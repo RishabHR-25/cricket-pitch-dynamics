@@ -13,6 +13,9 @@
 - `match_weather.csv` has **not** been produced yet. No partial file was left
   behind; the collector writes it only after all batches succeed.
 - All code and documentation changes below are ready to commit and hand off.
+- A teammate's **preliminary T20I analysis** was pulled after this work
+  (`4d37bed`, `c4e8e26`). It confirms that **bowling-role coverage, not weather,
+  is the current binding constraint on model quality** — see the next section.
 
 ## Current data inventory
 
@@ -30,6 +33,44 @@
 The drop from 24 to 18 reusable cached batches is expected: a batch's cache key
 is the list of coordinates, and the reviewed coordinates changed for venues that
 share a year with other grounds. Only those batches are re-requested.
+
+## Pulled teammate results: preliminary T20I analysis
+
+Source: `models/pitch_proxy_t20i_preliminary/` and
+`src/run_t20_preliminary_analysis.py` (T20 internationals only, **no weather**,
+role-complete matches only).
+
+| Quantity | Value |
+| --- | --- |
+| T20I matches parsed | 5,849 |
+| Matches usable after role join | 869 (14.9%) |
+| Credited-wicket coverage | 42.0% |
+| Labels | Pace 587 · Spin 213 · Batting 68 |
+| Chronological test set | 165 matches (from 2024-02-09) |
+| Best test macro-F1 | XGBoost 0.410 (RF 0.405, LR 0.406) |
+| Majority-class macro-F1 | 0.245 (but accuracy 0.582 vs XGB 0.497) |
+| Time-CV macro-F1 | RF 0.451 · LR 0.400 · XGB 0.395 |
+| Calibration (ECE) | RF 0.022 · XGB 0.144 · LR 0.183 |
+
+What this means for the program:
+
+1. **Role coverage is the bottleneck.** Only 15% of T20Is survive the role join;
+   `data/processed/role_curation_curve.csv` shows the payoff from curating the
+   biggest missing bowlers: top 200 players → 1,318 usable matches, top 400 →
+   1,618, top 800 → 2,350. `data/interim/bowler_role_review_queue.csv` is the
+   work list. Curating it will help metrics far more than adding weather to the
+   current 869 matches.
+2. **Do not report accuracy alone.** The majority baseline wins on accuracy
+   because Pace dominates; macro-F1 and balanced accuracy are the meaningful
+   comparisons, and the current models are only modestly above the venue prior.
+3. **`gender` is the top SHAP feature** (0.41). Removing it drops XGB macro-F1
+   from 0.410 to 0.347, so a large part of the signal is a gender/label
+   association rather than pitch behaviour. Investigate before writing this up;
+   consider a gender-stratified model or reporting male/female results
+   separately.
+4. Weather remains blocked by the API quota until 05:30 IST; when it lands,
+   re-run this same preliminary comparison with the weather columns to quantify
+   whether they add out-of-time signal.
 
 ## What changed in this work
 
