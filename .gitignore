@@ -1,0 +1,9 @@
+__pycache__/
+*.py[cod]
+
+data/interim/
+data/raw/cricsheet/all_json.zip
+data/raw/cricsheet/people.csv
+data/raw/cricsheet/names.csv
+data/raw/kaggle/
+models/pitch_proxy/

@@ -117,3 +117,94 @@ match-time alignment unless you obtain and validate start-time data separately.
 The supplied abstract PDF currently has no content (0 bytes). Replace it with
 the completed abstract before using it to finalize the research objectives,
 scope, or paper-specific methodology.
+
+## Separate T20, ODI, and Test models
+
+For the multi-format experiment, use the full
+[Cricsheet JSON archive](https://cricsheet.org/downloads/all_json.zip), not just
+the T20-international archive. The current local copy is
+`data/raw/cricsheet/all_json.zip`. The training code fits a distinct model for
+each format, so format-specific score patterns and proxy thresholds are not
+mixed.
+
+Cricsheet does not supply bowling style. The training workflow supplements its
+player register with two public Kaggle profile datasets:
+
+* [International Cricket Player Performance Stats](https://www.kaggle.com/datasets/ijajdatanerd/intl-cricketer-stats-odi-t20-tests)
+  supplies bowling style and Cricinfo player IDs; the direct ID join is used
+  when available.
+* [Cricket Players Dataset](https://www.kaggle.com/datasets/dhavalrupapara/cricket-players-worldwide-dataset)
+  supplies broader player-style coverage and is used only for a unique exact
+  normalized name/alias join when an ID join is unavailable.
+
+Both Kaggle listings currently declare CC0. Their metadata are third-party
+player-role labels, not official Cricsheet fields; inspect the source and terms
+before publication. The join audit is written to
+`models/pitch_proxy/player_role_join_audit.csv`. Matches with an unclassified
+credited wicket-taker are excluded from proxy-label training rather than
+guessing the player's style. Report this exclusion and role coverage in the
+paper.
+
+### Collect weather and train
+
+Install the project's Python dependencies:
+
+```powershell
+python -m pip install pandas numpy scikit-learn xgboost joblib
+```
+
+Collect daily city-level historical weather, then train the three models:
+
+```powershell
+python src\collect_match_weather.py `
+  --input data\raw\cricsheet\all_json.zip `
+  --output-dir data\interim `
+  --cache-dir data\interim\weather_cache
+
+python src\train_pitch_models.py `
+  --matches data\raw\cricsheet\all_json.zip `
+  --weather data\interim\match_weather.csv `
+  --output-dir models\pitch_proxy `
+  --device cuda
+```
+
+The weather collector saves a geocoding audit, cached API responses, and
+`match_weather.csv`. It uses Open-Meteo's ERA5 daily reanalysis at the match
+city (match day, not the stadium or exact start time). The free API is for
+non-commercial use; cite Open-Meteo and ERA5, retain the query/cache metadata,
+and verify ambiguous city geocodes before a paper submission. ERA5 begins in
+1940; older matches remain in the output with missing weather rather than
+requesting unavailable observations.
+
+Initial format-specific rules are deliberately explicit and configurable in
+`src/train_pitch_models.py`:
+
+* **T20:** `Batting` if first-innings run rate is at least 8.5 and first-six-
+  overs dot balls are at most 35%.
+* **ODI:** `Batting` if first-innings run rate is at least 5.5 and first-ten-
+  overs dot balls are at most 60%.
+* **Test:** `Batting` if first-innings run rate is at least 3.8 and first-ten-
+  overs dot balls are at most 75%. Tests have no powerplay; this is explicitly
+  an opening-ten-overs proxy, not a Test powerplay.
+* Otherwise, `Spin` requires at least two spin wickets and a spin-to-pace
+  wicket ratio of at least 1.25 (or no pace wickets); otherwise the label is
+  `Pace`. All spin/pace counts use bowler-credited dismissals.
+
+The ODI/Test rules are initial operational proxies and need domain validation
+and sensitivity analysis. Labels are not physical ground truth. The script
+trains only matches with complete bowling-style coverage and enough early
+overs; it uses only match-start features, prior same-format venue history (no
+same-day/future matches), season/toss/venue metadata, and daily weather. It
+keeps the most recent 20% of unique match dates as a chronological test set,
+uses class weighting, and compares out-of-time results against a majority
+baseline. Metrics measure prediction of the proxy labels, **not** accuracy
+against measured pitch behavior.
+
+The training command uses XGBoost's CUDA device when `--device cuda` is set;
+use `--device cpu` on machines without a supported CUDA-enabled XGBoost build.
+
+Each format's model folder contains a serialized model, held-out class
+probabilities, feature importance, and `metrics.json` with accuracy,
+balanced accuracy, macro/weighted F1, log loss, Brier score, confusion matrix,
+class supports, and baseline metrics. `proxy_label_audit.csv` and
+`summary.json` record the labels and counts used for the run.
