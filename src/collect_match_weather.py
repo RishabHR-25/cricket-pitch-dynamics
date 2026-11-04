@@ -62,6 +62,19 @@ def _request_json(url: str, *, retries: int = 3) -> Any:
                 _LAST_REQUEST_TIME = time.monotonic()
                 last_error = error
                 retry_after = error.headers.get("Retry-After")
+                if (
+                    error.code == 429
+                    and retry_after
+                    and retry_after.isdigit()
+                    and int(retry_after) > 3600
+                ):
+                    reset = error.headers.get("X-RateLimit-Reset")
+                    raise RuntimeError(
+                        "Open-Meteo daily API quota is exhausted; the collector cannot "
+                        "resume until it resets"
+                        + (f" (reset epoch {reset} UTC)" if reset else "")
+                        + ". The cache and audit are safe: re-run the same command later."
+                    ) from error
                 if attempt + 1 < retries:
                     delay = (
                         float(retry_after)
@@ -140,7 +153,7 @@ def _load_matches(archive_path: Path) -> pd.DataFrame:
     return pd.DataFrame(rows)
 
 
-def _geocode(query: str) -> dict[str, Any]:
+def _geocode(query: str, expected_country: str | None = None) -> dict[str, Any]:
     url = "https://geocoding-api.open-meteo.com/v1/search?" + urllib.parse.urlencode(
         {"name": query, "count": 10, "language": "en", "format": "json"}
     )
@@ -165,10 +178,28 @@ def _geocode(query: str) -> dict[str, Any]:
         if _normalize_location(str(item.get("name", ""))) == _normalize_location(query)
     ]
     candidates = exact or results
+    if expected_country:
+        country_key = _normalize_location(expected_country)
+        matching = [
+            item
+            for item in candidates
+            if _normalize_location(str(item.get("country", ""))) == country_key
+        ]
+        if not matching:
+            # Fall back to matching any candidate in the expected country, even
+            # if the place name differs slightly (for example a suburb).
+            matching = [
+                item
+                for item in results
+                if _normalize_location(str(item.get("country", ""))) == country_key
+            ]
+        if matching:
+            candidates = matching
     selected = max(
         candidates,
         key=lambda item: int(item.get("population") or 0),
     )
+
     return {
         "location_key": _normalize_location(query),
         "query": query,
@@ -208,12 +239,145 @@ def _write_geocode_cache(path: Path, cache: dict[str, dict[str, Any]]) -> None:
         "selected_name",
         "candidate_count",
         "candidates_json",
+        "resolution",
     ]
     path.parent.mkdir(parents=True, exist_ok=True)
     with path.open("w", encoding="utf-8", newline="") as file:
-        writer = csv.DictWriter(file, fieldnames=columns)
+        writer = csv.DictWriter(file, fieldnames=columns, extrasaction="ignore")
         writer.writeheader()
-        writer.writerows(cache[key] for key in sorted(cache))
+        writer.writerows(
+            {**cache[key], "location_key": key} for key in sorted(cache)
+        )
+
+
+def _load_location_overrides(path: Path | None) -> dict[str, dict[str, str]]:
+    """Load the reviewed venue/city corrections keyed by normalized query.
+
+    The file records, for each location string that Open-Meteo could not
+    resolve, the city used for the ERA5 request. This keeps a venue such as
+    "Arun Jaitley Stadium" from being geocoded as if it were a town name and
+    makes the correction auditable instead of implicit.
+    """
+    if path is None or not path.exists():
+        return {}
+    overrides: dict[str, dict[str, str]] = {}
+    with path.open(encoding="utf-8", newline="") as file:
+        for row in csv.DictReader(file):
+            query = (row.get("location_query") or "").strip()
+            city = (row.get("resolved_city") or "").strip()
+            if not query or not city:
+                continue
+            overrides[_normalize_location(query)] = {
+                "city": city,
+                "country": (row.get("country") or "").strip(),
+                "latitude": (row.get("latitude") or "").strip(),
+                "longitude": (row.get("longitude") or "").strip(),
+                "timezone": (row.get("timezone") or "").strip(),
+                "note": (row.get("note") or "").strip(),
+            }
+    return overrides
+
+
+def _apply_location_overrides(
+    geocodes: dict[str, dict[str, Any]],
+    overrides: dict[str, dict[str, str]],
+    max_workers: int,
+    refresh: bool = False,
+) -> dict[str, dict[str, Any]]:
+    """Re-resolve audited locations using the reviewed venue/city table.
+
+    Only entries whose coordinates are missing or that have not yet been
+    resolved by a reviewed override are touched, so repeated runs are
+    idempotent and successful geocodes are never silently replaced.
+    """
+    pending: dict[str, dict[str, str]] = {}
+    for key, row in geocodes.items():
+        override = overrides.get(key) or overrides.get(
+            _normalize_location(row.get("query", ""))
+        )
+        if override is None:
+            continue
+        marker = f"reviewed_override:{override['city']}"
+        if refresh:
+            pending[key] = override
+            continue
+        if override["latitude"] and override["longitude"]:
+            same = (
+                row.get("latitude") is not None
+                and row.get("longitude") is not None
+                and abs(float(row["latitude"]) - float(override["latitude"])) < 1e-6
+                and abs(float(row["longitude"]) - float(override["longitude"])) < 1e-6
+            )
+            if same:
+                continue
+            # Explicit reviewed coordinates are authoritative.
+            pending[key] = override
+            continue
+        if row.get("resolution") == marker and row.get("latitude") is not None:
+            continue
+        if row.get("latitude") is not None and not str(row.get("resolution", "")).startswith(
+            "reviewed_override:"
+        ):
+            # An automatic geocode succeeded; leave it alone unless the audit
+            # explicitly needs review.
+            continue
+        pending[key] = override
+
+    if not pending:
+        return geocodes
+
+    def resolve(item: tuple[str, dict[str, str]]) -> tuple[str, dict[str, Any]]:
+        key, override = item
+        marker = f"reviewed_override:{override['city']}"
+        if override["latitude"] and override["longitude"]:
+            return key, {
+                "latitude": float(override["latitude"]),
+                "longitude": float(override["longitude"]),
+                "timezone": override["timezone"] or None,
+                "country": override["country"] or None,
+                "selected_name": override["city"],
+                "candidate_count": 0,
+                "candidates_json": "[]",
+            }
+        resolved = _geocode(override["city"], override["country"] or None)
+        resolved["selected_name"] = resolved.get("selected_name") or override["city"]
+        if not resolved.get("country") and override["country"]:
+            resolved["country"] = override["country"]
+        if not resolved.get("timezone") and override["timezone"]:
+            resolved["timezone"] = override["timezone"]
+        return key, resolved
+
+    with ThreadPoolExecutor(max_workers=max_workers) as pool:
+        futures = {pool.submit(resolve, item): item[0] for item in pending.items()}
+        for future in as_completed(futures):
+            key, resolved = future.result()
+            marker = f"reviewed_override:{pending[key]['city']}"
+            row = dict(geocodes[key])
+            row.update(
+                {
+                    name: value
+                    for name, value in resolved.items()
+                    if name not in {"location_key", "query"}
+                }
+            )
+            row["resolution"] = marker
+            geocodes[key] = row
+            if resolved.get("latitude") is None:
+                LOGGER.warning("Reviewed override for %r still has no coordinates.", key)
+    return geocodes
+
+
+
+def _weather_cache_key(locations: list[dict[str, Any]], year: int) -> str:
+    start = f"{year}-01-01"
+    end = min(f"{year}-12-31", date.today().isoformat())
+    coordinate_key = ";".join(
+        f"{location['latitude']:.4f},{location['longitude']:.4f}"
+        for location in locations
+    )
+    return hashlib.sha256(
+        f"{coordinate_key},{start},{end}".encode("utf-8")
+    ).hexdigest()
 
 
 def _fetch_weather_batch(
@@ -223,14 +387,8 @@ def _fetch_weather_batch(
 ) -> list[dict[str, Any]]:
     start = f"{year}-01-01"
     end = min(f"{year}-12-31", date.today().isoformat())
-    coordinate_key = ";".join(
-        f"{location['latitude']:.4f},{location['longitude']:.4f}"
-        for location in locations
-    )
-    cache_key = hashlib.sha256(
-        f"{coordinate_key},{start},{end}".encode("utf-8")
-    ).hexdigest()
-    cache_path = cache_dir / f"{cache_key}.json.gz"
+    cache_path = cache_dir / f"{_weather_cache_key(locations, year)}.json.gz"
+
     if cache_path.exists():
         with gzip.open(cache_path, "rt", encoding="utf-8") as file:
             response = json.load(file)
@@ -263,6 +421,9 @@ def collect_weather(
     output_dir: Path,
     cache_dir: Path,
     max_workers: int = 4,
+    overrides_path: Path | None = None,
+    geocode_only: bool = False,
+    refresh_overrides: bool = False,
 ) -> tuple[pd.DataFrame, pd.DataFrame]:
     matches = _load_matches(archive_path)
     queries = (
@@ -282,7 +443,28 @@ def collect_weather(
         }
         for future in as_completed(futures):
             geocodes[futures[future]] = future.result()
+
+    overrides = _load_location_overrides(overrides_path)
+    if overrides:
+        geocodes = _apply_location_overrides(
+            geocodes, overrides, max_workers, refresh=refresh_overrides
+        )
     _write_geocode_cache(geocode_path, geocodes)
+    unresolved = {
+        key: row
+        for key, row in geocodes.items()
+        if row.get("latitude") is None and key in set(queries["location_key"])
+    }
+    if unresolved:
+        LOGGER.warning(
+            "%d locations used by matches are still unresolved; their weather will be missing: %s",
+            len(unresolved),
+            ", ".join(sorted(row.get("query", key) for key, row in unresolved.items())),
+        )
+    if geocode_only:
+        LOGGER.info("Geocoding stage complete; skipping weather requests.")
+        return pd.DataFrame(), queries
+
 
     weather_by_location: dict[str, dict[str, dict[str, Any]]] = {}
     years_by_location: dict[int, set[str]] = defaultdict(set)
@@ -301,6 +483,17 @@ def collect_weather(
             (year, valid_keys[index:index + 25])
             for index in range(0, len(valid_keys), 25)
         )
+    cached_batches = sum(
+        (cache_dir / f"{_weather_cache_key([geocodes[key] for key in keys], year)}.json.gz").exists()
+        for year, keys in batches
+    )
+    LOGGER.info(
+        "Weather batches: %d total, %d cached, %d to fetch.",
+        len(batches),
+        cached_batches,
+        len(batches) - cached_batches,
+    )
+    completed_batches = 0
     with ThreadPoolExecutor(max_workers=max_workers) as pool:
         futures = {
             pool.submit(
@@ -326,6 +519,11 @@ def collect_weather(
                         )
                         for variable in DAILY_VARIABLES
                     }
+            completed_batches += 1
+            if completed_batches % 10 == 0 or completed_batches == len(batches):
+                LOGGER.info(
+                    "Weather batches completed: %d/%d", completed_batches, len(batches)
+                )
 
     rows: list[dict[str, Any]] = []
     for match in matches.to_dict(orient="records"):
@@ -340,6 +538,8 @@ def collect_weather(
                 "location_query": match["location_query"],
                 "weather_country": geocode.get("country"),
                 "weather_timezone": geocode.get("timezone"),
+                "weather_geocode_name": geocode.get("selected_name"),
+                "weather_geocode_resolution": geocode.get("resolution") or "auto",
                 "weather_geocode_candidates": geocode.get("candidate_count"),
                 **observed,
             }
@@ -369,12 +569,36 @@ def main() -> None:
     parser.add_argument("--input", type=Path, required=True, help="Cricsheet all-format JSON ZIP.")
     parser.add_argument("--output-dir", type=Path, default=Path("data/interim"))
     parser.add_argument("--cache-dir", type=Path, default=Path("data/interim/weather_cache"))
+    parser.add_argument(
+        "--overrides",
+        type=Path,
+        default=Path("data/interim/venue_city_overrides.csv"),
+        help="Reviewed venue-to-city corrections applied to unresolved locations.",
+    )
     parser.add_argument("--max-workers", type=int, default=4)
+    parser.add_argument(
+        "--geocode-only",
+        action="store_true",
+        help="Resolve and audit locations, then stop before requesting ERA5.",
+    )
+    parser.add_argument(
+        "--refresh-overrides",
+        action="store_true",
+        help="Re-apply every reviewed override even if the audit is already resolved.",
+    )
     args = parser.parse_args()
     if args.max_workers < 1 or args.max_workers > 8:
         parser.error("--max-workers must be between 1 and 8.")
     logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
-    collect_weather(args.input, args.output_dir, args.cache_dir, args.max_workers)
+    collect_weather(
+        args.input,
+        args.output_dir,
+        args.cache_dir,
+        args.max_workers,
+        args.overrides,
+        args.geocode_only,
+        args.refresh_overrides,
+    )
 
 
 if __name__ == "__main__":

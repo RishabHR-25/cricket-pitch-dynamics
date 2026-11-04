@@ -150,14 +150,36 @@ guessing the player's style. Report this exclusion and role coverage in the
 paper.
 
 The team-shareable player registers and role-source ZIPs are in
-`data/raw/cricsheet/` and `data/raw/kaggle/`. The current weather checkpoint
-includes `data/interim/geocode_audit.csv` and 24 completed, reusable ERA5
-response batches under `data/interim/weather_cache/`. It is **partial**: no
-`match_weather.csv` has been produced, 83 estimated batches remain, and the
-geocode audit has unresolved/ambiguous city matches. Review the coordinates
-before scientific use. Resume the collector with the command below; it reuses
-the cached batches. The weather cache itself is Git-ignored by default, so the
-initial checkpoint was explicitly added to the repository.
+`data/raw/cricsheet/` and `data/raw/kaggle/`. `data/README.md` documents every
+derived artifact, its columns, and its sources.
+
+Geocoding is complete: all 413 location strings in
+`data/interim/geocode_audit.csv` have coordinates. The 94 previously unresolved
+venues were reviewed by hand and are recorded with a rationale in
+`data/interim/venue_city_overrides.csv`; the collector tags them
+`reviewed_override:<city>`. Generic place names can geocode to the wrong
+country (for example Port Soif → Vale, Georgia; Alur → Indonesia), so keep the
+override table authoritative when adding venues.
+
+Weather collection is **blocked on the Open-Meteo daily quota**, not on the
+pipeline: 111 year/coordinate batches are required (24 cached, 93 to fetch),
+and the free archive API returned HTTP 429 with a reset at
+2026-11-05 00:00 UTC (05:30 IST). The collector now fails fast with that
+message instead of retrying for an hour. Re-run the same command after the
+reset; cached batches are reused, so no work is repeated. When
+`data/interim/match_weather.csv` exists, run the readiness audit before
+training:
+
+```powershell
+python src\audit_datasets.py `
+  --weather data\interim\match_weather.csv `
+  --matches data\raw\cricsheet\all_json.zip
+```
+
+The audit writes `data/processed/data_readiness.json` and coverage CSVs, and
+exits non-zero if match coverage, value ranges, or geocoding checks fail. The
+weather cache is Git-ignored by default; the checkpoint is force-added so a
+teammate can resume on another machine.
 
 ### Collect weather and train
 
