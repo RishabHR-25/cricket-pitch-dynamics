@@ -127,6 +127,10 @@ the T20-international archive. The current local copy is
 each format, so format-specific score patterns and proxy thresholds are not
 mixed.
 
+The full archive is stored with Git LFS because it exceeds GitHub's regular
+100 MB file limit. After cloning, install Git LFS and run `git lfs pull` if the
+archive is not already present.
+
 Cricsheet does not supply bowling style. The training workflow supplements its
 player register with two public Kaggle profile datasets:
 
@@ -144,6 +148,16 @@ before publication. The join audit is written to
 credited wicket-taker are excluded from proxy-label training rather than
 guessing the player's style. Report this exclusion and role coverage in the
 paper.
+
+The team-shareable player registers and role-source ZIPs are in
+`data/raw/cricsheet/` and `data/raw/kaggle/`. The current weather checkpoint
+includes `data/interim/geocode_audit.csv` and 24 completed, reusable ERA5
+response batches under `data/interim/weather_cache/`. It is **partial**: no
+`match_weather.csv` has been produced, 83 estimated batches remain, and the
+geocode audit has unresolved/ambiguous city matches. Review the coordinates
+before scientific use. Resume the collector with the command below; it reuses
+the cached batches. The weather cache itself is Git-ignored by default, so the
+initial checkpoint was explicitly added to the repository.
 
 ### Collect weather and train
 
