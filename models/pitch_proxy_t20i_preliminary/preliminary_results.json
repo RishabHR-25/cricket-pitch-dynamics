@@ -1,0 +1,644 @@
+{
+  "scope": "T20 internationals in t20s_json.zip; no weather; role-complete matches only; preliminary",
+  "phase1_phase2": {
+    "input_matches": 843,
+    "returncode": 0,
+    "stderr_tail": "2026-11-04 15:28:49,734 INFO cricket_pitch_pipeline: Wrote 843 match rows to /home/claude/work/data/processed; target counts: {'Pace': 573, 'Spin': 203, 'Batting': 67}\n"
+  },
+  "phase1_vs_train_label_agreement": {
+    "compared": 842,
+    "agree": 1.0
+  },
+  "data": {
+    "archive_matches": 5849,
+    "parsed_complete_early_window": 5713,
+    "date_min": "2005-02-17",
+    "date_max": "2026-11-01",
+    "role_complete": 869,
+    "labelled": 868,
+    "labelled_fraction": 0.15193418519166813,
+    "by_gender": {
+      "female": {
+        "parsed": 2155,
+        "labelled": 272
+      },
+      "male": {
+        "parsed": 3558,
+        "labelled": 596
+      }
+    },
+    "class_counts": {
+      "Pace": 587,
+      "Spin": 213,
+      "Batting": 68
+    },
+    "class_share_by_gender": {
+      "female": {
+        "Batting": 0.01838235294117647,
+        "Pace": 0.5073529411764706,
+        "Spin": 0.4742647058823529
+      },
+      "male": {
+        "Batting": 0.10570469798657718,
+        "Pace": 0.7533557046979866,
+        "Spin": 0.14093959731543623
+      }
+    },
+    "labelled_by_year": {
+      "2006": 2,
+      "2007": 7,
+      "2008": 2,
+      "2009": 9,
+      "2010": 10,
+      "2011": 6,
+      "2012": 18,
+      "2013": 12,
+      "2014": 19,
+      "2015": 14,
+      "2016": 44,
+      "2017": 23,
+      "2018": 50,
+      "2019": 45,
+      "2020": 55,
+      "2021": 100,
+      "2022": 183,
+      "2023": 90,
+      "2024": 98,
+      "2025": 45,
+      "2026": 36
+    },
+    "venue_strings": 317,
+    "venue_ids": 301,
+    "bowlers_with_credited_wicket": 4370,
+    "role_table_rows": 1069,
+    "wicket_coverage": 0.4203938584779706,
+    "role_curation_curve": [
+      {
+        "top_n_curated": 0,
+        "wicket_coverage": 0.4203938584779706,
+        "role_complete_matches": 919
+      },
+      {
+        "top_n_curated": 50,
+        "wicket_coverage": 0.48842395921835174,
+        "role_complete_matches": 1021
+      },
+      {
+        "top_n_curated": 100,
+        "wicket_coverage": 0.5341364243233402,
+        "role_complete_matches": 1110
+      },
+      {
+        "top_n_curated": 200,
+        "wicket_coverage": 0.6006948658817818,
+        "role_complete_matches": 1318
+      },
+      {
+        "top_n_curated": 400,
+        "wicket_coverage": 0.6947748513169074,
+        "role_complete_matches": 1618
+      },
+      {
+        "top_n_curated": 800,
+        "wicket_coverage": 0.8136606384269935,
+        "role_complete_matches": 2350
+      },
+      {
+        "top_n_curated": 3291,
+        "wicket_coverage": 1.0,
+        "role_complete_matches": 5849
+      }
+    ]
+  },
+  "missing": {
+    "date": 0,
+    "venue": 0,
+    "toss_decision": 0,
+    "first_innings_run_rate": 0,
+    "early_dot_percent": 0
+  },
+  "sensitivity": [
+    {
+      "scenario": "Baseline",
+      "Batting": 0.07834101382488479,
+      "Pace": 0.6762672811059908,
+      "Spin": 0.24539170506912442,
+      "labels_changed": 0.0
+    },
+    {
+      "scenario": "Run-rate min 8.0",
+      "Batting": 0.09101382488479262,
+      "Pace": 0.6693548387096774,
+      "Spin": 0.23963133640552994,
+      "labels_changed": 0.012672811059907835
+    },
+    {
+      "scenario": "Run-rate min 9.0",
+      "Batting": 0.06221198156682028,
+      "Pace": 0.6900921658986175,
+      "Spin": 0.24769585253456222,
+      "labels_changed": 0.016129032258064516
+    },
+    {
+      "scenario": "Early dot% max 30.0",
+      "Batting": 0.03341013824884793,
+      "Pace": 0.7154377880184332,
+      "Spin": 0.2511520737327189,
+      "labels_changed": 0.044930875576036866
+    },
+    {
+      "scenario": "Early dot% max 40.0",
+      "Batting": 0.1497695852534562,
+      "Pace": 0.6152073732718893,
+      "Spin": 0.2350230414746544,
+      "labels_changed": 0.07142857142857142
+    },
+    {
+      "scenario": "Spin:pace ratio 1.0",
+      "Batting": 0.07834101382488479,
+      "Pace": 0.5841013824884793,
+      "Spin": 0.33755760368663595,
+      "labels_changed": 0.09216589861751152
+    },
+    {
+      "scenario": "Spin:pace ratio 1.5",
+      "Batting": 0.07834101382488479,
+      "Pace": 0.7200460829493087,
+      "Spin": 0.20161290322580644,
+      "labels_changed": 0.04377880184331797
+    },
+    {
+      "scenario": "Min spin wickets 3",
+      "Batting": 0.07834101382488479,
+      "Pace": 0.6774193548387096,
+      "Spin": 0.24423963133640553,
+      "labels_changed": 0.001152073732718894
+    }
+  ],
+  "split": {
+    "strategy": "chronological_by_unique_date",
+    "train_fraction_target": 0.8,
+    "train_end": "2024-02-02",
+    "test_start": "2024-02-09"
+  },
+  "n_train": 703,
+  "n_test": 165,
+  "features": [
+    "venue",
+    "venue_id",
+    "city",
+    "gender",
+    "toss_decision",
+    "toss_winner_batted_first",
+    "year",
+    "month_sin",
+    "month_cos",
+    "day_of_year_sin",
+    "day_of_year_cos",
+    "venue_last5_mean_first_innings_run_rate",
+    "venue_last5_mean_early_dot_percent",
+    "venue_last5_mean_spin_wicket_share",
+    "venue_matches_in_history",
+    "venue_role_matches_in_history"
+  ],
+  "test_classes": {
+    "Pace": 96,
+    "Spin": 57,
+    "Batting": 12
+  },
+  "train_classes": {
+    "Pace": 491,
+    "Spin": 156,
+    "Batting": 56
+  },
+  "models": {
+    "Majority class": {
+      "accuracy": 0.5818181818181818,
+      "balanced_accuracy": 0.3333333333333333,
+      "macro_f1": 0.24521072796934865,
+      "weighted_f1": 0.42800417972831767,
+      "multiclass_log_loss": 0.9129044738087294,
+      "multiclass_brier_score": 0.5657713087525171,
+      "classification_report": {
+        "Batting": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 12.0
+        },
+        "Pace": {
+          "precision": 0.5818181818181818,
+          "recall": 1.0,
+          "f1-score": 0.735632183908046,
+          "support": 96.0
+        },
+        "Spin": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 57.0
+        },
+        "accuracy": 0.5818181818181818,
+        "macro avg": {
+          "precision": 0.19393939393939394,
+          "recall": 0.3333333333333333,
+          "f1-score": 0.24521072796934865,
+          "support": 165.0
+        },
+        "weighted avg": {
+          "precision": 0.33851239669421485,
+          "recall": 0.5818181818181818,
+          "f1-score": 0.42800417972831767,
+          "support": 165.0
+        }
+      },
+      "confusion_matrix": [
+        [
+          0,
+          12,
+          0
+        ],
+        [
+          0,
+          96,
+          0
+        ],
+        [
+          0,
+          57,
+          0
+        ]
+      ]
+    },
+    "Venue prior": {
+      "accuracy": 0.593939393939394,
+      "balanced_accuracy": 0.35928362573099415,
+      "macro_f1": 0.3180323506491038,
+      "weighted_f1": 0.5018459672277314,
+      "multiclass_log_loss": 0.9583888239071829,
+      "multiclass_brier_score": 0.5902944502938249,
+      "classification_report": {
+        "Batting": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 12.0
+        },
+        "Pace": {
+          "precision": 0.5960264900662252,
+          "recall": 0.9375,
+          "f1-score": 0.728744939271255,
+          "support": 96.0
+        },
+        "Spin": {
+          "precision": 0.5714285714285714,
+          "recall": 0.14035087719298245,
+          "f1-score": 0.22535211267605634,
+          "support": 57.0
+        },
+        "accuracy": 0.593939393939394,
+        "macro avg": {
+          "precision": 0.38915168716493226,
+          "recall": 0.35928362573099415,
+          "f1-score": 0.3180323506491038,
+          "support": 165.0
+        },
+        "weighted avg": {
+          "precision": 0.5441816461684011,
+          "recall": 0.593939393939394,
+          "f1-score": 0.5018459672277314,
+          "support": 165.0
+        }
+      },
+      "confusion_matrix": [
+        [
+          0,
+          12,
+          0
+        ],
+        [
+          0,
+          90,
+          6
+        ],
+        [
+          0,
+          49,
+          8
+        ]
+      ]
+    },
+    "Logistic regression": {
+      "accuracy": 0.45454545454545453,
+      "balanced_accuracy": 0.46271929824561403,
+      "macro_f1": 0.40607352471759245,
+      "weighted_f1": 0.48512254737216215,
+      "multiclass_log_loss": 1.1255865235230538,
+      "multiclass_brier_score": 0.6959521428429494,
+      "classification_report": {
+        "Batting": {
+          "precision": 0.10638297872340426,
+          "recall": 0.4166666666666667,
+          "f1-score": 0.1694915254237288,
+          "support": 12.0
+        },
+        "Pace": {
+          "precision": 0.6206896551724138,
+          "recall": 0.375,
+          "f1-score": 0.4675324675324675,
+          "support": 96.0
+        },
+        "Spin": {
+          "precision": 0.5666666666666667,
+          "recall": 0.5964912280701754,
+          "f1-score": 0.5811965811965812,
+          "support": 57.0
+        },
+        "accuracy": 0.45454545454545453,
+        "macro avg": {
+          "precision": 0.4312464335208282,
+          "recall": 0.46271929824561403,
+          "f1-score": 0.40607352471759245,
+          "support": 165.0
+        },
+        "weighted avg": {
+          "precision": 0.5646230463105005,
+          "recall": 0.45454545454545453,
+          "f1-score": 0.48512254737216215,
+          "support": 165.0
+        }
+      },
+      "confusion_matrix": [
+        [
+          5,
+          5,
+          2
+        ],
+        [
+          36,
+          36,
+          24
+        ],
+        [
+          6,
+          17,
+          34
+        ]
+      ]
+    },
+    "Random forest": {
+      "accuracy": 0.49696969696969695,
+      "balanced_accuracy": 0.40935672514619875,
+      "macro_f1": 0.40507691837171605,
+      "weighted_f1": 0.5267258881131713,
+      "multiclass_log_loss": 0.9250183955013956,
+      "multiclass_brier_score": 0.5689994362885303,
+      "classification_report": {
+        "Batting": {
+          "precision": 0.06060606060606061,
+          "recall": 0.16666666666666666,
+          "f1-score": 0.08888888888888889,
+          "support": 12.0
+        },
+        "Pace": {
+          "precision": 0.6233766233766234,
+          "recall": 0.5,
+          "f1-score": 0.5549132947976878,
+          "support": 96.0
+        },
+        "Spin": {
+          "precision": 0.5818181818181818,
+          "recall": 0.5614035087719298,
+          "f1-score": 0.5714285714285714,
+          "support": 57.0
+        },
+        "accuracy": 0.49696969696969695,
+        "macro avg": {
+          "precision": 0.4219336219336219,
+          "recall": 0.40935672514619875,
+          "f1-score": 0.40507691837171605,
+          "support": 165.0
+        },
+        "weighted avg": {
+          "precision": 0.5680913026367572,
+          "recall": 0.49696969696969695,
+          "f1-score": 0.5267258881131713,
+          "support": 165.0
+        }
+      },
+      "confusion_matrix": [
+        [
+          2,
+          9,
+          1
+        ],
+        [
+          26,
+          48,
+          22
+        ],
+        [
+          5,
+          20,
+          32
+        ]
+      ]
+    },
+    "XGBoost": {
+      "accuracy": 0.49696969696969695,
+      "balanced_accuracy": 0.4265350877192982,
+      "macro_f1": 0.40988496522204393,
+      "weighted_f1": 0.5166693418940611,
+      "multiclass_log_loss": 1.0151575803756714,
+      "multiclass_brier_score": 0.6203648447990417,
+      "classification_report": {
+        "Batting": {
+          "precision": 0.10714285714285714,
+          "recall": 0.25,
+          "f1-score": 0.15,
+          "support": 12.0
+        },
+        "Pace": {
+          "precision": 0.6097560975609756,
+          "recall": 0.5208333333333334,
+          "f1-score": 0.5617977528089888,
+          "support": 96.0
+        },
+        "Spin": {
+          "precision": 0.5272727272727272,
+          "recall": 0.5087719298245614,
+          "f1-score": 0.5178571428571429,
+          "support": 57.0
+        },
+        "accuracy": 0.49696969696969695,
+        "macro avg": {
+          "precision": 0.4147238939921866,
+          "recall": 0.4265350877192982,
+          "f1-score": 0.40988496522204393,
+          "support": 165.0
+        },
+        "weighted avg": {
+          "precision": 0.544708152158263,
+          "recall": 0.49696969696969695,
+          "f1-score": 0.5166693418940611,
+          "support": 165.0
+        }
+      },
+      "confusion_matrix": [
+        [
+          3,
+          7,
+          2
+        ],
+        [
+          22,
+          50,
+          24
+        ],
+        [
+          3,
+          25,
+          29
+        ]
+      ]
+    }
+  },
+  "calibration": {
+    "XGBoost": [
+      {
+        "bin": "0.0-0.5",
+        "n": 32,
+        "mean_conf": 0.4656461775302887,
+        "accuracy": 0.375
+      },
+      {
+        "bin": "0.5-0.6",
+        "n": 42,
+        "mean_conf": 0.551302433013916,
+        "accuracy": 0.40476190476190477
+      },
+      {
+        "bin": "0.6-0.7",
+        "n": 35,
+        "mean_conf": 0.6495760083198547,
+        "accuracy": 0.5428571428571428
+      },
+      {
+        "bin": "0.7-0.8",
+        "n": 29,
+        "mean_conf": 0.7439396977424622,
+        "accuracy": 0.5862068965517241
+      },
+      {
+        "bin": "0.8-1.0",
+        "n": 27,
+        "mean_conf": 0.867321789264679,
+        "accuracy": 0.6296296296296297
+      }
+    ],
+    "Random forest": [
+      {
+        "bin": "0.0-0.5",
+        "n": 107,
+        "mean_conf": 0.4456283290249348,
+        "accuracy": 0.4392523364485981
+      },
+      {
+        "bin": "0.5-0.6",
+        "n": 45,
+        "mean_conf": 0.5320645053917248,
+        "accuracy": 0.5777777777777777
+      },
+      {
+        "bin": "0.6-0.7",
+        "n": 11,
+        "mean_conf": 0.6617915355830514,
+        "accuracy": 0.6363636363636364
+      },
+      {
+        "bin": "0.7-0.8",
+        "n": 2,
+        "mean_conf": 0.7091362477952783,
+        "accuracy": 1.0
+      }
+    ],
+    "Logistic regression": [
+      {
+        "bin": "0.0-0.5",
+        "n": 34,
+        "mean_conf": 0.4422875417791398,
+        "accuracy": 0.4411764705882353
+      },
+      {
+        "bin": "0.5-0.6",
+        "n": 41,
+        "mean_conf": 0.5569984627974688,
+        "accuracy": 0.4634146341463415
+      },
+      {
+        "bin": "0.6-0.7",
+        "n": 31,
+        "mean_conf": 0.6501150199245522,
+        "accuracy": 0.45161290322580644
+      },
+      {
+        "bin": "0.7-0.8",
+        "n": 32,
+        "mean_conf": 0.7443716938892426,
+        "accuracy": 0.4375
+      },
+      {
+        "bin": "0.8-1.0",
+        "n": 27,
+        "mean_conf": 0.8626609873920938,
+        "accuracy": 0.48148148148148145
+      }
+    ]
+  },
+  "ece": {
+    "XGBoost": 0.14413624062682645,
+    "Random forest": 0.02182280520523283,
+    "Logistic regression": 0.18266678713266904
+  },
+  "time_cv": "{\"('macro_f1', 'mean')\":{\"Logistic regression\":0.4,\"Majority class\":0.2603,\"Random forest\":0.4506,\"Venue prior\":0.29,\"XGBoost\":0.395},\"('macro_f1', 'std')\":{\"Logistic regression\":0.0519,\"Majority class\":0.0173,\"Random forest\":0.0637,\"Venue prior\":0.0231,\"XGBoost\":0.0683},\"('balanced_accuracy', 'mean')\":{\"Logistic regression\":0.4552,\"Majority class\":0.3333,\"Random forest\":0.4718,\"Venue prior\":0.3435,\"XGBoost\":0.4203},\"('balanced_accuracy', 'std')\":{\"Logistic regression\":0.0553,\"Majority class\":0.0,\"Random forest\":0.0815,\"Venue prior\":0.0123,\"XGBoost\":0.0695},\"('accuracy', 'mean')\":{\"Logistic regression\":0.481,\"Majority class\":0.6429,\"Random forest\":0.5623,\"Venue prior\":0.6499,\"XGBoost\":0.5387},\"('accuracy', 'std')\":{\"Logistic regression\":0.1091,\"Majority class\":0.0672,\"Random forest\":0.0589,\"Venue prior\":0.0582,\"XGBoost\":0.1004}}",
+  "shap_importance": {
+    "gender": 0.4138999879360199,
+    "venue_last5_mean_first_innings_run_rate": 0.23430000245571136,
+    "venue_last5_mean_spin_wicket_share": 0.21400000154972076,
+    "venue_last5_mean_early_dot_percent": 0.20010000467300415,
+    "toss_winner_batted_first": 0.17759999632835388,
+    "day_of_year_sin": 0.16820000112056732,
+    "day_of_year_cos": 0.14319999516010284,
+    "venue_role_matches_in_history": 0.11999999731779099,
+    "venue": 0.09709999710321426,
+    "year": 0.06970000267028809,
+    "month_cos": 0.047600001096725464,
+    "toss_decision": 0.03610000014305115,
+    "venue_id": 0.025800000876188278,
+    "venue_matches_in_history": 0.025499999523162842,
+    "month_sin": 0.025100000202655792,
+    "city": 0.015200000256299973
+  },
+  "no_gender_xgb_macro_f1": 0.347353249475891,
+  "no_gender_xgb_bal_acc": 0.3450292397660819,
+  "xgb_by_gender": {
+    "male": {
+      "n": 105,
+      "accuracy": 0.47619047619047616,
+      "classes": {
+        "Pace": 73,
+        "Spin": 21,
+        "Batting": 11
+      }
+    },
+    "female": {
+      "n": 60,
+      "accuracy": 0.5333333333333333,
+      "classes": {
+        "Spin": 36,
+        "Pace": 23,
+        "Batting": 1
+      }
+    }
+  }
+}

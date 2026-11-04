@@ -1,0 +1,844 @@
+match_id,date,venue,first_innings_runs,first_innings_run_rate,powerplay_dot_percent,spin_wickets,pace_wickets,y
+237242,2006-02-16,"Eden Park, Auckland",126,6.3,69.44444444444444,3,10,Pace
+251487,2006-12-22,"Westpac Stadium, Wellington",162,8.1,30.555555555555557,6,3,Spin
+287856,2007-09-12,"Newlands, Cape Town",138,6.9,69.44444444444444,1,11,Pace
+287857,2007-09-13,"Wanderers Stadium, Johannesburg",164,8.2,63.888888888888886,9,3,Spin
+287866,2007-09-16,"Newlands, Cape Town",123,6.15,58.333333333333336,1,7,Pace
+287871,2007-09-18,"Wanderers Stadium, Johannesburg",147,7.35,52.77777777777778,5,8,Pace
+287874,2007-09-20,"Newlands, Cape Town",101,5.17948717948718,61.111111111111114,0,10,Pace
+319142,2008-06-20,Kensington Oval,97,8.818181818181818,38.888888888888886,0,4,Pace
+355993,2009-06-06,The Oval,169,8.45,66.66666666666667,0,10,Pace
+355994,2009-06-06,Trent Bridge,180,9.0,33.333333333333336,8,5,Batting
+356002,2009-06-10,Trent Bridge,192,9.6,30.555555555555557,3,7,Batting
+356006,2009-06-12,Lord's,153,7.65,41.666666666666664,2,8,Pace
+356007,2009-06-13,The Oval,183,9.15,44.44444444444444,4,12,Pace
+356011,2009-06-15,The Oval,161,8.05,30.555555555555557,4,7,Pace
+430885,2009-12-12,"Punjab Cricket Association Stadium, Mohali, Chandigarh",206,10.3,47.22222222222222,4,4,Pace
+440946,2010-02-20,Dubai International Cricket Stadium,148,7.4,50.0,4,7,Pace
+406198,2010-02-23,Sydney Cricket Ground,138,6.9,61.111111111111114,2,6,Pace
+412680,2010-05-01,"Beausejour Stadium, Gros Islet, St Lucia",172,8.6,38.888888888888886,4,6,Pace
+412682,2010-05-02,"Beausejour Stadium, Gros Islet, St Lucia",186,9.3,55.55555555555556,3,6,Pace
+412692,2010-05-07,Kensington Oval,195,9.75,44.44444444444444,3,8,Pace
+412699,2010-05-11,"Beausejour Stadium, Gros Islet, St Lucia",163,8.15,33.333333333333336,1,8,Pace
+412701,2010-05-13,"Beausejour Stadium, Gros Islet, St Lucia",128,6.4,50.0,1,7,Pace
+473918,2010-12-26,"Eden Park, Auckland",143,7.15,47.22222222222222,1,12,Pace
+516204,2011-08-06,Pallekele International Cricket Stadium,198,9.9,38.888888888888886,4,6,Pace
+516205,2011-08-08,Pallekele International Cricket Stadium,157,7.85,33.333333333333336,9,8,Pace
+523735,2011-09-16,Harare Sports Club,198,9.9,33.333333333333336,6,6,Batting
+521217,2011-10-29,"Eden Gardens, Kolkata",120,6.0,66.66666666666667,4,8,Pace
+530432,2011-11-25,"Sheikh Zayed Stadium, Abu Dhabi",141,7.230769230769231,41.666666666666664,4,9,Pace
+556252,2012-03-30,"Wanderers Stadium, Johannesburg",219,10.95,38.888888888888886,3,1,Spin
+562437,2012-06-01,"Mahinda Rajapaksa International Cricket Stadium, Sooriyawewa, Hambantota",132,6.6,52.77777777777778,4,11,Pace
+534208,2012-06-24,Trent Bridge,172,8.6,61.111111111111114,2,5,Pace
+571148,2012-09-05,Dubai International Cricket Stadium,89,4.564102564102564,52.77777777777778,6,7,Pace
+571150,2012-09-10,Dubai International Cricket Stadium,168,8.4,41.666666666666664,5,11,Pace
+565820,2012-09-11,MA Chidambaram Stadium,167,8.35,55.55555555555556,0,9,Pace
+533273,2012-09-19,"R Premadasa Stadium, Colombo",123,6.15,61.111111111111114,3,6,Pace
+533275,2012-09-20,"Mahinda Rajapaksa International Cricket Stadium, Sooriyawewa, Hambantota",93,4.65,61.111111111111114,0,8,Pace
+533278,2012-09-22,"Mahinda Rajapaksa International Cricket Stadium, Sooriyawewa, Hambantota",78,11.142857142857142,19.444444444444443,1,7,Batting
+533279,2012-09-22,"R Premadasa Stadium, Colombo",191,9.55,47.22222222222222,1,8,Pace
+533284,2012-09-27,Pallekele International Cricket Stadium,174,8.7,44.44444444444444,3,7,Pace
+533287,2012-09-28,"R Premadasa Stadium, Colombo",140,7.0,27.77777777777778,1,6,Pace
+533290,2012-09-30,"R Premadasa Stadium, Colombo",146,7.3,47.22222222222222,4,3,Spin
+533294,2012-10-02,"R Premadasa Stadium, Colombo",149,7.45,50.0,8,5,Spin
+533295,2012-10-02,"R Premadasa Stadium, Colombo",152,7.6,58.333333333333336,5,10,Pace
+587476,2012-12-10,"Shere Bangla National Stadium, Mirpur",197,9.85,55.55555555555556,1,4,Pace
+573019,2013-01-26,"ANZ Stadium, Sydney",137,6.85,47.22222222222222,4,3,Spin
+573020,2013-01-28,Melbourne Cricket Ground,161,8.05,58.333333333333336,3,4,Pace
+602477,2013-03-31,Pallekele International Cricket Stadium,198,9.9,38.888888888888886,4,6,Pace
+623571,2013-05-11,"Queens Sports Club, Bulawayo",168,8.4,41.666666666666664,6,5,Pace
+623572,2013-05-12,"Queens Sports Club, Bulawayo",168,8.470588235294118,41.666666666666664,9,5,Spin
+635658,2013-08-02,"R Premadasa Stadium, Colombo",115,5.75,66.66666666666667,8,7,Pace
+635659,2013-08-04,"Mahinda Rajapaksa International Cricket Stadium, Sooriyawewa, Hambantota",145,7.25,58.333333333333336,3,9,Pace
+635660,2013-08-06,"Mahinda Rajapaksa International Cricket Stadium, Sooriyawewa, Hambantota",163,8.15,63.888888888888886,2,5,Pace
+659547,2013-08-24,Harare Sports Club,179,8.95,61.111111111111114,5,2,Spin
+664295,2013-09-15,"Senwes Park, Potchefstroom",109,5.45,75.0,3,3,Pace
+649101,2013-11-13,Dubai International Cricket Stadium,98,4.9,77.77777777777777,2,7,Pace
+657635,2013-12-13,Dubai International Cricket Stadium,211,10.55,44.44444444444444,7,5,Spin
+698987,2014-01-20,"West End Park International Cricket Stadium, Doha",119,5.95,58.333333333333336,3,5,Pace
+690351,2014-02-12,"Zahur Ahmed Chowdhury Stadium, Chittagong",168,8.4,36.111111111111114,5,7,Pace
+690353,2014-02-14,"Zahur Ahmed Chowdhury Stadium, Chittagong",120,6.050420168067228,52.77777777777778,7,8,Pace
+648681,2014-03-12,"Kingsmead, Durban",80,11.428571428571429,44.44444444444444,2,3,Pace
+648683,2014-03-14,"SuperSport Park, Centurion",128,6.4,63.888888888888886,6,5,Pace
+682911,2014-03-19,Sylhet International Cricket Stadium,123,6.15,47.22222222222222,2,6,Pace
+682915,2014-03-20,"Zahur Ahmed Chowdhury Stadium, Chittagong",108,6.545454545454546,38.888888888888886,14,4,Spin
+682923,2014-03-22,"Zahur Ahmed Chowdhury Stadium, Chittagong",165,8.25,44.44444444444444,6,7,Pace
+682933,2014-03-24,"Zahur Ahmed Chowdhury Stadium, Chittagong",39,3.7142857142857144,77.77777777777777,3,7,Pace
+682947,2014-03-29,"Zahur Ahmed Chowdhury Stadium, Chittagong",196,9.8,44.44444444444444,3,8,Pace
+682957,2014-04-01,"Shere Bangla National Stadium, Mirpur",153,7.65,69.44444444444444,0,8,Pace
+682963,2014-04-04,"Shere Bangla National Stadium, Mirpur",172,8.6,47.22222222222222,4,4,Pace
+754793,2014-08-30,"Kerrydale Oval, Gold Coast",92,4.6,52.77777777777778,5,4,Spin
+754717,2014-11-05,Adelaide Oval,144,7.2,41.666666666666664,2,7,Pace
+754719,2014-11-07,Melbourne Cricket Ground,101,5.05,52.77777777777778,2,8,Pace
+754721,2014-11-09,"ANZ Stadium, Sydney",145,7.25,27.77777777777778,4,10,Pace
+722335,2015-01-09,"Newlands, Cape Town",165,8.25,55.55555555555556,3,7,Pace
+722337,2015-01-11,"Wanderers Stadium, Johannesburg",231,11.55,38.888888888888886,2,9,Pace
+736063,2015-01-14,"Kingsmead, Durban",195,9.75,47.22222222222222,1,12,Pace
+858491,2015-04-24,"Shere Bangla National Stadium, Mirpur",141,7.05,63.888888888888886,1,5,Pace
+868723,2015-05-22,"Gaddafi Stadium, Lahore",172,8.6,33.333333333333336,4,7,Batting
+743953,2015-06-23,Old Trafford,191,9.55,33.333333333333336,3,12,Batting
+817203,2015-07-05,"Shere Bangla National Stadium, Mirpur",148,7.4,47.22222222222222,7,6,Pace
+885969,2015-07-17,Harare Sports Club,178,8.9,38.888888888888886,6,4,Spin
+860279,2015-07-30,"R Premadasa Stadium, Colombo",175,8.75,41.666666666666664,2,10,Pace
+743975,2015-08-31,"Sophia Gardens, Cardiff",182,9.1,61.111111111111114,1,9,Pace
+919603,2015-09-27,Harare Sports Club,136,6.8,61.111111111111114,6,7,Pace
+903589,2015-10-05,"Barabati Stadium, Cuttack",92,5.307692307692308,44.44444444444444,6,6,Pace
+915785,2015-11-11,"R Premadasa Stadium, Colombo",162,8.1,47.22222222222222,3,12,Pace
+931396,2015-11-13,"Shere Bangla National Stadium, Mirpur",131,6.717948717948718,66.66666666666667,7,8,Pace
+914217,2016-01-07,"Bay Oval, Mount Maunganui",182,9.1,38.888888888888886,2,9,Pace
+914219,2016-01-10,"Eden Park, Auckland",142,7.1,44.44444444444444,2,7,Pace
+958415,2016-01-15,"Sheikh Abu Naser Stadium, Khulna",163,8.15,52.77777777777778,5,5,Pace
+914223,2016-01-17,"Seddon Park, Hamilton",168,8.4,58.333333333333336,1,5,Pace
+958419,2016-01-20,"Sheikh Abu Naser Stadium, Khulna",187,9.35,44.44444444444444,8,4,Spin
+895817,2016-01-26,Adelaide Oval,188,9.4,44.44444444444444,4,9,Pace
+895789,2016-01-29,Melbourne Cricket Ground,125,6.944444444444445,52.77777777777778,4,2,Spin
+895819,2016-01-29,Melbourne Cricket Ground,184,9.2,41.666666666666664,5,4,Spin
+895821,2016-01-31,Sydney Cricket Ground,197,9.85,41.666666666666664,5,3,Spin
+963697,2016-02-09,"Maharashtra Cricket Association Stadium, Pune",101,5.3628318584070795,63.888888888888886,4,10,Pace
+963699,2016-02-12,"JSCA International Stadium Complex, Ranchi",196,9.8,22.22222222222222,6,9,Batting
+963701,2016-02-14,"Andhra Cricket Association-Visakhapatnam District Cricket Association Stadium, Visakhapatnam",82,4.555555555555555,66.66666666666667,7,3,Spin
+800479,2016-02-19,"Newlands, Cape Town",134,6.7,44.44444444444444,7,8,Pace
+966739,2016-02-21,"Khan Shaheb Osman Ali Stadium, Fatullah",146,7.3,50.0,4,7,Pace
+800481,2016-02-21,"Wanderers Stadium, Johannesburg",171,8.694915254237287,44.44444444444444,2,7,Pace
+966743,2016-02-22,"Shere Bangla National Stadium, Mirpur",172,8.6,52.77777777777778,6,7,Pace
+966745,2016-02-24,"Shere Bangla National Stadium, Mirpur",166,8.3,61.111111111111114,3,9,Pace
+966747,2016-02-25,"Shere Bangla National Stadium, Mirpur",129,6.45,47.22222222222222,3,14,Pace
+966749,2016-02-26,"Shere Bangla National Stadium, Mirpur",133,6.65,44.44444444444444,5,11,Pace
+966751,2016-02-27,"Shere Bangla National Stadium, Mirpur",83,4.742857142857143,75.0,3,10,Pace
+966753,2016-02-28,"Shere Bangla National Stadium, Mirpur",147,7.35,52.77777777777778,3,10,Pace
+966757,2016-03-01,"Shere Bangla National Stadium, Mirpur",138,6.9,52.77777777777778,3,9,Pace
+966761,2016-03-03,"Shere Bangla National Stadium, Mirpur",81,4.05,72.22222222222223,3,5,Pace
+884347,2016-03-04,"Kingsmead, Durban",157,7.85,36.111111111111114,3,11,Pace
+966765,2016-03-06,"Shere Bangla National Stadium, Mirpur",120,8.0,52.77777777777778,2,4,Pace
+884349,2016-03-06,"Wanderers Stadium, Johannesburg",204,10.2,44.44444444444444,1,11,Pace
+951305,2016-03-08,"Vidarbha Cricket Association Stadium, Jamtha, Nagpur",158,7.9,47.22222222222222,3,8,Pace
+884351,2016-03-09,"Newlands, Cape Town",178,8.9,36.111111111111114,2,5,Pace
+951331,2016-03-16,"Wankhede Stadium, Mumbai",182,9.1,50.0,3,6,Pace
+951337,2016-03-18,"Himachal Pradesh Cricket Association Stadium, Dharamsala",142,7.1,44.44444444444444,5,9,Pace
+951339,2016-03-18,"Wankhede Stadium, Mumbai",229,11.45,33.333333333333336,5,6,Batting
+951341,2016-03-19,"Eden Gardens, Kolkata",118,6.555555555555555,47.22222222222222,2,7,Pace
+951347,2016-03-21,"M Chinnaswamy Stadium, Bengaluru",156,7.8,44.44444444444444,6,5,Pace
+951395,2016-03-22,"Himachal Pradesh Cricket Association Stadium, Dharamsala",90,4.5,72.22222222222223,9,3,Spin
+951353,2016-03-23,"M Chinnaswamy Stadium, Bengaluru",146,7.3,38.888888888888886,8,7,Pace
+951355,2016-03-25,"Punjab Cricket Association IS Bindra Stadium, Mohali, Chandigarh",193,9.65,44.44444444444444,4,8,Pace
+951357,2016-03-25,"Vidarbha Cricket Association Stadium, Jamtha, Nagpur",122,6.1,55.55555555555556,5,7,Pace
+951361,2016-03-26,"Feroz Shah Kotla, Delhi",171,8.55,50.0,3,7,Pace
+951363,2016-03-27,"Punjab Cricket Association IS Bindra Stadium, Mohali, Chandigarh",160,8.0,41.666666666666664,2,8,Pace
+951369,2016-03-30,"Feroz Shah Kotla, Delhi",153,7.65,41.666666666666664,4,6,Pace
+913633,2016-07-05,"The Rose Bowl, Southampton",140,7.0,36.111111111111114,3,7,Pace
+1041615,2016-08-27,"Central Broward Regional Park Stadium Turf Ground, Lauderhill",245,12.25,27.77777777777778,2,7,Batting
+913663,2016-09-07,Old Trafford,135,6.75,36.111111111111114,3,5,Pace
+1019979,2017-01-03,"McLean Park, Napier",141,7.05,58.333333333333336,2,9,Pace
+1019981,2017-01-06,"Bay Oval, Mount Maunganui",195,9.75,47.22222222222222,8,7,Pace
+1019983,2017-01-08,"Bay Oval, Mount Maunganui",194,9.7,50.0,5,5,Pace
+936153,2017-01-20,"SuperSport Park, Centurion",126,12.6,22.22222222222222,4,6,Batting
+936157,2017-01-25,"Newlands, Cape Town",169,8.45,30.555555555555557,5,3,Spin
+1034825,2017-01-26,"Green Park, Kanpur",147,7.35,38.888888888888886,5,4,Spin
+1020029,2017-02-17,"Eden Park, Auckland",185,9.25,47.22222222222222,5,10,Pace
+1001353,2017-02-22,Adelaide Oval,187,9.35,36.111111111111114,5,8,Pace
+1031431,2017-06-21,"The Rose Bowl, Southampton",142,7.1,44.44444444444444,0,4,Pace
+1031433,2017-06-23,"The County Ground, Taunton",174,8.7,50.0,1,11,Pace
+1031435,2017-06-25,"Sophia Gardens, Cardiff",181,9.05,41.666666666666664,2,13,Pace
+1117821,2017-09-12,"Gaddafi Stadium, Lahore",197,9.85,41.666666666666664,3,8,Pace
+1119501,2017-10-07,"JSCA International Stadium Complex, Ranchi",118,6.321428571428571,36.111111111111114,3,5,Pace
+1119502,2017-10-10,"Barsapara Cricket Stadium, Guwahati",118,5.9,58.333333333333336,2,9,Pace
+1120093,2017-11-01,"Feroz Shah Kotla, Delhi",202,10.1,44.44444444444444,6,4,Spin
+1120094,2017-11-04,"Saurashtra Cricket Association Stadium, Rajkot",196,9.8,50.0,3,6,Pace
+1120095,2017-11-07,"Greenfield International Stadium, Thiruvananthapuram",67,8.375,36.111111111111114,3,6,Pace
+1086069,2017-11-21,"Manuka Oval, Canberra",178,8.9,41.666666666666664,3,3,Pace
+1122729,2017-12-20,"Barabati Stadium, Cuttack",180,9.0,30.555555555555557,6,7,Batting
+1122730,2017-12-22,"Holkar Cricket Stadium, Indore",260,13.0,44.44444444444444,7,7,Pace
+1122731,2017-12-24,"Wankhede Stadium, Mumbai",135,6.75,52.77777777777778,2,9,Pace
+1115809,2018-01-28,"Bay Oval, Mount Maunganui",181,9.05,52.77777777777778,6,6,Pace
+1072316,2018-02-03,Sydney Cricket Ground,117,5.85,58.333333333333336,2,10,Pace
+1072317,2018-02-07,"Bellerive Oval, Hobart",155,7.75,33.333333333333336,6,8,Pace
+1072318,2018-02-10,Melbourne Cricket Ground,137,6.85,44.44444444444444,0,9,Pace
+1072319,2018-02-13,"Westpac Stadium, Wellington",196,9.8,33.333333333333336,6,6,Batting
+1072320,2018-02-16,"Eden Park, Auckland",243,12.15,38.888888888888886,2,8,Pace
+1072321,2018-02-18,"Seddon Park, Hamilton",194,9.7,50.0,4,7,Pace
+1122285,2018-02-18,"Wanderers Stadium, Johannesburg",203,10.15,30.555555555555557,2,11,Batting
+1072322,2018-02-21,"Eden Park, Auckland",150,7.5,36.111111111111114,5,7,Pace
+1122286,2018-02-21,"SuperSport Park, Centurion",188,9.4,66.66666666666667,1,7,Pace
+1122287,2018-02-24,"Newlands, Cape Town",172,8.6,27.77777777777778,2,10,Batting
+1133818,2018-03-08,"R Premadasa Stadium, Colombo",139,6.95,52.77777777777778,1,10,Pace
+1133819,2018-03-10,"R Premadasa Stadium, Colombo",214,10.7,33.333333333333336,2,8,Batting
+1133821,2018-03-14,"R Premadasa Stadium, Colombo",176,8.8,41.666666666666664,4,4,Pace
+1133823,2018-03-18,"R Premadasa Stadium, Colombo",166,8.3,41.666666666666664,6,6,Pace
+1131235,2018-03-22,"Brabourne Stadium, Mumbai",152,7.6,55.55555555555556,3,6,Pace
+1131238,2018-03-26,"Brabourne Stadium, Mumbai",186,9.3,47.22222222222222,3,7,Pace
+1131239,2018-03-28,"Brabourne Stadium, Mumbai",96,5.433962264150943,50.0,5,7,Pace
+1144441,2018-05-19,"Mangaung Oval, Bloemfontein",169,8.45,55.55555555555556,2,6,Pace
+1144442,2018-05-20,"Mangaung Oval, Bloemfontein",64,7.111111111111111,36.111111111111114,4,5,Pace
+1148051,2018-06-04,"Kinrara Academy Oval, Kuala Lumpur",95,4.75,61.111111111111114,8,0,Spin
+1148054,2018-06-06,"Kinrara Academy Oval, Kuala Lumpur",136,6.8,55.55555555555556,10,1,Spin
+1148056,2018-06-06,"Kinrara Academy Oval, Kuala Lumpur",141,7.05,55.55555555555556,6,1,Spin
+1148063,2018-06-10,"Kinrara Academy Oval, Kuala Lumpur",112,5.6,63.888888888888886,11,1,Spin
+1119542,2018-06-27,Edgbaston,221,11.05,30.555555555555557,6,8,Batting
+1145894,2018-06-28,"YMCA Cricket Club, Dublin",134,6.7,55.55555555555556,6,5,Pace
+1142914,2018-07-02,Harare Sports Club,116,5.84873949579832,66.66666666666667,0,10,Pace
+1142915,2018-07-03,Harare Sports Club,229,11.45,25.0,3,8,Batting
+1119543,2018-07-03,Old Trafford,159,7.95,44.44444444444444,6,4,Spin
+1142916,2018-07-04,Harare Sports Club,162,8.1,47.22222222222222,2,5,Pace
+1142918,2018-07-06,Harare Sports Club,151,7.55,52.77777777777778,1,12,Pace
+1142919,2018-07-08,Harare Sports Club,183,9.15,38.888888888888886,4,7,Pace
+1144979,2018-10-01,"Allan Border Field, Brisbane",145,7.25,33.333333333333336,3,7,Pace
+1144980,2018-10-05,"Manuka Oval, Canberra",103,5.421052631578948,38.888888888888886,4,6,Pace
+1144149,2018-10-09,"Buffalo Park, East London",160,8.0,58.333333333333336,6,10,Pace
+1162727,2018-10-22,"Sheikh Zayed Stadium Nursery 2, Abu Dhabi",117,5.85,69.44444444444444,1,7,Pace
+1161231,2018-10-25,"Kinrara Academy Oval, Kuala Lumpur",195,9.75,33.333333333333336,7,3,Batting
+1161232,2018-10-27,"Kinrara Academy Oval, Kuala Lumpur",101,5.0924369747899165,55.55555555555556,10,4,Spin
+1161233,2018-10-29,"Kinrara Academy Oval, Kuala Lumpur",97,4.8099173553719,47.22222222222222,0,5,Pace
+1157375,2018-10-31,"Sheikh Zayed Stadium, Abu Dhabi",148,7.4,63.888888888888886,4,6,Pace
+1157376,2018-11-02,Dubai International Cricket Stadium,153,7.65,38.888888888888886,2,7,Pace
+1157377,2018-11-04,Dubai International Cricket Stadium,166,8.3,47.22222222222222,5,6,Pace
+1150534,2018-11-09,"Providence Stadium, Guyana",165,8.25,38.888888888888886,6,5,Pace
+1150538,2018-11-11,"Providence Stadium, Guyana",93,4.65,61.111111111111114,1,4,Pace
+1144989,2018-11-17,"Metricon Stadium, Carrara",108,10.8,30.555555555555557,2,11,Batting
+1153319,2018-12-22,"Shere Bangla National Stadium, Mirpur",190,9.827586206896552,33.333333333333336,8,10,Batting
+1172469,2019-01-31,"Southend Cricket Club Stadium, Karachi",160,8.0,58.333333333333336,4,6,Pace
+1168160,2019-02-01,"Newlands, Cape Town",90,4.5,66.66666666666667,4,5,Pace
+1172470,2019-02-01,"Southend Cricket Club Stadium, Karachi",132,6.6,58.333333333333336,5,6,Pace
+1172471,2019-02-03,"Southend Cricket Club Stadium, Karachi",150,7.5,38.888888888888886,10,2,Spin
+1144162,2019-02-03,"Wanderers Stadium, Johannesburg",188,9.4,44.44444444444444,1,8,Pace
+1144163,2019-02-06,"SuperSport Park, Centurion",168,8.4,50.0,3,14,Pace
+1168162,2019-02-06,"SuperSport Park, Centurion",163,8.15,36.111111111111114,5,7,Pace
+1158072,2019-03-08,"Warner Park, St Kitts",182,9.1,47.22222222222222,4,11,Pace
+1158073,2019-03-10,"Warner Park, St Kitts",71,5.461538461538462,55.55555555555556,4,8,Pace
+1144172,2019-03-19,"Newlands, Cape Town",134,6.7,55.55555555555556,4,8,Pace
+1144174,2019-03-24,"Wanderers Stadium, Johannesburg",198,9.9,47.22222222222222,1,10,Pace
+1152840,2019-05-05,"Sophia Gardens, Cardiff",173,8.65,44.44444444444444,1,6,Pace
+1177018,2019-05-15,"LC de Villiers Oval, Pretoria",119,5.95,63.888888888888886,6,4,Spin
+1177019,2019-05-18,"City Oval, Pietermaritzburg",128,6.4,50.0,4,3,Spin
+1185154,2019-05-26,"YMCA Cricket Club, Dublin",139,6.95,69.44444444444444,5,6,Pace
+1168521,2019-07-12,"Bready Cricket Club, Magheramason",132,10.153846153846153,47.22222222222222,0,8,Pace
+1168522,2019-07-14,"Bready Cricket Club, Magheramason",171,8.55,41.666666666666664,2,7,Pace
+1190769,2019-07-23,"Indian Association Ground, Singapore",122,6.1,47.22222222222222,6,6,Pace
+1168026,2019-07-26,"The County Ground, Chelmsford",226,11.3,41.666666666666664,4,7,Pace
+1168027,2019-07-28,"The County Ground, Hove",121,6.05,52.77777777777778,5,5,Pace
+1192875,2019-09-01,Pallekele International Cricket Stadium,174,8.7,36.111111111111114,4,4,Pace
+1197059,2019-09-05,"Forthill, Dundee",85,4.25,77.77777777777777,5,6,Pace
+1198475,2019-09-14,Kensington Oval,106,5.3,66.66666666666667,2,8,Pace
+1198476,2019-09-16,Kensington Oval,97,4.85,63.888888888888886,5,2,Spin
+1198477,2019-09-18,Kensington Oval,81,4.05,63.888888888888886,8,2,Spin
+1187005,2019-09-18,"Punjab Cricket Association IS Bindra Stadium, Mohali, Chandigarh",149,7.45,52.77777777777778,3,5,Pace
+1197143,2019-09-18,"Zahur Ahmed Chowdhury Stadium, Chattogram",175,8.75,38.888888888888886,5,11,Pace
+1187006,2019-09-22,"M Chinnaswamy Stadium, Bengaluru",134,6.7,47.22222222222222,3,6,Pace
+1198481,2019-10-01,"Lalabhai Contractor Stadium, Surat",140,8.235294117647058,50.0,6,4,Spin
+1202366,2019-10-03,"Lalabhai Contractor Stadium, Surat",98,4.9,61.111111111111114,8,5,Spin
+1198491,2019-10-09,"Gaddafi Stadium, Lahore",147,7.35,44.44444444444444,4,7,Pace
+1204726,2019-10-26,"Gaddafi Stadium, Lahore",126,6.3,66.66666666666667,5,9,Pace
+1183524,2019-10-27,Adelaide Oval,233,11.65,36.111111111111114,5,5,Pace
+1183525,2019-10-30,Brisbane Cricket Ground,117,6.157894736842105,52.77777777777778,4,5,Pace
+1183526,2019-11-01,Melbourne Cricket Ground,142,7.1,47.22222222222222,0,9,Pace
+1187666,2019-11-03,"Westpac Stadium, Wellington",176,8.8,33.333333333333336,6,12,Batting
+1183529,2019-11-08,Perth Stadium,106,5.3,63.888888888888886,1,7,Pace
+1202252,2019-11-09,"Darren Sammy National Cricket Stadium, Gros Islet, St Lucia",185,9.25,30.555555555555557,7,5,Batting
+1202253,2019-11-10,"Darren Sammy National Cricket Stadium, Gros Islet, St Lucia",103,5.15,66.66666666666667,5,2,Spin
+1187669,2019-11-10,"Eden Park, Auckland",146,13.272727272727273,19.444444444444443,3,9,Batting
+1187015,2019-11-10,"Vidarbha Cricket Association Stadium, Jamtha, Nagpur",174,8.7,50.0,1,14,Pace
+1208806,2019-12-04,Pokhara Rangasala,50,2.586206896551724,63.888888888888886,7,2,Spin
+1208347,2019-12-17,"Kinrara Academy Oval, Kuala Lumpur",154,7.7,50.0,8,5,Spin
+1208348,2019-12-19,"Kinrara Academy Oval, Kuala Lumpur",185,9.25,47.22222222222222,10,4,Spin
+1208349,2019-12-20,"Kinrara Academy Oval, Kuala Lumpur",170,8.5,44.44444444444444,4,4,Pace
+1202243,2020-01-07,"Holkar Cricket Stadium, Indore",142,7.1,47.22222222222222,5,7,Pace
+1202244,2020-01-10,"Maharashtra Cricket Association Stadium, Pune",201,10.05,22.22222222222222,6,7,Batting
+1203678,2020-01-19,"Warner Park, St Kitts",138,7.199999999999999,36.111111111111114,1,8,Pace
+1187677,2020-01-24,"Eden Park, Auckland",203,10.15,36.111111111111114,5,4,Spin
+1213058,2020-01-24,"Gaddafi Stadium, Lahore",141,7.05,61.111111111111114,2,6,Pace
+1213059,2020-01-25,"Gaddafi Stadium, Lahore",136,6.8,55.55555555555556,1,5,Pace
+1187678,2020-01-26,"Eden Park, Auckland",132,6.6,47.22222222222222,3,5,Pace
+1187679,2020-01-29,"Seddon Park, Hamilton",179,8.95,22.22222222222222,3,8,Batting
+1183543,2020-01-31,"Manuka Oval, Canberra",147,7.35,58.333333333333336,7,5,Spin
+1183544,2020-02-01,"Manuka Oval, Canberra",156,7.8,63.888888888888886,5,6,Pace
+1187718,2020-02-06,"Seddon Park, Hamilton",119,6.0508474576271185,44.44444444444444,3,9,Pace
+1183546,2020-02-07,"Junction Oval, Melbourne",123,6.15,55.55555555555556,5,5,Pace
+1183547,2020-02-08,"Junction Oval, Melbourne",173,8.65,47.22222222222222,5,3,Spin
+1185313,2020-02-12,"Buffalo Park, East London",177,8.85,27.77777777777778,2,13,Batting
+1185314,2020-02-14,"Kingsmead, Durban",204,10.2,36.111111111111114,1,13,Pace
+1185315,2020-02-16,"SuperSport Park, Centurion",222,11.1,27.77777777777778,2,9,Batting
+1215137,2020-02-21,"Kinrara Academy Oval, Kuala Lumpur",138,7.2631578947368425,58.333333333333336,9,4,Spin
+1173048,2020-02-21,Sydney Showground Stadium,132,6.6,55.55555555555556,7,5,Spin
+1185316,2020-02-21,"Wanderers Stadium, Johannesburg",196,9.8,41.666666666666664,9,7,Spin
+1173050,2020-02-22,"WACA, Perth",127,6.35,52.77777777777778,4,5,Pace
+1185317,2020-02-23,"St George's Park, Port Elizabeth",158,7.9,33.333333333333336,1,9,Pace
+1173051,2020-02-23,"WACA, Perth",123,6.15,61.111111111111114,5,7,Pace
+1185318,2020-02-26,"Newlands, Cape Town",193,9.65,13.88888888888889,6,9,Batting
+1173057,2020-02-27,"Manuka Oval, Canberra",189,9.45,36.111111111111114,3,5,Pace
+1173059,2020-02-28,"Manuka Oval, Canberra",158,7.9,47.22222222222222,7,10,Pace
+1173062,2020-03-01,Sydney Showground Stadium,136,6.8,72.22222222222223,5,4,Spin
+1173069,2020-03-05,Sydney Cricket Ground,134,6.7,41.666666666666664,3,7,Pace
+1217747,2020-03-06,"Terdthai Cricket Ground, Bangkok",132,6.6,36.111111111111114,6,4,Spin
+1173070,2020-03-08,Melbourne Cricket Ground,184,9.2,41.666666666666664,8,6,Spin
+1214670,2020-03-09,"Shere Bangla National Stadium, Mirpur",200,10.0,36.111111111111114,6,6,Pace
+1214671,2020-03-11,"Shere Bangla National Stadium, Mirpur",119,5.95,47.22222222222222,2,6,Pace
+1198245,2020-08-30,Old Trafford,195,9.75,27.77777777777778,5,4,Batting
+1198246,2020-09-01,Old Trafford,190,9.5,36.111111111111114,2,8,Pace
+1198235,2020-09-04,"The Rose Bowl, Southampton",162,8.1,44.44444444444444,6,6,Pace
+1198236,2020-09-06,"The Rose Bowl, Southampton",157,7.85,63.888888888888886,4,5,Pace
+1198237,2020-09-08,"The Rose Bowl, Southampton",145,7.25,61.111111111111114,6,5,Pace
+1223941,2020-09-26,"Allan Border Field, Brisbane",138,6.9,52.77777777777778,1,12,Pace
+1223942,2020-09-27,"Allan Border Field, Brisbane",128,6.620689655172415,44.44444444444444,6,5,Pace
+1230858,2020-09-28,"The County Ground, Derby",166,8.3,58.333333333333336,5,6,Pace
+1223943,2020-09-30,"Allan Border Field, Brisbane",123,6.15,55.55555555555556,6,5,Pace
+1233464,2020-11-07,Rawalpindi Cricket Stadium,156,7.8,41.666666666666664,1,9,Pace
+1233465,2020-11-08,Rawalpindi Cricket Stadium,134,6.7,36.111111111111114,3,6,Pace
+1233466,2020-11-10,Rawalpindi Cricket Stadium,129,6.45,47.22222222222222,8,2,Spin
+1237122,2020-11-27,"Newlands, Cape Town",179,8.95,36.111111111111114,3,8,Pace
+1237123,2020-11-29,"Boland Park, Paarl",146,7.3,38.888888888888886,5,6,Pace
+1237124,2020-12-01,"Newlands, Cape Town",191,9.55,33.333333333333336,0,4,Batting
+1223952,2020-12-04,"Manuka Oval, Canberra",161,8.05,44.44444444444444,5,9,Pace
+1223953,2020-12-06,Sydney Cricket Ground,194,9.7,41.666666666666664,3,5,Pace
+1223954,2020-12-08,Sydney Cricket Ground,186,9.3,41.666666666666664,7,4,Spin
+1233960,2020-12-20,"Seddon Park, Hamilton",163,8.15,61.111111111111114,1,6,Pace
+1244846,2021-01-29,"Kingsmead, Durban",124,6.2,61.111111111111114,0,9,Pace
+1244847,2021-01-31,"Kingsmead, Durban",133,6.65,61.111111111111114,3,9,Pace
+1243019,2021-02-11,"Gaddafi Stadium, Lahore",169,8.45,52.77777777777778,4,6,Pace
+1243020,2021-02-13,"Gaddafi Stadium, Lahore",144,7.2,52.77777777777778,3,8,Pace
+1243021,2021-02-14,"Gaddafi Stadium, Lahore",164,8.2,52.77777777777778,11,3,Spin
+1233971,2021-02-22,"Hagley Oval, Christchurch",184,9.2,58.333333333333336,5,10,Pace
+1233972,2021-02-25,"University Oval, Dunedin",219,10.95,41.666666666666664,6,8,Pace
+1252066,2021-03-03,"Coolidge Cricket Ground, Antigua",131,6.55,36.111111111111114,8,5,Spin
+1233973,2021-03-03,"Sky Stadium, Wellington",208,10.4,52.77777777777778,9,5,Spin
+1252067,2021-03-05,"Coolidge Cricket Ground, Antigua",160,8.0,27.77777777777778,8,6,Spin
+1233974,2021-03-05,"Sky Stadium, Wellington",156,7.8,58.333333333333336,10,5,Spin
+1252068,2021-03-07,"Coolidge Cricket Ground, Antigua",131,6.55,50.0,7,4,Spin
+1233975,2021-03-07,"Sky Stadium, Wellington",142,7.1,44.44444444444444,4,7,Pace
+1243388,2021-03-12,"Narendra Modi Stadium, Ahmedabad",124,6.2,69.44444444444444,3,6,Pace
+1243389,2021-03-14,"Narendra Modi Stadium, Ahmedabad",164,8.2,44.44444444444444,4,5,Pace
+1243390,2021-03-16,"Narendra Modi Stadium, Ahmedabad",156,7.8,66.66666666666667,2,5,Pace
+1243392,2021-03-20,"Narendra Modi Stadium, Ahmedabad",224,11.2,30.555555555555557,1,8,Batting
+1253273,2021-03-21,"Bharat Ratna Shri Atal Bihari Vajpayee Ekana Cricket Stadium, Lucknow",158,7.9,55.55555555555556,4,3,Spin
+1233979,2021-03-28,"Seddon Park, Hamilton",210,10.5,44.44444444444444,7,4,Spin
+1249238,2021-03-28,"Seddon Park, Hamilton",130,6.5,55.55555555555556,6,4,Spin
+1233980,2021-03-30,"McLean Park, Napier",173,9.700934579439252,36.111111111111114,3,9,Pace
+1249239,2021-03-30,"McLean Park, Napier",129,6.45,58.333333333333336,3,6,Pace
+1233981,2021-04-01,"Eden Park, Auckland",141,14.1,25.0,6,7,Batting
+1251575,2021-04-10,"Wanderers Stadium, Johannesburg",188,9.4,44.44444444444444,4,8,Pace
+1251576,2021-04-12,"Wanderers Stadium, Johannesburg",140,7.0,52.77777777777778,6,6,Pace
+1251577,2021-04-14,"SuperSport Park, Centurion",203,10.15,33.333333333333336,2,4,Batting
+1251578,2021-04-16,"SuperSport Park, Centurion",144,7.384615384615385,47.22222222222222,3,14,Pace
+1257183,2021-04-21,Harare Sports Club,149,7.45,44.44444444444444,6,7,Pace
+1257184,2021-04-23,Harare Sports Club,118,5.9,55.55555555555556,5,11,Pace
+1257185,2021-04-25,Harare Sports Club,165,8.25,36.111111111111114,0,10,Pace
+1263151,2021-06-26,"National Cricket Stadium, St George's, Grenada",160,8.0,38.888888888888886,3,4,Pace
+1263152,2021-06-27,"National Cricket Stadium, St George's, Grenada",166,8.3,36.111111111111114,5,10,Pace
+1263153,2021-06-29,"National Cricket Stadium, St George's, Grenada",167,8.35,41.666666666666664,3,11,Pace
+1267322,2021-06-30,"Sir Vivian Richards Stadium, North Sound, Antigua",136,6.8,44.44444444444444,4,8,Pace
+1263154,2021-07-01,"National Cricket Stadium, St George's, Grenada",167,8.35,52.77777777777778,5,10,Pace
+1267323,2021-07-02,"Coolidge Cricket Ground, Antigua",125,6.25,61.111111111111114,4,3,Spin
+1263155,2021-07-03,"National Cricket Stadium, St George's, Grenada",168,8.4,41.666666666666664,2,11,Pace
+1260097,2021-07-09,"County Ground, Northampton",177,8.85,30.555555555555557,3,5,Batting
+1263156,2021-07-09,"Darren Sammy National Cricket Stadium, Gros Islet, St Lucia",145,7.25,77.77777777777777,5,10,Pace
+1263157,2021-07-10,"Darren Sammy National Cricket Stadium, Gros Islet, St Lucia",196,9.8,47.22222222222222,5,7,Pace
+1263158,2021-07-12,"Darren Sammy National Cricket Stadium, Gros Islet, St Lucia",141,7.05,33.333333333333336,3,6,Pace
+1260099,2021-07-14,"The County Ground, Chelmsford",153,7.65,55.55555555555556,5,3,Spin
+1263160,2021-07-16,"Darren Sammy National Cricket Stadium, Gros Islet, St Lucia",199,9.95,38.888888888888886,4,11,Pace
+1239540,2021-07-16,Trent Bridge,232,11.6,33.333333333333336,4,10,Batting
+1239541,2021-07-18,Headingley,200,10.08403361344538,41.666666666666664,8,10,Pace
+1251953,2021-07-19,"Malahide Cricket Ground, Dublin",165,8.25,44.44444444444444,8,8,Pace
+1239542,2021-07-20,Old Trafford,154,7.7,38.888888888888886,11,1,Spin
+1251954,2021-07-22,"Civil Service Cricket Club, Stormont, Belfast",159,7.95,52.77777777777778,10,7,Spin
+1267680,2021-07-22,Harare Sports Club,152,8.0,36.111111111111114,1,8,Pace
+1267681,2021-07-23,Harare Sports Club,166,8.3,44.44444444444444,5,10,Pace
+1251955,2021-07-24,"Civil Service Cricket Club, Stormont, Belfast",189,9.45,33.333333333333336,3,6,Batting
+1267682,2021-07-25,Harare Sports Club,193,9.65,33.333333333333336,2,8,Batting
+1263165,2021-07-31,"Providence Stadium, Guyana",157,7.85,36.111111111111114,1,9,Pace
+1270834,2021-08-03,"Shere Bangla National Stadium, Mirpur",131,6.55,63.888888888888886,7,10,Pace
+1270835,2021-08-04,"Shere Bangla National Stadium, Mirpur",121,6.05,55.55555555555556,4,8,Pace
+1270836,2021-08-06,"Shere Bangla National Stadium, Mirpur",127,6.35,50.0,4,7,Pace
+1270837,2021-08-07,"Shere Bangla National Stadium, Mirpur",104,5.2,63.888888888888886,7,8,Pace
+1270838,2021-08-09,"Shere Bangla National Stadium, Mirpur",122,6.1,41.666666666666664,10,7,Spin
+1272373,2021-08-27,"Clontarf Cricket Club Ground, Dublin",117,5.85,44.44444444444444,7,7,Pace
+1272374,2021-08-29,"Clontarf Cricket Club Ground, Dublin",152,7.6,38.888888888888886,3,4,Pace
+1272375,2021-09-01,"Bready Cricket Club, Magheramason",178,8.9,58.333333333333336,3,8,Pace
+1272376,2021-09-02,"Bready Cricket Club, Magheramason",174,8.7,27.77777777777778,3,10,Batting
+1272377,2021-09-04,"Bready Cricket Club, Magheramason",124,6.2,63.888888888888886,1,11,Pace
+1273417,2021-09-04,"Sir Vivian Richards Stadium, North Sound, Antigua",80,4.0,66.66666666666667,7,4,Spin
+1271630,2021-09-10,"R Premadasa Stadium, Colombo",163,8.15,38.888888888888886,6,4,Spin
+1275112,2021-09-11,"Botswana Cricket Association Oval 1, Gaborone",17,1.8214285714285714,83.33333333333333,3,7,Pace
+1271631,2021-09-12,"R Premadasa Stadium, Colombo",103,5.669724770642201,36.111111111111114,10,1,Spin
+1271632,2021-09-14,"R Premadasa Stadium, Colombo",120,6.0,41.666666666666664,4,3,Spin
+1263623,2021-10-10,"Metricon Stadium, Carrara",149,7.45,47.22222222222222,5,5,Pace
+1273719,2021-10-20,"Sheikh Zayed Stadium, Abu Dhabi",171,8.55,47.22222222222222,5,11,Pace
+1273725,2021-10-23,Dubai International Cricket Stadium,55,3.837209302325581,69.44444444444444,8,5,Spin
+1273724,2021-10-23,"Sheikh Zayed Stadium, Abu Dhabi",118,5.9,55.55555555555556,5,8,Pace
+1284489,2021-10-23,"West End Park International Cricket Stadium, Doha",98,4.9,61.111111111111114,6,3,Spin
+1273727,2021-10-24,Dubai International Cricket Stadium,151,7.55,47.22222222222222,1,6,Pace
+1273726,2021-10-24,Sharjah Cricket Stadium,171,8.55,41.666666666666664,4,4,Pace
+1273729,2021-10-26,Dubai International Cricket Stadium,143,7.15,52.77777777777778,3,5,Pace
+1273730,2021-10-26,Sharjah Cricket Stadium,134,6.7,47.22222222222222,5,7,Pace
+1273731,2021-10-27,"Sheikh Zayed Stadium, Abu Dhabi",124,6.2,55.55555555555556,5,5,Pace
+1273733,2021-10-28,Dubai International Cricket Stadium,154,7.7,50.0,4,5,Pace
+1273734,2021-10-29,Sharjah Cricket Stadium,142,7.1,47.22222222222222,3,8,Pace
+1273737,2021-10-30,Dubai International Cricket Stadium,125,6.25,63.888888888888886,4,7,Pace
+1273736,2021-10-30,Sharjah Cricket Stadium,142,7.1,36.111111111111114,6,7,Pace
+1273739,2021-10-31,Dubai International Cricket Stadium,110,5.5,58.333333333333336,2,7,Pace
+1273740,2021-11-01,Sharjah Cricket Stadium,163,8.15,52.77777777777778,8,4,Spin
+1273741,2021-11-02,"Sheikh Zayed Stadium, Abu Dhabi",84,4.581818181818182,55.55555555555556,4,9,Pace
+1273745,2021-11-04,Dubai International Cricket Stadium,73,4.866666666666666,61.111111111111114,6,6,Pace
+1273746,2021-11-04,"Sheikh Zayed Stadium, Abu Dhabi",189,9.45,41.666666666666664,2,9,Pace
+1273750,2021-11-06,Sharjah Cricket Stadium,189,9.45,41.666666666666664,4,6,Pace
+1273749,2021-11-06,"Sheikh Zayed Stadium, Abu Dhabi",157,7.85,41.666666666666664,3,6,Pace
+1273754,2021-11-10,"Sheikh Zayed Stadium, Abu Dhabi",166,8.3,50.0,4,5,Pace
+1273755,2021-11-11,Dubai International Cricket Stadium,176,8.8,41.666666666666664,5,4,Spin
+1273756,2021-11-14,Dubai International Cricket Stadium,172,8.6,58.333333333333336,1,5,Pace
+1278671,2021-11-17,"Sawai Mansingh Stadium, Jaipur",164,8.2,47.22222222222222,3,8,Pace
+1278672,2021-11-19,"JSCA International Stadium Complex, Ranchi",153,7.65,27.77777777777778,2,7,Pace
+1277974,2021-11-19,"Shere Bangla National Stadium, Mirpur",127,6.35,55.55555555555556,3,9,Pace
+1277975,2021-11-20,"Shere Bangla National Stadium, Mirpur",108,5.4,50.0,4,5,Pace
+1278673,2021-11-21,"Eden Gardens, Kolkata",184,9.2,41.666666666666664,8,7,Pace
+1277976,2021-11-22,"Shere Bangla National Stadium, Mirpur",124,6.2,52.77777777777778,6,5,Pace
+1287775,2021-12-16,"National Stadium, Karachi",207,10.35,36.111111111111114,0,6,Pace
+1296027,2022-01-18,"Kinrara Academy Oval, Kuala Lumpur",49,2.45,80.55555555555556,6,3,Spin
+1263572,2022-01-20,Adelaide Oval,169,8.45,44.44444444444444,2,3,Pace
+1256720,2022-01-22,Kensington Oval,103,5.23728813559322,80.55555555555556,3,7,Pace
+1256721,2022-01-23,Kensington Oval,171,8.55,55.55555555555556,8,7,Pace
+1296036,2022-01-24,"Kinrara Academy Oval, Kuala Lumpur",136,6.8,58.333333333333336,7,2,Spin
+1256723,2022-01-29,Kensington Oval,193,9.65,55.55555555555556,5,6,Pace
+1256724,2022-01-30,Kensington Oval,179,8.95,33.333333333333336,8,6,Batting
+1289031,2022-02-09,Queenstown Events Centre,155,7.75,41.666666666666664,5,8,Pace
+1263471,2022-02-11,Sydney Cricket Ground,149,7.45,38.888888888888886,6,11,Pace
+1299594,2022-02-12,Al Amerat Cricket Ground Oman Cricket (Ministry Turf 1),137,7.086206896551724,44.44444444444444,4,6,Pace
+1263472,2022-02-13,Sydney Cricket Ground,164,8.2,36.111111111111114,4,9,Pace
+1263473,2022-02-15,"Manuka Oval, Canberra",121,6.05,61.111111111111114,6,4,Spin
+1278679,2022-02-16,"Eden Gardens, Kolkata",157,7.85,61.111111111111114,6,5,Pace
+1299567,2022-02-18,Al Amerat Cricket Ground Oman Cricket (Ministry Turf 2),216,10.8,38.888888888888886,3,3,Pace
+1278680,2022-02-18,"Eden Gardens, Kolkata",186,9.3,58.333333333333336,5,3,Spin
+1263474,2022-02-18,Melbourne Cricket Ground,139,6.95,41.666666666666664,3,7,Pace
+1299573,2022-02-19,Al Amerat Cricket Ground Oman Cricket (Ministry Turf 2),158,7.9,38.888888888888886,4,5,Pace
+1278681,2022-02-20,"Eden Gardens, Kolkata",184,9.2,50.0,2,12,Pace
+1263475,2022-02-20,Melbourne Cricket Ground,154,7.7,58.333333333333336,2,7,Pace
+1278684,2022-02-24,"Bharat Ratna Shri Atal Bihari Vajpayee Ekana Cricket Stadium, Lucknow",199,9.95,33.333333333333336,2,6,Batting
+1278685,2022-02-26,"Himachal Pradesh Cricket Association Stadium, Dharamsala",183,9.15,52.77777777777778,2,6,Pace
+1278686,2022-02-27,"Himachal Pradesh Cricket Association Stadium, Dharamsala",146,7.3,66.66666666666667,1,8,Pace
+1288316,2022-04-05,"Gaddafi Stadium, Lahore",162,8.1,25.0,3,12,Pace
+1310894,2022-04-24,"Centre for Cricket Development Ground, Windhoek",156,7.8,50.0,1,2,Pace
+1310981,2022-05-24,"Southend Cricket Club Stadium, Karachi",106,5.3,50.0,10,2,Spin
+1310982,2022-05-26,"Southend Cricket Club Stadium, Karachi",102,5.1,61.111111111111114,5,3,Spin
+1310983,2022-05-28,"Southend Cricket Club Stadium, Karachi",107,5.35,52.77777777777778,8,1,Spin
+1316642,2022-06-03,"Pembroke Cricket Club, Sandymount, Dublin",143,7.15,47.22222222222222,5,7,Pace
+1316643,2022-06-06,"Pembroke Cricket Club, Sandymount, Dublin",106,5.3,66.66666666666667,1,8,Pace
+1307293,2022-06-07,"R Premadasa Stadium, Colombo",128,6.564102564102564,47.22222222222222,0,8,Pace
+1316644,2022-06-08,"Pembroke Cricket Club, Sandymount, Dublin",104,5.621621621621622,52.77777777777778,3,7,Pace
+1307294,2022-06-08,"R Premadasa Stadium, Colombo",124,6.2,63.888888888888886,6,9,Pace
+1278687,2022-06-09,Arun Jaitley Stadium,211,10.55,55.55555555555556,2,5,Pace
+1307295,2022-06-11,Pallekele International Cricket Stadium,176,8.8,50.0,5,5,Pace
+1278688,2022-06-12,"Barabati Stadium, Cuttack",148,7.4,52.77777777777778,2,10,Pace
+1278689,2022-06-14,"Andhra Cricket Association-Visakhapatnam District Cricket Association Stadium, Visakhapatnam",179,8.95,38.888888888888886,6,8,Pace
+1278690,2022-06-17,"Saurashtra Cricket Association Stadium, Rajkot",169,8.45,58.333333333333336,4,10,Pace
+1319709,2022-06-23,Rangiri Dambulla International Stadium,138,6.9,55.55555555555556,10,1,Spin
+1319710,2022-06-25,Rangiri Dambulla International Stadium,125,6.25,63.888888888888886,9,2,Spin
+1303307,2022-06-26,"Malahide Cricket Ground, Dublin",108,9.0,38.888888888888886,1,6,Pace
+1319711,2022-06-27,Rangiri Dambulla International Stadium,138,6.9,47.22222222222222,4,2,Spin
+1303308,2022-06-28,"Malahide Cricket Ground, Dublin",225,11.25,44.44444444444444,1,10,Pace
+1317150,2022-07-03,"Windsor Park, Roseau",193,9.65,55.55555555555556,4,7,Pace
+1317151,2022-07-07,"Providence Stadium, Guyana",163,8.15,33.333333333333336,7,2,Spin
+1276904,2022-07-07,"The Rose Bowl, Southampton",198,9.9,38.888888888888886,5,12,Pace
+1276905,2022-07-09,Edgbaston,170,8.5,41.666666666666664,2,14,Pace
+1276906,2022-07-10,Trent Bridge,215,10.75,47.22222222222222,3,12,Pace
+1317636,2022-07-17,"Bready Cricket Club, Magheramason",99,4.95,63.888888888888886,3,6,Pace
+1303312,2022-07-18,"Civil Service Cricket Club, Stormont, Belfast",173,8.65,47.22222222222222,4,14,Pace
+1317637,2022-07-19,"Bready Cricket Club, Magheramason",92,6.571428571428571,58.333333333333336,2,6,Pace
+1303313,2022-07-20,"Civil Service Cricket Club, Stormont, Belfast",179,8.95,33.333333333333336,6,7,Batting
+1317638,2022-07-21,"Bready Cricket Club, Magheramason",182,9.1,52.77777777777778,5,6,Pace
+1301331,2022-07-21,"The County Ground, Chelmsford",111,5.55,63.888888888888886,3,9,Pace
+1303314,2022-07-22,"Civil Service Cricket Club, Stormont, Belfast",174,8.7,58.333333333333336,3,7,Pace
+1301332,2022-07-23,"New Road, Worcester",148,7.4,52.77777777777778,5,3,Spin
+1301333,2022-07-25,"The County Ground, Derby",176,8.8,36.111111111111114,7,4,Spin
+1276913,2022-07-27,"County Ground, Bristol",234,11.7,30.555555555555557,3,11,Batting
+1276914,2022-07-28,"Sophia Gardens, Cardiff",207,10.35,30.555555555555557,5,8,Batting
+1317903,2022-07-29,"Brian Lara Stadium, Tarouba, Trinidad",190,9.5,50.0,6,8,Pace
+1289259,2022-07-29,Edgbaston,154,7.7,61.111111111111114,6,8,Pace
+1289260,2022-07-29,Edgbaston,144,7.2,61.111111111111114,1,6,Pace
+1289261,2022-07-30,Edgbaston,167,8.35,41.666666666666664,2,5,Pace
+1289262,2022-07-30,Edgbaston,106,5.3,69.44444444444444,9,5,Spin
+1323295,2022-07-30,Harare Sports Club,205,10.25,41.666666666666664,3,5,Pace
+1289263,2022-07-31,Edgbaston,99,5.5,50.0,7,2,Spin
+1289264,2022-07-31,Edgbaston,64,3.2,66.66666666666667,6,5,Pace
+1323296,2022-07-31,Harare Sports Club,135,6.75,75.0,7,3,Spin
+1276915,2022-07-31,"The Rose Bowl, Southampton",191,9.55,41.666666666666664,9,6,Spin
+1317904,2022-08-01,"Warner Park, St Kitts",138,7.016949152542373,52.77777777777778,3,12,Pace
+1289265,2022-08-02,Edgbaston,167,8.35,38.888888888888886,2,6,Pace
+1289266,2022-08-02,Edgbaston,147,7.35,38.888888888888886,9,5,Spin
+1323297,2022-08-02,Harare Sports Club,156,7.8,52.77777777777778,7,9,Pace
+1317905,2022-08-02,"Warner Park, St Kitts",164,8.2,55.55555555555556,1,6,Pace
+1303315,2022-08-03,"County Ground, Bristol",211,10.55,36.111111111111114,7,5,Spin
+1289267,2022-08-03,Edgbaston,160,8.0,63.888888888888886,3,6,Pace
+1289268,2022-08-03,Edgbaston,162,8.1,52.77777777777778,4,7,Pace
+1289269,2022-08-04,Edgbaston,46,2.6796116504854366,83.33333333333333,2,6,Pace
+1289270,2022-08-04,Edgbaston,71,3.55,63.888888888888886,6,4,Spin
+1303316,2022-08-05,"County Ground, Bristol",182,9.1,52.77777777777778,4,12,Pace
+1317906,2022-08-06,"Central Broward Regional Park Stadium Turf Ground, Lauderhill",191,9.55,30.555555555555557,5,9,Batting
+1289271,2022-08-06,Edgbaston,164,8.2,36.111111111111114,3,4,Pace
+1289272,2022-08-06,Edgbaston,144,7.2,61.111111111111114,1,9,Pace
+1317907,2022-08-07,"Central Broward Regional Park Stadium Turf Ground, Lauderhill",188,9.4,38.888888888888886,11,5,Spin
+1289273,2022-08-07,Edgbaston,110,5.5,50.0,3,8,Pace
+1289274,2022-08-07,Edgbaston,161,8.05,44.44444444444444,8,5,Spin
+1317908,2022-08-10,Sabina Park,185,9.25,44.44444444444444,4,8,Pace
+1317909,2022-08-12,Sabina Park,215,10.75,41.666666666666664,7,6,Pace
+1317910,2022-08-14,Sabina Park,145,7.25,33.333333333333336,4,5,Pace
+1327270,2022-08-28,Dubai International Cricket Stadium,147,7.411764705882353,52.77777777777778,3,12,Pace
+1327273,2022-09-01,Dubai International Cricket Stadium,183,9.15,36.111111111111114,4,10,Pace
+1327274,2022-09-02,Sharjah Cricket Stadium,193,9.65,38.888888888888886,9,3,Spin
+1327276,2022-09-04,Dubai International Cricket Stadium,181,9.05,36.111111111111114,5,6,Pace
+1327277,2022-09-06,Dubai International Cricket Stadium,173,8.65,38.888888888888886,5,7,Pace
+1327280,2022-09-09,Dubai International Cricket Stadium,121,6.3130434782608695,36.111111111111114,7,7,Pace
+1301334,2022-09-10,"Riverside Ground, Chester-le-Street",132,6.6,47.22222222222222,6,1,Spin
+1327281,2022-09-11,Dubai International Cricket Stadium,170,8.5,47.22222222222222,6,10,Pace
+1301335,2022-09-13,"The County Ground, Derby",142,7.1,44.44444444444444,5,2,Spin
+1301336,2022-09-15,"County Ground, Bristol",122,6.1,75.0,8,3,Spin
+1331385,2022-09-18,"Sheikh Zayed Stadium, Abu Dhabi",143,7.15,63.888888888888886,9,2,Spin
+1327228,2022-09-20,"National Stadium, Karachi",158,7.9,25.0,5,6,Pace
+1327503,2022-09-20,"Punjab Cricket Association IS Bindra Stadium, Mohali, Chandigarh",208,10.4,55.55555555555556,4,8,Pace
+1331392,2022-09-21,"Sheikh Zayed Stadium, Abu Dhabi",158,7.9,63.888888888888886,2,1,Spin
+1327229,2022-09-22,"National Stadium, Karachi",199,9.95,41.666666666666664,1,4,Pace
+1327230,2022-09-23,"National Stadium, Karachi",221,11.05,36.111111111111114,4,6,Pace
+1331396,2022-09-23,"Sheikh Zayed Stadium, Abu Dhabi",137,6.85,55.55555555555556,5,7,Pace
+1327504,2022-09-23,"Vidarbha Cricket Association Stadium, Jamtha, Nagpur",90,11.25,30.555555555555557,5,2,Batting
+1327231,2022-09-25,"National Stadium, Karachi",166,8.3,36.111111111111114,4,9,Pace
+1327505,2022-09-25,"Rajiv Gandhi International Stadium, Uppal",186,9.3,41.666666666666664,4,6,Pace
+1331401,2022-09-25,"Sheikh Zayed Stadium, Abu Dhabi",120,6.0,63.888888888888886,12,5,Spin
+1327232,2022-09-28,"Gaddafi Stadium, Lahore",145,7.631578947368421,30.555555555555557,3,12,Pace
+1327506,2022-09-28,"Greenfield International Stadium, Thiruvananthapuram",106,5.3,72.22222222222223,1,9,Pace
+1334415,2022-09-28,"Sir Vivian Richards Stadium, North Sound, Antigua",115,5.75,41.666666666666664,9,6,Spin
+1327233,2022-09-30,"Gaddafi Stadium, Lahore",169,8.45,47.22222222222222,2,6,Pace
+1334416,2022-10-01,"Sir Vivian Richards Stadium, North Sound, Antigua",107,5.35,63.888888888888886,3,5,Pace
+1335786,2022-10-01,"Sylhet International Cricket Stadium, Academy Ground",150,7.5,50.0,11,2,Spin
+1327507,2022-10-02,"Barsapara Cricket Stadium, Guwahati",237,11.85,50.0,3,2,Spin
+1327234,2022-10-02,"Gaddafi Stadium, Lahore",209,10.45,27.77777777777778,1,8,Batting
+1334417,2022-10-02,"Sir Vivian Richards Stadium, North Sound, Antigua",93,4.65,52.77777777777778,11,3,Spin
+1335787,2022-10-02,"Sylhet International Cricket Stadium, Academy Ground",57,2.85,66.66666666666667,7,1,Spin
+1335789,2022-10-03,"Sylhet International Cricket Stadium, Academy Ground",70,3.5,83.33333333333333,5,2,Spin
+1327508,2022-10-04,"Holkar Cricket Stadium, Indore",227,11.35,44.44444444444444,2,10,Pace
+1317482,2022-10-05,"Metricon Stadium, Carrara",145,7.25,47.22222222222222,1,14,Pace
+1334418,2022-10-05,"Sir Vivian Richards Stadium, North Sound, Antigua",111,5.55,61.111111111111114,3,7,Pace
+1334419,2022-10-06,"Sir Vivian Richards Stadium, North Sound, Antigua",101,5.05,61.111111111111114,6,4,Spin
+1317483,2022-10-07,Brisbane Cricket Ground,178,8.9,52.77777777777778,1,13,Pace
+1322334,2022-10-07,"Hagley Oval, Christchurch",167,8.35,52.77777777777778,5,8,Pace
+1335797,2022-10-07,Sylhet International Cricket Stadium,137,6.85,44.44444444444444,11,4,Spin
+1322335,2022-10-08,"Hagley Oval, Christchurch",147,7.35,44.44444444444444,2,10,Pace
+1335799,2022-10-08,Sylhet International Cricket Stadium,159,7.95,33.333333333333336,9,1,Spin
+1322336,2022-10-09,"Hagley Oval, Christchurch",137,6.85,47.22222222222222,4,6,Pace
+1317486,2022-10-09,Perth Stadium,208,10.4,36.111111111111114,1,13,Pace
+1335802,2022-10-10,Sylhet International Cricket Stadium,83,4.568807339449541,69.44444444444444,9,1,Spin
+1322337,2022-10-11,"Hagley Oval, Christchurch",130,6.5,52.77777777777778,6,2,Spin
+1335805,2022-10-11,Sylhet International Cricket Stadium,112,5.946902654867257,55.55555555555556,12,1,Spin
+1322338,2022-10-12,"Hagley Oval, Christchurch",208,10.4,41.666666666666664,2,10,Pace
+1317487,2022-10-12,"Manuka Oval, Canberra",178,8.9,58.333333333333336,2,11,Pace
+1322339,2022-10-13,"Hagley Oval, Christchurch",173,8.65,52.77777777777778,1,7,Pace
+1335807,2022-10-13,Sylhet International Cricket Stadium,122,6.1,44.44444444444444,9,1,Spin
+1322340,2022-10-14,"Hagley Oval, Christchurch",163,8.15,52.77777777777778,5,6,Pace
+1335808,2022-10-15,Sylhet International Cricket Stadium,65,3.25,75.0,6,3,Spin
+1298138,2022-10-17,"Bellerive Oval, Hobart",174,8.7,44.44444444444444,4,12,Pace
+1298142,2022-10-19,"Bellerive Oval, Hobart",153,7.65,38.888888888888886,5,11,Pace
+1298145,2022-10-21,"Bellerive Oval, Hobart",146,7.3,44.44444444444444,5,1,Spin
+1298147,2022-10-22,Sydney Cricket Ground,200,10.0,41.666666666666664,5,8,Pace
+1298149,2022-10-23,"Bellerive Oval, Hobart",128,6.4,47.22222222222222,6,3,Spin
+1298150,2022-10-23,Melbourne Cricket Ground,159,7.95,66.66666666666667,2,11,Pace
+1298153,2022-10-25,Perth Stadium,157,7.85,52.77777777777778,4,4,Pace
+1298154,2022-10-26,Melbourne Cricket Ground,157,8.120689655172415,44.44444444444444,4,10,Pace
+1298158,2022-10-27,Perth Stadium,130,6.5,44.44444444444444,6,9,Pace
+1298156,2022-10-27,Sydney Cricket Ground,205,10.25,38.888888888888886,7,7,Pace
+1298161,2022-10-29,Sydney Cricket Ground,167,8.35,55.55555555555556,7,9,Pace
+1298162,2022-10-30,Brisbane Cricket Ground,150,7.5,58.333333333333336,4,9,Pace
+1298164,2022-10-30,Perth Stadium,133,6.65,55.55555555555556,1,12,Pace
+1298165,2022-10-31,Brisbane Cricket Ground,179,8.95,52.77777777777778,4,10,Pace
+1298167,2022-11-01,Brisbane Cricket Ground,179,8.95,44.44444444444444,2,9,Pace
+1298169,2022-11-02,Adelaide Oval,184,9.2,63.888888888888886,2,8,Pace
+1298170,2022-11-03,Sydney Cricket Ground,185,9.25,58.333333333333336,3,13,Pace
+1298171,2022-11-04,Adelaide Oval,185,9.25,41.666666666666664,6,9,Pace
+1298173,2022-11-05,Sydney Cricket Ground,141,7.05,33.333333333333336,5,8,Pace
+1298175,2022-11-06,Adelaide Oval,127,6.35,47.22222222222222,5,7,Pace
+1298176,2022-11-06,Melbourne Cricket Ground,186,9.3,38.888888888888886,7,8,Pace
+1298177,2022-11-09,Sydney Cricket Ground,152,7.6,41.666666666666664,2,4,Pace
+1298178,2022-11-10,Adelaide Oval,168,8.4,47.22222222222222,1,4,Pace
+1308236,2022-11-12,"Gaddafi Stadium, Lahore",135,6.75,66.66666666666667,3,5,Pace
+1298179,2022-11-13,Melbourne Cricket Ground,137,6.85,50.0,3,10,Pace
+1344783,2022-11-14,Al Amerat Cricket Ground Oman Cricket (Ministry Turf 1),195,9.75,58.333333333333336,1,10,Pace
+1308237,2022-11-14,"Gaddafi Stadium, Lahore",118,6.9411764705882355,52.77777777777778,5,2,Spin
+1308238,2022-11-16,"Gaddafi Stadium, Lahore",167,8.35,25.0,4,8,Pace
+1322276,2022-11-20,"Bay Oval, Mount Maunganui",191,9.55,55.55555555555556,8,8,Pace
+1322277,2022-11-22,"McLean Park, Napier",160,8.135593220338983,61.111111111111114,1,12,Pace
+1344619,2022-12-02,"Hagley Oval, Christchurch",164,8.2,33.333333333333336,4,9,Pace
+1344620,2022-12-04,"University Oval, Dunedin",148,7.4,44.44444444444444,3,6,Pace
+1344621,2022-12-07,Queenstown Events Centre,152,7.6,50.0,6,6,Pace
+1345424,2022-12-09,"Dr DY Patil Sports Academy, Navi Mumbai",172,8.6,58.333333333333336,2,4,Pace
+1345425,2022-12-11,"Dr DY Patil Sports Academy, Navi Mumbai",187,9.35,41.666666666666664,2,6,Pace
+1343934,2022-12-11,"Sir Vivian Richards Stadium, North Sound, Antigua",105,5.25,63.888888888888886,1,5,Pace
+1345426,2022-12-14,"Brabourne Stadium, Mumbai",172,8.6,38.888888888888886,6,8,Pace
+1345427,2022-12-17,"Brabourne Stadium, Mumbai",188,9.4,47.22222222222222,7,1,Spin
+1343936,2022-12-17,Kensington Oval,157,7.85,44.44444444444444,9,3,Spin
+1343937,2022-12-18,Kensington Oval,131,6.55,58.333333333333336,9,7,Spin
+1345428,2022-12-20,"Brabourne Stadium, Mumbai",196,9.8,61.111111111111114,5,8,Pace
+1343938,2022-12-22,Kensington Oval,43,2.63265306122449,72.22222222222223,4,8,Pace
+1349390,2022-12-23,"YSD-UKM Cricket Oval, Bangi",164,9.11111111111111,52.77777777777778,1,6,Pace
+1348640,2023-01-03,"Wankhede Stadium, Mumbai",162,8.1,47.22222222222222,3,10,Pace
+1348641,2023-01-05,"Maharashtra Cricket Association Stadium, Pune",206,10.3,41.666666666666664,4,10,Pace
+1348642,2023-01-07,"Saurashtra Cricket Association Stadium, Rajkot",228,11.4,52.77777777777778,4,11,Pace
+1348323,2023-01-12,Harare Sports Club,114,5.8965517241379315,61.111111111111114,7,8,Pace
+1348324,2023-01-14,Harare Sports Club,144,7.2,30.555555555555557,5,6,Pace
+1348325,2023-01-15,Harare Sports Club,141,7.05,38.888888888888886,8,7,Pace
+1344511,2023-01-19,"Buffalo Park, East London",147,7.35,58.333333333333336,11,2,Spin
+1344512,2023-01-21,"Buffalo Park, East London",141,7.05,52.77777777777778,3,8,Pace
+1344513,2023-01-23,"Buffalo Park, East London",167,8.35,58.333333333333336,5,1,Spin
+1345095,2023-01-24,North Sydney Oval,118,5.9,61.111111111111114,5,7,Pace
+1344514,2023-01-25,"Buffalo Park, East London",97,4.85,86.11111111111111,1,3,Pace
+1345096,2023-01-26,"Bellerive Oval, Hobart",96,4.8,63.888888888888886,7,2,Spin
+1348649,2023-01-27,"JSCA International Stadium Complex, Ranchi",176,8.8,50.0,8,5,Spin
+1348650,2023-01-29,"Bharat Ratna Shri Atal Bihari Vajpayee Ekana Cricket Stadium, Lucknow",99,4.95,58.333333333333336,6,3,Spin
+1344516,2023-01-30,"Buffalo Park, East London",94,4.7,63.888888888888886,5,3,Spin
+1348651,2023-02-01,"Narendra Modi Stadium, Ahmedabad",234,11.7,27.77777777777778,2,12,Batting
+1344517,2023-02-02,"Buffalo Park, East London",109,5.45,80.55555555555556,7,2,Spin
+1338040,2023-02-10,"Newlands, Cape Town",129,6.45,63.888888888888886,7,3,Spin
+1338041,2023-02-11,"Boland Park, Paarl",135,6.75,52.77777777777778,5,3,Spin
+1338042,2023-02-11,"Boland Park, Paarl",173,8.65,50.0,8,9,Pace
+1338043,2023-02-12,"Newlands, Cape Town",149,7.45,44.44444444444444,6,1,Spin
+1338044,2023-02-12,"Newlands, Cape Town",126,6.3,55.55555555555556,6,3,Spin
+1338045,2023-02-13,"Boland Park, Paarl",105,5.7272727272727275,44.44444444444444,11,4,Spin
+1338046,2023-02-13,"Boland Park, Paarl",132,6.6,47.22222222222222,7,7,Pace
+1338047,2023-02-14,"St George's Park, Gqeberha",107,5.35,61.111111111111114,5,4,Spin
+1338048,2023-02-15,"Newlands, Cape Town",118,5.9,58.333333333333336,6,3,Spin
+1338049,2023-02-15,"Newlands, Cape Town",165,8.25,30.555555555555557,10,4,Spin
+1338050,2023-02-16,"St George's Park, Gqeberha",112,5.6,52.77777777777778,3,5,Pace
+1338051,2023-02-17,"Newlands, Cape Town",189,9.45,22.22222222222222,7,3,Batting
+1338052,2023-02-17,"Newlands, Cape Town",137,6.85,50.0,6,4,Spin
+1338053,2023-02-18,"St George's Park, Gqeberha",151,7.55,41.666666666666664,4,7,Pace
+1338054,2023-02-18,"St George's Park, Gqeberha",124,6.2,50.0,4,6,Pace
+1338055,2023-02-19,"Boland Park, Paarl",116,5.8,47.22222222222222,9,2,Spin
+1338056,2023-02-19,"Boland Park, Paarl",162,8.1,36.111111111111114,5,5,Pace
+1338057,2023-02-20,"St George's Park, Gqeberha",155,7.75,44.44444444444444,0,7,Pace
+1338058,2023-02-21,"Newlands, Cape Town",213,10.56198347107438,44.44444444444444,7,5,Spin
+1338059,2023-02-21,"Newlands, Cape Town",113,5.65,63.888888888888886,1,5,Pace
+1338060,2023-02-23,"Newlands, Cape Town",172,8.6,44.44444444444444,5,5,Pace
+1338061,2023-02-24,"Newlands, Cape Town",164,8.2,55.55555555555556,3,9,Pace
+1338062,2023-02-26,"Newlands, Cape Town",156,7.8,58.333333333333336,4,6,Pace
+1351400,2023-03-09,"Zahur Ahmed Chowdhury Stadium, Chattogram",156,7.8,30.555555555555557,4,6,Pace
+1351401,2023-03-12,"Shere Bangla National Stadium, Mirpur",117,5.85,44.44444444444444,7,7,Pace
+1339604,2023-03-25,"SuperSport Park, Centurion",131,11.909090909090908,33.333333333333336,3,10,Batting
+1339605,2023-03-26,"SuperSport Park, Centurion",258,12.9,44.44444444444444,0,9,Pace
+1355720,2023-03-27,"Zahur Ahmed Chowdhury Stadium, Chattogram",207,10.706896551724139,16.666666666666668,1,9,Batting
+1339606,2023-03-28,"Wanderers Stadium, Johannesburg",220,11.0,50.0,1,12,Pace
+1355721,2023-03-29,"Zahur Ahmed Chowdhury Stadium, Chattogram",202,11.882352941176471,8.333333333333334,7,5,Batting
+1322362,2023-04-02,"Eden Park, Auckland",196,9.8,33.333333333333336,5,10,Batting
+1322363,2023-04-05,"University Oval, Dunedin",141,7.421052631578948,44.44444444444444,1,10,Pace
+1322364,2023-04-08,Queenstown Events Centre,182,9.1,50.0,2,7,Pace
+1339614,2023-04-14,"Gaddafi Stadium, Lahore",182,9.176470588235295,50.0,4,15,Pace
+1339615,2023-04-15,"Gaddafi Stadium, Lahore",192,9.6,27.77777777777778,3,8,Batting
+1339616,2023-04-17,"Gaddafi Stadium, Lahore",163,8.15,58.333333333333336,4,10,Pace
+1339618,2023-04-24,Rawalpindi Cricket Stadium,193,9.65,41.666666666666664,3,5,Pace
+1336074,2023-07-01,Edgbaston,153,7.65,41.666666666666664,7,5,Spin
+1378195,2023-07-06,"Darren Sammy National Cricket Stadium, Gros Islet, St Lucia",113,5.65,47.22222222222222,1,4,Pace
+1378196,2023-07-08,"Darren Sammy National Cricket Stadium, Gros Islet, St Lucia",116,5.8,52.77777777777778,5,5,Pace
+1379761,2023-07-10,"P Saravanamuttu Stadium, Colombo",118,5.9,61.111111111111114,3,4,Pace
+1381217,2023-08-03,"Brian Lara Stadium, Tarouba, Trinidad",149,7.45,47.22222222222222,4,9,Pace
+1381221,2023-08-13,"Central Broward Regional Park Stadium Turf Ground, Lauderhill",165,8.25,44.44444444444444,4,7,Pace
+1378200,2023-08-14,"VRA Ground, Amstelveen",92,4.6,61.111111111111114,0,9,Pace
+1384634,2023-08-18,"Malahide Cricket Ground, Dublin",139,6.95,58.333333333333336,2,7,Pace
+1384637,2023-08-20,"Malahide Cricket Ground, Dublin",185,9.25,27.77777777777778,3,9,Batting
+1336048,2023-08-30,"Riverside Ground, Chester-le-Street",139,6.95,63.888888888888886,4,8,Pace
+1373569,2023-09-01,"Kingsmead, Durban",164,8.2,55.55555555555556,1,9,Pace
+1382160,2023-09-01,"National Bank Cricket Arena, Karachi",150,7.5,33.333333333333336,2,2,Pace
+1373570,2023-09-03,"Kingsmead, Durban",190,9.5,36.111111111111114,4,8,Pace
+1382161,2023-09-03,"National Bank Cricket Arena, Karachi",150,7.5,44.44444444444444,5,0,Spin
+1336051,2023-09-05,Trent Bridge,175,8.75,36.111111111111114,8,2,Spin
+1399061,2023-09-25,Zhejiang University of Technology Cricket Field,64,3.2,75.0,12,1,Spin
+1375863,2023-10-01,North Sydney Oval,147,7.35,66.66666666666667,2,2,Pace
+1375864,2023-10-02,North Sydney Oval,212,10.6,41.666666666666664,4,5,Pace
+1375865,2023-10-05,"Allan Border Field, Brisbane",190,9.5,44.44444444444444,7,9,Pace
+1392354,2023-10-14,"Willowmoore Park, Benoni",172,8.6,44.44444444444444,0,6,Pace
+1392355,2023-10-15,"Willowmoore Park, Benoni",155,7.75,33.333333333333336,1,11,Pace
+1405122,2023-10-27,"Zahur Ahmed Chowdhury Stadium, Chattogram",120,6.0,50.0,8,3,Spin
+1389393,2023-11-28,"Barsapara Cricket Stadium, Guwahati",222,11.1,69.44444444444444,3,5,Pace
+1389394,2023-12-01,"Shaheed Veer Narayan Singh International Stadium, Raipur",174,8.7,50.0,6,9,Pace
+1388196,2023-12-03,"University Oval, Dunedin",127,6.35,47.22222222222222,2,7,Pace
+1388197,2023-12-05,"University Oval, Dunedin",137,6.85,55.55555555555556,5,7,Pace
+1408103,2023-12-07,Harare Sports Club,147,7.35,52.77777777777778,5,12,Pace
+1388198,2023-12-09,Queenstown Events Centre,137,6.85,36.111111111111114,7,0,Spin
+1408105,2023-12-10,Harare Sports Club,140,7.0,44.44444444444444,4,6,Pace
+1373579,2023-12-12,Kensington Oval,171,8.76923076923077,33.333333333333336,6,10,Batting
+1373580,2023-12-14,"National Cricket Stadium, St George's, Grenada",176,8.8,52.77777777777778,6,8,Pace
+1373581,2023-12-16,"National Cricket Stadium, St George's, Grenada",222,11.1,44.44444444444444,4,5,Pace
+1373582,2023-12-19,"Brian Lara Stadium, Tarouba, Trinidad",267,13.35,36.111111111111114,5,8,Pace
+1373583,2023-12-21,"Brian Lara Stadium, Tarouba, Trinidad",132,6.769230769230769,36.111111111111114,7,8,Pace
+1388213,2023-12-27,"McLean Park, Napier",134,6.7,52.77777777777778,4,10,Pace
+1388215,2023-12-31,"Bay Oval, Mount Maunganui",110,5.689655172413794,58.333333333333336,6,8,Pace
+1406082,2024-01-07,"Dr DY Patil Sports Academy, Navi Mumbai",130,6.5,61.111111111111114,6,5,Pace
+1406083,2024-01-09,"Dr DY Patil Sports Academy, Navi Mumbai",147,7.35,50.0,4,5,Pace
+1388216,2024-01-12,"Eden Park, Auckland",226,11.3,41.666666666666664,1,16,Pace
+1412542,2024-01-14,"R Premadasa Stadium, Colombo",143,7.15,55.55555555555556,8,4,Spin
+1388217,2024-01-14,"Seddon Park, Hamilton",194,9.7,36.111111111111114,3,14,Pace
+1412543,2024-01-16,"R Premadasa Stadium, Colombo",173,8.65,58.333333333333336,4,8,Pace
+1388218,2024-01-17,"University Oval, Dunedin",224,11.2,36.111111111111114,3,9,Pace
+1412544,2024-01-18,"R Premadasa Stadium, Colombo",82,5.788235294117647,33.333333333333336,8,3,Spin
+1388219,2024-01-19,"Hagley Oval, Christchurch",158,7.9,36.111111111111114,0,8,Pace
+1388220,2024-01-21,"Hagley Oval, Christchurch",134,6.7,55.55555555555556,8,9,Pace
+1375869,2024-01-27,"Manuka Oval, Canberra",147,7.35,58.333333333333336,1,6,Pace
+1375870,2024-01-28,"Manuka Oval, Canberra",142,7.1,55.55555555555556,3,6,Pace
+1375871,2024-01-30,"Bellerive Oval, Hobart",162,8.1,58.333333333333336,4,6,Pace
+1415987,2024-02-02,Harare Sports Club,138,6.9,58.333333333333336,6,8,Pace
+1375850,2024-02-09,"Bellerive Oval, Hobart",213,10.65,27.77777777777778,4,11,Batting
+1418543,2024-02-16,"Mission Road Ground, Mong Kok, Hong Kong",41,3.236842105263158,75.0,6,4,Spin
+1388223,2024-02-21,"Sky Stadium, Wellington",215,10.75,36.111111111111114,2,5,Pace
+1388224,2024-02-23,"Eden Park, Auckland",174,8.77310924369748,36.111111111111114,6,13,Pace
+1422802,2024-02-27,University of Doha for Science and Technology,172,8.6,33.333333333333336,4,9,Batting
+1419824,2024-03-04,Sylhet International Cricket Stadium,206,10.3,47.22222222222222,2,9,Pace
+1419825,2024-03-06,Sylhet International Cricket Stadium,165,8.25,52.77777777777778,1,5,Pace
+1419826,2024-03-09,Sylhet International Cricket Stadium,174,8.7,50.0,6,10,Pace
+1388202,2024-03-19,"University Oval, Dunedin",160,8.0,50.0,2,4,Pace
+1388206,2024-03-29,"Basin Reserve, Wellington",136,6.8,55.55555555555556,7,4,Spin
+1425065,2024-04-02,"Shere Bangla National Stadium, Mirpur",161,8.05,58.333333333333336,11,6,Spin
+1424830,2024-04-20,Rawalpindi Cricket Stadium,90,4.954128440366972,63.888888888888886,6,7,Pace
+1424831,2024-04-21,Rawalpindi Cricket Stadium,178,8.9,38.888888888888886,3,4,Pace
+1426085,2024-04-28,"National Bank Cricket Arena, Karachi",121,6.05,61.111111111111114,7,2,Spin
+1425647,2024-04-29,"Sheikh Zayed Stadium, Abu Dhabi",176,8.8,30.555555555555557,4,6,Batting
+1426086,2024-04-30,"National Bank Cricket Arena, Karachi",132,6.6,58.333333333333336,6,4,Spin
+1429394,2024-04-30,Sylhet International Cricket Stadium,119,5.95,55.55555555555556,7,2,Spin
+1426087,2024-05-02,"National Bank Cricket Arena, Karachi",84,4.2,66.66666666666667,9,1,Spin
+1429395,2024-05-02,Sylhet International Cricket Stadium,117,5.85,33.333333333333336,5,3,Spin
+1425126,2024-05-03,"Zahur Ahmed Chowdhury Stadium, Chattogram",124,6.2,55.55555555555556,2,8,Pace
+1425127,2024-05-05,"Zahur Ahmed Chowdhury Stadium, Chattogram",138,6.9,58.333333333333336,4,7,Pace
+1426830,2024-05-10,"Clontarf Cricket Club Ground, Dublin",182,9.1,61.111111111111114,2,7,Pace
+1426831,2024-05-12,"Clontarf Cricket Club Ground, Dublin",193,9.65,38.888888888888886,1,9,Pace
+1426832,2024-05-14,"Clontarf Cricket Club Ground, Dublin",178,8.9,44.44444444444444,1,10,Pace
+1385688,2024-05-25,Edgbaston,183,9.15,36.111111111111114,6,11,Pace
+1425133,2024-05-25,"Prairie View Cricket Complex, Houston",104,5.2,61.111111111111114,2,7,Pace
+1385690,2024-05-30,The Oval,157,7.915966386554622,36.111111111111114,5,7,Pace
+1415704,2024-06-03,"Nassau County International Cricket Stadium, New York",77,4.017391304347826,61.111111111111114,4,9,Pace
+1415708,2024-06-05,"Nassau County International Cricket Stadium, New York",96,6.0,80.55555555555556,2,9,Pace
+1415715,2024-06-07,"Grand Prairie Stadium, Dallas",124,6.2,52.77777777777778,6,11,Pace
+1415717,2024-06-08,Kensington Oval,201,10.05,41.666666666666664,5,7,Pace
+1415719,2024-06-09,"Nassau County International Cricket Stadium, New York",119,6.2631578947368425,55.55555555555556,1,15,Pace
+1415721,2024-06-10,"Nassau County International Cricket Stadium, New York",113,5.65,77.77777777777777,4,9,Pace
+1415724,2024-06-11,"Sir Vivian Richards Stadium, North Sound, Antigua",72,4.235294117647059,75.0,4,7,Pace
+1415726,2024-06-12,"Brian Lara Stadium, Tarouba, Trinidad",149,7.45,63.888888888888886,5,13,Pace
+1415732,2024-06-14,"Brian Lara Stadium, Tarouba, Trinidad",40,2.142857142857143,83.33333333333333,4,7,Pace
+1415736,2024-06-16,"Central Broward Regional Park Stadium Turf Ground, Lauderhill",106,5.3,69.44444444444444,4,12,Pace
+1415742,2024-06-19,"Darren Sammy National Cricket Stadium, Gros Islet, St Lucia",180,9.0,50.0,4,2,Spin
+1415744,2024-06-20,"Sir Vivian Richards Stadium, North Sound, Antigua",140,7.0,63.888888888888886,5,5,Pace
+1415745,2024-06-21,"Darren Sammy National Cricket Stadium, Gros Islet, St Lucia",163,8.15,27.77777777777778,4,7,Pace
+1415747,2024-06-22,"Sir Vivian Richards Stadium, North Sound, Antigua",196,9.8,38.888888888888886,6,7,Pace
+1415749,2024-06-23,Kensington Oval,115,6.106194690265487,55.55555555555556,3,7,Pace
+1415750,2024-06-23,"Sir Vivian Richards Stadium, North Sound, Antigua",135,6.75,50.0,8,6,Spin
+1415751,2024-06-24,"Darren Sammy National Cricket Stadium, Gros Islet, St Lucia",205,10.25,47.22222222222222,3,9,Pace
+1436890,2024-06-26,"Mahinda Rajapaksa International Cricket Stadium, Sooriyawewa, Hambantota",89,5.804347826086956,63.888888888888886,7,0,Spin
+1415754,2024-06-27,"Providence Stadium, Guyana",171,8.55,38.888888888888886,7,8,Pace
+1415755,2024-06-29,Kensington Oval,176,8.8,41.666666666666664,3,11,Pace
+1434291,2024-07-05,MA Chidambaram Stadium,189,9.45,52.77777777777778,4,4,Pace
+1426757,2024-07-19,Rangiri Dambulla International Stadium,108,5.586206896551724,50.0,8,4,Spin
+1426761,2024-07-21,Rangiri Dambulla International Stadium,108,5.4,66.66666666666667,2,2,Pace
+1426764,2024-07-23,Rangiri Dambulla International Stadium,103,5.15,72.22222222222223,7,0,Spin
+1426768,2024-07-26,Rangiri Dambulla International Stadium,80,4.0,75.0,4,4,Pace
+1426769,2024-07-26,Rangiri Dambulla International Stadium,140,7.0,33.333333333333336,8,2,Spin
+1442987,2024-07-27,Pallekele International Cricket Stadium,213,10.65,30.555555555555557,7,9,Batting
+1442988,2024-07-28,Pallekele International Cricket Stadium,161,8.05,38.888888888888886,7,5,Spin
+1426770,2024-07-28,Rangiri Dambulla International Stadium,165,8.25,52.77777777777778,5,1,Spin
+1446774,2024-08-24,"Selangor Turf Club, Kuala Lumpur",144,7.2,50.0,10,3,Spin
+1446777,2024-08-27,"Selangor Turf Club, Kuala Lumpur",146,7.3,55.55555555555556,4,2,Spin
+1447478,2024-08-30,"YSD-UKM Cricket Oval, Bangi",50,2.5,66.66666666666667,6,1,Spin
+1385697,2024-09-11,"The Rose Bowl, Southampton",179,9.179487179487179,27.77777777777778,6,13,Batting
+1449012,2024-09-18,Multan Cricket Stadium,181,9.05,50.0,5,3,Spin
+1449013,2024-09-20,Multan Cricket Stadium,153,7.65,41.666666666666664,5,1,Spin
+1426618,2024-09-22,"Great Barrier Reef Arena, Mackay",142,7.282051282051282,41.666666666666664,10,5,Spin
+1426619,2024-09-24,"Allan Border Field, Brisbane",146,7.3,50.0,8,3,Spin
+1432423,2024-10-03,Sharjah Cricket Stadium,116,5.8,47.22222222222222,14,5,Spin
+1432424,2024-10-04,Dubai International Cricket Stadium,118,5.9,75.0,4,2,Spin
+1432426,2024-10-05,Sharjah Cricket Stadium,93,4.65,77.77777777777777,6,4,Spin
+1432431,2024-10-08,Sharjah Cricket Stadium,148,7.4,38.888888888888886,7,11,Pace
+1432434,2024-10-10,Sharjah Cricket Stadium,103,5.15,55.55555555555556,8,1,Spin
+1432435,2024-10-11,Dubai International Cricket Stadium,82,4.1344537815126055,50.0,8,3,Spin
+1432437,2024-10-12,Dubai International Cricket Stadium,106,5.3,66.66666666666667,3,3,Pace
+1432439,2024-10-13,Sharjah Cricket Stadium,151,7.55,47.22222222222222,7,6,Pace
+1432440,2024-10-14,Dubai International Cricket Stadium,110,5.5,44.44444444444444,12,2,Spin
+1432441,2024-10-15,Dubai International Cricket Stadium,141,7.05,41.666666666666664,7,2,Spin
+1432442,2024-10-17,Dubai International Cricket Stadium,134,6.7,52.77777777777778,1,5,Pace
+1451816,2024-10-17,Rangiri Dambulla International Stadium,162,8.1,52.77777777777778,7,2,Spin
+1432443,2024-10-18,Sharjah Cricket Stadium,128,6.4,47.22222222222222,9,7,Spin
+1432444,2024-10-20,Dubai International Cricket Stadium,158,7.9,47.22222222222222,8,6,Spin
+1433373,2024-11-09,Kensington Oval,182,9.1,36.111111111111114,5,6,Pace
+1444653,2024-12-03,"Queens Sports Club, Bulawayo",57,4.5,55.55555555555556,7,3,Spin
+1432211,2024-12-10,"Kingsmead, Durban",183,9.15,47.22222222222222,8,9,Pace
+1433383,2024-12-15,"Arnos Vale Ground, Kingstown",147,7.35,61.111111111111114,8,8,Pace
+1433384,2024-12-17,"Arnos Vale Ground, Kingstown",129,6.45,63.888888888888886,8,8,Pace
+1433385,2024-12-19,"Arnos Vale Ground, Kingstown",189,9.45,47.22222222222222,7,7,Pace
+1426626,2025-01-20,Sydney Cricket Ground,198,9.9,44.44444444444444,8,7,Pace
+1426627,2025-01-23,"Manuka Oval, Canberra",185,9.25,47.22222222222222,3,5,Pace
+1468402,2025-01-27,"Warner Park, St Kitts",144,7.2,61.111111111111114,4,1,Spin
+1468403,2025-01-29,"Warner Park, St Kitts",201,10.05,44.44444444444444,11,3,Spin
+1443551,2025-03-21,"Eden Park, Auckland",204,10.285714285714286,38.888888888888886,3,8,Pace
+1443574,2025-03-21,"Eden Park, Auckland",137,6.85,61.111111111111114,0,4,Pace
+1443575,2025-03-23,"Bay Oval, Mount Maunganui",204,10.2,36.111111111111114,5,8,Pace
+1443553,2025-03-26,"Sky Stadium, Wellington",128,6.4,61.111111111111114,3,8,Pace
+1443576,2025-03-26,"Sky Stadium, Wellington",180,9.0,44.44444444444444,2,9,Pace
+1483785,2025-05-28,"Gaddafi Stadium, Lahore",201,10.05,36.111111111111114,7,10,Pace
+1483786,2025-05-30,"Gaddafi Stadium, Lahore",201,10.05,25.0,6,8,Batting
+1483787,2025-06-01,"Gaddafi Stadium, Lahore",196,9.8,44.44444444444444,3,6,Pace
+1485508,2025-07-10,Pallekele International Cricket Stadium,154,7.7,30.555555555555557,5,3,Spin
+1485509,2025-07-13,Rangiri Dambulla International Stadium,177,8.85,36.111111111111114,5,9,Pace
+1478866,2025-07-16,Harare Sports Club,173,8.65,61.111111111111114,4,10,Pace
+1485510,2025-07-16,"R Premadasa Stadium, Colombo",132,6.6,38.888888888888886,6,3,Spin
+1491903,2025-07-20,"Shere Bangla National Stadium, Mirpur",110,5.641025641025641,55.55555555555556,1,9,Pace
+1472521,2025-07-22,Sabina Park,172,8.6,47.22222222222222,5,5,Pace
+1491904,2025-07-22,"Shere Bangla National Stadium, Mirpur",133,6.65,58.333333333333336,4,13,Pace
+1491905,2025-07-24,"Shere Bangla National Stadium, Mirpur",178,8.9,52.77777777777778,5,12,Pace
+1472524,2025-07-28,"Warner Park, St Kitts",170,8.571428571428571,47.22222222222222,5,11,Pace
+1478898,2025-08-10,"Marrara Cricket Ground, Darwin",178,8.9,44.44444444444444,5,13,Pace
+1478900,2025-08-16,"Cazalys Stadium, Cairns",172,8.6,44.44444444444444,3,12,Pace
+1498207,2025-08-20,"Hazelaarweg, Rotterdam",62,3.381818181818182,75.0,1,8,Pace
+1498718,2025-09-03,"High Performance Oval, Windhoek",90,4.53781512605042,83.33333333333333,0,9,Pace
+1492824,2025-09-06,Harare Sports Club,80,4.528301886792453,55.55555555555556,5,9,Pace
+1448357,2025-09-10,"Sophia Gardens, Cardiff",97,12.382978723404255,25.0,1,9,Batting
+1496923,2025-09-12,Dubai International Cricket Stadium,160,8.0,38.888888888888886,7,9,Pace
+1448358,2025-09-12,Old Trafford,304,15.2,22.22222222222222,7,5,Batting
+1496924,2025-09-13,"Sheikh Zayed Stadium, Abu Dhabi",139,6.95,66.66666666666667,4,4,Pace
+1496932,2025-09-20,Dubai International Cricket Stadium,168,8.4,44.44444444444444,4,8,Pace
+1496933,2025-09-21,Dubai International Cricket Stadium,171,8.55,47.22222222222222,2,6,Pace
+1448362,2025-09-21,"Malahide Cricket Ground, Dublin",154,7.7,50.0,7,5,Spin
+1496934,2025-09-23,"Sheikh Zayed Stadium, Abu Dhabi",133,6.65,55.55555555555556,5,8,Pace
+1496936,2025-09-25,Dubai International Cricket Stadium,135,6.75,66.66666666666667,5,12,Pace
+1491716,2025-10-04,"Bay Oval, Mount Maunganui",156,7.8,58.333333333333336,1,15,Pace
+1491718,2025-10-20,"Hagley Oval, Christchurch",236,11.8,33.333333333333336,7,7,Batting
+1501895,2025-10-28,Rawalpindi Cricket Stadium,194,9.7,25.0,7,11,Batting
+1505126,2025-10-29,"Bir Sreshtho Flight Lieutenant Matiur Rahman Stadium, Chattogram",149,7.45,44.44444444444444,7,9,Pace
+1501896,2025-10-31,"Gaddafi Stadium, Lahore",110,5.689655172413794,55.55555555555556,1,10,Pace
+1502050,2025-11-22,Rawalpindi Cricket Stadium,128,6.4,47.22222222222222,4,5,Pace
+1502052,2025-11-25,Rawalpindi Cricket Stadium,146,7.3,44.44444444444444,4,2,Spin
+1506015,2025-11-29,"Bir Sreshtho Flight Lieutenant Matiur Rahman Stadium, Chattogram",170,8.5,25.0,5,4,Batting
+1506016,2025-12-02,"Bir Sreshtho Flight Lieutenant Matiur Rahman Stadium, Chattogram",117,5.899159663865547,44.44444444444444,5,7,Pace
+1513737,2025-12-26,"Greenfield International Stadium, Thiruvananthapuram",112,5.6,58.333333333333336,5,4,Spin
+1514480,2026-01-07,Rangiri Dambulla International Stadium,128,6.620689655172415,44.44444444444444,8,6,Spin
+1490236,2026-01-25,"Barsapara Cricket Stadium, Guwahati",153,7.65,55.55555555555556,3,7,Pace
+1477609,2026-01-27,"Boland Park, Paarl",173,8.65,44.44444444444444,6,2,Spin
+1507720,2026-02-01,Pallekele International Cricket Stadium,189,9.45,41.666666666666664,4,5,Pace
+1512724,2026-02-08,"R Premadasa Stadium, Colombo",163,8.15,41.666666666666664,10,6,Spin
+1512726,2026-02-09,Sinhalese Sports Club Ground,103,5.19327731092437,69.44444444444444,1,11,Pace
+1512729,2026-02-10,MA Chidambaram Stadium,173,8.65,41.666666666666664,2,4,Pace
+1512737,2026-02-13,"R Premadasa Stadium, Colombo",169,8.45,47.22222222222222,2,9,Pace
+1512742,2026-02-14,"Narendra Modi Stadium, Ahmedabad",175,8.75,44.44444444444444,2,8,Pace
+1477599,2026-02-16,"Willowmoore Park, Benoni",144,7.2,33.333333333333336,5,4,Spin
+1512760,2026-02-22,Pallekele International Cricket Stadium,146,7.3,41.666666666666664,12,6,Spin
+1512764,2026-02-25,"R Premadasa Stadium, Colombo",168,8.4,36.111111111111114,10,5,Spin
+1512765,2026-02-26,"Narendra Modi Stadium, Ahmedabad",176,8.8,50.0,1,7,Pace
+1512767,2026-02-27,"R Premadasa Stadium, Colombo",159,7.95,36.111111111111114,11,2,Spin
+1512768,2026-02-28,Pallekele International Cricket Stadium,212,10.6,36.111111111111114,4,8,Pace
+1512769,2026-03-01,Arun Jaitley Stadium,153,7.65,55.55555555555556,4,8,Pace
+1523983,2026-03-03,"National Cricket Stadium, St George's, Grenada",119,5.95,41.666666666666664,6,0,Spin
+1491705,2026-03-15,"Bay Oval, Mount Maunganui",190,9.5,38.888888888888886,1,11,Pace
+1491706,2026-03-17,"Seddon Park, Hamilton",177,8.85,47.22222222222222,5,8,Pace
+1491708,2026-03-22,"Hnry Stadium, Wellington",159,7.95,44.44444444444444,4,5,Pace
+1527254,2026-04-19,"Kingsmead, Durban",147,7.35,36.111111111111114,6,4,Spin
+1527255,2026-04-22,"Wanderers Stadium, Johannesburg",192,9.6,47.22222222222222,3,1,Spin
+1528540,2026-05-31,"Clontarf Cricket Club Ground, Dublin",176,8.8,41.666666666666664,3,5,Pace
+1538443,2026-06-01,Singapore National Cricket Ground,173,8.65,33.333333333333336,4,5,Batting
+1490679,2026-06-13,Old Trafford,172,8.6,44.44444444444444,10,7,Spin
+1490680,2026-06-13,"The Rose Bowl, Southampton",162,8.1,55.55555555555556,1,7,Pace
+1490687,2026-06-17,Edgbaston,126,6.3,66.66666666666667,5,8,Pace
+1490685,2026-06-17,Headingley,77,3.85,72.22222222222223,3,6,Pace
+1490697,2026-06-23,Headingley,199,9.95,38.888888888888886,9,5,Spin
+1490705,2026-06-28,Lord's,117,5.85,69.44444444444444,5,5,Pace
+1490707,2026-06-30,The Oval,125,6.25,50.0,7,2,Spin
+1490709,2026-07-05,Lord's,150,7.5,44.44444444444444,4,3,Spin
+1538301,2026-07-15,"Queens Sports Club, Bulawayo",170,8.5,47.22222222222222,1,14,Pace
+1538302,2026-07-17,"Queens Sports Club, Bulawayo",186,9.3,41.666666666666664,9,6,Spin
+1544610,2026-07-28,"Namibia Cricket Ground, Windhoek",116,6.959999999999999,52.77777777777778,0,0,Pace
+1552776,2026-10-01,Korogi Sports Park,111,8.538461538461538,58.333333333333336,6,4,Spin
+1552779,2026-10-03,Korogi Sports Park,211,10.55,38.888888888888886,5,7,Pace

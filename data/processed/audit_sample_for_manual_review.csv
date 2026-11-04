@@ -1,0 +1,26 @@
+match_id,date,venue,first_innings_run_rate,early_dot_percent,spin_wickets,pace_wickets,y
+1327229,2022-09-22,"National Stadium, Karachi",9.95,41.666666666666664,1,4,Pace
+1433384,2024-12-17,"Arnos Vale Ground, Kingstown",6.45,63.888888888888886,8,8,Pace
+1289031,2022-02-09,Queenstown Events Centre,7.75,41.666666666666664,5,8,Pace
+1273725,2021-10-23,Dubai International Cricket Stadium,3.837209302325581,69.44444444444444,8,5,Spin
+1444653,2024-12-03,"Queens Sports Club, Bulawayo",4.5,55.55555555555556,7,3,Spin
+1327277,2022-09-06,Dubai International Cricket Stadium,8.65,38.888888888888886,5,7,Pace
+1273755,2021-11-11,Dubai International Cricket Stadium,8.8,41.666666666666664,5,4,Spin
+1173048,2020-02-21,Sydney Showground Stadium,6.6,55.55555555555556,7,5,Spin
+1384634,2023-08-18,"Malahide Cricket Ground, Dublin",6.95,58.333333333333336,2,7,Pace
+1412543,2024-01-16,"R Premadasa Stadium, Colombo",8.65,58.333333333333336,4,8,Pace
+1273734,2021-10-29,Sharjah Cricket Stadium,7.1,47.22222222222222,3,8,Pace
+963697,2016-02-09,"Maharashtra Cricket Association Stadium, Pune",5.3628318584070795,63.888888888888886,4,10,Pace
+1443576,2025-03-26,"Sky Stadium, Wellington",9.0,44.44444444444444,2,9,Pace
+1412542,2024-01-14,"R Premadasa Stadium, Colombo",7.15,55.55555555555556,8,4,Spin
+1338047,2023-02-14,"St George's Park, Gqeberha",5.35,61.111111111111114,5,4,Spin
+1485510,2025-07-16,"R Premadasa Stadium, Colombo",6.6,38.888888888888886,6,3,Spin
+1276915,2022-07-31,"The Rose Bowl, Southampton",9.55,41.666666666666664,9,6,Spin
+1338056,2023-02-19,"Boland Park, Paarl",8.1,36.111111111111114,5,5,Pace
+1230857,2020-09-26,"The County Ground, Derby",7.7,55.55555555555556,4,7,Pace
+915785,2015-11-11,"R Premadasa Stadium, Colombo",8.1,47.22222222222222,3,12,Pace
+1161231,2018-10-25,"Kinrara Academy Oval, Kuala Lumpur",9.75,33.333333333333336,7,3,Batting
+931396,2015-11-13,"Shere Bangla National Stadium, Mirpur",6.717948717948718,66.66666666666667,7,8,Pace
+1230855,2020-09-21,"The County Ground, Derby",8.15,47.22222222222222,7,6,Pace
+1345096,2023-01-26,"Bellerive Oval, Hobart",4.8,63.888888888888886,7,2,Spin
+1432440,2024-10-14,Dubai International Cricket Stadium,5.5,44.44444444444444,12,2,Spin
