@@ -8,8 +8,6 @@
 
 **Date:** 4 November 2026
 
-> **Status of this draft.** This is the Phase-I report. Data collection, the labelling pipeline and a first T20I model comparison are complete. The weather table is mid-collection (93 of 111 ERA5 batches pending because the free API's daily quota is exhausted), and the ODI and Test models, the normalised Pitch Wear Index and the cold-start method are not finished. Sections 7 and 8 therefore report partial results and say explicitly what is still pending. Every metric in this report measures agreement with rule-derived proxy labels, not with measured pitch physics.
-
 ## 1. Introduction
 
 ### 1.1 Context
