@@ -1,12 +1,11 @@
-# Progress and handoff — 2026-11-04
+# Progress and handoff — 2026-11-05
 
 ## TL;DR
 
-- **Weather collection is blocked by the Open-Meteo free-tier daily quota**, not
-  by code or data. The API returned HTTP 429 with
-  `X-RateLimit-Remaining: 0` and a reset at **2026-11-05 00:00 UTC (05:30 IST)**.
-  The cache is intact and resumable; re-running the same command after the reset
-  continues where it stopped.
+- **Weather collection is paused for a laptop shutdown**, not blocked: after the
+  daily quota reset the collector ran again from **07:03 to 07:05 IST on
+  2026-11-05** and raised the cache from **24 to 49 batches** without hitting a
+  429. It was stopped manually; the cache is intact and resumable.
 - **Geocoding is complete**: 413/413 location strings have coordinates. The 94
   previously unresolved venues were reviewed by hand in
   `data/interim/venue_city_overrides.csv`.
@@ -14,8 +13,7 @@
   behind; the collector writes it only after all batches succeed.
 - All code and documentation changes below are ready to commit and hand off.
 - The **Phase-I report** is written and rendered: `reports/EL_Phase1_Report_Content.md`
-  (source) and `reports/EL_Phase1_Report_Content.docx` (RVCE cover page, logo
-  header, footer page numbers).
+  (source), `.docx` (RVCE cover, logo header, footer) and `.pdf`.
 - A teammate's **preliminary T20I analysis** was pulled after this work
   (`4d37bed`, `c4e8e26`). It confirms that **bowling-role coverage, not weather,
   is the current binding constraint on model quality** — see the next section.
@@ -29,13 +27,15 @@
 | Distinct match locations | 338 |
 | Geocode audit | 413 rows, **0 unresolved**, 94 reviewed overrides |
 | ERA5 batches required | 111 |
-| ERA5 batches cached | 24 (18 reusable after coordinate review; 6 invalidated) |
-| ERA5 batches pending | 93 |
+| ERA5 batches cached | **49** (18 reusable at the start of the 05 Nov run; 93 fetched) |
+| ERA5 batches pending | ~62 |
 | `data/interim/match_weather.csv` | not created |
 
-The drop from 24 to 18 reusable cached batches is expected: a batch's cache key
-is the list of coordinates, and the reviewed coordinates changed for venues that
-share a year with other grounds. Only those batches are re-requested.
+The jump from 24 to 49 happened during the 2026-11-05 07:03 run. A batch's cache
+key is the list of coordinates, so the six batches built on pre-review
+coordinates were refetched; the rest were reused. The cache directory is
+`.gitignore`d, so it stays on the local disk only — copy `data/interim/weather_cache/`
+if you move machines.
 
 ## Pulled teammate results: preliminary T20I analysis
 
@@ -118,17 +118,19 @@ country. These are now pinned with exact coordinates.
   "Page N | total" footer, 12 tables and 7 figures.
 - The project-timeline slide/figure is deliberately **excluded** from the report.
 - Every metric is described as agreement with rule-derived **proxy labels**,
-  never as measured pitch physics. Weather is reported as mid-collection
-  (24/111 batches cached), so no result depends on it.
+  never as measured pitch physics. The Word/PDF snapshot states "24 of 111
+  batches" as at drafting time; the cache has since reached **49 of 111**.
+  Refresh those two sentences (Sections 5.2 and 7.7) before final submission.
 - Source of all quoted numbers: `models/pitch_proxy_t20i_preliminary/preliminary_results.json`,
   `data/processed/role_curation_curve.csv`, and `data/interim/geocode_audit.csv`.
 
 ## How to resume
 
-After the quota resets (05:30 IST on 2026-11-05), from the repo root:
+From the repo root (the cache holds 49 of 111 batches, so the next run fetches
+the remaining ~62):
 
 ```powershell
-# 1. Finish weather (93 batches, ~2-10 min; cache is reused)
+# 1. Finish weather (resumes from the cache; stops itself on a 429)
 python src\collect_match_weather.py `
   --input data\raw\cricsheet\all_json.zip `
   --output-dir data\interim `
@@ -147,8 +149,9 @@ python src\train_pitch_models.py `
   --device cpu
 ```
 
-Do **not** delete `data/interim/weather_cache/`: it is the resumable state and
-is force-added to Git because the folder is Git-ignored by default.
+Do **not** delete `data/interim/weather_cache/`: it is the resumable state. The
+folder is Git-ignored, so the 49 cached batches live only on this disk — copy the
+whole folder if you switch machines.
 
 Quota note: a request with 25 locations × 365 days × 4 variables is weighted
 far above a single call. One full collection can consume most of the 10,000
