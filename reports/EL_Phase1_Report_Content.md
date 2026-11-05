@@ -158,7 +158,7 @@ Design decisions taken before implementation:
 
 **Player-style enrichment.** Cricsheet records the bowler's name but not the bowling style. Styles are joined from the two Kaggle registers, first on the ESPNcricinfo identifier and then on a conservative exact normalised name. When a credited wicket-taker cannot be classified, the match is excluded rather than guessed. This is deliberate: silent guessing would contaminate the label.
 
-**Geocoding and weather.** Matches are grouped by city (or venue when the city is blank) and geocoded, with a manual review of every location that failed. All 413 location strings now have coordinates; 94 previously unresolved venues were reviewed by hand and recorded with a rationale. The collector batches up to 25 coordinates per year, caches every response, and reuses the cache on restart. At the time of writing, 24 of 111 batches are cached and 93 remain; the free API's daily quota stopped the run and resets at 05:30 Indian Standard Time on 5 November 2026.
+**Geocoding and weather.** Matches are grouped by city (or venue when the city is blank) and geocoded, with a manual review of every location that failed. All 413 location strings now have coordinates; 94 previously unresolved venues were reviewed by hand and recorded with a rationale. The collector batches up to 25 coordinates per year, caches every response, and reuses the cache on restart. At the time of writing, 24 of 111 batches are cached and 93 remain; the free API's daily quota stopped the run.
 
 **Labels and features.** The labelling pipeline and the training script were run independently and produced identical labels on all 842 comparable T20I matches, which validates the implementation.
 
@@ -217,7 +217,7 @@ The dominant limitation is visible immediately: only about one match in seven ca
 
 The first Pitch Behaviour Profile covers the 13 men's T20I venues with at least 25 matches and at least 60% role coverage. Across these grounds, higher-scoring venues have a **lower** share of spin wickets (Pearson correlation r = −0.64). Eden Park averages 9.0 runs per over with 25% of wickets taken by spin; Mirpur averages 7.1 with 42%. This is consistent with the intuition that flat, high-scoring surfaces offer less turn, and it is the first evidence that the proxy captures something real about venue character.
 
-The raw Pitch Wear Index step compares the two innings. Second-innings run rate is a median 0.42 runs per over lower than first-innings run rate. This is **not yet** a wear measure: chasing tactics, target pressure and team strength have not been removed. The next version will normalise for those factors and for the quality of the batting and bowling units.
+The raw Pitch Wear Index step compares the two innings. Second-innings run rate is a median 0.42 runs per over lower than first-innings run rate. This is **not yet** a wear measure: chasing tactics, target pressure and team strength have not been removed. It is not yet normalised for those factors or for the quality of the batting and bowling units.
 
 ### 7.3 Model comparison
 
@@ -273,7 +273,7 @@ Threshold sensitivity changes 0–9.2% of labels. Tightening the early dot-ball 
 
 ### 7.7 Weather status
 
-Weather collection is incomplete by design rather than by failure: 413 locations are resolved, 111 year/coordinate batches are required, 24 are cached and 93 are pending. The free Open-Meteo daily quota was exhausted and resets at 05:30 Indian Standard Time on 5 November 2026. The collector now stops with a clear message instead of retrying for an hour, and the cache allows an exact restart. Weather is therefore **not** part of any model result reported above.
+Weather collection is incomplete by design rather than by failure: 413 locations are resolved, 111 year/coordinate batches are required, 24 are cached and 93 are pending. The free Open-Meteo daily quota was exhausted during collection. The collector now stops with a clear message instead of retrying for an hour, and the cache allows an exact restart. Weather is therefore **not** part of any model result reported above.
 
 ## 8. Results and Discussion
 
@@ -339,7 +339,7 @@ The system was built in vertical slices. The first slice read one archive, produ
 
 ### 10.1 Summary
 
-The project set out to make pitch behaviour measurable with open data. It has delivered the infrastructure to do so: a complete match inventory, a documented proxy label, a reviewed geocoding layer, leakage-safe features, a working weather collector, and a first model comparison with explanation and calibration. The early answer is cautious but positive: the models beat simple baselines on macro-F1 (0.410 versus 0.245), and venue profiles show a plausible relationship between scoring and spin (r = −0.64). The models are not yet ready to advise a captain. Accuracy is below the majority baseline, the Batting class is weak, gender is a confounder, and the weather table is incomplete. The next phase is therefore well defined: curate bowler roles, finish weather, normalise the Pitch Wear Index, and validate cold-start behaviour before claiming applied value.
+The project set out to make pitch behaviour measurable with open data. It has delivered the infrastructure to do so: a complete match inventory, a documented proxy label, a reviewed geocoding layer, leakage-safe features, a working weather collector, and a first model comparison with explanation and calibration. The early answer is cautious but positive: the models beat simple baselines on macro-F1 (0.410 versus 0.245), and venue profiles show a plausible relationship between scoring and spin (r = −0.64). The models are not yet ready to advise a captain. Accuracy is below the majority baseline, the Batting class is weak, gender is a confounder, and the weather table is incomplete. The remaining work is clear: curate bowler roles, finish weather, normalise the Pitch Wear Index, and validate cold-start behaviour before claiming applied value.
 
 ### 10.2 Personal reflections
 
