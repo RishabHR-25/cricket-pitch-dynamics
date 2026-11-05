@@ -13,6 +13,9 @@
 - `match_weather.csv` has **not** been produced yet. No partial file was left
   behind; the collector writes it only after all batches succeed.
 - All code and documentation changes below are ready to commit and hand off.
+- The **Phase-I report** is written and rendered: `reports/EL_Phase1_Report_Content.md`
+  (source) and `reports/EL_Phase1_Report_Content.docx` (RVCE cover page, logo
+  header, footer page numbers).
 - A teammate's **preliminary T20I analysis** was pulled after this work
   (`4d37bed`, `c4e8e26`). It confirms that **bowling-role coverage, not weather,
   is the current binding constraint on model quality** — see the next section.
@@ -104,6 +107,21 @@ New/changed data and docs
 Notable corrections found during review: `Port Soif` → Vale, **Georgia**;
 `Alur` → **Indonesia**; `Mulapadu` → wrong district; `St Saviour` missing
 country. These are now pinned with exact coordinates.
+
+## Phase-I report
+
+- `reports/EL_Phase1_Report_Content.md` — full report source (~5,900 words)
+  following the 12-section EL template, with references and a glossary that
+  spells out every abbreviation.
+- `reports/EL_Phase1_Report_Content.docx` — rendered report: RVCE cover page
+  (title, three members with USNs, group), logo header on every body page,
+  "Page N | total" footer, 12 tables and 7 figures.
+- The project-timeline slide/figure is deliberately **excluded** from the report.
+- Every metric is described as agreement with rule-derived **proxy labels**,
+  never as measured pitch physics. Weather is reported as mid-collection
+  (24/111 batches cached), so no result depends on it.
+- Source of all quoted numbers: `models/pitch_proxy_t20i_preliminary/preliminary_results.json`,
+  `data/processed/role_curation_curve.csv`, and `data/interim/geocode_audit.csv`.
 
 ## How to resume
 
