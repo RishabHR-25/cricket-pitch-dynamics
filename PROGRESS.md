@@ -1,11 +1,16 @@
-# Progress and handoff — 2026-11-05
+# Progress and handoff — 2026-11-07
 
 ## TL;DR
 
-- **Weather collection is paused for a laptop shutdown**, not blocked: after the
-  daily quota reset the collector ran again from **07:03 to 07:05 IST on
-  2026-11-05** and raised the cache from **24 to 49 batches** without hitting a
-  429. It was stopped manually; the cache is intact and resumable.
+- **Weather collection is paused for a laptop shutdown** with **71 cache files on
+  disk (65 reusable, 46 batches still to fetch)**. The 2026-11-07 run raised the
+  cache from 49 to 71 batches before hitting Open-Meteo's **hourly** request
+  limit (5,000 calls/hour, `X-RateLimit-Remaining: 0`), not the daily quota.
+- The collector now **waits out an hourly 429** using `Retry-After` and resumes
+  automatically (capped at 24 waits); only a wait longer than one hour is
+  treated as daily exhaustion and fails fast. Patch: `src/collect_match_weather.py`.
+- Six cached files are stale (they use pre-coordinate-review batch keys), which
+  is why 71 files correspond to 65 reusable batches.
 - **Geocoding is complete**: 413/413 location strings have coordinates. The 94
   previously unresolved venues were reviewed by hand in
   `data/interim/venue_city_overrides.csv`.
@@ -27,15 +32,15 @@
 | Distinct match locations | 338 |
 | Geocode audit | 413 rows, **0 unresolved**, 94 reviewed overrides |
 | ERA5 batches required | 111 |
-| ERA5 batches cached | **49** (18 reusable at the start of the 05 Nov run; 93 fetched) |
-| ERA5 batches pending | ~62 |
+| ERA5 cache files on disk | **71** (65 reusable; 6 stale pre-review keys) |
+| ERA5 batches pending | **46** |
 | `data/interim/match_weather.csv` | not created |
 
-The jump from 24 to 49 happened during the 2026-11-05 07:03 run. A batch's cache
-key is the list of coordinates, so the six batches built on pre-review
-coordinates were refetched; the rest were reused. The cache directory is
-`.gitignore`d, so it stays on the local disk only — copy `data/interim/weather_cache/`
-if you move machines.
+The 2026-11-07 run raised the cache from 49 to 71 files, then stopped on the
+hourly request limit. A batch's cache key is the list of coordinates and year,
+so the six batches built on pre-review coordinates are stale and get refetched;
+the rest are reused. The cache directory is `.gitignore`d, so it stays on the
+local disk only — copy `data/interim/weather_cache/` if you move machines.
 
 ## Pulled teammate results: preliminary T20I analysis
 
@@ -71,7 +76,8 @@ What this means for the program:
    association rather than pitch behaviour. Investigate before writing this up;
    consider a gender-stratified model or reporting male/female results
    separately.
-4. Weather remains blocked by the API quota until 05:30 IST; when it lands,
+4. Weather is limited by Open-Meteo's hourly request window (5,000 calls/hour);
+   the collector now waits it out and resumes. When `match_weather.csv` lands,
    re-run this same preliminary comparison with the weather columns to quantify
    whether they add out-of-time signal.
 
@@ -90,8 +96,10 @@ What this means for the program:
    `--refresh-overrides` (re-apply reviewed rows deliberately).
 4. Fixed a bug where merging override results overwrote the audit's
    `location_key`; the writer now always keys rows by the cache key.
-5. Shared cache-key helper, per-10-batch progress logging, and a fail-fast
-   message on long 429 responses (previously it retried for an hour).
+5. Shared cache-key helper, per-10-batch progress logging, and rate-limit
+   handling: an hourly 429 is waited out via `Retry-After` and retried without
+   consuming the retry budget; only a wait longer than one hour is treated as
+   daily exhaustion and fails fast.
 
 New/changed data and docs
 
@@ -119,18 +127,19 @@ country. These are now pinned with exact coordinates.
 - The project-timeline slide/figure is deliberately **excluded** from the report.
 - Every metric is described as agreement with rule-derived **proxy labels**,
   never as measured pitch physics. The Word/PDF snapshot states "24 of 111
-  batches" as at drafting time; the cache has since reached **49 of 111**.
-  Refresh those two sentences (Sections 5.2 and 7.7) before final submission.
+  batches" as at drafting time; the cache has since reached **71 files (65
+  reusable) of 111**. Refresh those two sentences (Sections 5.2 and 7.7) before
+  final submission.
 - Source of all quoted numbers: `models/pitch_proxy_t20i_preliminary/preliminary_results.json`,
   `data/processed/role_curation_curve.csv`, and `data/interim/geocode_audit.csv`.
 
 ## How to resume
 
-From the repo root (the cache holds 49 of 111 batches, so the next run fetches
-the remaining ~62):
+From the repo root (71 cache files on disk, 65 reusable, so the next run fetches
+the remaining 46):
 
 ```powershell
-# 1. Finish weather (resumes from the cache; stops itself on a 429)
+# 1. Finish weather (resumes from the cache; waits out an hourly 429)
 python src\collect_match_weather.py `
   --input data\raw\cricsheet\all_json.zip `
   --output-dir data\interim `
@@ -150,14 +159,16 @@ python src\train_pitch_models.py `
 ```
 
 Do **not** delete `data/interim/weather_cache/`: it is the resumable state. The
-folder is Git-ignored, so the 49 cached batches live only on this disk — copy the
+folder is Git-ignored, so the 71 cached files live only on this disk — copy the
 whole folder if you switch machines.
 
 Quota note: a request with 25 locations × 365 days × 4 variables is weighted
 far above a single call. One full collection can consume most of the 10,000
-daily units, so run it once and let the cache do its job. If a longer pause is
-needed, use `--geocode-only` while iterating on locations — it spends no weather
-quota.
+daily units, and a single run can also exhaust the 5,000-requests-per-hour
+window. The collector now waits out an hourly window and resumes by itself; a
+wait longer than one hour is treated as daily exhaustion and fails fast. If a
+longer pause is needed, use `--geocode-only` while iterating on locations — it
+spends no weather quota.
 
 ## Notes for training and metrics
 

@@ -42,14 +42,18 @@ DAILY_VARIABLES = (
 )
 
 
-def _request_json(url: str, *, retries: int = 3) -> Any:
+def _request_json(
+    url: str, *, retries: int = 3, max_hourly_waits: int = 24
+) -> Any:
     global _LAST_REQUEST_TIME
     request = urllib.request.Request(
         url,
         headers={"User-Agent": "SPORTS-EL-academic-research/1.0"},
     )
     last_error: Exception | None = None
-    for attempt in range(retries):
+    attempt = 0
+    hourly_waits = 0
+    while attempt < retries:
         with _REQUEST_LOCK:
             wait = 1.0 - (time.monotonic() - _LAST_REQUEST_TIME)
             if wait > 0:
@@ -62,32 +66,42 @@ def _request_json(url: str, *, retries: int = 3) -> Any:
                 _LAST_REQUEST_TIME = time.monotonic()
                 last_error = error
                 retry_after = error.headers.get("Retry-After")
-                if (
-                    error.code == 429
-                    and retry_after
-                    and retry_after.isdigit()
-                    and int(retry_after) > 3600
-                ):
-                    reset = error.headers.get("X-RateLimit-Reset")
-                    raise RuntimeError(
-                        "Open-Meteo daily API quota is exhausted; the collector cannot "
-                        "resume until it resets"
-                        + (f" (reset epoch {reset} UTC)" if reset else "")
-                        + ". The cache and audit are safe: re-run the same command later."
-                    ) from error
-                if attempt + 1 < retries:
-                    delay = (
-                        float(retry_after)
-                        if retry_after and retry_after.isdigit()
-                        else 60.0 if error.code == 429
-                        else 2**attempt
+                retry_seconds = (
+                    int(retry_after)
+                    if retry_after and str(retry_after).isdigit()
+                    else None
+                )
+                if error.code == 429:
+                    if retry_seconds is None or retry_seconds > 3600:
+                        reset = error.headers.get("X-RateLimit-Reset")
+                        raise RuntimeError(
+                            "Open-Meteo daily API quota is exhausted; the collector "
+                            "cannot resume until it resets"
+                            + (f" (reset epoch {reset} UTC)" if reset else "")
+                            + ". The cache and audit are safe: re-run the same "
+                            "command later."
+                        ) from error
+                    if hourly_waits >= max_hourly_waits:
+                        break
+                    hourly_waits += 1
+                    LOGGER.warning(
+                        "Open-Meteo hourly request limit reached; waiting %d s for "
+                        "the window to reset (wait %d of %d).",
+                        retry_seconds + 15,
+                        hourly_waits,
+                        max_hourly_waits,
                     )
-                    time.sleep(delay)
+                    time.sleep(retry_seconds + 15)
+                    continue
+                attempt += 1
+                if attempt < retries:
+                    time.sleep(2 ** (attempt - 1))
             except (urllib.error.URLError, TimeoutError, json.JSONDecodeError) as error:
                 _LAST_REQUEST_TIME = time.monotonic()
                 last_error = error
-                if attempt + 1 < retries:
-                    time.sleep(2**attempt)
+                attempt += 1
+                if attempt < retries:
+                    time.sleep(2 ** (attempt - 1))
     raise RuntimeError(f"Request failed after {retries} attempts: {url}") from last_error
 
 

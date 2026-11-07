@@ -161,14 +161,14 @@ venues were reviewed by hand and are recorded with a rationale in
 country (for example Port Soif → Vale, Georgia; Alur → Indonesia), so keep the
 override table authoritative when adding venues.
 
-Weather collection is **blocked on the Open-Meteo daily quota**, not on the
-pipeline: 111 year/coordinate batches are required (24 cached, 93 to fetch),
-and the free archive API returned HTTP 429 with a reset at
-2026-11-05 00:00 UTC (05:30 IST). The collector now fails fast with that
-message instead of retrying for an hour. Re-run the same command after the
-reset; cached batches are reused, so no work is repeated. When
-`data/interim/match_weather.csv` exists, run the readiness audit before
-training:
+Weather collection is limited by the **Open-Meteo free-tier request quota**, not
+by the pipeline: 111 year/coordinate batches are required. The cache currently
+holds 71 files (65 reusable; the rest use pre-review coordinates), leaving 46
+batches to fetch, and `data/interim/match_weather.csv` has not been written yet.
+The collector caches every successful batch, waits out an hourly 429 using
+`Retry-After`, and only fails fast when the wait implies daily exhaustion.
+Re-run the same command to resume; no work is repeated. When
+`data/interim/match_weather.csv` exists, run the readiness audit before training:
 
 ```powershell
 python src\audit_datasets.py `
