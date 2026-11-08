@@ -1,16 +1,21 @@
-# Progress and handoff — 2026-11-07
+# Progress and handoff — 2026-11-08
 
 ## TL;DR
 
-- **Weather collection is paused for a laptop shutdown** with **71 cache files on
-  disk (65 reusable, 46 batches still to fetch)**. The 2026-11-07 run raised the
-  cache from 49 to 71 batches before hitting Open-Meteo's **hourly** request
-  limit (5,000 calls/hour, `X-RateLimit-Remaining: 0`), not the daily quota.
-- The collector now **waits out an hourly 429** using `Retry-After` and resumes
+- **Weather collection stopped on the daily quota** with **105 cache files on
+  disk (0 corrupt)** and about **12–16 batches left**. The 2026-11-08 run raised
+  the cache from 71 to 105 files, reported **90/111 batches completed** at
+  12:34 IST, then hit the free tier's daily limit; the API reset epoch is
+  **2026-11-09 05:30 IST**.
+- Do **not** run two collectors at once. Two concurrent runs on 2026-11-08
+  doubled request traffic and repeatedly re-triggered the hourly limit. The
+  collector is silent for ~90 s at startup while it parses `all_json.zip`, so a
+  quiet log does **not** mean it failed.
+- The collector **waits out an hourly 429** using `Retry-After` and resumes
   automatically (capped at 24 waits); only a wait longer than one hour is
   treated as daily exhaustion and fails fast. Patch: `src/collect_match_weather.py`.
-- Six cached files are stale (they use pre-coordinate-review batch keys), which
-  is why 71 files correspond to 65 reusable batches.
+- Six cached files are stale (they use pre-coordinate-review batch keys), so
+  the reusable count is slightly below the file count.
 - **Geocoding is complete**: 413/413 location strings have coordinates. The 94
   previously unresolved venues were reviewed by hand in
   `data/interim/venue_city_overrides.csv`.
@@ -32,15 +37,19 @@
 | Distinct match locations | 338 |
 | Geocode audit | 413 rows, **0 unresolved**, 94 reviewed overrides |
 | ERA5 batches required | 111 |
-| ERA5 cache files on disk | **71** (65 reusable; 6 stale pre-review keys) |
-| ERA5 batches pending | **46** |
+| ERA5 cache files on disk | **105** (0 corrupt; 6 stale pre-review keys) |
+| ERA5 batches completed | **90/111 logged**, a few more fetched before the limit |
+| ERA5 batches pending | **~12–16** |
 | `data/interim/match_weather.csv` | not created |
 
 The 2026-11-07 run raised the cache from 49 to 71 files, then stopped on the
-hourly request limit. A batch's cache key is the list of coordinates and year,
-so the six batches built on pre-review coordinates are stale and get refetched;
-the rest are reused. The cache directory is `.gitignore`d, so it stays on the
-local disk only — copy `data/interim/weather_cache/` if you move machines.
+hourly request limit. The 2026-11-08 run (single collector, 12:13–12:36 IST)
+took it from 71 to 105 files and exhausted the **daily** free-tier quota; it
+resets at **05:30 IST on 2026-11-09**. A batch's cache key is the coordinate set
+and year, so the six batches built on pre-review coordinates are stale and get
+refetched; the rest are reused. The cache directory is `.gitignore`d, so it
+stays on the local disk only — copy `data/interim/weather_cache/` if you move
+machines.
 
 ## Pulled teammate results: preliminary T20I analysis
 
@@ -127,19 +136,20 @@ country. These are now pinned with exact coordinates.
 - The project-timeline slide/figure is deliberately **excluded** from the report.
 - Every metric is described as agreement with rule-derived **proxy labels**,
   never as measured pitch physics. The Word/PDF snapshot states "24 of 111
-  batches" as at drafting time; the cache has since reached **71 files (65
-  reusable) of 111**. Refresh those two sentences (Sections 5.2 and 7.7) before
-  final submission.
+  batches" as at drafting time; the cache has since reached **105 files** with
+  ~90+ batches complete. Refresh those two sentences (Sections 5.2 and 7.7)
+  before final submission.
 - Source of all quoted numbers: `models/pitch_proxy_t20i_preliminary/preliminary_results.json`,
   `data/processed/role_curation_curve.csv`, and `data/interim/geocode_audit.csv`.
 
 ## How to resume
 
-From the repo root (71 cache files on disk, 65 reusable, so the next run fetches
-the remaining 46):
+From the repo root (105 cache files on disk, so the next run fetches roughly a
+dozen batches; after the 05:30 IST reset on 2026-11-09):
 
 ```powershell
 # 1. Finish weather (resumes from the cache; waits out an hourly 429)
+#    Run only ONE collector at a time.
 python src\collect_match_weather.py `
   --input data\raw\cricsheet\all_json.zip `
   --output-dir data\interim `
@@ -159,7 +169,7 @@ python src\train_pitch_models.py `
 ```
 
 Do **not** delete `data/interim/weather_cache/`: it is the resumable state. The
-folder is Git-ignored, so the 71 cached files live only on this disk — copy the
+folder is Git-ignored, so the 105 cached files live only on this disk — copy the
 whole folder if you switch machines.
 
 Quota note: a request with 25 locations × 365 days × 4 variables is weighted
