@@ -27,7 +27,15 @@
         "temperature_2m_mean",
         "precipitation_sum",
         "wind_speed_10m_max",
-        "relative_humidity_2m_mean"
+        "relative_humidity_2m_mean",
+        "precip_sum_7d",
+        "precip_sum_14d",
+        "precip_sum_28d",
+        "temp_mean_7d",
+        "temp_mean_14d",
+        "humidity_mean_7d",
+        "wind_max_mean_7d",
+        "dry_days_before"
       ]
     },
     "ODI": {
@@ -44,7 +52,15 @@
         "temperature_2m_mean",
         "precipitation_sum",
         "wind_speed_10m_max",
-        "relative_humidity_2m_mean"
+        "relative_humidity_2m_mean",
+        "precip_sum_7d",
+        "precip_sum_14d",
+        "precip_sum_28d",
+        "temp_mean_7d",
+        "temp_mean_14d",
+        "humidity_mean_7d",
+        "wind_max_mean_7d",
+        "dry_days_before"
       ]
     },
     "Test": {
@@ -61,7 +77,15 @@
         "temperature_2m_mean",
         "precipitation_sum",
         "wind_speed_10m_max",
-        "relative_humidity_2m_mean"
+        "relative_humidity_2m_mean",
+        "precip_sum_7d",
+        "precip_sum_14d",
+        "precip_sum_28d",
+        "temp_mean_7d",
+        "temp_mean_14d",
+        "humidity_mean_7d",
+        "wind_max_mean_7d",
+        "dry_days_before"
       ]
     }
   },
@@ -69,6 +93,7 @@
     "T20": {
       "match_type": "T20",
       "training_device": "cpu",
+      "model_family": "xgb",
       "target_semantics": "deterministic behavioral proxy; not physical pitch ground truth",
       "label_rules": {
         "early_overs": 6,
@@ -102,60 +127,60 @@
         "test_start": "2023-12-03"
       },
       "model": {
-        "accuracy": 0.5225694444444444,
-        "balanced_accuracy": 0.4749902240098319,
-        "macro_f1": 0.4371205271729562,
-        "weighted_f1": 0.5585176725667814,
-        "multiclass_log_loss": 0.9485020800587987,
-        "multiclass_brier_score": 0.5877384158570932,
+        "accuracy": 0.5538194444444444,
+        "balanced_accuracy": 0.4490531255237138,
+        "macro_f1": 0.43364637979083104,
+        "weighted_f1": 0.5834362363271142,
+        "multiclass_log_loss": 0.914566988846654,
+        "multiclass_brier_score": 0.5595707533692016,
         "classification_report": {
           "Batting": {
-            "precision": 0.13380281690140844,
-            "recall": 0.37254901960784315,
-            "f1-score": 0.19689119170984457,
+            "precision": 0.11764705882352941,
+            "recall": 0.27450980392156865,
+            "f1-score": 0.16470588235294117,
             "support": 51.0
           },
           "Pace": {
-            "precision": 0.7456445993031359,
-            "recall": 0.5487179487179488,
-            "f1-score": 0.6322008862629247,
+            "precision": 0.7492354740061162,
+            "recall": 0.6282051282051282,
+            "f1-score": 0.6834030683403068,
             "support": 390.0
           },
           "Spin": {
-            "precision": 0.46258503401360546,
-            "recall": 0.5037037037037037,
-            "f1-score": 0.48226950354609927,
+            "precision": 0.46153846153846156,
+            "recall": 0.4444444444444444,
+            "f1-score": 0.4528301886792453,
             "support": 135.0
           },
-          "accuracy": 0.5225694444444444,
+          "accuracy": 0.5538194444444444,
           "macro avg": {
-            "precision": 0.4473441500727166,
-            "recall": 0.4749902240098319,
-            "f1-score": 0.4371205271729562,
+            "precision": 0.44280699812270247,
+            "recall": 0.4490531255237138,
+            "f1-score": 0.43364637979083104,
             "support": 576.0
           },
           "weighted avg": {
-            "precision": 0.6251290225382493,
-            "recall": 0.5225694444444444,
-            "f1-score": 0.5585176725667814,
+            "precision": 0.6258845957813848,
+            "recall": 0.5538194444444444,
+            "f1-score": 0.5834362363271142,
             "support": 576.0
           }
         },
         "confusion_matrix": [
           [
-            19,
-            25,
+            14,
+            30,
             7
           ],
           [
-            104,
-            214,
-            72
+            82,
+            245,
+            63
           ],
           [
-            19,
-            48,
-            68
+            23,
+            52,
+            60
           ]
         ]
       },
@@ -222,6 +247,7 @@
     "ODI": {
       "match_type": "ODI",
       "training_device": "cpu",
+      "model_family": "xgb",
       "target_semantics": "deterministic behavioral proxy; not physical pitch ground truth",
       "label_rules": {
         "early_overs": 10,
@@ -255,60 +281,60 @@
         "test_start": "2022-08-22"
       },
       "model": {
-        "accuracy": 0.4709480122324159,
-        "balanced_accuracy": 0.43326300571432297,
-        "macro_f1": 0.4165990920939601,
-        "weighted_f1": 0.4862190928494501,
-        "multiclass_log_loss": 1.0683034716953395,
-        "multiclass_brier_score": 0.654853663857505,
+        "accuracy": 0.4648318042813456,
+        "balanced_accuracy": 0.41345541946916514,
+        "macro_f1": 0.3995972812359881,
+        "weighted_f1": 0.4777341074549898,
+        "multiclass_log_loss": 1.064639838074405,
+        "multiclass_brier_score": 0.652872668550011,
         "classification_report": {
           "Batting": {
-            "precision": 0.21739130434782608,
-            "recall": 0.28846153846153844,
-            "f1-score": 0.24793388429752067,
+            "precision": 0.1746031746031746,
+            "recall": 0.21153846153846154,
+            "f1-score": 0.19130434782608696,
             "support": 52.0
           },
           "Pace": {
-            "precision": 0.6666666666666666,
-            "recall": 0.5051546391752577,
-            "f1-score": 0.5747800586510264,
+            "precision": 0.6513157894736842,
+            "recall": 0.5103092783505154,
+            "f1-score": 0.5722543352601156,
             "support": 194.0
           },
           "Spin": {
-            "precision": 0.36936936936936937,
-            "recall": 0.5061728395061729,
-            "f1-score": 0.4270833333333333,
+            "precision": 0.375,
+            "recall": 0.5185185185185185,
+            "f1-score": 0.43523316062176165,
             "support": 81.0
           },
-          "accuracy": 0.4709480122324159,
+          "accuracy": 0.4648318042813456,
           "macro avg": {
-            "precision": 0.41780911346128735,
-            "recall": 0.43326300571432297,
-            "f1-score": 0.4165990920939601,
+            "precision": 0.4003063213589529,
+            "recall": 0.41345541946916514,
+            "f1-score": 0.3995972812359881,
             "support": 327.0
           },
           "weighted avg": {
-            "precision": 0.521579816753331,
-            "recall": 0.4709480122324159,
-            "f1-score": 0.4862190928494501,
+            "precision": 0.5070630832943724,
+            "recall": 0.4648318042813456,
+            "f1-score": 0.4777341074549898,
             "support": 327.0
           }
         },
         "confusion_matrix": [
           [
-            15,
-            24,
-            13
+            11,
+            26,
+            15
           ],
           [
-            39,
-            98,
-            57
+            40,
+            99,
+            55
           ],
           [
-            15,
-            25,
-            41
+            12,
+            27,
+            42
           ]
         ]
       },
@@ -375,6 +401,7 @@
     "Test": {
       "match_type": "Test",
       "training_device": "cpu",
+      "model_family": "xgb",
       "target_semantics": "deterministic behavioral proxy; not physical pitch ground truth",
       "label_rules": {
         "early_overs": 10,
@@ -408,12 +435,12 @@
         "test_start": "2021-09-30"
       },
       "model": {
-        "accuracy": 0.6953125,
-        "balanced_accuracy": 0.5305462653288741,
-        "macro_f1": 0.492326139088729,
-        "weighted_f1": 0.6461218525179856,
-        "multiclass_log_loss": 0.8378484510012669,
-        "multiclass_brier_score": 0.46432842039393907,
+        "accuracy": 0.71875,
+        "balanced_accuracy": 0.5480490523968785,
+        "macro_f1": 0.5115646258503402,
+        "weighted_f1": 0.670280612244898,
+        "multiclass_log_loss": 0.8391323946815479,
+        "multiclass_brier_score": 0.4404505230474537,
         "classification_report": {
           "Batting": {
             "precision": 0.0,
@@ -422,46 +449,46 @@
             "support": 17.0
           },
           "Pace": {
-            "precision": 0.7297297297297297,
-            "recall": 0.8307692307692308,
-            "f1-score": 0.7769784172661871,
+            "precision": 0.7466666666666667,
+            "recall": 0.8615384615384616,
+            "f1-score": 0.8,
             "support": 65.0
           },
           "Spin": {
-            "precision": 0.6481481481481481,
-            "recall": 0.7608695652173914,
-            "f1-score": 0.7,
+            "precision": 0.6923076923076923,
+            "recall": 0.782608695652174,
+            "f1-score": 0.7346938775510204,
             "support": 46.0
           },
-          "accuracy": 0.6953125,
+          "accuracy": 0.71875,
           "macro avg": {
-            "precision": 0.4592926259592926,
-            "recall": 0.5305462653288741,
-            "f1-score": 0.492326139088729,
+            "precision": 0.4796581196581197,
+            "recall": 0.5480490523968785,
+            "f1-score": 0.5115646258503402,
             "support": 128.0
           },
           "weighted avg": {
-            "precision": 0.6034941191191191,
-            "recall": 0.6953125,
-            "f1-score": 0.6461218525179856,
+            "precision": 0.6279647435897436,
+            "recall": 0.71875,
+            "f1-score": 0.670280612244898,
             "support": 128.0
           }
         },
         "confusion_matrix": [
           [
             0,
+            10,
+            7
+          ],
+          [
+            0,
+            56,
+            9
+          ],
+          [
+            1,
             9,
-            8
-          ],
-          [
-            0,
-            54,
-            11
-          ],
-          [
-            0,
-            11,
-            35
+            36
           ]
         ]
       },

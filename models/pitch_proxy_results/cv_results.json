@@ -1,0 +1,1222 @@
+{
+  "folds": 4,
+  "min_train_fraction": 0.5,
+  "variants": {
+    "xgb:ctx": {
+      "T20": {
+        "weather_mode": "ctx",
+        "model_family": "xgb",
+        "n_raw_features": 29,
+        "folds": [
+          {
+            "fold": 1,
+            "train_n": 1455,
+            "test_n": 421,
+            "test_start": "2020-10-12",
+            "test_end": "2022-02-10",
+            "macro_f1": 0.41526008807212333,
+            "accuracy": 0.6247030878859857
+          },
+          {
+            "fold": 2,
+            "train_n": 1876,
+            "test_n": 490,
+            "test_start": "2022-02-11",
+            "test_end": "2023-03-28",
+            "macro_f1": 0.4763356201952693,
+            "accuracy": 0.5857142857142857
+          },
+          {
+            "fold": 3,
+            "train_n": 2366,
+            "test_n": 374,
+            "test_start": "2023-03-29",
+            "test_end": "2024-08-24",
+            "macro_f1": 0.4791188806363695,
+            "accuracy": 0.5882352941176471
+          },
+          {
+            "fold": 4,
+            "train_n": 2740,
+            "test_n": 342,
+            "test_start": "2024-08-27",
+            "test_end": "2026-10-29",
+            "macro_f1": 0.4157236396477761,
+            "accuracy": 0.5263157894736842
+          }
+        ],
+        "mean_fold_macro_f1": 0.4466095571378846,
+        "std_fold_macro_f1": 0.0311336797099687,
+        "pooled_macro_f1": 0.45322961203251694,
+        "pooled_accuracy": 0.5838967424708051,
+        "pooled_ece": 0.05777092356873442,
+        "pooled_n": 1627,
+        "match_type": "T20"
+      },
+      "ODI": {
+        "weather_mode": "ctx",
+        "model_family": "xgb",
+        "n_raw_features": 29,
+        "folds": [
+          {
+            "fold": 1,
+            "train_n": 804,
+            "test_n": 220,
+            "test_start": "2017-05-07",
+            "test_end": "2019-05-11",
+            "macro_f1": 0.4175358582700472,
+            "accuracy": 0.5272727272727272
+          },
+          {
+            "fold": 2,
+            "train_n": 1024,
+            "test_n": 214,
+            "test_start": "2019-05-12",
+            "test_end": "2022-02-12",
+            "macro_f1": 0.4306078568907105,
+            "accuracy": 0.48130841121495327
+          },
+          {
+            "fold": 3,
+            "train_n": 1238,
+            "test_n": 216,
+            "test_start": "2022-02-15",
+            "test_end": "2023-09-04",
+            "macro_f1": 0.3603340227043262,
+            "accuracy": 0.48148148148148145
+          },
+          {
+            "fold": 4,
+            "train_n": 1454,
+            "test_n": 207,
+            "test_start": "2023-09-06",
+            "test_end": "2026-10-31",
+            "macro_f1": 0.42397551855217963,
+            "accuracy": 0.45410628019323673
+          }
+        ],
+        "mean_fold_macro_f1": 0.4081133141043159,
+        "std_fold_macro_f1": 0.027969890106841026,
+        "pooled_macro_f1": 0.4198002544200458,
+        "pooled_accuracy": 0.4865810968494749,
+        "pooled_ece": 0.1058332494327943,
+        "pooled_n": 857,
+        "match_type": "ODI"
+      },
+      "Test": {
+        "weather_mode": "ctx",
+        "model_family": "xgb",
+        "n_raw_features": 29,
+        "folds": [
+          {
+            "fold": 1,
+            "train_n": 322,
+            "test_n": 84,
+            "test_start": "2016-01-02",
+            "test_end": "2018-01-24",
+            "macro_f1": 0.4956185273699784,
+            "accuracy": 0.7261904761904762
+          },
+          {
+            "fold": 2,
+            "train_n": 406,
+            "test_n": 86,
+            "test_start": "2018-01-31",
+            "test_end": "2020-07-24",
+            "macro_f1": 0.5824425667650752,
+            "accuracy": 0.7674418604651163
+          },
+          {
+            "fold": 3,
+            "train_n": 492,
+            "test_n": 85,
+            "test_start": "2020-08-13",
+            "test_end": "2022-12-01",
+            "macro_f1": 0.62534435261708,
+            "accuracy": 0.8117647058823529
+          },
+          {
+            "fold": 4,
+            "train_n": 577,
+            "test_n": 80,
+            "test_start": "2022-12-08",
+            "test_end": "2026-10-18",
+            "macro_f1": 0.48737469864230426,
+            "accuracy": 0.6625
+          }
+        ],
+        "mean_fold_macro_f1": 0.5476950363486095,
+        "std_fold_macro_f1": 0.05828231531821707,
+        "pooled_macro_f1": 0.5436428020898819,
+        "pooled_accuracy": 0.7432835820895523,
+        "pooled_ece": 0.09948799418615226,
+        "pooled_n": 335,
+        "match_type": "Test"
+      }
+    },
+    "xgb:day": {
+      "T20": {
+        "weather_mode": "day",
+        "model_family": "xgb",
+        "n_raw_features": 21,
+        "folds": [
+          {
+            "fold": 1,
+            "train_n": 1455,
+            "test_n": 421,
+            "test_start": "2020-10-12",
+            "test_end": "2022-02-10",
+            "macro_f1": 0.3687888744239869,
+            "accuracy": 0.5225653206650831
+          },
+          {
+            "fold": 2,
+            "train_n": 1876,
+            "test_n": 490,
+            "test_start": "2022-02-11",
+            "test_end": "2023-03-28",
+            "macro_f1": 0.430638510701917,
+            "accuracy": 0.5020408163265306
+          },
+          {
+            "fold": 3,
+            "train_n": 2366,
+            "test_n": 374,
+            "test_start": "2023-03-29",
+            "test_end": "2024-08-24",
+            "macro_f1": 0.45696973229577836,
+            "accuracy": 0.5401069518716578
+          },
+          {
+            "fold": 4,
+            "train_n": 2740,
+            "test_n": 342,
+            "test_start": "2024-08-27",
+            "test_end": "2026-10-29",
+            "macro_f1": 0.40790414675594916,
+            "accuracy": 0.49707602339181284
+          }
+        ],
+        "mean_fold_macro_f1": 0.4160753160444079,
+        "std_fold_macro_f1": 0.032354348578803864,
+        "pooled_macro_f1": 0.4206936865418369,
+        "pooled_accuracy": 0.5150583896742471,
+        "pooled_ece": 0.06605374596237963,
+        "pooled_n": 1627,
+        "match_type": "T20"
+      },
+      "ODI": {
+        "weather_mode": "day",
+        "model_family": "xgb",
+        "n_raw_features": 21,
+        "folds": [
+          {
+            "fold": 1,
+            "train_n": 804,
+            "test_n": 220,
+            "test_start": "2017-05-07",
+            "test_end": "2019-05-11",
+            "macro_f1": 0.43370877341631003,
+            "accuracy": 0.4909090909090909
+          },
+          {
+            "fold": 2,
+            "train_n": 1024,
+            "test_n": 214,
+            "test_start": "2019-05-12",
+            "test_end": "2022-02-12",
+            "macro_f1": 0.3676869062978825,
+            "accuracy": 0.3925233644859813
+          },
+          {
+            "fold": 3,
+            "train_n": 1238,
+            "test_n": 216,
+            "test_start": "2022-02-15",
+            "test_end": "2023-09-04",
+            "macro_f1": 0.37002156721782886,
+            "accuracy": 0.4861111111111111
+          },
+          {
+            "fold": 4,
+            "train_n": 1454,
+            "test_n": 207,
+            "test_start": "2023-09-06",
+            "test_end": "2026-10-31",
+            "macro_f1": 0.42077475515713125,
+            "accuracy": 0.4444444444444444
+          }
+        ],
+        "mean_fold_macro_f1": 0.39804800052228817,
+        "std_fold_macro_f1": 0.02956126310691034,
+        "pooled_macro_f1": 0.4054238362461897,
+        "pooled_accuracy": 0.4539089848308051,
+        "pooled_ece": 0.14027295294048164,
+        "pooled_n": 857,
+        "match_type": "ODI"
+      },
+      "Test": {
+        "weather_mode": "day",
+        "model_family": "xgb",
+        "n_raw_features": 21,
+        "folds": [
+          {
+            "fold": 1,
+            "train_n": 322,
+            "test_n": 84,
+            "test_start": "2016-01-02",
+            "test_end": "2018-01-24",
+            "macro_f1": 0.5274991352473193,
+            "accuracy": 0.75
+          },
+          {
+            "fold": 2,
+            "train_n": 406,
+            "test_n": 86,
+            "test_start": "2018-01-31",
+            "test_end": "2020-07-24",
+            "macro_f1": 0.5461502782931354,
+            "accuracy": 0.7209302325581395
+          },
+          {
+            "fold": 3,
+            "train_n": 492,
+            "test_n": 85,
+            "test_start": "2020-08-13",
+            "test_end": "2022-12-01",
+            "macro_f1": 0.5017046944662995,
+            "accuracy": 0.788235294117647
+          },
+          {
+            "fold": 4,
+            "train_n": 577,
+            "test_n": 80,
+            "test_start": "2022-12-08",
+            "test_end": "2026-10-18",
+            "macro_f1": 0.49657534246575336,
+            "accuracy": 0.675
+          }
+        ],
+        "mean_fold_macro_f1": 0.5179823626181269,
+        "std_fold_macro_f1": 0.02004509557856535,
+        "pooled_macro_f1": 0.5247134070663483,
+        "pooled_accuracy": 0.7343283582089553,
+        "pooled_ece": 0.10573538972965563,
+        "pooled_n": 335,
+        "match_type": "Test"
+      }
+    },
+    "rf:ctx": {
+      "T20": {
+        "weather_mode": "ctx",
+        "model_family": "rf",
+        "n_raw_features": 29,
+        "folds": [
+          {
+            "fold": 1,
+            "train_n": 1455,
+            "test_n": 421,
+            "test_start": "2020-10-12",
+            "test_end": "2022-02-10",
+            "macro_f1": 0.4029729789970801,
+            "accuracy": 0.6294536817102138
+          },
+          {
+            "fold": 2,
+            "train_n": 1876,
+            "test_n": 490,
+            "test_start": "2022-02-11",
+            "test_end": "2023-03-28",
+            "macro_f1": 0.4659236670875349,
+            "accuracy": 0.6
+          },
+          {
+            "fold": 3,
+            "train_n": 2366,
+            "test_n": 374,
+            "test_start": "2023-03-29",
+            "test_end": "2024-08-24",
+            "macro_f1": 0.4752942382500021,
+            "accuracy": 0.6443850267379679
+          },
+          {
+            "fold": 4,
+            "train_n": 2740,
+            "test_n": 342,
+            "test_start": "2024-08-27",
+            "test_end": "2026-10-29",
+            "macro_f1": 0.44142962454561624,
+            "accuracy": 0.5760233918128655
+          }
+        ],
+        "mean_fold_macro_f1": 0.4464051272200583,
+        "std_fold_macro_f1": 0.027958278115724603,
+        "pooled_macro_f1": 0.45039100126442894,
+        "pooled_accuracy": 0.6127842655193608,
+        "pooled_ece": 0.13242194161920157,
+        "pooled_n": 1627,
+        "match_type": "T20"
+      },
+      "ODI": {
+        "weather_mode": "ctx",
+        "model_family": "rf",
+        "n_raw_features": 29,
+        "folds": [
+          {
+            "fold": 1,
+            "train_n": 804,
+            "test_n": 220,
+            "test_start": "2017-05-07",
+            "test_end": "2019-05-11",
+            "macro_f1": 0.4401554269024149,
+            "accuracy": 0.5454545454545454
+          },
+          {
+            "fold": 2,
+            "train_n": 1024,
+            "test_n": 214,
+            "test_start": "2019-05-12",
+            "test_end": "2022-02-12",
+            "macro_f1": 0.3398665430904135,
+            "accuracy": 0.3598130841121495
+          },
+          {
+            "fold": 3,
+            "train_n": 1238,
+            "test_n": 216,
+            "test_start": "2022-02-15",
+            "test_end": "2023-09-04",
+            "macro_f1": 0.3970454636520269,
+            "accuracy": 0.46296296296296297
+          },
+          {
+            "fold": 4,
+            "train_n": 1454,
+            "test_n": 207,
+            "test_start": "2023-09-06",
+            "test_end": "2026-10-31",
+            "macro_f1": 0.4247468168440813,
+            "accuracy": 0.4830917874396135
+          }
+        ],
+        "mean_fold_macro_f1": 0.40045356262223414,
+        "std_fold_macro_f1": 0.038238731354312515,
+        "pooled_macro_f1": 0.41009903115796714,
+        "pooled_accuracy": 0.4632438739789965,
+        "pooled_ece": 0.072011543754582,
+        "pooled_n": 857,
+        "match_type": "ODI"
+      },
+      "Test": {
+        "weather_mode": "ctx",
+        "model_family": "rf",
+        "n_raw_features": 29,
+        "folds": [
+          {
+            "fold": 1,
+            "train_n": 322,
+            "test_n": 84,
+            "test_start": "2016-01-02",
+            "test_end": "2018-01-24",
+            "macro_f1": 0.4955555555555555,
+            "accuracy": 0.7142857142857143
+          },
+          {
+            "fold": 2,
+            "train_n": 406,
+            "test_n": 86,
+            "test_start": "2018-01-31",
+            "test_end": "2020-07-24",
+            "macro_f1": 0.5082758620689655,
+            "accuracy": 0.7674418604651163
+          },
+          {
+            "fold": 3,
+            "train_n": 492,
+            "test_n": 85,
+            "test_start": "2020-08-13",
+            "test_end": "2022-12-01",
+            "macro_f1": 0.6598817304699658,
+            "accuracy": 0.8352941176470589
+          },
+          {
+            "fold": 4,
+            "train_n": 577,
+            "test_n": 80,
+            "test_start": "2022-12-08",
+            "test_end": "2026-10-18",
+            "macro_f1": 0.5519960722943325,
+            "accuracy": 0.7
+          }
+        ],
+        "mean_fold_macro_f1": 0.5539273050972049,
+        "std_fold_macro_f1": 0.06465559780739112,
+        "pooled_macro_f1": 0.5535509031198687,
+        "pooled_accuracy": 0.755223880597015,
+        "pooled_ece": 0.1552738231039079,
+        "pooled_n": 335,
+        "match_type": "Test"
+      }
+    },
+    "rf:day": {
+      "T20": {
+        "weather_mode": "day",
+        "model_family": "rf",
+        "n_raw_features": 21,
+        "folds": [
+          {
+            "fold": 1,
+            "train_n": 1455,
+            "test_n": 421,
+            "test_start": "2020-10-12",
+            "test_end": "2022-02-10",
+            "macro_f1": 0.4555288578971785,
+            "accuracy": 0.5914489311163895
+          },
+          {
+            "fold": 2,
+            "train_n": 1876,
+            "test_n": 490,
+            "test_start": "2022-02-11",
+            "test_end": "2023-03-28",
+            "macro_f1": 0.46637239177020917,
+            "accuracy": 0.5530612244897959
+          },
+          {
+            "fold": 3,
+            "train_n": 2366,
+            "test_n": 374,
+            "test_start": "2023-03-29",
+            "test_end": "2024-08-24",
+            "macro_f1": 0.49186981600774704,
+            "accuracy": 0.5882352941176471
+          },
+          {
+            "fold": 4,
+            "train_n": 2740,
+            "test_n": 342,
+            "test_start": "2024-08-27",
+            "test_end": "2026-10-29",
+            "macro_f1": 0.4183529835703748,
+            "accuracy": 0.5175438596491229
+          }
+        ],
+        "mean_fold_macro_f1": 0.4580310123113774,
+        "std_fold_macro_f1": 0.026435061889288167,
+        "pooled_macro_f1": 0.4603975383182127,
+        "pooled_accuracy": 0.5636140135218193,
+        "pooled_ece": 0.11585705835358072,
+        "pooled_n": 1627,
+        "match_type": "T20"
+      },
+      "ODI": {
+        "weather_mode": "day",
+        "model_family": "rf",
+        "n_raw_features": 21,
+        "folds": [
+          {
+            "fold": 1,
+            "train_n": 804,
+            "test_n": 220,
+            "test_start": "2017-05-07",
+            "test_end": "2019-05-11",
+            "macro_f1": 0.42541059178347634,
+            "accuracy": 0.4954545454545455
+          },
+          {
+            "fold": 2,
+            "train_n": 1024,
+            "test_n": 214,
+            "test_start": "2019-05-12",
+            "test_end": "2022-02-12",
+            "macro_f1": 0.3148158713026495,
+            "accuracy": 0.3177570093457944
+          },
+          {
+            "fold": 3,
+            "train_n": 1238,
+            "test_n": 216,
+            "test_start": "2022-02-15",
+            "test_end": "2023-09-04",
+            "macro_f1": 0.4117738658576577,
+            "accuracy": 0.5046296296296297
+          },
+          {
+            "fold": 4,
+            "train_n": 1454,
+            "test_n": 207,
+            "test_start": "2023-09-06",
+            "test_end": "2026-10-31",
+            "macro_f1": 0.46691708500933116,
+            "accuracy": 0.5120772946859904
+          }
+        ],
+        "mean_fold_macro_f1": 0.40472935348827865,
+        "std_fold_macro_f1": 0.05574290762604926,
+        "pooled_macro_f1": 0.4174468756150523,
+        "pooled_accuracy": 0.4574095682613769,
+        "pooled_ece": 0.07888856212913918,
+        "pooled_n": 857,
+        "match_type": "ODI"
+      },
+      "Test": {
+        "weather_mode": "day",
+        "model_family": "rf",
+        "n_raw_features": 21,
+        "folds": [
+          {
+            "fold": 1,
+            "train_n": 322,
+            "test_n": 84,
+            "test_start": "2016-01-02",
+            "test_end": "2018-01-24",
+            "macro_f1": 0.503225806451613,
+            "accuracy": 0.7142857142857143
+          },
+          {
+            "fold": 2,
+            "train_n": 406,
+            "test_n": 86,
+            "test_start": "2018-01-31",
+            "test_end": "2020-07-24",
+            "macro_f1": 0.532254281022754,
+            "accuracy": 0.7906976744186046
+          },
+          {
+            "fold": 3,
+            "train_n": 492,
+            "test_n": 85,
+            "test_start": "2020-08-13",
+            "test_end": "2022-12-01",
+            "macro_f1": 0.5314814814814816,
+            "accuracy": 0.8117647058823529
+          },
+          {
+            "fold": 4,
+            "train_n": 577,
+            "test_n": 80,
+            "test_start": "2022-12-08",
+            "test_end": "2026-10-18",
+            "macro_f1": 0.523972602739726,
+            "accuracy": 0.7125
+          }
+        ],
+        "mean_fold_macro_f1": 0.5227335429238937,
+        "std_fold_macro_f1": 0.011718126284239985,
+        "pooled_macro_f1": 0.5282795337732652,
+        "pooled_accuracy": 0.7582089552238805,
+        "pooled_ece": 0.19010961094375356,
+        "pooled_n": 335,
+        "match_type": "Test"
+      }
+    },
+    "rf2:ctx": {
+      "T20": {
+        "weather_mode": "ctx",
+        "model_family": "rf2",
+        "n_raw_features": 29,
+        "folds": [
+          {
+            "fold": 1,
+            "train_n": 1455,
+            "test_n": 421,
+            "test_start": "2020-10-12",
+            "test_end": "2022-02-10",
+            "macro_f1": 0.43657000987044375,
+            "accuracy": 0.6152019002375297
+          },
+          {
+            "fold": 2,
+            "train_n": 1876,
+            "test_n": 490,
+            "test_start": "2022-02-11",
+            "test_end": "2023-03-28",
+            "macro_f1": 0.4295531985187158,
+            "accuracy": 0.5244897959183673
+          },
+          {
+            "fold": 3,
+            "train_n": 2366,
+            "test_n": 374,
+            "test_start": "2023-03-29",
+            "test_end": "2024-08-24",
+            "macro_f1": 0.4757174342080002,
+            "accuracy": 0.5962566844919787
+          },
+          {
+            "fold": 4,
+            "train_n": 2740,
+            "test_n": 342,
+            "test_start": "2024-08-27",
+            "test_end": "2026-10-29",
+            "macro_f1": 0.42483248393329714,
+            "accuracy": 0.5146198830409356
+          }
+        ],
+        "mean_fold_macro_f1": 0.44166828163261423,
+        "std_fold_macro_f1": 0.02009699286642069,
+        "pooled_macro_f1": 0.44441284242346074,
+        "pooled_accuracy": 0.5623847572218807,
+        "pooled_ece": 0.08680718001520608,
+        "pooled_n": 1627,
+        "match_type": "T20"
+      },
+      "ODI": {
+        "weather_mode": "ctx",
+        "model_family": "rf2",
+        "n_raw_features": 29,
+        "folds": [
+          {
+            "fold": 1,
+            "train_n": 804,
+            "test_n": 220,
+            "test_start": "2017-05-07",
+            "test_end": "2019-05-11",
+            "macro_f1": 0.34244044795215706,
+            "accuracy": 0.4409090909090909
+          },
+          {
+            "fold": 2,
+            "train_n": 1024,
+            "test_n": 214,
+            "test_start": "2019-05-12",
+            "test_end": "2022-02-12",
+            "macro_f1": 0.35155785374808973,
+            "accuracy": 0.35514018691588783
+          },
+          {
+            "fold": 3,
+            "train_n": 1238,
+            "test_n": 216,
+            "test_start": "2022-02-15",
+            "test_end": "2023-09-04",
+            "macro_f1": 0.4545405947362166,
+            "accuracy": 0.5
+          },
+          {
+            "fold": 4,
+            "train_n": 1454,
+            "test_n": 207,
+            "test_start": "2023-09-06",
+            "test_end": "2026-10-31",
+            "macro_f1": 0.43732295177958197,
+            "accuracy": 0.4444444444444444
+          }
+        ],
+        "mean_fold_macro_f1": 0.39646546205401134,
+        "std_fold_macro_f1": 0.04994359552333635,
+        "pooled_macro_f1": 0.40794817729044236,
+        "pooled_accuracy": 0.4352392065344224,
+        "pooled_ece": 0.05218787180494714,
+        "pooled_n": 857,
+        "match_type": "ODI"
+      },
+      "Test": {
+        "weather_mode": "ctx",
+        "model_family": "rf2",
+        "n_raw_features": 29,
+        "folds": [
+          {
+            "fold": 1,
+            "train_n": 322,
+            "test_n": 84,
+            "test_start": "2016-01-02",
+            "test_end": "2018-01-24",
+            "macro_f1": 0.49952380952380954,
+            "accuracy": 0.7142857142857143
+          },
+          {
+            "fold": 2,
+            "train_n": 406,
+            "test_n": 86,
+            "test_start": "2018-01-31",
+            "test_end": "2020-07-24",
+            "macro_f1": 0.5010822510822511,
+            "accuracy": 0.7093023255813954
+          },
+          {
+            "fold": 3,
+            "train_n": 492,
+            "test_n": 85,
+            "test_start": "2020-08-13",
+            "test_end": "2022-12-01",
+            "macro_f1": 0.600417524343421,
+            "accuracy": 0.8
+          },
+          {
+            "fold": 4,
+            "train_n": 577,
+            "test_n": 80,
+            "test_start": "2022-12-08",
+            "test_end": "2026-10-18",
+            "macro_f1": 0.6238095238095238,
+            "accuracy": 0.725
+          }
+        ],
+        "mean_fold_macro_f1": 0.5562082771897514,
+        "std_fold_macro_f1": 0.05651635539252674,
+        "pooled_macro_f1": 0.5644518573428877,
+        "pooled_accuracy": 0.7373134328358208,
+        "pooled_ece": 0.15438906175251732,
+        "pooled_n": 335,
+        "match_type": "Test"
+      }
+    },
+    "rf2:day": {
+      "T20": {
+        "weather_mode": "day",
+        "model_family": "rf2",
+        "n_raw_features": 21,
+        "folds": [
+          {
+            "fold": 1,
+            "train_n": 1455,
+            "test_n": 421,
+            "test_start": "2020-10-12",
+            "test_end": "2022-02-10",
+            "macro_f1": 0.4145896679318463,
+            "accuracy": 0.5463182897862233
+          },
+          {
+            "fold": 2,
+            "train_n": 1876,
+            "test_n": 490,
+            "test_start": "2022-02-11",
+            "test_end": "2023-03-28",
+            "macro_f1": 0.4158359986146383,
+            "accuracy": 0.45102040816326533
+          },
+          {
+            "fold": 3,
+            "train_n": 2366,
+            "test_n": 374,
+            "test_start": "2023-03-29",
+            "test_end": "2024-08-24",
+            "macro_f1": 0.44351137859695317,
+            "accuracy": 0.4893048128342246
+          },
+          {
+            "fold": 4,
+            "train_n": 2740,
+            "test_n": 342,
+            "test_start": "2024-08-27",
+            "test_end": "2026-10-29",
+            "macro_f1": 0.3993281335522714,
+            "accuracy": 0.43567251461988304
+          }
+        ],
+        "mean_fold_macro_f1": 0.4183162946739273,
+        "std_fold_macro_f1": 0.015932530653405295,
+        "pooled_macro_f1": 0.42423674495453967,
+        "pooled_accuracy": 0.4812538414259373,
+        "pooled_ece": 0.0819264075260418,
+        "pooled_n": 1627,
+        "match_type": "T20"
+      },
+      "ODI": {
+        "weather_mode": "day",
+        "model_family": "rf2",
+        "n_raw_features": 21,
+        "folds": [
+          {
+            "fold": 1,
+            "train_n": 804,
+            "test_n": 220,
+            "test_start": "2017-05-07",
+            "test_end": "2019-05-11",
+            "macro_f1": 0.35545590433482815,
+            "accuracy": 0.38636363636363635
+          },
+          {
+            "fold": 2,
+            "train_n": 1024,
+            "test_n": 214,
+            "test_start": "2019-05-12",
+            "test_end": "2022-02-12",
+            "macro_f1": 0.29638218923933213,
+            "accuracy": 0.2850467289719626
+          },
+          {
+            "fold": 3,
+            "train_n": 1238,
+            "test_n": 216,
+            "test_start": "2022-02-15",
+            "test_end": "2023-09-04",
+            "macro_f1": 0.3783985267361227,
+            "accuracy": 0.39814814814814814
+          },
+          {
+            "fold": 4,
+            "train_n": 1454,
+            "test_n": 207,
+            "test_start": "2023-09-06",
+            "test_end": "2026-10-31",
+            "macro_f1": 0.3747090067490568,
+            "accuracy": 0.3671497584541063
+          }
+        ],
+        "mean_fold_macro_f1": 0.351236406764835,
+        "std_fold_macro_f1": 0.03284635844135648,
+        "pooled_macro_f1": 0.35929356326082496,
+        "pooled_accuracy": 0.35939323220536756,
+        "pooled_ece": 0.1222628895768622,
+        "pooled_n": 857,
+        "match_type": "ODI"
+      },
+      "Test": {
+        "weather_mode": "day",
+        "model_family": "rf2",
+        "n_raw_features": 21,
+        "folds": [
+          {
+            "fold": 1,
+            "train_n": 322,
+            "test_n": 84,
+            "test_start": "2016-01-02",
+            "test_end": "2018-01-24",
+            "macro_f1": 0.5107974151452412,
+            "accuracy": 0.6547619047619048
+          },
+          {
+            "fold": 2,
+            "train_n": 406,
+            "test_n": 86,
+            "test_start": "2018-01-31",
+            "test_end": "2020-07-24",
+            "macro_f1": 0.44570886676149835,
+            "accuracy": 0.6395348837209303
+          },
+          {
+            "fold": 3,
+            "train_n": 492,
+            "test_n": 85,
+            "test_start": "2020-08-13",
+            "test_end": "2022-12-01",
+            "macro_f1": 0.555008210180624,
+            "accuracy": 0.7647058823529411
+          },
+          {
+            "fold": 4,
+            "train_n": 577,
+            "test_n": 80,
+            "test_start": "2022-12-08",
+            "test_end": "2026-10-18",
+            "macro_f1": 0.5395238095238095,
+            "accuracy": 0.675
+          }
+        ],
+        "mean_fold_macro_f1": 0.5127595754027933,
+        "std_fold_macro_f1": 0.04183574718721787,
+        "pooled_macro_f1": 0.5161490976097002,
+        "pooled_accuracy": 0.6835820895522388,
+        "pooled_ece": 0.13118471636801077,
+        "pooled_n": 335,
+        "match_type": "Test"
+      }
+    },
+    "avg:ctx": {
+      "T20": {
+        "weather_mode": "ctx",
+        "model_family": "avg",
+        "n_raw_features": 29,
+        "folds": [
+          {
+            "fold": 1,
+            "train_n": 1455,
+            "test_n": 421,
+            "test_start": "2020-10-12",
+            "test_end": "2022-02-10",
+            "macro_f1": 0.42553981991432815,
+            "accuracy": 0.6460807600950119
+          },
+          {
+            "fold": 2,
+            "train_n": 1876,
+            "test_n": 490,
+            "test_start": "2022-02-11",
+            "test_end": "2023-03-28",
+            "macro_f1": 0.47770059002838944,
+            "accuracy": 0.5918367346938775
+          },
+          {
+            "fold": 3,
+            "train_n": 2366,
+            "test_n": 374,
+            "test_start": "2023-03-29",
+            "test_end": "2024-08-24",
+            "macro_f1": 0.481413530898067,
+            "accuracy": 0.6176470588235294
+          },
+          {
+            "fold": 4,
+            "train_n": 2740,
+            "test_n": 342,
+            "test_start": "2024-08-27",
+            "test_end": "2026-10-29",
+            "macro_f1": 0.42289933195685947,
+            "accuracy": 0.5526315789473685
+          }
+        ],
+        "mean_fold_macro_f1": 0.451888318199411,
+        "std_fold_macro_f1": 0.02771559239455205,
+        "pooled_macro_f1": 0.4577678247088927,
+        "pooled_accuracy": 0.6035648432698217,
+        "pooled_ece": 0.07922681948913926,
+        "pooled_n": 1627,
+        "match_type": "T20"
+      },
+      "ODI": {
+        "weather_mode": "ctx",
+        "model_family": "avg",
+        "n_raw_features": 29,
+        "folds": [
+          {
+            "fold": 1,
+            "train_n": 804,
+            "test_n": 220,
+            "test_start": "2017-05-07",
+            "test_end": "2019-05-11",
+            "macro_f1": 0.4192085235920852,
+            "accuracy": 0.5409090909090909
+          },
+          {
+            "fold": 2,
+            "train_n": 1024,
+            "test_n": 214,
+            "test_start": "2019-05-12",
+            "test_end": "2022-02-12",
+            "macro_f1": 0.39903381642512076,
+            "accuracy": 0.4392523364485981
+          },
+          {
+            "fold": 3,
+            "train_n": 1238,
+            "test_n": 216,
+            "test_start": "2022-02-15",
+            "test_end": "2023-09-04",
+            "macro_f1": 0.38668450009485866,
+            "accuracy": 0.49074074074074076
+          },
+          {
+            "fold": 4,
+            "train_n": 1454,
+            "test_n": 207,
+            "test_start": "2023-09-06",
+            "test_end": "2026-10-31",
+            "macro_f1": 0.4194560004071091,
+            "accuracy": 0.45893719806763283
+          }
+        ],
+        "mean_fold_macro_f1": 0.40609571012979345,
+        "std_fold_macro_f1": 0.013938334288101328,
+        "pooled_macro_f1": 0.4179045295532569,
+        "pooled_accuracy": 0.4830805134189031,
+        "pooled_ece": 0.06869937955385041,
+        "pooled_n": 857,
+        "match_type": "ODI"
+      },
+      "Test": {
+        "weather_mode": "ctx",
+        "model_family": "avg",
+        "n_raw_features": 29,
+        "folds": [
+          {
+            "fold": 1,
+            "train_n": 322,
+            "test_n": 84,
+            "test_start": "2016-01-02",
+            "test_end": "2018-01-24",
+            "macro_f1": 0.5137134403095481,
+            "accuracy": 0.75
+          },
+          {
+            "fold": 2,
+            "train_n": 406,
+            "test_n": 86,
+            "test_start": "2018-01-31",
+            "test_end": "2020-07-24",
+            "macro_f1": 0.5255997135696383,
+            "accuracy": 0.7674418604651163
+          },
+          {
+            "fold": 3,
+            "train_n": 492,
+            "test_n": 85,
+            "test_start": "2020-08-13",
+            "test_end": "2022-12-01",
+            "macro_f1": 0.6566937877720119,
+            "accuracy": 0.8352941176470589
+          },
+          {
+            "fold": 4,
+            "train_n": 577,
+            "test_n": 80,
+            "test_start": "2022-12-08",
+            "test_end": "2026-10-18",
+            "macro_f1": 0.49657534246575336,
+            "accuracy": 0.675
+          }
+        ],
+        "mean_fold_macro_f1": 0.548145571029238,
+        "std_fold_macro_f1": 0.06351395741609216,
+        "pooled_macro_f1": 0.5406958585442693,
+        "pooled_accuracy": 0.7582089552238805,
+        "pooled_ece": 0.06864676890787463,
+        "pooled_n": 335,
+        "match_type": "Test"
+      }
+    },
+    "avg:day": {
+      "T20": {
+        "weather_mode": "day",
+        "model_family": "avg",
+        "n_raw_features": 21,
+        "folds": [
+          {
+            "fold": 1,
+            "train_n": 1455,
+            "test_n": 421,
+            "test_start": "2020-10-12",
+            "test_end": "2022-02-10",
+            "macro_f1": 0.3922884091687857,
+            "accuracy": 0.5391923990498813
+          },
+          {
+            "fold": 2,
+            "train_n": 1876,
+            "test_n": 490,
+            "test_start": "2022-02-11",
+            "test_end": "2023-03-28",
+            "macro_f1": 0.4645744289040849,
+            "accuracy": 0.5428571428571428
+          },
+          {
+            "fold": 3,
+            "train_n": 2366,
+            "test_n": 374,
+            "test_start": "2023-03-29",
+            "test_end": "2024-08-24",
+            "macro_f1": 0.49784825573980784,
+            "accuracy": 0.5882352941176471
+          },
+          {
+            "fold": 4,
+            "train_n": 2740,
+            "test_n": 342,
+            "test_start": "2024-08-27",
+            "test_end": "2026-10-29",
+            "macro_f1": 0.41717260066774625,
+            "accuracy": 0.5146198830409356
+          }
+        ],
+        "mean_fold_macro_f1": 0.4429709236201062,
+        "std_fold_macro_f1": 0.04096493549181271,
+        "pooled_macro_f1": 0.4467932991924968,
+        "pooled_accuracy": 0.5464044253226797,
+        "pooled_ece": 0.06541473645694053,
+        "pooled_n": 1627,
+        "match_type": "T20"
+      },
+      "ODI": {
+        "weather_mode": "day",
+        "model_family": "avg",
+        "n_raw_features": 21,
+        "folds": [
+          {
+            "fold": 1,
+            "train_n": 804,
+            "test_n": 220,
+            "test_start": "2017-05-07",
+            "test_end": "2019-05-11",
+            "macro_f1": 0.433033913954687,
+            "accuracy": 0.4954545454545455
+          },
+          {
+            "fold": 2,
+            "train_n": 1024,
+            "test_n": 214,
+            "test_start": "2019-05-12",
+            "test_end": "2022-02-12",
+            "macro_f1": 0.35324538585408155,
+            "accuracy": 0.3691588785046729
+          },
+          {
+            "fold": 3,
+            "train_n": 1238,
+            "test_n": 216,
+            "test_start": "2022-02-15",
+            "test_end": "2023-09-04",
+            "macro_f1": 0.41028921764627485,
+            "accuracy": 0.5046296296296297
+          },
+          {
+            "fold": 4,
+            "train_n": 1454,
+            "test_n": 207,
+            "test_start": "2023-09-06",
+            "test_end": "2026-10-31",
+            "macro_f1": 0.4415065094551947,
+            "accuracy": 0.46859903381642515
+          }
+        ],
+        "mean_fold_macro_f1": 0.4095187567275595,
+        "std_fold_macro_f1": 0.03443640814411444,
+        "pooled_macro_f1": 0.4186272467039078,
+        "pooled_accuracy": 0.4597432905484247,
+        "pooled_ece": 0.08513452914302327,
+        "pooled_n": 857,
+        "match_type": "ODI"
+      },
+      "Test": {
+        "weather_mode": "day",
+        "model_family": "avg",
+        "n_raw_features": 21,
+        "folds": [
+          {
+            "fold": 1,
+            "train_n": 322,
+            "test_n": 84,
+            "test_start": "2016-01-02",
+            "test_end": "2018-01-24",
+            "macro_f1": 0.5262313860252005,
+            "accuracy": 0.75
+          },
+          {
+            "fold": 2,
+            "train_n": 406,
+            "test_n": 86,
+            "test_start": "2018-01-31",
+            "test_end": "2020-07-24",
+            "macro_f1": 0.5153504880212955,
+            "accuracy": 0.7674418604651163
+          },
+          {
+            "fold": 3,
+            "train_n": 492,
+            "test_n": 85,
+            "test_start": "2020-08-13",
+            "test_end": "2022-12-01",
+            "macro_f1": 0.49361207897793263,
+            "accuracy": 0.7764705882352941
+          },
+          {
+            "fold": 4,
+            "train_n": 577,
+            "test_n": 80,
+            "test_start": "2022-12-08",
+            "test_end": "2026-10-18",
+            "macro_f1": 0.5057077625570776,
+            "accuracy": 0.6875
+          }
+        ],
+        "mean_fold_macro_f1": 0.5102254288953765,
+        "std_fold_macro_f1": 0.012029854522287033,
+        "pooled_macro_f1": 0.5155851578299481,
+        "pooled_accuracy": 0.746268656716418,
+        "pooled_ece": 0.07466319958353292,
+        "pooled_n": 335,
+        "match_type": "Test"
+      }
+    }
+  }
+}

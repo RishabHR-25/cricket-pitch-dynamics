@@ -6,10 +6,11 @@
   batches: **111/111 batches**, and wrote `data/interim/match_weather.csv` with
   **18,585 rows, 0 missing temperature observations, 0 failed geocodes**.
 - **All three format models are trained and saved** (2026-11-09, CPU, with
-  weather and 527 curated role overrides): T20 macro-F1 **0.437** (n=576),
-  ODI **0.417** (n=327), Test **0.492** (n=128), all above their majority
-  baselines. Artifacts in `models/pitch_proxy/` (Git-ignored); reviewable copies
-  in `models/pitch_proxy_results/`.
+  weather context and 527 curated role overrides). Rolling-origin CV macro-F1:
+  T20 **0.453**, ODI **0.420**, Test **0.544**; single hold-out: 0.434 / 0.400 /
+  0.512 (n=576 / 327 / 128). All above their majority baselines. Artifacts in
+  `models/pitch_proxy/` (Git-ignored); reviewable copies in
+  `models/pitch_proxy_results/`.
 - **Do not run two collectors at once.** Two concurrent runs on 2026-11-08
   doubled request traffic and repeatedly re-triggered the hourly limit. The
   collector is silent for ~90 s at startup while it parses `all_json.zip`, so a
@@ -46,17 +47,59 @@ pre-review coordinates are stale; the rest are reused. The cache directory is
 `.gitignore`d, so it stays on the local disk only — copy
 `data/interim/weather_cache/` if you move machines.
 
-## Three-format models trained with weather (2026-11-09)
+## Three-format models trained with weather context (2026-11-09)
 
 Command: `python src\train_pitch_models.py --matches data\raw\cricsheet\all_json.zip
 --weather data\interim\match_weather.csv --output-dir models\pitch_proxy --device cpu
 --role-overrides data\interim\bowler_role_overrides.csv`
 
+Single chronological hold-out (20% of dates):
+
 | Format | Train / test | Macro-F1 | Balanced acc. | Accuracy | Majority macro-F1 | Per-class F1 (Batting / Pace / Spin) |
 | --- | --- | --- | --- | --- | --- | --- |
-| T20 | 2,506 / 576 | **0.437** | 0.475 | 0.523 | 0.269 | 0.20 / 0.63 / 0.48 |
-| ODI | 1,334 / 327 | **0.417** | 0.433 | 0.471 | 0.248 | 0.25 / 0.57 / 0.43 |
-| Test | 529 / 128 | **0.492** | 0.531 | 0.695 | 0.225 | 0.00 / 0.78 / 0.70 |
+| T20 | 2,506 / 576 | **0.434** | 0.449 | 0.554 | 0.269 | 0.16 / 0.68 / 0.45 |
+| ODI | 1,334 / 327 | **0.400** | 0.413 | 0.465 | 0.248 | 0.19 / 0.57 / 0.44 |
+| Test | 529 / 128 | **0.512** | 0.548 | 0.719 | 0.225 | 0.00 / 0.80 / 0.73 |
+
+The hold-out is noisy (bootstrap 95% CI width 0.08–0.11), so the primary
+comparison below uses **4-fold rolling-origin cross-validation** over all
+labelled matches (train on earlier dates, test on the next contiguous block).
+
+### Pre-match moisture context and model comparison (2026-11-09)
+
+`src/build_weather_context.py` re-reads the ERA5 cache (no new API calls) and
+adds strictly prior windows to `match_weather.csv` (18,585 rows, 100% coverage):
+7/14/28-day precipitation, 7/14-day mean temperature, 7-day humidity and wind,
+and `dry_days_before` (consecutive rain-free days, capped at 30). The previous
+day-only table is preserved locally as `data/interim/match_weather_dayonly.csv`.
+
+`src/evaluate_rolling_cv.py` compares variants on identical folds
+(`models/rolling_cv/cv_summary.csv`). Pooled macro-F1 over out-of-fold
+predictions:
+
+| Variant | T20 | ODI | Test | ECE (T20 / ODI / Test) |
+| --- | --- | --- | --- | --- |
+| XGBoost, day-only weather (previous default) | 0.421 | 0.405 | 0.525 | 0.066 / 0.140 / 0.106 |
+| **XGBoost, moisture context (new default)** | **0.453** | **0.420** | **0.544** | **0.058 / 0.106 / 0.100** |
+| Random forest, moisture context | 0.450 | 0.410 | 0.554 | 0.132 / 0.072 / 0.155 |
+| XGB + RF probability average, context | 0.458 | 0.418 | 0.541 | 0.079 / 0.069 / 0.069 |
+| RF two-stage (Batting vs rest, then Pace vs Spin) | 0.444 | 0.408 | 0.564 | 0.087 / 0.052 / 0.154 |
+
+Decisions:
+
+- **Moisture context is the default.** Under CV it improves XGBoost in every
+  format (+0.032 T20, +0.014 ODI, +0.019 Test) and keeps the best single-model
+  calibration. The single hold-out disagrees for ODI, which is exactly the
+  split noise the CV was built to expose.
+- **Keep XGBoost.** RF wins on Test but loses T20/ODI and is much less
+  calibrated. The ensemble is near-best everywhere but never best and doubles
+  the artifact; the two-stage model helps only Test. Both are recorded in
+  `cv_summary.csv` as negative results rather than shipped.
+- Weather (day + context) now accounts for 8.9% (T20), 17.7% (ODI) and 22.5%
+  (Test) of XGBoost importance. `gender` is still the top feature in T20 and
+  ODI; it is absent from the Test top ten.
+- Every gain here is within roughly one fold standard deviation (0.02–0.06),
+  so the honest claim is "small but consistent improvement", not a step change.
 
 ### Role curation addendum (2026-11-09)
 
@@ -77,13 +120,16 @@ and 346 domestic-team players stay in the human review queue.
 | ODI macro-F1 | 0.415 | **0.417** | +0.002 |
 | Test macro-F1 | 0.473 | **0.492** | +0.019 |
 
-- Weather coverage is **100%** in every format; all four weather variables are
-  present. Weather's share of importance grows with match length: T20 3.4%,
-  ODI 6.5%, Test 10.8%.
-- `gender` is still the top feature in T20 and ODI (10.6% and 13.7% of
-  importance); it is absent from the Test model's top features.
-- The Batting class remains the weak point (F1 0.20 T20, 0.25 ODI, 0.00 Test —
-  only 67 Test examples).
+(The macro-F1 rows above are the day-only-weather hold-out at the time of the
+role work; the moisture-context comparison later in this file supersedes them.)
+
+- Weather coverage is **100%** in every format. With the prior-window features,
+  weather's share of XGBoost importance is 8.9% (T20), 17.7% (ODI) and 22.5%
+  (Test).
+- `gender` is still the top feature in T20 and ODI; it is absent from the Test
+  model's top ten.
+- The Batting class remains the weak point (F1 0.16 T20, 0.19 ODI, 0.00 Test —
+  only 17 Test examples in the hold-out).
 - Bug fixed en route: `train_one_format` merged every labeled column with the
   feature frame, so shared context columns were suffixed (`venue_x`/`venue_y`)
   and the feature list no longer matched. It now merges keys + `y` only. The
@@ -191,12 +237,16 @@ python src\audit_datasets.py `
   --weather data\interim\match_weather.csv `
   --matches data\raw\cricsheet\all_json.zip
 
-# 2. Train the three format models
+# 2. Train the three format models (moisture context is automatic)
 python src\train_pitch_models.py `
   --matches data\raw\cricsheet\all_json.zip `
   --weather data\interim\match_weather.csv `
   --output-dir models\pitch_proxy `
-  --device cpu
+  --device cpu `
+  --role-overrides data\interim\bowler_role_overrides.csv
+
+# 3. Re-run the rolling-origin comparison (~5 min, uses cached frames)
+python src\evaluate_rolling_cv.py
 ```
 
 If weather ever needs a refresh, the collector still works and resumes from the

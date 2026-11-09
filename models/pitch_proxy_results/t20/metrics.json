@@ -1,6 +1,7 @@
 {
   "match_type": "T20",
   "training_device": "cpu",
+  "model_family": "xgb",
   "target_semantics": "deterministic behavioral proxy; not physical pitch ground truth",
   "label_rules": {
     "early_overs": 6,
@@ -34,60 +35,60 @@
     "test_start": "2023-12-03"
   },
   "model": {
-    "accuracy": 0.5225694444444444,
-    "balanced_accuracy": 0.4749902240098319,
-    "macro_f1": 0.4371205271729562,
-    "weighted_f1": 0.5585176725667814,
-    "multiclass_log_loss": 0.9485020800587987,
-    "multiclass_brier_score": 0.5877384158570932,
+    "accuracy": 0.5538194444444444,
+    "balanced_accuracy": 0.4490531255237138,
+    "macro_f1": 0.43364637979083104,
+    "weighted_f1": 0.5834362363271142,
+    "multiclass_log_loss": 0.914566988846654,
+    "multiclass_brier_score": 0.5595707533692016,
     "classification_report": {
       "Batting": {
-        "precision": 0.13380281690140844,
-        "recall": 0.37254901960784315,
-        "f1-score": 0.19689119170984457,
+        "precision": 0.11764705882352941,
+        "recall": 0.27450980392156865,
+        "f1-score": 0.16470588235294117,
         "support": 51.0
       },
       "Pace": {
-        "precision": 0.7456445993031359,
-        "recall": 0.5487179487179488,
-        "f1-score": 0.6322008862629247,
+        "precision": 0.7492354740061162,
+        "recall": 0.6282051282051282,
+        "f1-score": 0.6834030683403068,
         "support": 390.0
       },
       "Spin": {
-        "precision": 0.46258503401360546,
-        "recall": 0.5037037037037037,
-        "f1-score": 0.48226950354609927,
+        "precision": 0.46153846153846156,
+        "recall": 0.4444444444444444,
+        "f1-score": 0.4528301886792453,
         "support": 135.0
       },
-      "accuracy": 0.5225694444444444,
+      "accuracy": 0.5538194444444444,
       "macro avg": {
-        "precision": 0.4473441500727166,
-        "recall": 0.4749902240098319,
-        "f1-score": 0.4371205271729562,
+        "precision": 0.44280699812270247,
+        "recall": 0.4490531255237138,
+        "f1-score": 0.43364637979083104,
         "support": 576.0
       },
       "weighted avg": {
-        "precision": 0.6251290225382493,
-        "recall": 0.5225694444444444,
-        "f1-score": 0.5585176725667814,
+        "precision": 0.6258845957813848,
+        "recall": 0.5538194444444444,
+        "f1-score": 0.5834362363271142,
         "support": 576.0
       }
     },
     "confusion_matrix": [
       [
-        19,
-        25,
+        14,
+        30,
         7
       ],
       [
-        104,
-        214,
-        72
+        82,
+        245,
+        63
       ],
       [
-        19,
-        48,
-        68
+        23,
+        52,
+        60
       ]
     ]
   },

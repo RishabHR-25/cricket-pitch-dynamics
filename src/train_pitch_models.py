@@ -35,6 +35,7 @@ from sklearn.metrics import (
 )
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import OneHotEncoder
+from sklearn.ensemble import RandomForestClassifier
 from sklearn.utils.class_weight import compute_sample_weight
 from xgboost import XGBClassifier
 
@@ -471,15 +472,22 @@ def build_features(matches: pd.DataFrame, weather_path: Path) -> pd.DataFrame:
     weather["match_id"] = weather["match_id"].astype(str)
     if weather["match_id"].duplicated().any():
         raise ValueError(f"{weather_path} contains duplicate match_id values.")
+    metadata = {
+        "match_id",
+        "date",
+        "match_type",
+        "city",
+        "location_query",
+        "weather_country",
+        "weather_timezone",
+        "weather_geocode_name",
+        "weather_geocode_resolution",
+        "weather_geocode_candidates",
+    }
     weather_columns = [
         column
-        for column in (
-            "temperature_2m_mean",
-            "precipitation_sum",
-            "wind_speed_10m_max",
-            "relative_humidity_2m_mean",
-        )
-        if column in weather.columns
+        for column in weather.columns
+        if column not in metadata and pd.api.types.is_numeric_dtype(weather[column])
     ]
     if not weather_columns:
         raise ValueError(f"{weather_path} has no supported numeric weather features.")
@@ -513,7 +521,10 @@ def _chronological_split(
 
 
 def _make_pipeline(
-    numeric_columns: list[str], categorical_columns: list[str], device: str = "cpu"
+    numeric_columns: list[str],
+    categorical_columns: list[str],
+    device: str = "cpu",
+    model_kind: str = "xgb",
 ) -> Pipeline:
     preprocessing = ColumnTransformer(
         transformers=[
@@ -549,22 +560,33 @@ def _make_pipeline(
         ],
         remainder="drop",
     )
-    model = XGBClassifier(
-        objective="multi:softprob",
-        num_class=len(CLASS_ORDER),
-        n_estimators=350,
-        max_depth=4,
-        learning_rate=0.04,
-        min_child_weight=4,
-        subsample=0.85,
-        colsample_bytree=0.85,
-        reg_lambda=2.0,
-        eval_metric="mlogloss",
-        tree_method="hist",
-        device=device,
-        n_jobs=4,
-        random_state=42,
-    )
+    if model_kind == "rf":
+        model = RandomForestClassifier(
+            n_estimators=600,
+            max_depth=None,
+            min_samples_leaf=2,
+            max_features="sqrt",
+            class_weight="balanced_subsample",
+            n_jobs=-1,
+            random_state=42,
+        )
+    else:
+        model = XGBClassifier(
+            objective="multi:softprob",
+            num_class=len(CLASS_ORDER),
+            n_estimators=350,
+            max_depth=4,
+            learning_rate=0.04,
+            min_child_weight=4,
+            subsample=0.85,
+            colsample_bytree=0.85,
+            reg_lambda=2.0,
+            eval_metric="mlogloss",
+            tree_method="hist",
+            device=device,
+            n_jobs=4,
+            random_state=42,
+        )
     return Pipeline([("preprocessing", preprocessing), ("model", model)])
 
 
@@ -626,6 +648,7 @@ def train_one_format(
     features: pd.DataFrame,
     output_dir: Path,
     device: str = "cpu",
+    model_kind: str = "xgb",
 ) -> dict[str, Any]:
     # `features` already carries venue/city/gender/toss context, so merge only the
     # keys and the label; selecting every labeled column would suffix the shared
@@ -662,7 +685,7 @@ def train_one_format(
             f"{match_type}: chronological training period is missing proxy class(es) "
             f"{sorted(missing_train_classes)}; do not fit a three-class model on this split."
         )
-    pipeline = _make_pipeline(numeric, categorical, device)
+    pipeline = _make_pipeline(numeric, categorical, device, model_kind)
     sample_weights = compute_sample_weight("balanced", train_labels)
     train_codes = train_labels.map(
         {label: index for index, label in enumerate(CLASS_ORDER)}
@@ -714,6 +737,7 @@ def train_one_format(
     results = {
         "match_type": match_type,
         "training_device": device,
+        "model_family": model_kind,
         "target_semantics": "deterministic behavioral proxy; not physical pitch ground truth",
         "label_rules": LABEL_RULES[match_type],
         "class_order": list(CLASS_ORDER),
@@ -747,6 +771,7 @@ def run_training(
     output_dir: Path,
     device: str = "cpu",
     role_overrides: Path | None = None,
+    model_kind: str = "xgb",
 ) -> dict[str, Any]:
     roles, role_audit = build_player_roles(
         people_path, names_path, international_zip, worldwide_zip, role_overrides
@@ -799,6 +824,14 @@ def run_training(
             "precipitation_sum",
             "wind_speed_10m_max",
             "relative_humidity_2m_mean",
+            "precip_sum_7d",
+            "precip_sum_14d",
+            "precip_sum_28d",
+            "temp_mean_7d",
+            "temp_mean_14d",
+            "humidity_mean_7d",
+            "wind_max_mean_7d",
+            "dry_days_before",
         )
         if column in features.columns
     ]
@@ -829,7 +862,7 @@ def run_training(
             "weather_columns": weather_columns,
         }
         summary["models"][match_type] = train_one_format(
-            match_type, eligible, features, output_dir, device
+            match_type, eligible, features, output_dir, device, model_kind
         )
     with (output_dir / "summary.json").open("w", encoding="utf-8") as file:
         json.dump(summary, file, indent=2)
@@ -860,6 +893,7 @@ def main() -> None:
     )
     parser.add_argument("--output-dir", type=Path, default=Path("models/pitch_proxy"))
     parser.add_argument("--device", choices=("cpu", "cuda"), default="cpu")
+    parser.add_argument("--model", choices=("xgb", "rf"), default="xgb")
     args = parser.parse_args()
     logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
     summary = run_training(
@@ -872,6 +906,7 @@ def main() -> None:
         args.output_dir,
         args.device,
         args.role_overrides,
+        args.model,
     )
     for match_type, metrics in summary["models"].items():
         LOGGER.info(

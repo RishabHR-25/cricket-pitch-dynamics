@@ -7,3 +7,6 @@ data/raw/cricsheet/people.csv
 data/raw/cricsheet/names.csv
 data/raw/kaggle/
 models/pitch_proxy/
+models/pitch_proxy_ctx/
+models/pitch_proxy_rf/
+models/rolling_cv/

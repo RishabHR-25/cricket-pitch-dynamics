@@ -1,6 +1,7 @@
 {
   "match_type": "Test",
   "training_device": "cpu",
+  "model_family": "xgb",
   "target_semantics": "deterministic behavioral proxy; not physical pitch ground truth",
   "label_rules": {
     "early_overs": 10,
@@ -34,12 +35,12 @@
     "test_start": "2021-09-30"
   },
   "model": {
-    "accuracy": 0.6953125,
-    "balanced_accuracy": 0.5305462653288741,
-    "macro_f1": 0.492326139088729,
-    "weighted_f1": 0.6461218525179856,
-    "multiclass_log_loss": 0.8378484510012669,
-    "multiclass_brier_score": 0.46432842039393907,
+    "accuracy": 0.71875,
+    "balanced_accuracy": 0.5480490523968785,
+    "macro_f1": 0.5115646258503402,
+    "weighted_f1": 0.670280612244898,
+    "multiclass_log_loss": 0.8391323946815479,
+    "multiclass_brier_score": 0.4404505230474537,
     "classification_report": {
       "Batting": {
         "precision": 0.0,
@@ -48,46 +49,46 @@
         "support": 17.0
       },
       "Pace": {
-        "precision": 0.7297297297297297,
-        "recall": 0.8307692307692308,
-        "f1-score": 0.7769784172661871,
+        "precision": 0.7466666666666667,
+        "recall": 0.8615384615384616,
+        "f1-score": 0.8,
         "support": 65.0
       },
       "Spin": {
-        "precision": 0.6481481481481481,
-        "recall": 0.7608695652173914,
-        "f1-score": 0.7,
+        "precision": 0.6923076923076923,
+        "recall": 0.782608695652174,
+        "f1-score": 0.7346938775510204,
         "support": 46.0
       },
-      "accuracy": 0.6953125,
+      "accuracy": 0.71875,
       "macro avg": {
-        "precision": 0.4592926259592926,
-        "recall": 0.5305462653288741,
-        "f1-score": 0.492326139088729,
+        "precision": 0.4796581196581197,
+        "recall": 0.5480490523968785,
+        "f1-score": 0.5115646258503402,
         "support": 128.0
       },
       "weighted avg": {
-        "precision": 0.6034941191191191,
-        "recall": 0.6953125,
-        "f1-score": 0.6461218525179856,
+        "precision": 0.6279647435897436,
+        "recall": 0.71875,
+        "f1-score": 0.670280612244898,
         "support": 128.0
       }
     },
     "confusion_matrix": [
       [
         0,
+        10,
+        7
+      ],
+      [
+        0,
+        56,
+        9
+      ],
+      [
+        1,
         9,
-        8
-      ],
-      [
-        0,
-        54,
-        11
-      ],
-      [
-        0,
-        11,
-        35
+        36
       ]
     ]
   },
