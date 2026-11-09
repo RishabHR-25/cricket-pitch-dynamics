@@ -127,9 +127,10 @@ country. These are now pinned with exact coordinates.
   "Page N | total" footer, 12 tables and 7 figures.
 - The project-timeline slide/figure is deliberately **excluded** from the report.
 - Every metric is described as agreement with rule-derived **proxy labels**,
-  never as measured pitch physics. The Word/PDF snapshot still states "24 of 111
-  batches"; weather is now **complete (111/111, 18,585 rows)**. Refresh those two
-  sentences (Sections 5.2 and 7.7) before final submission.
+  never as measured pitch physics. The report now states the finished weather
+  position (111/111 batches, 18,585 rows, 100% coverage) instead of the earlier
+  "24 of 111" snapshot; Sections 5.2, 7.7, the objectives table and the
+  conclusion were refreshed and the `.docx`/PDF rebuilt on 2026-11-09.
 
 ## How to resume
 

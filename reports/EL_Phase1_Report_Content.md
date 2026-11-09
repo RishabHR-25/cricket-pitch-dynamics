@@ -62,7 +62,7 @@ Classify pitch behaviour before a match using free public data, and convert that
 
 | # | Objective | Measure of success | Status at Phase-I |
 | --- | --- | --- | --- |
-| 1 | Complete the data | Weather audit passes at 98% match coverage; bowling styles known for at least 70% of T20I wickets | Partial: 42% of credited wickets have a known style; weather collection at 24 of 111 batches |
+| 1 | Complete the data | Weather audit passes at 98% match coverage; bowling styles known for at least 70% of T20I wickets | Partial: 42% of credited wickets have a known style; weather is complete at 100% match coverage |
 | 2 | Build pitch features | PBP and PWI computed for every venue using past matches only | Partial: PBP built for 13 men's T20I venues; PWI is a raw second-innings step, not yet normalised |
 | 3 | Train and validate classifiers | Random forest and gradient boosting beat the majority and venue baselines; macro-F1 of at least 0.50 in time-aware cross-validation | Partial: macro-F1 0.41 on the held-out period and 0.39–0.45 in cross-validation; beats baselines on macro-F1 but not on accuracy |
 | 4 | Explain and handle new grounds | SHapley Additive exPlanations (SHAP) drivers per prediction; cold-start method tested on held-out venues | Partial: SHAP implemented; cold-start matching still planned |
@@ -72,7 +72,7 @@ Classify pitch behaviour before a match using free public data, and convert that
 
 - Extend the same pipeline to One Day Internationals (ODIs) and Test matches with format-specific label thresholds.
 - Curate the highest-impact missing bowler styles so that more matches become trainable.
-- Quantify whether daily weather adds out-of-time predictive value once the weather table is complete.
+- Quantify whether daily weather adds out-of-time predictive value now that the weather table is complete.
 - Package the pipeline so that a teammate can reproduce every table and figure from the repository.
 
 ## 4. Methodology
@@ -158,7 +158,7 @@ Design decisions taken before implementation:
 
 **Player-style enrichment.** Cricsheet records the bowler's name but not the bowling style. Styles are joined from the two Kaggle registers, first on the ESPNcricinfo identifier and then on a conservative exact normalised name. When a credited wicket-taker cannot be classified, the match is excluded rather than guessed. This is deliberate: silent guessing would contaminate the label.
 
-**Geocoding and weather.** Matches are grouped by city (or venue when the city is blank) and geocoded, with a manual review of every location that failed. All 413 location strings now have coordinates; 94 previously unresolved venues were reviewed by hand and recorded with a rationale. The collector batches up to 25 coordinates per year, caches every response, and reuses the cache on restart. At the time of writing, 24 of 111 batches are cached and 93 remain; the free API's daily quota stopped the run.
+**Geocoding and weather.** Matches are grouped by city (or venue when the city is blank) and geocoded, with a manual review of every location that failed. All 413 location strings now have coordinates; 94 previously unresolved venues were reviewed by hand and recorded with a rationale. The collector batches up to 25 coordinates per year, caches every response, and reuses the cache on restart. Collection is now complete: all 111 year/coordinate batches are cached, and the resulting table holds **18,585 match rows with no missing weather values and no failed geocodes**. The readiness audit passes at 100% weather coverage.
 
 **Labels and features.** The labelling pipeline and the training script were run independently and produced identical labels on all 842 comparable T20I matches, which validates the implementation.
 
@@ -273,7 +273,7 @@ Threshold sensitivity changes 0–9.2% of labels. Tightening the early dot-ball 
 
 ### 7.7 Weather status
 
-Weather collection is incomplete by design rather than by failure: 413 locations are resolved, 111 year/coordinate batches are required, 24 are cached and 93 are pending. The free Open-Meteo daily quota was exhausted during collection. The collector now stops with a clear message instead of retrying for an hour, and the cache allows an exact restart. Weather is therefore **not** part of any model result reported above.
+Weather collection is now **complete**: 413 locations are resolved, all 111 year/coordinate batches are cached, and `match_weather.csv` contains 18,585 rows with 0 missing temperature observations and 0 failed geocodes. The readiness audit passes at 100% coverage. The free Open-Meteo tier throttled the process repeatedly — an hourly request window during collection and the daily quota at the end — so the collector was extended to wait out short limits and resume from its cache. Weather is still **not** part of any model result reported above: the models were trained before the table was finished, and adding the weather columns is the next modelling step.
 
 ## 8. Results and Discussion
 
@@ -285,7 +285,7 @@ The project has produced a working, reproducible pipeline; a documented proxy la
 
 | Objective | Verdict |
 | --- | --- |
-| Complete the data | **Partly met.** Geocoding is complete and audited; weather is 22% cached; bowling styles cover 42% of wickets against a 70% target. |
+| Complete the data | **Partly met.** Geocoding is complete and audited; weather is complete at 100% match coverage; bowling styles cover 42% of wickets against a 70% target. |
 | Build pitch features | **Partly met.** PBP exists for 13 men's venues; PWI is a raw step and is not yet normalised for team strength. |
 | Train and validate classifiers | **Partly met.** Baselines are beaten on macro-F1; the 0.50 macro-F1 target is not yet reached (0.39–0.45 in cross-validation). |
 | Explain and handle new grounds | **Partly met.** SHAP is implemented and interpreted; cold-start matching is designed but not validated. |
@@ -339,7 +339,7 @@ The system was built in vertical slices. The first slice read one archive, produ
 
 ### 10.1 Summary
 
-The project set out to make pitch behaviour measurable with open data. It has delivered the infrastructure to do so: a complete match inventory, a documented proxy label, a reviewed geocoding layer, leakage-safe features, a working weather collector, and a first model comparison with explanation and calibration. The early answer is cautious but positive: the models beat simple baselines on macro-F1 (0.410 versus 0.245), and venue profiles show a plausible relationship between scoring and spin (r = −0.64). The models are not yet ready to advise a captain. Accuracy is below the majority baseline, the Batting class is weak, gender is a confounder, and the weather table is incomplete. The remaining work is clear: curate bowler roles, finish weather, normalise the Pitch Wear Index, and validate cold-start behaviour before claiming applied value.
+The project set out to make pitch behaviour measurable with open data. It has delivered the infrastructure to do so: a complete match inventory, a documented proxy label, a reviewed geocoding layer, leakage-safe features, a working weather collector, and a first model comparison with explanation and calibration. The early answer is cautious but positive: the models beat simple baselines on macro-F1 (0.410 versus 0.245), and venue profiles show a plausible relationship between scoring and spin (r = −0.64). The models are not yet ready to advise a captain. Accuracy is below the majority baseline, the Batting class is weak, and gender is a confounder. Weather data are now complete but not yet tested in a model. The remaining work is clear: curate bowler roles, add the weather features to the comparison, normalise the Pitch Wear Index, and validate cold-start behaviour before claiming applied value.
 
 ### 10.2 Personal reflections
 
@@ -383,7 +383,7 @@ The figures below summarise the problem, the method, the data coverage and the p
 
 ## 12. Outcome of the Work
 
-**Primary target: conference publication.** An IEEE-format paper is planned. The abstract is drafted; the full paper needs the multi-format results, the completed weather join and the role-curation update.
+**Primary target: conference publication.** An IEEE-format paper is planned. The abstract is drafted; the full paper needs the multi-format results, the weather columns joined into the model comparison, and the role-curation update.
 
 **Stretch target: journal publication.** An extended paper is feasible if the ODI and Test models and the normalised Pitch Wear Index hold up on later matches.
 
