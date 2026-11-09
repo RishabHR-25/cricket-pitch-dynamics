@@ -1,0 +1,4 @@
+match_type,matches,matches_with_weather,start,end,weather_coverage
+ODI,3237,3237,2002-06-27,2026-11-02,1.0
+T20,14425,14425,2005-02-17,2026-11-03,1.0
+Test,923,923,2001-12-19,2026-10-28,1.0

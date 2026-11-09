@@ -1,0 +1,272 @@
+{
+  "generated_at_utc": "2026-11-09T13:55:53+00:00",
+  "weather_file": "data\\interim\\match_weather.csv",
+  "rows": 18585,
+  "weather_coverage": 1.0,
+  "geocode_resolution_counts": {
+    "auto": 17955,
+    "reviewed_override:Kigali": 291,
+    "reviewed_override:Moara Vlasiei": 101,
+    "reviewed_override:Gros Islet": 73,
+    "reviewed_override:Kandy": 48,
+    "reviewed_override:Mulapadu": 31,
+    "reviewed_override:Saint Helier": 15,
+    "reviewed_override:Vale": 13,
+    "reviewed_override:Mohali": 12,
+    "reviewed_override:Dehradun": 10,
+    "reviewed_override:Alur": 9,
+    "reviewed_override:Lucknow": 5,
+    "reviewed_override:Mombasa": 5,
+    "reviewed_override:Guangzhou": 4,
+    "reviewed_override:Stellenbosch": 3,
+    "reviewed_override:Katunayake": 2,
+    "reviewed_override:Pocos de Caldas": 2,
+    "reviewed_override:Royal Tunbridge Wells": 2,
+    "reviewed_override:East London": 1,
+    "reviewed_override:Sheikhupura": 1,
+    "reviewed_override:Louth": 1,
+    "reviewed_override:Adelaide": 1
+  },
+  "checks": [
+    {
+      "check": "weather_file_exists",
+      "ok": true,
+      "detail": "data\\interim\\match_weather.csv"
+    },
+    {
+      "check": "match_id_unique",
+      "ok": true,
+      "detail": "0 duplicate match_id values"
+    },
+    {
+      "check": "match_id_complete",
+      "ok": true,
+      "detail": "0 missing match_id values"
+    },
+    {
+      "check": "weather_columns_present",
+      "ok": true,
+      "detail": "found ['temperature_2m_mean', 'precipitation_sum', 'wind_speed_10m_max', 'relative_humidity_2m_mean']"
+    },
+    {
+      "check": "archive_coverage",
+      "ok": true,
+      "detail": "0 eligible matches absent; 0 unknown ids"
+    },
+    {
+      "check": "range_temperature_2m_mean",
+      "ok": true,
+      "detail": "0 values outside [-60.0, 60.0]"
+    },
+    {
+      "check": "range_precipitation_sum",
+      "ok": true,
+      "detail": "0 values outside [0.0, 2000.0]"
+    },
+    {
+      "check": "range_wind_speed_10m_max",
+      "ok": true,
+      "detail": "0 values outside [0.0, 120.0]"
+    },
+    {
+      "check": "range_relative_humidity_2m_mean",
+      "ok": true,
+      "detail": "0 values outside [0.0, 100.0]"
+    },
+    {
+      "check": "weather_coverage",
+      "ok": true,
+      "detail": "100.0% of rows have all weather variables (threshold 98%)"
+    },
+    {
+      "check": "geocodes_resolved",
+      "ok": true,
+      "detail": "0 match rows still use an unresolved location"
+    }
+  ],
+  "ok": true,
+  "coverage_by_format": [
+    {
+      "match_type": "ODI",
+      "matches": 3237,
+      "matches_with_weather": 3237,
+      "start": "2002-06-27",
+      "end": "2026-11-02",
+      "weather_coverage": 1.0
+    },
+    {
+      "match_type": "T20",
+      "matches": 14425,
+      "matches_with_weather": 14425,
+      "start": "2005-02-17",
+      "end": "2026-11-03",
+      "weather_coverage": 1.0
+    },
+    {
+      "match_type": "Test",
+      "matches": 923,
+      "matches_with_weather": 923,
+      "start": "2001-12-19",
+      "end": "2026-10-28",
+      "weather_coverage": 1.0
+    }
+  ],
+  "coverage_by_year": [
+    {
+      "year": 2001,
+      "matches": 1,
+      "matches_with_weather": 1,
+      "weather_coverage": 1.0
+    },
+    {
+      "year": 2002,
+      "matches": 5,
+      "matches_with_weather": 5,
+      "weather_coverage": 1.0
+    },
+    {
+      "year": 2003,
+      "matches": 140,
+      "matches_with_weather": 140,
+      "weather_coverage": 1.0
+    },
+    {
+      "year": 2004,
+      "matches": 96,
+      "matches_with_weather": 96,
+      "weather_coverage": 1.0
+    },
+    {
+      "year": 2005,
+      "matches": 95,
+      "matches_with_weather": 95,
+      "weather_coverage": 1.0
+    },
+    {
+      "year": 2006,
+      "matches": 167,
+      "matches_with_weather": 167,
+      "weather_coverage": 1.0
+    },
+    {
+      "year": 2007,
+      "matches": 220,
+      "matches_with_weather": 220,
+      "weather_coverage": 1.0
+    },
+    {
+      "year": 2008,
+      "matches": 221,
+      "matches_with_weather": 221,
+      "weather_coverage": 1.0
+    },
+    {
+      "year": 2009,
+      "matches": 270,
+      "matches_with_weather": 270,
+      "weather_coverage": 1.0
+    },
+    {
+      "year": 2010,
+      "matches": 268,
+      "matches_with_weather": 268,
+      "weather_coverage": 1.0
+    },
+    {
+      "year": 2011,
+      "matches": 288,
+      "matches_with_weather": 288,
+      "weather_coverage": 1.0
+    },
+    {
+      "year": 2012,
+      "matches": 392,
+      "matches_with_weather": 392,
+      "weather_coverage": 1.0
+    },
+    {
+      "year": 2013,
+      "matches": 434,
+      "matches_with_weather": 434,
+      "weather_coverage": 1.0
+    },
+    {
+      "year": 2014,
+      "matches": 564,
+      "matches_with_weather": 564,
+      "weather_coverage": 1.0
+    },
+    {
+      "year": 2015,
+      "matches": 555,
+      "matches_with_weather": 555,
+      "weather_coverage": 1.0
+    },
+    {
+      "year": 2016,
+      "matches": 732,
+      "matches_with_weather": 732,
+      "weather_coverage": 1.0
+    },
+    {
+      "year": 2017,
+      "matches": 707,
+      "matches_with_weather": 707,
+      "weather_coverage": 1.0
+    },
+    {
+      "year": 2018,
+      "matches": 899,
+      "matches_with_weather": 899,
+      "weather_coverage": 1.0
+    },
+    {
+      "year": 2019,
+      "matches": 1389,
+      "matches_with_weather": 1389,
+      "weather_coverage": 1.0
+    },
+    {
+      "year": 2020,
+      "matches": 617,
+      "matches_with_weather": 617,
+      "weather_coverage": 1.0
+    },
+    {
+      "year": 2021,
+      "matches": 1327,
+      "matches_with_weather": 1327,
+      "weather_coverage": 1.0
+    },
+    {
+      "year": 2022,
+      "matches": 1651,
+      "matches_with_weather": 1651,
+      "weather_coverage": 1.0
+    },
+    {
+      "year": 2023,
+      "matches": 1673,
+      "matches_with_weather": 1673,
+      "weather_coverage": 1.0
+    },
+    {
+      "year": 2024,
+      "matches": 1987,
+      "matches_with_weather": 1987,
+      "weather_coverage": 1.0
+    },
+    {
+      "year": 2025,
+      "matches": 2044,
+      "matches_with_weather": 2044,
+      "weather_coverage": 1.0
+    },
+    {
+      "year": 2026,
+      "matches": 1843,
+      "matches_with_weather": 1843,
+      "weather_coverage": 1.0
+    }
+  ]
+}
