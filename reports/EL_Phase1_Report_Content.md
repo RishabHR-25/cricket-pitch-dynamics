@@ -62,11 +62,11 @@ Classify pitch behaviour before a match using free public data, and convert that
 
 | # | Objective | Measure of success | Status at Phase-I |
 | --- | --- | --- | --- |
-| 1 | Complete the data | Weather audit passes at 98% match coverage; bowling styles known for at least 70% of T20I wickets | Partial: 42% of credited wickets have a known style; weather is complete at 100% match coverage |
+| 1 | Complete the data | Weather audit passes at 98% match coverage; bowling styles known for at least 70% of T20I wickets | Partial: weather is complete at 100% coverage with prior-window features; 3,005 players have a known style, but T20 label coverage is 21.8% (53.4% ODI, 71.3% Test) |
 | 2 | Build pitch features | PBP and PWI computed for every venue using past matches only | Partial: PBP built for 13 men's T20I venues; PWI is a raw second-innings step, not yet normalised |
-| 3 | Train and validate classifiers | Random forest and gradient boosting beat the majority and venue baselines; macro-F1 of at least 0.50 in time-aware cross-validation | Partial: macro-F1 0.41 on the held-out period and 0.39–0.45 in cross-validation; beats baselines on macro-F1 but not on accuracy |
-| 4 | Explain and handle new grounds | SHapley Additive exPlanations (SHAP) drivers per prediction; cold-start method tested on held-out venues | Partial: SHAP implemented; cold-start matching still planned |
-| 5 | Disseminate | IEEE-format conference paper | Planned: abstract drafted, full multi-format results pending |
+| 3 | Train and validate classifiers | Random forest and gradient boosting beat the majority and venue baselines; macro-F1 of at least 0.50 in time-aware cross-validation | Partial: pooled rolling-origin cross-validation macro-F1 0.453 T20, 0.420 ODI, 0.544 Test; all beat their majority baselines, but only Test reaches 0.50 |
+| 4 | Explain and handle new grounds | SHapley Additive exPlanations (SHAP) drivers per prediction; cold-start method tested on held-out venues | Partial: gain importance and an earlier SHAP analysis implemented; cold-start matching still planned |
+| 5 | Disseminate | IEEE-format conference paper and dashboard prototype | Planned: abstract and report drafted with multi-format results; paper and dashboard pending |
 
 ### 3.3 Secondary objectives
 
@@ -136,7 +136,7 @@ Leakage is controlled in three ways. First, the same-match statistics that defin
 
 ### 4.5 Training and evaluation protocol
 
-The most recent 20% of unique match dates form the held-out test period. Class weights compensate for imbalance. Models are compared against two baselines: always predicting the majority class, and predicting from the venue's historical label distribution. Evaluation reports accuracy, balanced accuracy (mean per-class recall, which does not reward ignoring minority classes), macro-F1 (the unweighted mean of per-class F1 scores, where F1 is the harmonic mean of precision and recall), weighted F1, multiclass log loss (a penalty for confident wrong probabilities), the Brier score (mean squared probability error), the confusion matrix, per-class precision/recall/F1, bootstrap confidence intervals, and calibration error. Five-fold time-aware cross-validation repeats the comparison across earlier periods.
+The most recent 20% of unique match dates form the held-out test period. Class weights compensate for imbalance. Models are compared against two baselines: always predicting the majority class, and predicting from the venue's historical label distribution. Evaluation reports accuracy, balanced accuracy (mean per-class recall, which does not reward ignoring minority classes), macro-F1 (the unweighted mean of per-class F1 scores, where F1 is the harmonic mean of precision and recall), weighted F1, multiclass log loss (a penalty for confident wrong probabilities), the Brier score (mean squared probability error), the confusion matrix, per-class precision/recall/F1, bootstrap confidence intervals, and calibration error. Four-fold expanding-window cross-validation repeats the comparison across earlier periods.
 
 ## 5. Project Execution
 
@@ -154,17 +154,17 @@ Design decisions taken before implementation:
 
 ### 5.2 Implementation
 
-**Data ingestion.** The full Cricsheet archive contains 18,585 T20, ODI and Test matches after date and format checks. The T20I subset used for the first modelling cycle contains 5,849 matches; 5,713 pass result and early-window checks.
+**Data ingestion.** The full Cricsheet archive contains 18,585 T20, ODI and Test matches after date and format checks. After the early-window completeness check, 14,109 T20, 3,113 ODI and 921 Test matches are eligible for modelling; 3,082, 1,661 and 657 of those can be labelled.
 
-**Player-style enrichment.** Cricsheet records the bowler's name but not the bowling style. Styles are joined from the two Kaggle registers, first on the ESPNcricinfo identifier and then on a conservative exact normalised name. When a credited wicket-taker cannot be classified, the match is excluded rather than guessed. This is deliberate: silent guessing would contaminate the label.
+**Player-style enrichment.** Cricsheet records the bowler's name but not the bowling style. Styles are joined from the two Kaggle registers, first on the ESPNcricinfo identifier and then on a conservative exact normalised name. A third, reviewed step resolves 527 players by first initial plus surname, but only when the Cricsheet team matches the profile country and every candidate profile agrees on the style class. When a credited wicket-taker still cannot be classified, the match is excluded rather than guessed. This is deliberate: silent guessing would contaminate the label.
 
-**Geocoding and weather.** Matches are grouped by city (or venue when the city is blank) and geocoded, with a manual review of every location that failed. All 413 location strings now have coordinates; 94 previously unresolved venues were reviewed by hand and recorded with a rationale. The collector batches up to 25 coordinates per year, caches every response, and reuses the cache on restart. Collection is now complete: all 111 year/coordinate batches are cached, and the resulting table holds **18,585 match rows with no missing weather values and no failed geocodes**. The readiness audit passes at 100% weather coverage.
+**Geocoding and weather.** Matches are grouped by city (or venue when the city is blank) and geocoded, with a manual review of every location that failed. All 413 location strings now have coordinates; 94 previously unresolved venues were reviewed by hand and recorded with a rationale. The collector batches up to 25 coordinates per year, caches every response, and reuses the cache on restart. Collection is now complete: all 111 year/coordinate batches are cached, and the resulting table holds **18,585 match rows with no missing weather values and no failed geocodes**. The readiness audit passes at 100% weather coverage. A separate script derives prior 7/14/28-day moisture windows from the same cache without new API calls.
 
-**Labels and features.** The labelling pipeline and the training script were run independently and produced identical labels on all 842 comparable T20I matches, which validates the implementation.
+**Labels and features.** The labelling pipeline and the training script were run independently and reproduced the same label on all 5,400 labelled matches, which validates the implementation.
 
-**Modelling and explanation.** Five models were compared on 868 labelled T20Is (703 training, 165 test), followed by SHAP analysis, calibration analysis and a role-curation study.
+**Modelling and explanation.** Separate XGBoost models are trained for T20, ODI and Test with a chronological 80/20 split. Four expanding-window folds provide the rolling-origin cross-validation, and variants are compared on identical folds. Calibration, bootstrap intervals and a role-curation study complete the evaluation.
 
-**Iterations.** The first version used only match context and venue history. Review showed that role coverage, not model choice, limited sample size, so the team added a role-curation curve and a prioritised review queue. The second iteration added calibration and bootstrap intervals after the first results showed that a single accuracy number hid the class imbalance.
+**Iterations.** The first version used only match context and venue history. Review showed that role coverage, not model choice, limited sample size, so the team added a role-curation curve, a prioritised review queue and an auditable override table. The second iteration added calibration and bootstrap intervals after the first results showed that a single accuracy number hid the class imbalance. The third added match-day weather, then prior-window moisture features and rolling-origin model selection.
 
 ## 6. Tools and Techniques Used
 
@@ -199,19 +199,25 @@ No paid software or paid data was used.
 
 ### 7.1 Data audit
 
-| Quantity | Value |
-| --- | --- |
-| T20Is in the archive | 5,849 |
-| Usable after result and early-window checks | 5,713 |
-| Labelled matches (all wicket-taker styles known) | 868 (15%) |
-| Credited wickets with a known bowling style | 42% |
-| Distinct venue strings / venue identifiers | 317 / 301 |
-| Bowlers with at least one credited wicket | 4,370 |
-| Role table rows after joins | 1,069 |
-| Label distribution | Pace 587 · Spin 213 · Batting 68 |
-| Test-period labels | Pace 96 · Spin 57 · Batting 12 |
+| Quantity | T20 | ODI | Test |
+| --- | --- | --- | --- |
+| Matches with a complete early window | 14,109 | 3,113 | 921 |
+| Labelled matches (all wicket-taker styles known) | 3,082 (21.8%) | 1,661 (53.4%) | 657 (71.3%) |
+| Pace / Spin / Batting labels | 2,219 / 623 / 240 | 1,129 / 268 / 264 | 428 / 162 / 67 |
+| Hold-out test matches | 576 | 327 | 128 |
 
-The dominant limitation is visible immediately: only about one match in seven can be labelled, because the style of every wicket-taker must be known. This is a data-coverage problem, not a modelling problem, and Section 7.6 quantifies how quickly it can be fixed.
+The role table now covers **3,005 players**: 1,899 from the worldwide profile name
+match, 579 from an exact Cricinfo identifier, and 527 from a reviewed override.
+The overrides accept a player only when the name matches, the Cricsheet team
+equals the profile country, and every candidate profile agrees on the style
+class; they add 9,768 credited wickets and are recorded row by row in
+`data/interim/bowler_role_overrides.csv`. A further 139 players have conflicting
+style evidence and 346 appear only for domestic sides, so they remain in the
+human review queue rather than being guessed.
+
+T20 remains the hardest format to label: only about one match in five has every
+wicket-taker's style known, against half of ODIs and most Tests. Section 7.6
+shows how much the review queue still offers.
 
 ### 7.2 Venue behaviour profiles
 
@@ -221,37 +227,73 @@ The raw Pitch Wear Index step compares the two innings. Second-innings run rate 
 
 ### 7.3 Model comparison
 
-Results on the 165 matches after 9 February 2024, without weather:
+Results on the chronological hold-out (the most recent 20% of unique match
+dates), using match-day weather and pre-match moisture features:
 
-| Model | Accuracy | Balanced accuracy | Macro-F1 | Macro-F1 95% CI | Log loss | Brier score |
+| Format | Test n | Accuracy | Balanced accuracy | Macro-F1 (95% CI) | Majority macro-F1 | Log loss |
 | --- | --- | --- | --- | --- | --- | --- |
-| Majority class | 0.582 | 0.333 | 0.245 | 0.223–0.265 | 0.913 | 0.566 |
-| Venue prior | 0.594 | 0.359 | 0.318 | 0.265–0.367 | 0.958 | 0.590 |
-| Logistic regression | 0.455 | 0.463 | 0.406 | 0.333–0.474 | 1.126 | 0.696 |
-| Random forest | 0.497 | 0.409 | 0.405 | 0.341–0.474 | 0.925 | 0.569 |
-| XGBoost | 0.497 | 0.427 | **0.410** | 0.336–0.491 | 1.015 | 0.620 |
+| T20 | 576 | 0.554 | 0.449 | 0.434 (0.395–0.474) | 0.269 | 0.915 |
+| ODI | 327 | 0.465 | 0.413 | 0.400 (0.348–0.453) | 0.248 | 1.065 |
+| Test | 128 | 0.719 | 0.548 | 0.512 (0.459–0.558) | 0.225 | 0.839 |
 
-XGBoost has the best macro-F1 (0.410), narrowly ahead of random forest (0.405) and logistic regression (0.406); the confidence intervals overlap, so the three cannot be separated reliably. All learned models beat the majority baseline on macro-F1, and all beat the venue prior except on accuracy. The XGBoost confusion matrix shows where the errors are:
+All three models beat the majority baseline on macro-F1 by a wide margin, and
+the Test model also beats it on accuracy. T20 and ODI show the accuracy paradox:
+the majority class (Pace) is right more often, yet the model is far better on
+the minority classes, which is what macro-F1 rewards. Per-class F1 is
+0.16 / 0.68 / 0.45 for T20, 0.19 / 0.57 / 0.44 for ODI and 0.00 / 0.80 / 0.73
+for Test (Batting / Pace / Spin). Batting is the persistent failure: it is only
+4–16% of labels, and in Test the hold-out contains just 17 examples, so the
+model never predicts it. Most remaining error is Pace-versus-Spin confusion,
+which is expected because the label depends on **who** took wickets rather than
+on a physical measurement.
 
-| Actual \ Predicted | Batting | Pace | Spin |
-| --- | --- | --- | --- |
-| Batting | 3 | 7 | 2 |
-| Pace | 22 | 50 | 24 |
-| Spin | 3 | 25 | 29 |
+### 7.4 Rolling-origin cross-validation and calibration
 
-Batting is the hardest class (F1 about 0.15 from only 12 test cases). Most errors are Pace/Spin confusion, which is expected because the label depends on **who** took wickets rather than on a physical measurement.
+A single hold-out has a 95% interval roughly ±0.04–0.05 wide, so small
+differences between variants cannot be read from it. Model selection therefore
+uses four expanding-window folds: the first 50% of dates train the first model,
+and each subsequent quarter is predicted in turn. Every labelled match is
+tested exactly once, always using earlier matches only. Pooled out-of-fold
+macro-F1 and Expected Calibration Error (ECE):
 
-### 7.4 Time-aware cross-validation and calibration
+| Variant | T20 | ODI | Test | ECE (T20 / ODI / Test) |
+| --- | --- | --- | --- | --- |
+| XGBoost, match-day weather only (previous default) | 0.421 | 0.405 | 0.525 | 0.066 / 0.140 / 0.106 |
+| **XGBoost, moisture context (shipped)** | **0.453** | **0.420** | **0.544** | **0.058 / 0.106 / 0.100** |
+| Random forest, moisture context | 0.450 | 0.410 | 0.554 | 0.132 / 0.072 / 0.155 |
+| Average of XGBoost and random-forest probabilities | 0.458 | 0.418 | 0.541 | 0.079 / 0.069 / 0.069 |
+| Two-stage random forest (Batting vs rest, then Pace vs Spin) | 0.444 | 0.408 | 0.564 | 0.087 / 0.052 / 0.154 |
 
-Five-fold time-aware cross-validation gives mean macro-F1 of 0.451 (random forest), 0.400 (logistic regression), 0.395 (XGBoost), 0.290 (venue prior) and 0.260 (majority). The ranking differs from the single held-out split, which is a warning against over-reading one test period. Accuracy is higher for the baselines (majority 0.643, venue prior 0.650) than for the learned models (random forest 0.562, XGBoost 0.539, logistic regression 0.481) because Pace dominates the test set.
-
-Calibration error is lowest for random forest (ECE 0.022), followed by XGBoost (0.144) and logistic regression (0.183). A calibrated model is essential if probabilities are to drive a toss recommendation.
+Adding the prior-window moisture features improves XGBoost in every format
+(+0.032 T20, +0.014 ODI, +0.019 Test) and keeps the best calibration of the
+single models; it is therefore the default. Random forest wins on Test but loses
+on T20 and ODI and is markedly less calibrated. The probability average is
+close to the best everywhere and best calibrated, but it never wins and doubles
+the artifact, so it is recorded rather than shipped. The two-stage model helps
+only Test. Every difference is within roughly one fold standard deviation
+(0.02–0.06), so the defensible claim is a small but consistent improvement, not
+a step change. The single hold-out in Section 7.3 is noisier and disagrees on
+ODI, which is precisely why the cross-validation is reported alongside it.
 
 ### 7.5 Explainability
 
-The top SHAP contributions are: gender (0.414), prior five-match venue run rate (0.234), prior spin wicket share (0.214), prior early dot-ball percentage (0.200), toss winner batted first (0.178) and seasonal encodings (0.168 and 0.143). Removing gender drops XGBoost macro-F1 from 0.410 to 0.347 and balanced accuracy from 0.427 to 0.345.
+The shipped models are explained with XGBoost gain importance. The strongest
+signals are match context rather than weather: `gender` contributes 9.4% of
+importance in T20 and 13.0% in ODI, venue identity is the next largest block,
+and the prior five-match spin-wicket share is the most useful continuous venue
+feature. Weather, including the new moisture windows, accounts for 8.9% of
+importance in T20, 17.7% in ODI and 22.5% in Test; in Test the leading weather
+terms are 7-day and 14-day mean temperature. The earlier T20I SHAP analysis
+reached the same conclusion about gender, so the effect is not an artefact of
+one explanation method.
 
-That finding is important and uncomfortable. Gender is not a property of a pitch; it is a proxy for a different distribution of matches, venues and player pools. The label rule also behaves differently by category: women's matches are 1.8% Batting, 50.7% Pace and 47.4% Spin, while men's matches are 10.6% Batting, 75.3% Pace and 14.1% Spin. A single set of thresholds is therefore not transferable without review. Until this is resolved, the model should be read as a **descriptive** tool and, if used at all, with gender-stratified reporting.
+That finding is important and uncomfortable. Gender is not a property of a
+pitch; it is a proxy for a different distribution of matches, venues and player
+pools. The label rule also behaves differently by category: women's matches are
+1.8% Batting, 50.7% Pace and 47.4% Spin, while men's matches are 10.6% Batting,
+75.3% Pace and 14.1% Spin. A single set of thresholds is therefore not
+transferable without review. Until this is resolved, the model should be read as
+a **descriptive** tool and, if used at all, with gender-stratified reporting.
 
 ### 7.6 Role coverage and label sensitivity
 
@@ -269,39 +311,72 @@ The role-curation curve shows the return on manual review:
 
 Curating the top 200 bowlers raises the usable sample by about 50%; curating 400 nearly doubles it. This is the single largest lever available for model quality and it costs no external data.
 
+The first pass of that review is complete. A conservative rule — name match
+plus Cricsheet team equals profile country plus agreement on style class —
+resolved **527 players covering 9,768 credited wickets** without a single guess;
+conflicting and domestic-side players were left in the queue. That raised
+labelled matches from 2,308 to 3,082 in T20 (+33.5%), 1,199 to 1,661 in ODI
+(+38.5%) and 576 to 657 in Test (+14.1%). Every added label carries its join
+method in `player_role_join_audit.csv`, so the decision can be audited row by
+row.
+
 Threshold sensitivity changes 0–9.2% of labels. Tightening the early dot-ball limit to 30% changes 4.5% of labels; changing the spin-to-pace ratio to 1.0 changes 9.2%. The labels are therefore reasonably stable to small threshold moves, but not to large ones. The cut-offs must be reviewed by format and by category before publication.
 
-### 7.7 Weather status
+### 7.7 Weather features
 
-Weather collection is now **complete**: 413 locations are resolved, all 111 year/coordinate batches are cached, and `match_weather.csv` contains 18,585 rows with 0 missing temperature observations and 0 failed geocodes. The readiness audit passes at 100% coverage. The free Open-Meteo tier throttled the process repeatedly — an hourly request window during collection and the daily quota at the end — so the collector was extended to wait out short limits and resume from its cache. Weather is still **not** part of any model result reported above: the models were trained before the table was finished, and adding the weather columns is the next modelling step.
+Weather collection is **complete**: 413 locations are resolved, all 111
+year/coordinate batches are cached, and `match_weather.csv` contains 18,585 rows
+with 0 missing temperature observations and 0 failed geocodes. The readiness
+audit passes at 100% coverage. The free Open-Meteo tier throttled the process
+repeatedly — an hourly request window during collection and the daily quota at
+the end — so the collector was extended to wait out short limits and resume from
+its cache.
+
+The table now also carries strictly prior windows derived from the same cached
+ERA5 series, with no additional API calls: 7-, 14- and 28-day precipitation,
+7- and 14-day mean temperature, 7-day humidity and wind, and the number of
+consecutive dry days before the match. Pitches dry over days, so these features
+are physically better motivated than the match-day value alone. In
+rolling-origin cross-validation they improve the model in all three formats
+(Section 7.4), and weather's share of importance grows with match length to
+22.5% in Test.
 
 ## 8. Results and Discussion
 
 ### 8.1 Phase-I results
 
-The project has produced a working, reproducible pipeline; a documented proxy label; a complete geocoding audit; a first venue profile; and the first honest model comparison. On later T20I matches, the best macro-F1 is 0.410, against 0.245 for the majority baseline and 0.318 for the venue prior. The learned models are therefore learning something beyond "Pace is most common", but the margin is modest and the accuracy paradox (0.497 for XGBoost versus 0.582 for the majority class) shows that headline accuracy is the wrong summary for this imbalanced target.
+The project has produced a working, reproducible pipeline; a documented proxy
+label; a complete geocoding audit; venue behaviour profiles; and a validated
+three-format model comparison. On the chronological hold-out the macro-F1 is
+0.434 for T20, 0.400 for ODI and 0.512 for Test, against majority baselines of
+0.269, 0.248 and 0.225. Rolling-origin cross-validation gives the more reliable
+estimates of 0.453, 0.420 and 0.544. The models are therefore learning beyond
+"Pace is most common", but the margin is modest. The accuracy paradox in T20 and
+ODI (the majority class is more accurate but far worse on macro-F1) shows that
+headline accuracy is the wrong summary for this imbalanced target. The Batting
+class, gender confounding and T20 role coverage remain the main weaknesses.
 
 ### 8.2 Were the objectives met?
 
 | Objective | Verdict |
 | --- | --- |
-| Complete the data | **Partly met.** Geocoding is complete and audited; weather is complete at 100% match coverage; bowling styles cover 42% of wickets against a 70% target. |
+| Complete the data | **Largely met.** Geocoding is complete and audited; weather is complete at 100% match coverage with prior-window features; 3,005 players have a known style after 527 audited overrides. T20 label coverage is still 21.8% because every wicket-taker must be known. |
 | Build pitch features | **Partly met.** PBP exists for 13 men's venues; PWI is a raw step and is not yet normalised for team strength. |
-| Train and validate classifiers | **Partly met.** Baselines are beaten on macro-F1; the 0.50 macro-F1 target is not yet reached (0.39–0.45 in cross-validation). |
-| Explain and handle new grounds | **Partly met.** SHAP is implemented and interpreted; cold-start matching is designed but not validated. |
-| Disseminate | **Not yet met.** The abstract is drafted; the paper needs multi-format results. |
+| Train and validate classifiers | **Partly met.** All three formats beat their majority baselines on macro-F1; the 0.50 target is met only by Test in cross-validation (0.544). T20 and ODI reach 0.453 and 0.420. |
+| Explain and handle new grounds | **Partly met.** Gain importance and an earlier SHAP analysis are interpreted; cold-start matching is designed but not validated. |
+| Disseminate | **Partly met.** The abstract and this report are drafted with multi-format results; the paper and dashboard remain. |
 
 ### 8.3 Unexpected findings
 
 1. **Gender dominates the explanation.** A variable that should not describe a pitch is the strongest predictor. This points to confounding between match category and label distribution, and it must be addressed before any applied claim.
 2. **Accuracy and macro-F1 disagree.** The majority baseline wins on accuracy but loses badly on macro-F1. Reporting accuracy alone would have made the models look worse than they are; reporting only macro-F1 would hide the weak Batting class.
-3. **Role coverage, not weather, is the bottleneck.** At 42% wicket coverage only 15% of matches are usable. Curating 400 bowlers would nearly double the training set, which is worth more than adding weather to 868 matches.
+3. **Role coverage, not weather, is the bottleneck.** T20 label coverage is 21.8% because every wicket-taker must be known, against 53.4% in ODI and 71.3% in Test. The 527 audited overrides added a third more T20 matches; finishing the review queue is still worth more than further model tuning.
 4. **Expert labels are noisy by nature.** The Adams et al. result (umpires reliable on bounce, unreliable on pace) is a useful reminder that even human assessment is imperfect, which supports the decision to report proxy agreement rather than claim physical truth.
 
 ### 8.4 Limitations and threats to validity
 
 - **Proxy labels.** The target is a behavioural rule, not a measurement. A match labelled Spin may be a pace-friendly pitch on which spinners happened to take wickets.
-- **Small, imbalanced sample.** 868 labelled matches, 68 of them Batting, produce wide confidence intervals.
+- **Small, imbalanced sample.** 5,400 labelled matches across three formats, but only 571 Batting examples (67 in Test); confidence intervals are wide.
 - **Selection bias.** Requiring complete role information favours recent matches, men's internationals and better-documented players.
 - **Weather is ambient and city-level.** It is not stadium conditions and is not aligned to the start time.
 - **Single-split risk.** Cross-validation and held-out rankings differ, so no model is reliably best yet.
@@ -316,9 +391,12 @@ The prototype is a command-line software system with five modules:
 | Module | Function |
 | --- | --- |
 | `src/collect_match_weather.py` | Parses the Cricsheet archive, geocodes locations, fetches and caches ERA5 daily weather, writes the geocode audit and `match_weather.csv` |
+| `src/build_weather_context.py` | Derives prior 7/14/28-day moisture features from the cached ERA5 series without new API calls |
 | `src/phase1_phase2.py` | Generates proxy labels and the leakage-safe T20 feature table |
 | `src/train_pitch_models.py` | Builds features for T20/ODI/Test, joins weather, trains and evaluates the models, and writes metrics |
-| `src/run_t20_preliminary_analysis.py` | Runs the T20I comparison, sensitivity analysis, role-curation curve, calibration and SHAP |
+| `src/build_role_overrides.py` | Resolves bowler styles with a name-plus-country-plus-agreeing-style rule; writes the audited override table |
+| `src/evaluate_rolling_cv.py` | Compares model and weather variants on identical expanding-window folds |
+| `src/run_t20_preliminary_analysis.py` | Runs the earlier T20I comparison, sensitivity analysis, role-curation curve, calibration and SHAP |
 | `src/audit_datasets.py` | Checks match coverage, value ranges, duplicates and geocoding; writes a readiness report |
 
 Outputs are plain CSV (comma-separated values) and JSON files, so they can be inspected without the code. The weather cache is content-addressed: a batch's filename is a hash of its coordinates and date range, which makes restarts exact and prevents silent recomputation.
@@ -329,17 +407,17 @@ The system was built in vertical slices. The first slice read one archive, produ
 
 ### 9.3 Testing and validation
 
-- **Label agreement:** the labelling pipeline and the training script produced identical labels on all 842 comparable matches (100%).
+- **Label agreement:** the labelling pipeline and the training script reproduced the same label on all 5,400 labelled matches (100%).
 - **Audit:** the readiness audit checks one row per match, unique identifiers, archive coverage, plausible value ranges and unresolved locations, and exits non-zero on failure.
 - **Out-of-time testing:** every model is evaluated on later matches only; rolling features use earlier dates only.
-- **Robustness:** five-fold time-aware cross-validation, bootstrap confidence intervals, threshold sensitivity and calibration analysis.
+- **Robustness:** four-fold expanding-window cross-validation, bootstrap confidence intervals, threshold sensitivity and calibration analysis.
 - **Reproducibility:** every response is cached, every override is documented, and the repository records the exact commands.
 
 ## 10. Conclusion
 
 ### 10.1 Summary
 
-The project set out to make pitch behaviour measurable with open data. It has delivered the infrastructure to do so: a complete match inventory, a documented proxy label, a reviewed geocoding layer, leakage-safe features, a working weather collector, and a first model comparison with explanation and calibration. The early answer is cautious but positive: the models beat simple baselines on macro-F1 (0.410 versus 0.245), and venue profiles show a plausible relationship between scoring and spin (r = −0.64). The models are not yet ready to advise a captain. Accuracy is below the majority baseline, the Batting class is weak, and gender is a confounder. Weather data are now complete but not yet tested in a model. The remaining work is clear: curate bowler roles, add the weather features to the comparison, normalise the Pitch Wear Index, and validate cold-start behaviour before claiming applied value.
+The project set out to make pitch behaviour measurable with open data. It has delivered the infrastructure to do so: a complete match inventory, a documented proxy label, a reviewed geocoding layer, leakage-safe features, a complete weather table with prior-window moisture, and a three-format model comparison with explanation and calibration. The answer is cautious but positive: in rolling-origin cross-validation the models reach macro-F1 0.453 (T20), 0.420 (ODI) and 0.544 (Test), against majority baselines of 0.269, 0.248 and 0.225, and venue profiles show a plausible relationship between scoring and spin (r = −0.64). The models are not yet ready to advise a captain. Accuracy is still below the majority baseline in T20 and ODI, the Batting class is weak, and gender is a confounder. The remaining work is clear: finish the role-review queue, normalise the Pitch Wear Index, resolve the gender confounder, and validate cold-start behaviour before claiming applied value.
 
 ### 10.2 Personal reflections
 
@@ -383,7 +461,7 @@ The figures below summarise the problem, the method, the data coverage and the p
 
 ## 12. Outcome of the Work
 
-**Primary target: conference publication.** An IEEE-format paper is planned. The abstract is drafted; the full paper needs the multi-format results, the weather columns joined into the model comparison, and the role-curation update.
+**Primary target: conference publication.** An IEEE-format paper is planned. The abstract and this report are drafted; the full paper needs the final role-curation pass, the gender-confounder analysis and the dashboard evaluation.
 
 **Stretch target: journal publication.** An extended paper is feasible if the ODI and Test models and the normalised Pitch Wear Index hold up on later matches.
 
