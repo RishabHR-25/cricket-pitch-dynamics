@@ -1,0 +1,528 @@
+cricsheet_id,bowler,team,credited_wickets,style,join_method,profile_name,profile_country,profile_style,confidence
+23e3f2d6,T Putthawong,Thailand,157,pace,first initial + surname,Thipatcha Putthawong,Thailand,right-arm-fast-medium,country-unique
+519b872a,O Kamchomphu,Thailand,130,spin,first initial + surname,Onnicha Kamchomphu,Thailand,right-arm-offbreak,country-unique
+4b15618c,S Laomi,Thailand,115,spin,first initial + surname,Suleeporn Laomi,Thailand,legbreak,country-unique
+ffa296f7,H Ishimwe,Rwanda,111,pace,first initial + surname,Henriette Therese Ishimwe,Rwanda,right-arm-fast-medium,country-unique
+49118dc7,SO Ngoche,Kenya,111,spin,first initial + surname,Shem Ngoche,Kenya,slow-left-arm-orthodox,country-unique
+84dc72db,Junaid Siddique,United Arab Emirates,108,pace,full name,Junaid Siddique,United Arab Emirates,right-arm-fast-medium,country-unique
+30d8136b,AR Ramjani,Uganda,101,spin,first initial + surname,Alpesh Ramjani,Uganda,slow-left-arm-orthodox,country-unique
+47b32a5a,IJR Zwilling,Netherlands,101,pace,first initial + surname,Iris Zwilling,Netherlands,right-arm-fast-medium,country-unique
+2b7609f1,H Ssenyondo,Uganda,100,spin,first initial + surname,Henry Ssenyondo,Uganda,slow-left-arm-orthodox,country-unique
+dcdb87f2,Bilal Khan,Oman,95,pace,full name,Bilal Khan,Oman,left-arm-fast-medium,country-unique
+1c5c3dce,IO Okpe,Nigeria,90,pace,first initial + surname,Isaac Okpe,Nigeria,right-arm-fast-medium,country-unique
+20481563,MNM Aslam,Kuwait,90,spin,first initial + surname,Mohammed Aslam,Kuwait,slow-left-arm-orthodox,country-unique
+46a7ac78,DM Nakrani,Uganda,89,pace,first initial + surname,Dinesh Nakrani,Uganda,left-arm-fast-medium,country-unique
+58acb320,N Boochatham,Thailand,89,spin,first initial + surname,Nattaya Boochatham,Thailand,right-arm-offbreak,country-unique
+c6a019f5,C de Lange,Netherlands,87,spin,first initial + surname,Caroline de Lange,Netherlands,legbreak-googly,country-unique
+1252f71a,MRJ Watt,Scotland,87,spin,first initial + surname,Mark Watt,Scotland,slow-left-arm-orthodox,country-unique
+e85d03d6,BM Scholtz,Namibia,85,spin,first initial + surname,Bernard Scholtz,Namibia,slow-left-arm-orthodox,country-unique
+4557dc54,PA van Meekeren,Netherlands,84,pace,first initial + surname,Paul van Meekeren,Netherlands,right-arm-fast-medium,country-unique
+f43dd8c2,SM Sharif,Scotland,79,pace,first initial + surname,Safyaan Sharif,Scotland,right-arm-fast-medium,country-unique
+72eada4c,P Maya,Thailand,74,pace,first initial + surname,Phannita Maya,Thailand,right-arm-fast-medium,country-unique
+2e392afa,P Aho,Nigeria,73,pace,first initial + surname,Peter Aho,Nigeria,right-arm-fast-medium,country-unique
+f6ddfe08,C Sutthiruang,Thailand,72,pace,first initial + surname,Chanida Sutthiruang,Thailand,right-arm-fast-medium,country-unique
+9f998ed8,CW Perchard,Jersey,71,pace,first initial + surname,Charles Perchard,Jersey,right-arm-fast-medium,country-unique
+eb4f9c61,LN Oluoch,Kenya,71,pace,first initial + surname,Lucas Oluoch,Kenya,left-arm-fast-medium,country-unique
+681f522f,SA Okpe,Nigeria,71,spin,first initial + surname,Sylvester Okpe,Nigeria,right-arm-offbreak,country-unique
+f61e2829,AH Maqsood,Scotland,70,spin,first initial + surname,Abtaha Maqsood,Scotland,legbreak,country-unique
+a0a65375,K Fraser,Scotland,69,spin,first initial + surname,Katherine Fraser,Scotland,right-arm-offbreak,country-unique
+64fb6b15,A Bohara,Nepal,67,pace,first initial + surname,Avinash Bohara,Nepal,right-arm-fast-medium,country-unique
+87e33d07,F Nsubuga,Uganda,65,spin,first initial + surname,Frank Nsubuga,Uganda,right-arm-offbreak,country-unique
+9b73d523,LM Kasperek,New Zealand,65,spin,first initial + surname,Leigh Kasperek,New Zealand,right-arm-offbreak,country-unique
+6de4e430,Washeem Abbas,Malta,65,pace,first initial + surname,Waseem Abbas,Malta,right-arm-fast,country-unique
+395695ce,C Kyewuta,Uganda,64,pace,first initial + surname,Cosmas Kyewuta,Uganda,right-arm-fast-medium,country-unique
+9e0bd203,B Ward,Jersey,63,spin,first initial + surname,Benjamin Ward,Jersey,legbreak,country-unique
+f8b50da3,S Dharnidharka,United Arab Emirates,60,pace,first initial + surname,Samaira Dharnidharka,United Arab Emirates,right-arm-fast-medium,country-unique
+dab18aa5,DL Brangman,Bermuda,59,spin,first initial + surname,Derrick Brangman,Bermuda,slow-left-arm-orthodox,country-unique
+1747ea18,DS Airee,Nepal,59,spin,first initial + surname,Dipendra Singh Airee,Nepal,right-arm-offbreak,country-unique
+5673a3fc,NL McCullum,New Zealand,58,spin,first initial + surname,Nathan McCullum,New Zealand,right-arm-offbreak,country-unique
+2dfe0612,Ghulam Ahmadi,Germany,57,spin,first initial + surname,Ghulam Rasul Ahmadi,Germany,right-arm-offbreak,country-unique
+da3b91fd,Imran Khan,Bahrain,57,pace,full name,Imran Khan,Bahrain,right-arm-fast-medium,country-unique
+3c87f0c3,JN Frylinck,Namibia,57,pace,first initial + surname,Jan Frylinck,Namibia,left-arm-fast-medium,country-unique
+e8a552ef,Usman Khan,France,57,pace,full name,Usman Khan,France,right-arm-fast-medium,country-unique
+f0e293b0,Zahoor Khan,United Arab Emirates,57,pace,full name,Zahoor Khan,United Arab Emirates,right-arm-fast-medium,country-unique
+ff6a7ab5,R Trumpelmann,Namibia,56,pace,first initial + surname,Ruben Trumpelmann,Namibia,left-arm-fast,country-unique
+28131839,MA Leask,Scotland,54,spin,first initial + surname,Michael Leask,Scotland,right-arm-offbreak,country-unique
+79209272,Yasir Ali,Spain,53,spin,full name,Yasir Ali,Spain,right-arm-offbreak,country-unique
+8b46fc4f,J Baguma,Uganda,52,spin,first initial + surname,Joseph Baguma,Uganda,right-arm-offbreak,country-unique
+7467fe01,WA Duraisingam,Malaysia,52,pace,first initial + surname,Winifred Duraisingam,Malaysia,right-arm-fast-medium,country-unique
+a3a275ec,K Waiswa,Uganda,51,pace,first initial + surname,Kenneth Waiswa,Uganda,right-arm-fast-medium,country-unique
+a36915ce,N Vanua,Papua New Guinea,50,pace,first initial + surname,Norman Vanua,Papua New Guinea,right-arm-fast-medium,country-unique
+76388dc8,S Badree,West Indies,50,spin,first initial + surname,Samuel Badree,West Indies,legbreak,country-unique
+6c8904c8,S Kotte,United Arab Emirates,49,spin,first initial + surname,Suraksha Kotte,United Arab Emirates,right-arm-offbreak,country-unique
+ea8b65ab,D Hazell,England,46,spin,first initial + surname,Danielle Hazell,England,right-arm-offbreak,country-unique
+f8c72766,D Heyliger,Canada,46,pace,first initial + surname,Dillon Heyliger,Canada,right-arm-fast-medium,country-unique
+fc4375ef,BFW de Leede,Netherlands,44,pace,first initial + surname,Bas de Leede,Netherlands,right-arm-fast-medium,country-unique
+a6ec88f4,HWA Landheer,Netherlands,44,pace,first initial + surname,Hannah Landheer,Netherlands,right-arm-fast-medium,country-unique
+0b581ed6,J Sumerauer,Jersey,44,pace,first initial + surname,Julius Sumerauer,Jersey,right-arm-fast-medium,country-unique
+abbdca1a,PM Seelaar,Netherlands,44,spin,first initial + surname,Pieter Seelaar,Netherlands,slow-left-arm-orthodox,country-unique
+b857468a,V Vijh,Luxembourg,44,pace,first initial + surname,Vikram Vijh,Luxembourg,right-arm-fast-medium,country-unique
+c03c6200,DJG Sammy,West Indies,43,pace,first initial + surname,Darren Sammy,West Indies,right-arm-fast-medium,country-unique
+022745d5,F Overdijk,Netherlands,43,pace,first initial + surname,Frederique Overdijk,Netherlands,right-arm-fast-medium,country-unique
+bf5e7711,M Hill,Hong Kong,43,pace,first initial + surname,Mariko Hill,Hong Kong,right-arm-fast-medium,country-unique
+6a63c29c,SVE Bharathi,Germany,43,pace,first initial + surname,Sri Bharathi,Germany,right-arm-fast-medium,country-unique
+4d35d0b3,EN Lynch,Netherlands,42,spin,first initial + surname,Eva Lynch,Netherlands,legbreak,country-unique
+dfcdb11e,LT Bichard,Guernsey,42,pace,first initial + surname,Luke Bichard,Guernsey,right-arm-fast-medium,country-unique
+8e7be59c,PA Chatterji,Scotland,42,pace,first initial + surname,Priyanaz Chatterji,Scotland,right-arm-fast-medium,country-unique
+94271647,V Vira,Vanuatu,42,spin,first initial + surname,Vince Vira,Vanuatu,right-arm-offbreak,country-unique
+72e60730,A Vala,Papua New Guinea,41,spin,first initial + surname,Assad Vala,Papua New Guinea,right-arm-offbreak,country-unique
+907c51ab,JL Gunn,England,41,pace,first initial + surname,Jenny Gunn,England,right-arm-fast-medium,country-unique
+57fcfd3b,S Muniandy,Malaysia,41,pace,first initial + surname,Sharvin Muniandy,Malaysia,right-arm-fast-medium,country-unique
+1e569fb0,S Veerapathiran,Bahrain,41,pace,first initial + surname,Sathaiya Veerapathiran,Bahrain,right-arm-fast-medium,country-unique
+add288ea,MM Baig,Qatar,40,pace,first initial + surname,Mirza Baig,Qatar,left-arm-fast-medium,country-unique
+5838cb64,SIP Fernando,Sri Lanka,40,pace,first initial + surname,Shiran Fernando,Sri Lanka,right-arm-fast-medium,country-unique
+e9a870ed,AC Evans,Scotland,39,pace,first initial + surname,Alasdair Evans,Scotland,right-arm-fast-medium,country-unique
+1021b6e5,J Rasu,Vanuatu,39,pace,first initial + surname,Joshua Rasu,Vanuatu,right-arm-fast-medium,country-unique
+5bb904d4,KKN Egodage,United Arab Emirates,39,spin,first initial + surname,Kavisha Egodage,United Arab Emirates,right-arm-offbreak,country-unique
+8de618ab,SA Ahmad,Denmark,39,spin,first initial + surname,Saif Ahmad,Denmark,right-arm-offbreak,country-unique
+c26cd57a,B Shikongo,Namibia,38,pace,first initial + surname,Ben Shikongo,Namibia,right-arm-fast-medium,country-unique
+c01d7726,H Thaker,Canada,38,spin,first initial + surname,Harsh Thaker,Canada,right-arm-offbreak,country-unique
+d465c6d7,C Wright,Cayman Islands,37,pace,first initial + surname,Conroy Wright,Cayman Islands,right-arm-fast-medium,country-unique
+6ad2d5f7,LN Rajbanshi,Nepal,37,spin,first initial + surname,Lalit Rajbanshi,Nepal,slow-left-arm-orthodox,country-unique
+00467a76,S Bodha,Gibraltar,37,pace,first initial + surname,Samarth Bodha,Gibraltar,right-arm-fast-medium,country-unique
+9c4b58db,S Tippoch,Thailand,37,spin,first initial + surname,Sornnarin Tippoch,Thailand,right-arm-offbreak,country-unique
+7c1ba524,AA Patil,India,36,spin,first initial + surname,Anuja Patil,India,right-arm-offbreak,country-unique
+0dbe27b8,BD Glover,Netherlands,36,pace,first initial + surname,Brandon Glover,Netherlands,right-arm-fast,country-unique
+4d84ad05,CJA Amini,Papua New Guinea,36,spin,first initial + surname,Charles Amini,Papua New Guinea,legbreak,country-unique
+c498c510,N Nipiko,Vanuatu,36,pace,first initial + surname,Nalin Nipiko,Vanuatu,right-arm-fast-medium,country-unique
+9f87d0f0,I Nandakumar,United Arab Emirates,35,pace,first initial + surname,Indhuja Nandakumar,United Arab Emirates,right-arm-fast-medium,country-unique
+c156cc1f,I Danladi,Nigeria,34,spin,first initial + surname,Isaac Danladi,Nigeria,slow-left-arm-orthodox,country-unique
+441006af,K Mirpuri,Gibraltar,34,pace,first initial + surname,Kabir Mirpuri,Gibraltar,right-arm-fast,country-unique
+4ed7d23f,RM Farrell,Australia,34,pace,first initial + surname,Rene Farrell,Australia,right-arm-fast-medium,country-unique
+3cfbddce,Sadia Yousuf,Pakistan,34,pace,first initial + surname,Shahid Yousuf,Pakistan,right-arm-fast-medium,country-unique
+98dfe425,Asmavia Iqbal,Pakistan,33,pace,first initial + surname,Arshad Iqbal,Pakistan,right-arm-fast-medium,country-unique
+270bf7e2,KV Morea,Papua New Guinea,33,pace,first initial + surname,Kabua Morea,Papua New Guinea,left-arm-fast-medium,country-unique
+2a03bd2f,L Bruce,Gibraltar,33,pace,first initial + surname,Louis Bruce,Gibraltar,right-arm-fast,country-unique
+1c1bb0d5,MB Tambe,Finland,33,pace,first initial + surname,Mahesh Tambe,Finland,right-arm-fast,country-unique
+d8976cb7,DG Blampied,Jersey,32,spin,first initial + surname,Dominic Blampied,Jersey,legbreak,country-unique
+dba54d8e,JA Burrows,Isle of Man,32,spin,first initial + surname,Joseph Burrows,Isle of Man,slow-left-arm-orthodox,country-unique
+374bb5e7,K Klein,Netherlands,31,pace,first initial + surname,Kyle Klein,Netherlands,right-arm-fast-medium,country-unique
+bba7558e,K McGill,Scotland,31,pace,first initial + surname,Katie McGill,Scotland,right-arm-fast-medium,country-unique
+2809b390,MV Pavlovic,Serbia,31,spin,first initial + surname,Mark Pavlovic,Serbia,right-arm-offbreak,country-unique
+42e4b276,R Rijke,Netherlands,31,pace,first initial + surname,Robine Rijke,Netherlands,right-arm-fast-medium,country-unique
+803dbf1d,A Dutt,Netherlands,30,spin,first initial + surname,Aryan Dutt,Netherlands,right-arm-offbreak,country-unique
+04cf2e94,A Morris,Cayman Islands,30,spin,first initial + surname,Alessandro Morris,Cayman Islands,right-arm-offbreak,country-unique
+0e6c2f00,AF Ifill,Cayman Islands,30,spin,first initial + surname,Alistair Ifill,Cayman Islands,legbreak,country-unique
+e3386c8a,K Bhurtel,Nepal,30,pace,first initial + surname,Kushal Bhurtel,Nepal,right-arm-fast-medium,country-unique
+5b2acc3f,Shahid Afridi,Germany,30,pace,full name,Shahid Afridi,Germany,right-arm-fast-medium,country-unique
+1688f2dc,T Lungameni,Namibia,30,pace,first initial + surname,Tangeni Lungameni,Namibia,left-arm-fast-medium,country-unique
+673be48f,W Nalisa,Vanuatu,30,spin,first initial + surname,Williamsing Nalisa,Vanuatu,legbreak-googly,country-unique
+65cd62a9,A Martel,Guernsey,29,spin,first initial + surname,Adam Martel,Guernsey,slow-left-arm-orthodox,country-unique
+1f490b28,AR Puri,Singapore,29,spin,first initial + surname,Akshay Roopak Puri,Singapore,right-arm-offbreak,country-unique
+007113d7,HAM Shah,Denmark,29,spin,first initial + surname,Hamid Shah,Denmark,right-arm-offbreak,country-unique
+8b0b3bba,SA Mohandas,Hungary,29,pace,first initial + surname,Sandeep Mohandas,Hungary,right-arm-fast,country-unique
+e1592949,KS Leverock,Bermuda,28,pace,first initial + surname,Kamau Leverock,Bermuda,right-arm-fast-medium,country-unique
+f5bd70f2,NM Salonen,Finland,28,pace,first initial + surname,Nicholas Salonen,Finland,right-arm-fast,country-unique
+dd5a9067,V Baskaran,Singapore,28,spin,first initial + surname,Vinoth Baskaran,Singapore,slow-left-arm-orthodox,country-unique
+2011735e,A Shahi,Cyprus,27,pace,first initial + surname,Arjun Shahi,Cyprus,right-arm-fast,country-unique
+9920dd86,CA Soper,Papua New Guinea,27,pace,first initial + surname,Chad Soper,Papua New Guinea,right-arm-fast-medium,country-unique
+ac5ae4af,I Udana,Sri Lanka,27,pace,first initial + surname,Isuru Udana,Sri Lanka,left-arm-fast-medium,country-unique
+f468293b,JN Loftie-Eaton,Namibia,27,pace,first initial + surname,Jan Nicol Loftie-Eaton,Namibia,right-arm-fast-medium,country-unique
+9706e64b,LA Marsh,England,27,pace,first initial + surname,Laura Marsh,England,right-arm-fast-medium,country-unique
+385eac52,O Bell,Scotland,27,spin,first initial + surname,Olivia Bell,Scotland,right-arm-offbreak,country-unique
+6e60a792,MJ Ansell,Isle of Man,26,pace,first initial + surname,Matthew Ansell,Isle of Man,left-arm-fast-medium,country-unique
+20ac8219,S Vashisht,Romania,26,pace,first initial + surname,Shantanu Vashisht,Romania,right-arm-fast-medium,country-unique
+4d1ec7eb,A Nao,Papua New Guinea,25,pace,first initial + surname,Alei Nao,Papua New Guinea,right-arm-fast-medium,country-unique
+c57fa67e,E Otieno,Kenya,25,pace,first initial + surname,Elijah Otieno,Kenya,right-arm-fast-medium,country-unique
+c573d173,MWR Stokes,Guernsey,25,pace,first initial + surname,Matthew Stokes,Guernsey,right-arm-fast-medium,country-unique
+5892ac75,R Kalimuthu,Singapore,25,pace,first initial + surname,Ramesh Kalimuthu,Singapore,right-arm-fast-medium,country-unique
+3df8f9d5,Vishil Patel,Kenya,25,spin,first initial + surname,Vraj Patel,Kenya,slow-left-arm-orthodox,country-unique
+e258a603,N Dutta,Canada,24,spin,first initial + surname,Nikhil Dutta,Canada,right-arm-offbreak,country-unique
+e23da78c,NK Aneesh Kumar,Switzerland,24,spin,first initial + surname,Nalinambika Kumar,Switzerland,slow-left-arm-orthodox,country-unique
+02b078b1,P Malav,Luxembourg,24,pace,first initial + surname,Pankaj Malav,Luxembourg,right-arm-fast-medium,country-unique
+af19aa66,PK Matautaava,Vanuatu,24,pace,first initial + surname,Patrick Matautaava,Vanuatu,right-arm-fast-medium,country-unique
+9a95bebb,S Bau,Papua New Guinea,24,pace,first initial + surname,Sese Bau,Papua New Guinea,right-arm-fast-medium,country-unique
+704e0160,A Nanda,Luxembourg,23,pace,first initial + surname,Ankush Nanda,Luxembourg,right-arm-fast-medium,country-unique
+053f3ce3,D Ravu,Papua New Guinea,23,pace,first initial + surname,Damien Ravu,Papua New Guinea,right-arm-fast-medium,country-unique
+6b46ce43,EJB Miles,Jersey,23,spin,first initial + surname,Elliot Miles,Jersey,slow-left-arm-orthodox,country-unique
+42bf1b7d,H Carlyon,Jersey,23,spin,first initial + surname,Harrison Carlyon,Jersey,right-arm-offbreak,country-unique
+efcb778e,J Butler,Guernsey,23,pace,first initial + surname,Josh Butler,Guernsey,right-arm-fast-medium,country-unique
+b91f2a31,KP Meiyappan,United Arab Emirates,23,spin,first initial + surname,Karthik Palaniapan Meiyappan,United Arab Emirates,legbreak,country-unique
+5f22ccae,NSS Sharma,India,23,pace,first initial + surname,Nitin Sharma,India,right-arm-fast-medium,country-unique
+a9a09cb8,S Wickramasekara,Czech Republic,23,pace,first initial + surname,Sudesh Wickramasekara,Czech Republic,right-arm-fast-medium,country-unique
+78f719ea,IDM Latin,Gibraltar,22,spin,first initial + surname,Iain Latin,Gibraltar,legbreak,country-unique
+443d1fd8,K Fletcher,Switzerland,22,pace,first initial + surname,Kenardo Fletcher,Switzerland,left-arm-fast,country-unique
+83d17bbc,MW Forde,West Indies,22,pace,first initial + surname,Matthew Forde,West Indies,right-arm-fast-medium,country-unique
+737e595d,NK Yadav,Nepal,22,pace,first initial + surname,Nandan Yadav,Nepal,right-arm-fast-medium,country-unique
+8e9d3dc4,PF Gallagher,Finland,22,spin,first initial + surname,Peter Gallagher,Finland,right-arm-offbreak,country-unique
+e21bc7f3,RD Berrington,Scotland,22,pace,first initial + surname,Richie Berrington,Scotland,right-arm-fast-medium,country-unique
+622be0d9,S Gooch,Estonia,22,pace,first initial + surname,Steffan Gooch,Estonia,right-arm-fast-medium,country-unique
+fb0c0bcc,Sultana Khatun,Bangladesh,22,spin,first initial + surname,Salma Khatun,Bangladesh,right-arm-offbreak,country-unique
+1d6e8f52,T Taylor,Cayman Islands,22,pace,first initial + surname,Troy Taylor,Cayman Islands,right-arm-fast-medium,country-unique
+baa7dd37,V Ganesan,Germany,22,spin,first initial + surname,Venkatraman Ganesan,Germany,right-arm-offbreak,country-unique
+3967b66f,CJ Langford,Isle of Man,21,pace,first initial + surname,Chris Langford,Isle of Man,left-arm-fast-medium,country-unique
+9048c17e,DM Gondaria,Kenya,21,pace,first initial + surname,Dhiren Gondaria,Kenya,right-arm-fast-medium,country-unique
+16443d2f,M Daniels,South Africa,21,pace,first initial + surname,Moseline Daniels,South Africa,left-arm-fast-medium,country-unique
+87a92b6b,N Pokana,Papua New Guinea,21,pace,first initial + surname,Nosaina Pokana,Papua New Guinea,left-arm-fast,country-unique
+753b5a2d,NN Odhiambo,Kenya,21,pace,first initial + surname,Nehemiah Odhiambo,Kenya,right-arm-fast-medium,country-unique
+c6097d68,O Thomas,West Indies,21,pace,first initial + surname,Oshane Thomas,West Indies,right-arm-fast,country-unique
+3a7ea906,VJ Kingma,Netherlands,21,pace,first initial + surname,Vivian Kingma,Netherlands,right-arm-fast-medium,country-unique
+609d6c7c,W Peatfield,Guernsey,21,pace,first initial + surname,William Peatfield,Guernsey,right-arm-fast-medium,country-unique
+390ff45b,Abdul Razzaq,Pakistan,20,pace,full name,Abdul Razzaq,Pakistan,right-arm-fast-medium,country-unique
+98d05440,B Regmi,Nepal,20,spin,first initial + surname,Basant Regmi,Nepal,slow-left-arm-orthodox,country-unique
+e6581a17,CM Akachukwu,Nigeria,20,pace,first initial + surname,Chima Akachukwu,Nigeria,right-arm-fast-medium,country-unique
+5aa8574b,I van der Woning,Netherlands,20,pace,first initial + surname,Isabel van der Woning,Netherlands,right-arm-fast-medium,country-unique
+bb9b51f4,JOA Gordon,Canada,20,pace,first initial + surname,Jeremy Gordon,Canada,right-arm-fast-medium,country-unique
+58aa33cd,Najjam Shahzad,Portugal,20,pace,first initial + surname,Najam Shahzad,Portugal,right-arm-fast-medium,country-unique
+0730a707,SI Kamea,Papua New Guinea,20,pace,first initial + surname,Semo Kamea,Papua New Guinea,left-arm-fast,country-unique
+7f74b21d,ACF Stokes,Guernsey,19,spin,first initial + surname,Anthony Stokes,Guernsey,slow-left-arm-orthodox,country-unique
+f33cfd25,B Masaba,Uganda,19,spin,first initial + surname,Brian Masaba,Uganda,legbreak,country-unique
+5680f1ad,CO Obuya,Kenya,19,spin,first initial + surname,Collins Obuya,Kenya,legbreak,country-unique
+fd835ab3,DJ Hussey,Australia,19,spin,first initial + surname,David Hussey,Australia,right-arm-offbreak,country-unique
+e00acf74,E Mathew,Malta,19,pace,first initial + surname,Eldhose Mathew,Malta,right-arm-fast-medium,country-unique
+4ebc70ca,GT Main,Scotland,19,pace,first initial + surname,Gavin Main,Scotland,right-arm-fast,country-unique
+b17a4a93,N Shangase,South Africa,19,spin,first initial + surname,Nondumiso Shangase,South Africa,right-arm-offbreak,country-unique
+13598ebc,A Krishna,Singapore,18,spin,first initial + surname,Anantha Krishna,Singapore,legbreak-googly,country-unique
+a768a762,AA Gajic,Serbia,18,pace,first initial + surname,Alister Gajic,Serbia,right-arm-fast-medium,country-unique
+b7824537,B Niaz,Belgium,18,pace,first initial + surname,Burhan Niaz,Belgium,right-arm-fast-medium,country-unique
+a968d39b,DC Smith,Philippines,18,pace,first initial + surname,Daniel Smith,Philippines,right-arm-fast-medium,country-unique
+0d0f0385,F Akankwasa,Uganda,18,spin,first initial + surname,Frank Akankwasa,Uganda,right-arm-offbreak,country-unique
+81898acc,KJ Ferrary,Gibraltar,18,spin,first initial + surname,Kieron Ferrary,Gibraltar,right-arm-offbreak,country-unique
+90a41671,L Karlsson,Sweden,18,pace,first initial + surname,Liam Karlsson,Sweden,right-arm-fast-medium,country-unique
+4aad6842,Sheraz Sheikh,Belgium,18,spin,first initial + surname,Sunny Sheikh,Belgium,slow-left-arm-orthodox,country-unique
+ef70a34b,TJ Vlaeminck,Australia,18,pace,first initial + surname,Tayla Vlaeminck,Australia,right-arm-fast-medium,country-unique
+6d024ce3,Zabiullah Zahid,Sweden,18,pace,first initial + surname,Zabi Zahid,Sweden,right-arm-fast-medium,country-unique
+66b30f71,AB Dinda,India,17,pace,first initial + surname,Ashok Dinda,India,right-arm-fast-medium,country-unique
+ae2c396f,AM Peterson,New Zealand,17,spin,first initial + surname,Anna Peterson,New Zealand,right-arm-offbreak,country-unique
+0813a8b1,D Marks,Malta,17,pace,first initial + surname,David Marks,Malta,right-arm-fast,country-unique
+5332fc2f,Hamid Mahmood,Sweden,17,pace,first initial + surname,Hassan Mahmood,Sweden,right-arm-fast-medium,country-unique
+670e6804,Junaid Khan,Finland,17,pace,full name,Junaid Khan,Finland,right-arm-fast-medium,country-unique
+fa8f9dc3,KM Beams,Australia,17,spin,first initial + surname,Kristen Beams,Australia,legbreak-googly,country-unique
+d62f04f5,M Ozturk,Turkey,17,pace,first initial + surname,Mecit Ozturk,Turkey,right-arm-fast-medium,country-unique
+5360c9be,R Mangal,France,17,pace,first initial + surname,Rahmatullah Mangal,France,right-arm-fast,country-unique
+3f2b40f0,Zeefa Jilani,Kuwait,17,pace,first initial + surname,Zeeshan Jilani,Kuwait,right-arm-fast-medium,country-unique
+9585854d,D Wotu,Vanuatu,16,pace,first initial + surname,Darren Wotu,Vanuatu,right-arm-fast-medium,country-unique
+7f6c2dae,DC Stovell,Bermuda,16,spin,first initial + surname,Dion Stovell,Bermuda,right-arm-offbreak,country-unique
+5750bcb4,E Malinga,Sri Lanka,16,pace,first initial + surname,Eshan Malinga,Sri Lanka,right-arm-fast-medium,country-unique
+a2f46292,KK Ahmed,India,16,pace,first initial + surname,Khaleel Ahmed,India,left-arm-fast-medium,country-unique
+34712b35,M Musinguzi,Uganda,16,spin,first initial + surname,Matthew Musinguzi,Uganda,slow-left-arm-orthodox,country-unique
+705b8c5c,Mohammad Atif,Spain,16,pace,first initial + surname,Muhammad Atif,Spain,left-arm-fast,country-unique
+a8e3170f,Mohammad Irfan,Pakistan,16,pace,full name,Mohammad Irfan,Pakistan,left-arm-fast,country-unique
+c07a1f41,NM Odhiambo,Kenya,16,pace,first initial + surname,Nehemiah Odhiambo,Kenya,right-arm-fast-medium,country-unique
+8b6c33d0,R Padunglerd,Thailand,16,pace,first initial + surname,Ratanaporn Padunglerd,Thailand,right-arm-fast-medium,country-unique
+52f96571,RJ Trott,Bermuda,16,spin,first initial + surname,Rodney Trott,Bermuda,right-arm-offbreak,country-unique
+4e3fd330,S Kushretha,Luxembourg,16,spin,first initial + surname,Saransh Kushretha,Luxembourg,right-arm-offbreak,country-unique
+9244df4b,A Ashokan,Czech Republic,15,pace,first initial + surname,Arun Ashokan,Czech Republic,right-arm-fast-medium,country-unique
+0ac067e8,DR Hooper,Guernsey,15,pace,first initial + surname,David Hooper,Guernsey,right-arm-fast-medium,country-unique
+6c53ffb2,Irfan Safi,Austria,15,pace,first initial + surname,Ishak Safi,Austria,right-arm-fast-medium,country-unique
+2fa916b3,K Kavindi,Sri Lanka,15,pace,first initial + surname,Kawya Kavindi,Sri Lanka,right-arm-fast-medium,country-unique
+b89cde87,K Nestor,Gibraltar,15,pace,first initial + surname,Kenroy Nestor,Gibraltar,right-arm-fast,country-unique
+d5ae21a2,KD Shah,Hong Kong,15,spin,first initial + surname,Kinchit Shah,Hong Kong,right-arm-offbreak,country-unique
+548d4188,KS Airee,Nepal,15,pace,first initial + surname,Kamal Singh Airee,Nepal,right-arm-fast-medium,country-unique
+2d45d7d2,MPGT Ketiyage,Cyprus,15,pace,first initial + surname,Mangala Ketiyage,Cyprus,right-arm-fast-medium,country-unique
+3d7f02d4,RM Dorji,Bhutan,15,spin,first initial + surname,Ranjung Mikyo Dorji,Bhutan,right-arm-offbreak,country-unique
+e204b898,Syed Maisam Ali,Portugal,15,pace,first initial + surname,Syed Ali,Portugal,right-arm-fast,country-unique
+5feead83,TT Maposa,Zimbabwe,15,pace,first initial + surname,Tinotenda Maposa,Zimbabwe,right-arm-fast-medium,country-unique
+053dc208,A Brindle,England,14,pace,first initial + surname,Arran Brindle,England,right-arm-fast-medium,country-unique
+f1c4f2ea,A Nathwani,Austria,14,spin,first initial + surname,Amit Nathwani,Austria,right-arm-offbreak,country-unique
+49f6d023,AL Stephen,Vanuatu,14,pace,first initial + surname,Apolinaire Stephen,Vanuatu,right-arm-fast-medium,country-unique
+d85d52c2,M Dixit,Luxembourg,14,pace,first initial + surname,Mohit Dixit,Luxembourg,left-arm-fast-medium,country-unique
+0e0afd8b,MO Jones,Bermuda,14,pace,first initial + surname,Malachi Jones,Bermuda,right-arm-fast-medium,country-unique
+e9d6a2ce,Manpreet Singh,Singapore,14,spin,full name,Manpreet Singh,Singapore,right-arm-offbreak,country-unique
+1a3cc554,RK Paudel,Nepal,14,pace,first initial + surname,Rohit Kumar Paudel,Nepal,right-arm-fast-medium,country-unique
+237baa2c,Sameera Khan,Oman,14,pace,first initial + surname,Shoaib Khan,Oman,right-arm-fast-medium,country-unique
+b978780e,G Chohan,Philippines,13,pace,first initial + surname,Gurbhupinder Chohan,Philippines,right-arm-fast-medium,country-unique
+d5fa2ab3,M McColl,Scotland,13,pace,first initial + surname,Megan McColl,Scotland,right-arm-fast-medium,country-unique
+e901d179,Musa Khan Ahmadzai,Switzerland,13,pace,first initial + surname,Musa Ahmadzai,Switzerland,left-arm-fast,country-unique
+25ca0573,TR Sadhu,India,13,pace,first initial + surname,Titas Sadhu,India,right-arm-fast-medium,country-unique
+f0e722e0,Usman Shinwari,Pakistan,13,pace,full name,Usman Shinwari,Pakistan,left-arm-fast-medium,country-unique
+753ada66,A Dhingra,Luxembourg,12,pace,first initial + surname,Amit Dhingra,Luxembourg,right-arm-fast-medium,country-unique
+b18dbaff,A Prashar,Hungary,12,pace,first initial + surname,Abhitesh Prashar,Hungary,right-arm-fast,country-unique
+c17dcc29,F Khaliq,Belgium,12,pace,first initial + surname,Faisal Khaliq,Belgium,right-arm-fast-medium,country-unique
+db218528,GC Galanis,Greece,12,spin,first initial + surname,Georgios Galanis,Greece,slow-left-arm-orthodox,country-unique
+4e6ff836,JA Fitzgerald,Gibraltar,12,pace,first initial + surname,James Andrew Fitzgerald,Gibraltar,right-arm-fast-medium,country-unique
+04855b85,K Vislapuu,Estonia,12,pace,first initial + surname,Kalle Vislapuu,Estonia,right-arm-fast-medium,country-unique
+a75a78eb,MR Swart,Netherlands,12,spin,first initial + surname,Michael Swart,Netherlands,right-arm-offbreak,country-unique
+4a36c370,N Madziva,Zimbabwe,12,pace,first initial + surname,Neville Madziva,Zimbabwe,right-arm-fast-medium,country-unique
+c9c356e2,P Florin,Romania,12,spin,first initial + surname,Pavel Florin,Romania,right-arm-offbreak,country-unique
+fa9db243,P Molkenboer,Netherlands,12,spin,first initial + surname,Phebe Molkenboer,Netherlands,right-arm-offbreak,country-unique
+44c69e2b,S Vijayakumar,Singapore,12,spin,first initial + surname,Selladore Vijayakumar,Singapore,right-arm-offbreak,country-unique
+8d6b36e3,HR Huddleston,New Zealand,11,pace,first initial + surname,Holly Huddleston,New Zealand,right-arm-fast-medium,country-unique
+42a01b52,Ilyas Ahmed,Kuwait,11,pace,full name,Ilyas Ahmed,Kuwait,left-arm-fast-medium,country-unique
+1c8cd1c3,J Horrocks,Gibraltar,11,pace,first initial + surname,Jack Horrocks,Gibraltar,left-arm-fast-medium,country-unique
+ab54f9e7,J Jarvis,Scotland,11,pace,first initial + surname,Jack Jarvis,Scotland,right-arm-fast-medium,country-unique
+1e78c51c,J Sebanja,Uganda,11,pace,first initial + surname,Jonathan Sebanja,Uganda,right-arm-fast-medium,country-unique
+6b4593ee,L Siaka,Papua New Guinea,11,pace,first initial + surname,Lega Siaka,Papua New Guinea,right-arm-fast-medium,country-unique
+c70448aa,R Hekure,Papua New Guinea,11,pace,first initial + surname,Riley Hekure,Papua New Guinea,right-arm-fast-medium,country-unique
+f49c401e,SH Obed,Vanuatu,11,spin,first initial + surname,Simpson Obed,Vanuatu,legbreak,country-unique
+4dabe716,W Liengprasert,Thailand,11,spin,first initial + surname,Wongpaka Liengprasert,Thailand,right-arm-offbreak,country-unique
+e15d9f04,Anjali Chand,Nepal,10,pace,first initial + surname,Akash Chand,Nepal,right-arm-fast-medium,country-unique
+f8035c2a,BDH Stevens,Jersey,10,spin,first initial + surname,Ben Stevens,Jersey,slow-left-arm-orthodox,country-unique
+18db3f22,C Waiswa,Uganda,10,pace,first initial + surname,Charles Waiswa,Uganda,left-arm-fast-medium,country-unique
+c7bb2416,GG Alta,Turkey,10,pace,first initial + surname,Gokhan Alta,Turkey,right-arm-fast,country-unique
+7bbeac6d,GH O'Brien,Bermuda,10,pace,first initial + surname,George O'Brien,Bermuda,right-arm-fast-medium,country-unique
+eeeebf82,HA Varaiya,Kenya,10,spin,first initial + surname,Hiren Varaiya,Kenya,slow-left-arm-orthodox,country-unique
+2498e163,JR Hopes,Australia,10,pace,first initial + surname,James Hopes,Australia,right-arm-fast-medium,country-unique
+a61bcb94,K Pierre,West Indies,10,spin,first initial + surname,Khary Pierre,West Indies,slow-left-arm-orthodox,country-unique
+c471750e,LC Le Tissier,Guernsey,10,spin,first initial + surname,Luke Le Tissier,Guernsey,right-arm-offbreak,country-unique
+c83c594d,M Cope,Luxembourg,10,spin,first initial + surname,Marcus Cope,Luxembourg,right-arm-offbreak,country-unique
+835a58da,NA Karnik,Singapore,10,pace,first initial + surname,Neil Anant Karnik,Singapore,right-arm-fast-medium,country-unique
+91052c96,PW Borren,Netherlands,10,pace,first initial + surname,Peter Borren,Netherlands,right-arm-fast-medium,country-unique
+e149d0ae,RL Grundy,England,10,spin,first initial + surname,Rebecca Grundy,England,slow-left-arm-orthodox,country-unique
+00d69fa4,SO Tikolo,Kenya,10,spin,first initial + surname,Steve Tikolo,Kenya,right-arm-offbreak,country-unique
+96fe3e9f,ZM Tribe,Jersey,10,spin,first initial + surname,Zak Tribe,Jersey,legbreak-googly,country-unique
+2deb4082,A Kheterpal,Hungary,9,pace,first initial + surname,Abhishek Kheterpal,Hungary,right-arm-fast-medium,country-unique
+623c8835,AS van Beuge,Netherlands,9,pace,first initial + surname,Annemijn van Beuge,Netherlands,right-arm-fast-medium,country-unique
+83f0b848,C Liebenberg,Isle of Man,9,pace,first initial + surname,Corbin Liebenberg,Isle of Man,right-arm-fast-medium,country-unique
+e16e7347,CG Williams,Namibia,9,pace,first initial + surname,Craig Williams,Namibia,right-arm-fast-medium,country-unique
+7636b587,D Muhumuza,Uganda,9,pace,first initial + surname,Deusdedit Muhumuza,Uganda,right-arm-fast-medium,country-unique
+21526a38,E Jabarkhel,Luxembourg,9,pace,first initial + surname,Eliyas Jabarkhel,Luxembourg,right-arm-fast,country-unique
+3957a70a,GP Meade,Italy,9,pace,first initial + surname,Gian Meade,Italy,right-arm-fast-medium,country-unique
+068c47d2,JJ Davidson,Scotland,9,pace,first initial + surname,Jasper Davidson,Scotland,right-arm-fast-medium,country-unique
+65122d56,K Christie,Hong Kong,9,pace,first initial + surname,Kyle Christie,Hong Kong,right-arm-fast-medium,country-unique
+aea89d48,L Keny,United Arab Emirates,9,pace,first initial + surname,Lavanya Keny,United Arab Emirates,right-arm-fast-medium,country-unique
+658c2e71,MGSM Fernando,Italy,9,spin,first initial + surname,Madupa Fernando,Italy,slow-left-arm-orthodox,country-unique
+70ced7f2,Mohammad Aadil Alam,Nepal,9,pace,first initial + surname,Mahaboob Alam,Nepal,left-arm-fast-medium,country-unique
+d516a95f,NSK Mehta,Belgium,9,pace,first initial + surname,Nemish Mehta,Belgium,left-arm-fast-medium,country-unique
+ed524599,RA Abolarin,Nigeria,9,pace,first initial + surname,Rasheed Abolarin,Nigeria,right-arm-fast-medium,country-unique
+ba3a1359,RSM Lili'i,Samoa,9,pace,first initial + surname,Regina Lilii,Samoa,right-arm-fast-medium,country-unique
+e9173fb0,SR Bhudia,Kenya,9,pace,first initial + surname,Sachin Bhudia,Kenya,right-arm-fast-medium,country-unique
+2c13defe,TM Odoyo,Kenya,9,pace,first initial + surname,Thomas Odoyo,Kenya,right-arm-fast-medium,country-unique
+f1e7f97c,Ziaurahman Shinwari,Austria,9,pace,first initial + surname,Ziaurrahman Shinwari,Austria,right-arm-fast,country-unique
+4a745f65,AR Nurse,West Indies,8,spin,first initial + surname,Ashley Nurse,West Indies,right-arm-offbreak,country-unique
+8160713d,AW Hawkins-Kay,Jersey,8,pace,first initial + surname,Anthony Hawkins-Kay,Jersey,right-arm-fast-medium,country-unique
+8a06bb55,Ahmad Ullah,Germany,8,spin,first initial + surname,Aziz Ullah,Germany,right-arm-offbreak,country-unique
+9bb259b4,Ashraful Shuvo,Estonia,8,pace,first initial + surname,Ashraful Islam Shuvo,Estonia,right-arm-fast-medium,country-unique
+5edaa34d,B Dugic,Serbia,8,pace,first initial + surname,Bogdan Dugic,Serbia,right-arm-fast,country-unique
+436c763a,BJ McMullen,Scotland,8,pace,first initial + surname,Brandon McMullen,Scotland,right-arm-fast-medium,country-unique
+270b3f8e,JK Kamande,Kenya,8,spin,first initial + surname,Jimmy Kamande,Kenya,right-arm-offbreak,country-unique
+abee08c7,JO Adedeji,Nigeria,8,spin,first initial + surname,Joseph Adedeji,Nigeria,right-arm-offbreak,country-unique
+31adb911,L Filer,England,8,pace,first initial + surname,Lauren Filer,England,right-arm-fast-medium,country-unique
+53984f75,N Tyagi,Czech Republic,8,pace,first initial + surname,Neeraj Tyagi,Czech Republic,right-arm-fast-medium,country-unique
+aad0c365,Nithish Kumar Reddy,India,8,pace,first initial + surname,Nitish Kumar Reddy,India,right-arm-fast-medium,country-unique
+12c3ba4d,P Khadka,Nepal,8,pace,first initial + surname,Paras Khadka,Nepal,right-arm-fast-medium,country-unique
+28c7d721,S Bhari,Nepal,8,spin,first initial + surname,Sushan Bhari,Nepal,slow-left-arm-orthodox,country-unique
+62653085,S Gokhale,United Arab Emirates,8,pace,first initial + surname,Siya Gokhale,United Arab Emirates,right-arm-fast-medium,country-unique
+5f862ccd,SS Weerakkody,Sri Lanka,8,pace,first initial + surname,Sripali Weerakkody,Sri Lanka,right-arm-fast-medium,country-unique
+dec85af5,Silda Joy,Malta,8,pace,first initial + surname,Shijil Joy,Malta,right-arm-fast,country-unique
+017faef2,Z Groenewald,Namibia,8,spin,first initial + surname,Zhivago Groenewald,Namibia,slow-left-arm-orthodox,country-unique
+8479657a,A Das,India,7,pace,first initial + surname,Amit Das,India,right-arm-fast-medium,country-unique
+4957b300,A Neill,Scotland,7,pace,first initial + surname,Adrian Neill,Scotland,right-arm-fast-medium,country-unique
+0393fbdc,A Pusthay,Finland,7,pace,first initial + surname,Aniketh Pusthay,Finland,right-arm-fast-medium,country-unique
+b56f5b6f,AE Paraam,Singapore,7,spin,first initial + surname,Anish Paraam,Singapore,slow-left-arm-orthodox,country-unique
+e6d298e8,CD de Lange,Scotland,7,spin,first initial + surname,Con de Lange,Scotland,slow-left-arm-orthodox,country-unique
+4e1b7998,Chare Smith,Bermuda,7,spin,first initial + surname,Clay Smith,Bermuda,right-arm-offbreak,country-unique
+a4bcaba7,G Venkateswaran,Luxembourg,7,pace,first initial + surname,Girish Venkateswaran,Luxembourg,right-arm-fast-medium,country-unique
+7839bf3a,HS Baidwan,Canada,7,pace,first initial + surname,Harvir Baidwan,Canada,right-arm-fast-medium,country-unique
+4d0d5b7d,I Elec,Turkey,7,pace,first initial + surname,Ishak Elec,Turkey,right-arm-fast-medium,country-unique
+d981a1de,J Jojo,Denmark,7,pace,first initial + surname,Jino Jojo,Denmark,right-arm-fast-medium,country-unique
+6a685375,JB Reva,Papua New Guinea,7,pace,first initial + surname,John Reva,Papua New Guinea,right-arm-fast-medium,country-unique
+f8dcfe4e,JK Mukhiya,Nepal,7,pace,first initial + surname,Jitendra Mukhiya,Nepal,right-arm-fast-medium,country-unique
+94a1827c,OGL Bascome,Bermuda,7,pace,first initial + surname,Onais Bascome,Bermuda,right-arm-fast-medium,country-unique
+0daf3ffc,P Bhart,Norway,7,spin,first initial + surname,Prithvi Bhart,Norway,right-arm-offbreak,country-unique
+24c1844e,S Chaudhary,Czech Republic,7,pace,first initial + surname,Shubhranshu Chaudhary,Czech Republic,right-arm-fast-medium,country-unique
+6b8eb6e5,S Sreesanth,India,7,pace,first initial + surname,Shanthakumaran Sreesanth,India,right-arm-fast-medium,country-unique
+cb9b8664,W O'Rourke,New Zealand,7,pace,first initial + surname,William O'Rourke,New Zealand,right-arm-fast-medium,country-unique
+3df3f50b,Waheed Ahmed,United Arab Emirates,7,pace,full name,Waheed Ahmed,United Arab Emirates,right-arm-fast-medium,country-unique
+a22b4f3f,A Mansale,Vanuatu,6,spin,first initial + surname,Andrew Mansale,Vanuatu,right-arm-offbreak,country-unique
+797f52cc,AAhan Achar,Singapore,6,spin,first initial + surname,Aahan Gopinath Achar,Singapore,slow-left-arm-orthodox,country-unique
+747209e0,AG Weligamage,Hungary,6,pace,first initial + surname,Asanka Weligamage,Hungary,right-arm-fast,country-unique
+4612619b,AS Mehmi,Greece,6,pace,first initial + surname,Amarpreet Mehmi,Greece,right-arm-fast-medium,country-unique
+b858be20,AV Lalcheta,Oman,6,spin,first initial + surname,Ajay Lalcheta,Oman,slow-left-arm-orthodox,country-unique
+e45810ed,Abdul-Shakoor Rahimzei,Germany,6,spin,full name,Abdul-Shakoor Rahimzei,Germany,right-arm-offbreak,country-unique
+b4706200,Adil Khan,Germany,6,pace,first initial + surname,Asad Khan,Germany,right-arm-fast-medium,country-unique
+d8b2f218,BB Sran,India,6,pace,first initial + surname,Barinder Sran,India,left-arm-fast-medium,country-unique
+c1b74851,ED Silva,Kuwait,6,pace,first initial + surname,Edson Silva,Kuwait,right-arm-fast-medium,country-unique
+eff8b730,GRD Munasinghe,Italy,6,pace,first initial + surname,Gayashan Munasinghe,Italy,right-arm-fast-medium,country-unique
+fb7dc205,JL Martel,Guernsey,6,pace,first initial + surname,Jordan Martel,Guernsey,left-arm-fast-medium,country-unique
+52f08be8,JM Muirhead,Australia,6,spin,first initial + surname,James Muirhead,Australia,legbreak-googly,country-unique
+681af475,M Ansari,Oman,6,pace,first initial + surname,Munis Ansari,Oman,right-arm-fast-medium,country-unique
+983a0c34,MM Dekeling,Netherlands,6,spin,first initial + surname,Merel Dekeling,Netherlands,legbreak-googly,country-unique
+465aa633,N Burger,South Africa,6,pace,first initial + surname,Nandre Burger,South Africa,left-arm-fast-medium,country-unique
+b3bad3f2,NR Kumar,Canada,6,spin,first initial + surname,Nitish Kumar,Canada,right-arm-offbreak,country-unique
+a300e810,PRP Boissevain,Netherlands,6,spin,first initial + surname,Philippe Boissevain,Netherlands,legbreak-googly,country-unique
+35230fa3,S Haggo,Scotland,6,pace,first initial + surname,Samantha Haggo,Scotland,right-arm-fast-medium,country-unique
+4169ae00,SC Kumari,Nepal,6,pace,first initial + surname,Saraswati Kumari,Nepal,right-arm-fast-medium,country-unique
+6a091f62,SJ Patel,Czech Republic,6,pace,first initial + surname,Smit Patel,Czech Republic,right-arm-fast-medium,country-unique
+2d8aae2f,SP Gauchan,Nepal,6,spin,first initial + surname,Shakti Gauchan,Nepal,slow-left-arm-orthodox,country-unique
+792d0178,Waheeda Akhtar,Pakistan,6,pace,first initial + surname,Waqas Akhtar,Pakistan,right-arm-fast,country-unique
+3ec513ea,A Maheshwari,Croatia,5,pace,first initial + surname,Aman Maheshwari,Croatia,right-arm-fast,country-unique
+033e9d59,Arjun Vinod,Switzerland,5,pace,first initial + surname,Ashwin Vinod,Switzerland,right-arm-fast-medium,country-unique
+39f0b039,Baljit Singh,Italy,5,pace,full name,Baljit Singh,Italy,right-arm-fast-medium,country-unique
+61da7440,D Mullen,Guernsey,5,pace,first initial + surname,Dane Mullen,Guernsey,right-arm-fast-medium,country-unique
+663ad386,I Asif,Austria,5,pace,first initial + surname,Imran Asif,Austria,right-arm-fast-medium,country-unique
+125bba96,J Perman,Spain,5,spin,first initial + surname,Jack Perman,Spain,legbreak,country-unique
+086f5984,Junaid Khan,Pakistan,5,pace,full name,Junaid Khan,Pakistan,left-arm-fast,country-unique
+56a94565,Karan Singh,Cyprus,5,pace,first initial + surname,Kulwinder Singh,Cyprus,right-arm-fast,country-unique
+6a71ba3a,M Levitt,Netherlands,5,pace,first initial + surname,Michael Levitt,Netherlands,right-arm-fast,country-unique
+e04fb55d,M Shehani,Sri Lanka,5,pace,first initial + surname,Malsha Shehani,Sri Lanka,right-arm-fast-medium,country-unique
+560ef10a,M Zwilling,Netherlands,5,pace,first initial + surname,Mikkie Zwilling,Netherlands,left-arm-fast-medium,country-unique
+e48c6ec7,N Davidovic,Croatia,5,pace,first initial + surname,Nikola Davidovic,Croatia,right-arm-fast-medium,country-unique
+63249474,O Davidson,Scotland,5,spin,first initial + surname,Oliver Davidson,Scotland,slow-left-arm-orthodox,country-unique
+f06b5585,P Manning,Cayman Islands,5,spin,first initial + surname,Paul Manning,Cayman Islands,right-arm-offbreak,country-unique
+01c05b6c,RJ Hatchman,Gibraltar,5,pace,first initial + surname,Richard John Hatchman,Gibraltar,right-arm-fast-medium,country-unique
+a323465c,RR Joshi,Canada,5,pace,first initial + surname,Rishiv Ragav Joshi,Canada,left-arm-fast-medium,country-unique
+b75b7b09,Rakibul Hasan,Italy,5,spin,full name,Rakibul Hasan,Italy,slow-left-arm-orthodox,country-unique
+81a0e294,SA Engelbrecht,Netherlands,5,spin,first initial + surname,Sybrand Engelbrecht,Netherlands,right-arm-offbreak,country-unique
+753c95b9,SS Pathirana,Sri Lanka,5,spin,first initial + surname,Sachith Pathirana,Sri Lanka,slow-left-arm-orthodox,country-unique
+51a125b3,T Nightingale,Guernsey,5,spin,first initial + surname,Tom Nightingale,Guernsey,right-arm-offbreak,country-unique
+ab8ef1e9,TC Vine,Spain,5,pace,first initial + surname,Thomas Vine,Spain,right-arm-fast-medium,country-unique
+fccc2d5a,Usman Arif,Norway,5,pace,full name,Usman Arif,Norway,right-arm-fast-medium,country-unique
+f0f2b9c5,V Khanduri,Cyprus,5,spin,first initial + surname,Vimal Khanduri,Cyprus,right-arm-offbreak,country-unique
+86e80bff,Vaishnavi Sharma,India,5,spin,first initial + surname,Vivrant Sharma,India,legbreak-googly,country-unique
+25c73eb6,A Aitken-Drummond,Scotland,4,pace,first initial + surname,Abbi Aitken-Drummond,Scotland,right-arm-fast-medium,country-unique
+1d45c01a,A Andrews,Switzerland,4,pace,first initial + surname,Aidan Andrews,Switzerland,right-arm-fast-medium,country-unique
+43a2244f,A Suwanchonrathi,Thailand,4,pace,first initial + surname,Aphisara Suwanchonrathi,Thailand,right-arm-fast-medium,country-unique
+b506636b,AA Jimoh,Nigeria,4,pace,first initial + surname,Abdulrahman Jimoh,Nigeria,right-arm-fast-medium,country-unique
+3cf0ab34,Attia Diwan Ali,Belgium,4,pace,first initial + surname,Aadil Diwan Ali,Belgium,right-arm-fast,country-unique
+008589a4,CM Wright,Scotland,4,pace,first initial + surname,Craig Wright,Scotland,right-arm-fast-medium,country-unique
+4751827a,CP Schofield,England,4,spin,first initial + surname,Chris Schofield,England,legbreak,country-unique
+b0b80a99,CV Harrison,Gibraltar,4,pace,first initial + surname,Charles Harrison,Gibraltar,right-arm-fast-medium,country-unique
+2494ff9e,D Ajekun,Nigeria,4,spin,first initial + surname,Daniel Ajekun,Nigeria,right-arm-offbreak,country-unique
+b64e3749,E Ochieng,Kenya,4,pace,first initial + surname,Eugene Ochieng,Kenya,right-arm-fast-medium,country-unique
+5ca0e315,G Richardson,Jersey,4,pace,first initial + surname,George Richardson,Jersey,right-arm-fast,country-unique
+86421172,GA Lamb,Zimbabwe,4,spin,first initial + surname,Greg Lamb,Zimbabwe,right-arm-offbreak,country-unique
+557550a4,Hamza Dar,Spain,4,pace,first initial + surname,Hamza Saleem Dar,Spain,right-arm-fast-medium,country-unique
+e662b18f,JAR Blain,Scotland,4,pace,first initial + surname,John Blain,Scotland,right-arm-fast-medium,country-unique
+092ccf20,JS Kundi,Kenya,4,pace,first initial + surname,Jasraj Kundi,Kenya,right-arm-fast-medium,country-unique
+c2fd51b1,K Gilham,Czech Republic,4,pace,first initial + surname,Kyle Gilham,Czech Republic,left-arm-fast-medium,country-unique
+7e38d2de,K Weeraratne,Sri Lanka,4,pace,first initial + surname,Kaushalya Weeraratne,Sri Lanka,right-arm-fast-medium,country-unique
+c7fcc20b,L Jones,South Africa,4,spin,first initial + surname,Lloyd Jones,South Africa,right-arm-offbreak,country-unique
+b699df47,MP O'Dowd,Netherlands,4,spin,first initial + surname,Max O'Dowd,Netherlands,right-arm-offbreak,country-unique
+083e01d9,Matiullah Khan,United Arab Emirates,4,pace,first initial + surname,Muhammad Uzair Khan,United Arab Emirates,right-arm-fast-medium,country-unique
+2669d6b7,Mohsin Khan,Hong Kong,4,pace,full name,Mohsin Khan,Hong Kong,left-arm-fast-medium,country-unique
+e7458e4b,Muhammad Kashif,Kuwait,4,spin,full name,Muhammad Kashif,Kuwait,right-arm-offbreak,country-unique
+362fde0f,NA Maiolo,Italy,4,spin,first initial + surname,Nicholas Maiolo,Italy,slow-left-arm-orthodox,country-unique
+cbabd6ad,NS Dhaliwal,Canada,4,pace,first initial + surname,Navneet Dhaliwal,Canada,right-arm-fast-medium,country-unique
+5ab659d9,P Pirabakaran,France,4,pace,first initial + surname,Pirakajan Pirabakaran,France,right-arm-fast-medium,country-unique
+bc6f8328,RJG Palmer,Jersey,4,spin,first initial + surname,Rhys Palmer,Jersey,right-arm-offbreak,country-unique
+7f46e127,Rohan Bhavesh Patel,Bulgaria,4,spin,first initial + surname,Rohan Patel,Bulgaria,slow-left-arm-orthodox,country-unique
+b78b3ffd,S Nadigotla,Romania,4,spin,first initial + surname,Satvik Nadigotla,Romania,right-arm-offbreak,country-unique
+3032933c,S Nitschke,Australia,4,spin,first initial + surname,Shelley Nitschke,Australia,slow-left-arm-orthodox,country-unique
+da39f141,S Sengupta,Czech Republic,4,pace,first initial + surname,Satyajit Sengupta,Czech Republic,right-arm-fast-medium,country-unique
+2b150c6b,SL Kalis,Netherlands,4,pace,first initial + surname,Sterre Kalis,Netherlands,right-arm-fast-medium,country-unique
+1304c2d6,ST Kannan,Germany,4,pace,first initial + surname,Saran Kannan,Germany,right-arm-fast-medium,country-unique
+98e908bd,TB Sole,Scotland,4,spin,first initial + surname,Tom Sole,Scotland,right-arm-offbreak,country-unique
+f0b16e64,Z Mali,South Africa,4,pace,first initial + surname,Zintle Mali,South Africa,right-arm-fast-medium,country-unique
+c8e6bddd,A Ndiraya,Zimbabwe,3,spin,first initial + surname,Ashley Ndiraya,Zimbabwe,legbreak-googly,country-unique
+51e0e79f,AS Abioye,Nigeria,3,pace,first initial + surname,Abiodun Abioye,Nigeria,right-arm-fast-medium,country-unique
+7bf34437,C Pervez,Canada,3,pace,first initial + surname,Cecil Pervez,Canada,right-arm-fast-medium,country-unique
+6b96bebf,C Zavoiu,Romania,3,spin,first initial + surname,Cosmin Zavoiu,Romania,right-arm-offbreak,country-unique
+9c376401,CS MacLeod,Scotland,3,pace,first initial + surname,Calum MacLeod,Scotland,right-arm-fast-medium,country-unique
+e770b214,DL Maddy,England,3,pace,first initial + surname,Darren  Lee Maddy,England,right-arm-fast-medium,country-unique
+e28bb0b9,DO Leicher,Namibia,3,pace,first initial + surname,Dylan Leicher,Namibia,right-arm-fast,country-unique
+dce2019b,F Behardien,South Africa,3,pace,first initial + surname,Farhaan Behardien,South Africa,right-arm-fast-medium,country-unique
+2b8b75a0,H Osinde,Canada,3,pace,first initial + surname,Henry Osinde,Canada,right-arm-fast-medium,country-unique
+baf3cf01,I Uboh,Nigeria,3,pace,first initial + surname,Ifeanyi Uboh,Nigeria,right-arm-fast-medium,country-unique
+5481bd91,J Hill,Philippines,3,pace,first initial + surname,Jonathan Hill,Philippines,right-arm-fast-medium,country-unique
+d996ba33,J Kila,Papua New Guinea,3,spin,first initial + surname,Jason Kila,Papua New Guinea,slow-left-arm-orthodox,country-unique
+f0398c2f,J Matharu,Canada,3,pace,first initial + surname,Jatinderpal Matharu,Canada,right-arm-fast-medium,country-unique
+3847ec84,JI de Villiers,Namibia,3,pace,first initial + surname,Jan-Izak de Villiers,Namibia,right-arm-fast-medium,country-unique
+479da8f9,JW Chilia,Vanuatu,3,spin,first initial + surname,Jelany Chilia,Vanuatu,right-arm-offbreak,country-unique
+cf06cb34,K Subramanian,Singapore,3,pace,first initial + surname,Karthikeyan Subramanian,Singapore,right-arm-fast-medium,country-unique
+d792374d,KK Dobell,Japan,3,pace,first initial + surname,Kento Ota Dobell,Japan,right-arm-fast-medium,country-unique
+e52eb657,KR Ebanks,Cayman Islands,3,pace,first initial + surname,Kervin Ebanks,Cayman Islands,right-arm-fast-medium,country-unique
+52a0b3ed,M Breban,Guernsey,3,pace,first initial + surname,Matthew Breban,Guernsey,right-arm-fast-medium,country-unique
+1339f52a,M Fontaine,Hungary,3,pace,first initial + surname,Mark Des Fontaine,Hungary,right-arm-fast,country-unique
+f08adc01,MG Hunter,Gibraltar,3,pace,first initial + surname,Matthew Hunter,Gibraltar,right-arm-fast-medium,country-unique
+ab343e93,P Kerai,Kenya,3,spin,first initial + surname,Pushpak Kerai,Kenya,legbreak,country-unique
+fbdc5ab1,P Murungi,Uganda,3,pace,first initial + surname,Pascal Murungi,Uganda,right-arm-fast-medium,country-unique
+a3b9191a,PD Hennessy,Spain,3,pace,first initial + surname,Paul Hennessy,Spain,right-arm-fast-medium,country-unique
+27cc4361,PJ Ongondo,Kenya,3,pace,first initial + surname,Peter Ongondo,Kenya,right-arm-fast-medium,country-unique
+0d4d3cb1,R Dhiman,Bulgaria,3,pace,first initial + surname,Rohit Dhiman,Bulgaria,right-arm-fast-medium,country-unique
+5959370f,R Kanoh,Thailand,3,spin,first initial + surname,Rosenan Kanoh,Thailand,right-arm-offbreak,country-unique
+a670d624,RR Watson,Scotland,3,pace,first initial + surname,Ryan Watson,Scotland,right-arm-fast-medium,country-unique
+a073f2ff,S Thakur,Romania,3,spin,first initial + surname,Sudeep Thakur,Romania,slow-left-arm-orthodox,country-unique
+1afd4f89,S Vats,Luxembourg,3,pace,first initial + surname,Shameek Vats,Luxembourg,right-arm-fast-medium,country-unique
+36d2face,Shorifa Khatun,Bangladesh,3,spin,first initial + surname,Salma Khatun,Bangladesh,right-arm-offbreak,country-unique
+eaeb065e,TCW Veillard,Guernsey,3,spin,first initial + surname,Thomas Veillard,Guernsey,slow-left-arm-orthodox,country-unique
+4a78f962,V Zanko,Croatia,3,pace,first initial + surname,Vedran Zanko,Croatia,right-arm-fast-medium,country-unique
+ebe27221,Y Fourie,South Africa,3,spin,first initial + surname,Yolani Fourie,South Africa,right-arm-offbreak,country-unique
+6483c062,A Dizija,Serbia,2,spin,first initial + surname,Aleksandar Dizija,Serbia,right-arm-offbreak,country-unique
+7c6293d1,A Orfila,Gibraltar,2,pace,first initial + surname,Adam Orfila,Gibraltar,right-arm-fast-medium,country-unique
+b91083bd,Abhijeet Ahuja,Hungary,2,pace,first initial + surname,Abhishek Stan Ahuja,Hungary,right-arm-fast-medium,country-unique
+518a21ed,Awais Ahmad,Sweden,2,pace,first initial + surname,Abrar Ahmad,Sweden,right-arm-fast-medium,country-unique
+50758325,B Geeves,Australia,2,pace,first initial + surname,Brett Geeves,Australia,right-arm-fast-medium,country-unique
+527c2dab,C Floyd,Netherlands,2,spin,first initial + surname,Clayton Floyd,Netherlands,slow-left-arm-orthodox,country-unique
+a72b14ff,CT Tremlett,England,2,pace,first initial + surname,Chris Tremlett,England,right-arm-fast-medium,country-unique
+3a1c34e6,D Gim,Nigeria,2,pace,first initial + surname,Daniel Gim,Nigeria,right-arm-fast-medium,country-unique
+bec5cab9,DK Mathias,Bahrain,2,pace,first initial + surname,David Mathias,Bahrain,right-arm-fast-medium,country-unique
+cefe0886,E Schiferli,Netherlands,2,pace,first initial + surname,Edgar Schiferli,Netherlands,right-arm-fast-medium,country-unique
+6ebf4d4e,Farzan Afzal,Spain,2,pace,first initial + surname,Faran Afzal,Spain,right-arm-fast-medium,country-unique
+9960a421,H Dandapani,Finland,2,spin,first initial + surname,Hariharan Dandapani,Finland,right-arm-offbreak,country-unique
+c4ff0618,H Patel,Canada,2,spin,first initial + surname,Hiral Patel,Canada,slow-left-arm-orthodox,country-unique
+7429c452,I Wardlaw,Scotland,2,pace,first initial + surname,Iain Wardlaw,Scotland,right-arm-fast-medium,country-unique
+430b7399,IP Swaney,Singapore,2,spin,first initial + surname,Ishaan Swaney,Singapore,slow-left-arm-orthodox,country-unique
+eae9fe8a,J Botha,South Africa,2,spin,first initial + surname,Johan Botha,South Africa,right-arm-offbreak,country-unique
+2dfdd316,J Intan,Malaysia,2,pace,first initial + surname,Jamahidaya Intan,Malaysia,right-arm-fast-medium,country-unique
+ab126ea8,JE Pitcher,Bermuda,2,pace,first initial + surname,Justin Pitcher,Bermuda,right-arm-fast-medium,country-unique
+a9a4df9f,JO Ngoche,Kenya,2,spin,first initial + surname,James Ngoche,Kenya,right-arm-offbreak,country-unique
+1afdbdbf,JWM Dalrymple,England,2,spin,first initial + surname,Jamie Dalrymple,England,right-arm-offbreak,country-unique
+056f58dd,KC Hodsoll,Bermuda,2,pace,first initial + surname,Kyle Hodsoll,Bermuda,right-arm-fast-medium,country-unique
+85d8110a,KJ Coetzer,Scotland,2,pace,first initial + surname,Kyle Coetzer,Scotland,right-arm-fast-medium,country-unique
+91136091,LHB Harrington-Myers,Cayman Islands,2,spin,first initial + surname,Luke Harrington-Myers,Cayman Islands,slow-left-arm-orthodox,country-unique
+68c3f79d,LN Onyango,Kenya,2,pace,first initial + surname,Lameck Onyango,Kenya,right-arm-fast-medium,country-unique
+47fb8d80,M Joshi,India,2,pace,first initial + surname,Mansi Joshi,India,right-arm-fast-medium,country-unique
+74ef405a,MBS Jonkman,Netherlands,2,pace,first initial + surname,Mark Jonkman,Netherlands,right-arm-fast,country-unique
+aa4154ad,MD Garratt,Gibraltar,2,pace,first initial + surname,Mark Daniel Garratt,Gibraltar,right-arm-fast-medium,country-unique
+d1c7dd6d,MJ Ross,Italy,2,spin,first initial + surname,Michael Ross,Italy,right-arm-offbreak,country-unique
+3c5a7deb,Memoona Riaz,Spain,2,pace,first initial + surname,Muhammad Riaz,Spain,right-arm-fast-medium,country-unique
+d1b5efdf,NCK Liyanage,Malaysia,2,pace,first initial + surname,Neville Liyanage,Malaysia,left-arm-fast-medium,country-unique
+270b4de6,NMS Param,Singapore,2,spin,first initial + surname,Navin Param,Singapore,right-arm-offbreak,country-unique
+c0fca5eb,O Gholami,Sweden,2,spin,first initial + surname,Oktai Gholami,Sweden,slow-left-arm-orthodox,country-unique
+796ffb22,P Masih,Romania,2,pace,first initial + surname,Patras Masih,Romania,right-arm-fast-medium,country-unique
+82294960,P Sarraf,Nepal,2,spin,first initial + surname,Pawan Sarraf,Nepal,right-arm-offbreak,country-unique
+babc65d3,Parveen Kumar,Finland,2,pace,full name,Parveen Kumar,Finland,right-arm-fast-medium,country-unique
+91cd337c,R Panchal,Spain,2,pace,first initial + surname,Ravi Panchal,Spain,right-arm-fast-medium,country-unique
+2a7a3137,S Arachchige,Italy,2,spin,first initial + surname,Shameera Nuwan Arachchige,Italy,right-arm-offbreak,country-unique
+8955b928,S Dhakal,Nepal,2,spin,first initial + surname,Sagar Dhakal,Nepal,slow-left-arm-orthodox,country-unique
+5ab09885,S Lateh,Thailand,2,spin,first initial + surname,Soraya Lateh,Thailand,slow-left-arm-orthodox,country-unique
+571f11e4,Tanveer Ahmed,Hong Kong,2,pace,full name,Tanveer Ahmed,Hong Kong,right-arm-fast-medium,country-unique
+0d677597,W Barresi,Netherlands,2,spin,first initial + surname,Wesley Barresi,Netherlands,right-arm-offbreak,country-unique
+679302a1,Z McLaughlin,Cayman Islands,2,spin,first initial + surname,Zachary McLaughlin,Cayman Islands,legbreak,country-unique
+55a5cffb,A Ahmadhel,Bulgaria,1,pace,first initial + surname,Agagyul Ahmadhel,Bulgaria,right-arm-fast-medium,country-unique
+7cefb2a2,A Mehmood,Hong Kong,1,pace,first initial + surname,Adil Mehmood,Hong Kong,right-arm-fast-medium,country-unique
+0c160e0d,Afif Khattak,Switzerland,1,pace,first initial + surname,Afif Khan Khattak,Switzerland,right-arm-fast-medium,country-unique
+f6b4f746,Ahmed Faiz,Malaysia,1,spin,first initial + surname,Ahmad Faiz,Malaysia,legbreak,country-unique
+3748955d,Amir Ali,Oman,1,spin,first initial + surname,Aamer Ali,Oman,right-arm-offbreak,country-unique
+b57f8a9a,BJ Hodge,Australia,1,spin,first initial + surname,Brad Hodge,Australia,right-arm-offbreak,country-unique
+17bc032c,C Munoz-Mills,Spain,1,spin,first initial + surname,Christian Munoz-Mills,Spain,right-arm-offbreak,country-unique
+a5c48ed1,C Wickramasinghe,Sri Lanka,1,pace,first initial + surname,Chamindu Wickramasinghe,Sri Lanka,right-arm-fast-medium,country-unique
+e91933cb,CC Blake,Vanuatu,1,pace,first initial + surname,Callum Blake,Vanuatu,right-arm-fast-medium,country-unique
+cb4a3840,Charanjeet Singh,Italy,1,spin,full name,Charanjeet Singh,Italy,right-arm-offbreak,country-unique
+adc96559,D Mogan,Malaysia,1,pace,first initial + surname,Dhivendran Mogan,Malaysia,right-arm-fast-medium,country-unique
+0d37dea9,DE Budge,Scotland,1,pace,first initial + surname,Dylan Budge,Scotland,right-arm-fast-medium,country-unique
+3185266a,DLS van Bunge,Netherlands,1,spin,first initial + surname,Daan van Bunge,Netherlands,legbreak,country-unique
+5a6bb1c7,Fayyaz Ahmed,United Arab Emirates,1,spin,first initial + surname,Farhan Ahmed,United Arab Emirates,slow-left-arm-orthodox,country-unique
+e6a7c6e2,G Axtell,Bahrain,1,pace,first initial + surname,George Axtell,Bahrain,right-arm-fast-medium,country-unique
+c3564c2d,G Toka,Papua New Guinea,1,pace,first initial + surname,Gaudi Toka,Papua New Guinea,right-arm-fast-medium,country-unique
+25261429,H Gori,Czech Republic,1,pace,first initial + surname,Honey Gori,Czech Republic,right-arm-fast-medium,country-unique
+9dc3ea7e,H Hiri,Papua New Guinea,1,spin,first initial + surname,Hiri Hiri,Papua New Guinea,right-arm-offbreak,country-unique
+2c01f21a,HC Overdijk,Netherlands,1,pace,first initial + surname,Hidde Overdijk,Netherlands,right-arm-fast-medium,country-unique
+716bd716,I Bardis,Greece,1,spin,first initial + surname,Ilias Bardis,Greece,slow-left-arm-orthodox,country-unique
+bceb1b07,JJ Tucker,Bermuda,1,pace,first initial + surname,Janeiro Tucker,Bermuda,right-arm-fast-medium,country-unique
+c9f851b0,JL de Mey,Netherlands,1,spin,first initial + surname,Julian de Mey,Netherlands,slow-left-arm-orthodox,country-unique
+5471024e,JM Davison,Canada,1,spin,first initial + surname,John Davison,Canada,right-arm-offbreak,country-unique
+2c6052a6,JS Henriksen,Denmark,1,pace,first initial + surname,Jonas Henriksen,Denmark,right-arm-fast-medium,country-unique
+015dc0cd,K Mendon,Czech Republic,1,pace,first initial + surname,Kushalkumar Mendon,Czech Republic,right-arm-fast-medium,country-unique
+a65593c6,K Tari,Vanuatu,1,pace,first initial + surname,Kenny Tari,Vanuatu,right-arm-fast-medium,country-unique
+18f4d808,L Gharasim,Romania,1,pace,first initial + surname,Laurentiu Gharasim,Romania,right-arm-fast-medium,country-unique
+fda4150a,M Brasier,Finland,1,pace,first initial + surname,Matias Brasier,Finland,right-arm-fast-medium,country-unique
+af2a0740,M Pushpakumara,Sri Lanka,1,spin,first initial + surname,Malinda Pushpakumara,Sri Lanka,slow-left-arm-orthodox,country-unique
+da4a1e46,M Spoors,Canada,1,spin,first initial + surname,Matthew Spoors,Canada,legbreak,country-unique
+27aec396,M Stoman,Portugal,1,pace,first initial + surname,Miguel Stoman,Portugal,right-arm-fast,country-unique
+486f252b,MO Bacarese,Gibraltar,1,spin,first initial + surname,Mark Bacarese,Gibraltar,right-arm-offbreak,country-unique
+518d96de,MR Montfort,Canada,1,pace,first initial + surname,Mark Montfort,Canada,right-arm-fast-medium,country-unique
+01b45044,Mohammad Amin,Kuwait,1,spin,full name,Mohammad Amin,Kuwait,right-arm-offbreak,country-unique
+5ce3fe3f,N Nankov,Bulgaria,1,spin,first initial + surname,Nikolay Nankov,Bulgaria,right-arm-offbreak,country-unique
+ecbd4377,NH Naureen,Spain,1,spin,first initial + surname,Nadim Hussain Naureen,Spain,legbreak,country-unique
+c8a7b014,OJ Hairs,Scotland,1,spin,first initial + surname,Ollie Hairs,Scotland,right-arm-offbreak,country-unique
+dcc5245d,P Oloka,Uganda,1,pace,first initial + surname,Pius Oloka,Uganda,right-arm-fast-medium,country-unique
+fccf5309,PA Desai,Canada,1,spin,first initial + surname,Parth Desai,Canada,slow-left-arm-orthodox,country-unique
+a56f4b65,PL Mommsen,Scotland,1,spin,first initial + surname,Preston Mommsen,Scotland,right-arm-offbreak,country-unique
+43ae7b1c,R Agamiire,Uganda,1,pace,first initial + surname,Richard Agamiire,Uganda,right-arm-fast-medium,country-unique
+543b4a1f,R Telemachus,South Africa,1,pace,first initial + surname,Roger Telemachus,South Africa,right-arm-fast-medium,country-unique
+c024db94,RJ Ranpura,Oman,1,pace,first initial + surname,Rajesh Ranpura,Oman,right-arm-fast-medium,country-unique
+5a892f36,RLB Rambukwella,Sri Lanka,1,spin,first initial + surname,Ramith Rambukwella,Sri Lanka,right-arm-offbreak,country-unique
+406de451,RS Williams,West Indies,1,pace,first initial + surname,Rashada Williams,West Indies,right-arm-fast,country-unique
+7d32d965,RT Lyons,Scotland,1,spin,first initial + surname,Ross Lyons,Scotland,slow-left-arm-orthodox,country-unique
+36ba7f0b,Rinitha Rajith,United Arab Emirates,1,pace,first initial + surname,Rishitha Rajith,United Arab Emirates,right-arm-fast-medium,country-unique
+123e663a,S Dhaniram,Canada,1,spin,first initial + surname,Sunil Dhaniram,Canada,slow-left-arm-orthodox,country-unique
+8ed6b6f1,S Malikzai,Germany,1,pace,first initial + surname,Shahir Malikzai,Germany,right-arm-fast,country-unique
+bbd365ad,S Ogundipe,Nigeria,1,spin,first initial + surname,Segun Ogundipe,Nigeria,slow-left-arm-orthodox,country-unique
+d4aa6a65,S Rengarajan,Czech Republic,1,spin,first initial + surname,Surya Rengarajan,Czech Republic,right-arm-offbreak,country-unique
+25ef10a2,S Saeed,Maldives,1,spin,first initial + surname,Shafee Saeed,Maldives,right-arm-offbreak,country-unique
+74d82e24,SKR Mallidi,Sweden,1,pace,first initial + surname,Sandeep Mallidi,Sweden,right-arm-fast,country-unique
+a89730a9,W Viraliliu,Vanuatu,1,pace,first initial + surname,Wesley Viraliliu,Vanuatu,right-arm-fast-medium,country-unique
+ade3660b,WT Mashinge,Zimbabwe,1,pace,first initial + surname,William Mashinge,Zimbabwe,right-arm-fast-medium,country-unique
+87ffd217,ZK Shem,Vanuatu,1,pace,first initial + surname,Zechariah Shem,Vanuatu,right-arm-fast-medium,country-unique

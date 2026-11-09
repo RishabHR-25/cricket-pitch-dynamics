@@ -6,10 +6,10 @@
   batches: **111/111 batches**, and wrote `data/interim/match_weather.csv` with
   **18,585 rows, 0 missing temperature observations, 0 failed geocodes**.
 - **All three format models are trained and saved** (2026-11-09, CPU, with
-  weather): T20 macro-F1 **0.431** (n=437), ODI **0.415** (n=243), Test
-  **0.473** (n=112), all above their majority baselines. Artifacts in
-  `models/pitch_proxy/` (Git-ignored); reviewable copies in
-  `models/pitch_proxy_results/`.
+  weather and 527 curated role overrides): T20 macro-F1 **0.437** (n=576),
+  ODI **0.417** (n=327), Test **0.492** (n=128), all above their majority
+  baselines. Artifacts in `models/pitch_proxy/` (Git-ignored); reviewable copies
+  in `models/pitch_proxy_results/`.
 - **Do not run two collectors at once.** Two concurrent runs on 2026-11-08
   doubled request traffic and repeatedly re-triggered the hourly limit. The
   collector is silent for ~90 s at startup while it parses `all_json.zip`, so a
@@ -49,21 +49,41 @@ pre-review coordinates are stale; the rest are reused. The cache directory is
 ## Three-format models trained with weather (2026-11-09)
 
 Command: `python src\train_pitch_models.py --matches data\raw\cricsheet\all_json.zip
---weather data\interim\match_weather.csv --output-dir models\pitch_proxy --device cpu`
+--weather data\interim\match_weather.csv --output-dir models\pitch_proxy --device cpu
+--role-overrides data\interim\bowler_role_overrides.csv`
 
 | Format | Train / test | Macro-F1 | Balanced acc. | Accuracy | Majority macro-F1 | Per-class F1 (Batting / Pace / Spin) |
 | --- | --- | --- | --- | --- | --- | --- |
-| T20 | 1,871 / 437 | **0.431** | 0.475 | 0.501 | 0.268 | 0.20 / 0.60 / 0.50 |
-| ODI | 956 / 243 | **0.415** | 0.433 | 0.453 | 0.248 | 0.29 / 0.55 / 0.41 |
-| Test | 464 / 112 | **0.473** | 0.510 | 0.670 | 0.220 | 0.00 / 0.77 / 0.65 |
+| T20 | 2,506 / 576 | **0.437** | 0.475 | 0.523 | 0.269 | 0.20 / 0.63 / 0.48 |
+| ODI | 1,334 / 327 | **0.417** | 0.433 | 0.471 | 0.248 | 0.25 / 0.57 / 0.43 |
+| Test | 529 / 128 | **0.492** | 0.531 | 0.695 | 0.225 | 0.00 / 0.78 / 0.70 |
+
+### Role curation addendum (2026-11-09)
+
+`src/build_role_overrides.py` resolves players whose Cricsheet short name does
+not match a profile full name. It accepts a player only when the name matches,
+the Cricsheet team equals the profile country, and all matching profiles agree
+on the style class. It wrote **527 overrides covering 9,768 credited wickets**
+(337 pace, 190 spin) to `data/interim/bowler_role_overrides.csv`; 139 conflicting
+and 346 domestic-team players stay in the human review queue.
+
+| Quantity | Before overrides | After overrides | Change |
+| --- | --- | --- | --- |
+| Players with a role | 2,478 | **3,005** | +527 |
+| T20 labelled matches | 2,308 | **3,082** | +33.5% |
+| ODI labelled matches | 1,199 | **1,661** | +38.5% |
+| Test labelled matches | 576 | **657** | +14.1% |
+| T20 macro-F1 | 0.431 | **0.437** | +0.006 |
+| ODI macro-F1 | 0.415 | **0.417** | +0.002 |
+| Test macro-F1 | 0.473 | **0.492** | +0.019 |
 
 - Weather coverage is **100%** in every format; all four weather variables are
   present. Weather's share of importance grows with match length: T20 3.4%,
   ODI 6.5%, Test 10.8%.
 - `gender` is still the top feature in T20 and ODI (10.6% and 13.7% of
   importance); it is absent from the Test model's top features.
-- The Batting class remains the weak point (F1 0.20 T20, 0.29 ODI, 0.00 Test —
-  only 61 Test examples).
+- The Batting class remains the weak point (F1 0.20 T20, 0.25 ODI, 0.00 Test —
+  only 67 Test examples).
 - Bug fixed en route: `train_one_format` merged every labeled column with the
   feature frame, so shared context columns were suffixed (`venue_x`/`venue_y`)
   and the feature list no longer matched. It now merges keys + `y` only. The

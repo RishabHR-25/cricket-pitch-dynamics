@@ -1,0 +1,3292 @@
+cricsheet_id,bowler,wickets,team,path_verdict,styles,same_country
+23e3f2d6,T Putthawong,157,Thailand,initial+surname:unique,pace,1
+6348c6e9,KY Chan,132,Hong Kong,none,,0
+519b872a,O Kamchomphu,130,Thailand,initial+surname:unique,spin,1
+4b15618c,S Laomi,115,Thailand,initial+surname:unique,spin,1
+ffa296f7,H Ishimwe,111,Rwanda,initial+surname:unique,pace,1
+49118dc7,SO Ngoche,111,Kenya,initial+surname:unique,spin,1
+84dc72db,Junaid Siddique,108,United Arab Emirates,full:unique,pace,1
+01c1b96c,C Aweko,107,Uganda,none,,0
+30d8136b,AR Ramjani,101,Uganda,initial+surname:unique,spin,1
+47b32a5a,IJR Zwilling,101,Netherlands,initial+surname:unique,pace,1
+2b7609f1,H Ssenyondo,100,Uganda,initial+surname:unique,spin,1
+fdc6b34d,ER Oza,97,United Arab Emirates,none,,0
+0dc00542,Shahid Afridi,95,Pakistan,full:conflict,"pace,spin",2
+dcdb87f2,Bilal Khan,95,Oman,full:unique,pace,1
+3c8faed4,F Banunaek,92,Indonesia,none,,0
+1f3b9f8d,M Akayezu,92,Rwanda,none,,0
+aaa6e84c,J Mbabazi,91,Uganda,none,,0
+ba57fb08,Z Bimenyimana,91,Rwanda,none,,0
+a62f55ba,DJ Hawoe,91,Indonesia,none,,0
+1c5c3dce,IO Okpe,90,Nigeria,initial+surname:unique,pace,1
+20481563,MNM Aslam,90,Kuwait,initial+surname:unique,spin,1
+58acb320,N Boochatham,89,Thailand,initial+surname:unique,spin,1
+3ac13a94,E Rukiriza,89,Rwanda,none,,0
+46a7ac78,DM Nakrani,89,Uganda,initial+surname:unique,pace,1
+090f96e4,Muhammad Nadir,88,Rwanda,none,,0
+c6a019f5,C de Lange,87,Netherlands,initial+surname:unique,spin,1
+c1a0cebe,MD Bimenyimana,87,Rwanda,none,,0
+1252f71a,MRJ Watt,87,Scotland,initial+surname:unique,spin,1
+f737ab44,S Vijay Unni,85,Malaysia,none,,0
+e85d03d6,BM Scholtz,85,Namibia,initial+surname:unique,spin,1
+4557dc54,PA van Meekeren,84,Netherlands,initial+surname:unique,pace,1
+44e00a4c,N Senamontree,84,Thailand,none,,0
+34e36b65,AM Kimote,81,Tanzania,none,,0
+f43dd8c2,SM Sharif,79,Scotland,initial+surname:unique,pace,1
+0cfb42b5,Abdul Majid Abbasi,78,Bahrain,initial+surname:unique,spin,0
+414d8a10,J Miyaji,76,Uganda,none,,0
+bd36bc39,S Chaturongrattana,76,Thailand,none,,0
+5728635a,W Mwatile,75,Namibia,none,,0
+97e6e41a,K Kunwar,75,Nepal,none,,0
+5b7ab5a9,CV Varun,75,Kolkata Knight Riders,none,,0
+72eada4c,P Maya,74,Thailand,initial+surname:unique,pace,1
+f13d3eba,KE Bryce,73,The Blaze,initial+surname:unique,pace,0
+2e392afa,P Aho,73,Nigeria,initial+surname:unique,pace,1
+f6ddfe08,C Sutthiruang,72,Thailand,initial+surname:unique,pace,1
+33b67317,Bilal Zalmai,72,Austria,none,,0
+fa9fdefa,KA Green,71,Namibia,none,,0
+681f522f,SA Okpe,71,Nigeria,initial+surname:unique,spin,1
+eb4f9c61,LN Oluoch,71,Kenya,initial+surname:unique,pace,1
+9f998ed8,CW Perchard,71,Jersey,initial+surname:unique,pace,1
+74eecff4,M Wai Siu,70,Hong Kong,none,,0
+95a5e066,MG Erasmus,70,Namibia,none,,0
+f61e2829,AH Maqsood,70,Scotland,initial+surname:unique,spin,1
+a0a65375,K Fraser,69,Scotland,initial+surname:unique,spin,1
+a96b36af,D Maisuria,68,Botswana,none,,0
+64fb6b15,A Bohara,67,Nepal,initial+surname:unique,pace,2
+87e33d07,F Nsubuga,65,Uganda,initial+surname:unique,spin,1
+190957d2,IKEG Artawan,65,Indonesia,none,,0
+9b73d523,LM Kasperek,65,New Zealand,initial+surname:unique,spin,1
+6de4e430,Washeem Abbas,65,Malta,initial+surname:unique,pace,1
+2e988457,Q Abel,64,Kenya,none,,0
+395695ce,C Kyewuta,64,Uganda,initial+surname:unique,pace,1
+583ce32c,N Shree Charani,64,India,none,,0
+4d7c5b56,IK Gamantika,64,Indonesia,none,,0
+6e60bbe2,PZ Kamunya,63,Tanzania,none,,0
+b9e07e44,R Abdulkareem,63,Nigeria,none,,0
+9e0bd203,B Ward,63,Jersey,initial+surname:unique,spin,1
+a1e80d06,A Shukla,62,Hong Kong,initial+surname:unique,pace,0
+dfdaca74,RC Belbashi,62,Nepal,none,,0
+008a024c,M Mooketsi,62,Botswana,none,,0
+c4022bff,Chan Ka Man,61,Hong Kong,none,,0
+a6898f7a,G Matome,61,Botswana,none,,0
+eb0f2802,M Koli,61,Romania,initial+surname:unique,pace,0
+9f2be73d,S Ravichandran,61,Japan,none,,0
+6762a445,A Ikuzwe,60,Rwanda,none,,0
+34f86a2d,M Bibi,60,Hong Kong,none,,0
+61c22ad0,SR Magar,60,Nepal,none,,0
+f8b50da3,S Dharnidharka,60,United Arab Emirates,initial+surname:unique,pace,1
+dab18aa5,DL Brangman,59,Bermuda,initial+surname:unique,spin,1
+1747ea18,DS Airee,59,Nepal,initial+surname:unique,spin,1
+9238dd92,YM Nkanya,59,Tanzania,none,,0
+5673a3fc,NL McCullum,58,New Zealand,initial+surname:unique,spin,1
+6d972d02,T Shadrack,58,Botswana,none,,0
+2dfe0612,Ghulam Ahmadi,57,Germany,initial+surname:unique,spin,1
+91056862,SA Jumbe,57,Tanzania,none,,0
+e8a552ef,Usman Khan,57,France,full:unique,pace,1
+da3b91fd,Imran Khan,57,Bahrain,full:unique,pace,1
+9a58f2c8,S Siegers,57,Netherlands,none,,0
+3c87f0c3,JN Frylinck,57,Namibia,initial+surname:unique,pace,1
+f0e293b0,Zahoor Khan,57,United Arab Emirates,full:unique,pace,1
+0848ac5f,S Thakor,57,Tanzania,none,,0
+cf92d76b,S Akiteng,57,Uganda,none,,0
+5b616bf0,LA Burns,56,Spain,none,,0
+ff6a7ab5,R Trumpelmann,56,Namibia,initial+surname:unique,pace,1
+c556b9d2,G Sesay,55,Sierra Leone,none,,0
+2f145a4f,I Nakisuuyi,55,Uganda,none,,0
+28131839,MA Leask,54,Scotland,initial+surname:unique,spin,1
+f0a45427,RM Koda,54,Indonesia,none,,0
+79209272,Yasir Ali,53,Spain,full:unique,spin,1
+aaccb8ca,Iqra Sahar,53,Hong Kong,none,,0
+615688b6,Usman Najeeb,52,Saudi Arabia,none,,0
+e73f6c4b,I Ntirenganya,52,Rwanda,none,,0
+8b46fc4f,J Baguma,52,Uganda,initial+surname:unique,spin,1
+7467fe01,WA Duraisingam,52,Malaysia,initial+surname:unique,pace,1
+71fa64d6,P Useni,51,Nigeria,none,,0
+a3a275ec,K Waiswa,51,Uganda,initial+surname:unique,pace,1
+fc362c5d,Qamar Mushtaque,51,Norway,none,,0
+b72a8938,JA Diergaardt,51,Namibia,none,,0
+d758a366,V Hamunyela,51,Namibia,none,,0
+a36915ce,N Vanua,50,Papua New Guinea,initial+surname:unique,pace,1
+76388dc8,S Badree,50,West Indies,initial+surname:unique,spin,1
+d99cc23a,T van der Gugten,50,Glamorgan,initial+surname:unique,pace,0
+1a9e9efe,Bilal Hassun,50,Uganda,none,,0
+8b7ce771,D Jakiel,49,Malawi,initial+surname:unique,pace,0
+b38a9f73,OH Agbomadzie,49,Ghana,none,,0
+eadc8924,A Reddy,49,India,initial+surname:conflict,"pace,spin",5
+ff36e706,Sirajullah Khadim,49,Portugal,none,,0
+6c8904c8,S Kotte,49,United Arab Emirates,initial+surname:unique,spin,1
+626af7ff,C Hinze,49,Japan,none,,0
+3ed4e2ad,C Rumistrzewicz,48,Spain,none,,0
+2d4317da,B Murekatete,48,Rwanda,none,,0
+0fa81719,V Saini,48,Romania,initial+surname:unique,pace,0
+9ccb6e52,K Irakoze,48,Rwanda,none,,0
+f99a219a,E Sebareme,47,Rwanda,none,,0
+e969e580,GD Arta,47,Indonesia,none,,0
+1b3f7dbb,SN Shihepo,47,Namibia,none,,0
+e910d955,NW Sariani,47,Indonesia,none,,0
+098a757c,Muhammad Jawadullah,47,United Arab Emirates,none,,0
+f537d39c,H Hotchandani,47,United Arab Emirates,none,,0
+f8c72766,D Heyliger,46,Canada,initial+surname:unique,pace,1
+ea8b65ab,D Hazell,46,England,initial+surname:unique,spin,1
+92b9e9af,M Mwatile,46,Namibia,none,,0
+dbd79036,HASD Siriwardene,46,Sri Lanka,none,,0
+c988daa1,I Takahashi,46,Japan,none,,0
+39fd9295,K Piet,46,Botswana,none,,0
+c042b412,FJ Klaassen,45,Kent,initial+surname:unique,pace,0
+70bab30b,PE Mendonca,45,Oman,none,,0
+0d38ab25,H Fennell,45,Argentina,none,,0
+c8ae2573,Mariamma Hyder,45,Kuwait,none,,0
+f5e70dd4,E Wachira,45,Kenya,none,,0
+8088632c,C Rububagumya,45,Rwanda,none,,0
+abbdca1a,PM Seelaar,44,Netherlands,initial+surname:unique,spin,1
+b857468a,V Vijh,44,Luxembourg,initial+surname:unique,pace,1
+fc4375ef,BFW de Leede,44,Netherlands,initial+surname:unique,pace,1
+3ad06915,J Coetzee,44,Thailand,none,,0
+a6ec88f4,HWA Landheer,44,Netherlands,initial+surname:unique,pace,1
+3e6e9a5f,S Gill,44,Kenya,initial+surname:unique,spin,0
+60bec5c3,Muhammad Amir,44,Malaysia,initial+surname:unique,pace,0
+0b581ed6,J Sumerauer,44,Jersey,initial+surname:unique,pace,1
+38424a4d,M Ribeiro,44,Brazil,none,,0
+782fb776,LV van Beek,43,Wellington Firebirds,initial+surname:unique,pace,0
+6a63c29c,SVE Bharathi,43,Germany,initial+surname:unique,pace,1
+c03c6200,DJG Sammy,43,West Indies,initial+surname:unique,pace,1
+b0023708,N Navaika,43,Vanuatu,none,,0
+022745d5,F Overdijk,43,Netherlands,initial+surname:unique,pace,1
+bf5e7711,M Hill,43,Hong Kong,initial+surname:unique,pace,1
+13f7c5f4,S Tuhadeleni,42,Namibia,none,,0
+602ebd4c,Sami Sohail,42,Malawi,none,,0
+74571ec4,Waqar Zalmai,42,Austria,none,,0
+8e7be59c,PA Chatterji,42,Scotland,initial+surname:unique,pace,1
+dfcdb11e,LT Bichard,42,Guernsey,initial+surname:unique,pace,1
+4d35d0b3,EN Lynch,42,Netherlands,initial+surname:unique,spin,1
+7be8a0ed,JW Dernbach,42,Surrey,initial+surname:unique,pace,0
+94271647,V Vira,42,Vanuatu,initial+surname:unique,spin,1
+4b95058b,Puja Mahato,42,Nepal,none,,0
+c8a3f688,SN Netravalkar,42,United States of America,initial+surname:unique,pace,0
+4bed6af7,Maria Jasvi,42,Kuwait,none,,0
+eb9082b2,A Kohli,41,Germany,none,,0
+907c51ab,JL Gunn,41,England,initial+surname:unique,pace,1
+7a81836e,L Malino,41,Malawi,none,,0
+57fcfd3b,S Muniandy,41,Malaysia,initial+surname:unique,pace,1
+14af45c4,KDA Lukies,41,Philippines,none,,0
+8f70fff7,S Conteh,41,Sierra Leone,none,,0
+29ee9bf9,K Nassoro,41,Tanzania,none,,0
+1e569fb0,S Veerapathiran,41,Bahrain,initial+surname:unique,pace,1
+72e60730,A Vala,41,Papua New Guinea,initial+surname:unique,spin,1
+add288ea,MM Baig,40,Qatar,initial+surname:unique,pace,1
+8a452195,R Slater,40,Scotland,none,,0
+0c24fb7b,S Yeshi,40,Bhutan,none,,0
+5838cb64,SIP Fernando,40,Sri Lanka,initial+surname:unique,pace,2
+521abce2,I Barma,40,Nepal,none,,0
+f1eb3c73,DMW Rawlins,40,Sussex,initial+surname:unique,spin,0
+f4a0a615,P Koech,40,Kenya,none,,0
+8451562a,L Udeh,40,Nigeria,none,,0
+dd14abf5,R Sakurano-Thomas,39,Japan,none,,0
+1021b6e5,J Rasu,39,Vanuatu,initial+surname:unique,pace,1
+bf19d427,SF Tiai,39,Samoa,none,,0
+752af5a4,NC Monteiro,39,Brazil,none,,0
+5bb904d4,KKN Egodage,39,United Arab Emirates,initial+surname:unique,spin,1
+cbd91942,M Taniyama,39,Japan,none,,0
+97290faf,S Joseph,39,West Indies,initial+surname:conflict,"pace,spin",0
+e9a870ed,AC Evans,39,Scotland,initial+surname:unique,pace,1
+d04fc4a4,NLKWR Dewi,39,Indonesia,none,,0
+8de618ab,SA Ahmad,39,Denmark,initial+surname:unique,spin,1
+44b53fba,Amna Tariq,39,Kuwait,initial+surname:unique,pace,0
+1119a645,Mengting Liu,38,China,none,,0
+c26cd57a,B Shikongo,38,Namibia,initial+surname:unique,pace,1
+e29e9c12,Shakeel Ahmed,38,Oman,initial+surname:conflict,"pace,spin",0
+f5715b48,Ali Naseer,38,United Arab Emirates,none,,0
+5152ab02,Habib Khan,38,Estonia,initial+surname:conflict,"pace,spin",0
+c01d7726,H Thaker,38,Canada,initial+surname:unique,spin,1
+3a4d914f,A Dcosta,38,Oman,none,,0
+adbf0400,Basil Hameed,38,United Arab Emirates,none,,0
+2d772f77,MI Khagoitsa,37,Kenya,none,,0
+29b322c7,Ateeq Iqbal,37,Hong Kong,initial+surname:unique,pace,0
+27339093,L Idambo,37,Kenya,none,,0
+36a0a88c,Sarawut Maliwan,37,Thailand,none,,0
+10854c82,A Gurung,37,Bhutan,initial+surname:unique,pace,0
+382377a4,NK Ariani,37,Indonesia,none,,0
+d465c6d7,C Wright,37,Cayman Islands,initial+surname:unique,pace,1
+6ad2d5f7,LN Rajbanshi,37,Nepal,initial+surname:unique,spin,1
+00467a76,S Bodha,37,Gibraltar,initial+surname:unique,pace,1
+6d48df01,HDJ Siegers,37,Netherlands,none,,0
+9c4b58db,S Tippoch,37,Thailand,initial+surname:unique,spin,1
+2daa8e40,S Jimmy,36,Papua New Guinea,none,,0
+26b3df21,AS Qwele,36,Tanzania,none,,0
+06bcade5,ASF Sirah,36,Philippines,none,,0
+4d84ad05,CJA Amini,36,Papua New Guinea,initial+surname:unique,spin,1
+ad135bde,SAN Maypriani,36,Indonesia,none,,0
+83cde44d,I Toua,36,Papua New Guinea,none,,0
+cdda92be,M Upadhayay,36,Nepal,none,,0
+0ab3c788,RP Singh,36,United States of America,full:unique,pace,0
+7c1ba524,AA Patil,36,India,initial+surname:unique,spin,1
+dc1dd6c4,Ijaz Hussain,36,Romania,full:unique,pace,0
+04bc296f,D Sabir,36,Bermuda,none,,0
+6a97c7a4,Karanbir Singh,36,Austria,initial+surname:conflict,"pace,spin",0
+531aef3b,SA Wittmann,36,Namibia,none,,0
+3239c8a9,R Coker,36,Sierra Leone,none,,0
+5777d460,L Cardoso,36,Brazil,none,,0
+0dbe27b8,BD Glover,36,Netherlands,initial+surname:unique,pace,1
+a4afc486,SZ Vayani,36,Malawi,none,,0
+c498c510,N Nipiko,36,Vanuatu,initial+surname:unique,pace,1
+9f87d0f0,I Nandakumar,35,United Arab Emirates,initial+surname:unique,pace,1
+23917bf0,S Kananji,35,Malawi,none,,0
+6a88d66d,Abdul Naser Baluch,35,Sweden,none,,0
+d7e51f87,GM Muthui,35,Kenya,none,,0
+9414a81c,AI Chudasama,35,United States of America,initial+surname:unique,pace,0
+7ee25c46,Raja Adeel,35,Spain,none,,0
+7fa6bd8e,RR Patel,35,Kenya,initial+surname:conflict,"pace,spin",2
+9c333e40,Namgay Thinley,35,Bhutan,none,,0
+3134e4a4,S Dunukedeniya,35,Cyprus,none,,0
+44c3cb6d,I van Zyl,35,Namibia,none,,0
+340202b0,LCN Smith,35,Southern Vipers,initial+surname:unique,spin,0
+e7068bfd,EU Kejarukua,35,Namibia,none,,0
+595433d2,P Siaka,35,Papua New Guinea,none,,0
+992979fa,GK Diviya,34,Singapore,none,,0
+716bf559,BA Pai,34,Gibraltar,none,,0
+6cc4d322,GC Murtaza,34,Cambodia,initial+surname:unique,pace,0
+4ed7d23f,RM Farrell,34,Australia,initial+surname:unique,pace,1
+441006af,K Mirpuri,34,Gibraltar,initial+surname:unique,pace,1
+52b57a65,NMP Suwandewi,34,Indonesia,none,,0
+3cfbddce,Sadia Yousuf,34,Pakistan,initial+surname:unique,pace,1
+18ae55e4,T Tshose,34,Botswana,none,,0
+16610c7b,NN Saidi,34,Tanzania,none,,0
+0e56c514,HJ Manenti,34,Italy,none,,0
+34ab1e6e,A Gbla,34,Sierra Leone,none,,0
+64c81abf,D Suzuki,34,Japan,none,,0
+c156cc1f,I Danladi,34,Nigeria,initial+surname:unique,spin,1
+cde067e1,J Kariko,34,Papua New Guinea,none,,0
+94113d54,AJ Parmar,34,Norway,initial+surname:unique,spin,0
+59f44fde,TT Soe,34,Myanmar,none,,0
+98dfe425,Asmavia Iqbal,33,Pakistan,initial+surname:unique,pace,1
+dc60abdc,Rizwan Haider,33,Malaysia,none,,0
+1c1bb0d5,MB Tambe,33,Finland,initial+surname:unique,pace,1
+1f943bef,H Rathod,33,Qatar,none,,0
+b27f9716,L Moises,33,Brazil,none,,0
+3250b7db,C Mahamalage,33,Italy,none,,0
+270bf7e2,KV Morea,33,Papua New Guinea,initial+surname:unique,pace,1
+72253b87,Kaleemullah,33,Oman,none,,0
+2a03bd2f,L Bruce,33,Gibraltar,initial+surname:unique,pace,1
+2ecd844a,BJ Currie,32,Sussex,initial+surname:unique,pace,0
+fa0d1410,Irfan Ringku,32,Romania,none,,0
+78fa5f6d,A Chandel,32,Japan,none,,0
+b1f21c0f,T Zangmo,32,Bhutan,none,,0
+d8976cb7,DG Blampied,32,Jersey,initial+surname:unique,spin,1
+5a0dbdeb,A Dhabe,32,Sweden,none,,0
+dba54d8e,JA Burrows,32,Isle of Man,initial+surname:unique,spin,1
+a3034d3d,HJ Thomas,32,Papua New Guinea,none,,0
+d4f98302,JE Ronalds,32,Germany,none,,0
+96275259,B Ito-Davis,32,Japan,none,,0
+d953bf92,A Kirschbaum,31,Argentina,none,,0
+0c40b02d,Shafina Mahesh,31,Singapore,none,,0
+bff0535a,CR Seneviratna,31,Sri Lanka,none,,0
+f9df0aa2,M Syrioti,31,Greece,none,,0
+b4d08794,Maryam Omar,31,Kuwait,none,,0
+dd572696,Haider Ali,31,United Arab Emirates,initial+surname:unique,pace,0
+42e4b276,R Rijke,31,Netherlands,initial+surname:unique,pace,1
+4bb7f51e,A Wright,31,Cayman Islands,none,,0
+37ceee4e,Aysha,31,Qatar,none,,0
+eb40ed89,VP Thamotharam,31,Malta,initial+surname:unique,pace,0
+0e80e47d,U Shantu,31,Portugal,none,,0
+0bf15e52,Harmeet Singh,31,United States of America,full:conflict,"pace,spin",0
+bba7558e,K McGill,31,Scotland,initial+surname:unique,pace,1
+d3868bd0,JH Davey,31,Somerset,initial+surname:unique,pace,0
+2af0e3b1,GA Priandana,31,Indonesia,none,,0
+374bb5e7,K Klein,31,Netherlands,initial+surname:unique,pace,1
+8b7cda26,Riya Sharma,31,Nepal,initial+surname:conflict,"pace,spin",0
+de6b3760,Festus Benn,31,Bahamas,none,,0
+2809b390,MV Pavlovic,31,Serbia,initial+surname:unique,spin,1
+314f0889,Usman Khalid,31,Saudi Arabia,none,,0
+fe4f5d2b,A Doddaballapur,31,Germany,none,,0
+1688f2dc,T Lungameni,30,Namibia,initial+surname:unique,pace,1
+c2c7e58a,MD Botha,30,United Arab Emirates,none,,0
+c4ecc42c,Joshua Asia,30,Nigeria,none,,0
+7267e3cd,Ibrahim Rizan,30,Maldives,none,,0
+f094e3b8,Muhammad Saqlain,30,Hungary,none,,0
+04cf2e94,A Morris,30,Cayman Islands,initial+surname:unique,spin,1
+803dbf1d,A Dutt,30,Netherlands,initial+surname:unique,spin,1
+62b2aa65,M Dale-Bradley,30,Guernsey,none,,0
+e3386c8a,K Bhurtel,30,Nepal,initial+surname:unique,pace,1
+5b351aff,Pratik Singh Bais,30,Mexico,none,,0
+e393c6c1,SF Jerome,30,Tanzania,none,,0
+3a00d34f,LV Boas,30,Brazil,none,,0
+0286eabe,MH Ushanga,30,Tanzania,none,,0
+0e6c2f00,AF Ifill,30,Cayman Islands,initial+surname:unique,spin,1
+66c1accf,R Andrew,30,Vanuatu,none,,0
+5b2acc3f,Shahid Afridi,30,Germany,full:unique,pace,1
+673be48f,W Nalisa,30,Vanuatu,initial+surname:unique,spin,1
+fde53ec1,Adil Butt,30,Eswatini,initial+surname:unique,pace,0
+395179e8,D Parashar,29,United Arab Emirates,none,,0
+b0f2d3bd,ND Laegsgaard,29,Denmark,none,,0
+b5714cf9,ZL Win,29,Myanmar,none,,0
+a268c07b,K Hinds,29,Bahamas,none,,0
+007113d7,HAM Shah,29,Denmark,initial+surname:unique,spin,1
+b3540b2a,C Pengkumta,29,Thailand,none,,0
+cebc1351,M Tom,29,Papua New Guinea,none,,0
+d816fc1c,JJ Huo,29,Mozambique,none,,0
+a53029a1,R Hashu,29,Portugal,none,,0
+1f490b28,AR Puri,29,Singapore,initial+surname:unique,spin,2
+39799e49,T Wangchuk,29,Bhutan,none,,0
+8ea44a61,Joyleen Kaur,29,Hong Kong,none,,0
+91d9aa26,S Nampiina,29,Uganda,none,,0
+8b0b3bba,SA Mohandas,29,Hungary,initial+surname:unique,pace,1
+72275237,Anjar Tadarus,29,Indonesia,none,,0
+65cd62a9,A Martel,29,Guernsey,initial+surname:unique,spin,1
+d144423b,E Toguchi-Quinn,29,Japan,none,,0
+8d62fc14,IM Vaghela,29,United States of America,initial+surname:unique,pace,0
+eb33378d,Nonoha Yasumoto,29,Japan,none,,0
+106135f5,Ruchitha Venkatesh,29,Hong Kong,none,,0
+2c54c49b,MJ Humphreys,29,Ireland,initial+surname:unique,spin,0
+89394502,MA Baig,29,Malawi,initial+surname:unique,pace,0
+1f7825dd,SF Daley,29,West Indies,none,,0
+dd5a9067,V Baskaran,28,Singapore,initial+surname:unique,spin,1
+5de198db,Abdullah Akbarjan,28,Austria,none,,0
+af42d9f2,K Thuchila,28,Malawi,none,,0
+781f1a40,A Mokgotlhe,28,Botswana,none,,0
+aeab0d4f,D Klein,28,Leicestershire,initial+surname:unique,pace,0
+569bbcbb,CM Greechan,28,Jersey,none,,0
+97b0e4ff,SC van Schalkwyk,28,United States of America,initial+surname:unique,pace,0
+c404f58a,DP Nannes,28,Delhi Daredevils,initial+surname:unique,pace,0
+84880baf,Milad Momend,28,Luxembourg,none,,0
+eb5aa5b9,Bilal Muhammad,28,Malta,full:unique,pace,0
+f5bd70f2,NM Salonen,28,Finland,initial+surname:unique,pace,1
+bfc7799f,E Kubwimana,28,Rwanda,none,,0
+089ebf89,K Juma,28,Tanzania,none,,0
+498031f9,Mirab Razwan,28,Norway,none,,0
+e1592949,KS Leverock,28,Bermuda,initial+surname:unique,pace,1
+57c95c3c,LH Rodrigues,28,Brazil,none,,0
+568e5a4a,AR Cusack,28,Ireland,initial+surname:unique,pace,0
+2327fdc7,AA Rahayu,28,Indonesia,none,,0
+8ccef7e2,Ma Ruike,28,China,none,,0
+8a522c6c,B Biza,28,Zimbabwe,none,,0
+8ce69204,K Arua,28,Papua New Guinea,none,,0
+e61cee7b,H Venkataram,27,Singapore,none,,0
+ac5ae4af,I Udana,27,Sri Lanka,initial+surname:unique,pace,1
+9920dd86,CA Soper,27,Papua New Guinea,initial+surname:unique,pace,1
+2011735e,A Shahi,27,Cyprus,initial+surname:unique,pace,1
+1911dcbc,AAP Rivero,27,Argentina,none,,0
+62318525,P Thongsa,27,Thailand,none,,0
+e63c08e9,R Samson,27,Nigeria,none,,0
+a4696d64,Jakob Gul,27,Bulgaria,initial+surname:unique,spin,0
+5fe3709e,G Bakiweyem,27,Ghana,none,,0
+385eac52,O Bell,27,Scotland,initial+surname:unique,spin,1
+3051fcc6,Amarpal Kaur,27,Canada,none,,0
+f4b942ae,Priyada Murali,27,Kuwait,none,,0
+256d29e8,L Bull,27,Sierra Leone,none,,0
+f468293b,JN Loftie-Eaton,27,Namibia,initial+surname:unique,pace,1
+eb2de8d9,K Amuge,27,Uganda,none,,0
+d07b6842,S Georgota,27,Greece,none,,0
+21b67523,F Mutua,27,Kenya,none,,0
+f7aca3b3,Aminata Kamara,27,Sierra Leone,none,,0
+9706e64b,LA Marsh,27,England,initial+surname:unique,pace,1
+5ef3c310,M Shahbaz Butt,27,Norway,initial+surname:unique,pace,0
+f1328a90,CM Gough,26,Germany,none,,0
+24a93558,OE Taylor,26,Cook Islands,none,,0
+0c142594,MPM Pathirannehelage,26,Austria,none,,0
+dd468f06,R Oa,26,Papua New Guinea,none,,0
+4f85f02c,P Maziya,26,Malawi,none,,0
+b5aa28ce,Yves Cyusa,26,Rwanda,none,,0
+20ac8219,S Vashisht,26,Romania,initial+surname:unique,pace,1
+7a787b98,M Magagula,26,Eswatini,none,,0
+74a578d0,C Udekwe,26,Nigeria,none,,0
+c6e10e5c,NK Patel,26,United States of America,initial+surname:unique,spin,0
+6cedad99,EB Ringera,26,Kenya,none,,0
+b8e65260,Imran Ameer,26,Malta,none,,0
+3775b9f9,Vinu Kumar,26,Singapore,initial+surname:conflict,"pace,spin",0
+3f9d95f9,LJ Myott,26,Philippines,none,,0
+2064e555,Lucas Rossi,26,Argentina,none,,0
+6e60a792,MJ Ansell,26,Isle of Man,initial+surname:unique,pace,1
+98affc04,A Makri,26,Greece,none,,0
+b975210d,DAM Louis,26,Qatar,none,,0
+31f01815,CB Roposo,26,Mozambique,none,,0
+1d6d8a8b,Zaki Ul Hassan,26,Belgium,initial+surname:unique,pace,0
+2d9451cc,MK Thakur,26,Thailand,none,,0
+cab3f89a,Gaurav Tiwari,26,Indonesia,none,,0
+78cb83f3,KOK Williams,25,West Indies,initial+surname:conflict,"pace,spin",2
+d0042e16,Z Burgess,25,Bermuda,none,,0
+bb4da4d3,D Visser,25,Samoa,none,,0
+9543a4fe,A Fujikawa,25,Japan,none,,0
+b67af1c4,Muhammad Jabir,25,Qatar,none,,0
+847b4bdd,HA Chohan,25,Tanzania,none,,0
+537021f5,JT Brassell,25,Namibia,none,,0
+1f4a78c5,Utkarsh Jain,25,Cambodia,none,,0
+762f43b7,ROC Dunka,25,Cayman Islands,none,,0
+4d1ec7eb,A Nao,25,Papua New Guinea,initial+surname:unique,pace,1
+e553e27f,K Senamontree,25,Thailand,none,,0
+5a8dc41e,Yasar Haroon,25,Brazil,none,,0
+5e6041a4,D Koralalage,25,Cyprus,none,,0
+04e145f4,A Salomao,25,Mozambique,none,,0
+c57fa67e,E Otieno,25,Kenya,initial+surname:unique,pace,1
+43d365ca,Tashi Phuntsho,25,Bhutan,none,,0
+45a34a2d,VD Adewoye,25,Nigeria,none,,0
+d8bee9a1,J Shaju,25,Malta,initial+surname:unique,pace,0
+09cbca15,Sonam,25,Bhutan,none,,0
+c573d173,MWR Stokes,25,Guernsey,initial+surname:unique,pace,1
+3df8f9d5,Vishil Patel,25,Kenya,initial+surname:unique,spin,1
+5892ac75,R Kalimuthu,25,Singapore,initial+surname:unique,pace,1
+69a9bb78,LK O'Reilly,24,Ireland,initial+surname:unique,pace,0
+3f61a062,BTJ Wheal,24,Hampshire,initial+surname:unique,pace,0
+df997334,CS Nascimento,24,Brazil,none,,0
+f888a374,AK Maguire,24,Ireland,none,,0
+b25a3800,Meet Bhavsar,24,Kuwait,none,,0
+31c04b7b,CJPF Kalugamage,24,Italy,none,,0
+3e06e7ac,Azyan Farhath,24,Maldives,none,,0
+09e86895,Pyae Phyo Wai,24,Myanmar,none,,0
+02b078b1,P Malav,24,Luxembourg,initial+surname:unique,pace,1
+27df03d2,Shoaib Rafiq,24,Mexico,none,,0
+af19aa66,PK Matautaava,24,Vanuatu,initial+surname:unique,pace,1
+e258a603,N Dutta,24,Canada,initial+surname:unique,spin,1
+33ab1f1c,B Khumalo,24,Botswana,none,,0
+39e9f0c9,B Arora,24,Malta,initial+surname:unique,spin,0
+14e1fdab,Amar Sharma,24,Malta,initial+surname:conflict,"pace,spin",0
+69caf2be,G Ngegba,24,Sierra Leone,none,,0
+9a95bebb,S Bau,24,Papua New Guinea,initial+surname:unique,pace,1
+e23da78c,NK Aneesh Kumar,24,Switzerland,initial+surname:unique,spin,1
+b471ff6c,K Fubler,24,Bermuda,none,,0
+62f6d8ce,Zaheer Zahiri,24,France,none,,0
+37f9eb59,L Mabhero,24,Zimbabwe,none,,0
+e50c13a5,J Gunasekar,24,Oman,none,,0
+dec8e038,J Theron,24,United States of America,none,,0
+5f5efae1,N Tanner,24,Philippines,none,,0
+2472ad2c,Aamir Lal,24,South Korea,none,,0
+4f3a89ae,SM Nash,24,Samoa,none,,0
+073126d6,LS Barkania,24,Tanzania,none,,0
+d92d3563,C Abel,24,Scotland,none,,0
+cfdfe39c,Nik Nur Atiela,24,Malaysia,none,,0
+bb0aac11,C Chukwuonye,23,Nigeria,none,,0
+efcb778e,J Butler,23,Guernsey,initial+surname:unique,pace,1
+5c658441,Ayaz Dadabhai,23,Zambia,none,,0
+a9a09cb8,S Wickramasekara,23,Czech Republic,initial+surname:unique,pace,1
+ee17d329,D Abeyrathna,23,Norway,none,,0
+3f8915a0,E Kamara,23,Sierra Leone,none,,0
+6b46ce43,EJB Miles,23,Jersey,initial+surname:unique,spin,1
+f606177e,G Kodali,23,United States of America,initial+surname:unique,pace,0
+c4f8d754,L Erdenebulgan,23,Mongolia,none,,0
+b91f2a31,KP Meiyappan,23,United Arab Emirates,initial+surname:unique,spin,1
+053f3ce3,D Ravu,23,Papua New Guinea,initial+surname:unique,pace,1
+f67ea6d2,S Walaza,23,Uganda,none,,0
+68f24545,S Maduranga,23,South Korea,initial+surname:unique,pace,0
+802febe2,J Hicks,23,Isle of Man,initial+surname:unique,pace,0
+704e0160,A Nanda,23,Luxembourg,initial+surname:unique,pace,1
+65cfc56b,DK Shetty,23,Indonesia,initial+surname:unique,pace,0
+8069f81f,J Tuffin,23,Philippines,none,,0
+82623a3a,Waqas Ahmad,23,Malta,initial+surname:unique,pace,0
+42bf1b7d,H Carlyon,23,Jersey,initial+surname:unique,spin,1
+9c96b71f,J Martins,23,Portugal,none,,0
+7027d12f,HRA Rainey,23,Scotland,none,,0
+04f0d409,S Pradhan,23,Bhutan,none,,0
+5f22ccae,NSS Sharma,23,India,initial+surname:unique,pace,2
+7163637f,V Mansale,23,Vanuatu,none,,0
+4ca3d67d,AM Kamara,23,Sierra Leone,none,,0
+9ea555a4,P Mapotsane,23,Botswana,none,,0
+443d1fd8,K Fletcher,22,Switzerland,initial+surname:unique,pace,1
+11f56b14,HV Mandhyan,22,Hungary,none,,0
+0706d6cc,Viola Komeda,22,Czech Republic,none,,0
+926c6d3c,Abdullah Mahmood,22,Denmark,initial+surname:conflict,"pace,spin",0
+ef537c2e,N Nojic,22,Serbia,none,,0
+40283617,NP Dalgaard,22,Denmark,none,,0
+1d6e8f52,T Taylor,22,Cayman Islands,initial+surname:unique,pace,1
+8e9d3dc4,PF Gallagher,22,Finland,initial+surname:unique,spin,1
+6fd40892,M Vervitsioti,22,Greece,none,,0
+a38da707,P Sabu,22,Austria,none,,0
+244009ae,Irfan Hafejee,22,Panama,none,,0
+baa7dd37,V Ganesan,22,Germany,initial+surname:unique,spin,1
+83d17bbc,MW Forde,22,West Indies,initial+surname:unique,pace,1
+b1c113d7,Ada Bhasin,22,Singapore,none,,0
+b7abb123,JB Abega,22,Cameroon,none,,0
+0ed66ce6,C Forshaw,22,Guernsey,none,,0
+db86ac96,C Wijesinghe,22,Cyprus,initial+surname:unique,pace,0
+737e595d,NK Yadav,22,Nepal,initial+surname:unique,pace,1
+72ef2c6b,V Jatinder Kumar,22,Germany,initial+surname:conflict,"pace,spin",0
+34c3f7b9,Adam Senn,22,Cyprus,none,,0
+373954ca,Fayaz Khan,22,Germany,initial+surname:unique,pace,0
+622be0d9,S Gooch,22,Estonia,initial+surname:unique,pace,1
+039168c7,A Dirannehelage,22,Cyprus,none,,0
+2dde3e62,J Bulele,22,Mozambique,none,,0
+d3a44255,HL Colvin,22,England,none,,0
+bb7b014a,Karri Gullem Keen,22,Philippines,none,,0
+24ed1f75,S Solman,22,Vanuatu,none,,0
+fb0c0bcc,Sultana Khatun,22,Bangladesh,initial+surname:unique,spin,1
+ad5165c2,A Galan,22,Argentina,none,,0
+06b387f1,Waseem Yaqoob,22,Lesotho,none,,0
+30f92334,ZGF Foulkes,22,Canterbury,initial+surname:unique,pace,0
+b5472435,M Valner,22,Estonia,none,,0
+f7d267f7,NP Kenjige,22,United States of America,initial+surname:unique,spin,0
+dd7dd27a,S Godara,22,Cambodia,none,,0
+78f719ea,IDM Latin,22,Gibraltar,initial+surname:unique,spin,1
+e21bc7f3,RD Berrington,22,Scotland,initial+surname:unique,pace,1
+3308d881,SL Quintyne,21,West Indies,none,,0
+c6097d68,O Thomas,21,West Indies,initial+surname:unique,pace,1
+21db290f,Hammadullah Shinwari,21,Finland,none,,0
+532ddb12,P Agboya,21,Nigeria,none,,0
+6ec13131,Shah Abrar Hussain,21,Cambodia,initial+surname:unique,pace,0
+03fb10bd,R Shimwamana,21,Rwanda,none,,0
+d577d45a,TI Gajanayake,21,Bahrain,none,,0
+1b0ce76e,A Adekunle,21,Nigeria,none,,0
+a7b3bd26,C Bull,21,Sierra Leone,none,,0
+3a44a4e4,PSRK Sudarshan,21,Singapore,none,,0
+3967b66f,CJ Langford,21,Isle of Man,initial+surname:unique,pace,1
+ef503cfe,P Kumbhare,21,Japan,none,,0
+9853b404,ML Castillo,21,Belize,none,,0
+26b59073,C Dickson,21,Cook Islands,none,,0
+231daa19,Asif Shaikh,21,Bahrain,initial+surname:unique,spin,0
+059ec7a5,B Kgosiemang,21,Botswana,none,,0
+87a92b6b,N Pokana,21,Papua New Guinea,initial+surname:unique,pace,1
+9048c17e,DM Gondaria,21,Kenya,initial+surname:unique,pace,1
+38189be1,OD Hald,21,Denmark,none,,0
+292d11ee,F Eseigbe,21,Nigeria,none,,0
+aea11d1d,D Birrell,21,Jersey,none,,0
+609d6c7c,W Peatfield,21,Guernsey,initial+surname:unique,pace,1
+ec8132b2,Ezgi Nur Kilic,21,Turkey,none,,0
+753b5a2d,NN Odhiambo,21,Kenya,initial+surname:unique,pace,2
+7f2f40fa,E Kuncova,21,Czech Republic,none,,0
+3a7ea906,VJ Kingma,21,Netherlands,initial+surname:unique,pace,1
+2b0deff9,L Qiao,21,Indonesia,none,,0
+4d382b64,Xu Qian,21,China,none,,0
+d58fdb42,CJ Metcalfe,21,Ireland,initial+surname:unique,spin,0
+16443d2f,M Daniels,21,South Africa,initial+surname:unique,pace,1
+040f11e8,V Araa,21,Papua New Guinea,none,,0
+e086735b,Umair Qasim,20,Eswatini,none,,0
+4c5a72e2,R Edwards,20,Cayman Islands,initial+surname:unique,pace,0
+5470418a,T Rossi,20,Argentina,none,,0
+91ae10e1,SC de Oliveira,20,Portugal,none,,0
+00823a96,KL Gordon,20,The Blaze,initial+surname:unique,spin,0
+e6581a17,CM Akachukwu,20,Nigeria,initial+surname:unique,pace,1
+5d006a1a,A Savvani,20,Greece,none,,0
+f7b2cbe8,C Viljoen,20,Otago Volts,initial+surname:unique,pace,0
+d9e5ecb4,E Anyipo,20,Uganda,none,,0
+f4f892a3,XSD Smith,20,Suriname,none,,0
+97ae78b7,Meghna Rajan,20,Switzerland,none,,0
+bbab35a3,M Yunusu Issa,20,Tanzania,none,,0
+16ddd36b,TD Chaoana,20,Lesotho,none,,0
+76b19864,Murid Ekrami,20,Belgium,none,,0
+2e89652e,H Bharadwaj,20,Singapore,none,,0
+06989091,Javid Patel,20,Zambia,initial+surname:conflict,"pace,spin",0
+97eb9a07,F Odhiambo,20,Kenya,none,,0
+ad580a96,Sangita Rai,20,Nepal,initial+surname:unique,pace,0
+017cadb2,R Musamali,20,Uganda,none,,0
+70722cc7,L Chipanga,20,Mozambique,none,,0
+866e9f3d,S Jegannathan,20,Indonesia,none,,0
+0730a707,SI Kamea,20,Papua New Guinea,initial+surname:unique,pace,1
+bb9b51f4,JOA Gordon,20,Canada,initial+surname:unique,pace,1
+fe5175ce,Yasir Mohammad,20,United States of America,none,,0
+2b43be58,Edward Fleming,20,Portugal,none,,0
+bb5f73de,Mohammad Khan Rafah,20,France,none,,0
+fd2b8c06,A Reyes,20,Gibraltar,none,,0
+390ff45b,Abdul Razzaq,20,Pakistan,full:unique,pace,1
+98d05440,B Regmi,20,Nepal,initial+surname:unique,spin,1
+9908d470,EC Bargna,20,Germany,none,,0
+3b492b8d,Zon Lin,20,Myanmar,none,,0
+ec687c3a,LL Htun,20,Myanmar,none,,0
+261fddca,MA Nyabela,20,Lesotho,none,,0
+c0266a6e,R Choden,20,Bhutan,none,,0
+324e00a9,Danyal Raja,20,Bulgaria,initial+surname:unique,pace,0
+a138f597,Ali Masood,20,Estonia,none,,0
+53f88bf1,LL Dimba,20,Malawi,none,,0
+58aa33cd,Najjam Shahzad,20,Portugal,initial+surname:unique,pace,1
+1a8f879b,Mujeeb-ur-Rehman,20,Qatar,none,,0
+a77472dc,G Stewart,20,Kent,initial+surname:unique,pace,0
+5aa8574b,I van der Woning,20,Netherlands,initial+surname:unique,pace,1
+d6f9dfd6,HMD Rasangika,20,Bahrain,none,,0
+85364088,I Chathurani,20,Cyprus,none,,0
+7a6decc8,Luqman Butt,19,Cambodia,none,,0
+6892f9c3,Waji Ul Hassan,19,Saudi Arabia,none,,0
+46a29dd0,L Piety,19,Nigeria,none,,0
+0ba9de33,HER Tyler,19,Philippines,none,,0
+3f18724b,MC Sorensen,19,Ireland,none,,0
+8ffa1b3c,V Phiri,19,Malawi,none,,0
+efca38df,P Cuinica,19,Mozambique,none,,0
+c06c25fd,Akhil Anil,19,Tanzania,none,,0
+26c9b5be,R Baaleri,19,Ghana,none,,0
+7e7d2fe5,J Nyirankundineza,19,Rwanda,none,,0
+3f9feb1e,S Sola,19,Samoa,none,,0
+b17a4a93,N Shangase,19,South Africa,initial+surname:unique,spin,1
+6cf75582,KK Lin Thu,19,Myanmar,none,,0
+1a8cedc8,M Jele,19,Eswatini,none,,0
+dacf556b,D Ramani,19,Czech Republic,initial+surname:unique,pace,0
+4393e047,R Nehonde,19,Botswana,none,,0
+d5f96736,DPS Tyagi,19,Singapore,none,,0
+266f372c,H Celik,19,Turkey,none,,0
+26eb73f9,MS Beresford,19,Germany,none,,0
+fed9a316,Viktoria Frey,19,Estonia,none,,0
+d2763568,DR Gibson,19,Western Storm,initial+surname:unique,pace,0
+42151725,GK Berg,19,Hampshire,initial+surname:unique,pace,0
+9bd0d19d,LA McBride,19,Ireland,none,,0
+95bd9407,E Karimi,19,Denmark,none,,0
+69e53eb3,F Stoman,19,Portugal,none,,0
+213dc641,M Hundal,19,Canada,none,,0
+9124aa4c,Zuhaib Zubair,19,United Arab Emirates,none,,0
+5bc290a2,MPP San,19,Myanmar,none,,0
+7f74b21d,ACF Stokes,19,Guernsey,initial+surname:unique,spin,1
+10726a80,S Mosweu,19,Botswana,none,,0
+2e092d2c,Thuya Aung,19,Myanmar,none,,0
+e00acf74,E Mathew,19,Malta,initial+surname:unique,pace,1
+5680f1ad,CO Obuya,19,Kenya,initial+surname:unique,spin,1
+f33cfd25,B Masaba,19,Uganda,initial+surname:unique,spin,1
+4ebc70ca,GT Main,19,Scotland,initial+surname:unique,pace,1
+1ce4f664,KS Bagabena,19,Ghana,none,,0
+33d65ab4,SY Win,19,Myanmar,none,,0
+88bba252,R Ova,19,Vanuatu,none,,0
+fbffb752,Alina Aslam,19,Norway,none,,0
+e22f8ec1,JKC Claxton,19,West Indies,none,,0
+67e21230,E Kasaija,19,Uganda,none,,0
+bb1a5f8a,PE Kulume,19,Uganda,none,,0
+8001a208,S Venkataraman,19,United Arab Emirates,none,,0
+fd835ab3,DJ Hussey,19,Australia,initial+surname:unique,spin,1
+cc3884f9,TD Smartt,19,West Indies,none,,0
+531f0278,K Santokie,18,Jamaica Tallawahs,initial+surname:unique,pace,0
+6d024ce3,Zabiullah Zahid,18,Sweden,initial+surname:unique,pace,1
+baeae6dd,R Immadi,18,Norway,none,,0
+92075cdc,M Taylor,18,Bahamas,initial+surname:unique,pace,0
+8d646b49,Soyeb Pendi,18,Zambia,none,,0
+edbc9441,A Meyenborg,18,Germany,none,,0
+cca50cd6,LJ Wright,18,Sussex,initial+surname:unique,pace,0
+e01895bb,DT Johnston,18,Ireland,none,,0
+fd94c29f,L Bonner,18,Belize,none,,0
+2cffab74,Mukesh Kumar,18,Delhi Capitals,initial+surname:conflict,"pace,spin",0
+5947220c,R Thapliyal,18,Belgium,none,,0
+84f831c3,DAL Paramitha,18,Indonesia,none,,0
+8ce2080b,TJG Pringle,18,Northern Districts,initial+surname:unique,pace,0
+e94d1dcd,Usman Tariq,18,Quetta Gladiators,initial+surname:unique,pace,0
+4aad6842,Sheraz Sheikh,18,Belgium,initial+surname:unique,spin,1
+13598ebc,A Krishna,18,Singapore,initial+surname:unique,spin,1
+c3ba4942,R Siriwardena,18,Cyprus,none,,0
+cfcf189f,DA Blignaut,18,Germany,none,,0
+ef70a34b,TJ Vlaeminck,18,Australia,initial+surname:unique,pace,1
+b7824537,B Niaz,18,Belgium,initial+surname:unique,pace,1
+c6002ece,Maahi Madhavan,18,United States of America,none,,0
+c3394c16,DEM Carter,18,Scotland,none,,0
+45b5ce8d,Nyeing Cham Soe,18,Myanmar,none,,0
+5299063a,CK Jasmat,18,Samoa,none,,0
+1eb5affb,Paing Danu,18,Myanmar,none,,0
+bc3fc527,SK Awiah,18,Ghana,none,,0
+90a41671,L Karlsson,18,Sweden,initial+surname:unique,pace,1
+0d0f0385,F Akankwasa,18,Uganda,initial+surname:unique,spin,1
+cd12f384,H Dhavina,18,Singapore,none,,0
+7ca68967,NA Greenwood,18,Wellington Firebirds,none,,0
+8cf61570,Shashikant Laxman,18,Mexico,none,,0
+997fffbe,MBA Lamplough,18,Hong Kong,none,,0
+0c00286e,M Vumiliya,18,Rwanda,none,,0
+797ee165,SS Kang,18,United Arab Emirates,none,,0
+335b2768,T Iosefo,18,Samoa,none,,0
+e8c42000,W Moutswi,18,Botswana,none,,0
+bad1af65,D Panda,18,Mexico,none,,0
+8299b9a2,Sher Sahak,18,Norway,initial+surname:unique,pace,0
+01679383,DB Loic,18,Cameroon,none,,0
+a968d39b,DC Smith,18,Philippines,initial+surname:unique,pace,1
+81898acc,KJ Ferrary,18,Gibraltar,initial+surname:unique,spin,1
+e1492aed,A Karmacharya,18,Nepal,none,,0
+3798b336,U Peace,18,Nigeria,none,,0
+c982ad6f,B Phelenyane,18,Lesotho,none,,0
+a768a762,AA Gajic,18,Serbia,initial+surname:unique,pace,1
+fa8f9dc3,KM Beams,17,Australia,initial+surname:unique,spin,1
+ae2c396f,AM Peterson,17,New Zealand,initial+surname:unique,spin,1
+66b30f71,AB Dinda,17,India,initial+surname:unique,pace,1
+58cb36aa,S Nsubuga,17,Uganda,none,,0
+c1edced9,AL Mundundo,17,Mozambique,none,,0
+95382501,SN Swamy,17,Sweden,none,,0
+4c87bd01,A Merritt,17,Jersey,none,,0
+5fa7f030,EL Bartram,17,Italy,none,,0
+670e6804,Junaid Khan,17,Finland,full:unique,pace,1
+507fc658,SFS Cheema,17,Austria,none,,0
+64457c72,Kamal Soukhiya,17,Luxembourg,none,,0
+c3c905ae,EAS Ferrary,17,Gibraltar,none,,0
+ef9ff861,S Kato,17,Japan,none,,0
+3aac5463,YS Blagg,17,Gibraltar,none,,0
+be0077ba,Junaid Khan,17,Portugal,full:unique,pace,0
+80d30c5f,Cai Yuzhi,17,China,none,,0
+211f48fe,K Ota,17,Japan,none,,0
+c2c12f2a,D Golechha,17,Denmark,none,,0
+4ae7048b,AB Slebsager,17,Denmark,none,,0
+f7ce2ff9,J Ramanandi,17,Oman,none,,0
+d62f04f5,M Ozturk,17,Turkey,initial+surname:unique,pace,1
+ee86a890,Rameez Khan,17,Romania,initial+surname:conflict,"pace,spin",0
+b1ad996b,MP Yadav,17,India,initial+surname:conflict,"pace,spin",2
+9c91218d,A Natubhai Ahir,17,Panama,none,,0
+e20b9b34,Abdullahi Ismail,17,Nigeria,none,,0
+5596d5bf,D Foerster,17,Namibia,none,,0
+b8cd9955,W Ngowhuad,17,Thailand,none,,0
+16301313,S Wetoto,17,Kenya,none,,0
+5bdeeed4,Shivam Sharma,17,Canada,full:conflict,"pace,spin",0
+5332fc2f,Hamid Mahmood,17,Sweden,initial+surname:unique,pace,1
+3f2b40f0,Zeefa Jilani,17,Kuwait,initial+surname:unique,pace,1
+3883402f,Tian Sen Qun,17,China,none,,0
+1c726c76,FO Kibasu,17,Tanzania,none,,0
+5c77d7cb,G Wetherall,17,Jersey,none,,0
+5360c9be,R Mangal,17,France,initial+surname:unique,pace,2
+8ae7bb3e,TG Norris,17,Southern Vipers,initial+surname:unique,pace,0
+83c3e8e3,SH Johnson,17,South Australia,initial+surname:unique,pace,0
+0813a8b1,D Marks,17,Malta,initial+surname:unique,pace,1
+3951be49,AB Kamara,17,Sierra Leone,none,,0
+f20e7e23,M Yanagida,17,Japan,none,,0
+42095275,I Edwards,17,Germany,none,,0
+75f3aa00,BN Toube,17,Cameroon,none,,0
+2306b48a,Kuldeep Gurjar,17,South Korea,none,,0
+5570c4c1,M Choamba,17,Malawi,none,,0
+e5be2427,Sania Khan,16,Pakistan,initial+surname:conflict,"pace,spin",9
+110839f2,JL Hunter,16,Australia,initial+surname:unique,pace,0
+460fc0ba,Muhammad Salman,16,Bahrain,none,,0
+11b37b2a,JL Tutty,16,Cook Islands,none,,0
+d30d4a0c,A Vessik,16,Estonia,none,,0
+34712b35,M Musinguzi,16,Uganda,initial+surname:unique,spin,1
+d1d83db3,T Gwandu,16,Zimbabwe,none,,0
+e03ca117,K Kato-Stafford,16,Japan,none,,0
+fb34b0ec,WJ Cope,16,Luxembourg,none,,0
+13bc54a8,U Aryaman Sunil,16,Singapore,none,,0
+9585854d,D Wotu,16,Vanuatu,initial+surname:unique,pace,1
+42581e6d,K Kubota,16,Japan,none,,0
+034d3c52,A Husain,16,Argentina,none,,0
+d9a2345a,L Barnett,16,Isle of Man,none,,0
+5750bcb4,E Malinga,16,Sri Lanka,initial+surname:unique,pace,1
+bf370562,S Talamarla,16,Czech Republic,none,,0
+7f6c2dae,DC Stovell,16,Bermuda,initial+surname:unique,spin,1
+4e3fd330,S Kushretha,16,Luxembourg,initial+surname:unique,spin,1
+4cf645c9,RMAM Avery,16,Brazil,none,,0
+fa308279,A Paul,16,Estonia,initial+surname:unique,pace,0
+c84a3e06,Wang Huiying,16,China,none,,0
+b2f4cb0d,C Sosa,16,Argentina,none,,0
+8e38d470,Robert Raina,16,Thailand,none,,0
+52f96571,RJ Trott,16,Bermuda,initial+surname:unique,spin,1
+e112732d,L Denny,16,Cook Islands,none,,0
+a02b9f81,SM Tupou,16,Fiji,none,,0
+e7e14ecc,A Chenthamara,16,Kuwait,none,,0
+3c4a62c4,O Matsolo,16,Mozambique,none,,0
+417bde96,JS Pooranakaran,16,Singapore,none,,0
+540fb139,O Lefaga,16,Samoa,none,,0
+c3a998fa,J Ajiambo,16,Kenya,none,,0
+dca2e79a,YP Molina,16,Costa Rica,none,,0
+ef2a7af4,KK Donovan,16,Philippines,none,,0
+ac166f77,S Shrivastava,16,Oman,none,,0
+c07a1f41,NM Odhiambo,16,Kenya,initial+surname:unique,pace,2
+c343a8c6,H Lin Aung,16,Myanmar,none,,0
+456397e5,T Perera,16,Botswana,initial+surname:unique,pace,0
+047d293e,A Bester,16,France,none,,0
+a8e3170f,Mohammad Irfan,16,Pakistan,full:unique,pace,1
+8b6c33d0,R Padunglerd,16,Thailand,initial+surname:unique,pace,1
+27159c6a,RM Haq,16,Scotland,none,,0
+fef92afc,SC Kuggeleijn,16,Northern Districts,initial+surname:unique,pace,0
+ac8bca8d,L Maritz,16,Ireland,initial+surname:unique,pace,0
+2c31f58a,T Sandaruwan,16,Romania,none,,0
+a2f46292,KK Ahmed,16,India,initial+surname:unique,pace,2
+2dc78362,RV Hawkins,16,Scotland,none,,0
+705b8c5c,Mohammad Atif,16,Spain,initial+surname:unique,pace,1
+d3b4b8ed,IMHC Joyce,15,Ireland,initial+surname:unique,pace,0
+5b8c830e,KH Pandya,15,Mumbai Indians,initial+surname:unique,spin,0
+28574428,J Singye,15,Bhutan,none,,0
+ed82d9a5,L Shafeeg,15,Maldives,none,,0
+0dda36e7,P Shetty,15,Bahrain,none,,0
+45828106,Zaid Ahmad,15,Sweden,initial+surname:unique,spin,0
+4f1d3f68,J Santhanam,15,Singapore,none,,0
+f7cb7c3a,Abul Farhad,15,Czech Republic,none,,0
+97f44626,NK Tiwari,15,Cyprus,none,,0
+6c53ffb2,Irfan Safi,15,Austria,initial+surname:unique,pace,1
+3f886270,H Agarwal,15,Qatar,initial+surname:unique,pace,0
+9244df4b,A Ashokan,15,Czech Republic,initial+surname:unique,pace,1
+e1631e47,M Khojbariya,15,Eswatini,none,,0
+2f6f44bb,RDB Ahir,15,Panama,none,,0
+db32d60a,KM Chingaipe,15,Malawi,none,,0
+04df9697,JAM Henri,15,Portugal,none,,0
+b89cde87,K Nestor,15,Gibraltar,initial+surname:unique,pace,1
+5feead83,TT Maposa,15,Zimbabwe,initial+surname:unique,pace,1
+548d4188,KS Airee,15,Nepal,initial+surname:unique,pace,1
+11a22126,A Turay,15,Sierra Leone,none,,0
+31d220f5,I Waqavakatoga,15,Fiji,none,,0
+0ac067e8,DR Hooper,15,Guernsey,initial+surname:unique,pace,1
+2fa916b3,K Kavindi,15,Sri Lanka,initial+surname:unique,pace,1
+95bf6b2a,G Mallett,15,Jersey,none,,0
+2fff8b43,AK Gokoel,15,Suriname,none,,0
+7ae1aad9,S Williams,15,Sierra Leone,initial+surname:unique,spin,0
+191ee2f2,J Khadka,15,Romania,none,,0
+019d7ef5,Mohamed Turay,15,Sierra Leone,none,,0
+5f311f1a,K Chigora,15,Zimbabwe,none,,0
+7e2c16a3,S Dhadwal,15,Qatar,none,,0
+9103ecdb,Muhammad Rohid,15,United Arab Emirates,none,,0
+98e3f1de,S Burdekin,15,Cyprus,none,,0
+3e1fbf05,SK Reddy,15,Austria,initial+surname:unique,spin,0
+83e9173e,S Bhardwaj,15,Austria,none,,0
+f0f9d832,A Rameshan,15,Malta,none,,0
+6c54bd7a,A Thorpe,15,Isle of Man,none,,0
+d5ae21a2,KD Shah,15,Hong Kong,initial+surname:unique,spin,1
+3bea1983,DT Doram,15,Netherlands,none,,0
+d945db3e,NH Patel,15,Northern Districts,initial+surname:unique,spin,0
+b7d8c07d,A Vaidya,15,Sweden,initial+surname:unique,spin,0
+3b52d247,FA Cossa,15,Mozambique,none,,0
+2c535f08,F Damiao Couana,15,Mozambique,none,,0
+e381ae69,KC Thompson,15,United Arab Emirates,none,,0
+756989cf,Naina Saju,15,Switzerland,none,,0
+3a5160d9,L Ostergaard,15,Denmark,none,,0
+3d7f02d4,RM Dorji,15,Bhutan,initial+surname:unique,spin,1
+469ccead,CB Sole,15,Scotland,none,,0
+a120e81b,Mohammed Qasim,15,Malta,initial+surname:unique,pace,0
+2d45d7d2,MPGT Ketiyage,15,Cyprus,initial+surname:unique,pace,1
+e204b898,Syed Maisam Ali,15,Portugal,initial+surname:unique,pace,1
+e4ad57ea,Ahmad Khalid Ahmadzai,15,Belgium,initial+surname:conflict,"pace,spin",0
+027662be,J Evans,15,Israel,none,,0
+8c712051,B Mpedi,15,Botswana,none,,0
+c7c60bc5,Fiza,15,Oman,none,,0
+180240d4,EM Bermingham,15,New Zealand,none,,0
+1eaf0ce1,MK Amusa,14,Nigeria,none,,0
+b6358ee8,E Kabwere,14,Malawi,none,,0
+686b7194,Siow Tzin Yee,14,Malaysia,none,,0
+d85d52c2,M Dixit,14,Luxembourg,initial+surname:unique,pace,1
+2fa8a697,A Kanukuntla,14,Germany,none,,0
+4d622fee,K Goud,14,India,none,,0
+f58295c2,JM Iradukunda,14,Rwanda,none,,0
+237baa2c,Sameera Khan,14,Oman,initial+surname:unique,pace,1
+9d80f576,J Kowa,14,Sierra Leone,none,,0
+053dc208,A Brindle,14,England,initial+surname:unique,pace,1
+15f609ed,NE Farrant,14,South East Stars,initial+surname:unique,pace,0
+0f05655d,Tashi Dorji,14,Bhutan,none,,0
+0e0afd8b,MO Jones,14,Bermuda,initial+surname:unique,pace,1
+b3e9555a,Aziz Mohammad,14,Belgium,initial+surname:conflict,"pace,spin",0
+1a54d618,Mohammed Irshad,14,Qatar,none,,0
+f3249df1,AM Healey,14,Germany,none,,0
+cd7134f5,Han Lili,14,China,none,,0
+bb1fcd51,P Agrawal,14,Norway,none,,0
+a031b75e,K Peddrick,14,Italy,none,,0
+f86ce673,AC Douglas,14,Bermuda,none,,0
+7ccc0a38,RR Seth,14,Singapore,none,,0
+e9d6a2ce,Manpreet Singh,14,Singapore,full:unique,spin,1
+c01d1c0a,T Jamtsho,14,Bhutan,none,,0
+1a3cc554,RK Paudel,14,Nepal,initial+surname:unique,pace,2
+fc2150f4,G Candiru,14,Qatar,none,,0
+7f97139f,O Mondlane,14,Mozambique,none,,0
+e56f4180,A Turkmen,14,Turkey,none,,0
+f1c4f2ea,A Nathwani,14,Austria,initial+surname:unique,spin,1
+fa6e2cb3,FA Sargent,14,Ireland,none,,0
+2a753483,RO Mazumba,14,Mozambique,none,,0
+877a3433,M Dlamini,14,Eswatini,none,,0
+2f37396f,I Muhawenimana,14,Rwanda,none,,0
+bc6f4dac,R Chaudhary,14,Nepal,none,,0
+e8bdbbca,AIV Benatar,14,Gibraltar,none,,0
+6ab99b17,WK Lai,14,Hong Kong,none,,0
+5995707a,R Ankad,14,Mexico,none,,0
+490f475a,RD Atangana,14,Cameroon,none,,0
+dacecca3,S Sarandeva,14,Bulgaria,none,,0
+b6015231,A Wanjira,14,Kenya,none,,0
+c3890e1e,D Ruynekova,14,Bulgaria,none,,0
+49f6d023,AL Stephen,14,Vanuatu,initial+surname:unique,pace,1
+ca72ea31,SJ Hughes-Pinan,13,Spain,none,,0
+71ee8c8d,O Ranedoumoun,13,Cameroon,none,,0
+95fdfe7e,R Limema,13,Lesotho,none,,0
+995fd3b2,M Gogev,13,Bulgaria,none,,0
+72de0105,M Mwangi,13,Kenya,none,,0
+757baa30,JKD Andreano,13,Philippines,none,,0
+c74c583b,R Bakum,13,Ghana,none,,0
+65a60be7,V Ateak,13,Ghana,none,,0
+3959c505,E Ungerman,13,Singapore,none,,0
+d20e22f7,Atif-Ur-Rehman,13,Saudi Arabia,none,,0
+97b9cb64,A Conteh,13,Gambia,none,,0
+e901d179,Musa Khan Ahmadzai,13,Switzerland,initial+surname:unique,pace,1
+f0e722e0,Usman Shinwari,13,Pakistan,full:unique,pace,1
+a6aac76b,NJ Browne,13,New Zealand,initial+surname:unique,spin,0
+1ba007d8,SA Sathiya,13,Oman,none,,0
+3eb26dc4,S Desungnoen,13,Thailand,none,,0
+57a25400,A Mare,13,Qatar,none,,0
+88bcd09d,GP Tom,13,Papua New Guinea,none,,0
+217f5194,AF Aoina,13,Samoa,none,,0
+d5fa2ab3,M McColl,13,Scotland,initial+surname:unique,pace,1
+2bc636df,Jamshid Nasiri,13,France,none,,0
+cb83a7df,T Mulepati,13,Finland,none,,0
+436527cd,Malyun Yusuf,13,Sweden,none,,0
+00863408,MTMMJ Ave,13,Cook Islands,initial+surname:unique,pace,0
+a19e799b,S Ostergaard,13,Denmark,none,,0
+034e7939,A Kato-Stafford,13,Japan,none,,0
+449d4f17,Iftikhar Kankhel,13,Belgium,none,,0
+88fac705,TJ Draca,13,Italy,none,,0
+ccaa3434,A Hlubi,13,South Africa,none,,0
+01815edc,S Kanankege,13,Italy,none,,0
+25ca0573,TR Sadhu,13,India,initial+surname:unique,pace,1
+fa39ad19,D Robson,13,Estonia,none,,0
+5772882c,Amal Jacob,13,Hungary,initial+surname:unique,pace,0
+3b22ee4e,P Gheewala,13,Estonia,none,,0
+c9f95a16,AM Zepeda,13,Austria,none,,0
+0e283b75,M Short,13,Namibia,initial+surname:unique,spin,0
+d24e69f5,Nary Thapa,13,Nepal,none,,0
+400b36cd,M Artur,13,Brazil,none,,0
+01341439,D Lohia,13,Papua New Guinea,none,,0
+843e067e,M Ayodhya,13,Sri Lanka,none,,0
+9865ed99,Asif Bevinje,13,Romania,initial+surname:unique,pace,0
+cbc0e027,Uswa Syed,13,Spain,none,,0
+16084b50,LA Simango,13,Mozambique,none,,0
+bb4d1237,C Magaia,13,Mozambique,none,,0
+c68fc575,Karuna Bhandari,13,Nepal,none,,0
+823a57a9,S di Bartolomeo,13,Italy,none,,0
+4bafe66b,T Salcedo,13,Mexico,none,,0
+b4c52f5f,G Oliveira,13,Brazil,none,,0
+a9ec2608,NH Berejo,13,Spain,none,,0
+faa8843f,Shahreeennawab,13,Qatar,none,,0
+83b7280e,D Marikova-Moodley,13,Czech Republic,none,,0
+a790df98,S Snater,13,Essex,initial+surname:unique,pace,0
+284604cf,I Mutoni,13,Uganda,none,,0
+b46b3d9b,Muhammad Siddiqui,13,Slovenia,none,,0
+b978780e,G Chohan,13,Philippines,initial+surname:unique,pace,1
+1294ee6d,Muhammad Arfan,13,United Arab Emirates,none,,0
+75be3b2a,JC Balt,13,Namibia,none,,0
+cae17490,Ali Hasan,12,Italy,initial+surname:conflict,"pace,spin",0
+52bbb9e5,E Duffy,12,Jersey,none,,0
+0a92f0e2,Ismail Kara,12,Zambia,none,,0
+8930a2a6,A Kalasi,12,Thailand,none,,0
+384fa385,TL Cutler,12,Vanuatu,none,,0
+3edb58fc,AD Mascarenhas,12,England,none,,0
+ec1c4b4d,HAM Samuddika,12,Sri Lanka,none,,0
+9e5f4ad7,K Reyneke,12,South Africa,none,,0
+753ada66,A Dhingra,12,Luxembourg,initial+surname:unique,pace,1
+fa9db243,P Molkenboer,12,Netherlands,initial+surname:unique,spin,1
+98614193,IKO Aboagye,12,Ghana,none,,0
+f1750a74,MT Jacob,12,Qatar,none,,0
+03beb59f,Luis Hermida,12,Mexico,none,,0
+c9c356e2,P Florin,12,Romania,initial+surname:unique,spin,1
+c17dcc29,F Khaliq,12,Belgium,initial+surname:unique,pace,1
+cc62ec8a,Ngawang Thinley,12,Bhutan,none,,0
+c228c52d,Arslan Amjad,12,Estonia,none,,0
+80a0cd77,BG Illing,12,New Zealand,none,,0
+04855b85,K Vislapuu,12,Estonia,initial+surname:unique,pace,1
+ecbcfef6,M Madara,12,Sri Lanka,none,,0
+4e6ff836,JA Fitzgerald,12,Gibraltar,initial+surname:unique,pace,1
+d285acaf,CE McConchie,12,Canterbury,initial+surname:unique,spin,0
+c7fa1e4c,TMA Leslie,12,Cameroon,none,,0
+67412324,A Fillie,12,Sierra Leone,none,,0
+9e3575ce,N Nuntarach,12,Thailand,none,,0
+8d0543ce,ZL Thoon,12,Myanmar,none,,0
+8c03f3b8,E Guehoada,12,Cameroon,none,,0
+369cc49c,Rafiullah,12,Oman,none,,0
+c62a0327,N Krishna,12,Seychelles,none,,0
+f98c24ec,DK Anefie,12,Ghana,none,,0
+76bda023,SR Thadani,12,United States of America,initial+surname:unique,pace,0
+2b203501,Akhil Arjunan,12,Finland,none,,0
+832b77c6,DKD Warnakulasuriya,12,Italy,none,,0
+4cc7cb1d,C Prasad,12,United States of America,none,,0
+38602b15,K Srandeva,12,Bulgaria,none,,0
+b18dbaff,A Prashar,12,Hungary,initial+surname:unique,pace,1
+d73891ad,PK Mohanarangam,12,Mexico,none,,0
+224a9f5e,DG Weakley,12,Bahamas,none,,0
+ae4d0b45,Jonte Smith,12,Bermuda,initial+surname:conflict,"pace,spin",0
+788afc32,A Perera,12,Canada,initial+surname:conflict,"pace,spin",0
+7ec52f4a,M Desmond,12,Nigeria,none,,0
+0abb2525,M Heingo,12,Namibia,none,,0
+ad05692c,Sami Ullah,12,Romania,full:conflict,"pace,spin",0
+2bcbcac3,A Limdawala,12,Malawi,none,,0
+a143d606,P Pushparajan,12,Malta,initial+surname:unique,pace,0
+d7b3a420,Jaskaran Singh,12,Canada,full:unique,pace,0
+81283f75,Ashwini Balaji,12,Germany,initial+surname:unique,pace,0
+cdc9bbec,H Deshan,12,Switzerland,none,,0
+a9231c3f,SR Taylor,12,United States of America,initial+surname:unique,spin,0
+3a82673c,V Mitari,12,Rwanda,none,,0
+d6164dc0,Q Joseph,12,West Indies,none,,0
+9be80ea0,F Pessima,12,Sierra Leone,none,,0
+eae6959b,S Matijevic,12,Serbia,none,,0
+ec11ad0b,Aarti Priya,12,Luxembourg,none,,0
+152d3c9d,C Perry,12,Isle of Man,none,,0
+5c805a60,AA Navicha,12,Mozambique,none,,0
+d3d096f5,DGAPD Wiswi,12,Indonesia,none,,0
+4175d211,SK Springer,12,Antigua and Barbuda Falcons,initial+surname:unique,pace,0
+1e630426,T Trajkovic,12,Serbia,none,,0
+1439a13c,VE Tembo,12,Mozambique,none,,0
+c999c416,A Stocks,12,Argentina,none,,0
+58317766,N Benjamin,12,Namibia,none,,0
+be592751,E Marx,12,South Africa,none,,0
+db218528,GC Galanis,12,Greece,initial+surname:unique,spin,1
+a42cdf67,B Tlali,12,Lesotho,none,,0
+cad60789,SA Panayan,12,Qatar,none,,0
+80b2fb19,Prince Yadav,12,Lucknow Super Giants,initial+surname:conflict,"pace,spin",0
+44c69e2b,S Vijayakumar,12,Singapore,initial+surname:unique,spin,1
+36d3ed28,S Thapa,12,Qatar,none,,0
+6978bff0,Sajad Ahmadzai,12,Belgium,initial+surname:conflict,"pace,spin",0
+376557f7,A Bishnoi,12,Malta,initial+surname:unique,pace,0
+760fcf65,D Wangmo,12,Bhutan,none,,0
+7c61a686,Khadija Khalil,12,Kuwait,none,,0
+73df1fe8,T Chopra,12,United States of America,initial+surname:unique,spin,0
+e5117568,B Pondani,12,Malawi,none,,0
+6e397f37,Asif Javed,12,Bahrain,initial+surname:unique,pace,0
+1438d928,Khadija Imtiaz,12,Qatar,initial+surname:unique,pace,0
+cffeef53,L Anyait,12,Uganda,none,,0
+f4270fc7,NJ Pius,12,Tanzania,none,,0
+9868bc75,BMAJ Mendis,12,Sri Lanka,none,,0
+e2410b5e,MJG Nielsen,12,New Zealand,none,,0
+a75a78eb,MR Swart,12,Netherlands,initial+surname:unique,spin,1
+4a36c370,N Madziva,12,Zimbabwe,initial+surname:unique,pace,1
+e77c9807,DK Pallekonda,11,Slovenia,none,,0
+e4f13acd,A Mene-Ejegi,11,Serbia,none,,0
+8d6b36e3,HR Huddleston,11,New Zealand,initial+surname:unique,pace,1
+554a83e5,P Malemikia,11,Uganda,none,,0
+ce490298,I Shukla,11,Singapore,none,,0
+99ad98b0,JM Vujinovich,11,Croatia,none,,0
+357484e9,Ilyas Ataullah,11,Turkey,none,,0
+a4051019,Jagrat Dubey,11,Luxembourg,none,,0
+175d59dd,TH Semau,11,Samoa,none,,0
+67bd483c,J Sanele,11,Samoa,none,,0
+81423620,Alifiya Sayed,11,Oman,none,,0
+2fdd16fe,RG Aga,11,Kenya,none,,0
+9ca533cc,ATS Silva,11,United Arab Emirates,initial+surname:unique,pace,0
+424a7994,Nilansh Keswani,11,United Arab Emirates,none,,0
+0e8f734c,H Shreya,11,Sweden,none,,0
+8a0ba257,J Efosa,11,Nigeria,none,,0
+5145239b,O Keitsemang,11,Botswana,none,,0
+537cc79f,M Phiase,11,Botswana,none,,0
+c9ca2bd7,Zara Mohammad,11,Sweden,initial+surname:unique,pace,0
+e734d090,CN Ackermann,11,Leicestershire,initial+surname:unique,spin,0
+8879d882,SEA Ruck,11,New Zealand,none,,0
+c70448aa,R Hekure,11,Papua New Guinea,initial+surname:unique,pace,1
+2719e9a6,E Robinson,11,Guernsey,none,,0
+1c8cd1c3,J Horrocks,11,Gibraltar,initial+surname:unique,pace,1
+90830f8d,Alam Nakash,11,South Korea,none,,0
+1e78c51c,J Sebanja,11,Uganda,initial+surname:unique,pace,1
+3812d56b,MH Yardy,11,Sussex,initial+surname:unique,spin,0
+53dd7d8e,Andre Jarju,11,Gambia,none,,0
+8a9320a1,TM Macalou,11,Mali,none,,0
+f3e65a4b,E Ndubudem,11,Nigeria,none,,0
+08df0bd3,A Rangaswamy,11,Botswana,none,,0
+d406e303,D Johnson,11,Cayman Islands,initial+surname:unique,pace,0
+e38e240a,NT Rajendran,11,Kuwait,none,,0
+42a01b52,Ilyas Ahmed,11,Kuwait,full:unique,pace,1
+556ad437,K Canavarci,11,Turkey,none,,0
+3377f988,Y Jasti,11,Mexico,none,,0
+21549344,K Motlanka,11,Botswana,none,,0
+9f2c6cd3,S Sarthak,11,Bahrain,none,,0
+7e6a3f17,CJ Dias,11,Kuwait,none,,0
+780d1997,RK Kiseto,11,Tanzania,none,,0
+c381cec5,M Kpaka,11,Sierra Leone,none,,0
+2964821b,Avishka Iroshan,11,Romania,none,,0
+8dc152d1,D Jansen,11,North West,none,,0
+91cc319d,Ma Qiancheng,11,China,none,,0
+6b4593ee,L Siaka,11,Papua New Guinea,initial+surname:unique,pace,1
+3b282e51,Bashir Shah,11,Denmark,initial+surname:conflict,"pace,spin",0
+c46400b7,F Tanguy,11,Jersey,none,,0
+ffc308ee,O Muzondo,11,Zimbabwe,none,,0
+ed0ec1fe,A Akhigbe,11,Nigeria,none,,0
+402ea377,Ronitkumar Ahir,11,Panama,none,,0
+4833efb4,N Master,11,Botswana,none,,0
+91fafb93,Nurin Imanina,11,Malaysia,none,,0
+4dabe716,W Liengprasert,11,Thailand,initial+surname:unique,spin,1
+ab54f9e7,J Jarvis,11,Scotland,initial+surname:unique,pace,1
+6edd8b10,I Alumo,11,Uganda,none,,0
+d424d06a,Nitesh Hooda,11,Ghana,none,,0
+96013995,DJ Turkich,11,Croatia,none,,0
+95fcbfb7,TK Patel,11,United States of America,initial+surname:conflict,"pace,spin",0
+850e9e00,SI Bara,11,Indonesia,none,,0
+e212b0fd,C Ostergaard,11,Denmark,none,,0
+df9cdebf,M Gaur,11,Lancashire,initial+surname:unique,pace,0
+c674f722,GT Taylor,11,Bahamas,none,,0
+ace63b7f,HL Tau,11,Papua New Guinea,none,,0
+898a21a4,J Fernando,11,Romania,initial+surname:unique,pace,0
+3a341948,T Ramabitsa,11,Lesotho,none,,0
+9446598e,Afida Afthab,11,Oman,none,,0
+46c81920,MSN Ekani,11,Cameroon,none,,0
+ea342fc1,Isabel Walker,11,Portugal,none,,0
+58431ca0,MADI Hemantha,11,Panadura Sports Club,none,,0
+764d8336,P Chilongia,11,Spain,none,,0
+beccd5a1,I Bist,11,Nepal,none,,0
+3465e307,R Athapaththu,11,Romania,none,,0
+4d290e7a,N Hirani,11,Kenya,none,,0
+bb939fa3,Elan Talker,11,Israel,none,,0
+e93b6c95,G Singh,11,United States of America,initial+surname:conflict,"pace,spin",0
+0fc88c2a,SMK Waththage,11,Czech Republic,none,,0
+f49c401e,SH Obed,11,Vanuatu,initial+surname:unique,spin,1
+23f94c02,J Drysdale,11,United States of America,none,,0
+87e87dd2,P Nedeljkovic,11,Serbia,none,,0
+138e30ab,Yair Nagavkar,10,Israel,none,,0
+212aeedd,N Peter,10,South Africa,none,,0
+a6bab2a9,K Gore,10,United States of America,initial+surname:unique,spin,0
+4a51c045,Kim Daeyeon,10,South Korea,none,,0
+ac1ddea1,Garret Banner,10,Belize,none,,0
+c57a486f,Khalid Niazi,10,Switzerland,none,,0
+4ec107c8,Sejal Vinod,10,Switzerland,none,,0
+eeeebf82,HA Varaiya,10,Kenya,initial+surname:unique,spin,1
+96fe3e9f,ZM Tribe,10,Jersey,initial+surname:unique,spin,1
+9dc8bc5c,Ibrar Ahmad,10,Hungary,initial+surname:unique,pace,0
+91052c96,PW Borren,10,Netherlands,initial+surname:unique,pace,1
+f0a0ed1d,L Shetty,10,United States of America,none,,0
+e15d9f04,Anjali Chand,10,Nepal,initial+surname:unique,pace,1
+b561e8ea,Nimish Lathief,10,Kuwait,none,,0
+54403333,N Salekar,10,Thailand,none,,0
+638f451b,N Zimonjic,10,Serbia,none,,0
+369b8bfc,C Praboda,10,Sri Lanka,none,,0
+8a5a8cf0,SM Warnakulasuriya,10,France,initial+surname:unique,pace,0
+2e005bfd,H Lin Oo,10,Myanmar,none,,0
+88bcd8da,MFD Douma,10,Cameroon,none,,0
+7bbeac6d,GH O'Brien,10,Bermuda,initial+surname:unique,pace,1
+26f98ea3,DV Varghese,10,Bulgaria,initial+surname:unique,pace,0
+c1f05d1d,Jaweed Sadran,10,Austria,none,,0
+e697d88c,A Andriani,10,Indonesia,none,,0
+280dc48c,S Dabholkatr,10,Switzerland,none,,0
+f681fa6e,DVD Madampage,10,South Korea,none,,0
+f8035c2a,BDH Stevens,10,Jersey,initial+surname:unique,spin,1
+aae9ce90,JF Mooney,10,Ireland,initial+surname:unique,pace,0
+716ba9ef,R Castillo,10,Philippines,none,,0
+c471750e,LC Le Tissier,10,Guernsey,initial+surname:unique,spin,1
+f6411545,LF Muller,10,Brazil,none,,0
+deef8879,Ali Nawaz,10,Hungary,none,,0
+0697b5a1,NN Banner,10,Belize,none,,0
+3f778477,Muhammad Fahad,10,Turkey,none,,0
+d3eedb51,I Mugisha,10,Rwanda,none,,0
+2498e163,JR Hopes,10,Australia,initial+surname:unique,pace,1
+28615668,M Parinitha,10,Switzerland,none,,0
+95c434f7,GDR Eranga,10,Canada,none,,0
+09ecc596,Aue Oru,10,Papua New Guinea,none,,0
+79c2f9bf,J Madan,10,Luxembourg,none,,0
+a6881817,K Venkatraman,10,Singapore,none,,0
+c6fee9f1,N Chabula,10,Zambia,none,,0
+ae4a47d8,MP Ainsworth,10,Hungary,none,,0
+e6bf8162,H Klazinge,10,Namibia,none,,0
+c83c594d,M Cope,10,Luxembourg,initial+surname:unique,spin,1
+091880f7,Shantanu Kaveri,10,Mexico,none,,0
+d13c1b74,K Mahekdeep,10,Hong Kong,none,,0
+ccd38b40,Francesca Galan,10,Argentina,none,,0
+dbf22922,D Nanayakkara,10,Italy,none,,0
+2cf2fc9e,CPPM Sadun,10,Cyprus,initial+surname:unique,pace,0
+98c13758,PEA Karunarathna,10,Finland,none,,0
+e21ef7ec,Ronald Ebanks,10,Cayman Islands,none,,0
+a904600a,N Choden,10,Bhutan,none,,0
+940255af,A Mongar,10,Bhutan,none,,0
+1a353572,Saeed Waqar Ali,10,Slovenia,initial+surname:conflict,"pace,spin",0
+59bff8c7,JV Chand,10,Zambia,none,,0
+4a0a532f,O Isiyaku,10,Nigeria,none,,0
+6083f332,NM Mokhachane,10,Lesotho,none,,0
+aaec928b,Snigdha Malhotra,10,Canada,initial+surname:unique,pace,0
+4fd4cef9,S Kambalapalli,10,United States of America,none,,0
+a14b3bc0,Kawsar Khan,10,Brazil,initial+surname:conflict,"pace,spin",0
+9bdb9aa9,KR Jha,10,Austria,none,,0
+99bf1fb7,A Yon,10,St Helena,none,,0
+3b2ca392,Shunan Ali,10,Maldives,initial+surname:conflict,"pace,spin",0
+835a58da,NA Karnik,10,Singapore,initial+surname:unique,pace,1
+01549705,J van Heerden,10,Germany,none,,0
+6d5983d4,JC Darji,10,Tanzania,none,,0
+e2abcf16,Niv Nagavkar,10,Israel,none,,0
+656fc15b,Jobayer Hossen,10,Seychelles,none,,0
+f4ccbe6f,K Namchaikul,10,Thailand,none,,0
+e0a2f58e,B van Zyl,10,Botswana,none,,0
+ffae3d12,Saniyah Zia,10,Canada,none,,0
+18db3f22,C Waiswa,10,Uganda,initial+surname:unique,pace,1
+bb1be934,SR McAnanama-Brereton,10,Germany,none,,0
+d99de998,ZB Lion-Cachet,10,Netherlands,initial+surname:unique,spin,0
+01b0d0a4,J Proctor,10,Bermuda,none,,0
+f805e474,C Lokuge,10,Estonia,none,,0
+03d9e80f,C Henery,10,Isle of Man,none,,0
+967806a5,Zinaida Jeremiah,10,Tanzania,none,,0
+b810425e,Rameesha Shahid,10,Germany,initial+surname:unique,pace,0
+d09615c8,Mansoor Shah,10,Norway,initial+surname:conflict,"pace,spin",0
+2dd90a40,Shujaat Rasool,10,Bahrain,none,,0
+3847f098,Saqib Anwar,10,Eswatini,initial+surname:unique,pace,0
+00d69fa4,SO Tikolo,10,Kenya,initial+surname:unique,spin,1
+69c994e4,SHA Rance,10,Central Stags,initial+surname:unique,pace,0
+730d2283,Saghir Khan,10,United Arab Emirates,initial+surname:conflict,"pace,spin",5
+e149d0ae,RL Grundy,10,England,initial+surname:unique,spin,1
+c7bb2416,GG Alta,10,Turkey,initial+surname:unique,pace,1
+a2dd9236,K Cawte,10,Isle of Man,none,,0
+1697a7c4,Ntombizonke MKhatshwa,10,Eswatini,none,,0
+7544bf30,MM Letsoalo,10,South Africa,none,,0
+2e966563,RM Hira,10,Canterbury,initial+surname:unique,spin,0
+10885753,V Dhaniram,10,Cayman Islands,none,,0
+a61bcb94,K Pierre,10,West Indies,initial+surname:unique,spin,1
+c7e59109,T Legaabile,10,Botswana,none,,0
+17a4ff00,Inshaf Farook,10,Lesotho,none,,0
+0095a0e3,Noah Mead,10,Samoa,none,,0
+6f337915,Madhawa Basnayaka,10,Finland,none,,0
+361b378b,TA Lavia,10,Canada,none,,0
+9b88f80e,I Muntean,9,Romania,none,,0
+dc86b56a,MT Waqanisau,9,Fiji,none,,0
+78670115,L Jie,9,China,none,,0
+2237eb05,Bilal Ahmad Mir,9,South Korea,none,,0
+907e30d9,DL Graham,9,France,none,,0
+cdf63aaa,ZT Kyaw,9,Myanmar,none,,0
+9fcaeb60,Pan Ei Phyu,9,Myanmar,none,,0
+a4e98e6b,Z Kamara,9,Sierra Leone,none,,0
+b1021056,I Chuma,9,Mozambique,none,,0
+c054cf6f,O Amarjargal,9,Mongolia,none,,0
+aea89d48,L Keny,9,United Arab Emirates,initial+surname:unique,pace,1
+1c8ada57,T Ritawa,9,Cook Islands,none,,0
+77143581,S Asha,9,Royal Challengers Bangalore,initial+surname:unique,spin,0
+70ced7f2,Mohammad Aadil Alam,9,Nepal,initial+surname:unique,pace,1
+068c47d2,JJ Davidson,9,Scotland,initial+surname:unique,pace,1
+530b20e3,JRMVB Sanjaya,9,Kurunegala Youth Cricket Club,none,,0
+11d0079f,B Etim,9,Nigeria,none,,0
+2beae660,T Granger,9,Zimbabwe,none,,0
+e8c95491,HB Dickson,9,Cook Islands,initial+surname:unique,pace,0
+e16e7347,CG Williams,9,Namibia,initial+surname:unique,pace,1
+d0d32c30,Amandeep Singh,9,Portugal,full:unique,pace,0
+faef026c,SKS Gill,9,Luxembourg,initial+surname:unique,spin,0
+b2431c60,Sheraz Sirwari,9,Switzerland,none,,0
+eaa36b2a,BJ Bennett,9,Zimbabwe,none,,0
+1ad21202,K Robert,9,Guernsey,none,,0
+39183970,Jayasooriya,9,Sweden,none,,0
+a9cd14fc,Zhao Yihan,9,China,none,,0
+88e90658,TS Omary,9,Tanzania,none,,0
+7e7f38ef,MHS James,9,Portugal,initial+surname:unique,spin,0
+fe7ba5cf,LI Haoye,9,China,none,,0
+21ef59e3,N Mabila,9,Eswatini,none,,0
+1b77c4c6,Shaik Basha,9,Tanzania,none,,0
+98db3666,KV Vakuruivalu,9,Fiji,none,,0
+db080f9d,K Dangol,9,Nepal,none,,0
+3957a70a,GP Meade,9,Italy,initial+surname:unique,pace,1
+623c8835,AS van Beuge,9,Netherlands,initial+surname:unique,pace,1
+1a9a6b15,Likitha Yadav,9,Malta,initial+surname:conflict,"pace,spin",0
+6153ce0d,E Prokic,9,Serbia,none,,0
+65122d56,K Christie,9,Hong Kong,initial+surname:unique,pace,1
+f1e7f97c,Ziaurahman Shinwari,9,Austria,initial+surname:unique,pace,1
+740a5b6d,Arif Ullah,9,Malaysia,initial+surname:conflict,"pace,spin",0
+07e5bda2,L Monanthane,9,Lesotho,none,,0
+2c13defe,TM Odoyo,9,Kenya,initial+surname:unique,pace,1
+2dcac6ff,E Niyomugabo,9,Rwanda,none,,0
+a6dd06d6,S Immadi,9,United States of America,none,,0
+a88e4013,KN Chaddha,9,Indonesia,none,,0
+66d258e2,G Ayan,9,Turkey,none,,0
+2901e489,RD de Sousa,9,Brazil,none,,0
+21526a38,E Jabarkhel,9,Luxembourg,initial+surname:unique,pace,1
+a90e53ec,MW Short,9,Victoria,initial+surname:unique,spin,0
+afe8ff08,M Aboagye,9,Ghana,none,,0
+094ebfb6,R Avery,9,Brazil,none,,0
+7636b587,D Muhumuza,9,Uganda,initial+surname:unique,pace,1
+b85c0597,H Khogiyani,9,Austria,none,,0
+7213d757,C Bah,9,Sierra Leone,none,,0
+cbef9f64,B Shotorova,9,Bulgaria,none,,0
+d77ddc9f,JQK Moala,9,Fiji,none,,0
+83f0b848,C Liebenberg,9,Isle of Man,initial+surname:unique,pace,1
+32190239,NT Gireesh,9,Cambodia,none,,0
+7a7e2be6,Sylvia Usabyimana,9,Rwanda,none,,0
+d8c37884,R Uwimana,9,Rwanda,none,,0
+e8cfd743,KMA Aziz,9,Ivory Coast,none,,0
+7e8bcfc1,ST Frohnmayer,9,Germany,none,,0
+ba3a1359,RSM Lili'i,9,Samoa,initial+surname:unique,pace,1
+4ec07775,RN ten Doeschate,9,Essex,initial+surname:unique,pace,0
+4d498084,Wu Juan,9,China,none,,0
+e82543d5,M Vandrasi,9,Czech Republic,none,,0
+80b92515,Harry Johnson,9,Guernsey,none,,0
+67d0ca6d,R Lungu,9,Zambia,none,,0
+5c8f43ab,Shreya Voya,9,Canada,none,,0
+990f1424,YP Dayal,9,Suriname,initial+surname:unique,pace,0
+9bc324b5,JR Barry,9,Bahamas,none,,0
+214cf493,KB Ahir,9,Panama,none,,0
+e9173fb0,SR Bhudia,9,Kenya,initial+surname:unique,pace,1
+0996f198,Luka Woods,9,Serbia,none,,0
+e2a702e3,S Tino,9,Uganda,none,,0
+298d9b83,Shariq Munir,9,Qatar,initial+surname:unique,pace,0
+9f0ab09b,Q Stephens,9,Cook Islands,none,,0
+d516a95f,NSK Mehta,9,Belgium,initial+surname:unique,pace,1
+2deb4082,A Kheterpal,9,Hungary,initial+surname:unique,pace,1
+fbb8cf87,E Beukes,9,Cambodia,none,,0
+65684b2b,A Vailoa,9,Cook Islands,none,,0
+f3f654c2,Kyte Gullem Keen,9,Philippines,none,,0
+fcb4448f,ABY Smith,9,Philippines,initial+surname:unique,spin,0
+5485c999,P Dakainivanua,9,Fiji,none,,0
+ad67ab56,S Vaz,9,Portugal,none,,0
+dc4f97bf,Prachi Kumari,9,Norway,none,,0
+a14b5f3c,Aslan Jafri,9,Singapore,none,,0
+d91a936b,S Kizito,9,Tanzania,none,,0
+658c2e71,MGSM Fernando,9,Italy,initial+surname:unique,spin,1
+78fd864b,EL Arlott,9,Central Sparks,none,,0
+6bd0d89e,B Mejaro,9,Lesotho,none,,0
+feb75c84,A Ilahi,9,Belgium,none,,0
+ed524599,RA Abolarin,9,Nigeria,initial+surname:unique,pace,1
+61579e9f,D Pavelic,9,Croatia,none,,0
+e6082b10,BP Adapaka,9,Hungary,none,,0
+c4e205e4,M Vivekanandan,9,Mongolia,none,,0
+c391d077,L Nyarko,9,Ghana,none,,0
+f219df21,Sahil Chauhan,8,Estonia,initial+surname:unique,pace,0
+e76c8732,T Amarmend,8,Mongolia,none,,0
+02c8fbfc,H Leko,8,Croatia,none,,0
+f97e4db3,D Dewald,8,Belgium,none,,0
+2d02f041,S Sugaya-Slater,8,Japan,none,,0
+c3cf210c,Riya Pradhan,8,Bhutan,none,,0
+d27caa9c,Saranya Kotha,8,Switzerland,none,,0
+31366b7e,G Mckeon,8,France,none,,0
+e01e17ee,E Gouge,8,Jersey,none,,0
+ef6d6883,A Alexander,8,Indonesia,none,,0
+7fc8bb18,M Faheem,8,Thailand,none,,0
+00d1544c,N Caruana,8,Gibraltar,none,,0
+f43dcdc1,Gurpreet Singh,8,Mexico,full:unique,pace,0
+9bb259b4,Ashraful Shuvo,8,Estonia,initial+surname:unique,pace,1
+24403a9f,A Emch,8,Argentina,none,,0
+e3660d2a,M Ochieng,8,Kenya,none,,0
+bc44071a,T Abdulquadri,8,Nigeria,none,,0
+a27d8778,R Pavlickova,8,Czech Republic,none,,0
+3c55c703,JG Bethell,8,Warwickshire,initial+surname:unique,spin,0
+5aac4f00,NM Ambo,8,Papua New Guinea,none,,0
+86a68879,A Mohamed,8,Tanzania,none,,0
+165b9097,GES Sullivan,8,Canterbury,none,,0
+7cff331d,RR Sharan,8,Cambodia,none,,0
+5787be00,S Davizi,8,Czech Republic,initial+surname:unique,pace,0
+25a2755a,S Ingabire,8,Rwanda,none,,0
+31adb911,L Filer,8,England,initial+surname:unique,pace,1
+dec85af5,Silda Joy,8,Malta,initial+surname:unique,pace,1
+8b1f5f91,Rabbjyot Rajput,8,Canada,initial+surname:unique,spin,0
+b56786e5,G Ilarionova,8,Bulgaria,none,,0
+ffb3b559,JJ Nyambo,8,Tanzania,none,,0
+228a747d,VB Viyala,8,Norway,none,,0
+b1414505,S Sigaiwasa,8,Fiji,none,,0
+ef1b7e1e,Jana Majski,8,Serbia,none,,0
+4286e899,Syed Aqeel Israr,8,Ghana,none,,0
+8af91a3e,L Taylor,8,Argentina,none,,0
+4a370769,Gagandeep Singh,8,Bulgaria,full:conflict,"pace,spin",0
+47b33198,Chen Zhuo Yue,8,China,none,,0
+2e3dc859,YYM Jakda,8,Lesotho,none,,0
+5e181be6,H Chamto,8,Sweden,none,,0
+d08fe309,TG Thamae,8,Lesotho,none,,0
+9565fda6,AB Kaur,8,India,none,,0
+75ae53e0,M Trajkovic,8,Serbia,none,,0
+1a3295a1,J Wilson,8,Gibraltar,none,,0
+9f16f7c8,J Dowling,8,Bulgaria,none,,0
+4b3057bc,R Airee,8,Nepal,none,,0
+3f0be08f,JG Kimaro,8,Tanzania,none,,0
+056e3558,A Augastin,8,Tanzania,none,,0
+5bdf2343,Amir Butt,8,Mexico,initial+surname:unique,pace,0
+1f1b4c89,JC Tongue,8,Worcestershire,initial+surname:unique,pace,0
+0398fc0f,SK Ravuri,8,Sweden,none,,0
+e17de07a,Areeb Khalid,8,South Korea,initial+surname:conflict,"pace,spin",0
+b51d654f,A Bierwisch,8,Germany,none,,0
+da22f2a2,Humaira Tasneem,8,United Arab Emirates,none,,0
+017faef2,Z Groenewald,8,Namibia,initial+surname:unique,spin,1
+60606200,Muzahir Raza,8,Oman,initial+surname:conflict,"pace,spin",0
+e6b3c3cc,Parveen Kumar,8,Canada,full:unique,pace,0
+84df22bd,SK Lahiri,8,Mexico,none,,0
+b26a30f9,C Bwanali,8,Malawi,none,,0
+8c2aa0f9,PKD Chase,8,Leinster Lightning,initial+surname:unique,pace,0
+4167f30b,IG Holland,8,Hampshire,initial+surname:unique,pace,0
+270b3f8e,JK Kamande,8,Kenya,initial+surname:unique,spin,1
+0ec45a9a,Abubacarr Kuyateh,8,Gambia,none,,0
+4a2ce060,M Jobarteh,8,Gambia,none,,0
+236e88ea,WM Delgado,8,Costa Rica,none,,0
+5e5a45bd,Kabir Berlia,8,Singapore,none,,0
+3e377209,D Tanase,8,Romania,none,,0
+ad2efd29,Khin Aye,8,Myanmar,none,,0
+73ff4720,U Iftikhar,8,United States of America,initial+surname:unique,pace,0
+f0396c01,CI Manidom,8,Cameroon,none,,0
+e3c23cef,BMA Mbida,8,Cameroon,none,,0
+12c3ba4d,P Khadka,8,Nepal,initial+surname:unique,pace,1
+d0ff93a9,ECB Moore,8,Italy,initial+surname:unique,spin,0
+ad8d5827,M Stanikzai,8,Switzerland,initial+surname:unique,pace,0
+3e697d4a,Chaudhary Akram,8,Norway,none,,0
+aad0c365,Nithish Kumar Reddy,8,India,initial+surname:unique,pace,1
+4c7d4170,A Le Ray,8,Guernsey,none,,0
+17f507e7,MA Algi,8,Mozambique,none,,0
+a7b67d5d,LI Salomone,8,Mozambique,none,,0
+63b1093f,N Ndzeute,8,Mozambique,none,,0
+c24a759a,Roheed Akhtar,8,Qatar,none,,0
+fb27d38c,S Waqas Ahmed,8,Norway,initial+surname:conflict,"pace,spin",0
+8160713d,AW Hawkins-Kay,8,Jersey,initial+surname:unique,pace,1
+93a77ad4,M Chadha,8,Cambodia,none,,0
+e13f8b16,AR Leo,8,St Helena,none,,0
+28c7d721,S Bhari,8,Nepal,initial+surname:unique,spin,1
+9e76cdb3,Ansh Patel,8,Canada,initial+surname:conflict,"pace,spin",0
+c942a53b,WK McCallan,8,Ireland,none,,0
+d8e79af0,AC Botha,8,Ireland,initial+surname:unique,pace,0
+d9ba93c0,RV Nascimento,8,Brazil,none,,0
+1daa8927,S Malla,8,Lumbini Lions,none,,0
+06fc82b8,T Musekiwa,8,Zimbabwe,none,,0
+6462c64b,H Mumford,8,Gibraltar,none,,0
+5f45a88b,M Enkhzul,8,Mongolia,none,,0
+5597338d,S Ravikumar,8,Costa Rica,none,,0
+121b6ac9,P Timong,8,Uganda,none,,0
+b93b7337,A Akurut,8,Uganda,none,,0
+8eb52953,Sabnam Rai,8,Nepal,initial+surname:unique,pace,0
+85c56be8,C Chatphaisan,8,Thailand,none,,0
+8d5580a7,B Bhadriraju,8,United States of America,initial+surname:unique,spin,0
+62653085,S Gokhale,8,United Arab Emirates,initial+surname:unique,pace,1
+f40bc7e3,O Erdenebaatar,8,Mongolia,none,,0
+84624717,D Ganesh,8,Costa Rica,none,,0
+cda3625c,D Rawat,8,Costa Rica,none,,0
+4cf05de9,Reehana Khan,8,Namibia,initial+surname:conflict,"pace,spin",0
+436c763a,BJ McMullen,8,Scotland,initial+surname:unique,pace,1
+ab21795b,BAD Manenti,8,South Australia,initial+surname:unique,spin,0
+53984f75,N Tyagi,8,Czech Republic,initial+surname:unique,pace,1
+5edaa34d,B Dugic,8,Serbia,initial+surname:unique,pace,1
+6e2ec862,I Goordial-John,8,Canada,none,,0
+eea862f6,K Inakale,8,Botswana,none,,0
+3dbbe483,G Setshwane,8,Botswana,none,,0
+3bd86723,ZP Ikiua,8,Cook Islands,none,,0
+36c3302e,M Zhu,8,China,none,,0
+abee08c7,JO Adedeji,8,Nigeria,initial+surname:unique,spin,1
+d22960d9,JR Cope,8,Czech Republic,initial+surname:unique,pace,0
+8a06bb55,Ahmad Ullah,8,Germany,initial+surname:unique,spin,1
+723f9bee,A Taylor,8,Cyprus,none,,0
+8b552293,LE Kaushalya,8,Sri Lanka,none,,0
+b5ae57ee,G Ishimwe,8,Rwanda,none,,0
+d4f0c300,Sumaiya Siddiqi,8,Pakistan,none,,0
+4a745f65,AR Nurse,8,West Indies,initial+surname:unique,spin,1
+9a8f01b7,W Behr,8,Germany,none,,0
+5f862ccd,SS Weerakkody,8,Sri Lanka,initial+surname:unique,pace,1
+af4c15c5,DV Macome,7,Mozambique,none,,0
+7239a365,JM Watkin,7,Central Districts,initial+surname:unique,spin,0
+65c9fc31,R Abdulrasak,7,Nigeria,none,,0
+6b64e7a3,J Mulder,7,Northern Knights,none,,0
+795df06c,AS Hansra,7,Canada,none,,0
+2ea9b32c,Qanita Jalil,7,Pakistan,none,,0
+e6d298e8,CD de Lange,7,Scotland,initial+surname:unique,spin,1
+8479657a,A Das,7,India,initial+surname:unique,pace,1
+dae6fac5,S Sharma,7,India,initial+surname:conflict,"pace,spin",9
+386f410e,S Loubser,7,South Africa,none,,0
+77c88f05,LN McCarthy,7,Ireland,none,,0
+5f25b104,Sheikh Rasik,7,Hungary,initial+surname:unique,pace,0
+98e4af63,J Danikula,7,Croatia,none,,0
+0f652c21,KS James,7,Bermuda,initial+surname:unique,spin,0
+245c13c2,NT Raghunandan,7,Portugal,none,,0
+9e866d80,A Brown-Carrera,7,Spain,none,,0
+94a1827c,OGL Bascome,7,Bermuda,initial+surname:unique,pace,2
+420431c9,K Jaikaran,7,Suriname,none,,0
+95c5ce07,E Kusuda-Nairn,7,Japan,none,,0
+4040951f,S Crowie,7,St Helena,none,,0
+d5dea4e7,LG Moras,7,Brazil,none,,0
+40ff8e58,LA Goncalves,7,Brazil,none,,0
+a7a7a2d5,DJ Hall,7,Croatia,none,,0
+6821ac10,JJ van der Wath,7,South Africa,initial+surname:unique,pace,0
+6b8eb6e5,S Sreesanth,7,India,initial+surname:unique,pace,1
+78a3ae4b,ZXM Vukusic,7,Croatia,none,,0
+a17a9548,H Satheedevi,7,Croatia,none,,0
+f0ddeafb,M Martinez,7,Argentina,none,,0
+bf07cc63,Rahimgul Naseri,7,France,none,,0
+a38669ba,NKD Murtiari,7,Indonesia,none,,0
+d5d87f3f,Kanchan Rana,7,Sweden,none,,0
+745c3cbc,Adnan Mirza,7,Qatar,none,,0
+a628a5c8,D Wabwire,7,Uganda,none,,0
+26c257be,Harper Chalmers,7,Canada,none,,0
+34b8cd68,P Rawat,7,India,none,,0
+862f4427,Regina Khan,7,Italy,initial+surname:conflict,"pace,spin",0
+2edff783,C Valencia,7,Argentina,none,,0
+c58d9c18,N Nini,7,South Africa,none,,0
+0d7e506a,V Marghashayam,7,Czech Republic,none,,0
+62d92d76,V Buruka,7,Papua New Guinea,none,,0
+0ca1ea55,HMHE Parsons,7,South Korea,none,,0
+c4480b25,Damini Ramesh,7,Singapore,none,,0
+3ff26cea,Riyaa Bhasin,7,Singapore,none,,0
+10eef955,MJM Kavana,7,Cook Islands,none,,0
+c0f5447e,L Wahmowe,7,France,none,,0
+8ca63417,MY Bawa,7,Panama,none,,0
+0680ff7f,E Kallous,7,Greece,none,,0
+92c81a4f,U Bayarjavkhlan,7,Mongolia,none,,0
+c328bc6c,M Ariokot,7,Uganda,none,,0
+8e6b7996,M Devush Patel,7,Lesotho,initial+surname:conflict,"pace,spin",0
+6577a6ad,BK Stroud,7,St Helena,none,,0
+1b6aafc8,Nawed Al Balushi,7,Oman,none,,0
+e7db2a56,CM Mbebe,7,Mozambique,none,,0
+2ed569a0,RD Chahar,7,Surrey,initial+surname:unique,spin,0
+9c48bdee,H Khuttan,7,Portugal,none,,0
+22d73540,Jahandad Khan,7,Lahore Qalandars,initial+surname:conflict,"pace,spin",0
+cb9b8664,W O'Rourke,7,New Zealand,initial+surname:unique,pace,1
+6a11facf,Dhananjay Rao,7,Hong Kong,none,,0
+1125ebe4,R Satheesan,7,Romania,initial+surname:unique,spin,0
+f1d76e6f,Xiuli Jin,7,China,none,,0
+576d6fdf,SS Shukla,7,Bahrain,none,,0
+95c2d309,SKDT Madusanka,7,Seychelles,none,,0
+2dcad6fa,Surinder Singh,7,Philippines,initial+surname:conflict,"pace,spin",0
+141ee9a0,AK Gonerara,7,Fiji,none,,0
+5a42db78,Abdullah Jasat,7,Panama,none,,0
+f8dcfe4e,JK Mukhiya,7,Nepal,initial+surname:unique,pace,1
+5d90eb77,R Rohmalia,7,Indonesia,none,,0
+77851c2d,SACA King,7,West Indies,initial+surname:unique,pace,0
+0daf3ffc,P Bhart,7,Norway,initial+surname:unique,spin,1
+f037f4d8,T Cheki,7,Bhutan,none,,0
+0b91b5d5,R Smith,7,Bahamas,initial+surname:unique,pace,0
+a3690f55,Khuzaima Tanveer,7,United Arab Emirates,none,,0
+b56f5b6f,AE Paraam,7,Singapore,initial+surname:unique,spin,1
+39f4084c,NKF Rada Rani,7,Indonesia,none,,0
+b5341b28,N Mutasa,7,Zimbabwe,none,,0
+5b4e5d3d,Wang Meng,7,China,none,,0
+d981a1de,J Jojo,7,Denmark,initial+surname:unique,pace,1
+73db1940,YS To,7,Hong Kong,none,,0
+52fc5577,K Kapadia,7,Canada,none,,0
+e21475a5,JL Aras,7,United States of America,none,,0
+dee70255,J Lassayo,7,Sierra Leone,none,,0
+4957b300,A Neill,7,Scotland,initial+surname:unique,pace,1
+4e1b7998,Chare Smith,7,Bermuda,initial+surname:unique,spin,1
+279c51f0,Aakash Chand,7,Pokhara Avengers,initial+surname:unique,pace,0
+637680bc,F Copley,7,Jersey,none,,0
+80058153,Karma Dorji,7,Bhutan,none,,0
+03b9ec54,E Packard,7,Gibraltar,none,,0
+3df3f50b,Waheed Ahmed,7,United Arab Emirates,full:unique,pace,1
+3c567308,Chan Sau Har,7,Hong Kong,none,,0
+a8c78834,N Robertson-Jack,7,Scotland,none,,0
+5f40b4da,M Stevanovic,7,Serbia,none,,0
+c7aae1f0,M Kadyan,7,Bulgaria,initial+surname:unique,pace,0
+ee3bfb9b,SR Rocket,7,Seychelles,none,,0
+3aca2ed5,S Miyaji,7,Japan,none,,0
+6a685375,JB Reva,7,Papua New Guinea,initial+surname:unique,pace,1
+2cf802eb,C Murrombe,7,Mozambique,none,,0
+0393fbdc,A Pusthay,7,Finland,initial+surname:unique,pace,1
+98dae38e,TK Lal,7,Czech Republic,none,,0
+f2756a51,AA Wagh,7,Austria,none,,0
+afa2ebba,Kamran Ahmadzai,7,France,initial+surname:unique,pace,0
+a4bcaba7,G Venkateswaran,7,Luxembourg,initial+surname:unique,pace,1
+24c1844e,S Chaudhary,7,Czech Republic,initial+surname:unique,pace,1
+125853c3,T Kahamker,7,Israel,none,,0
+4d0d5b7d,I Elec,7,Turkey,initial+surname:unique,pace,1
+e60e8014,Bhargav Narasimha,7,Mexico,none,,0
+0f9c9d1d,DC Delany,7,Leinster Lightning,initial+surname:unique,pace,0
+a69e2964,OJ Webster,7,Isle of Man,none,,0
+e2c882d1,AN Lascu,7,Romania,none,,0
+115b7211,L Krvaric,7,Croatia,none,,0
+d423f390,T Araliya,7,Italy,none,,0
+58a7f842,Baz Aybui,7,Sweden,none,,0
+cc550389,B Keganne,7,Botswana,none,,0
+db571b24,BS Stephenson,7,Belize,none,,0
+db1bf9c2,RN Patel,7,Kenya,initial+surname:conflict,"pace,spin",2
+ce7936a5,S Ravoka,7,Fiji,none,,0
+206efeb1,PR Surve,7,Indonesia,none,,0
+c27e0638,JS Ndanu,7,Kenya,none,,0
+7839bf3a,HS Baidwan,7,Canada,initial+surname:unique,pace,1
+b6e29ef5,VM Vaghela,7,United States of America,initial+surname:unique,spin,0
+1ac4b030,Ragne Hallik,7,Estonia,none,,0
+23f37c09,Azri Azhar,7,Malaysia,initial+surname:unique,pace,0
+e4f68364,H Mbam,7,Nigeria,none,,0
+e1e0775d,S Choden,7,Bhutan,none,,0
+507dd87f,Gaurav Mishra,6,Romania,full:conflict,"pace,spin",0
+8c3cbee9,Imran Ahmed Kaneez,6,Costa Rica,none,,0
+591cf573,P Madhukar,6,Malaysia,none,,0
+3486a171,L Sormus,6,Estonia,none,,0
+70d57519,AAP Atkinson,6,Surrey,none,,0
+927b34c9,S Pillai,6,Costa Rica,none,,0
+41721f6b,RS Quyn,6,Qatar,none,,0
+8cd72e0b,S Horley,6,Scotland,initial+surname:unique,spin,0
+c30d7608,S Channa,6,Oman,none,,0
+653a7fa8,PV Vuniwaqa,6,Fiji,none,,0
+ff4509d5,Lopamudra,6,Norway,none,,0
+2ee5997e,N Liyanage,6,Cyprus,initial+surname:unique,pace,0
+3346b14f,S Koppolu,6,Slovenia,none,,0
+935305fd,J Stanigze,6,Sweden,none,,0
+b4706200,Adil Khan,6,Germany,initial+surname:unique,pace,1
+c42eed38,F Samanyika,6,Botswana,none,,0
+77e321db,Aditya Panwar,6,Estonia,none,,0
+05ea0342,J Dzulfikar,6,Indonesia,none,,0
+acfd7188,Zahirbhai Patel,6,Zambia,none,,0
+c5445834,S Stanikzay,6,France,none,,0
+cba01c28,O Kgeresi,6,Botswana,none,,0
+77b49bd9,D Medagoda,6,Switzerland,none,,0
+ccd88623,O Lutbayar,6,Mongolia,none,,0
+c8ea9add,S Simpson,6,Jersey,none,,0
+d6d2ac95,S Sharma,6,Mexico,initial+surname:conflict,"pace,spin",0
+8f1e023f,Sidhant Singh,6,Singapore,initial+surname:conflict,"pace,spin",0
+915264c2,HN Ya France,6,Namibia,none,,0
+f5be7b08,S Rukmal,6,Seychelles,none,,0
+747209e0,AG Weligamage,6,Hungary,initial+surname:unique,pace,1
+8c42d7d8,V Mahajan,6,Canada,none,,0
+dcd05452,Lalu Bhai Ahir,6,Panama,none,,0
+11d83c44,M Kaukura,6,Cook Islands,none,,0
+6da5685e,A Kessar,6,Singapore,none,,0
+b4bbe95c,N Niranjana,6,India,none,,0
+d8b2f218,BB Sran,6,India,initial+surname:unique,pace,1
+550c9b2c,O Duff,6,Bulgaria,none,,0
+98cdb42d,NJ Amongin,6,Uganda,none,,0
+b979b662,Faridullah Shams,6,Austria,none,,0
+2f7244b5,Farmanullah Ghari,6,Norway,none,,0
+7bf39e5c,DE Burgess,6,Samoa,none,,0
+a413b433,PKM Mahawattage,6,France,none,,0
+23ef9b32,NM Sheikh,6,Scotland,none,,0
+792d0178,Waheeda Akhtar,6,Pakistan,initial+surname:unique,pace,1
+4612619b,AS Mehmi,6,Greece,initial+surname:unique,pace,1
+d19bec3f,B Maes Loch,6,Germany,none,,0
+d8e48e1b,MFI Assuncao,6,Brazil,none,,0
+983a0c34,MM Dekeling,6,Netherlands,initial+surname:unique,spin,1
+797f52cc,AAhan Achar,6,Singapore,initial+surname:unique,spin,1
+bf50e8de,Aslam Bera,6,Zambia,none,,0
+3da8cd3a,LAR Bommareddy,6,Singapore,none,,0
+b858be20,AV Lalcheta,6,Oman,initial+surname:unique,spin,1
+da76ae8f,M Kaswan,6,Japan,none,,0
+35230fa3,S Haggo,6,Scotland,initial+surname:unique,pace,1
+dcc76384,IC Simao,6,Brazil,none,,0
+af4a9a0a,J Blades,6,West Indies,none,,0
+3faa312e,S Hector,6,Leeward Islands,none,,0
+ce9ee68f,DK Dahyabhai Ahir,6,Panama,none,,0
+5d17f075,C Sridev,6,Singapore,none,,0
+cc7331d4,D Saxena,6,Canada,none,,0
+d3016d75,P Taylor,6,Czech Republic,none,,0
+016f6267,N Sitompul,6,Indonesia,none,,0
+8c73dff5,Phoup Srey Pheak,6,Cambodia,none,,0
+2d5c6e88,Yusuf Ebrahim,6,Panama,none,,0
+4169ae00,SC Kumari,6,Nepal,initial+surname:unique,pace,1
+9b6dde07,O Bastin,6,Jersey,none,,0
+eff8b730,GRD Munasinghe,6,Italy,initial+surname:unique,pace,1
+ff20c3ed,S Naidu,6,South Africa,none,,0
+f5932ad2,Zong Yuechao,6,China,none,,0
+863aa653,S Nair,6,Oman,none,,0
+cc9989f9,W Smith,6,Namibia,initial+surname:unique,spin,0
+c8e5012c,Nazwan Ismail,6,Maldives,none,,0
+a22b4f3f,A Mansale,6,Vanuatu,initial+surname:unique,spin,1
+95f0262b,IGTP Wiguna,6,Indonesia,none,,0
+7952fe28,M Chabula,6,Zambia,none,,0
+05b1aef8,NG Smith,6,Otago Volts,initial+surname:unique,pace,0
+01abe2db,IK Cheema,6,Portugal,none,,0
+487b8546,MW Jones,6,Essex,initial+surname:conflict,"pace,spin",0
+17881e49,Metty Fernandes,6,Switzerland,none,,0
+41bb77bc,S Krisheta,6,Qatar,none,,0
+dd26ae6e,Marcelle Hanekom,6,Cambodia,none,,0
+c1b74851,ED Silva,6,Kuwait,initial+surname:unique,pace,1
+e7353cbb,Anasim Khan,6,Bahrain,initial+surname:conflict,"pace,spin",0
+78f34e15,IE O'Brien,6,New Zealand,none,,0
+82a33cac,W Kokaua,6,Cook Islands,none,,0
+5500c675,PC Connell,6,Ireland,initial+surname:unique,pace,0
+088f22fd,Geovanis Uwase,6,Rwanda,none,,0
+9a54c30a,Mirza Ahmed,6,Kuwait,initial+surname:unique,spin,0
+29663fda,HL Harji,6,Seychelles,none,,0
+dad64776,MV Matsau,6,Lesotho,none,,0
+c386183b,M Biu,6,Fiji,none,,0
+201facae,N Mokoena,6,South Africa,none,,0
+32a85e70,C Tchale,6,Malawi,none,,0
+72a025a0,F Song,6,China,none,,0
+642b1b28,LS Simelane,6,Eswatini,none,,0
+6d9238ac,Serdar Burak Emir,6,Turkey,none,,0
+ecbbebf1,LK Bennett,6,Netherlands,none,,0
+f9b9883f,K Dorji,6,Bhutan,none,,0
+c329d304,J Cutinho,6,Costa Rica,none,,0
+9ac70727,Sohel Patel,6,Panama,initial+surname:conflict,"pace,spin",0
+a09323d8,AM Patel,6,Panama,initial+surname:conflict,"pace,spin",0
+51f56fdb,Simon Sorensen,6,Denmark,none,,0
+61bad8c9,DR Bangi,6,Indonesia,none,,0
+874c2cb3,Sameer Othman,6,Oman,none,,0
+8399a7af,R Dhakal,6,Nepal,none,,0
+4f3080c3,O Omonkhobio,6,Nigeria,none,,0
+57618587,G Newton,6,Isle of Man,none,,0
+7c668529,JD Bhatt,6,Germany,none,,0
+f9d6cfc6,Salman Sharjeel,6,Malta,none,,0
+11b78c67,S Gimhani,6,Sri Lanka,none,,0
+a1448a10,JK Vifah,6,Ghana,none,,0
+420d4d31,NM Meepage,6,Sri Lanka,none,,0
+ae5f7b63,D Tekyildirim,6,Turkey,none,,0
+465aa633,N Burger,6,South Africa,initial+surname:unique,pace,1
+e1bd3e2e,Kaung Htet Kyaw,6,Myanmar,none,,0
+6ff1d14f,A Levaci,6,Fiji,none,,0
+f30b0e54,P Neighbour,6,Luxembourg,none,,0
+95d3c4a6,TS Braat,6,Netherlands,none,,0
+a300e810,PRP Boissevain,6,Netherlands,initial+surname:unique,spin,1
+d1504c13,SA Akenji,6,Cameroon,none,,0
+98132a18,Vani Dhanuka,6,Switzerland,none,,0
+05e417e7,Meghana Lakayil,6,Germany,none,,0
+d2c61d83,MV Lehmann,6,Argentina,none,,0
+a6f6efba,T Malinga,6,Eswatini,none,,0
+7eba546e,S Kolcunova,6,Czech Republic,none,,0
+40d1b7bd,M Ramafifi,6,Botswana,none,,0
+8d747335,Hilva Noor,6,Indonesia,none,,0
+01127aa9,J Buchanan,6,Cayman Islands,none,,0
+95b5bda3,MK Hollard,6,Leinster Lightning,none,,0
+3094606e,AJ Prajapati,6,Mali,initial+surname:unique,pace,0
+7c7303eb,JD Nel,6,Scotland,none,,0
+abbc06cf,L Sanogo,6,Mali,none,,0
+36c0228f,AK Bangura,6,Sierra Leone,none,,0
+3cf06094,Bilal Tahir,6,Kuwait,none,,0
+b3bad3f2,NR Kumar,6,Canada,initial+surname:unique,spin,1
+a6cbe67b,Rhys Burinaga,6,Philippines,none,,0
+4eebb3e5,CC van Slobbe,6,Netherlands,none,,0
+4eb02f2e,KTH Ratnayake,6,Tamil Union Cricket and Athletic Club,none,,0
+7b8ed473,AC Septien,6,Mexico,none,,0
+a972ca63,SB Martinez,6,Costa Rica,none,,0
+58c16165,B Shetty,6,Oman,none,,0
+dfa6db1a,Vichanath Singh,6,Thailand,initial+surname:conflict,"pace,spin",0
+78c12883,S Baker,6,Hampshire,initial+surname:unique,pace,0
+65a2fff5,Mohammad Imran,6,Pakistan,full:unique,pace,0
+6b4817d9,G Shukla,6,Sweden,none,,0
+7f929ebe,AN Toube,6,Cameroon,none,,0
+63b156c1,IY Levy,6,Israel,none,,0
+73d19a42,B Gaanamong,6,Botswana,none,,0
+2d8aae2f,SP Gauchan,6,Nepal,initial+surname:unique,spin,1
+6a091f62,SJ Patel,6,Czech Republic,initial+surname:unique,pace,1
+52f08be8,JM Muirhead,6,Australia,initial+surname:unique,spin,1
+7d5fef52,W Hornero-Garcia,6,Germany,none,,0
+866d3ac8,A Parima,6,Cook Islands,none,,0
+0e01e881,M Batnasan,6,Mongolia,none,,0
+3be2b0a3,M Jevdjenovic,6,Serbia,none,,0
+681af475,M Ansari,6,Oman,initial+surname:unique,pace,1
+fb7dc205,JL Martel,6,Guernsey,initial+surname:unique,pace,2
+676aeb1b,D Dawa,6,Bhutan,none,,0
+5f93cb2d,Soniya Dabir,6,India,none,,0
+b97f21d8,EJ Tice,6,Ireland,none,,0
+e45810ed,Abdul-Shakoor Rahimzei,6,Germany,full:unique,spin,2
+8bebbcd4,Kerry Fraser,5,Luxembourg,initial+surname:unique,spin,0
+b75b7b09,Rakibul Hasan,5,Italy,full:unique,spin,1
+3ec513ea,A Maheshwari,5,Croatia,initial+surname:unique,pace,1
+9cfee623,C Cirlig,5,Romania,none,,0
+9e547805,T Thorpe,5,Leeward Islands,none,,0
+e6d1f4bb,M Lollo,5,Argentina,none,,0
+f0ad7a75,Thilina Silva,5,Seychelles,initial+surname:unique,pace,0
+eddf25bd,CAJ Meschede,5,Glamorgan,initial+surname:unique,pace,0
+de6ad58b,P Pustoslemsek,5,Slovenia,none,,0
+018f6488,M Gouws,5,Gibraltar,initial+surname:unique,pace,0
+32e47092,S Budhathoki,5,Malta,none,,0
+2d46e8ed,Zulqarnain Haider,5,Spain,none,,0
+1f09cd22,T Yangchen,5,Kuwait,none,,0
+4afe1806,SD Ranawaka,5,Bahrain,none,,0
+db077ead,Amina Kashif,5,Qatar,none,,0
+45c6afaf,Z Shurentsetseg,5,Mongolia,none,,0
+4758488e,T Tumursukh,5,Mongolia,none,,0
+2832fbba,R Haiong,5,Mozambique,none,,0
+dce5f11d,J Sasi Rekha,5,Sweden,none,,0
+32613355,M Akhigbe,5,Nigeria,none,,0
+a89c270b,KC Ramamoorthy,5,Indonesia,none,,0
+cd4845e9,Fatima Zahra,5,Sweden,none,,0
+aa47439d,Ibrar Ahmad,5,United Arab Emirates,initial+surname:unique,pace,0
+f70dabe0,M Ramlogan,5,Cayman Islands,none,,0
+c5e3fe3c,Sok Srey Maov,5,Cambodia,none,,0
+b245cd8b,Archara Supriya,5,United Arab Emirates,none,,0
+0bab1be2,M Fru,5,Cameroon,none,,0
+384cebed,Abdul Majid,5,Bahrain,initial+surname:unique,pace,0
+692ed48b,KAB Hynam-Nyberg,5,Samoa,none,,0
+5e72608f,KY Wilfried,5,Ivory Coast,none,,0
+31ca7a9c,Ethan D'Souza,5,United Arab Emirates,none,,0
+ddd411e0,P Bhandari,5,Finland,none,,0
+f0f20cf8,Ibrahim Kursad Dalyan,5,Turkey,none,,0
+e4f6147b,N Advani,5,Gibraltar,none,,0
+4551ed03,Fazil Muhammad,5,South Korea,none,,0
+5b9b8d98,CA Keita,5,Mali,none,,0
+118b0a7c,Aziz Sualley,5,Ghana,none,,0
+3bea7ea9,J Moondra,5,Leinster Lightning,none,,0
+85f0529e,P Chabuta,5,Zambia,none,,0
+eaba37fc,B Kasinja,5,Malawi,none,,0
+f681481e,Muhammad Nadeem,5,South Korea,full:conflict,"pace,spin",0
+81a0e294,SA Engelbrecht,5,Netherlands,initial+surname:unique,spin,1
+22cbe7fb,Malyun Hassan,5,Finland,initial+surname:unique,pace,0
+4e7d882f,A Beresford-Peirse,5,Croatia,none,,0
+2f208ab6,M Trajkovi,5,Serbia,none,,0
+f06b5585,P Manning,5,Cayman Islands,initial+surname:unique,spin,1
+2cb0acf4,C Beckford,5,United States of America,none,,0
+16d43e12,L Horan,5,Bermuda,none,,0
+edfe226f,Omid Shafi Rahman,5,United Arab Emirates,none,,0
+4f1208a8,Nabaa Naseem,5,Maldives,none,,0
+35cac794,Jiaping Li,5,China,none,,0
+037734ad,Wa Thone Nadi,5,Myanmar,none,,0
+3704ffe1,Nur Qalysha,5,Malaysia,none,,0
+6876264c,Santiago Duggan,5,Argentina,none,,0
+1285aa04,GMS Gaby,5,Mexico,none,,0
+6a71ba3a,M Levitt,5,Netherlands,initial+surname:unique,pace,1
+8c7b9bfc,Mohamed Ishmath,5,Maldives,none,,0
+03adc956,DB Lakhani,5,Sweden,none,,0
+943ca0cd,NT Nyamhuri,5,Zimbabwe,none,,0
+fffa744b,Naman Dhir,5,Mumbai Indians,none,,0
+ecd41f8c,J Yon,5,St Helena,none,,0
+740a5494,B Leo,5,St Helena,none,,0
+c63fd74d,Shruti Yadav,5,Bahrain,initial+surname:conflict,"pace,spin",0
+568fe66e,I Stewart,5,Switzerland,none,,0
+7eb7b47b,P Cabebula,5,Fiji,none,,0
+1f8b4fec,T Vanuarua,5,Cook Islands,none,,0
+a323465c,RR Joshi,5,Canada,initial+surname:unique,pace,1
+a2fc9177,R Muriyalo,5,Fiji,none,,0
+6d1db278,V Nagpaul,5,Singapore,none,,0
+9c1b1f4b,A Desai,5,Seattle Orcas,none,,0
+9235396c,R Endo,5,Japan,none,,0
+da738783,FN Walsh,5,Philippines,none,,0
+1775e31e,Frida Larsen,5,Denmark,none,,0
+ed4591ae,Joshep Zulu,5,Zambia,none,,0
+663ad386,I Asif,5,Austria,initial+surname:unique,pace,1
+d22287a8,KA Bazil,5,Cayman Islands,none,,0
+38702fb5,I Kamara,5,Sierra Leone,none,,0
+11174f6d,S Gasteratos,5,Greece,none,,0
+15322a7b,TA Dudnath,5,Suriname,none,,0
+8a22e5f0,M Badenhorst,5,Botswana,none,,0
+69950546,L Ramjit,5,United States of America,none,,0
+7fa094cb,M Durdevac,5,Croatia,none,,0
+725c73f2,H Rashid,5,Eswatini,none,,0
+8ad3d034,AB Mengoumou,5,Cameroon,none,,0
+d5966b42,RM Magare,5,Czech Republic,none,,0
+b49ab82b,Shivani Sati,5,Luxembourg,none,,0
+39f0b039,Baljit Singh,5,Italy,full:unique,pace,1
+92f0e10e,Ahmed Aqeel,5,Malaysia,none,,0
+4a6c0fbb,JE Titmuss,5,Hong Kong,none,,0
+f68bac56,B Lewis,5,Belize,none,,0
+6b25ef46,W Wotu,5,Vanuatu,none,,0
+2e4d5f94,TZ Chataira,5,Zimbabwe,none,,0
+2343b4bf,WT Mubayiwa,5,Zimbabwe,none,,0
+ecb8ba2c,J Winster,5,South Africa,none,,0
+86e80bff,Vaishnavi Sharma,5,India,initial+surname:unique,spin,1
+5a970aab,L Lamin,5,Sierra Leone,none,,0
+a89433c5,K Boniface,5,Nigeria,none,,0
+63249474,O Davidson,5,Scotland,initial+surname:unique,spin,1
+125bba96,J Perman,5,Spain,initial+surname:unique,spin,1
+1f982cd2,L Visser,5,Namibia,none,,0
+711c82b5,S Hanson,5,Jersey,none,,0
+61da7440,D Mullen,5,Guernsey,initial+surname:unique,pace,1
+648d060e,Aung Ko Ko,5,Myanmar,none,,0
+030a38e0,Emma Patel,5,France,none,,0
+fccc2d5a,Usman Arif,5,Norway,full:unique,pace,1
+01c05b6c,RJ Hatchman,5,Gibraltar,initial+surname:unique,pace,1
+acd030a0,S Sadarangani,5,Germany,none,,0
+458a21f3,C Breteche,5,France,none,,0
+17530fd9,G Irvin,5,Bahamas,none,,0
+e4bc45e0,T Brown,5,Bahamas,none,,0
+9328878b,Deya Stefanova,5,Bulgaria,none,,0
+618327de,D Demic,5,Serbia,none,,0
+f2c1f0e5,S Ishaque,5,Mumbai Indians,initial+surname:unique,spin,0
+d047f983,P Sharma,5,Kenya,initial+surname:unique,pace,0
+033e9d59,Arjun Vinod,5,Switzerland,initial+surname:unique,pace,1
+560ef10a,M Zwilling,5,Netherlands,initial+surname:unique,pace,1
+66f819df,A Lupascu,5,Romania,none,,0
+f12e21a0,Nayab Razwan,5,Norway,none,,0
+262b1d7d,M Robinson,5,Guernsey,none,,0
+f0f2b9c5,V Khanduri,5,Cyprus,initial+surname:unique,spin,1
+cc72f8df,G Madanayake,5,Estonia,none,,0
+1e4c0204,E Waithaka,5,Kenya,none,,0
+df15677b,T Makusha,5,Zimbabwe,none,,0
+e8cea6cf,TM Faimalo,5,Samoa,none,,0
+89df3901,Sadamali Bhakshala,5,Bahrain,none,,0
+81599c08,M Perisic,5,Serbia,none,,0
+8e051da2,Samiha Konuganti,5,Switzerland,none,,0
+7adc2d68,Yash Singh,5,Malta,initial+surname:unique,spin,0
+a819f6c8,Zahid Zadran,5,Germany,none,,0
+57b3c398,R Drake,5,Japan,none,,0
+949d1cae,GS Sequeira,5,Portugal,none,,0
+5f03af45,T Oyella,5,Uganda,none,,0
+3f38caff,Tshering Choden,5,Bhutan,none,,0
+b40bbd02,M Nguni,5,Zambia,none,,0
+56a94565,Karan Singh,5,Cyprus,initial+surname:unique,pace,1
+5cf163a5,Zada Sher,5,France,none,,0
+43c57d62,Asad Rasheed,5,Hong Kong,none,,0
+bdbde085,S Chinawa,5,Malawi,none,,0
+175937f6,R Sandeep,5,Eswatini,none,,0
+11b785d6,J Thomas,5,St Helena,initial+surname:unique,spin,0
+4ccbcd2f,M Ortiz,5,Mexico,none,,0
+1c03d322,P Senjug,5,Croatia,none,,0
+c7726eec,Atif Rasheed,5,Finland,none,,0
+3cc13c68,Rahat Ali,5,Czech Republic,full:unique,pace,0
+0420f51f,AG Rao,5,United States of America,none,,0
+f4a2d087,Bukhar Illikkal,5,Qatar,none,,0
+2a853aa5,U Shahid,5,France,none,,0
+c311564c,Ibrahim Jabarkhel,5,France,none,,0
+bcbb22dc,L Mamba,5,Eswatini,none,,0
+d2db7b61,AC Dei Castelli,5,Argentina,none,,0
+f2990906,Murat Yilmaz,5,Turkey,none,,0
+bfb66913,Isabella Clarke,5,Isle of Man,none,,0
+f0681e8b,S Sinha,5,Belgium,none,,0
+30c917bf,AV Lazarus,5,Thailand,none,,0
+36f7682b,Farial Zia Safdar,5,Norway,none,,0
+ccac9ed0,P Pratt,5,Sierra Leone,none,,0
+1bc685ee,N Kakor,5,Vanuatu,none,,0
+4709e746,Shakeel Zeb,5,Denmark,initial+surname:unique,pace,0
+fec8377a,Suzan Turan,5,Turkey,none,,0
+8d1ade08,M Mani,5,Delhi Capitals,initial+surname:unique,spin,0
+b5fedf28,W Ginindza,5,Eswatini,none,,0
+6949f713,MK Anafie,5,Ghana,none,,0
+266473e2,Amoluk Singh,5,Ghana,initial+surname:conflict,"pace,spin",0
+51a125b3,T Nightingale,5,Guernsey,initial+surname:unique,spin,1
+ec05df4e,S Bist,5,Nepal,none,,0
+1eb2b096,J Batinibulu,5,Fiji,none,,0
+039cabd9,TS Waqavakatoga,5,Fiji,none,,0
+4ab6d138,LR Doolan,5,New Zealand,none,,0
+e48c6ec7,N Davidovic,5,Croatia,initial+surname:unique,pace,1
+086f5984,Junaid Khan,5,Pakistan,full:unique,pace,2
+0c1da0c4,V Balakrishnan,5,Botswana,none,,0
+8d8c24fd,RJ Nicol,5,Auckland Aces,initial+surname:unique,pace,0
+e04fb55d,M Shehani,5,Sri Lanka,initial+surname:unique,pace,1
+a1aeb715,J Hurley,5,Argentina,none,,0
+c872d657,DV Devjani Mutreja,5,Mexico,none,,0
+ab8ef1e9,TC Vine,5,Spain,initial+surname:unique,pace,1
+3ed39f01,S Murari,5,Costa Rica,none,,0
+d864f752,BK Majji,5,Ghana,none,,0
+0bc162c4,JAN Ngono,5,Cameroon,none,,0
+54a10889,Khusboo Kandpal,5,Luxembourg,none,,0
+287ed3a0,GA Elwiss,5,Southern Vipers,initial+surname:unique,pace,0
+26534b48,AM Guruge,5,United Arab Emirates,none,,0
+753c95b9,SS Pathirana,5,Sri Lanka,initial+surname:unique,spin,1
+6f17c546,Y Choden,5,Bhutan,none,,0
+8b248d88,R Frylinck,5,Dolphins,initial+surname:unique,pace,0
+44d0e8af,HHC Gunaratne,5,Sri Lanka,none,,0
+a945bb28,T Muzarabani,5,Zimbabwe,none,,0
+7516045a,WT Gavera,5,Papua New Guinea,none,,0
+57a45277,RK Parwin,4,India,none,,0
+050492b0,R Dhar,4,India,none,,0
+f0b16e64,Z Mali,4,South Africa,initial+surname:unique,pace,1
+e7de4f6b,RR Emrit,4,Guyana Amazon Warriors,initial+surname:unique,pace,0
+abba64cd,A Obulor,4,Nigeria,none,,0
+362fde0f,NA Maiolo,4,Italy,initial+surname:unique,spin,1
+50102dea,T Kolcunova,4,Czech Republic,none,,0
+083e01d9,Matiullah Khan,4,United Arab Emirates,initial+surname:unique,pace,2
+c802af1c,Natim Hassam,4,Portugal,none,,0
+1500d104,Imtiaz Khan,4,Saudi Arabia,initial+surname:conflict,"pace,spin",0
+7fa2ab1f,RML Taylor,4,Leicestershire,initial+surname:conflict,"pace,spin",0
+81c29317,SL Munroe,4,West Indies,none,,0
+a7bc76a0,E Leie,4,Lions,initial+surname:unique,spin,0
+70a9f746,Mariam Hasan,4,Pakistan,initial+surname:conflict,"pace,spin",0
+5be810ba,MD Dai,4,Papua New Guinea,none,,0
+62d3f506,SD Valjalo,4,Croatia,none,,0
+c90346a0,D Jansen,4,Isle of Man,none,,0
+b78b3ffd,S Nadigotla,4,Romania,initial+surname:unique,spin,1
+63bd7086,B Jerkovic,4,Croatia,none,,0
+6caae2dc,Omar Rassol,4,Bulgaria,none,,0
+cccac242,Zain Ali,4,Italy,initial+surname:unique,pace,0
+20321b0c,K Lake,4,Japan,none,,0
+2494ff9e,D Ajekun,4,Nigeria,initial+surname:unique,spin,1
+98e908bd,TB Sole,4,Scotland,initial+surname:unique,spin,1
+cbabd6ad,NS Dhaliwal,4,Canada,initial+surname:unique,pace,1
+d5595998,J Kominkova,4,Czech Republic,none,,0
+261d591a,Firas Hussain,4,Bulgaria,initial+surname:unique,pace,0
+06b766f4,R Francis,4,St Helena,none,,0
+49355360,LJ Payas,4,Gibraltar,none,,0
+a044506e,Suabika Manivannan,4,Malaysia,none,,0
+01ac7f7c,NKDP Putri,4,Indonesia,none,,0
+ba0e04b2,S Namusha,4,Namibia,none,,0
+10ca0ed4,L Polaki,4,Lesotho,none,,0
+8684416d,ECM Egodagamage,4,Oman,none,,0
+66000a39,Md Shuayeb,4,Cambodia,none,,0
+0baa36e0,M Corazon,4,Indonesia,none,,0
+53c35b3a,Elias Tilman,4,Timor-Leste,none,,0
+1cad1601,K Sathish,4,Singapore,none,,0
+5ca0e315,G Richardson,4,Jersey,initial+surname:unique,pace,1
+c7fcc20b,L Jones,4,South Africa,initial+surname:unique,spin,1
+fd1041d2,Rudolph Fox,4,Bahamas,none,,0
+befef38f,Shahzaib,4,Saudi Arabia,none,,0
+871cf744,Deng Jinqi,4,China,none,,0
+012bd3f6,Shamma Ali,4,Maldives,initial+surname:conflict,"pace,spin",0
+557550a4,Hamza Dar,4,Spain,initial+surname:unique,pace,1
+6b75c2b1,NR Kirton,4,Canada,none,,0
+4043e3b0,SPS Shikongo,4,Namibia,none,,0
+43a2244f,A Suwanchonrathi,4,Thailand,initial+surname:unique,pace,1
+b1a4226c,CV Ranasinghe,4,South Korea,none,,0
+62a99934,Abdul Gaffar Saqlain,4,Rajshahi Warriors,none,,0
+fb266d70,Sageer Ahmad,4,South Korea,initial+surname:conflict,"pace,spin",0
+ec064d97,A Dowling,4,Bulgaria,none,,0
+423d2b12,S Shailesh,4,Mali,none,,0
+d821ea56,JL Kovacic,4,Slovenia,none,,0
+21fcad4e,JR Newton,4,Croatia,initial+surname:unique,pace,0
+20ab5aad,PD Blignaut,4,Namibia,none,,0
+9124e5ee,K Macheka,4,Zimbabwe,none,,0
+20988564,Virendra Kumar,4,Israel,initial+surname:conflict,"pace,spin",0
+b506636b,AA Jimoh,4,Nigeria,initial+surname:unique,pace,1
+4b490566,EFB Estrada,4,Costa Rica,none,,0
+092ccf20,JS Kundi,4,Kenya,initial+surname:unique,pace,1
+76a5e857,R Khullar,4,Finland,none,,0
+efea55e5,D Unhale,4,Finland,none,,0
+a2f8e873,B Balala,4,Malawi,none,,0
+de896b79,DF Jacobs,4,Thailand,initial+surname:unique,pace,0
+4289ccc9,Samader Shadab,4,Greece,none,,0
+01404b98,S Ranade,4,Japan,none,,0
+026b815f,MJ Tumukunde,4,Rwanda,none,,0
+2669d6b7,Mohsin Khan,4,Hong Kong,full:unique,pace,1
+1e843603,M Khauta,4,Lesotho,none,,0
+7f46e127,Rohan Bhavesh Patel,4,Bulgaria,initial+surname:unique,spin,1
+a82e0db7,FFZ Nhaduate,4,Mozambique,none,,0
+87968c84,Shuaib Al Balushi,4,Oman,none,,0
+dff2ffa0,JC Molina,4,Costa Rica,none,,0
+ab45cae8,Chayanisa Phengpaen,4,Thailand,none,,0
+0fce11e1,M Janicijevic,4,Serbia,none,,0
+860042f6,HH Aung,4,Myanmar,none,,0
+4839b023,SYD Chan,4,Hong Kong,none,,0
+5278cecc,Muhammed Imran,4,Oman,initial+surname:unique,pace,0
+6d6f52fc,Guido Angeletti,4,Argentina,none,,0
+c2fd51b1,K Gilham,4,Czech Republic,initial+surname:unique,pace,1
+5190900f,E Haven,4,Bahamas,none,,0
+df6534ac,Khalander Mustafa,4,Saudi Arabia,none,,0
+ff722bc8,C Outerbridge,4,Bermuda,none,,0
+c7a995d3,R Sai Kishore,4,Gloucestershire,initial+surname:unique,spin,0
+492ff0c2,R Mondol,4,Rajshahi Warriors,none,,0
+b92d1fe6,T Dlamini,4,Eswatini,none,,0
+07ac9c54,C Roberts,4,France,none,,0
+1ef6ed2b,PUKK Arachchige,4,Finland,none,,0
+e5ecb1ef,V Ravindran,4,Hungary,initial+surname:unique,pace,0
+4c257434,J Andujar,4,Argentina,none,,0
+6bcefc6e,I Quee,4,Sierra Leone,none,,0
+52a0e81d,MLN Sissako,4,Cameroon,none,,0
+d7c02672,CR Pagydyala,4,United States of America,none,,0
+5eaff430,V Vithanage,4,Canada,none,,0
+cfb49f67,Anjuli Ghalley,4,Bhutan,none,,0
+d2416610,LM Sims,4,Italy,initial+surname:unique,pace,0
+02b87bde,LW Potthoff,4,Croatia,none,,0
+7a64c6eb,E Vukusic,4,Somerset,none,,0
+58fba7cb,M Grzinic,4,Croatia,none,,0
+bd021695,Qudratullah Mir Afzail,4,Sweden,none,,0
+b64e3749,E Ochieng,4,Kenya,initial+surname:unique,pace,1
+bb641155,S Mtae,4,Tanzania,none,,0
+732ce0c2,G Mubiru,4,Uganda,none,,0
+ce5030d8,S Elmsjoo,4,Sweden,none,,0
+ff5051bd,Pooja Kumari,4,Norway,none,,0
+0f61aa94,P Donkaew,4,Thailand,none,,0
+021ac4dd,H Aggarwal,4,Estonia,none,,0
+6b7a90f5,N Sonne-Rudd,4,Denmark,none,,0
+e1d2c0bf,VT Thiyanesh,4,Singapore,none,,0
+32737738,Sufiyan Tarajia,4,Panama,none,,0
+d42de283,Vivek Dixit,4,Luxembourg,none,,0
+270587b3,PD Dabholkar,4,Germany,none,,0
+1b95b3cd,Suresh Kumar,4,Peru,full:conflict,"pace,spin",0
+d034d60a,M Gorases,4,Namibia,none,,0
+0b22ec0f,G Tuskan,4,Turkey,none,,0
+f1aa94c3,JE Marks,4,Israel,none,,0
+45d794b0,GJ Hilkowitz,4,Israel,none,,0
+af8d9fd9,Yasir Mehmood,4,Cyprus,none,,0
+88228580,MMR Obili,4,Estonia,none,,0
+c160db98,C Smith,4,Melbourne Stars,initial+surname:conflict,"pace,spin",0
+1b8c2b54,M Prasanna,4,Romania,none,,0
+9822fb85,Isa Zaroo,4,Bulgaria,none,,0
+fcf6b0f6,RR Simmonds,4,Barbados Royals,initial+surname:unique,pace,0
+34e10659,K Babu,4,South Korea,none,,0
+41a61623,S Kharvi,4,Indonesia,none,,0
+ae99724d,Wan Nor Zulaika,4,Malaysia,none,,0
+25850e31,S Ozkunduz,4,Turkey,none,,0
+e9e37173,A Busing-Volschenk,4,Namibia,none,,0
+5ffb535d,Suhail Sattar,4,Timor-Leste,none,,0
+aae9b47b,S Yildirim,4,Turkey,none,,0
+22651574,D Nanda,4,Indonesia,none,,0
+25c73eb6,A Aitken-Drummond,4,Scotland,initial+surname:unique,pace,1
+e7458e4b,Muhammad Kashif,4,Kuwait,full:unique,spin,1
+81ab2474,Sofia Velic,4,Indonesia,none,,0
+49e5f1b4,C Elmore,4,Guernsey,none,,0
+b0b80a99,CV Harrison,4,Gibraltar,initial+surname:unique,pace,1
+1d45c01a,A Andrews,4,Switzerland,initial+surname:unique,pace,1
+a18461a2,KD Mehta,4,Czech Republic,none,,0
+5ab659d9,P Pirabakaran,4,France,initial+surname:unique,pace,1
+bc6f8328,RJG Palmer,4,Jersey,initial+surname:unique,spin,1
+d12ec7b3,AL Seddon,4,France,none,,0
+761c929e,S Kolcharam,4,Germany,none,,0
+7a640d66,T Basile,4,Argentina,none,,0
+e7a0cb9a,M Leporoporo,4,Lesotho,none,,0
+8c8a3f08,GM Ntambalika,4,Malawi,none,,0
+45ca12a7,D Kansonkho,4,Malawi,none,,0
+53419aff,J Ghadiyali,4,Swaziland,none,,0
+12c9c558,Wang Qi,4,China,none,,0
+0b010809,S Munagala,4,Denmark,none,,0
+1304c2d6,ST Kannan,4,Germany,initial+surname:unique,pace,1
+3cf5a041,VN Veetil,4,Qatar,none,,0
+c6e87b1c,Kashif Khan,4,Singapore,initial+surname:conflict,"pace,spin",0
+11c35bf1,O Sam Arthur,4,Costa Rica,none,,0
+af6c03bc,A Zimunu,4,Zimbabwe,none,,0
+97fc39fd,M Kanno,4,Japan,none,,0
+90410756,ET Williams,4,Cook Islands,none,,0
+56f77a56,Hala Azmat,4,Canada,none,,0
+53d0b0dc,A Kaul,4,Singapore,none,,0
+62708dce,S Tabuisulu,4,Fiji,none,,0
+d88f9163,ST Yalimaiwai,4,Fiji,none,,0
+57fb24e6,TT Aung,4,Myanmar,none,,0
+36099d55,S Borakambi,4,Tanzania,none,,0
+b18d78f6,Ajhar Alam,4,Czech Republic,initial+surname:unique,pace,0
+71d6fd2c,A Davidson-Soler,4,Spain,none,,0
+b7062209,D Polpitiya,4,Eswatini,none,,0
+4a2159dc,E Ernest,4,Sierra Leone,none,,0
+5249f9c4,AE Isesele,4,Nigeria,none,,0
+b7db83eb,Jitin Singh,4,Tanzania,initial+surname:conflict,"pace,spin",0
+368c7e10,Payal Kothar,4,Belgium,none,,0
+da6576af,S Bhanushali,4,Sweden,none,,0
+15596e16,Rithika Rajesh,4,Belgium,none,,0
+ebfc9514,Afsheen Ahmed,4,Portugal,initial+surname:conflict,"pace,spin",0
+2d1b6dee,GK Ghalley,4,Bhutan,none,,0
+aae7b7f0,Heal Theara,4,Cambodia,none,,0
+79e754db,P Arrighi,4,Argentina,none,,0
+aa467af0,Tanvir Islam,4,Comilla Victorians,initial+surname:conflict,"pace,spin",0
+0c95e20e,F Clarke,4,Isle of Man,none,,0
+d6b4e3e2,KJ Patel,4,Seychelles,initial+surname:conflict,"pace,spin",0
+e0f12392,Mohammed Alamgir,4,Eswatini,none,,0
+8d76816e,E Richard,4,Malawi,none,,0
+68e7e8d5,J Henry,4,St Helena,none,,0
+600c9d3f,MEC de Fouw,4,Netherlands,none,,0
+6c75310b,J Lewis,4,Sussex,initial+surname:unique,pace,0
+99639abf,NJ Astle,4,New Zealand,none,,0
+e662b18f,JAR Blain,4,Scotland,initial+surname:unique,pace,1
+008589a4,CM Wright,4,Scotland,initial+surname:unique,pace,1
+8b8745fd,ML Lewis,4,Australia,none,,0
+4751827a,CP Schofield,4,England,initial+surname:unique,spin,1
+9f961c14,Joginder Sharma,4,Chennai Super Kings,none,,0
+b69e69ed,AA Noffke,4,Australia,none,,0
+df34a755,Harsha Amarasinghe,4,Maldives,none,,0
+96f5b685,AA Paradkar,4,United States of America,initial+surname:unique,pace,0
+3c13fc3b,E Frimpong,4,Ghana,none,,0
+4d2b96b4,I Tchakou,4,Cameroon,none,,0
+0877eba5,Nur Nadihirah,4,Malaysia,none,,0
+14bc5d2d,Hadia Siddiqui,4,Austria,none,,0
+2b150c6b,SL Kalis,4,Netherlands,initial+surname:unique,pace,2
+9d456118,GMK Jayaweera,4,Sweden,none,,0
+da21531c,Waqar Khan,4,Slovenia,initial+surname:unique,pace,0
+3cf0ab34,Attia Diwan Ali,4,Belgium,initial+surname:unique,pace,1
+a11dbbdb,Rabia Mushtaq,4,Spain,none,,0
+82903f3a,A Gulati,4,Bahamas,none,,0
+f16953c5,Sareer Shah,4,Luxembourg,initial+surname:conflict,"pace,spin",0
+4fbe9e03,L Hamilton,4,Netherlands,initial+surname:conflict,"pace,spin",0
+7e38d2de,K Weeraratne,4,Sri Lanka,initial+surname:unique,pace,1
+5b8fffb4,GD Drummond,4,Scotland,none,,0
+4fc516bd,HMCM Bandara,4,Sri Lanka,none,,0
+3032933c,S Nitschke,4,Australia,initial+surname:unique,spin,1
+86421172,GA Lamb,4,Zimbabwe,initial+surname:unique,spin,1
+6bb7a785,LC Sthalekar,4,Australia,none,,0
+8a00eec1,AN Hyobeom,4,South Korea,none,,0
+7239b60d,CAH Stevenson,4,United States of America,initial+surname:unique,pace,0
+deaa286f,S Jayasinghe,4,Bahrain,none,,0
+1b3acd33,MD Bates,4,Auckland Aces,none,,0
+b67bfaae,GE Mathurin,4,Jamaica Tallawahs,none,,0
+a4d52e08,SM Benade,4,South Africa,none,,0
+63772ee4,D Finau,4,Samoa,none,,0
+97f2faf0,Aleena Khan,4,Qatar,initial+surname:conflict,"pace,spin",0
+a3ead8da,A Sharma,4,India,initial+surname:conflict,"pace,spin",4
+41b63677,R Baruah,4,Estonia,none,,0
+68832922,Taher Muhammad,4,Slovenia,none,,0
+d613f046,M Whelan,4,Gibraltar,none,,0
+da39f141,S Sengupta,4,Czech Republic,initial+surname:unique,pace,1
+5257e839,Emily Merrien,4,Guernsey,none,,0
+68f500c8,Z Hoque,4,Thailand,none,,0
+30564b3e,Mazharul Islam,4,Seychelles,initial+surname:conflict,"pace,spin",0
+8ea1f4c4,L Holmgaard,4,Denmark,none,,0
+f2b769ad,GEM Brealey,4,Luxembourg,none,,0
+15404b57,A Mesarovic,4,Serbia,none,,0
+dcf81436,S Kaul,4,Punjab,initial+surname:unique,pace,0
+e13f5984,R Malhotra,4,India,none,,0
+e2ee90d9,MA Aponso,4,Sri Lanka,none,,0
+94eac556,CJ McKay,4,Leicestershire,initial+surname:unique,pace,0
+b699df47,MP O'Dowd,4,Netherlands,initial+surname:unique,spin,1
+0bd536fb,P Raho,3,Papua New Guinea,none,,0
+e1824e7d,Iqbal Hossain,3,Austria,initial+surname:unique,pace,0
+2df874e6,R Kumar,3,Romania,initial+surname:conflict,"pace,spin",0
+7bdbd6d0,H Roy,3,Nepal,none,,0
+79e23cc5,ML Kostic,3,Serbia,none,,0
+b91efad5,FC Leydon-Davis,3,Otago,none,,0
+b388d623,G Fatouros,3,Greece,none,,0
+ec201565,JD Newton,3,Croatia,initial+surname:unique,pace,0
+b58b7db6,GSNFG Jayasuriya,3,Chilaw Marians Cricket Club,none,,0
+59e1abef,A Gupta,3,Norway,initial+surname:conflict,"pace,spin",0
+424a646f,D Ahir,3,Panama,none,,0
+1f795a79,K Samten,3,Bhutan,none,,0
+f992c8da,Yash Talati,3,Kenya,none,,0
+69649715,JT Darrell,3,Bermuda,none,,0
+aeb893b4,GG Banner,3,Belize,none,,0
+f0398c2f,J Matharu,3,Canada,initial+surname:unique,pace,1
+fc30a5b7,RP Mitchell,3,Bahamas,none,,0
+63bff7f9,SM Harwood,3,Australia,none,,0
+2d4465da,SG Whittingham,3,Sussex,initial+surname:unique,pace,0
+7c0055c1,KE Broadmore,3,Otago,none,,0
+2842d925,JM Apio,3,Uganda,none,,0
+525c3f54,AR Adams,3,Nottinghamshire,none,,0
+fe3e9880,SG Diaby,3,Mali,none,,0
+8c95e2dd,MS Diawara,3,Mali,none,,0
+27d95005,B Maximo,3,Portugal,none,,0
+2c8d5886,David Demba,3,Gambia,none,,0
+8eefeb60,Anoushka Vaidya,3,Sweden,initial+surname:unique,spin,0
+79a29279,Ida Bagus Nara,3,Indonesia,none,,0
+8d995b86,S Gantulga,3,Mongolia,none,,0
+6706fd18,T Buri,3,Thailand,none,,0
+180e2c15,Ismaila Tanba,3,Gambia,none,,0
+c2409632,ML Bojang,3,Gambia,none,,0
+e770b214,DL Maddy,3,England,initial+surname:unique,pace,1
+13501ff4,Mohamed Khan,3,Sierra Leone,initial+surname:conflict,"pace,spin",0
+b8b95e44,SDJJ Dima,3,Mozambique,none,,0
+b68b1633,P Vekaria,3,Rwanda,none,,0
+00c98c78,NH Ekanayake,3,Bahamas,none,,0
+c4281e43,Waleed Rana,3,Italy,none,,0
+b88a24ba,HM Bandara,3,Romania,none,,0
+7117e610,AD Perez,3,Mexico,none,,0
+fcbf5a30,D Gough,3,England,none,,0
+f1879052,G Morales,3,Mexico,none,,0
+eb001e0b,I Rodriguez,3,Mexico,none,,0
+755819f4,Zafer Durmaz,3,Turkey,none,,0
+e52eb657,KR Ebanks,3,Cayman Islands,initial+surname:unique,pace,1
+ecb7a421,FL Albanjari,3,Indonesia,none,,0
+43449b1e,JEA Doctora,3,Philippines,none,,0
+837be376,Nazmul Huda,3,Timor-Leste,none,,0
+f53fa89c,Chado Om,3,Bhutan,none,,0
+17751f98,H Eulenkamp,3,Guernsey,none,,0
+25bc2d36,N Pathan,3,Thailand,none,,0
+a9ddd37d,MNR Cooray,3,Maldives,none,,0
+e401f8a5,Mayank Nagayach,3,Luxembourg,none,,0
+1afd4f89,S Vats,3,Luxembourg,initial+surname:unique,pace,1
+e0c9637f,Zahoor Ahmad,3,Saudi Arabia,initial+surname:unique,spin,0
+82a7dfdd,Muhammad Usman,3,Estonia,initial+surname:unique,pace,0
+f49935eb,BF Mailata,3,Samoa,none,,0
+f70f8dbb,S Selvaraj,3,Tanzania,none,,0
+16d52916,Aqif Farooq,3,Kuwait,initial+surname:unique,pace,0
+9a28e6e1,AJA Samuels,3,Cook Islands,none,,0
+a9b998d9,M Raikes,3,Gibraltar,none,,0
+6755b6c7,Merwais Shinwari,3,Slovenia,initial+surname:unique,pace,0
+df70c3f2,K Oala,3,Papua New Guinea,none,,0
+bc11f3a3,S Malwatta,3,Italy,none,,0
+c577d7d4,A Chaubey,3,Croatia,none,,0
+38476559,Seungmin Song,3,South Korea,none,,0
+664ad13f,Jiyeon Park,3,South Korea,none,,0
+ce431658,Mina Baek,3,South Korea,none,,0
+465fd722,A Chaudhary,3,Singapore,none,,0
+c219a3c4,S Simic,3,Serbia,none,,0
+e18e9598,S Vasilakis,3,Greece,none,,0
+740d29d5,Sai Hla Htwe,3,Myanmar,none,,0
+5fb4c015,T Dissanayake,3,Bulgaria,none,,0
+856dcfa8,A Nagarajan,3,Qatar,none,,0
+fa948618,Jannatul Ferdus,3,Bangladesh,none,,0
+ab343e93,P Kerai,3,Kenya,initial+surname:unique,spin,1
+e1846e12,T Mpatane,3,Botswana,none,,0
+e05dd44b,V Shaw,3,Suriname,none,,0
+c7fee762,G Jafta,3,South Africa,none,,0
+6e61adb8,JWW Gardner,3,Papua New Guinea,initial+surname:unique,spin,0
+479da8f9,JW Chilia,3,Vanuatu,initial+surname:unique,spin,1
+b30bfd44,JP Cabrera,3,Argentina,none,,0
+55f0e741,C Greenshields,3,Portugal,initial+surname:unique,pace,0
+ef160d73,A Cossa,3,Mozambique,none,,0
+74ed1b5f,P Modimo,3,Botswana,none,,0
+e45ac860,Adama Kamara,3,Sierra Leone,none,,0
+2f8c4e6e,T Ariuntsetseg,3,Mongolia,none,,0
+639000b6,CN Nation,3,West Indies,none,,0
+eaeb065e,TCW Veillard,3,Guernsey,initial+surname:unique,spin,1
+e01d2dae,Ikbal Hossain,3,France,initial+surname:unique,pace,0
+907e5f6c,C Pavely,3,Warwickshire,initial+surname:unique,spin,0
+14198941,CD Mboe,3,Cameroon,none,,0
+ddc7e056,P Buccimazza,3,Portugal,none,,0
+33328ec7,Fakhrul Mohon,3,Portugal,none,,0
+f08adc01,MG Hunter,3,Gibraltar,initial+surname:unique,pace,1
+48ec1360,Sabikun Nahar Jesmin,3,Bangladesh,none,,0
+203de497,L Makgale,3,Botswana,none,,0
+baf3cf01,I Uboh,3,Nigeria,initial+surname:unique,pace,1
+0a509d6b,RK Singh,3,Kolkata Knight Riders,initial+surname:conflict,"pace,spin",0
+9c376401,CS MacLeod,3,Scotland,initial+surname:unique,pace,1
+e95cf4f8,Mah Noor Amir,3,Saudi Arabia,initial+surname:unique,pace,0
+18fcb85f,Jaikumar Thakur,3,Croatia,initial+surname:unique,pace,0
+ecfdfbad,P Hingorani,3,Romania,none,,0
+90bd1f11,B Mahesh,3,Cyprus,initial+surname:unique,pace,0
+51e0e79f,AS Abioye,3,Nigeria,initial+surname:unique,pace,1
+d11e0c76,Sanjay Kumar Ahir,3,Panama,none,,0
+fe366f34,C Connolly,3,Western Australia,initial+surname:unique,spin,0
+b7f70e36,K Modise,3,Botswana,none,,0
+4705e4b1,Mahewish Khan,3,Canada,initial+surname:conflict,"pace,spin",0
+9877d487,E Millington,3,Guernsey,none,,0
+a9b7e3e6,O Morgan,3,Guernsey,none,,0
+966b2677,Mustakim Aslam,3,Denmark,initial+surname:conflict,"pace,spin",0
+53c738ac,L Klokgieters,3,Netherlands,none,,0
+2d0b7057,RL D'Souza,3,Bahrain,none,,0
+f903aec2,NS Prasad,3,Delhi Capitals,none,,0
+1252c950,Mah Noor,3,Saudi Arabia,none,,0
+83f59aa3,Muhammad Ansar,3,Kuwait,none,,0
+cf06cb34,K Subramanian,3,Singapore,initial+surname:unique,pace,1
+cc3fb3b3,Imran Butt,3,Bahrain,none,,0
+3a200eb2,MC Alex,3,Ivory Coast,none,,0
+9dba7a41,AAH Bhikari,3,Suriname,none,,0
+f866a499,S Parker,3,Hong Kong,none,,0
+349c5e58,RMR Brathwaite,3,Cyprus,none,,0
+6f852c49,N Venables,3,Vanuatu,none,,0
+2575caf6,J Mathew,3,Malta,initial+surname:unique,pace,0
+1fc086bc,ADP Diaz,3,Costa Rica,none,,0
+cf712c6d,Mehak Thakur,3,United Arab Emirates,none,,0
+52a0b3ed,M Breban,3,Guernsey,initial+surname:unique,pace,1
+b2cd8abe,Chen Xinyu,3,China,none,,0
+1d5273c9,Yang Yu Xuan,3,China,none,,0
+48024cf4,MM Siddique,3,Japan,initial+surname:unique,pace,0
+01396dc6,Abeera Waris,3,Bahrain,none,,0
+c8e6bddd,A Ndiraya,3,Zimbabwe,initial+surname:unique,spin,1
+320d39c0,L Wesley,3,Malawi,none,,0
+287dab75,M Kachingo,3,Zambia,none,,0
+b66201dd,Aarnav Patel,3,Kenya,initial+surname:conflict,"pace,spin",0
+a3b9191a,PD Hennessy,3,Spain,initial+surname:unique,pace,1
+308ac7cb,YM Murrure,3,Mozambique,none,,0
+3847ec84,JI de Villiers,3,Namibia,initial+surname:unique,pace,1
+3dd11bb4,Humna Bilal,3,Pakistan,initial+surname:unique,pace,0
+f536e967,P Kaveao,3,Cook Islands,none,,0
+0efdea1f,Maria Ahsan,3,Sweden,none,,0
+09c766ec,Mohsin Zaki,3,Bahrain,none,,0
+fb432bd3,MM Mabathoana,3,Lesotho,none,,0
+86ae7e09,C Wyngaard,3,South Africa,none,,0
+4ee38eae,Raihan Stanikzai,3,Switzerland,none,,0
+d84a1af0,Nathan Ingleston,3,Panama,none,,0
+36d2face,Shorifa Khatun,3,Bangladesh,initial+surname:unique,spin,1
+70308587,JMJ Lynn,3,Indonesia,none,,0
+1f22730e,Rafiulah Alokozai,3,Belgium,none,,0
+5481bd91,J Hill,3,Philippines,initial+surname:unique,pace,1
+d996ba33,J Kila,3,Papua New Guinea,initial+surname:unique,spin,1
+e2e5b178,M Yousaf,3,Hong Kong,none,,0
+82af7861,LP Kasturiarachchige,3,Austria,none,,0
+dfe8ddeb,Camila Valdes,3,Chile,none,,0
+c821e504,Bipin Kumar,3,Qatar,initial+surname:unique,pace,0
+e205ce8b,FL Patel,3,Panama,none,,0
+a073f2ff,S Thakur,3,Romania,initial+surname:unique,spin,1
+55c9fffb,N Tropolova,3,Bulgaria,none,,0
+eb45b187,I Mustafoev,3,Uzbekistan,none,,0
+1eaac48d,Rashid Khan,3,Belgium,full:conflict,"pace,spin",0
+d35c1fc7,Zumika Azmi,3,Malaysia,none,,0
+1a156c88,DJM Short,3,Western Australia,initial+surname:conflict,"pace,spin",0
+7068c81e,MJ Fisher,3,Northern Districts,initial+surname:unique,pace,0
+5473ec6f,Manish Sharma,3,Cambodia,initial+surname:conflict,"pace,spin",0
+52b090a6,Lakshit Gupta,3,Cambodia,none,,0
+5f77f23a,US Hathinjar,3,Cambodia,none,,0
+6b96bebf,C Zavoiu,3,Romania,initial+surname:unique,spin,1
+3cd5ae89,J Kgang,3,Botswana,none,,0
+af5b6464,N Bidaisee,3,St Kitts and Nevis Patriots,none,,0
+bf350134,Tasmia Rubab,3,Pakistan,none,,0
+fbdc5ab1,P Murungi,3,Uganda,initial+surname:unique,pace,1
+4a78f962,V Zanko,3,Croatia,initial+surname:unique,pace,1
+078f166f,AS Withanage,3,Italy,none,,0
+2f22325f,Ameer Saiyed,3,Botswana,none,,0
+1fed517a,Tenjin Rabgey,3,Bhutan,none,,0
+cebbf3c9,Myat Thu Aung,3,Myanmar,none,,0
+c9c57de3,R Chatterton,3,Peru,none,,0
+caf0dbef,SF Mangoda,3,Israel,none,,0
+d204a45a,M Mastrangelo,3,Argentina,none,,0
+7bd61c82,B Murtagh,3,Isle of Man,none,,0
+c4f42529,D Murphy,3,Isle of Man,none,,0
+02888f23,A Donovan,3,Philippines,none,,0
+f11f5a92,K Burrows,3,Bahamas,none,,0
+a12672e0,J Baker,3,Cayman Islands,initial+surname:unique,pace,0
+a64e3b89,SK Atai,3,Papua New Guinea,none,,0
+1b61a9fa,DM Braat,3,Netherlands,none,,0
+69f47625,ME Violleau,3,France,none,,0
+19758a47,CG Osborne,3,Croatia,initial+surname:unique,pace,0
+bf09f51d,ADL Stokoe,3,Isle of Man,none,,0
+68877963,BJ Konstas,3,Greece,none,,0
+c0ee8488,AL Khunti,3,Israel,none,,0
+fd57254c,HK Brahmbhatt,3,Peru,none,,0
+41e04234,O Qudratov,3,Uzbekistan,none,,0
+13d3e7d8,Abidullah Kotwa,3,Austria,none,,0
+3e331df6,Matthew Walker,3,Gibraltar,none,,0
+32009b6a,Furkan Tuskan,3,Turkey,none,,0
+f52961ea,P Jirapatananukul,3,Thailand,none,,0
+8ce93575,S Mabuza,3,Eswatini,none,,0
+ca3f2b64,N Kayani,3,Sweden,none,,0
+f3e240a6,Mustapha Yusuf,3,Nigeria,none,,0
+d2e67105,Pargat Singh,3,Canada,initial+surname:conflict,"pace,spin",0
+99033245,Aliya Kamara,3,Sierra Leone,none,,0
+ccd6b379,Olipa Gerald,3,Uganda,none,,0
+d86d276e,W Sahan,3,Ace Capital Cricket Club,initial+surname:unique,pace,0
+967ee086,Mohammed Al Balushi,3,Oman,none,,0
+c05f9d20,SSD Arachchige,3,Nondescripts Cricket Club,initial+surname:unique,spin,0
+03a83c50,V Viyaskanth,3,Tamil Union Cricket and Athletic Club,none,,0
+0272042d,Danaya Ilieva,3,Bulgaria,none,,0
+83ca2482,E Eduard,3,Indonesia,none,,0
+c32bb7bb,LO Telea,3,Samoa,none,,0
+0e818f80,N Tokizawa,3,Japan,none,,0
+2853eafb,V Iriho,3,Rwanda,none,,0
+7d668c73,T Hanum,3,Indonesia,none,,0
+bd6f7c24,K Winda Prastini,3,Indonesia,none,,0
+7b6623bc,J Daley,3,Turks and Caicos Island,none,,0
+ede30898,D St Ange,3,Turks and Caicos Island,none,,0
+b34de9a6,WK Bitis,3,Croatia,none,,0
+792805ee,M Abdulla,3,Malawi,none,,0
+f15d17c7,Sarfaraj Patel,3,Lesotho,initial+surname:conflict,"pace,spin",0
+00029c30,M Mwamadi,3,Malawi,none,,0
+be59ed3f,G Cengiz,3,Turkey,none,,0
+46dff613,N Asuramanage,3,Italy,none,,0
+1ee9a0f6,Syed Ali Gillani,3,Sweden,none,,0
+324e5c36,Samarth Shetty,3,Sweden,none,,0
+52dfe157,T Filer,3,Estonia,none,,0
+7a8292a4,Reyyan Aliusta,3,Turkey,none,,0
+87e5a75b,AGC Vimukthi,3,Sri Lanka,none,,0
+8c3e36b2,Maria Ababi,3,Romania,none,,0
+bbd31c8f,Thea Larsen,3,Denmark,none,,0
+c9a38569,Zakir Husain Patel,3,Zambia,none,,0
+7a652afa,M Kojo,3,Finland,none,,0
+8e7e982c,Muhammed Turkmen,3,Turkey,none,,0
+0d4d3cb1,R Dhiman,3,Bulgaria,initial+surname:unique,pace,1
+e28bb0b9,DO Leicher,3,Namibia,initial+surname:unique,pace,1
+1c4161b3,Bilal Safdar,3,Norway,none,,0
+818aef9a,Ali Abdulla Popalzae,3,Greece,none,,0
+65dadc70,Ankit Dubey,3,Sweden,initial+surname:unique,spin,0
+729c5ab5,M Pascal,3,Tanzania,none,,0
+ff227198,G Sultana,3,India,none,,0
+aef2982e,MB van Schelven,3,Netherlands,none,,0
+1f74f675,T Yotharat,3,Thailand,none,,0
+42aaf21c,KD Jayawant,3,Oman,none,,0
+463e127a,C Jennings,3,Guernsey,none,,0
+f24ffaab,T Smith,3,Jersey,initial+surname:unique,pace,0
+5c57229d,Muhammad Fahim,3,Belgium,none,,0
+1339f52a,M Fontaine,3,Hungary,initial+surname:unique,pace,1
+2687fff2,KC D'Souza,3,Bulgaria,initial+surname:unique,spin,0
+7c7c4988,NL Ujawe,3,Slovenia,initial+surname:unique,pace,0
+27cc4361,PJ Ongondo,3,Kenya,initial+surname:unique,pace,1
+9018bf65,Mansoor Amjad,3,Pakistan,none,,0
+110b180a,DE Roache,3,Samoa,none,,0
+cd85eae4,SN Pradhan,3,India,none,,0
+5d9a1a73,R Sharma,3,Pune Warriors,initial+surname:conflict,"pace,spin",0
+78fc85c0,APC Kilowan,3,South Africa,none,,0
+5959370f,R Kanoh,3,Thailand,initial+surname:unique,spin,1
+3da7a16e,ST Eyyunni,3,United States of America,initial+surname:unique,spin,0
+8bba9ec2,KJ Young,3,Belize,none,,0
+7bf34437,C Pervez,3,Canada,initial+surname:unique,pace,1
+d792374d,KK Dobell,3,Japan,initial+surname:unique,pace,1
+c46999c7,M Podosky,3,Philippines,none,,0
+d395e33c,AL Watkins,3,New Zealand,none,,0
+d1761087,RM West,3,Ireland,none,,0
+a670d624,RR Watson,3,Scotland,initial+surname:unique,pace,1
+faaab47c,P Roy,3,India,none,,0
+fb3233d4,YS Chauhan,3,Sweden,none,,0
+d92fb332,A Razmilic,3,Croatia,none,,0
+eae39ba0,Yang Shen,3,China,none,,0
+1efd12d1,PR Brown,3,Worcestershire,initial+surname:unique,pace,0
+b3e5205c,P Kotoisuva,3,Fiji,none,,0
+519c30cb,CJ Gannon,3,Western Australia,initial+surname:unique,pace,0
+dbc23e51,S Farooq,3,United States of America,none,,0
+dcc7a7a9,S Ramautar,3,United States of America,none,,0
+ed1f0ef2,S Kijiana,3,Fiji,none,,0
+c569a574,G Ford,3,Isle of Man,none,,0
+4fc3790e,S Magar,3,Nepal,none,,0
+d7af6207,S Kamate,3,Mali,none,,0
+160c90b1,KR Frost,3,Spain,none,,0
+11374353,C Boyle,3,Singapore,none,,0
+a994e18f,LY Loch Srey,3,Cambodia,none,,0
+84c5c2f2,SK Gedara,3,Sweden,none,,0
+53d50717,A Hartley,3,Thunder,initial+surname:unique,spin,0
+2b8b75a0,H Osinde,3,Canada,initial+surname:unique,pace,1
+456884dd,LJ Leokaoke,3,Lesotho,none,,0
+1ba50005,C Mutasa,3,Zimbabwe,none,,0
+b5dcec37,TKP Rajapaksha,3,Seychelles,none,,0
+06b8bdb3,AM Rajpurohit,3,Gambia,none,,0
+3f951265,R Galgalikar,3,Mexico,none,,0
+89d6902b,Ashi Chopla,3,Austria,none,,0
+fdb8ed0d,SD Parry,3,Lancashire,initial+surname:unique,spin,0
+ebe27221,Y Fourie,3,South Africa,initial+surname:unique,spin,1
+b37b035c,MGMCP Gunawardene,3,Sri Lanka,none,,0
+dce2019b,F Behardien,3,South Africa,initial+surname:unique,pace,1
+20f4a109,TGJ Gruijters,3,Netherlands,none,,0
+bd8139a1,SK Dolawatte,3,Sri Lanka,none,,0
+c4d28aa3,MS Aulakh,3,Canada,none,,0
+e412cb64,HF Gurney,3,Nottinghamshire,initial+surname:unique,pace,0
+f91c322b,T Britton,2,Jersey,none,,0
+d9fb6ede,O Chare,2,Zimbabwe,none,,0
+caf58d1e,T Kavinda,2,Maldives,none,,0
+f8fb7e7b,Musaddiq Ahmed,2,Germany,initial+surname:unique,spin,0
+af79635f,P Gundecha,2,Japan,none,,0
+babc65d3,Parveen Kumar,2,Finland,full:unique,pace,1
+67c83213,M Salum,2,Tanzania,none,,0
+6034840a,O Isesele,2,Nigeria,none,,0
+54690147,A Mishra,2,Ghana,initial+surname:conflict,"pace,spin",0
+31865a5b,Gurdeep Singh,2,Kenya,initial+surname:conflict,"pace,spin",0
+305c9b8a,V Rathinasamy,2,Croatia,none,,0
+3c5a7deb,Memoona Riaz,2,Spain,initial+surname:unique,pace,1
+9b4b9ce3,Constanza Oyarce,2,Chile,none,,0
+d6ec9f9f,N Jagadish,2,Oman,none,,0
+70e1b3a8,VRB Arachchige,2,Malta,none,,0
+c0fca5eb,O Gholami,2,Sweden,initial+surname:unique,spin,1
+c8b0b64c,FDM Devonshire,2,Central Districts,none,,0
+271f83cd,SA Yadav,2,India,initial+surname:conflict,"pace,spin",8
+9960a421,H Dandapani,2,Finland,initial+surname:unique,spin,1
+d802854a,M Kearvell,2,Romania,none,,0
+b97e474c,V Atanasova,2,Bulgaria,none,,0
+945a19ee,Nur Alya Batrisyia,2,Malaysia,none,,0
+49693035,TOW Chu,2,Hong Kong,none,,0
+0e3e8ce3,L Greig,2,Jersey,none,,0
+2be548b0,M Ulmanova,2,Czech Republic,none,,0
+e2d1822f,AUKDS Kalugala,2,Cyprus,none,,0
+d6f139ee,Vamshi Reddy,2,Mali,none,,0
+f2c0c73d,R Parkin,2,Estonia,none,,0
+12ee9897,N Khumalo,2,Eswatini,none,,0
+fb81a798,Shafia Hassan,2,Singapore,initial+surname:unique,spin,0
+3676b91f,D Kegasitswe,2,Botswana,none,,0
+679302a1,Z McLaughlin,2,Cayman Islands,initial+surname:unique,spin,1
+91136091,LHB Harrington-Myers,2,Cayman Islands,initial+surname:unique,spin,1
+25640e61,N Ndouteng,2,Cameroon,none,,0
+c88d3ef1,R Sewwandi,2,Sri Lanka,none,,0
+330c8351,TW Hamid,2,Indonesia,none,,0
+4909a5f6,Salman Patel,2,Zambia,initial+surname:conflict,"pace,spin",0
+f1a042e5,WP Myburgh,2,Namibia,none,,0
+afbc53ba,Ahmer Bin Nisar,2,Bahrain,none,,0
+c9c2a7e8,FC Muniz,2,Brazil,none,,0
+bec5cab9,DK Mathias,2,Bahrain,initial+surname:unique,pace,1
+74d21854,MA Parker,2,Scotland,initial+surname:unique,pace,0
+11cebda3,Shafiq Jan,2,Oman,initial+surname:unique,pace,0
+d1f14716,Yahya Suhail,2,Timor-Leste,none,,0
+177a648d,PPS Win,2,Myanmar,none,,0
+e0febd97,Arsalan Ahmed,2,Greece,initial+surname:conflict,"pace,spin",2
+421a0275,MG Maceira,2,Scotland,none,,0
+f80682f8,Ravinderpal Singh,2,Canada,initial+surname:conflict,"pace,spin",0
+44e008a5,T Luka,2,Malawi,none,,0
+1191807f,D Dzimau,2,Malawi,none,,0
+1fbef290,G Wijekoon,2,Sri Lanka,none,,0
+a72b14ff,CT Tremlett,2,England,initial+surname:unique,pace,1
+5bb73a3c,S Hussein,2,Malawi,none,,0
+27d1cc51,PA Hitchcock,2,New Zealand,none,,0
+b9b194d6,Altaf Gill,2,South Korea,initial+surname:unique,pace,0
+e7af8a61,J Tugsjargal,2,Mongolia,none,,0
+2c78e246,Sara,2,Saudi Arabia,none,,0
+860f7b67,J Byrappa,2,Mexico,none,,0
+2619e00c,Kasir Ahmed,2,Hungary,initial+surname:conflict,"pace,spin",0
+2bfec670,H Kaushik,2,United Arab Emirates,none,,0
+7f2cb055,MS Graham,2,Bahamas,none,,0
+29342bbe,SH Lawlor,2,Luxembourg,none,,0
+c7e67ed4,P Munorwei,2,Zimbabwe,none,,0
+d1c7dd6d,MJ Ross,2,Italy,initial+surname:unique,spin,1
+c2ecd4a7,N Ahir,2,Panama,none,,0
+c01852c6,Junaid Sheikh,2,Norway,none,,0
+82340b9d,TJ Stephenson,2,Belize,none,,0
+c266599c,A Khasanov,2,Uzbekistan,none,,0
+709cb7f0,Hwanhee Lee,2,South Korea,none,,0
+ddcb8503,Asif Iqbal,2,South Korea,initial+surname:unique,pace,0
+bc02b37a,Sana Ullah,2,South Korea,initial+surname:conflict,"pace,spin",0
+efbd35a9,LA Musiani,2,Argentina,none,,0
+93d65d0f,M Ogawa,2,Japan,none,,0
+c14ba87c,K Brock-Nielsen,2,Denmark,none,,0
+26d80a9d,M Campopiano,2,Italy,none,,0
+6501e421,Hina Hussain,2,Norway,initial+surname:unique,pace,0
+ab126ea8,JE Pitcher,2,Bermuda,initial+surname:unique,pace,1
+772f226b,Aphsal Ashraf,2,Kuwait,none,,0
+86ea6123,Mohamed Coulibaly,2,Mali,none,,0
+c3e3d7e7,Hyejin Park,2,South Korea,none,,0
+1f87b800,Seri Chang,2,South Korea,none,,0
+b76fd014,Shaila Sharmin,2,Bangladesh,none,,0
+b6bc4d31,F Martin,2,Isle of Man,none,,0
+0bb0a5ef,LE Nzuza,2,South Africa,none,,0
+cfbd3998,Naseem Khan,2,Croatia,initial+surname:conflict,"pace,spin",0
+5d00cd6f,MT Diaby,2,Mali,none,,0
+d1b5efdf,NCK Liyanage,2,Malaysia,initial+surname:unique,pace,1
+62474838,Mohammad Ahsan,2,Kuwait,none,,0
+19499257,P Bhandari,2,Malta,none,,0
+0159383b,SB Chamundaiah,2,Austria,none,,0
+c1fdfb46,P Rathnayake,2,Colombo Cricket Club,none,,0
+1f5622a9,M Kulfiwala,2,Eswatini,none,,0
+3b62a6b4,MLG Silva,2,Brazil,initial+surname:unique,pace,0
+1afdbdbf,JWM Dalrymple,2,England,initial+surname:unique,spin,1
+69fc75bb,Lily Lamb,2,Cook Islands,none,,0
+0d677597,W Barresi,2,Netherlands,initial+surname:unique,spin,1
+b91083bd,Abhijeet Ahuja,2,Hungary,initial+surname:unique,pace,1
+4e4d2c20,SM Dhanusri,2,Malaysia,none,,0
+659fc11f,Aishath Meesa Rameez,2,Maldives,none,,0
+2d99b12e,Latsha Haleemath,2,Maldives,none,,0
+82294960,P Sarraf,2,Nepal,initial+surname:unique,spin,1
+8c0d904e,D Wulandari,2,Indonesia,none,,0
+f02c0809,SKPD Ayu,2,Indonesia,none,,0
+aa4154ad,MD Garratt,2,Gibraltar,initial+surname:unique,pace,1
+1ae34c14,Grace Cottier,2,Isle of Man,none,,0
+f8929fe0,K Matigimu,2,Zimbabwe,none,,0
+0d298cc9,S Lundell,2,Sweden,none,,0
+46a9bea1,TU Deshpande,2,Chennai Super Kings,initial+surname:unique,pace,0
+80b34521,A Kshirsagar,2,Czech Republic,none,,0
+498aacac,S Thanikaithasan,2,Denmark,none,,0
+17f2fbf4,E Moiane,2,Mozambique,none,,0
+5e118871,B Ndipo,2,Malawi,none,,0
+5a6b2c1d,R Khasana,2,Lesotho,none,,0
+2fdcecae,B Lekau,2,Lesotho,none,,0
+f6b2e610,MJ Massawe,2,Tanzania,none,,0
+71eb9780,MA Tsemane,2,Lesotho,none,,0
+ffc44968,M Paryani,2,Gibraltar,none,,0
+a3586afb,H Santhoshkumar,2,Canada,none,,0
+2b661b53,L Dalbina,2,Estonia,none,,0
+d1e75f95,B Verdon,2,France,none,,0
+591a0cfa,PH Shamdasani,2,Peru,none,,0
+c251b048,Luo Shilin,2,China,none,,0
+59ff3c57,IY Mckeon,2,France,none,,0
+d409b68f,Rithika Sriram,2,Zambia,none,,0
+b6af1647,Abdul Bashir,2,Germany,initial+surname:unique,pace,0
+c05f9e9d,E Mmese,2,Botswana,none,,0
+dc53a969,Muhammet Kursat,2,Turkey,none,,0
+91cd337c,R Panchal,2,Spain,initial+surname:unique,pace,1
+aa655cd5,Nilusha Waruwangodage,2,Cyprus,none,,0
+6830487a,Taimoor Nasir,2,Romania,none,,0
+518a21ed,Awais Ahmad,2,Sweden,initial+surname:unique,pace,2
+45be80ed,J Prodehl,2,South Africa,none,,0
+6a1f6e13,S Meyenborg,2,Germany,none,,0
+f4d1184a,Kulwinderjeet Singh,2,Philippines,initial+surname:conflict,"pace,spin",0
+602db3d9,GJ van Rensburg,2,Namibia,none,,0
+eae9fe8a,J Botha,2,South Africa,initial+surname:unique,spin,1
+71d0fad3,G Sanjeewa,2,Romania,none,,0
+7990dc16,Muhammet Bicer,2,Turkey,none,,0
+510d525c,Emanuel,2,Greece,none,,0
+00df8c9b,BADL Faunce,2,Greece,none,,0
+a744d530,RV Viraj,2,Cambodia,none,,0
+6bfa638b,Ahmad Raza,2,Saudi Arabia,initial+surname:conflict,"pace,spin",0
+a6631b55,Salvin Stanly,2,Cambodia,none,,0
+44a2bb4f,U Bhagwan,2,Canada,none,,0
+43490928,Elina Rama,2,Finland,none,,0
+3c338b6a,J Raubenheimer,2,Knights,initial+surname:unique,pace,0
+c9835e0a,A Wichakam,2,Thailand,none,,0
+6ebf4d4e,Farzan Afzal,2,Spain,initial+surname:unique,pace,1
+527c2dab,C Floyd,2,Netherlands,initial+surname:unique,spin,1
+270b4de6,NMS Param,2,Singapore,initial+surname:unique,spin,1
+3a1c34e6,D Gim,2,Nigeria,initial+surname:unique,pace,1
+ae84d526,Abdurrahman Ahmadzai,2,France,initial+surname:conflict,"pace,spin",0
+b5a12740,M Beardman,2,Western Australia,initial+surname:unique,pace,0
+73c0e40c,Ye Ko Ko,2,Myanmar,none,,0
+5ffee881,MI Shakim,2,Tanzania,none,,0
+60ef3ddb,AA Hussein,2,Tanzania,none,,0
+a1cb1472,Najwa Akram,2,Saudi Arabia,none,,0
+8c8a3ac6,JA Miranda,2,Chile,none,,0
+38f2525c,Rumaisa Jawad Nasir,2,Saudi Arabia,none,,0
+ac9c2a35,J Ulrik,2,Tanzania,none,,0
+be47cb63,Al Maseera Jahangir,2,United Arab Emirates,none,,0
+532c3f73,Lihara Ayeysekara,2,Qatar,none,,0
+76a3af9b,Lujaina,2,Oman,none,,0
+430b7399,IP Swaney,2,Singapore,initial+surname:unique,spin,1
+1439e6b5,CM Carroll,2,Croatia,none,,0
+74be2916,D Doyle-Calle,2,Spain,none,,0
+732c9016,JE Scott,2,Bahamas,none,,0
+56544f81,S Rossi,2,Argentina,none,,0
+3ddd957f,OSB Tilley,2,Croatia,none,,0
+14bf34e0,Chinyenum George,2,Nigeria,none,,0
+09f0aba1,Mohammed Jamadar,2,Lesotho,none,,0
+2f94b39d,Adil Latheef,2,Malta,none,,0
+bb20441f,H Dhami,2,Sudur Paschim Royals,none,,0
+21fe743b,STRA de Silva,2,Seychelles,initial+surname:unique,spin,0
+0bb077ff,F Effiong,2,Nigeria,none,,0
+895ae8b6,D Kalvin,2,Seychelles,none,,0
+1f84183a,Nikhil Chaudhary,2,Tasmania,initial+surname:unique,pace,0
+7d990412,Suman Ghimire,2,Portugal,none,,0
+30a307d3,J Baleicikoibia,2,Fiji,none,,0
+3fcb7b21,G Quaicoe,2,Ghana,none,,0
+74bff7ca,KN Singh,2,Suriname,initial+surname:conflict,"pace,spin",0
+2e9e4eaf,S Alavala,2,Cyprus,none,,0
+18ac3318,Mohammed Faraazuddin,2,United Arab Emirates,none,,0
+66e189ac,S Cholasseri,2,Malta,none,,0
+526a1047,MJ Tugaga,2,Wellington Firebirds,none,,0
+876dbe2d,DR Mousley,2,Warwickshire,initial+surname:unique,spin,0
+2fd4669a,Waqas Ali,2,Belgium,initial+surname:conflict,"pace,spin",0
+27320242,IW Budiarta,2,Indonesia,none,,0
+d2d881de,S Waqabaca,2,Fiji,none,,0
+8bee668b,G Burrows,2,Isle of Man,initial+surname:unique,pace,0
+4233080d,Faraaz Mehti Abbas,2,Finland,none,,0
+719ac15b,AA Senn,2,Cyprus,none,,0
+be176a70,S Diwangana,2,Cayman Islands,none,,0
+f18b67a3,T Chabila,2,Malawi,none,,0
+eaa5cb7c,M Landsman,2,Netherlands,none,,0
+27847fec,M Turner,2,Turks and Caicos Island,none,,0
+791dca18,F Najjumba,2,Uganda,none,,0
+eed2d0be,S Jeelany,2,Oman,none,,0
+589f2008,G Bruno,2,Turks and Caicos Island,none,,0
+eb96bc06,SM Don,2,Malta,none,,0
+fabbb9e0,R Johnson,2,Turks and Caicos Island,none,,0
+07160156,A Tripathi,2,Mexico,none,,0
+f0af99a7,D Ferreira,2,Joburg Super Kings,none,,0
+29269e98,K Sequiera,2,Portugal,none,,0
+47fb8d80,M Joshi,2,India,initial+surname:unique,pace,1
+8d35b7da,J de Figueiredo,2,Portugal,none,,0
+b672e825,A Manousis,2,Greece,none,,0
+906bc22b,Saqlain Mukhtar,2,Czech Republic,none,,0
+32b8d4fe,Divya Kandpal,2,Luxembourg,none,,0
+abd82f3b,BE Fletcher,2,Netherlands,none,,0
+28252261,KN Gabhane,2,Hungary,initial+surname:unique,pace,0
+30b93df1,Rupesh Singh,2,Nepal,initial+surname:conflict,"pace,spin",0
+2d03c3f8,C Cassell,2,Scotland,none,,0
+93fe473e,TMM Newton,2,Wellington,initial+surname:unique,pace,0
+2c8d0953,AS Gorad,2,Norway,none,,0
+b6924e3f,RJ Ainsworth,2,Hungary,none,,0
+7a805b4c,NIAF Paynter,2,Bermuda,none,,0
+adef2d7b,S Yenamandra,2,Belgium,none,,0
+edcd847a,Gong Yuting,2,China,none,,0
+d4992df7,NJ Qaeze,2,France,none,,0
+ed90abe4,AP Devcich,2,Northern Districts,initial+surname:unique,spin,0
+63fc4b92,RD Pangestuti,2,Indonesia,none,,0
+dead3b10,MIW van den Raad,2,Netherlands,none,,0
+d02c40ab,YS Samra,2,Canada,none,,0
+b9bb76c8,C Agafili,2,Northern Districts,initial+surname:unique,pace,0
+89b2f78f,Sameer Yousuf,2,Bahrain,initial+surname:unique,pace,0
+bbb5073b,Elyza Wall,2,Philippines,none,,0
+672cee0a,RV Auora,2,Cook Islands,none,,0
+3c3f34b0,AR Valdez,2,Philippines,none,,0
+cbef5af4,Angela Busa,2,Philippines,none,,0
+1745c7d4,F Guirrugo,2,Mozambique,none,,0
+6c724896,L Vuadreu,2,Fiji,none,,0
+745815a1,M Tilau,2,Fiji,none,,0
+27a9eb25,Momina Riasat,2,Pakistan,none,,0
+59aea698,MI Tato,2,Samoa,none,,0
+55223171,L Tastuki,2,Vanuatu,none,,0
+9d1f42c6,Ashfaq Ahmed,2,United Arab Emirates,initial+surname:conflict,"pace,spin",0
+6af31962,JS Iggo,2,Singapore,none,,0
+2a7a3137,S Arachchige,2,Italy,initial+surname:unique,spin,1
+6a84b40e,Davion Codner,2,Cayman Islands,none,,0
+9d0332ee,Nisha Ali,2,United Arab Emirates,initial+surname:conflict,"pace,spin",0
+b64e0295,S Vithayathil,2,Turks and Caicos Island,none,,0
+54a3d69f,R Kanai,2,Japan,none,,0
+8e574c74,V Barboza,2,Bahrain,none,,0
+f62fa324,Tasaduq Hussain,2,Sweden,initial+surname:unique,pace,0
+526fe472,DE Martel,2,Guernsey,none,,0
+ca753f5d,AJ Kenealy,2,Ireland,initial+surname:unique,pace,0
+83d567a4,Z Simpson,2,Gibraltar,none,,0
+68f7caf9,M Jenkinson,2,Finland,initial+surname:unique,spin,0
+ae694554,Esperanza Rubio,2,Chile,none,,0
+f4e6469b,Sofia Mardones,2,Chile,none,,0
+f74a1394,Elias Hasan,2,Estonia,none,,0
+74ef405a,MBS Jonkman,2,Netherlands,initial+surname:unique,pace,1
+4ff67681,MM Iqbal,2,Scotland,initial+surname:unique,pace,0
+295e3c13,S Kaneria,2,Belgium,none,,0
+6779e840,R Cunningham,2,Gibraltar,none,,0
+7572bf45,EHSN Silva,2,United Arab Emirates,initial+surname:unique,pace,0
+75186c24,Kamran Shazad,2,United Arab Emirates,none,,0
+d11272c4,E Samson,2,Israel,none,,0
+430f7ef9,R Misra,2,Canada,none,,0
+da994dd7,A Prince,2,Argentina,initial+surname:unique,spin,0
+d146924b,Raza-ur-Rehman,2,Canada,none,,0
+7805af0f,NM Carter,2,Scotland,none,,0
+7429c452,I Wardlaw,2,Scotland,initial+surname:unique,pace,1
+9353d2fc,RM Hill,2,Jersey,none,,0
+4c4d245a,T Zotos,2,Greece,none,,0
+4373c57e,JH Stander,2,Scotland,none,,0
+4631be71,M Charlie,2,Papua New Guinea,none,,0
+8a5b0066,TRR Sharfudheen,2,Malta,none,,0
+08320616,SK Naidu,2,India,none,,0
+571f11e4,Tanveer Ahmed,2,Hong Kong,full:unique,pace,1
+85d8110a,KJ Coetzer,2,Scotland,initial+surname:unique,pace,1
+8c7d6cbe,MW Machan,2,Sussex,initial+surname:unique,spin,0
+15fe1668,O Casasola,2,Belize,none,,0
+de3acffe,AJ McKay,2,Wellington Firebirds,initial+surname:unique,pace,0
+195fb6db,Imran Khan (1),2,Chittagong Vikings,initial+surname:conflict,"pace,spin",0
+e3806aca,T Moses,2,Belize,none,,0
+77768f72,Rakibul Hasan,2,Rangpur Riders,full:unique,spin,0
+c4ff0618,H Patel,2,Canada,initial+surname:unique,spin,1
+a9a4df9f,JO Ngoche,2,Kenya,initial+surname:unique,spin,1
+4437df8c,R Patten,2,Bahamas,none,,0
+e3540b8c,DS Bajwa,2,Canada,none,,0
+e69dbbef,KL George,2,Central Sparks,initial+surname:unique,pace,0
+d3a9aadd,S Lackay,2,South Africa,none,,0
+7babb041,Sagar Kumar Ahir,2,Panama,none,,0
+3d0ed2f9,JT Ball,2,Nottinghamshire,initial+surname:unique,pace,0
+63a1874a,AK Kitchen,2,Otago Volts,initial+surname:unique,spin,0
+f46500c3,IT Guha,2,England,none,,0
+6483c062,A Dizija,2,Serbia,initial+surname:unique,spin,1
+7f7dc2ee,K Ogola,2,Kenya,none,,0
+32832dc8,Maira Khan,2,Saudi Arabia,initial+surname:conflict,"pace,spin",0
+f27f89e8,AR White,2,Ireland,initial+surname:unique,spin,0
+7f8316e3,NO Tindo,2,Tanzania,none,,0
+99efdb1b,JM Nthenya,2,Kenya,none,,0
+c745f462,K Paskova,2,Bulgaria,none,,0
+d68f4aa1,AJ Michael,2,Samoa,none,,0
+2999e5b3,RSK Samson,2,Vanuatu,none,,0
+60d0efc4,T Skordili,2,Greece,none,,0
+8955b928,S Dhakal,2,Nepal,initial+surname:unique,spin,1
+4fc115af,RJ Pierre,2,Rwanda,none,,0
+8d913205,Vishaul Singh,2,Suriname,initial+surname:conflict,"pace,spin",0
+3b8e7647,SP Krishnamurthi,2,United States of America,initial+surname:unique,spin,0
+30291c08,H Beresford-Peirse,2,Croatia,none,,0
+d617f2bf,Hardeep Singh,2,Cyprus,full:unique,pace,0
+24903af6,S Nunna,2,Bahrain,none,,0
+1e3db5f4,C Bevin,2,Croatia,none,,0
+a2ef4337,Aminul Islam Chowdhury,2,Cyprus,initial+surname:unique,pace,0
+7cb931fc,Hassnain Shah,2,Oman,initial+surname:conflict,"pace,spin",0
+81d5afce,Emaan Ejaz,2,Saudi Arabia,none,,0
+4325e7ae,K Moingoto,2,France,none,,0
+44f11bd0,SV Wiig,2,United States of America,none,,0
+7c05b23d,Syed Ahzamul Haq,2,Uzbekistan,none,,0
+9c1ccdea,J Louw,2,Cape Cobras,none,,0
+441b1b20,LS Baker,2,West Indies,none,,0
+d852095e,S Samuels,2,Cook Islands,none,,0
+4cc968c5,Abdullah Mohd Yousaf,2,Bahrain,none,,0
+4353bba5,YA Abdulla,2,Kings XI Punjab,none,,0
+50ceaef6,P Kurup,2,Bahrain,none,,0
+7e9ff716,NJ Shaw,2,England,none,,0
+9efc1ea4,A Khullar,2,Finland,none,,0
+1c19e5eb,L Martin,2,Finland,none,,0
+aa76333b,Sikder Billah,2,Bahrain,none,,0
+50758325,B Geeves,2,Australia,initial+surname:unique,pace,1
+f99b9970,N Mamba,2,Eswatini,none,,0
+78103121,S Vaia,2,Cook Islands,none,,0
+62fb9336,M Anyigo,2,Uganda,none,,0
+d3611e29,EF Faalupega,2,Samoa,none,,0
+014da3d8,Paras Singh,2,Hong Kong,initial+surname:conflict,"pace,spin",0
+68c3f79d,LN Onyango,2,Kenya,initial+surname:unique,pace,1
+9815de17,DP Michael,2,Samoa,initial+surname:unique,pace,0
+22bdbba3,M Bhatia,2,Singapore,none,,0
+cefe0886,E Schiferli,2,Netherlands,initial+surname:unique,pace,1
+ea0e8ea2,R Mahajan,2,Philippines,none,,0
+5ab09885,S Lateh,2,Thailand,initial+surname:unique,spin,1
+c86675a9,Madeeha Zuberi,2,Kuwait,none,,0
+d6ca2714,Dok Da Nit,2,Cambodia,none,,0
+3b50c63a,KS Lokuarachchi,2,Sri Lanka,none,,0
+43e2e8c3,Neeraj Mishra,2,Czech Republic,none,,0
+e6ddab51,EH Hutchinson,2,United States of America,initial+surname:unique,pace,0
+c96e51ba,S Khadka,2,Nepal,none,,0
+9adb9f71,Edward Taylor,2,Chile,none,,0
+36ffe914,A Ostergaard,2,Denmark,none,,0
+9e310ab6,LV Mandhate,2,Mozambique,none,,0
+056f58dd,KC Hodsoll,2,Bermuda,initial+surname:unique,pace,1
+d9238aee,AF Mapu,2,Samoa,none,,0
+f987245c,AM Ellis,2,Canterbury,initial+surname:unique,pace,0
+d5867f82,E Konasova,2,Czech Republic,none,,0
+daf255ce,G Chilia,2,Vanuatu,none,,0
+1aabd6fc,PC McGeown,2,France,none,,0
+a4abf7b5,M Elikana,2,Cook Islands,none,,0
+eb9cb105,SC Meaker,2,Surrey,initial+surname:unique,pace,0
+f2c936d7,MJ Owen,2,Tasmania,initial+surname:unique,pace,0
+c3b5da14,N Simelane,2,Eswatini,none,,0
+c6614fc0,DNA Ankrah,2,Ghana,none,,0
+a9668b5f,Ly Saomakara,2,Cambodia,none,,0
+6ceec40d,Sandeep Nair,2,Bulgaria,none,,0
+2dfdd316,J Intan,2,Malaysia,initial+surname:unique,pace,1
+218c7eab,Basir Ahamad,2,Nepal,none,,0
+10f52b3a,T Kobeli,2,Lesotho,none,,0
+796ffb22,P Masih,2,Romania,initial+surname:unique,pace,1
+4f05f64e,A Kontopirakis,2,Italy,none,,0
+2fdf42e9,OT Wallerson,2,United States of America,none,,0
+e3f53051,T Makaya,2,Malawi,none,,0
+4291f081,KA Knight,2,Northern Districts,initial+surname:unique,pace,0
+3d6617c6,S Jamil,2,Belgium,none,,0
+7c6293d1,A Orfila,2,Gibraltar,initial+surname:unique,pace,1
+70c36d4d,Disna Jayasooriya,2,Bahrain,none,,0
+8357fc3e,Ilyas Cetin,2,Turkey,none,,0
+7a6ce3c9,D Dlamini,1,Eswatini,none,,0
+ae4006ad,Syed Amanullah,1,Greece,none,,0
+3a54c25b,N Magagula,1,Eswatini,none,,0
+656b696c,Gargi Arya,1,Germany,none,,0
+4b437302,Yukthi Suresh,1,Germany,none,,0
+6ecd3d7b,GE Gutierrez Chavez,1,Mexico,none,,0
+bcc12dab,Umair Safi,1,Romania,initial+surname:unique,pace,0
+b0aadf4f,N Knights,1,Isle of Man,none,,0
+e77d4107,A Iopu,1,Samoa,none,,0
+27d5901c,CH van Koolwijk,1,Netherlands,none,,0
+22595a2d,JC Cullen,1,Argentina,none,,0
+f3614f32,AISD Kainoco,1,Fiji,none,,0
+5c884c17,DS Vlachopoulou,1,Greece,none,,0
+1eec6a0f,M Turay,1,Sierra Leone,none,,0
+7e8cd083,AL Mangue,1,Mozambique,none,,0
+09bea436,H Sawaneh,1,Sierra Leone,none,,0
+c8a7b014,OJ Hairs,1,Scotland,initial+surname:unique,spin,1
+3c5b2e9e,TJ Mahe,1,Lesotho,none,,0
+55f13cf4,Susan George,1,Malta,initial+surname:unique,pace,0
+bbfdb0c8,Mobashar Ashraf,1,France,initial+surname:unique,pace,0
+f4e3d407,Nikhil,1,Uzbekistan,none,,0
+7ff6c967,O Batisani,1,Botswana,none,,0
+19a51d59,A Musaev,1,Uzbekistan,none,,0
+11898ffe,PA Wadenpohl,1,Germany,none,,0
+c97539e6,U Tuychiev,1,Uzbekistan,none,,0
+00be46fe,DS Gamage,1,Norway,none,,0
+881cb071,RG Somashekhar,1,Sweden,none,,0
+dce01d1e,Zahid Abbas,1,Kenya,initial+surname:unique,spin,0
+d5172e9a,S Devata,1,Sweden,none,,0
+95569cde,AC Brodin,1,Belgium,none,,0
+be5b6d0d,B Ercegovcevic,1,Serbia,none,,0
+44839bd7,Nikhil Deshmukh,1,Peru,none,,0
+0ead3a98,AEMP Durayalage,1,Romania,none,,0
+d95070e3,AK Ahir,1,Panama,none,,0
+36b5d84b,Vritti Dahiya,1,Canada,none,,0
+9044ee8e,J George,1,Cook Islands,none,,0
+39b12998,Yuanyuan Cai,1,China,none,,0
+e2b58daf,RL Blake,1,Romania,none,,0
+ac02a458,V Pulibanti,1,Croatia,initial+surname:unique,pace,0
+02d11602,AA Banner,1,Belize,none,,0
+27aec396,M Stoman,1,Portugal,initial+surname:unique,pace,1
+a5e1e2d4,Muhammad Soban,1,Hungary,none,,0
+f957f558,Baljinder Singh,1,Romania,initial+surname:conflict,"pace,spin",0
+158a7d41,CJ Ana,1,Romania,none,,0
+34dd3fd9,SSM Stanislaus,1,Malta,none,,0
+c96b8c25,L Enoch,1,Vanuatu,none,,0
+3af1511e,M Chereches,1,Romania,none,,0
+0a10b268,JM Willathgamuwa,1,United States of America,none,,0
+96a6ce8e,Jamal Stanikzai,1,Switzerland,none,,0
+a0a32dd1,Imran Khan,1,Portugal,full:conflict,"pace,spin",0
+a6a22a96,Sabah Nawab,1,Qatar,none,,0
+a9520ac2,J Mubarak,1,Sri Lanka,none,,0
+2e5919c5,SJ Andrews,1,Australia,none,,0
+290cba17,SJ Modani,1,United States of America,initial+surname:unique,spin,0
+da4a1e46,M Spoors,1,Canada,initial+surname:unique,spin,1
+e6a7c6e2,G Axtell,1,Bahrain,initial+surname:unique,pace,1
+b619f825,D Bhaskara,1,Bahrain,none,,0
+604b19e3,Amna Khan,1,Saudi Arabia,initial+surname:conflict,"pace,spin",0
+53494306,Shahzeb Afridi,1,Qatar,initial+surname:conflict,"pace,spin",0
+192f2caf,A Bhargava,1,Singapore,initial+surname:unique,pace,0
+20d948ae,B Maphosa,1,Botswana,none,,0
+b501b61e,S Biko,1,Kenya,none,,0
+29f936f0,CR Smith,1,Australia,initial+surname:conflict,"pace,spin",0
+98b974df,C van der Westhuizen,1,South Africa,none,,0
+fccf5309,PA Desai,1,Canada,initial+surname:unique,spin,1
+e429f443,Marina Iqbal,1,Pakistan,initial+surname:unique,pace,0
+20c716e7,Shukhtara Rahman,1,Bangladesh,initial+surname:conflict,"pace,spin",2
+ef423744,CH Abeyratne,1,Singapore,none,,0
+88a5adcf,LM Gabriel,1,Lesotho,none,,0
+ceec82cd,G Johnson,1,St Helena,none,,0
+60fc2c8c,T Shanmugam,1,Seychelles,none,,0
+0b130202,CL Cairns,1,New Zealand,none,,0
+6a0537aa,N Boje,1,South Africa,none,,0
+543b4a1f,R Telemachus,1,South Africa,initial+surname:unique,pace,1
+10f7b52b,JD Baker,1,Northern Districts,initial+surname:unique,pace,0
+809ab8d4,S Tarawally,1,Sierra Leone,none,,0
+7a653792,EP Thompson,1,New Zealand,initial+surname:unique,pace,0
+51abacb2,MM Sarwar,1,Kuwait,initial+surname:unique,pace,0
+63f306ac,Mudassir Iqbal,1,South Korea,initial+surname:unique,pace,0
+5d9ebb3c,Z Abbasi,1,Botswana,none,,0
+55fedd51,KK Tillett,1,Belize,none,,0
+a0a27cd4,J Jagroo,1,Bahamas,none,,0
+02264be0,SL Gomez,1,Kuwait,none,,0
+dfba63a4,B Schuster,1,Samoa,none,,0
+25654c89,KL Pulford,1,New Zealand,none,,0
+76e84cb1,Naveed Fakhr,1,Kuwait,none,,0
+7d32d965,RT Lyons,1,Scotland,initial+surname:unique,spin,1
+3748955d,Amir Ali,1,Oman,initial+surname:unique,spin,1
+93f104b4,Tanvir Ahmed,1,Pakistan,initial+surname:unique,pace,0
+0d51e658,CD Barnwell,1,Guyana Amazon Warriors,initial+surname:unique,pace,0
+8c52619b,DP David,1,India,none,,0
+9ba59a3c,LJ Woodcock,1,Wellington Firebirds,initial+surname:unique,spin,0
+42a05795,GW Aldridge,1,Northern Districts,none,,0
+a1c4aed5,PRCS Kumarihami,1,Sri Lanka,none,,0
+3cacbb57,A Martin,1,West Indies,none,,0
+36ba7f0b,Rinitha Rajith,1,United Arab Emirates,initial+surname:unique,pace,1
+dd3df124,Akramullah Malikzada,1,Hungary,none,,0
+1e43a8c8,Sukhkaran Sahi,1,Romania,none,,0
+14ea3348,A Amado,1,Israel,none,,0
+a1d4bc51,R Hubbard,1,Guernsey,none,,0
+a2369eaf,Hasan Cakir,1,Turkey,none,,0
+13f21a98,Alexandros Karvelas,1,Greece,initial+surname:unique,pace,0
+93a583c3,RH Candy,1,New Zealand,none,,0
+3021a755,Maham Tariq,1,Pakistan,none,,0
+2c2013a9,A Bhattarai,1,Nepal,none,,0
+51a36d3e,GH Worker,1,Central Stags,initial+surname:unique,spin,0
+5a6bb1c7,Fayyaz Ahmed,1,United Arab Emirates,initial+surname:unique,spin,1
+9f500ddb,L Nou,1,Papua New Guinea,none,,0
+357f5314,A Karn,1,Nepal,initial+surname:unique,pace,0
+957532de,S Aravind,1,Royal Challengers Bangalore,initial+surname:unique,pace,0
+89187d8b,V Thari Thari,1,Botswana,none,,0
+123e663a,S Dhaniram,1,Canada,initial+surname:unique,spin,1
+59fa2bbc,OJ Herrington,1,Belgium,none,,0
+fc551432,Zara Haider,1,Hong Kong,none,,0
+24dacf72,J Erdenesuvd,1,Mongolia,none,,0
+6c4170b6,A Kanwal,1,Hong Kong,none,,0
+eac03b76,AS Taai,1,South Africa,none,,0
+af2a0740,M Pushpakumara,1,Sri Lanka,initial+surname:unique,spin,1
+3185266a,DLS van Bunge,1,Netherlands,initial+surname:unique,spin,1
+5471024e,JM Davison,1,Canada,initial+surname:unique,spin,1
+41bfb2a9,I Suhun,1,Bahrain,none,,0
+b5417394,Noorkhan Ahmedi,1,Switzerland,none,,0
+9f4aeb13,Bilal Aftab,1,Denmark,none,,0
+4a28527d,D Staddon,1,Brazil,none,,0
+4dd262d6,M Chaudhary,1,United States of America,none,,0
+4cfe9bac,M Gill,1,Canada,none,,0
+3a592d0d,D Samarawickrama,1,Italy,none,,0
+b0f9dac4,R Nil,1,Seychelles,none,,0
+f3ca5af8,G Kansonkho,1,Malawi,none,,0
+43ae7b1c,R Agamiire,1,Uganda,initial+surname:unique,pace,1
+0371cc19,K Govind,1,Seychelles,none,,0
+dc04a09c,Emmanuella Nyaaba,1,Ghana,none,,0
+71b1e668,Assad Mehmood,1,Portugal,initial+surname:unique,pace,0
+fda4150a,M Brasier,1,Finland,initial+surname:unique,pace,1
+6798b28e,Sumit Singh,1,Finland,initial+surname:conflict,"pace,spin",0
+321be7e3,A Ashok,1,Auckland Aces,none,,0
+91b35a29,Razaullah,1,Pakistan,none,,0
+ce9ce42f,Muhammad Amin,1,Swaziland,initial+surname:conflict,"pace,spin",0
+0c160e0d,Afif Khattak,1,Switzerland,initial+surname:unique,pace,1
+416863d4,B Taylan,1,Turkey,none,,0
+d37581d9,Rabia Sahan,1,Turkey,none,,0
+e179aae0,BM Anusha,1,India,none,,0
+2c6052a6,JS Henriksen,1,Denmark,initial+surname:unique,pace,1
+9dc3ea7e,H Hiri,1,Papua New Guinea,initial+surname:unique,spin,1
+119dc992,R Kassim,1,Sierra Leone,none,,0
+7cfb9b67,M Sheriff,1,Sierra Leone,none,,0
+0d37dea9,DE Budge,1,Scotland,initial+surname:unique,pace,1
+ab42bc93,Aryaa Kulkarni,1,Estonia,none,,0
+e383e204,DB Chhetri,1,Sweden,none,,0
+eb2da352,J Thirukkumaran,1,United Arab Emirates,none,,0
+02c4fa15,Amelia Griffiths,1,Isle of Man,initial+surname:unique,pace,0
+54b592a5,ZB Ender,1,Turkey,none,,0
+460fbb80,Lydia Katsimari,1,Greece,none,,0
+1308f9d8,E Bourgaize,1,Guernsey,none,,0
+4f1f5bdd,F Bulpitt,1,Guernsey,none,,0
+b6e6746b,C Nzabarinda,1,Rwanda,none,,0
+71439299,B Tamjidsuren,1,Mongolia,none,,0
+e8925c3c,M Erdenebat,1,Mongolia,none,,0
+69c6ed39,Reyansh Sharma,1,Hong Kong,initial+surname:conflict,"pace,spin",0
+33e7d5ed,Yao Junting,1,China,none,,0
+c66dfb30,J Solomon,1,Ghana,none,,0
+2f644e7f,SRE Lara,1,Costa Rica,none,,0
+4e8c2d76,KG Calderon,1,Costa Rica,none,,0
+7f148ce7,AM McCarthy,1,Jamaica Tallawahs,initial+surname:unique,spin,0
+aac26d39,Dunja Miskovic,1,Serbia,none,,0
+9aae2140,Adan Gul,1,Sweden,initial+surname:unique,spin,0
+949988f5,Anjali Natarajan,1,Sweden,none,,0
+c5c308b7,G Ionita,1,Romania,none,,0
+ec5160d7,J Broad,1,Northamptonshire,initial+surname:unique,pace,0
+96912eac,A Denuwan,1,Italy,none,,0
+1a35a2d3,Wania Malik,1,Spain,none,,0
+a3a5072b,Rabia Iqbal,1,Spain,initial+surname:unique,spin,0
+b84be97f,Khan Arbaaz,1,Lesotho,none,,0
+dcc5245d,P Oloka,1,Uganda,initial+surname:unique,pace,1
+c15f37d9,J Kusuda-Nairn,1,Japan,none,,0
+e30c9b2d,L Croospulle,1,Colombo Cricket Club,initial+surname:unique,spin,0
+45d38a84,Al Islam,1,Chittagong Kings,initial+surname:conflict,"pace,spin",0
+157854ac,Damion Wint,1,Bahamas,none,,0
+78df631a,S Fowler,1,Bahamas,none,,0
+fd7d703c,Adeeb Usmani,1,United Arab Emirates,none,,0
+2cc6811b,Obaid ur Rahman,1,Qatar,none,,0
+58edb974,Irshad Mubbashar,1,Saudi Arabia,none,,0
+406de451,RS Williams,1,West Indies,initial+surname:unique,pace,1
+b312a9c1,E Walker,1,Isle of Man,none,,0
+b509e186,Cynthia Konadu,1,Ghana,none,,0
+8b6aebf7,SF Nhavotso,1,Mozambique,none,,0
+03ef382c,ZE Matsinhe,1,Mozambique,none,,0
+bbd365ad,S Ogundipe,1,Nigeria,initial+surname:unique,spin,1
+44116edc,Mustapha Suwareh,1,Gambia,none,,0
+b43f7a6a,AR Patwa,1,Tanzania,none,,0
+57427d9e,O Touray,1,Gambia,none,,0
+d75bec48,Rahima Yahaya,1,Tanzania,none,,0
+80b1465d,J Rokoro,1,Fiji,none,,0
+bb0dfa8c,Kiyo Fujikawa,1,Japan,none,,0
+0cf4b7fe,Kim Rang,1,South Korea,none,,0
+68b9e5ea,Jeon Myeong,1,South Korea,none,,0
+7143efc1,LK Sharma,1,Mexico,none,,0
+cb4a3840,Charanjeet Singh,1,Italy,full:unique,spin,1
+e5cb6eb9,Nazakat Ali,1,Norway,initial+surname:conflict,"pace,spin",0
+f70b575c,CM Madsen,1,Denmark,none,,0
+968878a7,AW Wambua,1,Kenya,none,,0
+9b52731d,Amaya Rajapaksha,1,Italy,none,,0
+6535cc7b,V Jayant,1,Lesotho,none,,0
+e15c6692,M Malle,1,Mali,none,,0
+9d6cba1d,TJ Ramphoma,1,Lesotho,none,,0
+5eb51b97,V Sukumaran,1,United Arab Emirates,none,,0
+7be9cb29,T Khabo,1,Lesotho,none,,0
+1530ae9d,F Bangur,1,Sierra Leone,none,,0
+13fdbc7e,Zhang Xiangxue,1,China,none,,0
+6059bb14,TC Mataora,1,Cook Islands,none,,0
+0eb829be,R Bowers-Fleming,1,Cook Islands,none,,0
+be53a6a2,A Hewage,1,Cyprus,none,,0
+b67bfbf8,HK Kukreja,1,Singapore,none,,0
+8f75193e,Muhammad Zohaib,1,United Arab Emirates,none,,0
+a8301fdc,ME Bessala,1,Cameroon,none,,0
+9b2e971a,L Bigula,1,Malawi,none,,0
+3e86080b,Abdul Salman Khan,1,Saudi Arabia,initial+surname:conflict,"pace,spin",0
+9049ab63,MR Corteen-Coleman,1,Surrey,none,,0
+25ef10a2,S Saeed,1,Maldives,initial+surname:unique,spin,1
+1d50ed62,S Hongsi,1,Thailand,none,,0
+27128c74,Md Shafiqul Haque,1,Thailand,initial+surname:unique,spin,0
+58994986,Matilda Fred,1,Sweden,none,,0
+dc4535fe,S Kakai,1,Uganda,none,,0
+fcf37e14,P Alako,1,Uganda,none,,0
+d381938d,N Toleva,1,Bulgaria,none,,0
+6ab0658d,R Gnanaraj,1,Singapore,none,,0
+1b9d3eb3,Maryyam Ashraf,1,Kuwait,initial+surname:unique,pace,0
+0544b8a9,SMHH Aung,1,Myanmar,none,,0
+75a58f94,Ihsanullah Wafa,1,Sweden,none,,0
+9a9a056d,S Khurana,1,Netherlands,none,,0
+8047ca8c,H Nguyen,1,Finland,none,,0
+8f5313ce,WJ Malinda,1,Maldives,none,,0
+2b8123ff,Muhammad Tahir,1,Greece,none,,0
+17e2a2d6,R Dianish,1,Malta,none,,0
+ed47a68b,A Sathyan,1,Croatia,none,,0
+770202e9,D Igihozo,1,Rwanda,none,,0
+594a0dec,S Sunday,1,Nigeria,none,,0
+20ace887,N Vare,1,Papua New Guinea,none,,0
+fea44a7f,S Kucuksucu,1,Croatia,none,,0
+661e8a03,Ali Saleem,1,Norway,none,,0
+fd43bb69,PS Roberts,1,Croatia,none,,0
+d1f0c1ce,CV Fernandes Torres,1,Brazil,none,,0
+a5c48ed1,C Wickramasinghe,1,Sri Lanka,initial+surname:unique,pace,1
+3f05c34d,Raihan Hossain,1,Timor-Leste,initial+surname:conflict,"pace,spin",0
+c0e88e7d,L Leemhuis,1,Netherlands,none,,0
+4de681b8,F Zirahangaje,1,Rwanda,none,,0
+646880e7,KAC Wong,1,Philippines,none,,0
+3a743619,JT Pooranakaran,1,Singapore,none,,0
+f6b4f746,Ahmed Faiz,1,Malaysia,initial+surname:unique,spin,1
+518d96de,MR Montfort,1,Canada,initial+surname:unique,pace,1
+9ef019c5,Smruthi Radhakrishnan,1,Singapore,initial+surname:unique,spin,0
+74d82e24,SKR Mallidi,1,Sweden,initial+surname:unique,pace,1
+5af47874,J Edmiston,1,Switzerland,none,,0
+45c2db15,RS Glen,1,Scotland,none,,0
+8a3756a0,CR Suryawanshi,1,Singapore,none,,0
+2c01f21a,HC Overdijk,1,Netherlands,initial+surname:unique,pace,1
+946d4d9a,Mohamed Shiyam,1,Maldives,none,,0
+d4aa2ddb,R Sheshadri,1,Singapore,none,,0
+1c366af1,E Batkhuyag,1,Mongolia,none,,0
+09c30c43,K Nanno,1,Japan,none,,0
+ab50174b,A Kanada,1,Japan,none,,0
+b7152dc4,Shayan Khan,1,Estonia,initial+surname:conflict,"pace,spin",0
+e0c5125f,AZ Shah,1,Fiji,initial+surname:conflict,"pace,spin",0
+a65593c6,K Tari,1,Vanuatu,initial+surname:unique,pace,1
+18e71a72,Alice Davis,1,Guernsey,none,,0
+b4b88cdd,I Mwebaze,1,Uganda,none,,0
+c3564c2d,G Toka,1,Papua New Guinea,initial+surname:unique,pace,1
+a6de4c41,Zikria Islam,1,Oman,none,,0
+d9645cab,M Zdravkova,1,Bulgaria,none,,0
+a801ca06,J Chirila,1,Romania,none,,0
+d4bebd88,Rahat Kazi,1,Timor-Leste,none,,0
+30baaf1f,TP Allen,1,United States of America,initial+surname:unique,pace,0
+4d0055a0,MA Parker,1,Scotland,initial+surname:unique,pace,0
+0725d3d2,O Kirsten,1,South Africa,none,,0
+c024db94,RJ Ranpura,1,Oman,initial+surname:unique,pace,1
+26a85969,R Dhawan,1,Himachal,initial+surname:unique,pace,0
+be85b12d,RA Lewis,1,Ireland,initial+surname:unique,spin,0
+f76f673e,T Sarada,1,Malta,none,,0
+1314d6f8,K Tereza,1,Greece,none,,0
+ba69926f,M Holmes,1,Switzerland,none,,0
+a626d864,Tripti Gore,1,Belgium,none,,0
+f61e2b59,SMR Ruelas,1,Mexico,none,,0
+1356b739,S Basharat,1,Spain,none,,0
+e31c12c3,A Hartley,1,Spain,initial+surname:unique,spin,0
+5d534cff,Haris Karim,1,Slovenia,none,,0
+48fd691d,Dayal Joy,1,Slovenia,none,,0
+637c65f1,H Elder,1,Switzerland,none,,0
+aa05263e,Mansi Parmar,1,Czech Republic,none,,0
+2e287171,P Raghunath,1,Gibraltar,none,,0
+ecc4562b,AAM Eliane,1,Cameroon,none,,0
+d000b421,T Pullman,1,Jersey,none,,0
+863bfcc9,J Long,1,Philippines,none,,0
+e1556297,MEMO Scott-Hayward,1,Ireland,none,,0
+9c9f8dbc,H Davids,1,Titans,initial+surname:unique,pace,0
+59f509ed,G Goudie,1,Scotland,none,,0
+5208c0a1,DI Allan,1,Kenya,none,,0
+119678fd,KV Sharma,1,Sunrisers Hyderabad,initial+surname:conflict,"pace,spin",0
+5a892f36,RLB Rambukwella,1,Sri Lanka,initial+surname:unique,spin,1
+a56f4b65,PL Mommsen,1,Scotland,initial+surname:unique,spin,1
+1fb3e04f,T Motlhabaphuti,1,Botswana,none,,0
+716bd716,I Bardis,1,Greece,initial+surname:unique,spin,1
+bcd1f525,KA Heffernan,1,New Zealand,none,,0
+ff1ec94d,R Klein,1,Netherlands,initial+surname:unique,pace,0
+ffbbf432,F Choudary,1,Sweden,none,,0
+2c83f1f7,T Shabani,1,Tanzania,none,,0
+4e2def5c,G Fernando,1,Bahrain,none,,0
+1486e3fd,EK Hubbard,1,Hong Kong,none,,0
+b79932e1,Prajna Jagdeesha,1,Bahrain,none,,0
+43433cec,Dechen Zangmo,1,Bhutan,none,,0
+5a22d91c,EMDY Munaweera,1,Negombo Cricket Club,none,,0
+badd245f,AK Peters,1,West Indies,none,,0
+b57f8a9a,BJ Hodge,1,Australia,initial+surname:unique,spin,1
+51862ee2,D Busingye,1,Uganda,none,,0
+befa9863,S Saenya,1,Thailand,none,,0
+e91933cb,CC Blake,1,Vanuatu,initial+surname:unique,pace,1
+7370ca3d,JH Kiani,1,Philippines,none,,0
+76f168de,Mustafa Atmaca,1,Turkey,none,,0
+a0d07fd6,A Chilia,1,Vanuatu,none,,0
+f763e221,M Mete,1,Vanuatu,none,,0
+d6c1d6b7,LS Mulivai,1,Samoa,none,,0
+5e71e5cc,Hiba Shamshad,1,Canada,none,,0
+09653658,Mariam Waseem,1,Portugal,initial+surname:unique,pace,0
+945f5357,JN du Plooy,1,Hungary,none,,0
+7d794fa6,SZ Thakor,1,India,none,,0
+a4dcac97,S Sajana,1,Mumbai Indians,none,,0
+ba05b211,Fatima Amir,1,Hong Kong,none,,0
+61763f48,Franz Bur,1,Argentina,none,,0
+2e563be8,AR Perez Rivero,1,Argentina,none,,0
+d333e575,Zayneb Fazil,1,Bahrain,none,,0
+7e665859,PK Dimitri,1,Ivory Coast,none,,0
+6760153a,IL Parks,1,Costa Rica,none,,0
+ab591e7d,E Isaneez,1,Uganda,none,,0
+faff7eac,G Kuthalingham,1,Turks and Caicos Island,none,,0
+3296507e,M Smith,1,Turks and Caicos Island,none,,0
+67d40eaa,D Bourne,1,Turks and Caicos Island,none,,0
+fd4809c8,A Kuthalingham,1,Turks and Caicos Island,none,,0
+1b62ed99,Anskumar Ahir,1,Panama,none,,0
+2df72aae,B Akhilesh Reddy,1,United States of America,none,,0
+f1c8a09b,SA Pradhan,1,Singapore,none,,0
+10cfda7c,T Lafai,1,Samoa,none,,0
+dcff5376,M Vua,1,Fiji,none,,0
+556e2874,G Ribeiro,1,Brazil,none,,0
+f8ef3653,Ibrahim Rahimi,1,Norway,none,,0
+b9d8abd3,Vishal Sharma,1,Norway,initial+surname:unique,spin,0
+1e1a8922,KDC Clarke,1,Northern Districts,initial+surname:unique,pace,0
+dcdc9b49,Basharat Hussain,1,South Korea,initial+surname:unique,pace,0
+af104d94,N D'souza,1,United Arab Emirates,none,,0
+c7071bf6,A Konhu,1,France,none,,0
+eff8319a,F Sisifo,1,Samoa,none,,0
+bd2a2bbc,R Siwa,1,France,none,,0
+13cc5f9d,NJM Salima,1,Samoa,none,,0
+2bea8bda,T Elikana,1,Cook Islands,none,,0
+64442beb,Sani E Zehra,1,Oman,none,,0
+adc96559,D Mogan,1,Malaysia,initial+surname:unique,pace,1
+598f5484,Adil Butt,1,Saudi Arabia,initial+surname:unique,pace,0
+f0e8d51a,Shoaib Ali,1,Saudi Arabia,initial+surname:conflict,"pace,spin",0
+452e7e96,Navid Abdollahpour,1,Iran,none,,0
+43420e97,Naiem Bameri,1,Iran,none,,0
+01b45044,Mohammad Amin,1,Kuwait,full:unique,spin,1
+0d24b1f7,UKPW Kumaranayaka,1,Kuwait,none,,0
+edc2a9c6,B Karki,1,Nepal,initial+surname:conflict,"pace,spin",2
+4d21a67a,WSLK Narayana,1,Israel,none,,0
+080bbb6e,S Kailath,1,Austria,none,,0
+7195065a,JA Stiglitz,1,Austria,none,,0
+18377910,S Pakhrin,1,Nepal,none,,0
+f2026cc2,A Cheung,1,Hong Kong,none,,0
+56a660cc,Rashmeka Badri Narayanan,1,Singapore,none,,0
+29254752,Jaza Mariyam,1,Qatar,none,,0
+417bde11,Roshni Sebastian,1,Qatar,none,,0
+93b40209,B Unenchtseceg,1,Mongolia,none,,0
+8ff4ef0e,Sara Vivek,1,Bahrain,none,,0
+422c0dde,R Avdylaj,1,Austria,none,,0
+bf8c8572,Javeria Rauf,1,Pakistan,none,,0
+b48304b5,S Stephen,1,Vanuatu,none,,0
+e2b2c927,APS Sanchez,1,Costa Rica,none,,0
+e4d4c4e0,Sofia Araya,1,Chile,none,,0
+b04e6811,S Pitabeddara,1,South Korea,none,,0
+5ea3a7c6,Esam Rahman,1,Japan,initial+surname:unique,pace,0
+4b8e8f64,AS Broomfield,1,South Korea,none,,0
+d8dccff5,JP Kaltapau,1,Vanuatu,none,,0
+dba7b529,Gaba Frank,1,Papua New Guinea,none,,0
+a872a8fc,AR Shetty,1,Oman,initial+surname:conflict,"pace,spin",0
+361388d6,M Separovic,1,Croatia,none,,0
+0faa702f,Shiva Mani,1,Slovenia,initial+surname:unique,spin,0
+4895df9e,S Houghton,1,Croatia,initial+surname:unique,pace,0
+6770bccd,K Nagnama,1,Ivory Coast,none,,0
+3bc18521,VF Bomnyuy,1,Cameroon,none,,0
+096601c5,DKJ Claude,1,Ivory Coast,none,,0
+9ae09b37,QF Djakaridja,1,Ivory Coast,none,,0
+581eec7e,G Fontenla,1,Scotland,none,,0
+0894ec27,Y Verma,1,Oman,none,,0
+8ed6b6f1,S Malikzai,1,Germany,initial+surname:unique,pace,1
+ed27d267,Yousif Wali,1,Bahrain,none,,0
+389d04a6,Mohamad Junaid Khushi,1,Bahrain,none,,0
+065c35fc,Roopa Nagraj,1,United Arab Emirates,none,,0
+06deb88a,Mariska Kornet,1,Netherlands,none,,0
+46804494,G Mugwaneza,1,Rwanda,none,,0
+0affba80,Farwa Baber,1,Czech Republic,none,,0
+7b5ba4d1,D Fisher,1,Jersey,none,,0
+30aa04d2,MD Rocha,1,Jersey,none,,0
+7cefb2a2,A Mehmood,1,Hong Kong,initial+surname:unique,pace,1
+94ca2e62,K Suwanchonrathi,1,Thailand,none,,0
+657c4b12,M Altankhuyag,1,Mongolia,none,,0
+a19db58e,Umair Sharif,1,Saudi Arabia,none,,0
+e51abd5e,LR Gaonkar,1,Panama,none,,0
+6f79d514,M Walker,1,Bermuda,none,,0
+38952986,H Virdee,1,Luxembourg,none,,0
+9db1b072,SM Dhakal,1,Chitwan Rhinos,initial+surname:unique,spin,0
+cec44e08,SM Sharma,1,United Arab Emirates,initial+surname:conflict,"pace,spin",0
+c9f851b0,JL de Mey,1,Netherlands,initial+surname:unique,spin,1
+fecd828e,M Simpson-Parker,1,Austria,none,,0
+6ad7d184,D Jamyansuren,1,Mongolia,none,,0
+2afebf34,SHA Sheth,1,United Arab Emirates,none,,0
+963b1a9d,Laiba,1,Saudi Arabia,none,,0
+4bf76da2,L Solomone,1,Mozambique,none,,0
+26c7fe2a,Jihad Hossain,1,Eswatini,initial+surname:unique,spin,0
+6ea85c26,TA Khetsi,1,Lesotho,none,,0
+f3e4494a,Faizalmahmed Patel,1,Eswatini,none,,0
+385bb7ff,Wasim Al Balushi,1,Oman,none,,0
+25261429,H Gori,1,Czech Republic,initial+surname:unique,pace,1
+015dc0cd,K Mendon,1,Czech Republic,initial+surname:unique,pace,2
+ef07f354,B Yadav,1,Lumbini Lions,initial+surname:unique,spin,0
+18f4d808,L Gharasim,1,Romania,initial+surname:unique,pace,1
+5ce3fe3f,N Nankov,1,Bulgaria,initial+surname:unique,spin,1
+55a5cffb,A Ahmadhel,1,Bulgaria,initial+surname:unique,pace,1
+be869ccf,GHS Garton,1,Sussex,initial+surname:unique,pace,0
+08deefa3,Guillermo Aburto,1,Chile,none,,0
+ea6ec2d9,Alex Carthew,1,Chile,none,,0
+085071f2,Amit Uniyal,1,Chile,none,,0
+c60361d7,Harprit Singh,1,Mexico,initial+surname:conflict,"pace,spin",0
+44482748,TO Thilappan,1,Singapore,none,,0
+d4aa6a65,S Rengarajan,1,Czech Republic,initial+surname:unique,spin,1
+b0e16d9b,N Naranbaatar,1,Mongolia,none,,0
+45a62071,T Hinds,1,Trinbago Knight Riders,initial+surname:unique,pace,0
+cdd875d9,JA Turner,1,Hampshire,initial+surname:unique,pace,0
+8bbfc744,HA Daluwatta,1,Italy,none,,0
+bceb1b07,JJ Tucker,1,Bermuda,initial+surname:unique,pace,1
+fd67c5f0,Miriam Ehsun,1,Ghana,none,,0
+77c14bc2,E Sagoe,1,Ghana,none,,0
+71b1e490,G Essoun,1,Ghana,none,,0
+b10e688b,Kate Awuah,1,Ghana,none,,0
+0b37840b,J Dickinson,1,Scotland,none,,0
+fb52a279,S Devasia,1,Ghana,none,,0
+bc773c4a,KS Gautam,1,India,none,,0
+b3092fc4,L Maphane,1,Botswana,none,,0
+ac5003f9,K Marasini,1,Nepal,none,,0
+443c122f,TP Kanwar,1,Gujarat Giants,initial+surname:unique,pace,0
+a651cd4d,B Wani,1,Estonia,none,,0
+e14e70c0,B Namuunzul,1,Mongolia,none,,0
+1cd03c09,D Uwizeye,1,Rwanda,none,,0
+6f37931c,M Matobole,1,Lesotho,none,,0
+00c9dcf9,E Bakiweyem,1,Ghana,none,,0
+90eac542,J Chialoufas,1,Cyprus,none,,0
+c7e5cc8f,Saran Maliwan,1,Thailand,none,,0
+fa83d1b6,D Svilicic,1,Croatia,none,,0
+93544e69,A Awasthi,1,Croatia,none,,0
+8b3cf264,A Curavic,1,Croatia,none,,0
+17bc032c,C Munoz-Mills,1,Spain,initial+surname:unique,spin,2
+af39dcae,C Gwilliam-Lopez,1,Spain,none,,0
+e7a3e3a0,Laiba Nasrullah,1,Saudi Arabia,none,,0
+1f578535,Simrah Mirza,1,Saudi Arabia,initial+surname:unique,pace,0
+459a7b0a,R MacDonald-Gay,1,South East Stars,initial+surname:unique,pace,0
+667f3fd3,Zwe Htet Paing,1,Myanmar,none,,0
+2c12bc65,Abhishek Anand,1,Japan,none,,0
+f9d26872,Waleed Waqar,1,Bulgaria,none,,0
+8a91d0f1,EGS Kana,1,Cameroon,none,,0
+a91772c4,I Nandera,1,Uganda,none,,0
+3fd351ed,T Mpandakwaya,1,Malawi,none,,0
+98f33eed,L Ward,1,Isle of Man,none,,0
+88c742fb,L Kooagile,1,Botswana,none,,0
+2c00691c,G Ingabire,1,Rwanda,none,,0
+ffb65f46,Ugyen Dorji,1,Bhutan,none,,0
+ecbd4377,NH Naureen,1,Spain,initial+surname:unique,spin,1
+c92f74da,B Mosoaboli,1,Lesotho,none,,0
+5088c217,A Alfonso,1,Malawi,none,,0
+cfbd10ee,W Matabwa,1,Malawi,none,,0
+10ae734d,E Mulenga,1,Zambia,none,,0
+8eb2e2e6,L McCarthy,1,Munster Reds,none,,0
+3cbdbdeb,Zainullah Ihsan,1,Scotland,none,,0
+d32f3102,Hassan Nasir,1,Mexico,initial+surname:unique,pace,0
+c2887e22,Ankush Singh,1,Mexico,initial+surname:conflict,"pace,spin",0
+277d2704,C Kauripeke,1,Namibia,none,,0
+d8141f01,M Noble,1,Mexico,none,,0
+6c9abc8a,M Sefati,1,Botswana,none,,0
+4d9dfc7f,S Banamali,1,Singapore,none,,0
+023c40b8,Zhao Tianle,1,China,none,,0
+f22d2247,KH Abe,1,Japan,none,,0
+9c2bb7da,Zheng Lili,1,China,none,,0
+ab900b23,SK Shetty,1,Oman,none,,0
+2513b4fe,Kashif Siddique,1,Saudi Arabia,none,,0
+fdc1ac0f,Hazrat Luqman,1,Dubai Capitals,none,,0
+ddf3ccfa,C Cirino,1,Brazil,none,,0
+6061de69,M Mabvuka,1,Malawi,none,,0
+0e1baf3d,Abraar Khan,1,Lesotho,initial+surname:conflict,"pace,spin",0
+07793daf,JR Lennox,1,Central Stags,initial+surname:unique,spin,0
+dccb802c,Faisal Raza,1,Norway,none,,0
+26b96e00,Syed Jawad Haider,1,Norway,initial+surname:unique,pace,0
+58ebd785,E Mapisa,1,Malawi,none,,0
+ade3660b,WT Mashinge,1,Zimbabwe,initial+surname:unique,pace,1
+a89730a9,W Viraliliu,1,Vanuatu,initial+surname:unique,pace,1
+87ffd217,ZK Shem,1,Vanuatu,initial+surname:unique,pace,1
+486f252b,MO Bacarese,1,Gibraltar,initial+surname:unique,spin,1
+415ed107,K Nima,1,Bhutan,none,,0
+2053da82,P Chakraborty,1,Bangladesh,none,,0
+7b5250ed,S Khatiwada,1,Nepal,none,,0
+0e63259d,J Campbell,1,Zimbabwe,initial+surname:conflict,"pace,spin",0
+8831b92e,Raunaq Kapur,1,Canterbury,initial+surname:unique,pace,0
+872d51a6,P Gopalkrishnan,1,Qatar,none,,0
+438aef39,ZR Jaboneke,1,Tanzania,none,,0
+69cccff3,Rashid Khan,1,Kathmandu Gorkhas,full:conflict,"pace,spin",0
+60285d55,L Botha,1,Boland,none,,0
+fc2ddc2c,H Pieterse,1,South Africa,none,,0
+e454c356,T Singye,1,Bhutan,none,,0

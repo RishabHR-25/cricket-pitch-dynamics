@@ -143,6 +143,7 @@ def build_player_roles(
     names_path: Path,
     international_zip: Path,
     worldwide_zip: Path,
+    overrides_path: Path | None = None,
 ) -> tuple[dict[str, str], pd.DataFrame]:
     """Join public role sources to Cricsheet identifiers and retain provenance."""
     id_lookup, name_lookup = _load_style_sources(international_zip, worldwide_zip)
@@ -207,6 +208,26 @@ def build_player_roles(
                 "join_method": "unique exact normalized name/alias",
             }
         )
+
+    if overrides_path is not None and Path(overrides_path).exists():
+        overrides = pd.read_csv(overrides_path)
+        for row in overrides.itertuples():
+            identifier = str(row.cricsheet_id).strip()
+            style = str(row.style).strip().lower()
+            if identifier in roles or identifier not in people:
+                continue
+            if style not in {"pace", "spin"}:
+                continue
+            roles[identifier] = style
+            audit.append(
+                {
+                    "cricsheet_id": identifier,
+                    "name": people[identifier].get("name", ""),
+                    "style": style,
+                    "source": "Reviewed role override",
+                    "join_method": f"country-unique {getattr(row, 'join_method', 'name')}",
+                }
+            )
     return roles, pd.DataFrame(audit)
 
 
@@ -725,9 +746,10 @@ def run_training(
     weather_path: Path,
     output_dir: Path,
     device: str = "cpu",
+    role_overrides: Path | None = None,
 ) -> dict[str, Any]:
     roles, role_audit = build_player_roles(
-        people_path, names_path, international_zip, worldwide_zip
+        people_path, names_path, international_zip, worldwide_zip, role_overrides
     )
     output_dir.mkdir(parents=True, exist_ok=True)
     role_audit.to_csv(output_dir / "player_role_join_audit.csv", index=False)
@@ -830,6 +852,12 @@ def main() -> None:
         default=Path("data/raw/kaggle/worldwide_player_profiles.zip"),
     )
     parser.add_argument("--weather", type=Path, default=Path("data/interim/match_weather.csv"))
+    parser.add_argument(
+        "--role-overrides",
+        type=Path,
+        default=Path("data/interim/bowler_role_overrides.csv"),
+        help="Optional CSV of reviewed bowling-style overrides (skipped if absent).",
+    )
     parser.add_argument("--output-dir", type=Path, default=Path("models/pitch_proxy"))
     parser.add_argument("--device", choices=("cpu", "cuda"), default="cpu")
     args = parser.parse_args()
@@ -843,6 +871,7 @@ def main() -> None:
         args.weather,
         args.output_dir,
         args.device,
+        args.role_overrides,
     )
     for match_type, metrics in summary["models"].items():
         LOGGER.info(
