@@ -5,6 +5,11 @@
 - **Weather collection is COMPLETE.** The 2026-11-09 run finished the last 12
   batches: **111/111 batches**, and wrote `data/interim/match_weather.csv` with
   **18,585 rows, 0 missing temperature observations, 0 failed geocodes**.
+- **All three format models are trained and saved** (2026-11-09, CPU, with
+  weather): T20 macro-F1 **0.431** (n=437), ODI **0.415** (n=243), Test
+  **0.473** (n=112), all above their majority baselines. Artifacts in
+  `models/pitch_proxy/` (Git-ignored); reviewable copies in
+  `models/pitch_proxy_results/`.
 - **Do not run two collectors at once.** Two concurrent runs on 2026-11-08
   doubled request traffic and repeatedly re-triggered the hourly limit. The
   collector is silent for ~90 s at startup while it parses `all_json.zip`, so a
@@ -15,8 +20,6 @@
 - **Geocoding is complete**: 413/413 location strings have coordinates. The 94
   previously unresolved venues were reviewed by hand in
   `data/interim/venue_city_overrides.csv`.
-- `match_weather.csv` has **not** been produced yet. No partial file was left
-  behind; the collector writes it only after all batches succeed.
 - All code and documentation changes below are ready to commit and hand off.
 - The **Phase-I report** is written and rendered: `reports/EL_Phase1_Report_Content.md`
   (source), `.docx` (RVCE cover, logo header, footer) and `.pdf`.
@@ -42,6 +45,32 @@ A batch's cache key is the coordinate set and year, so the six batches built on
 pre-review coordinates are stale; the rest are reused. The cache directory is
 `.gitignore`d, so it stays on the local disk only — copy
 `data/interim/weather_cache/` if you move machines.
+
+## Three-format models trained with weather (2026-11-09)
+
+Command: `python src\train_pitch_models.py --matches data\raw\cricsheet\all_json.zip
+--weather data\interim\match_weather.csv --output-dir models\pitch_proxy --device cpu`
+
+| Format | Train / test | Macro-F1 | Balanced acc. | Accuracy | Majority macro-F1 | Per-class F1 (Batting / Pace / Spin) |
+| --- | --- | --- | --- | --- | --- | --- |
+| T20 | 1,871 / 437 | **0.431** | 0.475 | 0.501 | 0.268 | 0.20 / 0.60 / 0.50 |
+| ODI | 956 / 243 | **0.415** | 0.433 | 0.453 | 0.248 | 0.29 / 0.55 / 0.41 |
+| Test | 464 / 112 | **0.473** | 0.510 | 0.670 | 0.220 | 0.00 / 0.77 / 0.65 |
+
+- Weather coverage is **100%** in every format; all four weather variables are
+  present. Weather's share of importance grows with match length: T20 3.4%,
+  ODI 6.5%, Test 10.8%.
+- `gender` is still the top feature in T20 and ODI (10.6% and 13.7% of
+  importance); it is absent from the Test model's top features.
+- The Batting class remains the weak point (F1 0.20 T20, 0.29 ODI, 0.00 Test —
+  only 61 Test examples).
+- Bug fixed en route: `train_one_format` merged every labeled column with the
+  feature frame, so shared context columns were suffixed (`venue_x`/`venue_y`)
+  and the feature list no longer matched. It now merges keys + `y` only. The
+  scripts had never been run end to end before this.
+- Artifacts: `models/pitch_proxy/{t20,odi,test}/{model.joblib,metrics.json,
+  feature_importance.csv,test_predictions.csv}` plus `summary.json`; small
+  reviewable copies are committed under `models/pitch_proxy_results/`.
 
 ## Pulled teammate results: preliminary T20I analysis
 

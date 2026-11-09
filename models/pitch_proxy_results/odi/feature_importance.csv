@@ -1,0 +1,336 @@
+feature,importance
+categorical__gender_male,0.072604805
+categorical__gender_female,0.064066164
+categorical__city_Nottingham,0.030375095
+"categorical__venue_Zahur Ahmed Chowdhury Stadium, Chittagong",0.029897472
+categorical__venue_Rangiri Dambulla International Stadium,0.028598813
+categorical__venue_id_b7eee9e3,0.02444873
+categorical__venue_id_586b8dfc,0.02443733
+categorical__city_Mirpur,0.022924934
+categorical__venue_Pallekele International Cricket Stadium,0.021218369
+categorical__venue_id_93304ba7,0.02110413
+categorical__venue_Queenstown Events Centre,0.020703057
+categorical__city_,0.020525483
+categorical__venue_Harare Sports Club,0.02023526
+numeric__venue_last5_mean_spin_wicket_share,0.020209441
+numeric__year,0.018048482
+categorical__city_Ahmedabad,0.01725983
+numeric__temperature_2m_mean,0.017223435
+categorical__city_Colombo,0.017163591
+numeric__precipitation_sum,0.017156588
+numeric__venue_last5_mean_first_innings_run_rate,0.016993485
+categorical__venue_Lord's,0.01692126
+numeric__wind_speed_10m_max,0.016794851
+numeric__venue_last5_mean_early_dot_percent,0.016705548
+"categorical__venue_Shere Bangla National Stadium, Mirpur",0.016614782
+"categorical__venue_R Premadasa Stadium, Colombo",0.016462512
+categorical__toss_decision_field,0.016281005
+"categorical__venue_SuperSport Park, Centurion",0.015783029
+numeric__day_of_year_sin,0.015395607
+categorical__venue_id_a167b335,0.015213623
+numeric__venue_matches_in_history,0.015075553
+numeric__day_of_year_cos,0.014961972
+categorical__venue_Kensington Oval,0.014377212
+numeric__month_cos,0.014319808
+numeric__month_sin,0.014092062
+numeric__relative_humidity_2m_mean,0.013690542
+categorical__venue_id_dea6641b,0.013475287
+numeric__toss_winner_batted_first,0.013469567
+categorical__venue_id_4bacac99,0.013433072
+numeric__venue_role_matches_in_history,0.013427581
+categorical__venue_id_3dc422fc,0.012960356
+categorical__venue_id_2a20f4bc,0.012455981
+"categorical__venue_Wanderers Stadium, Johannesburg",0.012376828
+categorical__venue_id_f2b98fd6,0.012358962
+categorical__venue_Trent Bridge,0.012316809
+categorical__toss_decision_bat,0.012236694
+categorical__city_London,0.012077715
+categorical__venue_Old Trafford,0.01190408
+"categorical__venue_Mahinda Rajapaksa International Cricket Stadium, Sooriyawewa, Hambantota",0.011479634
+"categorical__venue_Providence Stadium, Guyana",0.0114594605
+categorical__venue_infrequent_sklearn,0.010580518
+categorical__venue_id_58512cad,0.010470637
+numeric__missingindicator_venue_last5_mean_spin_wicket_share,0.009180522
+categorical__venue_Sydney Cricket Ground,0.009096844
+categorical__venue_id_c6e9ea3f,0.008432224
+"categorical__venue_The Rose Bowl, Southampton",0.007854645
+categorical__city_infrequent_sklearn,0.0070611187
+categorical__venue_id_fcc90eb2,0.0040075756
+categorical__venue_Brisbane Cricket Ground,0.0
+categorical__venue_Galle International Stadium,0.0
+categorical__city_Napier,0.0
+categorical__city_Nagpur,0.0
+numeric__missingindicator_venue_last5_mean_early_dot_percent,0.0
+categorical__city_Worcester,0.0
+categorical__city_Wellington,0.0
+categorical__city_Visakhapatnam,0.0
+categorical__city_Vadodara,0.0
+categorical__city_Trinidad,0.0
+categorical__city_Taunton,0.0
+categorical__city_Sylhet,0.0
+categorical__city_Sydney,0.0
+categorical__city_St Lucia,0.0
+categorical__city_St Kitts,0.0
+categorical__city_Southampton,0.0
+categorical__city_Sharjah,0.0
+categorical__city_Rawalpindi,0.0
+"categorical__venue_Maharashtra Cricket Association Stadium, Pune",0.0
+"categorical__venue_Madhavrao Scindia Cricket Ground, Rajkot",0.0
+categorical__venue_MA Chidambaram Stadium,0.0
+"categorical__venue_Kinrara Academy Oval, Kuala Lumpur",0.0
+"categorical__venue_Kingsmead, Durban",0.0
+"categorical__venue_Junction Oval, Melbourne",0.0
+"categorical__venue_JSCA International Stadium Complex, Ranchi",0.0
+"categorical__venue_ICC Academy, Dubai",0.0
+"categorical__venue_Holkar Cricket Stadium, Indore",0.0
+"categorical__venue_Himachal Pradesh Cricket Association Stadium, Dharamsala",0.0
+categorical__venue_Headingley,0.0
+"categorical__venue_Hagley Oval, Christchurch",0.0
+"categorical__venue_Green Park, Kanpur",0.0
+"categorical__venue_Great Barrier Reef Arena, Mackay",0.0
+"categorical__venue_Grace Road, Leicester",0.0
+categorical__venue_Perth Stadium,0.0
+"categorical__venue_P Saravanamuttu Stadium, Colombo",0.0
+"categorical__venue_Old Hararians, Harare",0.0
+"categorical__venue_Newlands, Cape Town",0.0
+"categorical__venue_New Road, Worcester",0.0
+"categorical__venue_National Stadium, Karachi",0.0
+"categorical__venue_National Cricket Stadium, St George's, Grenada",0.0
+"categorical__venue_Narendra Modi Stadium, Ahmedabad",0.0
+categorical__venue_Multan Cricket Stadium,0.0
+categorical__venue_Melbourne Cricket Ground,0.0
+"categorical__venue_McLean Park, Napier",0.0
+"categorical__venue_Manuka Oval, Canberra",0.0
+"categorical__venue_Mangaung Oval, Bloemfontein",0.0
+"categorical__venue_Malahide Cricket Ground, Dublin",0.0
+"categorical__venue_Sheikh Zayed Stadium, Abu Dhabi",0.0
+categorical__venue_Sharjah Cricket Stadium,0.0
+"categorical__venue_Shaheed Chandu Stadium, Bogra",0.0
+"categorical__venue_Senwes Park, Potchefstroom",0.0
+"categorical__venue_Seddon Park, Hamilton",0.0
+"categorical__venue_Saxton Oval, Nelson",0.0
+"categorical__venue_Sawai Mansingh Stadium, Jaipur",0.0
+"categorical__venue_Saurashtra Cricket Association Stadium, Rajkot",0.0
+"categorical__venue_Sardar Patel Stadium, Motera, Ahmedabad",0.0
+categorical__venue_Sabina Park,0.0
+"categorical__venue_Riverside Ground, Chester-le-Street",0.0
+"categorical__venue_Reliance Stadium, Vadodara",0.0
+categorical__venue_Rawalpindi Cricket Stadium,0.0
+"categorical__venue_Queens Sports Club, Bulawayo",0.0
+"categorical__venue_Queen's Park Oval, Port of Spain, Trinidad",0.0
+"categorical__venue_Punjab Cricket Association Stadium, Mohali, Chandigarh",0.0
+"categorical__venue_WACA, Perth",0.0
+"categorical__venue_Vidarbha Cricket Association Stadium, Jamtha, Nagpur",0.0
+"categorical__venue_University Oval, Dunedin",0.0
+categorical__venue_The Oval,0.0
+"categorical__venue_The County Ground, Taunton",0.0
+"categorical__venue_Telstra Dome, Melbourne",0.0
+categorical__venue_Sylhet International Cricket Stadium,0.0
+"categorical__venue_St Lawrence Ground, Canterbury",0.0
+"categorical__venue_St George's Park, Port Elizabeth",0.0
+"categorical__venue_Southend Cricket Club Stadium, Karachi",0.0
+"categorical__venue_Sophia Gardens, Cardiff",0.0
+"categorical__venue_Sir Vivian Richards Stadium, North Sound, Antigua",0.0
+categorical__venue_Sinhalese Sports Club Ground,0.0
+categorical__venue_id_163af78d,0.0
+categorical__venue_id_146a8a08,0.0
+categorical__venue_id_132928e2,0.0
+categorical__venue_id_12c104c1,0.0
+categorical__venue_id_05ceed33,0.0
+categorical__venue_id_0443d94f,0.0
+categorical__venue_id_024d9dc3,0.0
+categorical__venue_id_01a4fdb1,0.0
+"categorical__venue_Zahur Ahmed Chowdhury Stadium, Chattogram",0.0
+"categorical__venue_Windsor Park, Roseau",0.0
+"categorical__venue_Willowmoore Park, Benoni",0.0
+"categorical__venue_Westpac Stadium, Wellington",0.0
+"categorical__venue_Warner Park, St Kitts",0.0
+"categorical__venue_Wankhede Stadium, Mumbai",0.0
+categorical__venue_id_405a8927,0.0
+categorical__venue_id_38a7a67b,0.0
+categorical__venue_id_354f95b9,0.0
+categorical__venue_id_351ac0b1,0.0
+categorical__venue_id_3198489d,0.0
+categorical__venue_id_2fa1bb17,0.0
+categorical__venue_id_2e3b883d,0.0
+categorical__venue_id_291a7a33,0.0
+categorical__venue_id_25b64fb5,0.0
+categorical__venue_id_2489737f,0.0
+categorical__venue_id_241ce892,0.0
+categorical__venue_id_23d8819f,0.0
+categorical__venue_id_1fdf4def,0.0
+categorical__venue_id_189d0732,0.0
+categorical__venue_id_6a114331,0.0
+categorical__venue_id_67e29339,0.0
+categorical__venue_id_672f066b,0.0
+categorical__venue_id_64e8f8d7,0.0
+categorical__venue_id_63714fc3,0.0
+categorical__venue_id_5bbd83c0,0.0
+categorical__venue_id_5a985b66,0.0
+categorical__venue_id_5a232ad1,0.0
+categorical__venue_id_50039b09,0.0
+categorical__venue_id_477f1ae2,0.0
+categorical__venue_id_4666efc5,0.0
+categorical__venue_id_441641a6,0.0
+categorical__venue_id_4414dcff,0.0
+categorical__venue_id_425055d2,0.0
+categorical__venue_id_81137e75,0.0
+categorical__venue_id_80fc5774,0.0
+categorical__venue_id_7e0fa9a4,0.0
+categorical__venue_id_783a2b83,0.0
+categorical__venue_id_781303a2,0.0
+categorical__venue_id_73bb627b,0.0
+categorical__venue_id_72923025,0.0
+categorical__venue_id_7152cefb,0.0
+categorical__venue_id_70795294,0.0
+categorical__venue_id_6f9052c3,0.0
+categorical__venue_id_6cbe6b49,0.0
+categorical__venue_id_6bfc6938,0.0
+categorical__venue_id_6b2f7c19,0.0
+categorical__venue_id_6b0a6071,0.0
+categorical__venue_id_6ab3b11e,0.0
+categorical__venue_id_6a2a3465,0.0
+categorical__venue_id_a682fc55,0.0
+categorical__venue_id_a656b2cd,0.0
+categorical__venue_id_a48e1e3a,0.0
+categorical__venue_id_a1d67071,0.0
+categorical__venue_id_a1af6c3f,0.0
+categorical__venue_id_a0fc5764,0.0
+categorical__venue_id_a0891586,0.0
+categorical__venue_id_9eecb9ce,0.0
+categorical__venue_id_9e236baa,0.0
+categorical__venue_id_9dd68e5f,0.0
+categorical__venue_id_9a7cfff8,0.0
+categorical__venue_id_993ce27b,0.0
+categorical__venue_id_97ce693c,0.0
+categorical__venue_id_8d1d7db9,0.0
+categorical__venue_id_89068030,0.0
+categorical__venue_id_833af9c5,0.0
+categorical__venue_id_cc5717a5,0.0
+categorical__venue_id_cc221190,0.0
+categorical__venue_id_ca92c7ab,0.0
+categorical__venue_id_c9fb7c53,0.0
+"categorical__venue_AMI Stadium, Christchurch",0.0
+categorical__venue_id_c3e37c1f,0.0
+categorical__venue_id_c3607be2,0.0
+categorical__venue_id_c28dafd8,0.0
+categorical__venue_id_bf040d61,0.0
+categorical__venue_id_ba1305a8,0.0
+categorical__venue_id_b97da5c8,0.0
+categorical__venue_id_b4715b8e,0.0
+categorical__venue_id_afed0e37,0.0
+categorical__venue_id_ada144d6,0.0
+categorical__venue_id_abca06f8,0.0
+categorical__venue_id_a899c2b7,0.0
+categorical__venue_id_infrequent_sklearn,0.0
+categorical__venue_Adelaide Oval,0.0
+categorical__venue_id_f5913055,0.0
+categorical__venue_id_f4fe4119,0.0
+categorical__venue_id_f380dc0d,0.0
+"categorical__venue_Allan Border Field, Brisbane",0.0
+categorical__venue_id_eef26f35,0.0
+categorical__venue_id_ed4e4230,0.0
+categorical__venue_id_eadbad25,0.0
+categorical__venue_id_e8345861,0.0
+categorical__venue_id_deae8c56,0.0
+"categorical__venue_Andhra Cricket Association-Visakhapatnam District Cricket Association Stadium, Visakhapatnam",0.0
+categorical__venue_id_d9627581,0.0
+categorical__venue_id_d2fdb0fb,0.0
+categorical__venue_id_d2a4ff70,0.0
+categorical__venue_id_cc767911,0.0
+categorical__city_Cape Town,0.0
+categorical__city_Canterbury,0.0
+categorical__city_Canberra,0.0
+categorical__city_Bulawayo,0.0
+categorical__city_Bristol,0.0
+categorical__city_Brisbane,0.0
+categorical__city_Bridgetown,0.0
+categorical__city_Bogra,0.0
+categorical__city_Bloemfontein,0.0
+categorical__city_Birmingham,0.0
+categorical__city_Benoni,0.0
+categorical__city_Belfast,0.0
+categorical__city_Barbados,0.0
+categorical__city_Auckland,0.0
+categorical__city_Antigua,0.0
+categorical__city_Abu Dhabi,0.0
+categorical__city_Dunedin,0.0
+categorical__city_Dublin,0.0
+categorical__city_Dubai,0.0
+categorical__city_Dominica,0.0
+categorical__city_Dhaka,0.0
+"categorical__venue_Barabati Stadium, Cuttack",0.0
+categorical__city_Cuttack,0.0
+categorical__city_Coolidge,0.0
+categorical__city_Christchurch,0.0
+categorical__city_Chittagong,0.0
+categorical__city_Chester-le-Street,0.0
+categorical__city_Chennai,0.0
+categorical__city_Chattogram,0.0
+categorical__city_Chandigarh,0.0
+categorical__city_Centurion,0.0
+categorical__city_Cardiff,0.0
+categorical__city_Karachi,0.0
+categorical__city_Kanpur,0.0
+categorical__city_Kandy,0.0
+categorical__city_Johannesburg,0.0
+categorical__city_Jamaica,0.0
+categorical__city_Jaipur,0.0
+categorical__city_Indore,0.0
+categorical__city_Hobart,0.0
+categorical__city_Harare,0.0
+categorical__city_Hamilton,0.0
+categorical__city_Hambantota,0.0
+categorical__city_Guyana,0.0
+categorical__city_Grenada,0.0
+categorical__city_Fatullah,0.0
+categorical__city_East London,0.0
+categorical__city_Durban,0.0
+"categorical__venue_Brabourne Stadium, Mumbai",0.0
+"categorical__venue_Boland Park, Paarl",0.0
+"categorical__venue_Bharat Ratna Shri Atal Bihari Vajpayee Ekana Cricket Stadium, Lucknow",0.0
+categorical__city_Mount Maunganui,0.0
+categorical__city_Melbourne,0.0
+categorical__city_Manchester,0.0
+categorical__city_Mackay,0.0
+categorical__city_Lucknow,0.0
+"categorical__venue_Basin Reserve, Wellington",0.0
+categorical__city_Leicester,0.0
+categorical__city_Delhi,0.0
+categorical__city_Lahore,0.0
+categorical__city_Kuala Lumpur,0.0
+categorical__city_Kolkata,0.0
+categorical__city_Kingston,0.0
+categorical__city_Kimberley,0.0
+categorical__city_Ranchi,0.0
+categorical__city_Mumbai,0.0
+categorical__city_Multan,0.0
+"categorical__venue_Gaddafi Stadium, Lahore",0.0
+"categorical__venue_Feroz Shah Kotla, Delhi",0.0
+categorical__venue_Edgbaston,0.0
+"categorical__venue_Eden Park, Auckland",0.0
+"categorical__venue_Eden Gardens, Kolkata",0.0
+categorical__venue_Dubai International Cricket Stadium,0.0
+"categorical__venue_Diamond Oval, Kimberley",0.0
+"categorical__venue_County Ground, Bristol",0.0
+"categorical__venue_Coolidge Cricket Ground, Antigua",0.0
+"categorical__venue_Clontarf Cricket Club Ground, Dublin",0.0
+"categorical__venue_Civil Service Cricket Club, Stormont, Belfast",0.0
+"categorical__venue_Buffalo Park, East London",0.0
+numeric__missingindicator_venue_last5_mean_first_innings_run_rate,0.0
+"categorical__venue_Bay Oval, Mount Maunganui",0.0
+"categorical__venue_Beausejour Stadium, Gros Islet, St Lucia",0.0
+categorical__team_type_international,0.0
+"categorical__venue_Bellerive Oval, Hobart",0.0
+categorical__city_Rajkot,0.0
+categorical__city_Queenstown,0.0
+categorical__city_Pune,0.0
+categorical__city_Providence,0.0
+categorical__city_Potchefstroom,0.0
+categorical__city_Port of Spain,0.0
+categorical__city_Port Elizabeth,0.0
+categorical__city_Perth,0.0
+categorical__city_Paarl,0.0
+categorical__city_North Sound,0.0
+categorical__city_Nelson,0.0
+categorical__city_Leeds,0.0

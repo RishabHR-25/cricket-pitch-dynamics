@@ -438,10 +438,10 @@ def build_features(matches: pd.DataFrame, weather_path: Path) -> pd.DataFrame:
     features["month_sin"] = np.sin(2 * np.pi * features["date"].dt.month / 12)
     features["month_cos"] = np.cos(2 * np.pi * features["date"].dt.month / 12)
     features["day_of_year_sin"] = np.sin(
-        2 * np.pi * features["date"].dt.dayofyear / 365.25
+        2 * np.pi * features["date"].dt.day_of_year / 365.25
     )
     features["day_of_year_cos"] = np.cos(
-        2 * np.pi * features["date"].dt.dayofyear / 365.25
+        2 * np.pi * features["date"].dt.day_of_year / 365.25
     )
     features = features.join(history)
     weather = pd.read_csv(weather_path)
@@ -606,7 +606,12 @@ def train_one_format(
     output_dir: Path,
     device: str = "cpu",
 ) -> dict[str, Any]:
-    merged = labeled.merge(features, on=["match_id", "date", "match_type"], validate="one_to_one")
+    # `features` already carries venue/city/gender/toss context, so merge only the
+    # keys and the label; selecting every labeled column would suffix the shared
+    # context columns (venue_x/venue_y) and break the feature list.
+    merged = labeled[["match_id", "date", "match_type", "y"]].merge(
+        features, on=["match_id", "date", "match_type"], validate="one_to_one"
+    )
     merged = merged.sort_values(["date", "match_id"], kind="stable")
     train, test, split = _chronological_split(merged)
     if train.empty or test.empty:

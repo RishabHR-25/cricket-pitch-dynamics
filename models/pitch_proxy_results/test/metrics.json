@@ -1,0 +1,153 @@
+{
+  "match_type": "Test",
+  "training_device": "cpu",
+  "target_semantics": "deterministic behavioral proxy; not physical pitch ground truth",
+  "label_rules": {
+    "early_overs": 10,
+    "batting_run_rate_min": 3.8,
+    "early_dot_percent_max": 75.0
+  },
+  "class_order": [
+    "Batting",
+    "Pace",
+    "Spin"
+  ],
+  "sample_counts": {
+    "eligible_total": 576,
+    "train": 464,
+    "test": 112,
+    "train_classes": {
+      "Pace": 315,
+      "Spin": 104,
+      "Batting": 45
+    },
+    "test_classes": {
+      "Pace": 55,
+      "Spin": 41,
+      "Batting": 16
+    }
+  },
+  "split": {
+    "strategy": "chronological_by_unique_date",
+    "train_fraction_target": 0.8,
+    "train_end": "2021-11-29",
+    "test_start": "2021-12-03"
+  },
+  "model": {
+    "accuracy": 0.6696428571428571,
+    "balanced_accuracy": 0.5104212860310421,
+    "macro_f1": 0.47286746987951805,
+    "weighted_f1": 0.6153098106712565,
+    "multiclass_log_loss": 0.9229393987400665,
+    "multiclass_brier_score": 0.4893473096103328,
+    "classification_report": {
+      "Batting": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 16.0
+      },
+      "Pace": {
+        "precision": 0.6857142857142857,
+        "recall": 0.8727272727272727,
+        "f1-score": 0.768,
+        "support": 55.0
+      },
+      "Spin": {
+        "precision": 0.6428571428571429,
+        "recall": 0.6585365853658537,
+        "f1-score": 0.6506024096385542,
+        "support": 41.0
+      },
+      "accuracy": 0.6696428571428571,
+      "macro avg": {
+        "precision": 0.4428571428571429,
+        "recall": 0.5104212860310421,
+        "f1-score": 0.47286746987951805,
+        "support": 112.0
+      },
+      "weighted avg": {
+        "precision": 0.5720663265306122,
+        "recall": 0.6696428571428571,
+        "f1-score": 0.6153098106712565,
+        "support": 112.0
+      }
+    },
+    "confusion_matrix": [
+      [
+        0,
+        8,
+        8
+      ],
+      [
+        0,
+        48,
+        7
+      ],
+      [
+        0,
+        14,
+        27
+      ]
+    ]
+  },
+  "majority_baseline": {
+    "accuracy": 0.49107142857142855,
+    "balanced_accuracy": 0.3333333333333333,
+    "macro_f1": 0.21956087824351297,
+    "weighted_f1": 0.3234602224123182,
+    "multiclass_log_loss": 18.343645028389975,
+    "multiclass_brier_score": 1.0178571428571428,
+    "classification_report": {
+      "Batting": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 16.0
+      },
+      "Pace": {
+        "precision": 0.49107142857142855,
+        "recall": 1.0,
+        "f1-score": 0.6586826347305389,
+        "support": 55.0
+      },
+      "Spin": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 41.0
+      },
+      "accuracy": 0.49107142857142855,
+      "macro avg": {
+        "precision": 0.1636904761904762,
+        "recall": 0.3333333333333333,
+        "f1-score": 0.21956087824351297,
+        "support": 112.0
+      },
+      "weighted avg": {
+        "precision": 0.24115114795918366,
+        "recall": 0.49107142857142855,
+        "f1-score": 0.3234602224123182,
+        "support": 112.0
+      }
+    },
+    "confusion_matrix": [
+      [
+        0,
+        16,
+        0
+      ],
+      [
+        0,
+        55,
+        0
+      ],
+      [
+        0,
+        41,
+        0
+      ]
+    ]
+  },
+  "interpretation": "Test metrics are chronological out-of-time agreement with proxy labels. Do not interpret them as accuracy against measured pitch physics."
+}
