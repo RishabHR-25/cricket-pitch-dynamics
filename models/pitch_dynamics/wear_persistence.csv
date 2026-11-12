@@ -1,0 +1,7 @@
+match_type,outcome,matches,pearson_r,pearson_p,spearman_r,spearman_p,regression_slope,regression_p
+Test,runs_per_ball,763,0.0304,0.402386,-0.0057,0.875754,0.0283,0.402386
+Test,wicket_rate,763,0.0003,0.994053,0.0511,0.158407,0.0004,0.994053
+ODI,runs_per_ball,2689,-0.0473,0.014147,0.0061,0.752701,-0.0822,0.014147
+ODI,wicket_rate,2689,0.0263,0.173332,0.0302,0.117242,0.0499,0.173332
+T20,runs_per_ball,7801,-0.0028,0.805092,0.0091,0.422264,-0.0032,0.805092
+T20,wicket_rate,7801,0.0017,0.881697,0.0198,0.080034,0.0014,0.881697

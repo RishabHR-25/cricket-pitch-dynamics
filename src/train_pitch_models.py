@@ -382,31 +382,92 @@ def _parse_matches(
     return matches, matches[matches["y"].notna()].copy()
 
 
-def _add_prior_venue_features(matches: pd.DataFrame, window: int = 5) -> pd.DataFrame:
-    """Create format-specific venue history using strictly earlier match dates."""
+def _history_mean(
+    history: pd.DataFrame, column: str, weights: np.ndarray | None
+) -> float:
+    """Mean of one history column, optionally exponentially weighted."""
+    if history.empty:
+        return np.nan
+    values = history[column]
+    mask = values.notna().to_numpy()
+    if not mask.any():
+        return np.nan
+    if weights is None:
+        return float(values[mask].mean())
+    return float(np.average(values.to_numpy()[mask], weights=weights[mask]))
+
+
+def _add_prior_venue_features(
+    matches: pd.DataFrame,
+    window: int = 5,
+    half_life: float | None = None,
+    windows_by_format: dict[str, int] | None = None,
+) -> pd.DataFrame:
+    """Create format-specific venue history using strictly earlier match dates.
+
+    ``window`` caps how many prior matches are kept, and can be overridden per
+    format with ``windows_by_format`` (for example a longer memory in Tests).
+    When ``half_life`` is set, matches are weighted by
+    ``0.5 ** (age / half_life)`` in match order.
+    """
     result = pd.DataFrame(index=matches.index)
     metrics = [
         "first_innings_run_rate",
         "early_dot_percent",
     ]
     for match_type, format_rows in matches.groupby("match_type", sort=False):
+        format_window = (
+            windows_by_format.get(match_type, window)
+            if windows_by_format
+            else window
+        )
+        prefix = (
+            f"venue_last{format_window}"
+            if half_life is None
+            else f"venue_ewma{half_life:g}"
+        )
         for venue_key, venue_rows in format_rows.groupby(
             venue_rows_key(format_rows), sort=False, dropna=False
         ):
             ordered = venue_rows.sort_values(["date", "match_id"], kind="stable")
-            prior: deque[dict[str, float]] = deque(maxlen=window)
+            prior: deque[dict[str, float]] = deque(maxlen=format_window)
             for _, same_day in ordered.groupby(ordered["date"].dt.normalize(), sort=True):
                 history = pd.DataFrame(prior)
+                weights: np.ndarray | None = None
+                if half_life is not None and not history.empty:
+                    ages = np.arange(len(history) - 1, -1, -1)
+                    weights = 0.5 ** (ages / half_life)
                 for column in metrics:
-                    result.loc[same_day.index, f"venue_last{window}_mean_{column}"] = (
-                        history[column].mean() if not history.empty else np.nan
+                    result.loc[same_day.index, f"{prefix}_mean_{column}"] = _history_mean(
+                        history, column, weights
                     )
-                role_history = history.loc[
-                    history["role_complete"].eq(1), "spin_wicket_share"
-                ] if not history.empty else pd.Series(dtype=float)
-                result.loc[
-                    same_day.index, f"venue_last{window}_mean_spin_wicket_share"
-                ] = role_history.mean() if not role_history.empty else np.nan
+                role_mask = (
+                    history["role_complete"].eq(1).to_numpy()
+                    if not history.empty
+                    else np.zeros(0, dtype=bool)
+                )
+                if role_mask.any():
+                    spin_values = history.loc[
+                        role_mask, "spin_wicket_share"
+                    ].to_numpy()
+                    spin_ok = ~np.isnan(spin_values)
+                    if spin_ok.any():
+                        if weights is None:
+                            spin_value = float(spin_values[spin_ok].mean())
+                        else:
+                            spin_value = float(
+                                np.average(
+                                    spin_values[spin_ok],
+                                    weights=weights[role_mask][spin_ok],
+                                )
+                            )
+                    else:
+                        spin_value = np.nan
+                    result.loc[
+                        same_day.index, f"{prefix}_mean_spin_wicket_share"
+                    ] = spin_value
+                else:
+                    result.loc[same_day.index, f"{prefix}_mean_spin_wicket_share"] = np.nan
                 result.loc[same_day.index, "venue_matches_in_history"] = len(prior)
                 result.loc[same_day.index, "venue_role_matches_in_history"] = int(
                     history["role_complete"].sum() if not history.empty else 0
@@ -432,7 +493,13 @@ def venue_rows_key(rows: pd.DataFrame) -> pd.Series:
     return registered.where(registered.ne(""), fallback)
 
 
-def build_features(matches: pd.DataFrame, weather_path: Path) -> pd.DataFrame:
+def build_features(
+    matches: pd.DataFrame,
+    weather_path: Path,
+    venue_window: int = 5,
+    venue_half_life: float | None = None,
+    windows_by_format: dict[str, int] | None = None,
+) -> pd.DataFrame:
     matches = matches.copy()
     total_wickets = matches["spin_wickets"] + matches["pace_wickets"]
     matches["spin_wicket_share"] = np.divide(
@@ -441,7 +508,9 @@ def build_features(matches: pd.DataFrame, weather_path: Path) -> pd.DataFrame:
         out=np.full(len(matches), np.nan, dtype=float),
         where=(total_wickets.to_numpy() > 0) & matches["role_complete"].to_numpy(),
     )
-    history = _add_prior_venue_features(matches)
+    history = _add_prior_venue_features(
+        matches, venue_window, venue_half_life, windows_by_format
+    )
     features = matches[
         [
             "match_id",
@@ -584,7 +653,9 @@ def _make_pipeline(
             eval_metric="mlogloss",
             tree_method="hist",
             device=device,
-            n_jobs=4,
+            # Single-threaded so repeated runs are bit-identical, which the
+            # paper's reproducibility claims depend on.
+            n_jobs=1,
             random_state=42,
         )
     return Pipeline([("preprocessing", preprocessing), ("model", model)])
@@ -663,6 +734,16 @@ def train_one_format(
 
     excluded = {"match_id", "date", "match_type", "y"}
     feature_columns = [column for column in features.columns if column not in excluded]
+    # Per-format venue windows leave the other formats' history columns in the
+    # frame as all-NaN; drop them so the model only sees live features.
+    all_nan = [
+        column
+        for column in feature_columns
+        if pd.api.types.is_numeric_dtype(features[column])
+        and merged[column].isna().all()
+    ]
+    if all_nan:
+        feature_columns = [column for column in feature_columns if column not in all_nan]
     categorical = [
         column
         for column in (
@@ -761,6 +842,23 @@ def train_one_format(
     return results
 
 
+def parse_format_windows(spec: str | None) -> dict[str, int] | None:
+    """Parse ``T20=5,ODI=5,Test=10`` into a format -> window mapping."""
+    if not spec:
+        return None
+    windows: dict[str, int] = {}
+    canonical = {name.upper(): name for name in FORMATS}
+    for part in spec.split(","):
+        if not part.strip():
+            continue
+        name, _, value = part.partition("=")
+        key = name.strip().upper()
+        if key not in canonical:
+            raise ValueError(f"unknown format {name!r}; expected one of {FORMATS}")
+        windows[canonical[key]] = int(value)
+    return windows or None
+
+
 def run_training(
     archive_path: Path,
     people_path: Path,
@@ -772,6 +870,9 @@ def run_training(
     device: str = "cpu",
     role_overrides: Path | None = None,
     model_kind: str = "xgb",
+    venue_window: int = 5,
+    venue_half_life: float | None = None,
+    windows_by_format: dict[str, int] | None = None,
 ) -> dict[str, Any]:
     roles, role_audit = build_player_roles(
         people_path, names_path, international_zip, worldwide_zip, role_overrides
@@ -786,7 +887,13 @@ def run_training(
         where=all_matches["role_complete"].to_numpy()
         & ((all_matches["spin_wickets"] + all_matches["pace_wickets"]).to_numpy() > 0),
     )
-    features = build_features(all_matches, weather_path)
+    features = build_features(
+        all_matches,
+        weather_path,
+        venue_window,
+        venue_half_life,
+        windows_by_format,
+    )
     all_matches[
         [
             "match_id",
@@ -824,12 +931,24 @@ def run_training(
             "precipitation_sum",
             "wind_speed_10m_max",
             "relative_humidity_2m_mean",
+            "precip_sum_3d",
+            "precip_sum_5d",
             "precip_sum_7d",
             "precip_sum_14d",
             "precip_sum_28d",
+            "precip_max_7d",
+            "precip_days_7d",
+            "precip_trend_7_28",
+            "temp_mean_3d",
             "temp_mean_7d",
             "temp_mean_14d",
+            "temp_min_7d",
+            "temp_max_7d",
+            "temp_range_7d",
             "humidity_mean_7d",
+            "humidity_max_7d",
+            "wind_mean_7d",
+            "wind_max_7d",
             "wind_max_mean_7d",
             "dry_days_before",
         )
@@ -894,8 +1013,21 @@ def main() -> None:
     parser.add_argument("--output-dir", type=Path, default=Path("models/pitch_proxy"))
     parser.add_argument("--device", choices=("cpu", "cuda"), default="cpu")
     parser.add_argument("--model", choices=("xgb", "rf"), default="xgb")
+    parser.add_argument("--venue-window", type=int, default=5)
+    parser.add_argument(
+        "--venue-windows",
+        default=None,
+        help="Per-format venue windows, e.g. T20=5,ODI=5,Test=10 (overrides --venue-window).",
+    )
+    parser.add_argument(
+        "--venue-half-life",
+        type=float,
+        default=None,
+        help="If set, exponentially weight the venue history in match order.",
+    )
     args = parser.parse_args()
     logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
+    windows_by_format = parse_format_windows(args.venue_windows)
     summary = run_training(
         args.matches,
         args.people,
@@ -907,6 +1039,9 @@ def main() -> None:
         args.device,
         args.role_overrides,
         args.model,
+        args.venue_window,
+        args.venue_half_life,
+        windows_by_format,
     )
     for match_type, metrics in summary["models"].items():
         LOGGER.info(

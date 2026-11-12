@@ -1,0 +1,19 @@
+match_type,outcome,term,coefficient,std_error,ci_low,ci_high,p_value
+T20,runs_per_ball,"Change per over, pace",0.04936,0.00011,0.04914,0.04958,0.0
+T20,runs_per_ball,Spin-pace gap at over 0,-0.04973,0.00089,-0.05146,-0.04799,0.0
+T20,runs_per_ball,Extra change per over for spin,-0.00224,8e-05,-0.00241,-0.00208,0.0
+T20,wicket_rate,"Change per over, pace",-0.00042,1e-05,-0.00044,-0.00039,0.0
+T20,wicket_rate,Spin-pace gap at over 0,-0.00099,0.00011,-0.0012,-0.00078,0.0
+T20,wicket_rate,Extra change per over for spin,0.00012,1e-05,0.0001,0.00014,0.0
+ODI,runs_per_ball,"Change per over, pace",0.01373,4e-05,0.01365,0.01381,0.0
+ODI,runs_per_ball,Spin-pace gap at over 0,-0.01704,0.00101,-0.01903,-0.01506,0.0
+ODI,runs_per_ball,Extra change per over for spin,-0.00179,4e-05,-0.00187,-0.00172,0.0
+ODI,wicket_rate,"Change per over, pace",-0.00022,0.0,-0.00022,-0.00021,0.0
+ODI,wicket_rate,Spin-pace gap at over 0,0.00155,0.00011,0.00133,0.00177,0.0
+ODI,wicket_rate,Extra change per over for spin,-0.00017,0.0,-0.00018,-0.00016,0.0
+Test,runs_per_ball,"Change per over, pace",0.0006,2e-05,0.00057,0.00063,0.0
+Test,runs_per_ball,Spin-pace gap at over 0,-0.00171,0.00075,-0.00318,-0.00024,0.0226
+Test,runs_per_ball,Extra change per over for spin,-0.00014,1e-05,-0.00017,-0.00012,0.0
+Test,wicket_rate,"Change per over, pace",-0.00017,0.0,-0.00017,-0.00016,0.0
+Test,wicket_rate,Spin-pace gap at over 0,-0.00297,7e-05,-0.0031,-0.00283,0.0
+Test,wicket_rate,Extra change per over for spin,2e-05,0.0,1e-05,2e-05,0.0

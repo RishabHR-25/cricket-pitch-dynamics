@@ -1,0 +1,13 @@
+variant,match_type,outcome,coefficient,std_error,p_value,cells,matches
+established_bowlers,Test,runs_per_ball,-0.00012,6e-05,0.05348,277599,922
+established_bowlers,Test,wicket_rate,-0.0,1e-05,0.41547,277599,922
+established_bowlers,Test,dot_share,0.00013,3e-05,1e-05,277599,922
+established_bowlers,Test,boundary_share,-3e-05,1e-05,0.03846,277599,922
+established_bowlers,ODI,runs_per_ball,-0.00135,0.00023,0.0,241903,3231
+established_bowlers,ODI,wicket_rate,-0.00018,3e-05,0.0,241903,3231
+established_bowlers,ODI,dot_share,0.00147,9e-05,0.0,241903,3231
+established_bowlers,ODI,boundary_share,3e-05,5e-05,0.59277,241903,3231
+established_bowlers,T20,runs_per_ball,-0.00216,0.00051,2e-05,318198,13139
+established_bowlers,T20,wicket_rate,9e-05,7e-05,0.1661,318198,13139
+established_bowlers,T20,dot_share,0.00162,0.00016,0.0,318198,13139
+established_bowlers,T20,boundary_share,-0.00013,0.00011,0.25594,318198,13139

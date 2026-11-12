@@ -27,6 +27,12 @@
 - A teammate's **preliminary T20I analysis** was pulled after this work
   (`4d37bed`, `c4e8e26`). It confirms that **bowling-role coverage, not weather,
   is the current binding constraint on model quality** — see the next section.
+- **Ball-by-ball pitch dynamics (2026-11-12)** are built and audited. The
+  within-innings age x spin gradient is precise and stable but is **not**
+  identified as pitch wear: the second-new-ball jump at over 80 is bowler
+  selection (naive +1.5 pp pace dot share, within-bowler −2.1 pp) and the
+  October 2011 two-new-ball rule leaves the ODI gradient unchanged. Conference
+  draft: `reports/PAPER_DRAFT.md`.
 
 ## Current data inventory
 
@@ -226,6 +232,99 @@ country. These are now pinned with exact coordinates.
   position (111/111 batches, 18,585 rows, 100% coverage) instead of the earlier
   "24 of 111" snapshot; Sections 5.2, 7.7, the objectives table and the
   conclusion were refreshed and the `.docx`/PDF rebuilt on 2026-11-09.
+
+## Ball-by-ball pitch dynamics and identification (2026-11-12)
+
+The match-level model is shipped and untouched. This section is a separate
+analysis layer over the raw deliveries, and its purpose is to decide what a
+within-match "pitch wear" estimate can actually claim.
+
+### Data and estimator
+
+- `src/build_ball_dataset.py` → `data/interim/balls.parquet`: **6,776,668
+  deliveries, 23,241 matches** (T20 / ODI / Test, both genders, 2001-12-19 →
+  2026-11-03). Bowling style is attached with the conservative role protocol;
+  **22.6% of deliveries have unknown style and are excluded**.
+- Analysis sample: **5,116,165 legal spin/pace deliveries → 855,659 over x style
+  cells** (three or more legal balls per cell, weighted by ball count).
+- `src/pitch_dynamics.py` fits `y = match FE + age + spin + age x spin + controls`
+  on the cell panel (`models/pitch_dynamics/over_panel.parquet`), with
+  match-clustered standard errors. Venue, match, match x innings and
+  match x innings x bowler fixed effects are all reported.
+- The estimand is **relative**: how spin's outcomes move against pace's as the
+  ball ages. It is never a physical pitch measurement.
+
+### What the gradient does
+
+| Check | Result | Verdict |
+| --- | --- | --- |
+| Pooled dot-share coefficient | +0.0015 (T20), +0.0015 (ODI), +0.0001 (Test), p<0.001 | precise but ambiguous |
+| Within-innings placebo (100 draws) | null mean +0.00027 (T20), +0.00030 (ODI) | about a fifth of the estimate is mechanical |
+| Phase decomposition | T20 powerplay +0.00752, middle +0.00114, death −0.00623 | **sign reverses** |
+| Boundary trim | T20 runs −0.00198 → −0.00010 (p=0.87) | runs channel is an innings-edge artefact |
+| Persistence across innings | r = −0.003 / −0.047 / +0.030 | no match-level persistence |
+| Out-of-sample gain | 0.002–0.153% of weighted MSE | economically negligible |
+| Rolling origin (4 folds) | dot share same sign 12/12; magnitudes stable | not a period effect |
+
+### What the gradient is not
+
+`src/identify_wear.py` runs the two identification tests.
+
+1. **Second new ball at over 80 (Test).** Event study in two-over bins relative
+   to overs 78-79 on 162,467 deliveries, match-clustered SE. Across all
+   deliveries pace's dot share rises **+0.0148** (p=0.031) in overs 80-81;
+   within the same bowler and innings it **falls −0.0210** (p=0.044) and keeps
+   falling (−0.0293, −0.0305, −0.0449). The pace share of deliveries rises from
+   **40% to 74%** at the boundary. The naive jump is the frontline attack
+   returning, not the new ball. Output: `wear_new_ball_event.csv`.
+2. **Two new balls per ODI innings from 2011-10-01.** Each ball ages at about
+   half the rate per over of play, so a ball-ageing gradient should roughly
+   halve. It does not: ODI dot gradient +0.00129 pre → +0.00138 post, T20 control
+   +0.00205 → +0.00146, **DiD +0.00069 (SE 0.00089, p=0.44)** against a predicted
+   −0.00064. Strata are disjoint samples, so the DiD SE is the root of the sum
+   of the four variances. Output: `wear_two_new_ball.csv`.
+
+Taken together: **ball renewal matters, gradual ball ageing does not, and the
+smooth within-innings gradient is composition rather than condition.** The one
+surviving surface-scale signal is the across-innings Test contrast (dot share
++0.01073, p<0.001; wicket rate +0.00113, p=0.007; boundary +0.00284, p=0.004).
+
+### Report and paper
+
+- `reports/EL_Phase1_Report_Content.md` — §4.6 (estimator), §7.8 (placebo with
+  real null means), §7.9 (persistence, predictive gain, rolling stability in
+  Table 7.12, cross-innings contrast) and the new **§7.10 "Is the gradient ball
+  condition or surface change?"** with Table 7.13 (event study) and Table 7.14
+  (rule DiD).
+- `reports/PAPER_DRAFT.md` — conference draft built on the composition thesis:
+  abstract, 11 sections, 5 tables, reproducibility table, verified ICC rule
+  citations, and a short venue-fit note.
+- Figures: `reports/figures/fig1`–`fig6` from
+  `python src\make_dynamics_figures.py`. `fig5` is the naive-versus-within-bowler
+  event study; `fig6` is the format-era rule comparison.
+
+### Do not reuse
+
+The earlier decay-profile numbers (+2.1 pp pace dot "spike", ratio 2.07,
+"ball condition is first-order") came from a trend-controlled profile that
+flips sign under no-trend and linear specifications. They were superseded by the
+within-bowler event study and their artifacts were deleted on 2026-11-12. Do not
+resurface them.
+
+### Reproduce
+
+```powershell
+python src\build_ball_dataset.py
+python src\pitch_dynamics.py
+python src\wear_robustness.py
+python src\validate_wear.py
+python src\identify_wear.py all
+python src\make_dynamics_figures.py
+```
+
+`validate_wear.py` takes tens of minutes on the full panel and streams its table
+to `models/pitch_dynamics/validate.log`; redirected Python stdout is buffered,
+so an empty-looking log does not mean a stall.
 
 ## How to resume
 

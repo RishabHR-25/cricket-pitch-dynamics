@@ -35,49 +35,49 @@
     "test_start": "2021-09-30"
   },
   "model": {
-    "accuracy": 0.71875,
-    "balanced_accuracy": 0.5480490523968785,
-    "macro_f1": 0.5115646258503402,
-    "weighted_f1": 0.670280612244898,
-    "multiclass_log_loss": 0.8391323946815479,
-    "multiclass_brier_score": 0.4404505230474537,
+    "accuracy": 0.7421875,
+    "balanced_accuracy": 0.5821496491573218,
+    "macro_f1": 0.5609271353566397,
+    "weighted_f1": 0.7022512485593546,
+    "multiclass_log_loss": 0.795679762544028,
+    "multiclass_brier_score": 0.4150790847178874,
     "classification_report": {
       "Batting": {
-        "precision": 0.0,
-        "recall": 0.0,
-        "f1-score": 0.0,
+        "precision": 0.5,
+        "recall": 0.058823529411764705,
+        "f1-score": 0.10526315789473684,
         "support": 17.0
       },
       "Pace": {
-        "precision": 0.7466666666666667,
+        "precision": 0.7777777777777778,
         "recall": 0.8615384615384616,
-        "f1-score": 0.8,
+        "f1-score": 0.8175182481751825,
         "support": 65.0
       },
       "Spin": {
-        "precision": 0.6923076923076923,
-        "recall": 0.782608695652174,
-        "f1-score": 0.7346938775510204,
+        "precision": 0.7037037037037037,
+        "recall": 0.8260869565217391,
+        "f1-score": 0.76,
         "support": 46.0
       },
-      "accuracy": 0.71875,
+      "accuracy": 0.7421875,
       "macro avg": {
-        "precision": 0.4796581196581197,
-        "recall": 0.5480490523968785,
-        "f1-score": 0.5115646258503402,
+        "precision": 0.6604938271604938,
+        "recall": 0.5821496491573218,
+        "f1-score": 0.5609271353566397,
         "support": 128.0
       },
       "weighted avg": {
-        "precision": 0.6279647435897436,
-        "recall": 0.71875,
-        "f1-score": 0.670280612244898,
+        "precision": 0.7142650462962963,
+        "recall": 0.7421875,
+        "f1-score": 0.7022512485593546,
         "support": 128.0
       }
     },
     "confusion_matrix": [
       [
-        0,
-        10,
+        1,
+        9,
         7
       ],
       [
@@ -87,8 +87,8 @@
       ],
       [
         1,
-        9,
-        36
+        7,
+        38
       ]
     ]
   },

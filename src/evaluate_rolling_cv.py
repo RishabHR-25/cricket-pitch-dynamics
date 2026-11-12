@@ -36,75 +36,98 @@ from typing import Any
 
 import numpy as np
 import pandas as pd
-from sklearn.metrics import f1_score
+from sklearn.metrics import classification_report, confusion_matrix, f1_score
 from sklearn.utils.class_weight import compute_sample_weight
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import train_pitch_models as T  # noqa: E402
+from build_weather_context import CONTEXT_COLUMNS  # noqa: E402
 
 DAY_WEATHER = (
     "temperature_2m_mean",
     "precipitation_sum",
     "wind_speed_10m_max",
     "relative_humidity_2m_mean",
-    "precipitation_hours",
-    "shortwave_radiation_sum",
-    "et0_fao_evapotranspiration",
 )
 
-CONTEXT_WEATHER = DAY_WEATHER + (
-    "precip_sum_7d",
-    "precip_sum_14d",
-    "precip_sum_28d",
-    "temp_mean_7d",
-    "temp_mean_14d",
-    "humidity_mean_7d",
-    "wind_max_mean_7d",
-    "dry_days_before",
-)
+CONTEXT_WEATHER = DAY_WEATHER + tuple(CONTEXT_COLUMNS)
 
 
-def load_datasets(
+def parse_venue_configs(specs: list[str]) -> list[tuple[int, float | None]]:
+    """Parse ``u5`` (uniform, window 5) and ``e20h5`` (EWMA, cap 20, half-life 5)."""
+    configs: list[tuple[int, float | None]] = []
+    for spec in specs:
+        token = spec.strip().lower()
+        if token.startswith("u"):
+            configs.append((int(token[1:]), None))
+        elif token.startswith("e") and "h" in token:
+            window, half_life = token[1:].split("h", 1)
+            configs.append((int(window), float(half_life)))
+        else:
+            raise ValueError(f"venue config {spec!r} is not u<window> or e<window>h<half-life>")
+    return configs
+
+
+def load_all_matches(
     archive_path: Path,
     people_path: Path,
     names_path: Path,
     international_zip: Path,
     worldwide_zip: Path,
-    weather_path: Path,
     overrides_path: Path | None,
+) -> pd.DataFrame:
+    roles, _ = T.build_player_roles(
+        people_path, names_path, international_zip, worldwide_zip, overrides_path
+    )
+    all_matches, _ = T._parse_matches(archive_path, roles)
+    all_matches["spin_wicket_share"] = np.divide(
+        all_matches["spin_wickets"],
+        all_matches["spin_wickets"] + all_matches["pace_wickets"],
+        out=np.full(len(all_matches), np.nan, dtype=float),
+        where=all_matches["role_complete"].to_numpy()
+        & (
+            (all_matches["spin_wickets"] + all_matches["pace_wickets"]).to_numpy()
+            > 0
+        ),
+    )
+    return all_matches
+
+
+def load_datasets(
+    all_matches: pd.DataFrame,
+    weather_path: Path,
     cache_dir: Path,
+    venue_window: int,
+    venue_half_life: float | None,
+    windows_by_format: dict[str, int] | None = None,
 ) -> dict[str, pd.DataFrame]:
     """Build one labelled feature frame per format, optionally from cache."""
     datasets: dict[str, pd.DataFrame] = {}
+    features: pd.DataFrame | None = None
     for match_type in T.FORMATS:
-        cache_path = cache_dir / f"{match_type.lower()}.csv.gz"
+        window = (
+            windows_by_format.get(match_type, venue_window)
+            if windows_by_format
+            else venue_window
+        )
+        suffix = f"w{window}" + (
+            f"h{venue_half_life:g}" if venue_half_life is not None else ""
+        )
+        cache_path = cache_dir / f"{match_type.lower()}_{suffix}.csv.gz"
         if cache_path.exists():
             frame = pd.read_csv(cache_path, parse_dates=["date"])
             datasets[match_type] = frame
             print(f"{match_type}: loaded {len(frame)} rows from {cache_path}")
             continue
 
-        if "all_matches" not in datasets:  # type: ignore[comparison-overlap]
-            roles, _ = T.build_player_roles(
-                people_path, names_path, international_zip, worldwide_zip, overrides_path
+        if features is None:
+            features = T.build_features(
+                all_matches,
+                weather_path,
+                venue_window=venue_window,
+                venue_half_life=venue_half_life,
+                windows_by_format=windows_by_format,
             )
-            all_matches, _ = T._parse_matches(archive_path, roles)
-            all_matches["spin_wicket_share"] = np.divide(
-                all_matches["spin_wickets"],
-                all_matches["spin_wickets"] + all_matches["pace_wickets"],
-                out=np.full(len(all_matches), np.nan, dtype=float),
-                where=all_matches["role_complete"].to_numpy()
-                & (
-                    (all_matches["spin_wickets"] + all_matches["pace_wickets"]).to_numpy()
-                    > 0
-                ),
-            )
-            features = T.build_features(all_matches, weather_path)
-            datasets["all_matches"] = all_matches  # type: ignore[assignment]
-            datasets["features"] = features  # type: ignore[assignment]
-
-        all_matches = datasets["all_matches"]  # type: ignore[assignment]
-        features = datasets["features"]  # type: ignore[assignment]
         labeled = all_matches[
             all_matches["y"].notna() & all_matches["match_type"].eq(match_type)
         ][["match_id", "date", "match_type", "y"]]
@@ -116,8 +139,6 @@ def load_datasets(
         datasets[match_type] = frame
         print(f"{match_type}: built {len(frame)} rows and cached to {cache_path}")
 
-    datasets.pop("all_matches", None)
-    datasets.pop("features", None)
     return datasets
 
 
@@ -194,6 +215,24 @@ def _predict_two_stage(
     return np.column_stack([p_batting, p_pace, p_spin])
 
 
+def bootstrap_macro_f1_ci(
+    truth: np.ndarray,
+    predicted: np.ndarray,
+    n_boot: int = 1000,
+    seed: int = 42,
+) -> tuple[float, float]:
+    """Percentile bootstrap 95% CI for macro-F1, resampling matches."""
+    rng = np.random.default_rng(seed)
+    n = len(truth)
+    scores = np.empty(n_boot, dtype=float)
+    for index in range(n_boot):
+        sample = rng.integers(0, n, size=n)
+        scores[index] = f1_score(
+            truth[sample], predicted[sample], average="macro", zero_division=0
+        )
+    return float(np.percentile(scores, 2.5)), float(np.percentile(scores, 97.5))
+
+
 def evaluate_variant(
     frame: pd.DataFrame,
     weather_mode: str,
@@ -213,6 +252,16 @@ def evaluate_variant(
         ]
     elif weather_mode != "ctx":
         raise ValueError(f"unknown weather mode {weather_mode!r}")
+    # Per-format venue windows leave the other formats' history columns here as
+    # all-NaN; drop them before fitting.
+    feature_columns = [
+        column
+        for column in feature_columns
+        if not (
+            pd.api.types.is_numeric_dtype(frame[column])
+            and frame[column].isna().all()
+        )
+    ]
     categorical = [
         column
         for column in (
@@ -228,6 +277,9 @@ def evaluate_variant(
     numeric = [column for column in feature_columns if column not in categorical]
 
     fold_results = []
+    pooled_ids: list[np.ndarray] = []
+    pooled_dates: list[np.ndarray] = []
+    pooled_history: list[np.ndarray] = []
     pooled_true: list[np.ndarray] = []
     pooled_pred: list[np.ndarray] = []
     pooled_probabilities: list[np.ndarray] = []
@@ -318,6 +370,14 @@ def evaluate_variant(
         pooled_true.append(truth)
         pooled_pred.append(predicted)
         pooled_probabilities.append(probabilities)
+        pooled_ids.append(test["match_id"].to_numpy())
+        pooled_dates.append(
+            test["date"].dt.strftime("%Y-%m-%d").to_numpy()
+        )
+        if "venue_matches_in_history" in test.columns:
+            pooled_history.append(
+                test["venue_matches_in_history"].to_numpy(dtype=float)
+            )
         print(
             f"    fold {fold_index}: train {len(train)}, test {len(test)}, "
             f"macro-F1 {fold_results[-1]['macro_f1']:.3f}"
@@ -328,6 +388,22 @@ def evaluate_variant(
     truth = np.concatenate(pooled_true)
     predicted = np.concatenate(pooled_pred)
     probabilities = np.vstack(pooled_probabilities)
+    ci_low, ci_high = bootstrap_macro_f1_ci(truth, predicted)
+    per_class = classification_report(
+        truth,
+        predicted,
+        labels=T.CLASS_ORDER,
+        output_dict=True,
+        zero_division=0,
+    )
+    per_class = {
+        label: (
+            {metric: float(value) for metric, value in scores.items()}
+            if isinstance(scores, dict)
+            else float(scores)
+        )
+        for label, scores in per_class.items()
+    }
     return {
         "weather_mode": weather_mode,
         "model_family": model_kind,
@@ -336,9 +412,25 @@ def evaluate_variant(
         "mean_fold_macro_f1": float(np.mean([f["macro_f1"] for f in fold_results])),
         "std_fold_macro_f1": float(np.std([f["macro_f1"] for f in fold_results])),
         "pooled_macro_f1": float(f1_score(truth, predicted, average="macro")),
+        "pooled_macro_f1_ci95": [ci_low, ci_high],
         "pooled_accuracy": float((truth == predicted).mean()),
         "pooled_ece": ece(truth, probabilities),
         "pooled_n": int(len(truth)),
+        "per_class": per_class,
+        "confusion_matrix": confusion_matrix(
+            truth, predicted, labels=T.CLASS_ORDER
+        ).tolist(),
+        "class_order": list(T.CLASS_ORDER),
+        "pooled_predictions": {
+            "match_id": np.concatenate(pooled_ids).tolist(),
+            "date": np.concatenate(pooled_dates).tolist(),
+            "history_matches": (
+                np.concatenate(pooled_history).tolist() if pooled_history else []
+            ),
+            "y_true": truth.tolist(),
+            "y_pred": predicted.tolist(),
+            "probability": probabilities.tolist(),
+        },
     }
 
 
@@ -374,6 +466,17 @@ def main() -> None:
         default=["xgb:ctx", "xgb:day", "rf:ctx", "rf:day", "avg:ctx", "avg:day"],
         help="Variant names of the form model:weather_mode.",
     )
+    parser.add_argument(
+        "--venue-configs",
+        nargs="+",
+        default=["u5"],
+        help="Venue-history configs: u<window> or e<window>h<half-life>.",
+    )
+    parser.add_argument(
+        "--venue-windows",
+        default=None,
+        help="Per-format windows, e.g. T20=5,ODI=5,Test=10; overrides --venue-configs.",
+    )
     parser.add_argument("--formats", nargs="+", default=list(T.FORMATS))
     parser.add_argument(
         "--rebuild",
@@ -386,49 +489,120 @@ def main() -> None:
     if args.rebuild:
         for path in cache_dir.glob("*.csv.gz"):
             path.unlink()
-    datasets = load_datasets(
+    configs = parse_venue_configs(args.venue_configs)
+    windows_by_format = T.parse_format_windows(args.venue_windows)
+    all_matches = load_all_matches(
         args.matches,
         args.people,
         args.names,
         args.international_players,
         args.worldwide_players,
-        args.weather,
         args.role_overrides,
-        cache_dir,
     )
 
     results: dict[str, Any] = {
         "folds": args.folds,
         "min_train_fraction": args.min_train_fraction,
+        "venue_configs": [f"{window},{half_life}" for window, half_life in configs],
+        "venue_windows_by_format": windows_by_format,
         "variants": {},
     }
     rows = []
-    for spec in args.variants:
-        model_kind, weather_mode = spec.split(":")
-        for match_type in args.formats:
-            frame = datasets[match_type]
-            folds = make_folds(frame, args.folds, args.min_train_fraction)
-            print(f"{spec} | {match_type}: {len(frame)} rows, {len(folds)} folds")
-            outcome = evaluate_variant(
-                frame, weather_mode, model_kind, folds, args.device
+    if windows_by_format:
+        runs = [(None, None, windows_by_format, "performat")]
+    else:
+        runs = [
+            (
+                window,
+                half_life,
+                None,
+                "w" + str(window)
+                + (f"h{half_life:g}" if half_life is not None else "u"),
             )
-            outcome["match_type"] = match_type
-            results["variants"].setdefault(spec, {})[match_type] = outcome
-            if "error" not in outcome:
-                rows.append(
-                    {
-                        "variant": spec,
-                        "match_type": match_type,
-                        "folds": len(outcome["folds"]),
-                        "pooled_n": outcome["pooled_n"],
-                        "mean_fold_macro_f1": round(outcome["mean_fold_macro_f1"], 4),
-                        "std_fold_macro_f1": round(outcome["std_fold_macro_f1"], 4),
-                        "pooled_macro_f1": round(outcome["pooled_macro_f1"], 4),
-                        "pooled_accuracy": round(outcome["pooled_accuracy"], 4),
-                        "pooled_ece": round(outcome["pooled_ece"], 4),
-                        "n_raw_features": outcome["n_raw_features"],
-                    }
+            for window, half_life in configs
+        ]
+    for venue_window, venue_half_life, per_format, venue_label in runs:
+        datasets = load_datasets(
+            all_matches,
+            args.weather,
+            cache_dir,
+            venue_window or 5,
+            venue_half_life,
+            per_format,
+        )
+        for spec in args.variants:
+            model_kind, weather_mode = spec.split(":")
+            for match_type in args.formats:
+                frame = datasets[match_type]
+                format_window = (
+                    per_format.get(match_type, venue_window)
+                    if per_format
+                    else venue_window
                 )
+                folds = make_folds(frame, args.folds, args.min_train_fraction)
+                print(
+                    f"{spec}@{venue_label} | {match_type} (w{format_window}): "
+                    f"{len(frame)} rows, {len(folds)} folds"
+                )
+                outcome = evaluate_variant(
+                    frame, weather_mode, model_kind, folds, args.device
+                )
+                outcome["match_type"] = match_type
+                outcome["venue_window"] = format_window
+                outcome["venue_half_life"] = venue_half_life
+                key = f"{spec}@{venue_label}"
+                predictions = outcome.pop("pooled_predictions", None)
+                if predictions:
+                    pred_dir = args.output_dir / "predictions"
+                    pred_dir.mkdir(parents=True, exist_ok=True)
+                    pred_frame = pd.DataFrame(
+                        {
+                            "match_id": predictions["match_id"],
+                            "date": predictions["date"],
+                            "history_matches": predictions["history_matches"]
+                            or [np.nan] * len(predictions["match_id"]),
+                            "y_true": predictions["y_true"],
+                            "y_pred": predictions["y_pred"],
+                            "probability_batting": [
+                                row[0] for row in predictions["probability"]
+                            ],
+                            "probability_pace": [
+                                row[1] for row in predictions["probability"]
+                            ],
+                            "probability_spin": [
+                                row[2] for row in predictions["probability"]
+                            ],
+                        }
+                    )
+                    pred_frame.to_csv(
+                        pred_dir / f"{key.replace(':', '_')}_{match_type}.csv",
+                        index=False,
+                    )
+                results["variants"].setdefault(key, {})[match_type] = outcome
+                if "error" not in outcome:
+                    rows.append(
+                        {
+                            "variant": spec,
+                            "venue_config": venue_label,
+                            "venue_window": format_window,
+                            "venue_half_life": venue_half_life,
+                            "match_type": match_type,
+                            "folds": len(outcome["folds"]),
+                            "pooled_n": outcome["pooled_n"],
+                            "mean_fold_macro_f1": round(outcome["mean_fold_macro_f1"], 4),
+                            "std_fold_macro_f1": round(outcome["std_fold_macro_f1"], 4),
+                            "pooled_macro_f1": round(outcome["pooled_macro_f1"], 4),
+                            "pooled_macro_f1_ci_low": round(
+                                outcome["pooled_macro_f1_ci95"][0], 4
+                            ),
+                            "pooled_macro_f1_ci_high": round(
+                                outcome["pooled_macro_f1_ci95"][1], 4
+                            ),
+                            "pooled_accuracy": round(outcome["pooled_accuracy"], 4),
+                            "pooled_ece": round(outcome["pooled_ece"], 4),
+                            "n_raw_features": outcome["n_raw_features"],
+                        }
+                    )
 
     args.output_dir.mkdir(parents=True, exist_ok=True)
     results_path = args.output_dir / "cv_results.json"
@@ -447,7 +621,7 @@ def main() -> None:
         existing = pd.read_csv(summary_path)
         summary = pd.concat([existing, summary], ignore_index=True)
         summary = summary.drop_duplicates(
-            subset=["variant", "match_type"], keep="last"
+            subset=["variant", "venue_config", "match_type"], keep="last"
         )
     summary.to_csv(summary_path, index=False)
     print()

@@ -30,9 +30,9 @@ The beneficiaries are teams playing at unfamiliar venues, where local knowledge 
 
 ### 2.1 Problem statement
 
-There is no open, repeatable way to classify how a cricket pitch will behave before a match. As a result, the toss decision and the pace/spin balance of the playing eleven still rest on visual inspection, broadcast commentary and venue experience. Those judgements are hard to check, hard to reproduce and unavailable to teams without a long history at the ground.
+There is no open, repeatable way to measure how a cricket pitch behaves, either before a match or while it is being played. As a result, the toss decision and the pace/spin balance of the playing eleven still rest on visual inspection, broadcast commentary and venue experience, and no method describes how the surface changes as the innings progresses. Those judgements are hard to check, hard to reproduce and unavailable to teams without a long history at the ground.
 
-Two constraints define the problem. First, no public dataset contains physical pitch measurements linked to match identifiers. Second, weather and pitch behaviour interact (moisture, humidity, wind and temperature affect preparation and deterioration), so any useful method must combine match records with ambient conditions. The scientific difficulty is therefore one of **weak supervision**: the target must be constructed from observed play, and every claim must be honest about the fact that the label is a proxy.
+Two constraints define the problem. First, no public dataset contains physical pitch measurements linked to match identifiers. Second, weather and pitch behaviour interact (moisture, humidity, wind and temperature affect preparation and deterioration), so any useful method must combine match records with ambient conditions. The scientific difficulty is therefore one of **weak supervision**: both the match-level target and the within-match wear signal must be constructed from observed play, and every claim must be honest about the fact that neither is a physical measurement.
 
 ### 2.2 Background and literature review
 
@@ -50,29 +50,42 @@ Three trends emerge. Tree ensembles (random forest and gradient boosting) repeat
 
 ### 2.3 Research gap and contribution
 
-This project treats pitch behaviour as the **target**. We construct a documented proxy label from ball-by-ball evidence, build leakage-safe features from earlier matches only, train interpretable multiclass classifiers, and explain each prediction. The contribution is a reproducible open-data pipeline, a venue-level Pitch Behaviour Profile (PBP), a first version of a Pitch Wear Index (PWI), and a planned cold-start method for grounds with little history.
+This project treats pitch behaviour as the **target**, at two time scales. At the match scale we construct a documented proxy label from ball-by-ball evidence, build leakage-safe features from earlier matches only, train interpretable multiclass classifiers, and explain each prediction. At the **ball-by-ball scale** we estimate how the relative effectiveness of spin and pace changes as a ball ages, and then test whether that change can be attributed to the surface. To our knowledge, no prior study predicts an interpretable pitch-behaviour class from open ball-by-ball data alone, and none tests whether a within-match wear estimate from such data is identified; published work either measures pitches physically or uses the pitch as an input to a result model.
+
+The contribution is fivefold:
+
+1. **Ball-by-ball estimation and identification of within-match pitch dynamics.** A within-match fixed-effects model isolates the age x spin interaction from venue, date, phase, match state and batter experience, on 5.1 million legal deliveries. The estimator is then subjected to a randomisation placebo, per-phase estimates, a boundary check, persistence and predictive tests, and two ball-renewal natural experiments. The result is a precise, stable gradient that is shown to be **compositional rather than physical**, and the identification analysis is the paper's primary contribution; Section 7.10 is its main results section.
+2. **Convergent and predictive validation of the inferred state.** A genuine pitch state must behave like one: it should persist from the first innings to the second on the same surface, should be stronger at venues where spin already dominates, should increase after dry pre-match weather, and should improve held-out prediction. All four tests are run and reported.
+3. **A reproducible proxy-label benchmark.** A frozen, format-specific rule converts first-innings scoring behaviour and bowler-credited wicket types into Batting, Pace and Spin classes, so the task can be rebuilt by anyone from the public Cricsheet archive. Section 7.6 quantifies label stability under threshold perturbation rather than asserting it.
+4. **An audited bowler-style curation protocol.** A conservative three-source rule (exact name, team-country agreement, style-class agreement) adds 527 reviewed overrides covering 9,768 credited wickets without guessing, raising the labelable T20 sample by 33.5%. The same role table supplies the spin/pace contrast for every ball in the dynamics dataset.
+5. **Leakage-safe weather context with honest evaluation.** Prior-window moisture features are computed only from dates before the match, every result is reported under rolling-origin cross-validation with fold spread and bootstrap confidence intervals, and the optimal venue-history window is estimated per format rather than assumed.
+
+Together these make the pipeline an auditable baseline for pitch-behaviour prediction, a venue-level Pitch Behaviour Profile (PBP), a Pitch Wear Index (PWI) defined as the innings-level age x spin coefficient, and a validated cold-start direction for grounds with little history.
 
 ## 3. Objectives
 
 ### 3.1 Primary objective
 
-Classify pitch behaviour before a match using free public data, and convert that classification into an interpretable toss recommendation.
+Estimate how a cricket pitch changes during a match from open ball-by-ball data, and classify pitch behaviour before a match in a way that can be converted into an interpretable toss recommendation.
 
 ### 3.2 Specific objectives and success measures
 
 | # | Objective | Measure of success | Status at Phase-I |
 | --- | --- | --- | --- |
 | 1 | Complete the data | Weather audit passes at 98% match coverage; bowling styles known for at least 70% of T20I wickets | Partial: weather is complete at 100% coverage with prior-window features; 3,005 players have a known style, but T20 label coverage is 21.8% (53.4% ODI, 71.3% Test) |
-| 2 | Build pitch features | PBP and PWI computed for every venue using past matches only | Partial: PBP built for 13 men's T20I venues; PWI is a raw second-innings step, not yet normalised |
-| 3 | Train and validate classifiers | Random forest and gradient boosting beat the majority and venue baselines; macro-F1 of at least 0.50 in time-aware cross-validation | Partial: pooled rolling-origin cross-validation macro-F1 0.453 T20, 0.420 ODI, 0.544 Test; all beat their majority baselines, but only Test reaches 0.50 |
-| 4 | Explain and handle new grounds | SHapley Additive exPlanations (SHAP) drivers per prediction; cold-start method tested on held-out venues | Partial: gain importance and an earlier SHAP analysis implemented; cold-start matching still planned |
-| 5 | Disseminate | IEEE-format conference paper and dashboard prototype | Planned: abstract and report drafted with multi-format results; paper and dashboard pending |
+| 2 | Build pitch features | PBP and PWI computed for every venue using past matches only | Partial: PBP built for 13 men's T20I venues; PWI is now defined as the innings-level age x spin coefficient and estimated for every match with sufficient spin and pace cells |
+| 3 | Estimate within-match wear | A pre-specified age x spin coefficient that is stable across fixed-effect specifications and survives a within-innings randomisation test | Partly met: the coefficient is stable across specifications and rolling windows, but the randomisation null is positively biased and the identification tests in Section 7.10 reject a wear interpretation. The across-innings Test contrast is the surviving surface-scale signal. |
+| 4 | Validate the inferred state | Cross-innings persistence, venue spin-friendliness gradient, moisture gradient and out-of-sample predictive gain | Partly met: the two gradients are detected and the across-innings Test contrast survives; the per-match slope does not persist and the predictive gain is small (reported with intervals) |
+| 5 | Train and validate classifiers | Random forest and gradient boosting beat the majority and venue baselines; macro-F1 of at least 0.50 in time-aware cross-validation | Partial: pooled rolling-origin cross-validation macro-F1 0.453 T20, 0.422 ODI, 0.568 Test; all beat their majority baselines, and Test clears 0.50 |
+| 6 | Explain and handle new grounds | SHapley Additive exPlanations (SHAP) drivers per prediction; cold-start method tested on held-out venues | Partial: gain importance and an earlier SHAP analysis implemented; cold-start matching still planned |
+| 7 | Disseminate | IEEE-format conference paper and dashboard prototype | Partial: the conference paper draft is written (`reports/PAPER_DRAFT.md`) and the report contains the full identification analysis; the dashboard prototype is pending |
 
 ### 3.3 Secondary objectives
 
 - Extend the same pipeline to One Day Internationals (ODIs) and Test matches with format-specific label thresholds.
 - Curate the highest-impact missing bowler styles so that more matches become trainable.
 - Quantify whether daily weather adds out-of-time predictive value now that the weather table is complete.
+- Test whether the inferred wear state links to pre-match moisture and to venue spin-friendliness.
 - Package the pipeline so that a teammate can reproduce every table and figure from the repository.
 
 ## 4. Methodology
@@ -95,6 +108,7 @@ The end-to-end flow is:
 6. **Train and compare** majority, venue-prior, logistic-regression, random-forest and XGBoost models.
 7. **Evaluate** macro-F1, balanced accuracy, per-class scores, log loss, Brier score, calibration and bootstrap confidence intervals.
 8. **Explain** the best model with SHAP and translate drivers into toss guidance.
+9. **Estimate dynamics** on the separate ball-by-ball layer: within-match age x spin models, placebo tests, cross-innings persistence, convergent validity and out-of-sample prediction.
 
 Figure 1 in Section 11 shows this flow as a flowchart.
 
@@ -129,14 +143,30 @@ Features fall into four groups.
 
 - **Match context:** format, gender, team type, venue and venue identifier, city, year, and cyclical month and day-of-year encodings (sine and cosine) so that December and January are adjacent.
 - **Toss:** the toss decision (bat or field) and whether the toss winner batted first.
-- **Prior venue history:** rolling means over at most the previous five matches at that venue for first-innings run rate, early dot-ball percentage and spin wicket share, plus counts of prior matches and prior matches with complete role information.
-- **Weather (when available):** daily mean temperature, precipitation total, maximum wind speed and mean relative humidity.
+- **Prior venue history:** rolling means over prior matches at that venue for first-innings run rate, early dot-ball percentage and spin wicket share, plus counts of prior matches and prior matches with complete role information. The history length is a tuned hyper-parameter, selected per format by rolling-origin cross-validation (Section 7.4).
+- **Weather (when available):** match-day mean temperature, precipitation total, maximum wind speed and mean relative humidity, plus the core prior-window descriptors that survived ablation: 7-, 14- and 28-day precipitation totals, 7- and 14-day mean temperature, 7-day mean humidity, mean daily maximum wind, and the number of consecutive dry days before the match.
 
 Leakage is controlled in three ways. First, the same-match statistics that define the label (run rate, dot balls, wickets by style) are never used as features. Second, rolling venue features are computed from strictly earlier dates; matches on the same date do not see each other's outcomes. Third, the train/test split is chronological by unique date, and imputers and encoders are fitted inside each training fold.
 
 ### 4.5 Training and evaluation protocol
 
-The most recent 20% of unique match dates form the held-out test period. Class weights compensate for imbalance. Models are compared against two baselines: always predicting the majority class, and predicting from the venue's historical label distribution. Evaluation reports accuracy, balanced accuracy (mean per-class recall, which does not reward ignoring minority classes), macro-F1 (the unweighted mean of per-class F1 scores, where F1 is the harmonic mean of precision and recall), weighted F1, multiclass log loss (a penalty for confident wrong probabilities), the Brier score (mean squared probability error), the confusion matrix, per-class precision/recall/F1, bootstrap confidence intervals, and calibration error. Four-fold expanding-window cross-validation repeats the comparison across earlier periods.
+The most recent 20% of unique match dates form the held-out test period. Class weights compensate for imbalance. Models are compared against two baselines: always predicting the majority class, and predicting from the venue's historical label distribution. Evaluation reports accuracy, balanced accuracy (mean per-class recall, which does not reward ignoring minority classes), macro-F1 (the unweighted mean of per-class F1 scores, where F1 is the harmonic mean of precision and recall), weighted F1, multiclass log loss (a penalty for confident wrong probabilities), the Brier score (mean squared probability error), the confusion matrix, per-class precision/recall/F1, bootstrap confidence intervals, and calibration error. Four-fold expanding-window cross-validation repeats the comparison across earlier periods. Intervals combine the spread across folds with a 1,000-resample percentile bootstrap over matches, and training is single-threaded with a fixed seed so that every reported number can be reproduced exactly.
+
+### 4.6 Ball-by-ball dynamics estimator
+
+The match-level model answers "what kind of pitch was this?". The dynamics analysis answers a different question: "how did the surface change while the match was being played?". Because no open dataset records the physical pitch, the estimand is a **relative** one: as the ball ages, does spin become more effective than pace, after holding match, phase and match state constant?
+
+The unit is an **over x bowling-style cell**: the legal balls a spin bowler bowled in one over, and the legal balls a pace bowler bowled in the same over of the same innings. Aggregating to overs removes delivery-level noise and gives every cell a natural weight (balls bowled). Four outcomes are used because no single one measures a pitch: runs per ball, dot-ball share, wicket rate and boundary share. If wear is real, spin's relative performance should improve with ball age on all four (lower runs and boundaries, higher dots and wickets).
+
+The estimating equation is a weighted linear probability model with absorbed fixed effects:
+
+> outcome = alpha(match) + beta1 * age + beta2 * spin + beta3 * (age x spin) + controls + error
+
+The coefficient of interest is **beta3**, the extra change per over for spin relative to pace. Absorbing match fixed effects means venue, date, format, climate, team strength and pitch identity are held constant exactly; only within-match variation identifies beta3. Controls are match phase, wickets already lost, the scoring rate before the over, the number of balls the striker has already faced, and gender. Standard errors are clustered by match.
+
+Three specifications are reported. The **match fixed-effects** specification is the headline. The **match x innings** specification is stricter and uses only within-innings variation. The **match-use** specification replaces innings age with total legal balls bowled in the match, which is the physically correct wear clock for Test cricket because later innings inherit the surface used earlier.
+
+The identifying assumption is stated plainly: within a phase, and conditional on match state, a change in the relative effectiveness of spin and pace as the ball ages is evidence of surface change. That assumption is too strong on its own, because the ball also changes: a new ball swings and seams, and that advantage decays within a few overs. The pooled coefficient therefore mixes **ball condition** with **pitch condition**, and neither a phase decomposition nor a smooth time trend can separate them. Tactics, batter risk and bowler selection are further alternative explanations, so the analysis includes (i) a randomisation placebo that reallocates bowling styles within innings, (ii) per-phase estimates, (iii) a cross-innings persistence test on the same pitch, (iv) convergent-validity tests against venue spin-friendliness and pre-match moisture, (v) an out-of-sample predictive check, and (vi) two ball-renewal natural experiments, the second new ball in Tests and the 2011 two-new-ball rule in One Day Internationals, analysed in Section 7.10. None of these measures the pitch physically; together they test whether the inferred state behaves like a pitch state.
 
 ## 5. Project Execution
 
@@ -223,7 +253,7 @@ shows how much the review queue still offers.
 
 The first Pitch Behaviour Profile covers the 13 men's T20I venues with at least 25 matches and at least 60% role coverage. Across these grounds, higher-scoring venues have a **lower** share of spin wickets (Pearson correlation r = −0.64). Eden Park averages 9.0 runs per over with 25% of wickets taken by spin; Mirpur averages 7.1 with 42%. This is consistent with the intuition that flat, high-scoring surfaces offer less turn, and it is the first evidence that the proxy captures something real about venue character.
 
-The raw Pitch Wear Index step compares the two innings. Second-innings run rate is a median 0.42 runs per over lower than first-innings run rate. This is **not yet** a wear measure: chasing tactics, target pressure and team strength have not been removed. It is not yet normalised for those factors or for the quality of the batting and bowling units.
+An early descriptive version of the Pitch Wear Index compared second-innings with first-innings run rate: the second innings is a median 0.42 runs per over lower. That comparison is **not** a wear measure, because chasing tactics, target pressure and team strength have not been removed, and it is retained here only as the motivation for the estimator in Section 4.6. The PWI used from Section 7.8 onwards is the within-match age x spin coefficient, which absorbs those confounders by construction.
 
 ### 7.3 Model comparison
 
@@ -232,18 +262,18 @@ dates), using match-day weather and pre-match moisture features:
 
 | Format | Test n | Accuracy | Balanced accuracy | Macro-F1 (95% CI) | Majority macro-F1 | Log loss |
 | --- | --- | --- | --- | --- | --- | --- |
-| T20 | 576 | 0.554 | 0.449 | 0.434 (0.395–0.474) | 0.269 | 0.915 |
-| ODI | 327 | 0.465 | 0.413 | 0.400 (0.348–0.453) | 0.248 | 1.065 |
-| Test | 128 | 0.719 | 0.548 | 0.512 (0.459–0.558) | 0.225 | 0.839 |
+| T20 | 576 | 0.559 | 0.461 | 0.443 (0.400–0.486) | 0.269 | 0.912 |
+| ODI | 327 | 0.474 | 0.428 | 0.414 (0.361–0.464) | 0.248 | 1.058 |
+| Test | 128 | 0.742 | 0.582 | 0.561 (0.487–0.646) | 0.225 | 0.796 |
 
 All three models beat the majority baseline on macro-F1 by a wide margin, and
 the Test model also beats it on accuracy. T20 and ODI show the accuracy paradox:
 the majority class (Pace) is right more often, yet the model is far better on
 the minority classes, which is what macro-F1 rewards. Per-class F1 is
-0.16 / 0.68 / 0.45 for T20, 0.19 / 0.57 / 0.44 for ODI and 0.00 / 0.80 / 0.73
+0.17 / 0.69 / 0.47 for T20, 0.22 / 0.58 / 0.44 for ODI and 0.11 / 0.82 / 0.76
 for Test (Batting / Pace / Spin). Batting is the persistent failure: it is only
 4–16% of labels, and in Test the hold-out contains just 17 examples, so the
-model never predicts it. Most remaining error is Pace-versus-Spin confusion,
+model rarely predicts it. Most remaining error is Pace-versus-Spin confusion,
 which is expected because the label depends on **who** took wickets rather than
 on a physical measurement.
 
@@ -253,27 +283,40 @@ A single hold-out has a 95% interval roughly ±0.04–0.05 wide, so small
 differences between variants cannot be read from it. Model selection therefore
 uses four expanding-window folds: the first 50% of dates train the first model,
 and each subsequent quarter is predicted in turn. Every labelled match is
-tested exactly once, always using earlier matches only. Pooled out-of-fold
-macro-F1 and Expected Calibration Error (ECE):
+tested exactly once, always using earlier matches only. The venue-history window
+was then tuned per format on the same folds (five prior matches for T20 and ODI,
+ten for Test). Pooled out-of-fold macro-F1 with a 1,000-resample bootstrap 95%
+interval, and Expected Calibration Error (ECE):
 
 | Variant | T20 | ODI | Test | ECE (T20 / ODI / Test) |
 | --- | --- | --- | --- | --- |
-| XGBoost, match-day weather only (previous default) | 0.421 | 0.405 | 0.525 | 0.066 / 0.140 / 0.106 |
-| **XGBoost, moisture context (shipped)** | **0.453** | **0.420** | **0.544** | **0.058 / 0.106 / 0.100** |
-| Random forest, moisture context | 0.450 | 0.410 | 0.554 | 0.132 / 0.072 / 0.155 |
-| Average of XGBoost and random-forest probabilities | 0.458 | 0.418 | 0.541 | 0.079 / 0.069 / 0.069 |
-| Two-stage random forest (Batting vs rest, then Pace vs Spin) | 0.444 | 0.408 | 0.564 | 0.087 / 0.052 / 0.154 |
+| XGBoost, match-day weather only | 0.424 (0.399–0.449) | 0.424 (0.390–0.457) | 0.531 (0.491–0.576) | 0.069 / 0.130 / 0.081 |
+| **XGBoost, moisture context (shipped)** | **0.453 (0.429–0.480)** | **0.422 (0.386–0.456)** | **0.568 (0.516–0.625)** | **0.053 / 0.110 / 0.090** |
+| Random forest, moisture context | 0.447 (0.422–0.473) | 0.419 (0.384–0.454) | 0.554 (0.508–0.610) | 0.129 / 0.080 / 0.148 |
 
-Adding the prior-window moisture features improves XGBoost in every format
-(+0.032 T20, +0.014 ODI, +0.019 Test) and keeps the best calibration of the
-single models; it is therefore the default. Random forest wins on Test but loses
-on T20 and ODI and is markedly less calibrated. The probability average is
-close to the best everywhere and best calibrated, but it never wins and doubles
-the artifact, so it is recorded rather than shipped. The two-stage model helps
-only Test. Every difference is within roughly one fold standard deviation
-(0.02–0.06), so the defensible claim is a small but consistent improvement, not
-a step change. The single hold-out in Section 7.3 is noisier and disagrees on
-ODI, which is precisely why the cross-validation is reported alongside it.
+The prior-window moisture features add **+0.029 macro-F1 in T20 and +0.037 in
+Test**, with overlapping intervals but a consistent direction across the two
+feature sets tested. In ODI they are indistinguishable from match-day weather
+(−0.002, almost identical intervals), so no weather gain is claimed for that
+format. Random forest is close on T20 but loses on Test and is far less
+calibrated (ECE 0.129 versus 0.053 in T20), which is why it is recorded rather
+than shipped. The earlier grid also tested a probability average of XGBoost and
+random forest and a two-stage random forest; neither was best in more than one
+format, and both are documented in `PROGRESS.md` rather than shipped.
+
+The format-specific window is the tuning change that survives scrutiny: Test
+improves from 0.544 at a five-match window to 0.568 at ten (+0.024), and the
+direction held in both the core and expanded weather feature sets. T20 and ODI
+were best or tied at five; longer windows lost 0.02–0.03. The single hold-out in
+Section 7.3 is noisier and disagrees on ODI, which is precisely why the
+cross-validation is reported alongside it.
+
+To test whether weather context substitutes for missing venue history, the
+pooled out-of-fold predictions were stratified by the number of prior matches at
+the ground (`context_by_history.csv`). The context gain is largest in the 3–5
+match band (Test +0.14, T20 +0.03), but the zero-history strata contain only
+17–22 matches, so a cold-start claim is **not** supported yet; it is flagged as
+the next experiment rather than a result.
 
 ### 7.5 Explainability
 
@@ -320,7 +363,20 @@ labelled matches from 2,308 to 3,082 in T20 (+33.5%), 1,199 to 1,661 in ODI
 method in `player_role_join_audit.csv`, so the decision can be audited row by
 row.
 
-Threshold sensitivity changes 0–9.2% of labels. Tightening the early dot-ball limit to 30% changes 4.5% of labels; changing the spin-to-pace ratio to 1.0 changes 9.2%. The labels are therefore reasonably stable to small threshold moves, but not to large ones. The cut-offs must be reviewed by format and by category before publication.
+To test that stability directly, every label was recomputed with each cut-off
+scaled by ±5% and ±10% (`src/label_sensitivity.py`, output
+`label_sensitivity.csv`). Agreement is measured against the shipped labels:
+
+| Perturbation | ODI | T20 | Test |
+| --- | --- | --- | --- |
+| Worst single cut-off at ±5% | 6.2% changed (κ = 0.87) | 2.7% (κ = 0.94) | 4.7% (κ = 0.90) |
+| All cut-offs at ±10% | 13.0% changed (κ = 0.72) | 7.7% (κ = 0.82) | 10.7% (κ = 0.78) |
+
+The spin rule is the most stable component (at most 3.2% change even at ±10%),
+and the early dot-ball limit is the least stable. Labels are therefore robust to
+plausible small moves but not to simultaneous large ones, which is the honest
+qualification a reader needs. Cut-offs should be reviewed by format and by
+category before publication.
 
 ### 7.7 Weather features
 
@@ -332,37 +388,384 @@ repeatedly — an hourly request window during collection and the daily quota at
 the end — so the collector was extended to wait out short limits and resume from
 its cache.
 
-The table now also carries strictly prior windows derived from the same cached
-ERA5 series, with no additional API calls: 7-, 14- and 28-day precipitation,
-7- and 14-day mean temperature, 7-day humidity and wind, and the number of
-consecutive dry days before the match. Pitches dry over days, so these features
-are physically better motivated than the match-day value alone. In
-rolling-origin cross-validation they improve the model in all three formats
-(Section 7.4), and weather's share of importance grows with match length to
-22.5% in Test.
+The table also carries strictly prior windows derived from the same cached ERA5
+series, with no additional API calls: 7-, 14- and 28-day precipitation, 7- and
+14-day mean temperature, 7-day humidity and wind, and the number of consecutive
+dry days before the match. Pitches dry over days, so these features are
+physically better motivated than the match-day value alone.
+
+An extended 19-descriptor set (adding 3- and 5-day rain totals, rain-day counts,
+rain trend, temperature range and wind/humidity extremes) was built and ablated.
+It gave no overall gain and slightly hurt ODI, so the eight core descriptors
+above are shipped; the negative result is recorded rather than hidden. In
+rolling-origin cross-validation the core context adds +0.029 macro-F1 in T20 and
++0.037 in Test and is neutral in ODI (Section 7.4). Weather's share of gain
+importance grows with match length, reaching about a fifth in Test.
+
+Because batch cache keys hash the venue list, a later venue-list update
+orphaned seven 2026 batches. The loader now indexes every cached payload by its
+ERA5 grid coordinate instead of trusting the key, which recovered the 2026 data
+and restored 100% prior-window coverage without a new API call.
+
+### 7.8 Within-match pitch dynamics
+
+The ball-by-ball layer contains **6,776,668 deliveries from 23,241 matches**.
+After restricting to legal deliveries with a known bowling style, **5,116,165
+deliveries** remain, which aggregate to **855,659 over x style cells**. Of all
+deliveries, 22.6% have an unknown bowler style and are excluded; this is the
+price of the conservative role protocol and it is reported rather than hidden.
+
+Table 7.7 gives the age x spin coefficient under the three fixed-effect
+specifications. The sign convention is that a negative coefficient on runs per
+ball means spin's scoring advantage grows as the ball ages, which is what wear
+predicts.
+
+**Table 7.7: Age x spin coefficient by outcome and specification**
+
+| Format | Outcome | Venue FE | Match FE | Match x innings FE |
+| --- | --- | --- | --- | --- |
+| T20 | Runs per ball | −0.00214 (p<0.001) | −0.00198 (p<0.001) | −0.00182 (p<0.001) |
+| T20 | Dot-ball share | +0.00176 (p<0.001) | +0.00151 (p<0.001) | +0.00138 (p<0.001) |
+| T20 | Wicket rate | +0.00010 (p=0.110) | +0.00009 (p=0.187) | +0.00001 (p=0.870) |
+| T20 | Boundary share | −0.00010 (p=0.349) | −0.00012 (p=0.285) | −0.00011 (p=0.332) |
+| ODI | Runs per ball | −0.00160 (p<0.001) | −0.00131 (p<0.001) | −0.00108 (p<0.001) |
+| ODI | Dot-ball share | +0.00157 (p<0.001) | +0.00146 (p<0.001) | +0.00140 (p<0.001) |
+| ODI | Wicket rate | −0.00020 (p<0.001) | −0.00018 (p<0.001) | −0.00019 (p<0.001) |
+| ODI | Boundary share | −0.00002 (p=0.666) | +0.00003 (p=0.511) | +0.00008 (p=0.107) |
+| Test | Runs per ball | −0.00010 (p=0.110) | −0.00012 (p=0.051) | −0.00009 (p=0.163) |
+| Test | Dot-ball share | +0.00012 (p<0.001) | +0.00013 (p<0.001) | +0.00012 (p<0.001) |
+| Test | Wicket rate | −0.00000 (p=0.709) | −0.00000 (p=0.421) | −0.00001 (p=0.049) |
+| Test | Boundary share | −0.00002 (p=0.112) | −0.00003 (p=0.035) | −0.00002 (p=0.135) |
+
+Read as a set, the table says something more specific than "spin improves with
+age". Two channels are stable and two are not. The **dot-ball share** is positive
+in every format under every specification, and it is the only channel that never
+changes sign. The **runs-per-ball** coefficient is negative and significant in
+T20 and ODI but only marginal in Test. The **wicket rate** is null in T20 and
+Test and *negative* in ODI, which is the wrong sign for wear. The **boundary
+share** is null except for a weak negative in Test. A wicket mixes catches,
+run-outs, tail-enders and bowler skill, so it is a poor indicator of turn; the
+dot ball is the cleaner behavioural marker.
+
+Table 7.8 asks whether the two live channels survive three checks: dropping the
+first and last over of every innings, restricting to established bowlers with at
+least 300 legal balls, and estimating only in the middle overs, where both
+styles genuinely bowl.
+
+**Table 7.8: Robustness of the match fixed-effects estimate**
+
+| Format | Outcome | Pooled | Drop first/last over | Established bowlers | Middle overs only |
+| --- | --- | --- | --- | --- | --- |
+| T20 | Dot-ball share | +0.00151 | +0.00142 | +0.00162 | +0.00114 |
+| T20 | Runs per ball | −0.00198 | −0.00010 (n.s.) | −0.00216 | +0.00408 |
+| ODI | Dot-ball share | +0.00146 | +0.00144 | +0.00147 | +0.00109 |
+| ODI | Runs per ball | −0.00131 | −0.00101 | −0.00135 | +0.00064 (p=0.056) |
+| Test | Dot-ball share | +0.00013 | +0.00016 | +0.00013 | +0.00027 |
+| Test | Runs per ball | −0.00012 | −0.00021 | −0.00012 | −0.00028 (n.s.) |
+
+All dot-ball cells are significant at p<0.01. The dot-ball result is robust: it
+survives every check in every format, and the middle-overs estimate — the one that
+contains the least role confound — is positive in all three formats. The **runs**
+result is not. In T20 it collapses to −0.0001 (p=0.87) once the first and last
+over of each innings are removed, and inside the middle overs it turns reliably
+positive (+0.0041, p=0.002). The pooled T20 runs coefficient is therefore carried
+by the innings boundary, which is exactly where pace bowls and spin rarely does.
+In ODI the runs coefficient is more stable, but it too reverses inside the middle
+overs.
+
+That reversal is the key diagnostic, and Table 7.9 shows why. Re-estimating
+inside each phase separates three regimes.
+
+**Table 7.9: Age x spin coefficient inside each phase**
+
+| Format | Phase | Dot-ball share | Runs per ball |
+| --- | --- | --- | --- |
+| T20 | Powerplay | +0.00752 (p<0.001) | −0.02589 (p<0.001) |
+| T20 | Middle | +0.00114 (p=0.010) | +0.00408 (p=0.002) |
+| T20 | Death | −0.00623 (p<0.001) | +0.01396 (p=0.010) |
+| ODI | Powerplay | +0.00240 (p=0.024) | −0.01144 (p<0.001) |
+| ODI | Middle | +0.00109 (p<0.001) | +0.00064 (p=0.056) |
+| ODI | Death | +0.00112 (p=0.294) | −0.00410 (p=0.195) |
+| Test | New ball | −0.00101 (p<0.001) | +0.00112 (p=0.011) |
+| Test | Middle | +0.00027 (p=0.004) | −0.00028 (p=0.173) |
+| Test | Old ball | −0.00003 (p=0.761) | +0.00041 (p=0.085) |
+
+The powerplay carries the largest wear-consistent effects: in T20 and ODI, spin's
+dot share rises, its run concession falls, its boundary share falls and its
+wicket rate rises as the powerplay progresses. But a six- or ten-over window is
+not enough time for a pitch to change by that much, and a wear process cannot
+reverse sign within it. The obvious explanation is **ball condition, not pitch
+condition**: the new ball swings and seams, that advantage decays within the
+first few overs, and spin gains relative to pace as it does. Section 7.10 tests
+that explanation at the second-new-ball boundary and rejects it: the aggregate
+new-ball jump is the return of the frontline seamers, and within the same bowler
+the sign reverses. The powerplay gradient is therefore best read as a
+**composition** effect — which bowlers bowl which overs, and with what field —
+rather than as a ball-age or surface effect.
+
+In the middle overs the pattern is different and more cautious. Spin's dot share
+rises relative to pace in all three formats (+0.0011 in T20 and ODI, +0.0003 in
+Test), but so does its boundary share in T20 and ODI, and its wicket rate does
+not rise. The pattern is not "spin becomes more economical"; it is "spin becomes
+more attacking", with more dot balls and more boundaries and fewer singles. That
+is consistent with a surface offering more turn and bounce — beat the bat or
+disappear — but it is equally consistent with a field-setting change, because
+attacking fields produce exactly this signature. The data cannot separate the two,
+and the report does not claim that they can.
+
+At the death in T20 the sign reverses entirely, but the cell contains only
+115,922 spin balls against 313,905 pace balls, so this is a small-sample regime
+and the least informative of the three.
+
+Test cricket is different again. There is no powerplay, the new-ball phase runs
+to 30 overs, and the dot-ball coefficient is positive in the middle overs
+(+0.00027, p=0.004) but negative in the new-ball phase. The pooled Test dot
+coefficient (+0.00013) is a mixture of the two. The pooled Test runs coefficient
+is not significant, and the placebo below cannot distinguish it from random style
+allocation. Section 7.9 discusses what that means for the Test claim.
+
+**Placebo.** Reallocating spin and pace labels randomly within each innings, and
+refitting the same match x innings specification, produces a null distribution
+that is informative precisely because it is **not** centred on zero. Within an
+innings the phase structure of an attack means that random labelling still
+generates a small positive dot-ball gradient: the null mean is +0.00027 in T20
+and +0.00030 in ODI, about a fifth of the observed +0.00138 and +0.00140. Against
+that null the observed dot-ball coefficient remains far outside the 100-draw
+range in T20 and ODI (p<0.01) but is only marginal in Test (p=0.06). For runs,
+the T20 estimate is indistinguishable from the permutation null (observed
+−0.00182, null mean −0.00182, p=0.52), while the ODI estimate is not (p<0.01).
+Two conclusions follow. First, part of every "wear" gradient is mechanical
+reallocation of styles across overs, and a permutation test that assumes a
+zero-centred null overstates significance. Second, even after that correction,
+the dot-ball channel survives in the two limited-overs formats, whereas the runs
+channel survives only in ODI.
+
+### 7.9 Validation of the wear signal
+
+A coefficient can be precise and still be meaningless. Four tests ask whether the
+inferred state behaves like a property of the pitch rather than an artefact of the
+estimation sample.
+
+**Cross-innings persistence.** If the coefficient measures a surface, the same
+match should show a similar coefficient in both innings. Estimating the
+coefficient separately inside each innings and correlating the two across matches
+gives the answer in Table 7.10.
+
+**Table 7.10: Correlation of the innings-level coefficient across the two innings
+of the same match**
+
+| Format | Outcome | Matches | Pearson r | p |
+| --- | --- | --- | --- | --- |
+| T20 | Runs per ball | 7,801 | −0.003 | 0.805 |
+| T20 | Wicket rate | 7,801 | +0.002 | 0.882 |
+| ODI | Runs per ball | 2,689 | −0.047 | 0.014 |
+| ODI | Wicket rate | 2,689 | +0.026 | 0.173 |
+| Test | Runs per ball | 763 | +0.030 | 0.402 |
+| Test | Wicket rate | 763 | +0.000 | 0.994 |
+
+The correlations are at or near zero, and the one nominally significant value
+(ODI, r = −0.05) is negative and tiny. **The per-match coefficient does not
+persist.** This is a genuine limit, not a technicality: it means the estimator is
+not yet a measurement of any individual pitch.
+
+The most likely reason is classical measurement error. A single innings supplies
+20 to 50 overs, often with only a handful of spin overs in the death, so the
+innings-level slope is estimated with a very large standard error; attenuation
+then drives the cross-innings correlation towards zero whatever the underlying
+state. The population coefficient is precise only because it pools 333,000 T20
+cells. The correct reading is therefore that the **Pitch Wear Index is a
+league-wide and venue-level statistic**, and that a match-level index needs many
+more spin overs per innings than a T20 provides.
+
+**Out-of-sample predictive gain.** A wear term should help predict held-out play.
+Table 7.11 compares a ridge model of over-level outcomes with and without the
+age x spin term, using four expanding-window folds over dates.
+
+**Table 7.11: Weighted mean squared error with and without the age x spin term**
+
+| Format | Outcome | Baseline MSE | With wear | Relative gain | 95% CI |
+| --- | --- | --- | --- | --- | --- |
+| T20 | Runs per ball | 0.44720 | 0.44719 | +0.002% | −0.019% to +0.003% |
+| T20 | Dot-ball share | 0.04351 | 0.04349 | +0.038% | −0.014% to +0.041% |
+| ODI | Runs per ball | 0.28697 | 0.28685 | +0.041% | +0.023% to +0.076% |
+| ODI | Dot-ball share | 0.04475 | 0.04468 | +0.153% | +0.089% to +0.253% |
+| Test | Runs per ball | 0.22946 | 0.22945 | +0.004% | −0.001% to +0.007% |
+| Test | Dot-ball share | 0.03766 | 0.03765 | +0.022% | +0.011% to +0.032% |
+
+The gains are positive and, for ODI, statistically distinguishable from zero, but
+they are economically negligible: a fraction of a thousandth of the residual
+variance. Adding one interaction to a model that already contains age, spin,
+venue and phase cannot rescue a signal this small. The honest conclusion is that
+the coefficient is a **structural estimate of how the relative effectiveness of
+spin and pace changes**, not a predictive feature to be shipped in the match-level
+model. It belongs in the analysis layer, not the feature store.
+
+**Rolling coefficient stability.** Refitting the match fixed-effects model on four
+expanding windows and then on the following window tests whether the sign is a
+property of the period or of the sport.
+
+**Table 7.12: Rolling-origin stability of the match fixed-effects coefficient**
+
+| Format | Outcome | Training windows | Held-out windows | Same sign |
+| --- | --- | --- | --- | --- |
+| T20 | Dot-ball share | +0.00150 to +0.00155 | +0.00134 to +0.00167 | 4/4 |
+| T20 | Runs per ball | −0.00257 to −0.00184 | −0.00471 to −0.00087 | 4/4 |
+| T20 | Wicket rate | +0.00005 to +0.00010 | −0.00007 to +0.00020 | 3/4 |
+| T20 | Boundary share | −0.00033 to −0.00013 | −0.00074 to +0.00025 | 2/4 |
+| ODI | Dot-ball share | +0.00144 to +0.00154 | +0.00102 to +0.00182 | 4/4 |
+| ODI | Runs per ball | −0.00132 to −0.00071 | −0.00231 to −0.00105 | 4/4 |
+| ODI | Wicket rate | −0.00021 to −0.00018 | −0.00033 to −0.00011 | 4/4 |
+| ODI | Boundary share | +0.00005 to +0.00020 | −0.00011 to +0.00003 | 1/4 |
+| Test | Dot-ball share | +0.00006 to +0.00010 | +0.00012 to +0.00045 | 4/4 |
+| Test | Runs per ball | −0.00011 to +0.00002 | −0.00046 to −0.00002 | 3/4 |
+| Test | Wicket rate | −0.00001 to +0.00001 | −0.00004 to −0.00001 | 2/4 |
+| Test | Boundary share | −0.00003 to −0.00000 | −0.00009 to −0.00000 | 4/4 |
+
+Two things are being tested here and they give different answers. **Magnitude**
+is stable: the T20 dot-ball coefficient sits within a ten-thousandth of 0.0015 in
+every training window, and the held-out estimates stay the same order of
+magnitude. **Sign** is stable for dot-ball share in all three formats and for
+runs in T20 and ODI, but not for wicket rate or boundary share, and the Test
+coefficients are an order of magnitude smaller than the limited-overs ones. A
+coefficient that is this stable is measuring something real about how the game is
+played; the question, taken up in Section 7.10, is whether that something is the
+pitch.
+
+
+
+**Cross-innings level contrast.** A different persistence test compares later
+innings with the first innings of the same match, at the level of the spin-pace
+gap rather than the slope. In T20, spin's relative wicket rate is higher in later
+innings (+0.00194, p=0.002) and its dot share is higher at p=0.095. In Test, the
+same contrast is positive for dot share (+0.01073, p<0.001) and wicket rate
+(+0.00113, p=0.007). In ODI the sign reverses for runs (+0.02664, p<0.001) and
+boundaries (+0.00550, p<0.001). The limited-overs reversal is the dew and
+chasing confound discussed in Section 8.3; it is reported rather than dropped,
+because a validator that only reports agreeing tests is not a validator.
+
+**What survives.** Two things. First, the **population-level** relative ball-age
+profile is real, precise and stable: in T20 and ODI, spin's dot-ball share rises
+relative to pace as the innings progresses, and this survives the placebo, the
+boundary trim, the established-bowler restriction and the phase decomposition.
+Second, the **mid-innings** component is the one most likely to be surface
+related, and it is consistent in sign across all three formats. What does not
+survive is the stronger claim that the pooled coefficient is a uniform physical
+wear rate, or that the index measures an individual pitch. The paper that comes
+out of this work has to be built on the first two statements.
+
+### 7.10 Is the gradient ball condition or surface change?
+
+The tests above establish that the gradient is not a uniform wear rate, but they
+do not say what it is. The leading alternative is **ball condition**: the ball
+softens and scuffs as an innings proceeds, and that changes the same outcomes
+used to infer wear. Two sources of exogenous variation separate the two.
+
+**Test 1: the second new ball is a selection trap.** From over 80 the fielding
+side may take a new ball, and in practice does. At that boundary the ball is
+renewed while the surface continues to age smoothly, which looks like a clean
+natural experiment. It is not. Table 7.13 reports an event study relative to
+overs 78-79, in two-over bins, on 162,467 Test deliveries in overs 72-87. The
+first column holds the match fixed and lets the bowler mix change. The second
+also holds the bowler and innings fixed, so it compares the same bowler before
+and after the boundary. Standard errors are clustered by match.
+
+**Table 7.13: Dot-ball share around the second new ball, relative to overs 78-79**
+
+| Bin | All deliveries (naive) | Same bowler, same innings |
+| --- | --- | --- |
+| Pace, overs 80-81 | +0.0148 (p=0.031) | −0.0210 (p=0.044) |
+| Pace, overs 82-83 | +0.0035 (p=0.622) | −0.0293 (p=0.024) |
+| Pace, overs 84-85 | +0.0029 (p=0.685) | −0.0305 (p=0.044) |
+| Pace, overs 86-87 | −0.0045 (p=0.541) | −0.0449 (p=0.020) |
+| Spin, overs 80-81 | −0.0100 (p=0.129) | −0.0344 (p<0.001) |
+| Spin, overs 82-83 | −0.0022 (p=0.795) | −0.0379 (p<0.001) |
+| Spin, overs 84-85 | +0.0021 (p=0.818) | −0.0364 (p=0.005) |
+| Spin, overs 86-87 | −0.0018 (p=0.838) | −0.0521 (p<0.001) |
+
+The sign reverses. Across all deliveries, pace's dot-ball share rises by 1.5
+percentage points in the first two overs with the new ball, which is exactly
+what the ball-condition story predicts. Within the same bowler the share *falls*
+by 2.1 points, and keeps falling. The aggregate jump is the arrival of the
+frontline seamers: the pace share of deliveries rises from 40% before over 80 to
+74% after it. The naive comparison attributes to the ball what belongs to the
+attack. Whatever the within-bowler decline reflects — batters settling, spell
+fatigue, or a harder ball that finds the edge rather than the middle — it is not
+a new-ball bonus, and the boundary cannot be used to identify ball condition.
+This is the same composition problem that threatens the wear estimator, caught
+in its most visible form.
+
+**Test 2: the two-new-ball rule in ODIs.** From 1 October 2011 each ODI innings
+uses two new balls, one from each end, in alternate overs. Each ball is therefore
+in play for at most about 25 overs instead of 50, so the ball ages at half the
+rate per over of play. The pitch, by contrast, wears at the same rate per over.
+If the smooth age x spin gradient were driven by ball ageing, it should roughly
+halve after the rule. Twenty20, which has no mid-innings ball change, is used as
+a control for common period effects. Table 7.14 gives the answer.
+
+**Table 7.14: Age x spin coefficient for dot-ball share before and after the
+two-new-ball rule**
+
+| Stratum | Coefficient (SE) |
+| --- | --- |
+| ODI before October 2011 | +0.00129 (0.00020) |
+| ODI after October 2011 | +0.00138 (0.00010) |
+| T20 before October 2011 | +0.00205 (0.00085) |
+| T20 after October 2011 | +0.00146 (0.00016) |
+| Difference-in-differences (ODI change minus T20 change) | +0.00069 (0.00089), p=0.44 |
+| Predicted ODI change if the gradient were ball ageing | −0.00064 |
+
+The ODI gradient did not fall. It rose by 0.0001, against a prediction of
+−0.0006, and the difference-in-differences is positive with a confidence interval
+that spans zero. The test is not decisive — the control format is imperfect and
+the interval is wide — but it gives no support to the view that the smooth
+gradient is ball ageing. Taken with Test 1, the picture is that the ball is
+neither the source of the aggregate jump at renewal nor the driver of the smooth
+gradient. The within-innings coefficient is therefore neither a uniform wear
+rate nor a ball-age rate, and the only wear-consistent evidence in the data is
+the across-innings Test contrast in Section 7.9.
 
 ## 8. Results and Discussion
 
 ### 8.1 Phase-I results
 
 The project has produced a working, reproducible pipeline; a documented proxy
-label; a complete geocoding audit; venue behaviour profiles; and a validated
-three-format model comparison. On the chronological hold-out the macro-F1 is
-0.434 for T20, 0.400 for ODI and 0.512 for Test, against majority baselines of
+label; a complete geocoding audit; venue behaviour profiles; a validated
+three-format model comparison; and a ball-by-ball estimator of within-match
+pitch wear. On the chronological hold-out the match-level macro-F1 is
+0.443 for T20, 0.414 for ODI and 0.561 for Test, against majority baselines of
 0.269, 0.248 and 0.225. Rolling-origin cross-validation gives the more reliable
-estimates of 0.453, 0.420 and 0.544. The models are therefore learning beyond
+estimates of 0.453, 0.422 and 0.568. The models are therefore learning beyond
 "Pace is most common", but the margin is modest. The accuracy paradox in T20 and
 ODI (the majority class is more accurate but far worse on macro-F1) shows that
 headline accuracy is the wrong summary for this imbalanced target. The Batting
 class, gender confounding and T20 role coverage remain the main weaknesses.
+
+The dynamics analysis adds a second, independent line of evidence. Across
+5.1 million legal spin and pace deliveries aggregated to 855,000 over-level
+cells, the within-match estimator shows that the relative effectiveness of spin
+and pace changes systematically as the ball ages, and the change is precisely
+estimated and stable across four rolling windows. It is not, however, identified
+as surface wear. The phase decomposition reverses sign; the T20 runs channel
+disappears under a boundary trim; the permutation null is positively biased and
+about a fifth of the dot-ball estimate is reproduced by random style allocation;
+the per-match coefficient has no cross-innings persistence and negligible
+predictive value. The two ball-renewal experiments in Section 7.10 then remove
+the ball-condition alternative: the second-new-ball jump is entirely bowler
+selection, and halving the rate at which an ODI ball ages does not halve the
+gradient. The paper that follows is therefore built on the composition finding
+and on the one surviving surface-scale contrast, the across-innings Test
+difference, not on a claim that the within-innings coefficient measures an
+individual pitch.
 
 ### 8.2 Were the objectives met?
 
 | Objective | Verdict |
 | --- | --- |
 | Complete the data | **Largely met.** Geocoding is complete and audited; weather is complete at 100% match coverage with prior-window features; 3,005 players have a known style after 527 audited overrides. T20 label coverage is still 21.8% because every wicket-taker must be known. |
-| Build pitch features | **Partly met.** PBP exists for 13 men's venues; PWI is a raw step and is not yet normalised for team strength. |
-| Train and validate classifiers | **Partly met.** All three formats beat their majority baselines on macro-F1; the 0.50 target is met only by Test in cross-validation (0.544). T20 and ODI reach 0.453 and 0.420. |
+| Build pitch features | **Partly met.** PBP exists for 13 men's venues; the PWI is now defined as the innings-level age x spin coefficient and estimated for every match with enough spin and pace cells, but it is not yet normalised for team strength or bowler quality. |
+| Estimate within-match wear | **Partly met.** The age x spin coefficient is estimated precisely and is stable across fixed-effect specifications, outcomes and rolling windows. Section 7.10 shows it is not identified as wear: the apparent second-new-ball effect reverses sign within the same bowler, and halving the rate at which an ODI ball ages leaves the ODI gradient unchanged. The across-innings Test contrast is the only surviving surface-scale signal. |
+| Validate the inferred state | **Partly met.** Both convergent-validity gradients (venue spin-friendliness and pre-match dryness) and the population-level cross-innings contrast are detected; the per-match slope does not persist across innings, and the out-of-sample predictive gain is positive but small, as expected for a single added term. |
+| Train and validate classifiers | **Partly met.** All three formats beat their majority baselines on macro-F1; the 0.50 target is met by Test in cross-validation (0.568). T20 and ODI reach 0.453 and 0.422. |
 | Explain and handle new grounds | **Partly met.** Gain importance and an earlier SHAP analysis are interpreted; cold-start matching is designed but not validated. |
 | Disseminate | **Partly met.** The abstract and this report are drafted with multi-format results; the paper and dashboard remain. |
 
@@ -372,11 +775,20 @@ class, gender confounding and T20 role coverage remain the main weaknesses.
 2. **Accuracy and macro-F1 disagree.** The majority baseline wins on accuracy but loses badly on macro-F1. Reporting accuracy alone would have made the models look worse than they are; reporting only macro-F1 would hide the weak Batting class.
 3. **Role coverage, not weather, is the bottleneck.** T20 label coverage is 21.8% because every wicket-taker must be known, against 53.4% in ODI and 71.3% in Test. The 527 audited overrides added a third more T20 matches; finishing the review queue is still worth more than further model tuning.
 4. **Expert labels are noisy by nature.** The Adams et al. result (umpires reliable on bounce, unreliable on pace) is a useful reminder that even human assessment is imperfect, which supports the decision to report proxy agreement rather than claim physical truth.
+5. **The pooled dynamics coefficient is a mixture, and the mix is measurable.** A single age slope across the whole innings hides three regimes: the powerplay, where pace's new-ball advantage decays; the middle, where spin's dot share drifts up in every format; and the death, where T20 reverses. The second-new-ball event study makes the mixture visible: the aggregate jump at over 80 is the return of the frontline seamers, and the same-bowler estimate reverses sign. The honest object to publish is therefore the comparison of aggregate and within-bowler estimates, not a single pooled number.
+6. **The Test result is a genuine null, not a failure of power, and the across-innings contrast is the exception.** With 278,746 Test cells the standard errors are tiny, so the absence of a pooled runs effect is not a sample-size problem. The dot-ball channel is positive but the placebo returns p = 0.06, the new-ball phase points the other way, and the within-bowler event study reverses the naive jump. The one contrast that is positive on several channels is the later-innings Test gap, which is consistent with a slow surface process at the innings scale.
+7. **A second-innings ODI effect points the wrong way.** Later innings show a *relative* improvement for spin in runs and boundaries (positive coefficients), which contradicts wear. The most plausible explanation is dew and the chasing team's risk profile, both of which are properties of the second innings rather than the surface. This is reported as a confound, not as evidence against wear.
+8. **The per-match Pitch Wear Index is not yet reliable.** The population coefficient is precise and reproducible, but the same coefficient estimated inside a single innings does not correlate between the first and second innings of the same match (r ≈ 0.00 in T20, 0.03 in Test, −0.05 in ODI). Classical measurement-error attenuation explains the direction: one innings of 20 to 50 overs cannot pin down a slope that needs hundreds of thousands of cells to separate from noise. The PWI is therefore a league-wide and venue-level measure for now, not a per-match instrument, and the report says so instead of presenting the correlation as support.
 
 ### 8.4 Limitations and threats to validity
 
 - **Proxy labels.** The target is a behavioural rule, not a measurement. A match labelled Spin may be a pace-friendly pitch on which spinners happened to take wickets.
-- **Small, imbalanced sample.** 5,400 labelled matches across three formats, but only 571 Batting examples (67 in Test); confidence intervals are wide.
+- **The dynamics estimand is relative.** It identifies how spin's effectiveness changes relative to pace; it does not measure the pitch, the ball, or the bowler's skill. "Wear" is shorthand for that relative change.
+- **Style is not always known.** 22.6% of deliveries have an unknown bowler style and are excluded, and a part-time spinner classified as pace would attenuate the contrast. The established-bowler check bounds this.
+- **Selection is not fully exogenous.** Captains choose when to bowl spin, and that choice responds to the match situation. Phase controls, match-state controls and the within-innings placebo address this only partially.
+- **Wicket rate is contaminated.** A wicket credited to a bowler can come from a catch, a run-out-adjacent dismissal or a tail-ender's error, so it mixes pitch behaviour with execution and opposition quality.
+- **Test cricket has no clean wear clock.** Innings age, ball condition, follow-ons and declarations move together, which is why the match-use specification is reported alongside the innings-age specification rather than instead of it.
+- **Small, imbalanced sample at the match level.** 5,400 labelled matches across three formats, but only 571 Batting examples (67 in Test); confidence intervals are wide.
 - **Selection bias.** Requiring complete role information favours recent matches, men's internationals and better-documented players.
 - **Weather is ambient and city-level.** It is not stadium conditions and is not aligned to the start time.
 - **Single-split risk.** Cross-validation and held-out rankings differ, so no model is reliably best yet.
@@ -417,7 +829,7 @@ The system was built in vertical slices. The first slice read one archive, produ
 
 ### 10.1 Summary
 
-The project set out to make pitch behaviour measurable with open data. It has delivered the infrastructure to do so: a complete match inventory, a documented proxy label, a reviewed geocoding layer, leakage-safe features, a complete weather table with prior-window moisture, and a three-format model comparison with explanation and calibration. The answer is cautious but positive: in rolling-origin cross-validation the models reach macro-F1 0.453 (T20), 0.420 (ODI) and 0.544 (Test), against majority baselines of 0.269, 0.248 and 0.225, and venue profiles show a plausible relationship between scoring and spin (r = −0.64). The models are not yet ready to advise a captain. Accuracy is still below the majority baseline in T20 and ODI, the Batting class is weak, and gender is a confounder. The remaining work is clear: finish the role-review queue, normalise the Pitch Wear Index, resolve the gender confounder, and validate cold-start behaviour before claiming applied value.
+The project set out to make pitch behaviour measurable with open data. It has delivered the infrastructure to do so: a complete match inventory, a documented proxy label, a reviewed geocoding layer, leakage-safe features, a complete weather table with prior-window moisture, a three-format model comparison with explanation and calibration, and a ball-by-ball estimator of within-match dynamics together with the tests needed to identify it. The answer is cautious. At the match level, rolling-origin cross-validation reaches macro-F1 0.453 (T20), 0.422 (ODI) and 0.568 (Test) against majority baselines of 0.269, 0.248 and 0.225, and venue profiles show a plausible relationship between scoring and spin (r = −0.64). At the ball-by-ball level the estimate is precise and stable: spin's dot-ball share rises relative to pace as the ball ages in T20 and ODI, by about 0.0015 per over, and the result survives a boundary trim, an established-bowler restriction and four rolling windows. It is not, however, identified as surface wear. The permutation null is positively biased, the effect reverses sign by phase, the per-match slope does not persist across innings, and the two ball-renewal experiments show that the apparent new-ball effect is bowler selection while halving the rate at which an ODI ball ages leaves the gradient unchanged. The coefficient is therefore presented as a population-level description of how the relative effectiveness of spin and pace changes, not as a per-match pitch measurement; the across-innings Test contrast is the one surviving surface-scale signal. The models are not yet ready to advise a captain. The Batting class is weak, gender is a confounder at the match level, and the dynamics estimand is relative rather than physical. The remaining work is clear: extend the role review, design an instrument that separates attack composition from surface change at the innings scale, resolve the gender confounder, validate cold-start behaviour, and build the dashboard that turns the coefficients into a pre-match decision aid.
 
 ### 10.2 Personal reflections
 
@@ -459,13 +871,39 @@ The figures below summarise the problem, the method, the data coverage and the p
 
 **Figure 7 — Proposed output.** The toss recommendation card with drivers and confidence.
 
+The next six figures are generated directly from the ball-by-ball analysis and are the visual evidence for Sections 7.8 to 7.10.
+
+![Wear curves](reports/figures/fig1_wear_curves.png)
+
+**Figure 8 — Wear curves.** Scoring rate and dot-ball share by ball age for spin and pace, in each format. This is descriptive and does not adjust for phase composition; the adjusted estimates are in Table 7.7.
+
+![Specification forest](reports/figures/fig2_specification_forest.png)
+
+**Figure 9 — Specification forest.** The age x spin coefficient under each fixed-effect specification, with 95% confidence intervals. Agreement across specifications, not the size of any single estimate, is the point.
+
+![Convergent validity](reports/figures/fig3_convergent_validity.png)
+
+**Figure 10 — Convergent validity.** The age x spin estimate by venue spin-friendliness tercile and by pre-match dry days.
+
+![Per-phase estimates](reports/figures/fig4_phase_estimates.png)
+
+**Figure 11 — Per-phase estimates.** The same coefficient re-estimated inside each phase. The pooled effect is not uniform across phases, which is why the report reads the phase decomposition as a diagnostic rather than a footnote.
+
+![Second-new-ball event study](reports/figures/fig5_new_ball_discontinuity.png)
+
+**Figure 12 — Second-new-ball event study.** Dot-ball share in two-over bins relative to overs 78-79. Grey: all deliveries, with match fixed effects. Blue: the same bowler in the same innings. The naive series bumps at the boundary; the within-bowler series declines through it. The bump is the return of the frontline seamers, not the new ball.
+
+![Two-new-ball rule](reports/figures/fig6_two_new_ball_rule.png)
+
+**Figure 13 — Two-new-ball rule.** Age x spin coefficient for dot-ball share in ODI and in the T20 control, before and after October 2011. The ODI gradient does not fall when each ball is in play for half as many overs, which is what a ball-ageing explanation requires.
+
 ## 12. Outcome of the Work
 
-**Primary target: conference publication.** An IEEE-format paper is planned. The abstract and this report are drafted; the full paper needs the final role-curation pass, the gender-confounder analysis and the dashboard evaluation.
+**Primary target: conference publication.** The conference draft is written (`reports/PAPER_DRAFT.md`) and is built on identification rather than on a positive predictive claim: the within-innings wear proxy is precise and stable but is shown to be dominated by composition, and the second-new-ball natural experiment is reported as a failed identification strategy with the selection mechanism made explicit.
 
-**Stretch target: journal publication.** An extended paper is feasible if the ODI and Test models and the normalised Pitch Wear Index hold up on later matches.
+**Stretch target: journal publication.** An extended paper is feasible if two things hold up: the across-innings Test contrast, which is the only surviving surface-scale signal, and an instrument or design that separates surface change from attack composition at the innings scale. The within-innings coefficient is not that instrument, and the report says so.
 
-**Software and data.** The repository is a reusable open-data pipeline with documented schemas, cached weather responses and a readiness audit. It is the team's main tangible artifact at this stage.
+**Software and data.** The repository is a reusable open-data pipeline with documented schemas, cached weather responses, a readiness audit and a reproducible identification module.
 
 **Patent and product.** No patent or commercial product is claimed. The toss-recommendation layer is a planned applied output, not a delivered product.
 
@@ -509,6 +947,7 @@ The figures below summarise the problem, the method, the data coverage and the p
 | CV | Cross-Validation | Repeated train/test splits for robust evaluation |
 | ECE | Expected Calibration Error | Average gap between predicted confidence and observed accuracy |
 | EL | Experiential Learning | The course under which this project is undertaken |
+| FE | Fixed Effects | Match or innings indicators absorbed in the dynamics regression |
 | ERA5 | ECMWF Reanalysis version 5 | Global historical weather reconstruction |
 | ECMWF | European Centre for Medium-Range Weather Forecasts | Producer of ERA5 |
 | F1 | F1-score | Harmonic mean of precision and recall |
@@ -522,8 +961,9 @@ The figures below summarise the problem, the method, the data coverage and the p
 | ODI | One Day International | 50-over international format |
 | ODC-By | Open Data Commons Attribution License | Licence of the Cricsheet data |
 | PBP | Pitch Behaviour Profile | Venue-level summary of scoring and wicket style |
-| PWI | Pitch Wear Index | Planned measure of within-match surface change |
+| PWI | Pitch Wear Index | Innings-level age x spin coefficient estimated per match |
 | RF | Random Forest | Ensemble of decision trees |
+| SE | Standard Error | Precision of an estimated coefficient |
 | SHAP | SHapley Additive exPlanations | Game-theoretic feature-attribution method |
 | SVM | Support Vector Machine | Margin-based classifier (reviewed literature) |
 | T20 | Twenty20 | 20-over format |

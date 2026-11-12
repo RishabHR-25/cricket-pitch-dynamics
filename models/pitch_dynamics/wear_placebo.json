@@ -1,0 +1,182 @@
+[
+  {
+    "observed": -9.090285579812498e-05,
+    "null_mean": -0.00018484530446820198,
+    "null_sd": 4.717519861434759e-05,
+    "p_value": 0.97,
+    "draws": 100,
+    "spec": "match_innings_fe",
+    "permutation_unit": "match_id|innings",
+    "null_quantiles": {
+      "2.5%": -0.0002874819372918082,
+      "97.5%": -8.706516341308635e-05
+    },
+    "match_type": "Test",
+    "outcome": "runs_per_ball"
+  },
+  {
+    "observed": -1.1442152097959407e-05,
+    "null_mean": -6.634978642800183e-06,
+    "null_sd": 4.895853630861907e-06,
+    "p_value": 0.18,
+    "draws": 100,
+    "spec": "match_innings_fe",
+    "permutation_unit": "match_id|innings",
+    "null_quantiles": {
+      "2.5%": -1.5643566762000608e-05,
+      "97.5%": 3.974859670341981e-06
+    },
+    "match_type": "Test",
+    "outcome": "wicket_rate"
+  },
+  {
+    "observed": 0.00012413712949951167,
+    "null_mean": 9.294120235218286e-05,
+    "null_sd": 1.951017150577322e-05,
+    "p_value": 0.06,
+    "draws": 100,
+    "spec": "match_innings_fe",
+    "permutation_unit": "match_id|innings",
+    "null_quantiles": {
+      "2.5%": 5.7193071846443365e-05,
+      "97.5%": 0.00012800715747037875
+    },
+    "match_type": "Test",
+    "outcome": "dot_share"
+  },
+  {
+    "observed": -1.9148257419297765e-05,
+    "null_mean": -3.450244456227033e-05,
+    "null_sd": 1.0677271172811243e-05,
+    "p_value": 0.94,
+    "draws": 100,
+    "spec": "match_innings_fe",
+    "permutation_unit": "match_id|innings",
+    "null_quantiles": {
+      "2.5%": -5.439791493505129e-05,
+      "97.5%": -9.548298488414004e-06
+    },
+    "match_type": "Test",
+    "outcome": "boundary_share"
+  },
+  {
+    "observed": -0.0010769455778731375,
+    "null_mean": -0.0004967305295493965,
+    "null_sd": 0.00014062945957307474,
+    "p_value": 0.0,
+    "draws": 100,
+    "spec": "match_innings_fe",
+    "permutation_unit": "match_id|innings",
+    "null_quantiles": {
+      "2.5%": -0.0008058934220385639,
+      "97.5%": -0.00021713509322064618
+    },
+    "match_type": "ODI",
+    "outcome": "runs_per_ball"
+  },
+  {
+    "observed": -0.00019295729498019685,
+    "null_mean": 4.292170548349859e-05,
+    "null_sd": 1.8438488908036833e-05,
+    "p_value": 0.0,
+    "draws": 100,
+    "spec": "match_innings_fe",
+    "permutation_unit": "match_id|innings",
+    "null_quantiles": {
+      "2.5%": 7.82550874833659e-06,
+      "97.5%": 7.574308617875045e-05
+    },
+    "match_type": "ODI",
+    "outcome": "wicket_rate"
+  },
+  {
+    "observed": 0.0014035036741711256,
+    "null_mean": 0.00029505886360133514,
+    "null_sd": 5.544930512444453e-05,
+    "p_value": 0.0,
+    "draws": 100,
+    "spec": "match_innings_fe",
+    "permutation_unit": "match_id|innings",
+    "null_quantiles": {
+      "2.5%": 0.00018296910024340706,
+      "97.5%": 0.00038630300957890175
+    },
+    "match_type": "ODI",
+    "outcome": "dot_share"
+  },
+  {
+    "observed": 8.011754943749484e-05,
+    "null_mean": -5.878636801513259e-05,
+    "null_sd": 2.9626423151548097e-05,
+    "p_value": 0.18,
+    "draws": 100,
+    "spec": "match_innings_fe",
+    "permutation_unit": "match_id|innings",
+    "null_quantiles": {
+      "2.5%": -0.0001269720760307894,
+      "97.5%": -3.499612215728131e-06
+    },
+    "match_type": "ODI",
+    "outcome": "boundary_share"
+  },
+  {
+    "observed": -0.0018202781385294742,
+    "null_mean": -0.0018237489567210158,
+    "null_sd": 0.00040620746341510247,
+    "p_value": 0.52,
+    "draws": 100,
+    "spec": "match_innings_fe",
+    "permutation_unit": "match_id|innings",
+    "null_quantiles": {
+      "2.5%": -0.0024927987839255417,
+      "97.5%": -0.0009098622821400698
+    },
+    "match_type": "T20",
+    "outcome": "runs_per_ball"
+  },
+  {
+    "observed": 1.1164804987607094e-05,
+    "null_mean": 0.000234087303284213,
+    "null_sd": 5.68922896772645e-05,
+    "p_value": 1.0,
+    "draws": 100,
+    "spec": "match_innings_fe",
+    "permutation_unit": "match_id|innings",
+    "null_quantiles": {
+      "2.5%": 0.00012596885996648253,
+      "97.5%": 0.0003352281293428961
+    },
+    "match_type": "T20",
+    "outcome": "wicket_rate"
+  },
+  {
+    "observed": 0.001377322191586025,
+    "null_mean": 0.0002702506741878482,
+    "null_sd": 0.00011816545372885449,
+    "p_value": 0.0,
+    "draws": 100,
+    "spec": "match_innings_fe",
+    "permutation_unit": "match_id|innings",
+    "null_quantiles": {
+      "2.5%": 3.449575252983913e-05,
+      "97.5%": 0.0004584328178027606
+    },
+    "match_type": "T20",
+    "outcome": "dot_share"
+  },
+  {
+    "observed": -0.00011078023639768224,
+    "null_mean": -0.0003695731023861412,
+    "null_sd": 8.344801162851425e-05,
+    "p_value": 0.99,
+    "draws": 100,
+    "spec": "match_innings_fe",
+    "permutation_unit": "match_id|innings",
+    "null_quantiles": {
+      "2.5%": -0.0005063452010530713,
+      "97.5%": -0.00017895950257103415
+    },
+    "match_type": "T20",
+    "outcome": "boundary_share"
+  }
+]

@@ -1,0 +1,17 @@
+{
+  "formats": [
+    "T20",
+    "ODI",
+    "Test"
+  ],
+  "outcomes": [
+    "runs_per_ball",
+    "wicket_rate",
+    "dot_share",
+    "boundary_share"
+  ],
+  "placebo_draws": 100,
+  "seed": 42,
+  "cells": 855659,
+  "matches": 17411
+}

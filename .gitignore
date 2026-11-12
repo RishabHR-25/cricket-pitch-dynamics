@@ -10,3 +10,13 @@ models/pitch_proxy/
 models/pitch_proxy_ctx/
 models/pitch_proxy_rf/
 models/rolling_cv/
+
+data/interim/balls*.parquet
+data/interim/match_weather_ctx12.csv
+data/interim/match_weather_head.csv
+models/pitch_dynamics/*.parquet
+models/pitch_dynamics/*.log
+models/pitch_dynamics/*.err
+models/pitch_dynamics_test/
+
+models/rolling_cv_*/
