@@ -75,8 +75,9 @@ Our contributions are:
    because the phase structure of an innings is itself informative. A permutation
    test that assumes a zero-centred null is anti-conservative.
 
-3. **A phase decomposition that reverses.** The pooled gradient is dominated by
-   the powerplay and reverses in the T20 death overs. A physical wear process
+3. **A phase decomposition that reverses.** The pooled gradient is an average of
+   offsetting phase effects: the powerplay contributes the largest positive term
+   and the T20 death overs the largest negative one. A physical wear process
    cannot change sign at the same ball age, so the pooled coefficient is a
    weighted average of different regimes rather than a rate.
 
@@ -100,41 +101,52 @@ Our contributions are:
 The practical message is a checklist rather than a metric. Before a within-innings
 gradient is called wear, it should survive a within-innings permutation null, a
 phase decomposition, an innings-boundary trim, a bowler-fixed comparison and a
-persistence test. The gradient in this data set survives the third and fails the
-others.
+persistence test. In this data set the dot-ball gradient passes the boundary trim
+and survives the corrected permutation null in T20 and ODI, but it fails the phase
+check, cannot be given a bowler-fixed interpretation, and fails the persistence
+test.
 
 ## 2. Related work
 
-Work on cricket analytics has concentrated on prediction: match outcomes,
-player performance and, more recently, pre-match pitch or venue classification
-from historical scorecards. Venue behaviour profiles are a common construct:
-grounds are ranked by average score, wicket rate or the share of wickets taken by
-spin, and the ranking is used as a pre-match prior. Those profiles are
-descriptive and are not validated against surface measurements, because none are
-public.
+**Pitch measurement.** The direct literature is small and instrument-based. Adams
+et al. [1] measured bounce, hardness and friction on 92 County Championship
+pitches and compared the readings with umpires' ratings; James et al. [2]
+characterised the playing performance of county surfaces. Both establish that
+surface properties are measurable, and both require on-site equipment that no
+public archive provides. Our work is the complement: what can be inferred
+without instruments, and what cannot.
 
-The methodological literature that matters here is older and comes from
-econometrics and causal inference rather than cricket. Three ideas recur.
-First, fixed effects remove level differences but not composition: if the mix of
-units changes within the absorbing group, the within estimate is still a weighted
-average of heterogeneous effects. Second, randomisation inference is only valid
-if the treatment assignment is exchangeable within the randomisation unit; when
-the unit is an innings and the outcome is a function of over number, the null is
-not centred on zero. Third, natural experiments in sport are usually bundled:
-a rule change alters the ball, the field, the tactics and the incentives at the
-same time, so a discontinuity is evidence of the bundle rather than of any one
-component.
+**Prediction from open data.** A larger literature predicts results rather than
+surfaces. Morley and Thomas [3] model home advantage in English one-day cricket,
+Sood and Willis [4] estimate the toss effect across more than 41,000 matches,
+Chakraborty et al. [5] and Shah et al. [6] compare classifiers for T20 outcomes,
+and Bhatnagar and Bhatnagar [7] combine automated machine learning with pitch
+reports to classify first-innings scores. Venue behaviour profiles — grounds
+ranked by average score, wicket rate or spin share — are a common construct in
+this literature and in practice. They are descriptive and, because no surface
+measurements are public, unvalidated. Our paper asks what such a profile can be
+built from, and shows that the within-match version is not identified as surface
+change.
 
-The second new ball is a textbook case. It is a genuine discontinuity in ball
-condition, but it is also a discontinuity in who bowls, where they pitch it and
-how the field is set. The contribution of this paper is to show, on a large
-sample, that the selection component is larger than the treatment component and
-has the opposite sign.
+**Composition and inference.** Three methodological ideas carry the argument.
+First, fixed effects remove level differences but not composition: when units are
+heterogeneous, a within-group coefficient is a weighted average of unit-specific
+effects, which is the critique of two-way fixed-effects estimators under
+heterogeneous effects [8]. Second, randomisation inference is valid only when
+treatment assignment is exchangeable within the randomisation unit [9], [10],
+and the modern formulation makes the assignment mechanism explicit [11]; when the
+unit is an innings and the outcome depends on over number, the null is not
+centred on zero. Third, sport provides bundled natural experiments. A boundary
+design identifies a discontinuity in treatment, not the component of the bundle
+that causes it [12], so a new-ball discontinuity is evidence about the new ball
+*and* the attack and the field. Cluster-robust inference at match level follows
+[13]; the difference-in-differences design and its serial-correlation caveat
+follow [14].
 
 ## 3. Data
 
-**Ball-by-ball archive.** We use the Cricsheet archive of ball-by-ball scorecards,
-which covers international and major domestic competitions. The extract used here
+**Ball-by-ball archive.** We use the Cricsheet archive of ball-by-ball scorecards
+[15], which covers international and major domestic competitions. The extract used here
 contains **6,776,668 deliveries from 23,241 matches** played between December
 2001 and November 2026, across T20, ODI and Test cricket and both genders.
 
@@ -160,10 +172,10 @@ more wickets, more dots, fewer boundaries.
 **Rule dates.** The second new ball in Tests is available after 80 overs
 throughout the sample. In ODIs, a mandatory ball change at the start of the 35th
 over applied before 1 October 2011, when it was replaced by two new balls per
-innings, one from each end, used in alternate overs [ICC 2011]. We use those dates
-as given and verify the first-stage mechanically: the pace share of deliveries
-jumps from 40% to 74% at over 80, and each post-2011 ODI ball is in play for at
-most about 25 overs.
+innings, one from each end, used in alternate overs [16]. We use those dates
+as given and verify the mechanics of both regimes: the pace share of deliveries
+jumps from 40% to 74% at over 80 in Tests, and each post-2011 ODI ball is in play
+for at most about 25 overs.
 
 ## 4. Estimator
 
@@ -179,7 +191,7 @@ where $a_{c}=t+0.5$ is ball age in overs, $s_{c}=1$ for spin, $\alpha_{m}$ is a
 match (or match-by-innings, or match-by-innings-by-bowler) fixed effect, and
 $\mathbf{x}_{c}$ contains wickets lost, the run rate before the over and the mean
 balls faced by the batter. Cells are weighted by legal balls and standard errors
-are one-way cluster-robust at match level. The coefficient of interest is
+are one-way cluster-robust at match level [13]. The coefficient of interest is
 $\delta$, the age-by-spin interaction.
 
 The interpretation of $\delta$ deserves care. A negative $\delta$ on runs per ball
@@ -217,9 +229,9 @@ sections explain why that reader would be wrong.
 ### 6.1 The permutation null is biased
 
 The standard placebo reallocates spin and pace labels at random within each
-innings and refits the same specification. If the coefficient were driven by
-style, the observed value should lie far in the tail of the null. It does, but the
-null is not where it should be. Table 2 reports 100 draws per cell.
+innings and refits the same specification [9], [10]. If the coefficient were
+driven by style, the observed value should lie far in the tail of the null. It
+does, but the null is not where it should be. Table 2 reports 100 draws per cell.
 
 **Table 2: Within-innings permutation placebo (100 draws)**
 
@@ -313,7 +325,9 @@ We estimate an event study in two-over bins relative to overs 78-79, on 162,467
 Test deliveries in overs 72-87. The naive specification holds the match fixed and
 lets the bowler mix change. The within-bowler specification also holds the bowler
 and innings fixed, and restricts the sample to bowler-innings units that bowl on
-both sides of the boundary. Standard errors are clustered by match.
+both sides of the boundary. Standard errors are clustered by match. The
+comparison is a check on what the boundary identifies, not a regression-
+discontinuity estimate of the new ball itself [12].
 
 **Table 4: Dot-ball share around the second new ball, relative to overs 78-79**
 
@@ -347,10 +361,12 @@ over 80. Bars are 95% confidence intervals from match-clustered standard errors.
 
 A second test asks whether the smooth gradient is ball ageing. From 1 October
 2011 each ODI innings has used two new balls, one from each end, in alternate
-overs [ICC 2011]. Each ball is in play for at most about 25 overs instead of 50,
+overs [16]. Each ball is in play for at most about 25 overs instead of 50,
 so ball age accrues at half the rate per over of play, while the pitch wears at
 the same rate. If the gradient were driven by ball ageing it should halve.
-Table 5 gives the answer, with T20 as a control for common period effects.
+Table 5 gives the answer, with T20 as a control for common period effects. The
+design is a difference-in-differences across format-era strata, estimated with
+separate within-format fits [14].
 
 **Table 5: Age-by-spin coefficient for dot-ball share before and after the
 two-new-ball rule**
@@ -378,7 +394,7 @@ within-innings coefficient is neither a uniform wear rate nor a ball-age rate.
 
 One result has the shape of a surface effect. Within the same match, spin's
 dot-ball advantage is 1.07 percentage points higher in the second and later
-innings than in the first (p<0.001, 763 Tests), with a smaller positive contrast
+innings than in the first (p<0.001), with a smaller positive contrast
 for wicket rate (+0.00113, p=0.007) and boundary share (+0.00284, p=0.004). The
 comparison is across innings of the same match, so venue, weather and teams are
 held fixed, and the surface has had more time to wear than any within-innings
@@ -438,13 +454,16 @@ the tactics. We therefore interpret the within-bowler estimate as "not a
 ball-condition bonus", not as a precise negative causal effect of a new ball.
 
 **Rule changes are packages.** The 2011 ODI rule also changed powerplay timing
-and field restrictions. The T20 control and the stability of the T20 coefficient
-bound the common shock, but cannot remove ODI-specific changes.
+and field restrictions. The T20 control absorbs the common change — the T20
+gradient itself fell by 0.0006 over the same period — but it cannot remove
+ODI-specific changes.
 
-**Functional form.** Event studies around a boundary are sensitive to the trend
-control. We report the naive and within-bowler estimates side by side precisely
-because the contrast does not depend on the trend: the naive series bumps up and
-the within-bowler series does not, under the same binning.
+**Functional form.** Event studies around a boundary are sensitive to how the
+trend in over number is modelled. The design here uses bin indicators rather
+than a fitted trend, so the contrast does not depend on a functional form for
+age, and the within-bowler estimate is stable across specifications: −0.0192
+without controls, −0.0210 with the wickets control used in the tables, and
+−0.0211 with wickets and run rate.
 
 **Multiple outcomes.** Four outcomes and three formats generate twelve headline
 coefficients. We treat dot-ball share as the primary channel because it is the
@@ -489,21 +508,66 @@ All code and derived artifacts are in the project repository.
 
 ## References
 
-To be completed with venue formatting. Verified sources used in this draft:
+[1] W. A. Adams, S. W. Baker, D. M. James, and R. J. Young, "Measuring and
+modelling the bounce and pace of County Championship cricket pitches,"
+*International Turfgrass Society Research Journal*, vol. 10, pp. 1021–1026, 2005.
 
-- Cricsheet. Ball-by-ball cricket data archive. https://cricsheet.org
-- International Cricket Council. Amendments to playing conditions, effective
-  1 October 2011 (two new balls per ODI innings, alternate overs, one from each
-  end; elective powerplays between overs 16 and 40).
-  https://www.icc-cricket.com/news/amendments-to-playing-conditions-take-effect-from-1-october
-- International Cricket Council. Playing conditions, 2010 (mandatory change of
-  ball at the commencement of the 35th over in ODIs).
-  https://www.icc-cricket.com/news/amendments-to-playing-conditions-take-effect-from-1-october
+[2] D. M. James, M. J. Carré, and S. J. Haake, "The playing performance of county
+cricket pitches," *Sports Engineering*, vol. 7, no. 1, pp. 1–14, 2004.
 
-The related-work section still needs citations to (i) pre-match pitch and venue
-classification in cricket analytics, (ii) fixed-effects and composition bias in
-within-group estimators, and (iii) randomisation inference under non-exchangeable
-assignment. These are not yet cited and must be added before submission.
+[3] B. Morley and D. Thomas, "An investigation of home advantage and other
+factors affecting outcomes in English one-day cricket matches," *Journal of
+Sports Sciences*, vol. 23, no. 3, pp. 261–268, 2005.
+
+[4] G. Sood and D. Willis, "Fairly random: The impact of winning the toss on the
+probability of winning," arXiv:1605.08753, 2016.
+
+[5] S. Chakraborty et al., "Cricket data analytics: Forecasting T20 match winners
+through machine learning," *International Journal of Knowledge-Based and
+Intelligent Engineering Systems*, vol. 28, no. 1, pp. 73–92, 2024,
+doi: 10.3233/KES-230060.
+
+[6] S. A. A. Shah, Q. Zaman, D. Wasim, J. Allohibi, A. A. Alharbi, and
+M. Shabbir, "Optimal model for predicting highest runs chase outcomes in T-20
+international cricket using modern classification algorithms," *Alexandria
+Engineering Journal*, vol. 114, pp. 588–598, 2025.
+
+[7] M. Bhatnagar and M. Bhatnagar, "Analyzing key factors influencing IPL cricket
+scores using explainability and multimodal data," *Journal of Quantitative
+Analysis in Sports*, vol. 21, no. 3, pp. 253–267, 2025,
+doi: 10.1515/jqas-2025-0006.
+
+[8] C. de Chaisemartin and X. D'Haultfœuille, "Two-way fixed effects estimators
+with heterogeneous treatment effects," *American Economic Review*, vol. 110,
+no. 9, pp. 2964–2996, 2020.
+
+[9] R. A. Fisher, *The Design of Experiments*. Edinburgh, U.K.: Oliver & Boyd,
+1935.
+
+[10] P. R. Rosenbaum, *Observational Studies*, 2nd ed. New York, NY, USA:
+Springer, 2002.
+
+[11] S. Athey and G. W. Imbens, "The econometrics of randomized experiments," in
+*Handbook of Econometrics*, vol. 1, Amsterdam, The Netherlands: Elsevier, 2017,
+pp. 73–140.
+
+[12] G. W. Imbens and T. Lemieux, "Regression discontinuity designs: A guide to
+practice," *Journal of Econometrics*, vol. 142, no. 2, pp. 615–635, 2008.
+
+[13] A. C. Cameron, J. B. Gelbach, and D. L. Miller, "Robust inference with
+multiway clustering," *Journal of Business & Economic Statistics*, vol. 29,
+no. 2, pp. 238–249, 2011.
+
+[14] M. Bertrand, E. Duflo, and S. Mullainathan, "How much should we trust
+differences-in-differences estimates?" *Quarterly Journal of Economics*,
+vol. 119, no. 1, pp. 249–275, 2004.
+
+[15] Cricsheet. Ball-by-ball cricket data archive. [Online]. Available:
+https://cricsheet.org
+
+[16] International Cricket Council. "Amendments to playing conditions take
+effect from 1 October 2011." [Online]. Available:
+https://www.icc-cricket.com/news/amendments-to-playing-conditions-take-effect-from-1-october
 
 ## Venue fit
 

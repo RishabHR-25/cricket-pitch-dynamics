@@ -222,10 +222,14 @@ country. These are now pinned with exact coordinates.
 
 - `reports/EL_Phase1_Report_Content.md` — full report source (~5,900 words)
   following the 12-section EL template, with references and a glossary that
-  spells out every abbreviation.
-- `reports/EL_Phase1_Report_Content.docx` — rendered report: RVCE cover page
-  (title, three members with USNs, group), logo header on every body page,
-  "Page N | total" footer, 12 tables and 7 figures.
+  spells out every abbreviation. It now also carries the dynamics identification
+  work (§7.10, Tables 7.12–7.14, Figures 12–13), which post-dates the submitted
+  build.
+- `reports/EL_Phase1_Report_Content.docx` — rendered report as submitted on
+  2026-11-09: RVCE cover page (title, three members with USNs, group), logo
+  header on every body page, "Page N | total" footer. It contains the Phase-I
+  results as they stood at submission and does **not** include §7.10; rebuild it
+  from the markdown only if a fresh copy is wanted.
 - The project-timeline slide/figure is deliberately **excluded** from the report.
 - Every metric is described as agreement with rule-derived **proxy labels**,
   never as measured pitch physics. The report now states the finished weather
