@@ -300,9 +300,11 @@ $+0.030$ in Test (all $n\ge763$). The one nominally significant value is negativ
 and tiny.
 
 A wear term should also help predict held-out play. Adding the age-by-spin term to
-a ridge model of over-level outcomes improves weighted mean squared error by
-between 0.002% and 0.153% depending on format and outcome. The ODI dot-ball gain
-is statistically distinguishable from zero and economically irrelevant.
+a ridge model of over-level outcomes changes weighted mean squared error by
+between −0.007% and +0.153% depending on format and outcome. The largest gain, on
+ODI dot-ball share, is statistically distinguishable from zero and economically
+irrelevant, and three of the twelve outcome-format combinations get slightly
+worse.
 
 Classical measurement error explains part of this: a single innings supplies few
 spin overs, so the innings-level slope is noisy and attenuates towards zero. But

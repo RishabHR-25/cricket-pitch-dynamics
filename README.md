@@ -244,3 +244,26 @@ probabilities, feature importance, and `metrics.json` with accuracy,
 balanced accuracy, macro/weighted F1, log loss, Brier score, confusion matrix,
 class supports, and baseline metrics. `proxy_label_audit.csv` and
 `summary.json` record the labels and counts used for the run.
+## Ball-by-ball pitch dynamics (analysis layer)
+
+The match-level model above is unchanged. A separate analysis layer estimates
+whether the *relative* effectiveness of spin and pace changes as the ball ages,
+and tests whether that change can be attributed to the surface.
+
+`powershell
+python src\build_ball_dataset.py        # data/interim/balls.parquet
+python src\pitch_dynamics.py            # over x style panel, specs, placebo
+python src\wear_robustness.py           # phase, boundary trim, established bowlers
+python src\validate_wear.py             # persistence, predictive gain, rolling origin
+python src\identify_wear.py all         # new-ball event study and 2011 rule DiD
+python src\make_dynamics_figures.py     # reports/figures/fig1-fig6
+`
+
+Read the output as a statement about a **relative, population-level gradient**,
+never as a physical pitch measurement. The headline identification result is
+negative: the naive second-new-ball jump at over 80 is bowler selection, because
+the pace share of deliveries rises from 40% to 74% at the boundary and the
+within-bowler estimate reverses sign. The October 2011 two-new-ball rule leaves
+the ODI age gradient unchanged. Write-up:
+eports/PAPER_DRAFT.md and Section 7.10 of
+eports/EL_Phase1_Report_Content.md.
