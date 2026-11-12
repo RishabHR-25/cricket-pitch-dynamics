@@ -715,14 +715,14 @@ two-new-ball rule**
 | Predicted ODI change if the gradient were ball ageing | −0.00064 |
 
 The ODI gradient did not fall. It rose by 0.0001, against a prediction of
-−0.0006, and the difference-in-differences is positive with a confidence interval
-that spans zero. The test is not decisive — the control format is imperfect and
-the interval is wide — but it gives no support to the view that the smooth
-gradient is ball ageing. Taken with Test 1, the picture is that the ball is
-neither the source of the aggregate jump at renewal nor the driver of the smooth
-gradient. The within-innings coefficient is therefore neither a uniform wear
-rate nor a ball-age rate, and the only wear-consistent evidence in the data is
-the across-innings Test contrast in Section 7.9.
+−0.0006, and the difference-in-differences is positive. The confidence interval
+[−0.0011, +0.0024] spans zero and is wide enough to include the ball-ageing
+prediction, so the test is evidence against that explanation rather than a
+rejection of it. Taken with Test 1, the picture is that the ball is neither the
+source of the aggregate jump at renewal nor the driver of the smooth gradient.
+The within-innings coefficient is therefore neither a uniform wear rate nor a
+ball-age rate, and the only wear-consistent evidence in the data is the
+across-innings Test contrast in Section 7.9.
 
 ## 8. Results and Discussion
 

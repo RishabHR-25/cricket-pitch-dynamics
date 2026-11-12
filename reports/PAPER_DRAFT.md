@@ -90,8 +90,11 @@ Our contributions are:
 
 5. **A ball-age regime test.** The October 2011 two-new-ball rule halves the rate
    at which an ODI ball ages per over of play. If the smooth gradient were ball
-   ageing, it should halve. It does not; the ODI gradient is essentially
-   unchanged, and a T20 control shows no common shock of the required size.
+   ageing, it should halve. The ODI gradient is essentially unchanged
+   (+0.00129 to +0.00138) and the difference-in-differences is positive, though
+   its interval is wide enough to include the ball-ageing prediction. The test is
+   therefore supportive rather than decisive, and is read alongside the event
+   study rather than on its own.
 
 6. **What survives.** The per-match index has zero cross-innings persistence and
    negligible predictive value. The one surface-scale signal that survives is the
@@ -383,10 +386,12 @@ two-new-ball rule**
 | Predicted ODI change if ball ageing | −0.00064 |
 
 The ODI gradient did not fall. It rose by 0.0001 against a prediction of
-−0.0006, and the difference-in-differences is positive with an interval that spans
-zero. The test is not decisive: the control format is imperfect, the rule came in
-a package with other changes, and the interval is wide. It nevertheless gives no
-support to the view that the smooth gradient is ball ageing.
+−0.0006, and the difference-in-differences is positive. The interval
+[−0.0011, +0.0024] is wide enough to include the ball-ageing prediction, so this
+is evidence against that explanation rather than a rejection of it. The control
+format is imperfect and the rule came in a package with other changes. The test
+therefore does not carry the paper on its own; it is the combination with the
+event study that rules out ball condition as the main driver.
 
 Taken with the event study, the picture is that the ball is not the source of the
 aggregate jump at renewal and not the driver of the smooth gradient. The
