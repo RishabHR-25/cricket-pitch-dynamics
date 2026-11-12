@@ -25,10 +25,18 @@ then in play for about 25 overs instead of 50, so ball age accrues at half the
 rate per over of play while the pitch wears at the same rate. If the smooth
 gradient were ball ageing, it should halve after the rule. It does not.
 
+The third test asks whether the *smooth* gradient is also composition. It holds
+the bowler and the innings fixed at delivery level, so each bowler-innings level
+is absorbed and the coefficient is the difference between the spin and pace age
+slopes. That estimate does not collapse; it is larger than the match
+fixed-effects estimate. Bowler selection therefore explains the boundary jump
+but not the trend.
+
 Usage::
 
     python src\\identify_wear.py newball
     python src\\identify_wear.py did
+    python src\\identify_wear.py within
     python src\\identify_wear.py all
 """
 
@@ -72,11 +80,14 @@ def load_deliveries(
         "match_id",
         "date",
         "match_type",
+        "gender",
         "innings",
         "over",
+        "ball_age",
         "legal",
         "bowler_style",
         "bowler_id",
+        "batter_id",
         "runs_total",
         "runs_batter",
         "is_bowler_wicket",
@@ -293,6 +304,147 @@ def run_two_new_ball(panel_path: Path, output_dir: Path) -> pd.DataFrame:
     return result
 
 
+def within_bowler_gradient(
+    deliveries: Path,
+    output_dir: Path,
+) -> pd.DataFrame:
+    """Delivery-level age x spin gradient with match x innings x bowler FE.
+
+    The cell panel in ``pitch_dynamics.py`` holds the match fixed, so a change
+    in *which* bowler bowls an over can move the age x spin coefficient. This
+    function instead holds the bowler and the innings fixed for every delivery,
+    which absorbs the spin main effect: ``age_x_spin`` is then identified as the
+    difference between the spin and pace age slopes. Match-state controls,
+    batter experience, gender and phase dummies are added in four nested
+    specifications. If composition explained the smooth gradient, the
+    within-bowler estimate should collapse towards zero.
+    """
+    rows = []
+    outcomes = ("dot", "runs_total", "boundary", "is_bowler_wicket")
+    for match_type in ("T20", "ODI", "Test"):
+        frame = load_deliveries(deliveries, (match_type,))
+        frame = frame.sort_values(
+            ["match_id", "innings", "ball_age"], kind="stable"
+        ).reset_index(drop=True)
+        frame["batter_balls"] = (
+            frame.groupby(["match_id", "innings", "batter_id"], observed=True)
+            .cumcount()
+            .astype(float)
+        )
+        frame["phase"] = P.assign_phase(frame)
+        frame["age"] = frame["over"].astype(float) + 0.5
+        frame["male"] = frame["gender"].eq("male").astype(float)
+        frame["unit"] = (
+            frame["match_id"].astype(str)
+            + "|"
+            + frame["innings"].astype(str)
+            + "|"
+            + frame["bowler_id"].astype(str)
+        )
+        age = frame["age"].to_numpy(float)
+        spin = frame["spin"].to_numpy(float)
+        phases = sorted(frame["phase"].unique())
+
+        def state_controls() -> tuple[list[np.ndarray], list[str]]:
+            return (
+                [
+                    frame["wickets_before"].to_numpy(float),
+                    frame["run_rate_before"].to_numpy(float),
+                ],
+                ["wickets_before", "run_rate_before"],
+            )
+
+        specifications: list[tuple[str, list[np.ndarray], list[str]]] = []
+        specifications.append(("uncontrolled", [], []))
+        columns, names = state_controls()
+        specifications.append(("state", columns, names))
+        columns = columns + [
+            frame["batter_balls"].to_numpy(float),
+            frame["male"].to_numpy(float),
+        ]
+        specifications.append(
+            ("state_batter_gender", columns, names + ["batter_balls", "male"])
+        )
+        columns = columns + [
+            frame["phase"].eq(phase).to_numpy(float) for phase in phases[1:]
+        ]
+        specifications.append(
+            (
+                "full",
+                columns,
+                names + ["batter_balls", "male"] + [f"phase_{p}" for p in phases[1:]],
+            )
+        )
+
+        for spec_name, controls, control_names in specifications:
+            design = np.column_stack(
+                [
+                    np.ones(len(frame)),
+                    age,
+                    spin,
+                    age * spin,
+                    *controls,
+                ]
+            )
+            column_names = [
+                "intercept",
+                "age",
+                "spin",
+                "age_x_spin",
+                *control_names,
+            ]
+            for outcome in outcomes:
+                fitted = P.within_fit(
+                    frame[outcome].to_numpy(float),
+                    design,
+                    column_names,
+                    frame["unit"].to_numpy(),
+                    np.ones(len(frame)),
+                    frame["match_id"].to_numpy(),
+                )
+                hit = fitted[fitted["term"].eq("age_x_spin")].iloc[0]
+                rows.append(
+                    {
+                        "match_type": match_type,
+                        "spec": spec_name,
+                        "outcome": outcome,
+                        "coefficient": round(float(hit["coefficient"]), 6),
+                        "std_error": round(float(hit["std_error"]), 6),
+                        "ci_low": round(float(hit["ci_low"]), 6),
+                        "ci_high": round(float(hit["ci_high"]), 6),
+                        "p_value": round(float(hit["p_value"]), 8),
+                        "n_deliveries": int(len(frame)),
+                        "n_bowlers": int(frame["bowler_id"].nunique()),
+                        "n_units": int(frame["unit"].nunique()),
+                        "n_matches": int(frame["match_id"].nunique()),
+                    }
+                )
+        print(f"{match_type}: {len(frame):,} deliveries")
+
+    result = pd.DataFrame(rows)
+    result.to_csv(output_dir / "wear_within_bowler.csv", index=False)
+    print("\nWithin-bowler age x spin gradient, dot-ball share")
+    print(
+        result[
+            result["outcome"].eq("dot")
+        ][
+            [
+                "match_type",
+                "spec",
+                "coefficient",
+                "std_error",
+                "p_value",
+                "n_deliveries",
+                "n_bowlers",
+                "n_matches",
+            ]
+        ]
+        .round(6)
+        .to_string(index=False)
+    )
+    return result
+
+
 def _norm_cdf(value: float) -> float:
     from math import erf, sqrt
 
@@ -314,7 +466,7 @@ def main() -> None:
         "--output-dir", type=Path, default=root / "models/pitch_dynamics"
     )
     parser.add_argument(
-        "command", choices=("newball", "did", "all"), nargs="?", default="all"
+        "command", choices=("newball", "did", "within", "all"), nargs="?", default="all"
     )
     args = parser.parse_args()
     args.output_dir.mkdir(parents=True, exist_ok=True)
@@ -323,6 +475,8 @@ def main() -> None:
         run_new_ball(args.balls, args.output_dir)
     if args.command in ("did", "all"):
         run_two_new_ball(args.panel, args.output_dir)
+    if args.command in ("within", "all"):
+        within_bowler_gradient(args.balls, args.output_dir)
     print(f"\nArtifacts written to {args.output_dir}")
 
 

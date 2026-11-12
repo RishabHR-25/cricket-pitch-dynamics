@@ -30,9 +30,10 @@
 - **Ball-by-ball pitch dynamics (2026-11-12)** are built and audited. The
   within-innings age x spin gradient is precise and stable but is **not**
   identified as pitch wear: the second-new-ball jump at over 80 is bowler
-  selection (naive +1.5 pp pace dot share, within-bowler −2.1 pp) and the
-  October 2011 two-new-ball rule leaves the ODI gradient unchanged. Conference
-  draft: `reports/PAPER_DRAFT.md`.
+  selection (naive +1.5 pp pace dot share, within-bowler −2.1 pp), the October
+  2011 two-new-ball rule leaves the ODI gradient unchanged, and the smooth
+  gradient is *not* composition either because holding the bowler fixed makes it
+  larger. Conference draft: `reports/PAPER_DRAFT.md`.
 
 ## Current data inventory
 
@@ -269,10 +270,11 @@ within-match "pitch wear" estimate can actually claim.
 | Persistence across innings | r = −0.003 / −0.047 / +0.030 | no match-level persistence |
 | Out-of-sample gain | 0.002–0.153% of weighted MSE | economically negligible |
 | Rolling origin (4 folds) | dot share same sign 12/12; magnitudes stable | not a period effect |
+| Within-bowler FE (full controls) | +0.00196 (T20), +0.00223 (ODI), +0.00027 (Test), p<0.001 | **not composition**; larger than match FE |
 
 ### What the gradient is not
 
-`src/identify_wear.py` runs the two identification tests.
+`src/identify_wear.py` runs the three identification tests.
 
 1. **Second new ball at over 80 (Test).** Event study in two-over bins relative
    to overs 78-79 on 162,467 deliveries, match-clustered SE. Across all
@@ -287,22 +289,31 @@ within-match "pitch wear" estimate can actually claim.
    +0.00205 → +0.00146, **DiD +0.00069 (SE 0.00089, p=0.44)** against a predicted
    −0.00064. Strata are disjoint samples, so the DiD SE is the root of the sum
    of the four variances. Output: `wear_two_new_ball.csv`.
+3. **Within-bowler age x spin gradient (all formats).** Delivery-level weighted
+   least squares with match x innings x bowler fixed effects, match-clustered SE,
+   on 5,116,165 deliveries. The spin main effect is absorbed, so the coefficient
+   is the spin-minus-pace age-slope difference. With full controls (wickets, run
+   rate, batter experience, gender, phase) the dot-share coefficient is
+   **+0.00196 (T20), +0.00223 (ODI), +0.00027 (Test)**, all p<0.001, against
+   match-FE estimates of +0.00151, +0.00146 and +0.00013. Every nested
+   specification is larger than match FE. Output: `wear_within_bowler.csv`.
 
-Taken together: **ball renewal matters, gradual ball ageing does not, and the
-smooth within-innings gradient is composition rather than condition.** The one
-surviving surface-scale signal is the across-innings Test contrast (dot share
-+0.01073, p<0.001; wicket rate +0.00113, p=0.007; boundary +0.00284, p=0.004).
+Taken together: **the ball-renewal jump is selection, the smooth gradient is not
+composition, and neither is identified as surface wear.** The one surviving
+surface-scale signal is the across-innings Test contrast (dot share +0.01073,
+p<0.001; wicket rate +0.00113, p=0.007; boundary +0.00284, p=0.004).
 
 ### Report and paper
 
 - `reports/EL_Phase1_Report_Content.md` — §4.6 (estimator), §7.8 (placebo with
   real null means), §7.9 (persistence, predictive gain, rolling stability in
   Table 7.12, cross-innings contrast) and the new **§7.10 "Is the gradient ball
-  condition or surface change?"** with Table 7.13 (event study) and Table 7.14
-  (rule DiD).
-- `reports/PAPER_DRAFT.md` — conference draft built on the composition thesis:
-  abstract, 11 sections, 5 tables, reproducibility table, verified ICC rule
-  citations, and a short venue-fit note.
+  condition or surface change?"** with Table 7.13 (event study), Table 7.14
+  (rule DiD) and Table 7.15 (within-bowler gradient).
+- `reports/PAPER_DRAFT.md` — conference draft built on the two-part identification
+  result (boundary selection, unidentified trend): abstract, 11 sections, 6
+  tables, reproducibility table, verified ICC rule citations, and a short
+  venue-fit note.
 - Figures: `reports/figures/fig1`–`fig6` from
   `python src\make_dynamics_figures.py`. `fig5` is the naive-versus-within-bowler
   event study; `fig6` is the format-era rule comparison.

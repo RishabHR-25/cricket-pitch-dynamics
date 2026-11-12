@@ -54,7 +54,7 @@ This project treats pitch behaviour as the **target**, at two time scales. At th
 
 The contribution is fivefold:
 
-1. **Ball-by-ball estimation and identification of within-match pitch dynamics.** A within-match fixed-effects model isolates the age x spin interaction from venue, date, phase, match state and batter experience, on 5.1 million legal deliveries. The estimator is then subjected to a randomisation placebo, per-phase estimates, a boundary check, persistence and predictive tests, and two ball-renewal natural experiments. The result is a precise, stable gradient that is shown to be **compositional rather than physical**, and the identification analysis is the paper's primary contribution; Section 7.10 is its main results section.
+1. **Ball-by-ball estimation and identification of within-match pitch dynamics.** A within-match fixed-effects model isolates the age x spin interaction from venue, date, phase, match state and batter experience, on 5.1 million legal deliveries. The estimator is then subjected to a randomisation placebo, per-phase estimates, a boundary check, persistence and predictive tests, two ball-renewal natural experiments, and a delivery-level within-bowler test. The result is a precise, stable gradient that is **not identified as surface wear**: selection explains the ball-renewal jump, but the smooth gradient survives bowler fixed effects and still fails attribution. The identification analysis is the paper's primary contribution; Section 7.10 is its main results section.
 2. **Convergent and predictive validation of the inferred state.** A genuine pitch state must behave like one: it should persist from the first innings to the second on the same surface, should be stronger at venues where spin already dominates, should increase after dry pre-match weather, and should improve held-out prediction. All four tests are run and reported.
 3. **A reproducible proxy-label benchmark.** A frozen, format-specific rule converts first-innings scoring behaviour and bowler-credited wicket types into Batting, Pace and Spin classes, so the task can be rebuilt by anyone from the public Cricsheet archive. Section 7.6 quantifies label stability under threshold perturbation rather than asserting it.
 4. **An audited bowler-style curation protocol.** A conservative three-source rule (exact name, team-country agreement, style-class agreement) adds 527 reviewed overrides covering 9,768 credited wickets without guessing, raising the labelable T20 sample by 33.5%. The same role table supplies the spin/pace contrast for every ball in the dynamics dataset.
@@ -166,7 +166,7 @@ The coefficient of interest is **beta3**, the extra change per over for spin rel
 
 Three specifications are reported. The **match fixed-effects** specification is the headline. The **match x innings** specification is stricter and uses only within-innings variation. The **match-use** specification replaces innings age with total legal balls bowled in the match, which is the physically correct wear clock for Test cricket because later innings inherit the surface used earlier.
 
-The identifying assumption is stated plainly: within a phase, and conditional on match state, a change in the relative effectiveness of spin and pace as the ball ages is evidence of surface change. That assumption is too strong on its own, because the ball also changes: a new ball swings and seams, and that advantage decays within a few overs. The pooled coefficient therefore mixes **ball condition** with **pitch condition**, and neither a phase decomposition nor a smooth time trend can separate them. Tactics, batter risk and bowler selection are further alternative explanations, so the analysis includes (i) a randomisation placebo that reallocates bowling styles within innings, (ii) per-phase estimates, (iii) a cross-innings persistence test on the same pitch, (iv) convergent-validity tests against venue spin-friendliness and pre-match moisture, (v) an out-of-sample predictive check, and (vi) two ball-renewal natural experiments, the second new ball in Tests and the 2011 two-new-ball rule in One Day Internationals, analysed in Section 7.10. None of these measures the pitch physically; together they test whether the inferred state behaves like a pitch state.
+The identifying assumption is stated plainly: within a phase, and conditional on match state, a change in the relative effectiveness of spin and pace as the ball ages is evidence of surface change. That assumption is too strong on its own, because the ball also changes: a new ball swings and seams, and that advantage decays within a few overs. The pooled coefficient therefore mixes **ball condition** with **pitch condition**, and neither a phase decomposition nor a smooth time trend can separate them; holding the bowler fixed removes only one of the remaining alternatives. Tactics, batter risk and bowler selection are further alternative explanations, so the analysis includes (i) a randomisation placebo that reallocates bowling styles within innings, (ii) per-phase estimates, (iii) a cross-innings persistence test on the same pitch, (iv) convergent-validity tests against venue spin-friendliness and pre-match moisture, (v) an out-of-sample predictive check, (vi) two ball-renewal natural experiments, the second new ball in Tests and the 2011 two-new-ball rule in One Day Internationals, and (vii) a delivery-level within-bowler specification, all analysed in Section 7.10. None of these measures the pitch physically; together they test whether the inferred state behaves like a pitch state.
 
 ## 5. Project Execution
 
@@ -497,11 +497,14 @@ not enough time for a pitch to change by that much, and a wear process cannot
 reverse sign within it. The obvious explanation is **ball condition, not pitch
 condition**: the new ball swings and seams, that advantage decays within the
 first few overs, and spin gains relative to pace as it does. Section 7.10 tests
-that explanation at the second-new-ball boundary and rejects it: the aggregate
-new-ball jump is the return of the frontline seamers, and within the same bowler
-the sign reverses. The powerplay gradient is therefore best read as a
-**composition** effect — which bowlers bowl which overs, and with what field —
-rather than as a ball-age or surface effect.
+that explanation at the second-new-ball boundary and with bowler fixed effects.
+At the boundary, the aggregate new-ball jump is the return of the frontline
+seamers and the within-bowler sign reverses. Across the innings, however, the
+gradient does not shrink when the bowler is held fixed, so composition is not a
+general explanation either. The powerplay gradient is therefore best read as a
+**phase-specific pattern whose mechanism is not identified**: it is too large and
+too short-lived for wear, and the ball-renewal test does not support a ball-age
+reading.
 
 In the middle overs the pattern is different and more cautious. Spin's dot share
 rises relative to pace in all three formats (+0.0011 in T20 and ODI, +0.0003 in
@@ -656,9 +659,9 @@ out of this work has to be built on the first two statements.
 ### 7.10 Is the gradient ball condition or surface change?
 
 The tests above establish that the gradient is not a uniform wear rate, but they
-do not say what it is. The leading alternative is **ball condition**: the ball
-softens and scuffs as an innings proceeds, and that changes the same outcomes
-used to infer wear. Two sources of exogenous variation separate the two.
+do not say what it is. Two alternatives remain: **ball condition**, because the
+ball softens and scuffs as an innings proceeds, and **bowler selection**, because
+which bowler bowls an over changes with age. Three tests separate them.
 
 **Test 1: the second new ball is a selection trap.** From over 80 the fielding
 side may take a new ball, and in practice does. At that boundary the ball is
@@ -691,8 +694,8 @@ frontline seamers: the pace share of deliveries rises from 40% before over 80 to
 attack. Whatever the within-bowler decline reflects — batters settling, spell
 fatigue, or a harder ball that finds the edge rather than the middle — it is not
 a new-ball bonus, and the boundary cannot be used to identify ball condition.
-This is the same composition problem that threatens the wear estimator, caught
-in its most visible form.
+This is the composition problem caught in its most visible form, but it is a
+statement about the boundary, not about the smooth trend.
 
 **Test 2: the two-new-ball rule in ODIs.** From 1 October 2011 each ODI innings
 uses two new balls, one from each end, in alternate overs [14]. Each ball is therefore
@@ -718,11 +721,52 @@ The ODI gradient did not fall. It rose by 0.0001, against a prediction of
 −0.0006, and the difference-in-differences is positive. The confidence interval
 [−0.0011, +0.0024] spans zero and is wide enough to include the ball-ageing
 prediction, so the test is evidence against that explanation rather than a
-rejection of it. Taken with Test 1, the picture is that the ball is neither the
-source of the aggregate jump at renewal nor the driver of the smooth gradient.
-The within-innings coefficient is therefore neither a uniform wear rate nor a
-ball-age rate, and the only wear-consistent evidence in the data is the
-across-innings Test contrast in Section 7.9.
+rejection of it.
+
+**Test 3: does the smooth gradient survive bowler fixed effects?** The second new
+ball is a discontinuity, and a discontinuity can be dominated by who bowls it.
+The smooth trend need not be. A delivery-level model with match x innings x bowler
+fixed effects removes the between-bowler mix entirely. The spin main effect is
+absorbed, so the age x spin coefficient is the difference between the spin and
+pace age slopes with each bowler-innings level held fixed. Table 7.15 reports
+dot-ball share under four nested specifications, with standard errors clustered by
+match. There are 1,983,526 T20, 1,461,903 ODI and 1,670,736 Test deliveries.
+
+**Table 7.15: Within-bowler age x spin coefficient for dot-ball share**
+
+| Format | No controls | Match state | + Batter and gender | + Phase |
+| --- | --- | --- | --- | --- |
+| T20 | +0.00197 (0.00019) | +0.00218 (0.00019) | +0.00218 (0.00018) | +0.00196 (0.00019) |
+| ODI | +0.00260 (0.00011) | +0.00250 (0.00010) | +0.00227 (0.00010) | +0.00223 (0.00011) |
+| Test | +0.00034 (0.00004) | +0.00035 (0.00004) | +0.00025 (0.00004) | +0.00027 (0.00004) |
+
+The gradient does not collapse; it grows. In the full specification it is
++0.00196 in T20, +0.00223 in ODI and +0.00027 in Test, against +0.00151, +0.00146
+and +0.00013 with match fixed effects (Table 7.7). Every specification gives a
+larger estimate than the match fixed-effects model in every format, and all are
+significant at p<0.001. Bowler selection therefore does **not generate** the
+pooled estimate: removing the between-bowler mix leaves it at least as large. The
+runs and boundary channels move in the same direction; the wicket-rate channel is
+small and mixed.
+
+This result removes one alternative explanation and it also limits the paper's
+thesis. The boundary is selection, but the smooth trend is not. Two caveats keep
+the result from becoming a wear claim. First, the comparison conditions on
+bowlers who bowl on both sides of an age contrast, so it selects long spells and
+stable roles and is not an experiment. Second, bowler fixed effects remove the
+between-bowler mix but not spell stage, field changes or batter adaptation, all of
+which move with age within a bowler. What survives is a robust description of how
+the relative effectiveness of spin and pace changes with ball age. What does not
+survive is the attribution of that description to the surface: the phase
+reversal, the absent persistence, the negligible predictive gain and the rule
+test all still stand.
+
+Taken together, the three tests separate the two alternatives. The ball is
+neither the source of the aggregate jump at renewal nor a supported explanation
+for the smooth gradient. The bowler explains the jump but not the trend. The
+within-innings coefficient is therefore neither a uniform wear rate nor a
+ball-age rate nor a bowler-composition artefact, and the only wear-consistent
+evidence in the data is the across-innings Test contrast in Section 7.9.
 
 ## 8. Results and Discussion
 
@@ -749,13 +793,15 @@ as surface wear. The phase decomposition reverses sign; the T20 runs channel
 disappears under a boundary trim; the permutation null is positively biased and
 about a fifth of the dot-ball estimate is reproduced by random style allocation;
 the per-match coefficient has no cross-innings persistence and negligible
-predictive value. The two ball-renewal experiments in Section 7.10 then remove
-the ball-condition alternative: the second-new-ball jump is entirely bowler
-selection, and halving the rate at which an ODI ball ages does not halve the
-gradient. The paper that follows is therefore built on the composition finding
-and on the one surviving surface-scale contrast, the across-innings Test
-difference, not on a claim that the within-innings coefficient measures an
-individual pitch.
+predictive value. The three tests in Section 7.10 then remove the two leading
+alternatives in opposite directions: the second-new-ball jump is entirely bowler
+selection, while the smooth gradient is *not* bowler composition, because holding
+the bowler fixed makes it larger. Halving the rate at which an ODI ball ages also
+leaves the gradient unchanged. The paper that follows is therefore built on two
+identification results — the boundary is selection and the trend is not
+composition but is also not identified as surface wear — and on the one
+surviving surface-scale contrast, the across-innings Test difference, not on a
+claim that the within-innings coefficient measures an individual pitch.
 
 ### 8.2 Were the objectives met?
 
@@ -763,11 +809,11 @@ individual pitch.
 | --- | --- |
 | Complete the data | **Largely met.** Geocoding is complete and audited; weather is complete at 100% match coverage with prior-window features; 3,005 players have a known style after 527 audited overrides. T20 label coverage is still 21.8% because every wicket-taker must be known. |
 | Build pitch features | **Partly met.** PBP exists for 13 men's venues; the PWI is now defined as the innings-level age x spin coefficient and estimated for every match with enough spin and pace cells, but it is not yet normalised for team strength or bowler quality. |
-| Estimate within-match wear | **Partly met.** The age x spin coefficient is estimated precisely and is stable across fixed-effect specifications, outcomes and rolling windows. Section 7.10 shows it is not identified as wear: the apparent second-new-ball effect reverses sign within the same bowler, and halving the rate at which an ODI ball ages leaves the ODI gradient unchanged. The across-innings Test contrast is the only surviving surface-scale signal. |
+| Estimate within-match wear | **Partly met.** The age x spin coefficient is estimated precisely and is stable across fixed-effect specifications, outcomes and rolling windows. Section 7.10 shows it is not identified as wear: the apparent second-new-ball effect reverses sign within the same bowler, and halving the rate at which an ODI ball ages leaves the ODI gradient unchanged. Holding the bowler fixed makes the smooth gradient larger, so the trend is not a composition artefact either; it is simply not attributable to the surface. The across-innings Test contrast is the only surviving surface-scale signal. |
 | Validate the inferred state | **Partly met.** Both convergent-validity gradients (venue spin-friendliness and pre-match dryness) and the population-level cross-innings contrast are detected; the per-match slope does not persist across innings, and the out-of-sample predictive gain is positive but small, as expected for a single added term. |
 | Train and validate classifiers | **Partly met.** All three formats beat their majority baselines on macro-F1; the 0.50 target is met by Test in cross-validation (0.568). T20 and ODI reach 0.453 and 0.422. |
 | Explain and handle new grounds | **Partly met.** Gain importance and an earlier SHAP analysis are interpreted; cold-start matching is designed but not validated. |
-| Disseminate | **Partly met.** The abstract and this report are drafted with multi-format results; the paper and dashboard remain. |
+| Disseminate | **Partly met.** The conference paper draft is written (`reports/PAPER_DRAFT.md`) and this report contains the full identification analysis; the dashboard prototype remains. |
 
 ### 8.3 Unexpected findings
 
@@ -775,7 +821,7 @@ individual pitch.
 2. **Accuracy and macro-F1 disagree.** The majority baseline wins on accuracy but loses badly on macro-F1. Reporting accuracy alone would have made the models look worse than they are; reporting only macro-F1 would hide the weak Batting class.
 3. **Role coverage, not weather, is the bottleneck.** T20 label coverage is 21.8% because every wicket-taker must be known, against 53.4% in ODI and 71.3% in Test. The 527 audited overrides added a third more T20 matches; finishing the review queue is still worth more than further model tuning.
 4. **Expert labels are noisy by nature.** The Adams et al. result (umpires reliable on bounce, unreliable on pace) is a useful reminder that even human assessment is imperfect, which supports the decision to report proxy agreement rather than claim physical truth.
-5. **The pooled dynamics coefficient is a mixture, and the mix is measurable.** A single age slope across the whole innings hides three regimes: the powerplay, where pace's new-ball advantage decays; the middle, where spin's dot share drifts up in every format; and the death, where T20 reverses. The second-new-ball event study makes the mixture visible: the aggregate jump at over 80 is the return of the frontline seamers, and the same-bowler estimate reverses sign. The honest object to publish is therefore the comparison of aggregate and within-bowler estimates, not a single pooled number.
+5. **The pooled dynamics coefficient is a mixture, and the mix is measurable.** A single age slope across the whole innings hides three regimes: the powerplay, where pace's new-ball advantage decays; the middle, where spin's dot share drifts up in every format; and the death, where T20 reverses. The second-new-ball event study makes the mixture visible: the aggregate jump at over 80 is the return of the frontline seamers, and the same-bowler estimate reverses sign. But the smooth trend is not the same object. A delivery-level model with match x innings x bowler fixed effects returns a *larger* coefficient than the match fixed-effects model in every format, so bowler composition does not create the gradient. The honest object to publish is the pair of results — selection at the boundary, an unidentified trend across the innings — not a single pooled number.
 6. **The Test result is a genuine null, not a failure of power, and the across-innings contrast is the exception.** With 278,746 Test cells the standard errors are tiny, so the absence of a pooled runs effect is not a sample-size problem. The dot-ball channel is positive but the placebo returns p = 0.06, the new-ball phase points the other way, and the within-bowler event study reverses the naive jump. The one contrast that is positive on several channels is the later-innings Test gap, which is consistent with a slow surface process at the innings scale.
 7. **A second-innings ODI effect points the wrong way.** Later innings show a *relative* improvement for spin in runs and boundaries (positive coefficients), which contradicts wear. The most plausible explanation is dew and the chasing team's risk profile, both of which are properties of the second innings rather than the surface. This is reported as a confound, not as evidence against wear.
 8. **The per-match Pitch Wear Index is not yet reliable.** The population coefficient is precise and reproducible, but the same coefficient estimated inside a single innings does not correlate between the first and second innings of the same match (r ≈ 0.00 in T20, 0.03 in Test, −0.05 in ODI). Classical measurement-error attenuation explains the direction: one innings of 20 to 50 overs cannot pin down a slope that needs hundreds of thousands of cells to separate from noise. The PWI is therefore a league-wide and venue-level measure for now, not a per-match instrument, and the report says so instead of presenting the correlation as support.
@@ -785,7 +831,7 @@ individual pitch.
 - **Proxy labels.** The target is a behavioural rule, not a measurement. A match labelled Spin may be a pace-friendly pitch on which spinners happened to take wickets.
 - **The dynamics estimand is relative.** It identifies how spin's effectiveness changes relative to pace; it does not measure the pitch, the ball, or the bowler's skill. "Wear" is shorthand for that relative change.
 - **Style is not always known.** 22.6% of deliveries have an unknown bowler style and are excluded, and a part-time spinner classified as pace would attenuate the contrast. The established-bowler check bounds this.
-- **Selection is not fully exogenous.** Captains choose when to bowl spin, and that choice responds to the match situation. Phase controls, match-state controls and the within-innings placebo address this only partially.
+- **Selection is not fully exogenous.** Captains choose when to bowl spin, and that choice responds to the match situation. Phase controls, match-state controls, the within-innings placebo and the delivery-level within-bowler specification address this only partially; the last conditions on bowlers who bowl across an age contrast, so it selects long spells and stable roles.
 - **Wicket rate is contaminated.** A wicket credited to a bowler can come from a catch, a run-out-adjacent dismissal or a tail-ender's error, so it mixes pitch behaviour with execution and opposition quality.
 - **Test cricket has no clean wear clock.** Innings age, ball condition, follow-ons and declarations move together, which is why the match-use specification is reported alongside the innings-age specification rather than instead of it.
 - **Small, imbalanced sample at the match level.** 5,400 labelled matches across three formats, but only 571 Batting examples (67 in Test); confidence intervals are wide.
@@ -829,7 +875,7 @@ The system was built in vertical slices. The first slice read one archive, produ
 
 ### 10.1 Summary
 
-The project set out to make pitch behaviour measurable with open data. It has delivered the infrastructure to do so: a complete match inventory, a documented proxy label, a reviewed geocoding layer, leakage-safe features, a complete weather table with prior-window moisture, a three-format model comparison with explanation and calibration, and a ball-by-ball estimator of within-match dynamics together with the tests needed to identify it. The answer is cautious. At the match level, rolling-origin cross-validation reaches macro-F1 0.453 (T20), 0.422 (ODI) and 0.568 (Test) against majority baselines of 0.269, 0.248 and 0.225, and venue profiles show a plausible relationship between scoring and spin (r = −0.64). At the ball-by-ball level the estimate is precise and stable: spin's dot-ball share rises relative to pace as the ball ages in T20 and ODI, by about 0.0015 per over, and the result survives a boundary trim, an established-bowler restriction and four rolling windows. It is not, however, identified as surface wear. The permutation null is positively biased, the effect reverses sign by phase, the per-match slope does not persist across innings, and the two ball-renewal experiments show that the apparent new-ball effect is bowler selection while halving the rate at which an ODI ball ages leaves the gradient unchanged. The coefficient is therefore presented as a population-level description of how the relative effectiveness of spin and pace changes, not as a per-match pitch measurement; the across-innings Test contrast is the one surviving surface-scale signal. The models are not yet ready to advise a captain. The Batting class is weak, gender is a confounder at the match level, and the dynamics estimand is relative rather than physical. The remaining work is clear: extend the role review, design an instrument that separates attack composition from surface change at the innings scale, resolve the gender confounder, validate cold-start behaviour, and build the dashboard that turns the coefficients into a pre-match decision aid.
+The project set out to make pitch behaviour measurable with open data. It has delivered the infrastructure to do so: a complete match inventory, a documented proxy label, a reviewed geocoding layer, leakage-safe features, a complete weather table with prior-window moisture, a three-format model comparison with explanation and calibration, and a ball-by-ball estimator of within-match dynamics together with the tests needed to identify it. The answer is cautious. At the match level, rolling-origin cross-validation reaches macro-F1 0.453 (T20), 0.422 (ODI) and 0.568 (Test) against majority baselines of 0.269, 0.248 and 0.225, and venue profiles show a plausible relationship between scoring and spin (r = −0.64). At the ball-by-ball level the estimate is precise and stable: spin's dot-ball share rises relative to pace as the ball ages in T20 and ODI, by about 0.0015 per over, and the result survives a boundary trim, an established-bowler restriction and four rolling windows. It is not, however, identified as surface wear. The permutation null is positively biased, the effect reverses sign by phase, the per-match slope does not persist across innings, and the identification tests point in two directions: the apparent new-ball effect is bowler selection, while holding the bowler fixed makes the smooth gradient larger, so the trend is not composition either. Halving the rate at which an ODI ball ages leaves the gradient unchanged. The coefficient is therefore a robust description of relative style effectiveness, not a reading of the surface; the across-innings Test contrast is the one surviving surface-scale signal. The models are not yet ready to advise a captain. The Batting class is weak, gender is a confounder at the match level, and the dynamics estimand is relative rather than physical. The remaining work is clear: extend the role review, design an instrument that separates attack composition from surface change at the innings scale, resolve the gender confounder, validate cold-start behaviour, and build the dashboard that turns the coefficients into a pre-match decision aid.
 
 ### 10.2 Personal reflections
 
@@ -899,7 +945,7 @@ The next six figures are generated directly from the ball-by-ball analysis and a
 
 ## 12. Outcome of the Work
 
-**Primary target: conference publication.** The conference draft is written (`reports/PAPER_DRAFT.md`) and is built on identification rather than on a positive predictive claim: the within-innings wear proxy is precise and stable but is shown to be dominated by composition, and the second-new-ball natural experiment is reported as a failed identification strategy with the selection mechanism made explicit.
+**Primary target: conference publication.** The conference draft is written (`reports/PAPER_DRAFT.md`) and is built on identification rather than on a positive predictive claim. The within-innings wear proxy is precise and stable but is not identified as surface change: the second-new-ball jump is a selection trap, the smooth gradient survives bowler fixed effects and so is not composition either, and the phase, persistence, prediction and rule tests still fail. The report presents the boundary and the trend as two separate results rather than as one wear estimate.
 
 **Stretch target: journal publication.** An extended paper is feasible if two things hold up: the across-innings Test contrast, which is the only surviving surface-scale signal, and an instrument or design that separates surface change from attack composition at the innings scale. The within-innings coefficient is not that instrument, and the report says so.
 
