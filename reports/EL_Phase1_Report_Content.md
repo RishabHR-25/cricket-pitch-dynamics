@@ -695,7 +695,7 @@ This is the same composition problem that threatens the wear estimator, caught
 in its most visible form.
 
 **Test 2: the two-new-ball rule in ODIs.** From 1 October 2011 each ODI innings
-uses two new balls, one from each end, in alternate overs. Each ball is therefore
+uses two new balls, one from each end, in alternate overs [14]. Each ball is therefore
 in play for at most about 25 overs instead of 50, so the ball ages at half the
 rate per over of play. The pitch, by contrast, wears at the same rate per over.
 If the smooth age x spin gradient were driven by ball ageing, it should roughly
@@ -934,6 +934,8 @@ The next six figures are generated directly from the ball-by-ball analysis and a
 [12] S. A. A. Shah, Q. Zaman, D. Wasim, J. Allohibi, A. A. Alharbi, and M. Shabbir, "Optimal model for predicting highest runs chase outcomes in T-20 international cricket using modern classification algorithms," *Alexandria Engineering Journal*, vol. 114, pp. 588–598, 2025.
 
 [13] G. Sood and D. Willis, "Fairly random: The impact of winning the toss on the probability of winning," arXiv:1605.08753, 2016.
+
+[14] International Cricket Council, "David Richardson answers your questions," 4 October 2011. [Online]. Available: https://www.icc-cricket.com/news/david-richardson-answers-your-questions
 
 ## Appendix A — Glossary of Abbreviations
 

@@ -171,8 +171,8 @@ more wickets, more dots, fewer boundaries.
 
 **Rule dates.** The second new ball in Tests is available after 80 overs
 throughout the sample. In ODIs, a mandatory ball change at the start of the 35th
-over applied before 1 October 2011, when it was replaced by two new balls per
-innings, one from each end, used in alternate overs [16]. We use those dates
+over applied before 1 October 2011 [17], when it was replaced by two new balls
+per innings, one from each end, used in alternate overs [16]. We use those dates
 as given and verify the mechanics of both regimes: the pace share of deliveries
 jumps from 40% to 74% at over 80 in Tests, and each post-2011 ODI ball is in play
 for at most about 25 overs.
@@ -567,8 +567,12 @@ vol. 119, no. 1, pp. 249–275, 2004.
 [15] Cricsheet. Ball-by-ball cricket data archive. [Online]. Available:
 https://cricsheet.org
 
-[16] International Cricket Council. "Amendments to playing conditions take
-effect from 1 October 2011." [Online]. Available:
+[16] International Cricket Council. "David Richardson answers your questions."
+4 October 2011. [Online]. Available:
+https://www.icc-cricket.com/news/david-richardson-answers-your-questions
+
+[17] International Cricket Council. "Amendments to playing conditions take
+effect from 1 October." 6 April 2010. [Online]. Available:
 https://www.icc-cricket.com/news/amendments-to-playing-conditions-take-effect-from-1-october
 
 ## Venue fit
