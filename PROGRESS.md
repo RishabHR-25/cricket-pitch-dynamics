@@ -323,6 +323,14 @@ within-match "pitch wear" estimate can actually claim.
    The strict interval [−0.001, +0.008] excludes the pooled +0.0107, so the
    pooled magnitude is rejected at 5% but zero is not.
    Output: `wear_across_innings_stress.csv` from `python src\across_innings.py`.
+6. **Power audit.** The smallest effect each design detects at 80% power is
+   2.80 x SE. Within-innings designs resolve 0.0004–0.0005 per over in T20 and
+   ODI (about a fifth of the gradient), so their nulls are not power failures.
+   The second-new-ball designs resolve only 1.9–2.9 points, so "no new-ball
+   bonus" there means "no bonus above three points"; the selection conclusion
+   rests on the 4.9-point between-group difference (3.2 SE), not on that null.
+   The across-innings strict design resolves 0.66 points. Output:
+   `wear_power_audit.csv` from `python src\power_audit.py`.
 
 Taken together: **the ball-renewal jump is selection, the smooth gradient is not
 composition, and neither is identified as surface wear.** The one remaining
@@ -340,7 +348,7 @@ zero, so no surface-scale signal is confirmed.
   stress test).
 - `reports/PAPER_DRAFT.md` — conference draft built on the audit result (boundary
   selection, unidentified trend, across-innings contrast not robust): abstract,
-  11 sections, 8 tables, reproducibility table, verified ICC rule citations, and
+  11 sections, 9 tables, reproducibility table, verified ICC rule citations, and
   a short venue-fit note.
 - Figures: `reports/figures/fig1`–`fig6` from
   `python src\make_dynamics_figures.py`. `fig5` is the naive-versus-continuing-bowler
@@ -364,6 +372,7 @@ python src\validate_wear.py
 python src\identify_wear.py all
 python src\decompose_wear.py all
 python src\across_innings.py
+python src\power_audit.py
 python src\make_dynamics_figures.py
 ```
 

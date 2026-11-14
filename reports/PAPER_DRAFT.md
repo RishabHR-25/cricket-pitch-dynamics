@@ -27,7 +27,7 @@ composition. We then test the most natural identification strategy, the second
 new ball at over 80 in Test cricket, and the audit turns up a second trap.
 Across all deliveries the pace dot-ball share rises by 1.5 percentage points at
 the boundary, but the rise is 4.9 points in the matches where no pace bowler
-bowls on both sides of it and zero in the matches where one does. The jump is a
+bowls on both sides of it and essentially zero in the matches where one does. The jump is a
 change of personnel, and it disappears once the comparison is restricted to
 bowlers who continue. A second
 natural experiment, the October 2011 two-new-ball rule in One Day
@@ -101,7 +101,7 @@ Our contributions are:
    against a wear story. For the second new ball at over 80 it is everything.
    The aggregate pace dot-ball share rises 1.5 percentage points, but 4.9
    points in the matches where the pace attack turns over completely at the
-   boundary, and not at all where a seamer continues. The jump is a change of
+   boundary, and essentially not at all where a seamer continues. The jump is a change of
    personnel, not a new ball.
 
 5. **A ball-age regime test.** The October 2011 two-new-ball rule halves the rate
@@ -471,6 +471,14 @@ bowlers continue, adding bowler-innings fixed effects moves the estimate by
 0.0006, about 3% of the gap. Composition is not a correction that the fixed
 effects apply; it is the sample.
 
+The null in the continuing-bowler matches is a bound, not a zero. With an SE of
+0.008 the design rules out a pace jump larger than about 2.3 points there, roughly
+half the +4.9 point jump seen where the attack turns over, but it cannot rule out
+the 1.5 point aggregate on its own. The selection conclusion rests on the
+difference between the two groups, which is 4.9 points at 3.2 standard errors, and
+on the exact decomposition of the smooth trend in Section 6.4. Section 9 reports
+these thresholds for every design.
+
 The effect is not confined to the first two overs. On continuing bowlers the pace
 coefficient is −0.0293 at 82-83, −0.0305 at 84-85 and −0.0449 at 86-87, against
 +0.0035, +0.0029 and −0.0045 in the naive specification. The naive series is flat
@@ -597,7 +605,7 @@ play, not a reading of the surface.
 
 ## 9. An audit for pitch-wear claims
 
-We propose five checks, in increasing order of cost. Each is cheap on
+We propose six checks, in increasing order of cost. Each is cheap on
 ball-by-ball data and each corresponds to a failure mode documented above.
 
 1. **Report the permutation null, not just the p-value.** Randomise style within
@@ -622,8 +630,43 @@ ball-by-ball data and each corresponds to a failure mode documented above.
 5. **Test persistence and prediction.** Correlate the innings-level estimate
    across innings of the same match, and measure the out-of-sample gain. A
    measurement that does not persist is not a measurement of the pitch.
+6. **Report the smallest effect the design can detect.** A null is informative
+   only if the design could have found the effect it was looking for. Report
+   $2.80\times\text{SE}$, the effect detected with 80% power at the 5% level,
+   next to every null. In this paper the same threshold ranges over two orders of
+   magnitude across designs, and that range is the difference between a null that
+   rules out wear and one that does not.
 
-A claim that passes all five is a genuine surface estimate. A claim that reports
+Table 9 reports it for each design used above.
+
+**Table 9: Smallest effect detectable with 80% power (dot-ball share)**
+
+| Design | Estimate | Detectable effect |
+| --- | --- | --- |
+| Within innings, T20 | +0.00198 | 0.00044 |
+| Within innings, ODI | +0.00176 | 0.00026 |
+| Within innings, Test | +0.00014 | 0.00008 |
+| Within bowler, T20 | +0.00196 | 0.00052 |
+| Second new ball, pace, all deliveries | +0.0148 | 0.0193 |
+| Second new ball, pace, continuing bowlers | −0.0204 | 0.0291 |
+| Across innings, strict within-side design | +0.0035 | 0.0066 |
+
+The table separates two regimes. The within-innings designs resolve effects of
+0.0004 to 0.0005 per over in the limited-overs formats, about a fifth of the
+estimated gradient, so the precision complaint cannot rescue a rejected wear
+reading: the coefficient is measured to a small fraction of its own size, and the
+tests that fail are about interpretation, not noise. The boundary and
+across-innings designs are an order of magnitude looser in the units that matter.
+At the second new ball, the match-level comparison in continuing-bowler matches
+can rule out a pace jump larger than about 2.3 points, and the bowler-level one
+larger than about 2.9, so "no new-ball bonus" means "no bonus larger than three
+points", not "no effect". The selection claim does not rest on that
+null: the jump in matches where the pace attack turns over (+4.9 points, SE 1.3)
+differs from the jump where it does not (0.0, SE 0.8) by 4.9 points at 3.2
+standard errors. The across-innings strict design can rule out effects above 0.66
+points, which is why its interval excludes the pooled 1.07 but not zero.
+
+A claim that passes all six is a genuine surface estimate. A claim that reports
 only the pooled coefficient and a confidence interval is reporting a mixture.
 
 ## 10. Threats to validity
@@ -738,6 +781,7 @@ All code and derived artifacts are in the project repository.
 | Identification | `python src\identify_wear.py all` | `wear_new_ball_event.csv`, `wear_two_new_ball.csv`, `wear_within_bowler.csv` |
 | Decomposition | `python src\decompose_wear.py all` | `wear_decomposition.csv`, `wear_boundary_ladder.csv` |
 | Across-innings stress test | `python src\across_innings.py` | `wear_across_innings_stress.csv` |
+| Power audit | `python src\power_audit.py` | `wear_power_audit.csv` |
 | Figures | `python src\make_dynamics_figures.py` | `reports/figures/fig1`–`fig6` |
 
 ## References

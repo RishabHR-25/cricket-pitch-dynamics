@@ -259,6 +259,7 @@ python src\validate_wear.py             # persistence, predictive gain, rolling 
 python src\identify_wear.py all         # second new ball, 2011 rule, within-bowler gradient
 python src\decompose_wear.py all        # exact within/between split, selection ladder
 python src\across_innings.py            # across-innings stress test
+python src\power_audit.py               # smallest detectable effect per design
 python src\make_dynamics_figures.py     # reports/figures/fig1-fig6
 ```
 

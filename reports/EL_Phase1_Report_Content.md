@@ -707,6 +707,14 @@ continue, adding bowler-innings fixed effects moves the estimate by 0.0006, abou
 3% of the gap. Composition is not a correction the fixed effects apply; it is the
 sample.
 
+That null is a bound rather than a zero. With a standard error of 0.008 the
+design rules out a pace jump larger than about 2.3 percentage points in the
+continuing-bowler matches, roughly half the +4.9 point jump seen where the attack
+turns over, but it cannot rule out the 1.5 point aggregate on its own. The
+selection conclusion rests on the difference between the two groups, which is 4.9
+points at 3.2 standard errors, and on the exact decomposition of the smooth trend
+in Section 7.10.
+
 The pattern continues beyond the first two overs. On continuing bowlers the pace
 coefficient is −0.0293 at overs 82-83, −0.0305 at 84-85 and −0.0449 at 86-87,
 against +0.0035, +0.0029 and −0.0045 in the naive specification. The overall pace
@@ -890,7 +898,7 @@ claim that the within-innings coefficient measures an individual pitch.
 | --- | --- |
 | Complete the data | **Largely met.** Geocoding is complete and audited; weather is complete at 100% match coverage with prior-window features; 3,005 players have a known style after 527 audited overrides. T20 label coverage is still 21.8% because every wicket-taker must be known. |
 | Build pitch features | **Partly met.** PBP exists for 13 men's venues; the PWI is now defined as the innings-level age x spin coefficient and estimated for every match with enough spin and pace cells, but it is not yet normalised for team strength or bowler quality. |
-| Estimate within-match wear | **Partly met.** The age x spin coefficient is estimated precisely and is stable across fixed-effect specifications, outcomes and rolling windows. Section 7.10 shows it is not identified as wear: the apparent second-new-ball effect is concentrated in matches where the pace attack turns over at the boundary and is absent where a seamer continues, and halving the rate at which an ODI ball ages leaves the ODI gradient unchanged. An exact decomposition finds a negligible composition term for the smooth trend, so the trend is not a composition artifact either; it is simply not attributable to the surface. The across-innings Test contrast is the only remaining candidate, and two thirds of it does not survive a within-side design, so no surface-scale signal is confirmed. |
+| Estimate within-match wear | **Partly met.** The age x spin coefficient is estimated precisely and is stable across fixed-effect specifications, outcomes and rolling windows. Section 7.10 shows it is not identified as wear: the apparent second-new-ball effect is concentrated in matches where the pace attack turns over at the boundary and is bounded below about 2.3 points where a seamer continues, and halving the rate at which an ODI ball ages leaves the ODI gradient unchanged. An exact decomposition finds a negligible composition term for the smooth trend, so the trend is not a composition artifact either; it is simply not attributable to the surface. The across-innings Test contrast is the only remaining candidate, and two thirds of it does not survive a within-side design, so no surface-scale signal is confirmed. |
 | Validate the inferred state | **Partly met.** Both convergent-validity gradients (venue spin-friendliness and pre-match dryness) and the population-level cross-innings contrast are detected; the per-match slope does not persist across innings, and the out-of-sample predictive gain is positive but small, as expected for a single added term. |
 | Train and validate classifiers | **Partly met.** All three formats beat their majority baselines on macro-F1; the 0.50 target is met by Test in cross-validation (0.568). T20 and ODI reach 0.453 and 0.422. |
 | Explain and handle new grounds | **Partly met.** Gain importance and an earlier SHAP analysis are interpreted; cold-start matching is designed but not validated. |
