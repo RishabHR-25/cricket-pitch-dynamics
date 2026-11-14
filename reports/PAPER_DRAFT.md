@@ -120,8 +120,9 @@ Our contributions are:
    in matches with a follow-on, falls by 44% once follow-on and declaration
    interactions are added, and returns +0.0035 (p=0.14) in the strictest design,
    which compares each side's second innings with its first inside the same
-   match. We report it as an unresolved candidate, not as a measured surface
-   effect.
+   match. That design cannot reject zero, but its interval excludes the pooled
+   value. We report the contrast as an unresolved candidate, not as a measured
+   surface effect.
 
 The practical message is a checklist rather than a metric. Before a within-innings
 gradient is called wear, it should survive a within-innings permutation null, a
@@ -580,10 +581,10 @@ one direction. A third innings is often a declaration setup, where the batting
 side scores quickly, and a fourth innings is a chase; both change the objective
 for the batting side, and neither is captured by the match-state controls. We
 therefore do not claim that +0.0035 is the surface effect. We claim the opposite:
-the headline +0.0107 is mostly composition and selection, and the part that
-survives the best available design cannot be distinguished from zero at this
-sample size. The interval does not exclude a surface effect of +0.008, so the
-question is open, but the pooled magnitude is not a clean estimate of it.
+the headline +0.0107 is mostly composition and selection. The strict design cannot
+distinguish its own estimate from zero, but its 95% interval, [−0.001, +0.008],
+does not contain +0.0107, so it rejects the pooled magnitude at the 5% level while
+leaving open whether a smaller surface effect of up to about 0.008 is present.
 
 This is where the data stop. Surface change over 20 to 50 overs is small, and
 composition is not the reason the within-innings estimator fails: Section 6.4

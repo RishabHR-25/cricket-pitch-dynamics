@@ -838,13 +838,14 @@ The strict design is not an experiment. A third innings is often a declaration
 setup and a fourth is a chase, so the batting side's objective differs between
 the two observations, and the match-state controls do not capture strategic
 intent. We therefore do not read +0.0035 as the surface effect. The correct
-reading is that the pooled +0.0107 is mostly composition and selection, and that
-the part which survives the best available design cannot be distinguished from
-zero at this sample size. The interval still contains a surface effect of +0.008,
-so the question is open, but the pooled magnitude is not a clean estimate of it.
-The only wear-consistent evidence in the data is therefore this contrast at a
-third of its pooled size, and it is not statistically distinguishable from zero;
-there is no confirmed surface-scale signal. Output:
+reading is that the pooled +0.0107 is mostly composition and selection. The strict
+design cannot distinguish its own estimate from zero, but its 95% interval,
+[−0.001, +0.008], does not contain +0.0107, so it rejects the pooled magnitude at
+the 5% level while leaving open whether a smaller effect of up to about 0.008 is
+present. The only
+wear-consistent evidence in the data is therefore this contrast at a third of its
+pooled size, and it is not statistically distinguishable from zero; there is no
+confirmed surface-scale signal. Output:
 `wear_across_innings_stress.csv` from `python src\across_innings.py`.
 
 ## 8. Results and Discussion

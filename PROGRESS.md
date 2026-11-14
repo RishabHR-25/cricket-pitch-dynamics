@@ -320,6 +320,8 @@ within-match "pitch wear" estimate can actually claim.
    declaration interactions cuts it 44% to **+0.0068**; comparing each side's
    second innings with its own first under match x team FE gives **+0.0035**
    (SE 0.0024, p=0.14). Two thirds of the contrast is composition and selection.
+   The strict interval [−0.001, +0.008] excludes the pooled +0.0107, so the
+   pooled magnitude is rejected at 5% but zero is not.
    Output: `wear_across_innings_stress.csv` from `python src\across_innings.py`.
 
 Taken together: **the ball-renewal jump is selection, the smooth gradient is not
