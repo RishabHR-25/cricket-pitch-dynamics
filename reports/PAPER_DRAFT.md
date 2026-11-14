@@ -13,7 +13,8 @@ Pitch wear is a first-order tactical variable in cricket and there is no public
 measurement of it. The natural proxy is the within-match change in the relative
 effectiveness of spin and pace, estimated from ball-by-ball data with match fixed
 effects. Using 6.8 million deliveries from 23,241 matches, we show that this
-proxy is precise and stable but not identified as wear. The verdict is mixed. Within-innings permutation nulls are positively biased by about a
+proxy is precise and stable but not identified as wear. The verdict is mostly
+negative. Within-innings permutation nulls are positively biased by about a
 fifth, so the usual randomisation test overstates significance. The estimate
 reverses sign between phases, which no uniform surface process predicts. The
 runs channel disappears when innings boundaries are trimmed, and the per-match
@@ -857,12 +858,20 @@ The paper is a measurement-and-identification study with a large observational
 sample and a negative central result. It fits workshops and tracks that value
 rigour over a positive predictive headline:
 
-- **MLSA (Machine Learning and Sports Analytics) workshop at ECML-PKDD** — short
-  format, methods-and-application mix, strong fit for the audit framing.
+- **MLSA (Machine Learning and Data Mining for Sports Analytics), workshop at
+  ECML-PKDD** — short format, methods-and-application mix, strong fit for the
+  audit framing and the boundary ladder. Annual cycle; no article processing
+  charge. The nine tables would need to be cut to about five.
 - **IEEE BigData, Sports Analytics track** — longer format, accommodates the full
-  event study and the rule-change test.
-- **Journal of Sports Analytics** — rolling submission, appropriate if the
-  related-work section is expanded.
+  event study, the rule-change test and the power audit. Annual December
+  conference.
+- **Journal of Sports Analytics** — rolling submission, double-anonymous review,
+  roughly six months from submission to publication. It has the best topical fit
+  and no page limit, but it charges an article processing charge, so cost should
+  be checked before submitting.
+
+The natural order is the workshop for fast feedback on the audit framing and a
+journal version afterwards with the full set of tables.
 
 The main revision risk is the absence of physical pitch data. The mitigation is
 to frame the contribution as identification, not measurement, which is how the
