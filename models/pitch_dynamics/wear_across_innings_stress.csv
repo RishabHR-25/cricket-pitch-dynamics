@@ -1,0 +1,7 @@
+spec,sample,term,coefficient,std_error,ci_low,ci_high,p_value,n,n_matches,n_innings,note
+baseline,all matches,later_innings_x_spin,0.01217212754909257,0.0027817107801070095,0.006719974420082831,0.01762428067810231,1.210043620991641e-05,1670736,922,3423,delivery-level replication of the panel contrast
+follow_on + declaration controls,all matches,later_innings_x_spin,0.006785413089650686,0.0029121200901435114,0.0010776577129694032,0.012493168466331969,0.019803006430811898,1670736,922,3423,adds follow-on and declaration indicators and their spin interactions
+baseline,no follow-on,later_innings_x_spin,0.009099390087691202,0.0029196548460670916,0.0033768665893997027,0.014821913585982702,0.0018295093902296333,1518758,828,3123,matches without a follow-on
+baseline,follow-on,later_innings_x_spin,0.038956417726007275,0.008459201758047867,0.022376382280233455,0.055536453171781096,4.120458100498325e-06,151978,94,300,"matches with a follow-on, where the side batting again was just dismissed"
+"repeated innings, match FE",no follow-on,repeat_innings_x_spin,0.00358311522210324,0.002398610566706463,-0.0011181614886414271,0.008284391932847907,0.1352201890928093,1518758,828,3123,"innings 3-4 versus innings 1-2, so each side is compared with itself"
+"second time batting, match x team FE",no follow-on,second_bat_x_spin,0.003503557916217026,0.002354418519613609,-0.001111102382225648,0.0081182182146597,0.13673037897161322,1518758,828,3123,"each side's second innings against its first, batting side absorbed"

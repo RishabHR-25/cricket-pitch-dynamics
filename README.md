@@ -258,6 +258,7 @@ python src\wear_robustness.py           # phase, boundary trim, established bowl
 python src\validate_wear.py             # persistence, predictive gain, rolling origin
 python src\identify_wear.py all         # second new ball, 2011 rule, within-bowler gradient
 python src\decompose_wear.py all        # exact within/between split, selection ladder
+python src\across_innings.py            # across-innings stress test
 python src\make_dynamics_figures.py     # reports/figures/fig1-fig6
 ```
 
@@ -269,7 +270,9 @@ on both sides of the boundary and −0.0005 in the 405 where one does, and the p
 share of deliveries rises from 40% to 74% at the boundary. The smooth gradient is
 not composition either: an exact decomposition writes the pooled coefficient as
 a variance-weighted average of a within-bowler and a between-bowler slope, and the
-composition term is +0.00002 in T20 and negative in ODI and Test. The October
+composition term is +0.00002 in T20 and negative in ODI and Test. The across-innings
+Test contrast, the last candidate, is +0.0122 pooled but +0.0035 (p=0.14) when each
+side's second innings is compared with its own first. The October
 2011 two-new-ball rule leaves the ODI age gradient unchanged. Write-up:
 `reports/PAPER_DRAFT.md` and Section 7.10 of
 `reports/EL_Phase1_Report_Content.md`.

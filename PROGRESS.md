@@ -34,7 +34,10 @@
   bowler bowls on both sides of the boundary, and zero where one does. The smooth
   gradient is *not* composition either: an exact decomposition puts the
   composition term at 1% of the coefficient in T20 and negative in ODI and Test.
-  The October 2011 two-new-ball rule leaves the ODI gradient unchanged.
+  The October 2011 two-new-ball rule leaves the ODI gradient unchanged. The last
+  candidate, a one-point across-innings Test contrast, is four times larger in
+  follow-on matches and falls to +0.0035 (p=0.14) when each side is compared with
+  its own first innings.
   Conference draft: `reports/PAPER_DRAFT.md`.
 
 ## Current data inventory
@@ -310,11 +313,20 @@ within-match "pitch wear" estimate can actually claim.
    closes to 4e-17. Composition is +0.00002 (T20), −0.00047 (ODI), −0.00012
    (Test), so it never creates the gradient and where it is non-zero it biases a
    wear claim downwards. Output: `wear_decomposition.csv`.
+5. **Across-innings stress test (Test, dot share).** The last candidate is the
+   later-innings contrast, +0.0122 at match FE on 1,670,736 deliveries in 922
+   matches (cell-panel value +0.01073). It is **+0.0390** in the 94 matches with
+   a follow-on and **+0.0091** in the 828 without; adding follow-on and
+   declaration interactions cuts it 44% to **+0.0068**; comparing each side's
+   second innings with its own first under match x team FE gives **+0.0035**
+   (SE 0.0024, p=0.14). Two thirds of the contrast is composition and selection.
+   Output: `wear_across_innings_stress.csv` from `python src\across_innings.py`.
 
 Taken together: **the ball-renewal jump is selection, the smooth gradient is not
-composition, and neither is identified as surface wear.** The one surviving
-surface-scale signal is the across-innings Test contrast (dot share +0.01073,
-p<0.001; wicket rate +0.00113, p=0.007; boundary +0.00284, p=0.004).
+composition, and neither is identified as surface wear.** The one remaining
+candidate, the across-innings Test contrast (dot share +0.01073, p<0.001), loses
+two thirds of its size under a within-side design and is not distinguishable from
+zero, so no surface-scale signal is confirmed.
 
 ### Report and paper
 
@@ -322,11 +334,12 @@ p<0.001; wicket rate +0.00113, p=0.007; boundary +0.00284, p=0.004).
   real null means), §7.9 (persistence, predictive gain, rolling stability in
   Table 7.12, cross-innings contrast) and the new **§7.10 "Is the gradient ball
   condition or surface change?"** with Table 7.13 (selection ladder), Table 7.14
-  (rule DiD) and Table 7.15 (within-bowler gradient).
-- `reports/PAPER_DRAFT.md` — conference draft built on the two-part identification
-  result (boundary selection, unidentified trend): abstract, 11 sections, 7
-  tables, reproducibility table, verified ICC rule citations, and a short
-  venue-fit note.
+  (rule DiD), Table 7.15 (within-bowler gradient) and Table 7.16 (across-innings
+  stress test).
+- `reports/PAPER_DRAFT.md` — conference draft built on the audit result (boundary
+  selection, unidentified trend, across-innings contrast not robust): abstract,
+  11 sections, 8 tables, reproducibility table, verified ICC rule citations, and
+  a short venue-fit note.
 - Figures: `reports/figures/fig1`–`fig6` from
   `python src\make_dynamics_figures.py`. `fig5` is the naive-versus-continuing-bowler
   event study; `fig6` is the format-era rule comparison.
@@ -348,6 +361,7 @@ python src\wear_robustness.py
 python src\validate_wear.py
 python src\identify_wear.py all
 python src\decompose_wear.py all
+python src\across_innings.py
 python src\make_dynamics_figures.py
 ```
 

@@ -31,7 +31,10 @@ bowls on both sides of it and zero in the matches where one does. The jump is a
 change of personnel, and it disappears once the comparison is restricted to
 bowlers who continue. A second
 natural experiment, the October 2011 two-new-ball rule in One Day
-Internationals, leaves the age gradient unchanged. We conclude that the sharp
+Internationals, leaves the age gradient unchanged. The one candidate that
+survives on pooled data, a one-point across-innings contrast in Tests, is four
+times larger in follow-on matches and loses two thirds of its size when each side
+is compared with its own first innings. We conclude that the sharp
 boundary is a selection trap and that the smooth trend is a real description of
 play that cannot be read as surface change; we give a short audit that any
 pitch-wear claim should pass.
@@ -109,19 +112,25 @@ Our contributions are:
    therefore supportive rather than decisive, and is read alongside the event
    study rather than on its own.
 
-6. **What survives.** The per-match index has zero cross-innings persistence and
-   negligible predictive value. The one surface-scale signal that survives is the
-   across-innings contrast in Tests, where spin's dot advantage is 1.1 percentage
-   points higher in later innings of the same match.
+6. **The last candidate fails the same audit.** The per-match index has zero
+   cross-innings persistence and negligible predictive value, which leaves the
+   across-innings contrast in Tests as the only surface-scale signal: spin's dot
+   advantage is about one percentage point higher in later innings of the same
+   match. Stress-testing it removes most of it. The contrast is four times larger
+   in matches with a follow-on, falls by 44% once follow-on and declaration
+   interactions are added, and returns +0.0035 (p=0.14) in the strictest design,
+   which compares each side's second innings with its first inside the same
+   match. We report it as an unresolved candidate, not as a measured surface
+   effect.
 
 The practical message is a checklist rather than a metric. Before a within-innings
 gradient is called wear, it should survive a within-innings permutation null, a
-phase decomposition, an innings-boundary trim, a bowler-fixed comparison and a
-persistence test. In this data set the dot-ball gradient passes the boundary trim,
-survives the corrected permutation null in T20 and ODI, and does not shrink under
-bowler fixed effects. It fails the phase check, does not respond to the ball-age
-regime, and fails the persistence and prediction tests. Composition is one
-alternative removed, not the explanation.
+phase decomposition, an innings-boundary trim, a bowler-fixed comparison, an exact
+composition decomposition, and a persistence test. In this data set the dot-ball
+gradient passes the boundary trim, survives the corrected permutation null in T20
+and ODI, and does not shrink under bowler fixed effects. It fails the phase check,
+does not respond to the ball-age regime, and fails the persistence and prediction
+tests. Composition is one alternative removed, not the explanation.
 
 ## 2. Related work
 
@@ -519,28 +528,70 @@ aggregate jump at renewal and is not a supported driver of the smooth gradient.
 The within-innings coefficient is neither a uniform wear rate nor a ball-age
 rate.
 
-## 8. What survives
+## 8. The last candidate, and what it cannot carry
 
-One result has the shape of a surface effect. Within the same match, spin's
-dot-ball advantage is 1.07 percentage points higher in the second and later
-innings than in the first (p<0.001), with a smaller positive contrast
-for wicket rate (+0.00113, p=0.007) and boundary share (+0.00284, p=0.004). The
-comparison is across innings of the same match, so venue, weather and teams are
-held fixed, and the surface has had more time to wear than any within-innings
-window allows.
+If the within-innings gradient is not wear, the natural move is to change scale.
+Inside one Test match the pitch has had days rather than overs to change, and the
+teams, the venue and the weather are held fixed by the match itself. The
+across-innings contrast is therefore the last place a surface effect could hide,
+and on pooled data it is there: spin's dot-ball advantage is 1.07 percentage
+points higher in the second and later innings of a Test than in the first
+(p<0.001), with smaller positive contrasts for wicket rate (+0.00113, p=0.007) and
+boundary share (+0.00284, p=0.004). That is the only result in the study that is
+positive on several channels and has the right order of magnitude for a slow
+surface process.
 
-It is not proof. Later innings differ in batting side, light, declaration
-pressure and follow-on selection. But it is the only contrast in the data that is
-both positive on multiple channels and consistent with a slow surface process,
-and it points to the right scale: innings, not overs.
+The confounds are exactly the ones that killed the second new ball: the sample
+that bats again is not a random sample. Table 8 adds one restriction at a time,
+on the same 1.67 million Test deliveries, with match-clustered standard errors.
+The first row is a delivery-level replication of the cell-panel estimate of
++0.0107; it returns +0.0122 on the same contrasts, and the difference is the
+weighting and control-mean treatment discussed in Section 6.4.
 
-The contrast also locates the failure. Surface change over 20 to 50 overs is
-small, but composition is not the reason the within-innings estimator fails:
-Section 6.4 decomposes the coefficient exactly and the composition term is
-negative in ODI and Test and 1% of the total in T20. The failure is in
-attribution. The same coefficient is produced by spell stage, field changes and
-batter adaptation, and it does not persist from one innings to the next or
-improve out-of-sample prediction. A relative style gradient is a description of
+**Table 8: Stress-testing the across-innings Test contrast (dot-ball share)**
+
+| Design | Matches | Coefficient (SE) | p |
+| --- | --- | --- | --- |
+| Match FE, all matches | 922 | +0.0122 (0.0028) | <0.001 |
+| Add follow-on and declaration interactions | 922 | +0.0068 (0.0029) | 0.020 |
+| Match FE, matches without a follow-on | 828 | +0.0091 (0.0029) | 0.002 |
+| Match FE, matches with a follow-on | 94 | +0.0390 (0.0085) | <0.001 |
+| Repeated innings (3-4 versus 1-2), no follow-on | 828 | +0.0036 (0.0024) | 0.135 |
+| Each side's second innings versus its first, match x team FE | 828 | +0.0035 (0.0024) | 0.137 |
+
+Three things move the number. First, the contrast is 4.3 times larger in the 94
+matches that produced a follow-on (+0.0390) than in the 828 that did not
+(+0.0091). A follow-on is awarded when one side leads heavily, and the side that
+bats again has just been dismissed cheaply, so this is the selection trap of
+Section 7 reappearing at the innings scale. Second, adding a follow-on indicator
+and a declaration indicator, each interacted with spin, cuts the contrast by 44%
+to +0.0068. Declaration pressure is pervasive: a third of second-innings
+deliveries and half of fourth-innings deliveries come in an innings that began
+after a declaration, and the batting side in those innings faces a different
+objective. Third, and most demanding, the contrast can be
+estimated without comparing different batting sides at all. In a Test without a
+follow-on the innings alternate between the sides, so each side's second innings
+can be compared with its own first, with match x team fixed effects absorbing the
+batting side exactly. That design returns +0.0035 (SE 0.0024, p=0.14), about a
+third of the headline, with a 95% interval of [−0.001, +0.008].
+
+The strict design is still not an experiment, and it is not obviously biased in
+one direction. A third innings is often a declaration setup, where the batting
+side scores quickly, and a fourth innings is a chase; both change the objective
+for the batting side, and neither is captured by the match-state controls. We
+therefore do not claim that +0.0035 is the surface effect. We claim the opposite:
+the headline +0.0107 is mostly composition and selection, and the part that
+survives the best available design cannot be distinguished from zero at this
+sample size. The interval does not exclude a surface effect of +0.008, so the
+question is open, but the pooled magnitude is not a clean estimate of it.
+
+This is where the data stop. Surface change over 20 to 50 overs is small, and
+composition is not the reason the within-innings estimator fails: Section 6.4
+decomposes the coefficient exactly and the composition term is negative in ODI and
+Test and 1% of the total in T20. The failure is in attribution. The same
+coefficient is produced by spell stage, field changes and batter adaptation, it
+does not persist from one innings to the next, and it does not improve
+out-of-sample prediction. A relative style gradient is a description of
 play, not a reading of the surface.
 
 ## 9. An audit for pitch-wear claims
@@ -563,8 +614,10 @@ ball-by-ball data and each corresponds to a failure mode documented above.
    the jump in matches without a continuing bowler is +4.9 points, and the jump
    in matches with one is zero. A design that changes the sample and the fixed
    effect at the same time cannot tell selection from a ball effect. Apply the
-   same test to the smooth trend: if it survives, composition is ruled out, but
-   attribution is not established.
+   same test to any surviving result: the across-innings contrast of +1.1 points
+   falls to +0.35 once each side is compared with itself. Apply it to the smooth
+   trend too: if the trend survives a bowler-fixed comparison, composition is
+   ruled out, but attribution is not established.
 5. **Test persistence and prediction.** Correlate the innings-level estimate
    across innings of the same match, and measure the out-of-sample gain. A
    measurement that does not persist is not a measurement of the pitch.
@@ -610,6 +663,15 @@ and field restrictions. The T20 control absorbs the common change — the T20
 gradient itself fell by 0.0006 over the same period — but it cannot remove
 ODI-specific changes.
 
+**Innings order is not random.** In the strict across-innings design each side's
+second innings is compared with its first, which holds the batting side fixed but
+not the match situation. A third innings is often a declaration setup and a fourth
+is often a chase, so the batting side's objective differs between the two
+observations. The match-state controls absorb the prevailing run rate and wickets
+lost but not the strategic intent behind them. This cuts both ways and we do not
+sign the bias, which is why we report the strict estimate as an unresolved bound
+rather than as a surface effect.
+
 **Functional form.** Event studies around a boundary are sensitive to how the
 trend in over number is modelled. The design here uses bin indicators rather
 than a fitted trend, so the contrast does not depend on a functional form for
@@ -643,11 +705,22 @@ not persist across innings of the same match.
 
 Analysts who report within-innings wear should report the composition and
 validity audits alongside it, or state plainly that they are describing a
-mixture of play. The constructive path is to move the measurement to the scale
-where the signal is larger than the confounds. Across innings, in the same match,
-spin's dot advantage is higher by about one percentage point in Tests. That is
-small, but it is the right order of magnitude for a surface process and it is the
-quantity a pitch-wear index should try to predict.
+mixture of play. The same applies to the across-innings contrast, which is the
+last candidate in this data set: it is four times larger where a follow-on
+happened, falls by 44% once that and declaration pressure are controlled, and
+returns a third of its headline size once each side is compared with itself. The
+honest summary is that 6.8 million deliveries pin down how the relative
+effectiveness of spin and pace changes with ball age, and cannot pin down why.
+
+The constructive path is not more of the same data. The variation that would
+identify a surface process — two comparable innings by the same side on the same
+surface, with the same objective — is rare precisely because declarations,
+follow-ons and chases are chosen in response to the state of the game. Resolving
+it needs a design that isolates that variation, such as neutral first-class
+fixtures, repeated matches at one venue within a short window, or the instrumented
+surfaces of [1] and [2] used as a validation sample. Until then a pitch-wear
+index built from ball-by-ball data should report an upper bound and the audit
+behind it, not a point estimate.
 
 ---
 
@@ -663,6 +736,7 @@ All code and derived artifacts are in the project repository.
 | Validation | `python src\validate_wear.py` | `wear_persistence.csv`, `wear_predictive_gain.csv`, `wear_rolling_coefficients.csv` |
 | Identification | `python src\identify_wear.py all` | `wear_new_ball_event.csv`, `wear_two_new_ball.csv`, `wear_within_bowler.csv` |
 | Decomposition | `python src\decompose_wear.py all` | `wear_decomposition.csv`, `wear_boundary_ladder.csv` |
+| Across-innings stress test | `python src\across_innings.py` | `wear_across_innings_stress.csv` |
 | Figures | `python src\make_dynamics_figures.py` | `reports/figures/fig1`–`fig6` |
 
 ## References
