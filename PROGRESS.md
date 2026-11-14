@@ -29,11 +29,13 @@
   is the current binding constraint on model quality** — see the next section.
 - **Ball-by-ball pitch dynamics (2026-11-12)** are built and audited. The
   within-innings age x spin gradient is precise and stable but is **not**
-  identified as pitch wear: the second-new-ball jump at over 80 is bowler
-  selection (naive +1.5 pp pace dot share, within-bowler −2.1 pp), the October
-  2011 two-new-ball rule leaves the ODI gradient unchanged, and the smooth
-  gradient is *not* composition either because holding the bowler fixed makes it
-  larger. Conference draft: `reports/PAPER_DRAFT.md`.
+  identified as pitch wear. The second-new-ball jump at over 80 is a change of
+  personnel: naive +1.5 pp pace dot share, +4.9 pp in the matches where no pace
+  bowler bowls on both sides of the boundary, and zero where one does. The smooth
+  gradient is *not* composition either: an exact decomposition puts the
+  composition term at 1% of the coefficient in T20 and negative in ODI and Test.
+  The October 2011 two-new-ball rule leaves the ODI gradient unchanged.
+  Conference draft: `reports/PAPER_DRAFT.md`.
 
 ## Current data inventory
 
@@ -270,7 +272,8 @@ within-match "pitch wear" estimate can actually claim.
 | Persistence across innings | r = −0.003 / −0.047 / +0.030 | no match-level persistence |
 | Out-of-sample gain | 0.002–0.153% of weighted MSE | economically negligible |
 | Rolling origin (4 folds) | dot share same sign 12/12; magnitudes stable | not a period effect |
-| Within-bowler FE (full controls) | +0.00196 (T20), +0.00223 (ODI), +0.00027 (Test), p<0.001 | **not composition**; larger than match FE |
+| Within-bowler FE (full controls) | +0.00196 (T20), +0.00223 (ODI), +0.00027 (Test), p<0.001 | **not composition**; never smaller than pooled |
+| Exact decomposition, composition term | +0.00002 (T20), −0.00047 (ODI), −0.00012 (Test) | composition is 1% of the coefficient or **negative** |
 
 ### What the gradient is not
 
@@ -278,11 +281,16 @@ within-match "pitch wear" estimate can actually claim.
 
 1. **Second new ball at over 80 (Test).** Event study in two-over bins relative
    to overs 78-79 on 162,467 deliveries, match-clustered SE. Across all
-   deliveries pace's dot share rises **+0.0148** (p=0.031) in overs 80-81;
-   within the same bowler and innings it **falls −0.0210** (p=0.044) and keeps
-   falling (−0.0293, −0.0305, −0.0449). The pace share of deliveries rises from
-   **40% to 74%** at the boundary. The naive jump is the frontline attack
-   returning, not the new ball. Output: `wear_new_ball_event.csv`.
+   deliveries pace's dot share rises **+0.0148** (p=0.031) in overs 80-81. The
+   rise is not uniform across matches: **+0.0487** (p<0.001) in the 472 matches
+   where no pace bowler bowls on both sides of the boundary, **−0.0005**
+   (p=0.95) in the 405 where one does, **−0.0204** among those continuing
+   bowlers at match FE and **−0.0210** (p=0.044) with bowler x innings FE. The
+   pace share of deliveries rises from **40% to 74%** at the boundary. The
+   published "within-bowler sign reversal" is therefore mostly a *sample*
+   change, not a fixed-effects change; the fixed effect moves the continuing-bowler
+   estimate by 0.0006. Outputs: `wear_new_ball_event.csv`,
+   `wear_boundary_ladder.csv`.
 2. **Two new balls per ODI innings from 2011-10-01.** Each ball ages at about
    half the rate per over of play, so a ball-ageing gradient should roughly
    halve. It does not: ODI dot gradient +0.00129 pre → +0.00138 post, T20 control
@@ -295,8 +303,13 @@ within-match "pitch wear" estimate can actually claim.
    is the spin-minus-pace age-slope difference. With full controls (wickets, run
    rate, batter experience, gender, phase) the dot-share coefficient is
    **+0.00196 (T20), +0.00223 (ODI), +0.00027 (Test)**, all p<0.001, against
-   match-FE estimates of +0.00151, +0.00146 and +0.00013. Every nested
-   specification is larger than match FE. Output: `wear_within_bowler.csv`.
+   pooled delivery-level estimates of +0.00198, +0.00176 and +0.00014 on the
+   same rows. Output: `wear_within_bowler.csv`.
+4. **Exact decomposition.** The pooled coefficient is a variance-weighted
+   average of the within-bowler and between-bowler slopes, an identity that
+   closes to 4e-17. Composition is +0.00002 (T20), −0.00047 (ODI), −0.00012
+   (Test), so it never creates the gradient and where it is non-zero it biases a
+   wear claim downwards. Output: `wear_decomposition.csv`.
 
 Taken together: **the ball-renewal jump is selection, the smooth gradient is not
 composition, and neither is identified as surface wear.** The one surviving
@@ -308,14 +321,14 @@ p<0.001; wicket rate +0.00113, p=0.007; boundary +0.00284, p=0.004).
 - `reports/EL_Phase1_Report_Content.md` — §4.6 (estimator), §7.8 (placebo with
   real null means), §7.9 (persistence, predictive gain, rolling stability in
   Table 7.12, cross-innings contrast) and the new **§7.10 "Is the gradient ball
-  condition or surface change?"** with Table 7.13 (event study), Table 7.14
+  condition or surface change?"** with Table 7.13 (selection ladder), Table 7.14
   (rule DiD) and Table 7.15 (within-bowler gradient).
 - `reports/PAPER_DRAFT.md` — conference draft built on the two-part identification
-  result (boundary selection, unidentified trend): abstract, 11 sections, 6
+  result (boundary selection, unidentified trend): abstract, 11 sections, 7
   tables, reproducibility table, verified ICC rule citations, and a short
   venue-fit note.
 - Figures: `reports/figures/fig1`–`fig6` from
-  `python src\make_dynamics_figures.py`. `fig5` is the naive-versus-within-bowler
+  `python src\make_dynamics_figures.py`. `fig5` is the naive-versus-continuing-bowler
   event study; `fig6` is the format-era rule comparison.
 
 ### Do not reuse
@@ -334,6 +347,7 @@ python src\pitch_dynamics.py
 python src\wear_robustness.py
 python src\validate_wear.py
 python src\identify_wear.py all
+python src\decompose_wear.py all
 python src\make_dynamics_figures.py
 ```
 

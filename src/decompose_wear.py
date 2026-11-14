@@ -37,11 +37,21 @@ the pooled regression. It is reported with a cluster-robust standard error that
 accounts for the covariance between the two fits, since both are linear in the
 same outcome vector.
 
-The same identity is applied to the second-new-ball event study, where ``x`` is
-the over-80 indicator rather than the age interaction. If composition is the
-explanation at the boundary, the between term should dominate there; if it is not
-the explanation for the trend, the between term should be small there. That
-contrast is the paper's main result in one table.
+The identity is applied to the smooth age x spin gradient in ``run_trend``. At the
+second new ball the same identity is not enough, because the within-bowler design
+can only be estimated on bowler-innings units that bowl on both sides of the
+boundary: it changes the fixed effect *and* the sample. ``run_boundary`` therefore
+estimates a ladder that adds one restriction at a time: all deliveries, matches
+with and without a continuing bowler, the continuing bowlers at match fixed
+effects, and the same rows with bowler x innings fixed effects.
+
+The ladder overturns the reading in the first draft of the paper. The published
+comparison ("+1.5 points naive, -2.1 points within bowler, so the sign reverses")
+conflates a sample change with a fixed-effects change. In fact the +1.5 point jump
+is +4.9 points in matches where the pace attack turns over completely at the
+boundary and zero in matches where a seamer continues, and the fixed effect moves
+the continuing-bowler estimate by only 0.0006. Selection is the sample, not the
+correction.
 
 Usage::
 
@@ -187,8 +197,18 @@ def decompose(
     return {
         "beta_pooled": beta_pooled,
         "se_pooled": float(np.sqrt(var_pooled)),
+        "p_pooled": float(
+            2 * (1 - norm.cdf(abs(beta_pooled / np.sqrt(var_pooled))))
+        )
+        if var_pooled > 0
+        else np.nan,
         "beta_within": beta_within,
         "se_within": float(np.sqrt(var_within)),
+        "p_within": float(
+            2 * (1 - norm.cdf(abs(beta_within / np.sqrt(var_within))))
+        )
+        if var_within > 0
+        else np.nan,
         "beta_between": beta_between,
         "weight_within": weight_within,
         "weight_between": weight_between,

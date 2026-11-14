@@ -18,13 +18,18 @@ fifth, so the usual randomisation test overstates significance. The estimate
 reverses sign between phases, which no uniform surface process predicts. The
 runs channel disappears when innings boundaries are trimmed, and the per-match
 estimate has zero cross-innings persistence and negligible predictive value.
-Bowler selection is not the explanation for the smooth trend: holding the bowler
-and innings fixed makes the gradient larger, not smaller. What fails is
-attribution, not composition. We then test the most natural identification
-strategy, the second new ball at over 80 in Test cricket. Across all deliveries
-the pace dot-ball share rises by 1.5 percentage points at the boundary. Within
-the same bowler and innings it falls by 2.1 points, because the new ball also
-brings the frontline seamers. The apparent ball effect is selection. A second
+Bowler selection is not the explanation for the smooth trend. We write the
+pooled coefficient as an exact variance-weighted average of a within-bowler and
+a between-bowler slope: composition contributes 0.00002 to a coefficient of
+0.00198 in T20, and is negative in ODI and Test, so the gradient is never
+smaller within bowlers than across them. What fails is attribution, not
+composition. We then test the most natural identification strategy, the second
+new ball at over 80 in Test cricket, and the audit turns up a second trap.
+Across all deliveries the pace dot-ball share rises by 1.5 percentage points at
+the boundary, but the rise is 4.9 points in the matches where no pace bowler
+bowls on both sides of it and zero in the matches where one does. The jump is a
+change of personnel, and it disappears once the comparison is restricted to
+bowlers who continue. A second
 natural experiment, the October 2011 two-new-ball rule in One Day
 Internationals, leaves the age gradient unchanged. We conclude that the sharp
 boundary is a selection trap and that the smooth trend is a real description of
@@ -84,14 +89,17 @@ Our contributions are:
    cannot change sign at the same ball age, so the pooled coefficient is a
    weighted average of different regimes rather than a rate.
 
-4. **Two composition tests, two different answers.** The second new ball at over
-   80 appears to raise the pace dot-ball share by 1.5 percentage points. Holding
-   the bowler and innings fixed, the same boundary lowers it by 2.1 points. The
-   naive estimate is the arrival of the frontline seamers, not the arrival of a
-   new ball. But the smooth gradient is not the same object: holding the bowler
-   and innings fixed at delivery level makes it *larger* (+0.0022 in T20, +0.0025
-   in ODI, +0.0003 in Test), not smaller. Bowler selection explains the
-   discontinuity, not the trend, and the paper keeps the two claims separate.
+4. **Two composition tests, two different answers.** We write the pooled
+   coefficient as an exact variance-weighted average of a within-bowler and a
+   between-bowler slope, so composition is an arithmetic term rather than an
+   inference from two differently specified regressions. For the smooth gradient
+   the composition term is +0.00002 in T20, −0.00047 in ODI and −0.00012 in
+   Test: it never creates the gradient, and where it is non-zero it works
+   against a wear story. For the second new ball at over 80 it is everything.
+   The aggregate pace dot-ball share rises 1.5 percentage points, but 4.9
+   points in the matches where the pace attack turns over completely at the
+   boundary, and not at all where a seamer continues. The jump is a change of
+   personnel, not a new ball.
 
 5. **A ball-age regime test.** The October 2011 two-new-ball rule halves the rate
    at which an ODI ball ages per over of play. If the smooth gradient were ball
@@ -315,24 +323,64 @@ absorbed; $\delta$ is the difference between the age slopes of spin and pace
 bowlers, with each bowler-innings level held fixed. Table 4 reports the
 coefficient under four nested specifications: no controls, match-state controls
 (wickets lost and prior run rate), adding batter experience and gender, and
-adding phase dummies.
+adding phase dummies. The first column is the pooled match fixed-effects
+estimate on exactly the same deliveries, so the comparison changes one thing.
 
-**Table 4: Within-bowler age-by-spin coefficient for dot-ball share**
+**Table 4: Age-by-spin coefficient for dot-ball share, pooled and within bowler**
 
-| Format | No controls | State | State + batter + gender | Full |
-| --- | --- | --- | --- | --- |
-| T20 | +0.00197 (0.00019) | +0.00218 (0.00019) | +0.00218 (0.00018) | +0.00196 (0.00019) |
-| ODI | +0.00260 (0.00011) | +0.00250 (0.00010) | +0.00227 (0.00010) | +0.00223 (0.00011) |
-| Test | +0.00034 (0.00004) | +0.00035 (0.00004) | +0.00025 (0.00004) | +0.00027 (0.00004) |
+| Format | Pooled (match FE) | No controls | State | State + batter + gender | Full |
+| --- | --- | --- | --- | --- | --- |
+| T20 | +0.00198 (0.00016) | +0.00197 (0.00019) | +0.00218 (0.00019) | +0.00218 (0.00018) | +0.00196 (0.00019) |
+| ODI | +0.00176 (0.00009) | +0.00260 (0.00011) | +0.00250 (0.00010) | +0.00227 (0.00010) | +0.00223 (0.00011) |
+| Test | +0.00014 (0.00003) | +0.00034 (0.00004) | +0.00035 (0.00004) | +0.00025 (0.00004) | +0.00027 (0.00004) |
 
-The estimate does not collapse. It is larger than the match fixed-effects
-estimate in every format and under every specification: about +0.0020 in T20,
-+0.0022 in ODI and +0.0003 in Test in the full specification, against +0.0015,
-+0.0015 and +0.0001 with match fixed effects. Between-bowler variation therefore
-does not create the pooled coefficient: removing it leaves the gradient at least
-as large, which is the opposite of what the composition hypothesis predicts. All
-coefficients are significant at $p<0.001$ with match-clustered standard errors,
-on 5.1 million deliveries.
+The pooled column is estimated at delivery level with the same controls as the
+within-bowler columns, so that the table changes one thing at a time. It differs
+slightly from the cell-panel estimate in Table 1 (+0.00151, +0.00146 and
++0.00013 for T20, ODI and Test) because the panel weights each over-by-style cell
+by its deliveries and enters cell means of the controls. Both estimate the same
+population coefficient; the delivery-level version is used here because the
+decomposition below requires identical rows.
+
+The estimate does not collapse. It is equal to the pooled estimate in T20 and
+larger in ODI and Test under every specification. That is suggestive, but it is
+still a comparison of two coefficients. Table 5 makes it an identity.
+
+**Table 5: Exact decomposition of the pooled coefficient (dot-ball share)**
+
+| Format | Pooled | Within-bowler | Between-bowler | Weight on within | Composition |
+| --- | --- | --- | --- | --- | --- |
+| T20 | +0.00198 | +0.00196 | +0.00203 | 0.71 | +0.00002 (0.00010) |
+| ODI | +0.00176 | +0.00223 | +0.00036 | 0.75 | −0.00047 (0.00006) |
+| Test | +0.00014 | +0.00027 | −0.00012 | 0.68 | −0.00012 (0.00002) |
+
+Write $x$ for the age-by-spin interaction and let $Z$ be the match fixed effects
+and the other controls. Residualise $x$ on $Z$, and split the residual into the
+part explained by bowler-innings effects and the part that survives within them.
+Because the bowler-innings design nests the match design, the two pieces are
+orthogonal, and the pooled coefficient is exactly
+
+$$\beta_{\text{pooled}} = w\,\beta_{\text{within}} + (1-w)\,\beta_{\text{between}},$$
+
+where $w$ is the share of the residual variance of $x$ that survives within
+bowler-innings units. The composition term
+$C=\beta_{\text{pooled}}-\beta_{\text{within}}$ is the omitted-variable bias from
+leaving the bowler-innings effects out, and its standard error accounts for the
+covariance between the two fits, since both are linear in the same outcomes. The
+identity closes to $4\times10^{-17}$ in every cell, so the arithmetic is exact
+rather than approximate.
+
+The composition term is small, and where it is non-zero it is negative. In T20,
+71% of the identifying variation is within bowler, the between-bowler slope
+(+0.00203) is almost identical to the within-bowler slope (+0.00196), and
+composition contributes 1% of the pooled coefficient. In ODI and Test the
+between-bowler slope is smaller than the within-bowler slope, so omitting the
+bowler effects makes the gradient look *smaller* than it is: composition biases
+a wear claim downwards. The composition hypothesis predicts the opposite.
+Between-bowler variation therefore does not create the pooled coefficient, and
+the gradient cannot be dismissed on those grounds. All coefficients in Tables 4
+and 5 are significant at $p<0.001$ with match-clustered standard errors, on 5.1
+million deliveries.
 
 Two caveats matter. First, the comparison conditions on bowlers who survive long
 enough to bowl on both sides of an age contrast, so the sample is selected for
@@ -380,54 +428,73 @@ look like a ball-condition effect.
 
 We estimate an event study in two-over bins relative to overs 78-79, on 162,467
 Test deliveries in overs 72-87. The naive specification holds the match fixed and
-lets the bowler mix change. The within-bowler specification also holds the bowler
-and innings fixed, and restricts the sample to bowler-innings units that bowl on
-both sides of the boundary. Standard errors are clustered by match. The
-comparison is a check on what the boundary identifies, not a regression-
-discontinuity estimate of the new ball itself [12].
+lets the bowler mix change. Standard errors are clustered by match. The
+comparison is a check on what the boundary identifies, not a
+regression-discontinuity estimate of the new ball itself [12].
 
-**Table 5: Dot-ball share around the second new ball, relative to overs 78-79**
+The obvious comparison would stop here: report the naive estimate, report a
+within-bowler estimate, and note that the sign reverses. That comparison is
+misleading, and the reason is instructive. The within-bowler specification can
+only be estimated on bowler-innings units that bowl on both sides of the
+boundary, so it changes two things at once, the fixed effect and the sample. The
+comparison is usually read as a fixed-effects result. It is not. Table 6
+separates the two changes by adding one restriction at a time.
 
-| Bin | All deliveries (naive) | Same bowler, same innings |
-| --- | --- | --- |
-| Pace, 80-81 | +0.0148 (p=0.031) | −0.0210 (p=0.044) |
-| Pace, 82-83 | +0.0035 (p=0.622) | −0.0293 (p=0.024) |
-| Pace, 84-85 | +0.0029 (p=0.685) | −0.0305 (p=0.044) |
-| Pace, 86-87 | −0.0045 (p=0.541) | −0.0449 (p=0.020) |
-| Spin, 80-81 | −0.0100 (p=0.129) | −0.0344 (p<0.001) |
-| Spin, 82-83 | −0.0022 (p=0.795) | −0.0379 (p<0.001) |
-| Spin, 84-85 | +0.0021 (p=0.818) | −0.0364 (p=0.005) |
-| Spin, 86-87 | −0.0018 (p=0.838) | −0.0521 (p<0.001) |
+**Table 6: The second-new-ball jump is a change of personnel (dot-ball share,
+overs 80-81 relative to 78-79)**
 
-The sign reverses. Across all deliveries, pace's dot-ball share rises by 1.5
-percentage points in the first two overs with the new ball. Within the same
-bowler, it falls by 2.1 points and keeps falling. The naive jump is the arrival
-of the frontline seamers: the pace share of deliveries rises from 40% before over
-80 to 74% after it. The ball is new, but so is the attack.
+| Comparison | Matches (pace / spin) | Pace | Spin |
+| --- | --- | --- | --- |
+| Match FE, all deliveries | 877 / 860 | +0.0148 (p=0.031) | −0.0100 (p=0.129) |
+| Match FE, matches with no continuing bowler | 472 / 347 | +0.0487 (p<0.001) | +0.0251 (p=0.522) |
+| Match FE, matches with a continuing bowler | 405 / 513 | −0.0005 (p=0.952) | −0.0125 (p=0.069) |
+| Match FE, continuing bowlers only | 405 / 513 | −0.0204 (p=0.051) | −0.0306 (p<0.001) |
+| Bowler x innings FE, continuing bowlers | 405 / 513 | −0.0210 (p=0.044) | −0.0344 (p<0.001) |
 
-Figure 1 shows the two paths. The grey line is the naive series, with a visible
-bump at the boundary. The blue line is the within-bowler series, which declines
-smoothly through the same window. Whatever the decline reflects — batters
-settling, spell fatigue, or a harder ball that finds the edge rather than the
-middle — it is not a new-ball bonus. The boundary cannot be used to identify ball
-condition. It does not follow that the smooth gradient is also selection: Section
-6.4 holds the bowler fixed and the gradient survives. The discontinuity and the
-trend are different objects, and only the first is explained by the attack.
+The ladder locates the jump. It is not present in the average match. In the 405
+matches where at least one pace bowler bowls on both sides of over 80, the naive
+estimate is already zero, and restricting further to those bowlers makes it
+slightly negative. The +1.5 point aggregate is carried by the other 472 matches,
+where the pace attack turns over completely at the boundary, so a ball effect and
+a change of bowler cannot be separated by construction. Within matches where
+bowlers continue, adding bowler-innings fixed effects moves the estimate by
+0.0006, about 3% of the gap. Composition is not a correction that the fixed
+effects apply; it is the sample.
+
+The effect is not confined to the first two overs. On continuing bowlers the pace
+coefficient is −0.0293 at 82-83, −0.0305 at 84-85 and −0.0449 at 86-87, against
++0.0035, +0.0029 and −0.0045 in the naive specification. The naive series is flat
+after the boundary because the new ball and the new attack arrive together and
+then both decay; the continuing-bowler series declines.
+
+The ball is new, but so is the attack: the pace share of deliveries rises from 40%
+before over 80 to 74% after it. Figure 1 shows the two paths. The grey line is the
+naive series, with a visible bump at the boundary. The blue line is the
+continuing-bowler series, which declines smoothly through the same window; it is
+estimated on the restricted sample, as Table 6 makes explicit. Whatever the
+decline reflects — batters settling, spell fatigue, or a harder ball that finds
+the edge rather than the middle — it is not a new-ball bonus. The boundary cannot
+be used to identify ball condition. It does not follow that the smooth gradient
+is also selection: Section 6.4 writes the gradient as an exact decomposition and
+the composition term is negligible. The discontinuity and the trend are different
+objects, and only the first is explained by the attack.
 
 **Figure 1.** Event study around the second new ball. Grey: all deliveries with
-match fixed effects. Blue: within the same bowler and innings. Vertical line at
-over 80. Bars are 95% confidence intervals from match-clustered standard errors.
+match fixed effects. Blue: bowlers who bowl on both sides of the boundary, within
+the same bowler and innings. Vertical line at over 80. Bars are 95% confidence
+intervals from match-clustered standard errors. The blue series changes the
+sample as well as the fixed effect; Table 6 reports each change separately.
 
 A second test asks whether the smooth gradient is ball ageing. From 1 October
 2011 each ODI innings has used two new balls, one from each end, in alternate
 overs [16]. Each ball is in play for at most about 25 overs instead of 50,
 so ball age accrues at half the rate per over of play, while the pitch wears at
 the same rate. If the gradient were driven by ball ageing it should halve.
-Table 6 gives the answer, with T20 as a control for common period effects. The
+Table 7 gives the answer, with T20 as a control for common period effects. The
 design is a difference-in-differences across format-era strata, estimated with
 separate within-format fits [14].
 
-**Table 6: Age-by-spin coefficient for dot-ball share before and after the
+**Table 7: Age-by-spin coefficient for dot-ball share before and after the
 two-new-ball rule**
 
 | Stratum | Coefficient (SE) |
@@ -469,7 +536,8 @@ and it points to the right scale: innings, not overs.
 
 The contrast also locates the failure. Surface change over 20 to 50 overs is
 small, but composition is not the reason the within-innings estimator fails:
-Section 6.4 removes bowler composition and the gradient grows. The failure is in
+Section 6.4 decomposes the coefficient exactly and the composition term is
+negative in ODI and Test and 1% of the total in T20. The failure is in
 attribution. The same coefficient is produced by spell stage, field changes and
 batter adaptation, and it does not persist from one innings to the next or
 improve out-of-sample prediction. A relative style gradient is a description of
@@ -488,10 +556,15 @@ ball-by-ball data and each corresponds to a failure mode documented above.
    mixture, not as a rate.
 3. **Trim innings boundaries.** The first and last overs are where style
    composition is most extreme, and they can carry an entire runs effect.
-4. **Hold the bowler fixed.** For any discontinuity design, estimate the effect
-   within bowler-by-innings. If the sign reverses, the design measures selection.
-   Apply the same test to the smooth trend: if it survives, composition is ruled
-   out, but attribution is not established.
+4. **Hold the unit fixed, and check the sample.** For any discontinuity design,
+   estimate the effect within the unit that should be comparable across the
+   boundary, and report the estimate separately for matches where such a unit
+   exists and where it does not. In our data the aggregate jump is +1.5 points,
+   the jump in matches without a continuing bowler is +4.9 points, and the jump
+   in matches with one is zero. A design that changes the sample and the fixed
+   effect at the same time cannot tell selection from a ball effect. Apply the
+   same test to the smooth trend: if it survives, composition is ruled out, but
+   attribution is not established.
 5. **Test persistence and prediction.** Correlate the innings-level estimate
    across innings of the same match, and measure the out-of-sample gain. A
    measurement that does not persist is not a measurement of the pitch.
@@ -514,10 +587,16 @@ is biased. The established-bowler restriction, which keeps the 1,491 bowlers wit
 at least 300 legal balls, leaves the dot-ball result intact, which bounds the
 problem but does not eliminate it.
 
-**Bundled treatments.** The second new ball changes the ball, the bowler, the
-field and the batter's intent. The within-bowler design removes the bowler but not
-the tactics. We therefore interpret the within-bowler estimate as "not a
-ball-condition bonus", not as a precise negative causal effect of a new ball.
+**Bundled treatments and a changing sample.** The second new ball changes the
+ball, the bowler, the field and the batter's intent. The within-bowler design
+removes the bowler but not the tactics, and it also restricts the sample to
+bowlers who continue across the boundary. Table 6 separates those two changes and
+shows that the sample restriction does almost all of the work. We therefore
+interpret the result as "not a ball-condition bonus", not as a precise negative
+causal effect of a new ball, and we do not treat the restricted sample as a
+random subset. Matches with and without a continuing pace bowler differ in attack
+quality and in how the captain used the new ball. The ladder describes where the
+jump lives; it does not estimate a ball effect in either group.
 
 **Bowler fixed effects are not an instrument.** The delivery-level specification
 in Section 6.4 conditions on bowlers who bowl across the age range, so it selects
@@ -551,10 +630,12 @@ What looks like wear is a mixture of phase, ball condition, bowler selection and
 batter adaptation, and the tests separate only one of them cleanly.
 
 The most useful negative result is the failed natural experiment. The second new
-ball raises the aggregate pace dot rate by 1.5 percentage points and lowers the
-same-bowler rate by 2.1 points. A boundary this sharp can be pure selection. But
-the smooth gradient is not the same phenomenon: holding the bowler fixed makes it
-larger, so bowler composition is not its source either. The coefficient is a
+ball raises the aggregate pace dot rate by 1.5 percentage points. The rise is 4.9
+points where the pace attack turns over at the boundary and zero where a seamer
+continues, so a boundary this sharp can be pure selection. But the smooth
+gradient is not the same phenomenon: the exact decomposition puts composition at
+1% of the coefficient in T20 and negative in ODI and Test, so bowler composition
+is not its source either. The coefficient is a
 real, precise description of how the relative effectiveness of spin and pace
 changes with ball age. It is not identified as surface wear, because it reverses
 by phase, does not respond to halving the rate at which the ball ages, and does
@@ -581,6 +662,7 @@ All code and derived artifacts are in the project repository.
 | Robustness | `python src\wear_robustness.py` | `wear_by_phase.csv`, `wear_robustness.csv` |
 | Validation | `python src\validate_wear.py` | `wear_persistence.csv`, `wear_predictive_gain.csv`, `wear_rolling_coefficients.csv` |
 | Identification | `python src\identify_wear.py all` | `wear_new_ball_event.csv`, `wear_two_new_ball.csv`, `wear_within_bowler.csv` |
+| Decomposition | `python src\decompose_wear.py all` | `wear_decomposition.csv`, `wear_boundary_ladder.csv` |
 | Figures | `python src\make_dynamics_figures.py` | `reports/figures/fig1`–`fig6` |
 
 ## References

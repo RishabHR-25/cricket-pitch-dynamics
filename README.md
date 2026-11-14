@@ -257,17 +257,19 @@ python src\pitch_dynamics.py            # over x style panel, specs, placebo
 python src\wear_robustness.py           # phase, boundary trim, established bowlers
 python src\validate_wear.py             # persistence, predictive gain, rolling origin
 python src\identify_wear.py all         # second new ball, 2011 rule, within-bowler gradient
+python src\decompose_wear.py all        # exact within/between split, selection ladder
 python src\make_dynamics_figures.py     # reports/figures/fig1-fig6
 ```
 
 Read the output as a statement about a **relative, population-level gradient**,
 never as a physical pitch measurement. The headline identification result is
-negative: the naive second-new-ball jump at over 80 is bowler selection, because
-the pace share of deliveries rises from 40% to 74% at the boundary and the
-within-bowler estimate reverses sign. The smooth gradient is not composition
-either: holding the bowler and innings fixed makes it larger (+0.00196 in T20,
-+0.00223 in ODI, +0.00027 in Test, against +0.00151, +0.00146 and +0.00013 with
-match fixed effects). The October 2011 two-new-ball rule leaves the ODI age
-gradient unchanged. Write-up:
+negative. The naive second-new-ball jump at over 80 (+0.0148 pace dot share) is a
+change of personnel: it is +0.0487 in the 472 matches where no pace bowler bowls
+on both sides of the boundary and −0.0005 in the 405 where one does, and the pace
+share of deliveries rises from 40% to 74% at the boundary. The smooth gradient is
+not composition either: an exact decomposition writes the pooled coefficient as
+a variance-weighted average of a within-bowler and a between-bowler slope, and the
+composition term is +0.00002 in T20 and negative in ODI and Test. The October
+2011 two-new-ball rule leaves the ODI age gradient unchanged. Write-up:
 `reports/PAPER_DRAFT.md` and Section 7.10 of
 `reports/EL_Phase1_Report_Content.md`.
