@@ -14,8 +14,11 @@ measurement of it. The natural proxy is the within-match change in the relative
 effectiveness of spin and pace, estimated from ball-by-ball data with match fixed
 effects. Using 6.8 million deliveries from 23,241 matches, we show that this
 proxy is precise and stable but not identified as wear. The verdict is mostly
-negative. Within-innings permutation nulls are positively biased by about a
-fifth, so the usual randomisation test overstates significance. The estimate
+negative. Within-innings permutation nulls are mis-centred — for one outcome by
+more than the effect they are meant to test — so the usual randomisation
+p-values are not usable; a null-imposed wild cluster bootstrap restores a
+zero-centred null, and under it the gradient is significant in all three
+formats. The estimate
 reverses sign between phases, which no uniform surface process predicts. The
 runs channel disappears when innings boundaries are trimmed, and the per-match
 estimate has zero cross-innings persistence and negligible predictive value.
@@ -81,11 +84,16 @@ Our contributions are:
    match-clustered standard errors. The pooled coefficient replicates and is
    stable, so the problem is not the sample.
 
-2. **A diagnostic for permutation inference.** Randomising bowling style within
-   innings produces a null distribution that is not centred on zero. About a
-   fifth of the observed dot-ball gradient is reproduced by random allocation,
-   because the phase structure of an innings is itself informative. A permutation
-   test that assumes a zero-centred null is anti-conservative.
+2. **A diagnostic for permutation inference, and a repair.** Randomising bowling
+   style within innings produces a null distribution that is not centred on zero.
+   For dot-ball share the null mean is a fifth of the observed gradient in T20
+   and ODI and three quarters in Tests; for other outcomes it can be larger than
+   the observed value in either direction, which is the signature of an invalid
+   null rather than a weak effect. The permutation p-values are therefore not
+   usable. A null-imposed wild cluster bootstrap, with the weight drawn at the
+   match level, centres the null at zero and reproduces the clustered standard
+   error; under it the dot gradient is significant in all three formats. The
+   standard placebo is not a conservative test; it is not a test of zero at all.
 
 3. **A phase decomposition that reverses.** The pooled gradient is an average of
    offsetting phase effects: the powerplay contributes the largest positive term
@@ -126,13 +134,13 @@ Our contributions are:
    surface effect.
 
 The practical message is a checklist rather than a metric. Before a within-innings
-gradient is called wear, it should survive a within-innings permutation null, a
+gradient is called wear, it should pass a correctly centred randomisation null, a
 phase decomposition, an innings-boundary trim, a bowler-fixed comparison, an exact
 composition decomposition, and a persistence test. In this data set the dot-ball
-gradient passes the boundary trim, survives the corrected permutation null in T20
-and ODI, and does not shrink under bowler fixed effects. It fails the phase check,
-does not respond to the ball-age regime, and fails the persistence and prediction
-tests. Composition is one alternative removed, not the explanation.
+gradient passes the boundary trim, is significant under the corrected null in all
+three formats, and does not shrink under bowler fixed effects. It fails the phase
+check, does not respond to the ball-age regime, and fails the persistence and
+prediction tests. Composition is one alternative removed, not the explanation.
 
 ## 2. Related work
 
@@ -254,31 +262,49 @@ sections explain why that reader would be wrong.
 
 ## 6. Five validity checks
 
-### 6.1 The permutation null is biased
+### 6.1 The permutation null is mis-centred
 
 The standard placebo reallocates spin and pace labels at random within each
 innings and refits the same specification [9], [10]. If the coefficient were
-driven by style, the observed value should lie far in the tail of the null. It
-does, but the null is not where it should be. Table 2 reports 100 draws per cell.
+driven by style, the observed value should lie in the tail of the values produced
+by random allocation. That logic fails here, because the permutation does not
+sample under the null: it reallocates the regressor and changes its joint
+distribution with over number and with the controls.
 
-**Table 2: Within-innings permutation placebo (100 draws)**
+**Table 2: The permutation null is mis-centred, and a null-imposed bootstrap repairs it**
 
-| Format | Outcome | Observed | Null mean | Null sd | p |
-| --- | --- | --- | --- | --- | --- |
-| T20 | Dot-ball share | +0.00138 | +0.00027 | 0.00012 | <0.01 |
-| T20 | Runs per ball | −0.00182 | −0.00182 | 0.00041 | 0.52 |
-| ODI | Dot-ball share | +0.00140 | +0.00030 | 0.00006 | <0.01 |
-| ODI | Runs per ball | −0.00108 | −0.00050 | 0.00014 | <0.01 |
-| Test | Dot-ball share | +0.00012 | +0.00009 | 0.00002 | 0.06 |
-| Test | Runs per ball | −0.00009 | −0.00018 | 0.00005 | 0.97 |
+| Format | Outcome | Observed | Permutation null mean (ratio) | Permutation p | Bootstrap sd | Bootstrap p |
+| --- | --- | --- | --- | --- | --- | --- |
+| T20 | Dot-ball share | +0.00138 | +0.00027 (0.20) | <0.01 | 0.00015 | <0.002 |
+| T20 | Runs per ball | −0.00182 | −0.00182 (1.00) | 0.52 | 0.00048 | <0.002 |
+| T20 | Wicket rate | +0.00001 | +0.00023 (21.0) | 1.00 | 0.00006 | 0.85 |
+| ODI | Dot-ball share | +0.00140 | +0.00030 (0.21) | <0.01 | 0.00009 | <0.002 |
+| ODI | Runs per ball | −0.00108 | −0.00050 (0.46) | <0.01 | 0.00024 | <0.002 |
+| Test | Dot-ball share | +0.00012 | +0.00009 (0.75) | 0.06 | 0.00003 | <0.002 |
+| Test | Runs per ball | −0.00009 | −0.00018 (2.03) | 0.97 | 0.00007 | 0.16 |
 
-Two facts stand out. First, the null mean is positive for dot-ball share in every
-format: randomising styles inside an innings still produces about a fifth of the
-observed gradient, because spinners and seamers are not interchangeable across
-overs even after the labels are shuffled. A test that assumes a zero-centred null
-will overstate significance. Second, once the correct null is used, the T20 runs
-effect is indistinguishable from noise ($p=0.52$). The channel that most papers
-would report is the one that fails first.
+The ratio in parentheses is the null mean divided by the observed coefficient.
+It ranges from 0.20 to 21.0 across the seven cells, which is not a mild bias. For
+dot-ball share the null sits toward the estimate, so the permutation test is
+conservative and the Test $p=0.06$ understates the evidence. For the T20 runs
+coefficient the null mean is indistinguishable from the observed value, so the
+test cannot see the effect at all. For the T20 wicket coefficient the null mean is
+twenty-one times the observed value, so the test sees an effect that is not
+there. A null that can
+hide a real effect or manufacture a spurious one is not a test of zero.
+
+The repair is to impose the null instead of permuting the regressor. We drop the
+interaction, fit the restricted model, and resample its residuals with a
+Rademacher weight drawn once per match, which preserves the clustering used by
+the standard errors. The bootstrap null is centred at zero by construction, and
+its standard deviation reproduces the match-clustered standard error (0.00015
+against 0.00016 in T20, 0.00009 against 0.00009 in ODI, 0.00003 against 0.00003
+in Test). Under it the dot-ball gradient is significant in all three formats,
+with $z$ of 9.3, 15.5 and 3.9, so the Test permutation $p=0.06$ is an artefact
+rather than a weak effect. The gradient is precise and real. Every rejection in
+the rest of the paper is about attribution, not existence. The runs channel is
+treated separately in Section 6.3, where the innings-boundary trim, not the
+permutation test, is what removes it.
 
 ### 6.2 The coefficient reverses by phase
 
@@ -609,9 +635,14 @@ play, not a reading of the surface.
 We propose six checks, in increasing order of cost. Each is cheap on
 ball-by-ball data and each corresponds to a failure mode documented above.
 
-1. **Report the permutation null, not just the p-value.** Randomise style within
-   innings, refit, and report the null mean. If the null mean is a non-trivial
-   fraction of the observed coefficient, the claim is partly mechanical.
+1. **Check that the permutation null is centred.** Randomise the regressor within
+   the permutation unit, refit, and report the null mean. If it is a non-trivial
+   fraction of the observed coefficient, the p-value is not a test of zero: the
+   permutation is reallocating the regressor, not sampling under the null. In our
+   T20 data the null mean equals the observed runs coefficient, and for wickets it
+   is twenty-one times the observed, so the same test can hide an effect or invent
+   one. The repair is to impose the null, fit the restricted model, and resample
+   its residuals with a cluster-level wild bootstrap.
 2. **Report the estimate by phase.** A wear rate should not change sign between
    phases at the same ball age. If it does, report the weighted average as a
    mixture, not as a rate.
@@ -777,6 +808,7 @@ All code and derived artifacts are in the project repository.
 | --- | --- | --- |
 | Build deliveries | `python src\build_ball_dataset.py` | `data/interim/balls.parquet` |
 | Fit specifications | `python src\pitch_dynamics.py` | `wear_specifications.csv`, `wear_placebo.json` |
+| Placebo repair | `python src\placebo_bias.py` | `wear_placebo_bias.csv` |
 | Robustness | `python src\wear_robustness.py` | `wear_by_phase.csv`, `wear_robustness.csv` |
 | Validation | `python src\validate_wear.py` | `wear_persistence.csv`, `wear_predictive_gain.csv`, `wear_rolling_coefficients.csv` |
 | Identification | `python src\identify_wear.py all` | `wear_new_ball_event.csv`, `wear_two_new_ball.csv`, `wear_within_bowler.csv` |

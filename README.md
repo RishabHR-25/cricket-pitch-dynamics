@@ -254,6 +254,7 @@ and tests whether that change can be attributed to the surface.
 ```powershell
 python src\build_ball_dataset.py        # data/interim/balls.parquet
 python src\pitch_dynamics.py            # over x style panel, specs, placebo
+python src\placebo_bias.py              # correct the mis-centred permutation null
 python src\wear_robustness.py           # phase, boundary trim, established bowlers
 python src\validate_wear.py             # persistence, predictive gain, rolling origin
 python src\identify_wear.py all         # second new ball, 2011 rule, within-bowler gradient

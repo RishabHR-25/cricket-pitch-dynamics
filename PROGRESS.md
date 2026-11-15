@@ -269,7 +269,8 @@ within-match "pitch wear" estimate can actually claim.
 | Check | Result | Verdict |
 | --- | --- | --- |
 | Pooled dot-share coefficient | +0.0015 (T20), +0.0015 (ODI), +0.0001 (Test), p<0.001 | precise but ambiguous |
-| Within-innings placebo (100 draws) | null mean +0.00027 (T20), +0.00030 (ODI) | about a fifth of the estimate is mechanical |
+| Within-innings placebo (100 draws) | null mean +0.00027 (T20), +0.00030 (ODI), +0.00009 (Test); T20 runs null = observed, T20 wicket null = 21x observed | **null is mis-centred and unusable**, so permutation p-values are not used |
+| Null-imposed wild bootstrap (600 draws) | null centred at 0; sd reproduces the clustered SE (0.00015/0.00009/0.00003); dot z = 9.3, 15.5, 3.9 | gradient is precise and real; the Test p=0.06 is an artefact |
 | Phase decomposition | T20 powerplay +0.00752, middle +0.00114, death −0.00623 | **sign reverses** |
 | Boundary trim | T20 runs −0.00198 → −0.00010 (p=0.87) | runs channel is an innings-edge artefact |
 | Persistence across innings | r = −0.003 / −0.047 / +0.030 | no match-level persistence |
@@ -367,6 +368,7 @@ resurface them.
 ```powershell
 python src\build_ball_dataset.py
 python src\pitch_dynamics.py
+python src\placebo_bias.py
 python src\wear_robustness.py
 python src\validate_wear.py
 python src\identify_wear.py all
