@@ -382,6 +382,52 @@ python src\make_dynamics_figures.py
 to `models/pitch_dynamics/validate.log`; redirected Python stdout is buffered,
 so an empty-looking log does not mean a stall.
 
+## Dashboard prototype — Pitch Brief (2026-11-15)
+
+`dashboard/app.py` is a read-only Streamlit app that turns the committed
+artifacts into a pre-match brief. It does not fit, refit or scan the ball table
+on interaction.
+
+- **Inputs.** `data/processed/dashboard_matches.csv` has 18,143 matches (the
+  exact parsed population, not the ball-derived table, which differed slightly
+  around incomplete first innings). Its labels and every prior-window feature
+  match the rolling-CV feature frames with max difference 0.0 and no
+  missing-value mismatch. `dashboard_weather_climatology.csv` holds
+  venue × format × month means plus venue-overall and format-overall fallbacks.
+  `dashboard_venues.csv` is the sidebar directory.
+- **Models.** `models/dashboard/{t20,odi,test}/model.joblib` refit the paper's
+  headline XGBoost specification on all labelled matches with the per-format
+  venue windows (5 / 5 / 10). Each `model_card.json` records 29 features,
+  training ranges, label counts and the rolling-origin CV. No in-sample metric
+  is reported anywhere.
+- **Screens.** Match brief (three proxy-class probabilities, local XGBoost
+  contributions, venue snapshot, recent matches, weather inputs); Pitch dynamics
+  (phase decomposition, age curves, venue terciles, Test second-new-ball ladder);
+  Model card (out-of-fold class report, confusion matrix, calibration, global
+  importance); Method & caveats (label rules, estimand, six-check audit,
+  limitations).
+- **Defaults.** The first venue is the highest-match-count venue with at least 20
+  matches and at least 60% role coverage in its last five: Kingsmead for T20,
+  R Premadasa for ODI, Mirpur for Test. The dropdown stays ordered by match
+  count. Venues with partial role coverage show an explicit imputation note.
+- **Weather** is month climatology plus an optional dry or wet build-up scenario,
+  not a forecast.
+- **Verified.** `streamlit.testing.v1.AppTest` passes for all three formats,
+  venue changes, the no-history case, and toss and scenario changes. A local
+  server returned `ok` from `/_stcore/health`.
+- **Committed inputs.** The final rolling-origin run
+  `models/rolling_cv_final` (about 1.3 MB) is force-added, because
+  `models/rolling_cv_*/` is otherwise ignored; it holds the CV summary, the
+  feature frames behind the deployment refit and the out-of-fold predictions the
+  model card reads. `data/interim/matches_parsed.parquet` is the parsed-match
+  cache the data build uses when `all_json.zip` is absent.
+
+```powershell
+python src\build_dashboard_data.py
+python src\build_dashboard_model.py
+streamlit run dashboard/app.py
+```
+
 ## How to resume
 
 Weather is done. From the repo root:

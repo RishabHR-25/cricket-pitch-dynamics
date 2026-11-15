@@ -1,0 +1,730 @@
+venue_key,match_type,venue,city,gender,team_type,matches,first_match,last_match
+011e780e,T20,"Gliderol Stadium, Adelaide",Adelaide,female,club,3,2017-12-09,2017-12-17
+01489ccd,T20,"Rookwood, Sale",Sale,female,club,1,2022-05-18,2022-05-18
+01a4fdb1,ODI,"Providence Stadium, Guyana",Providence,male,international,27,2007-03-28,2026-07-16
+01a4fdb1,T20,"Providence Stadium, Guyana",Providence,male,club,124,2010-04-30,2026-09-11
+01a4fdb1,Test,"Providence Stadium, Guyana",Providence,male,international,3,2008-03-22,2024-08-15
+01de6f86,T20,"Shrimant Madhavrao Scindia Cricket Stadium, Gwalior",Gwalior,male,international,1,2024-10-06,2024-10-06
+024d9dc3,ODI,"National Cricket Stadium, St George's, Grenada",St George's,female,international,20,2003-05-30,2026-02-25
+024d9dc3,T20,"National Cricket Stadium, St George's, Grenada",St George's,female,international,13,2014-07-11,2026-03-03
+024d9dc3,Test,"National Cricket Stadium, St George's, Grenada",St George's,male,international,4,2009-07-17,2025-07-03
+035dc474,ODI,"Forthill, Dundee",Dundee,male,international,15,2024-07-18,2026-08-13
+035dc474,T20,"Forthill, Dundee",Dundee,female,international,10,2019-08-31,2019-09-07
+0443d94f,ODI,"The Rose Bowl, Southampton",Southampton,male,international,31,2003-07-10,2025-09-07
+0443d94f,T20,"The Rose Bowl, Southampton",Southampton,male,international,186,2005-06-13,2026-09-15
+0443d94f,Test,"The Rose Bowl, Southampton",Southampton,male,international,7,2011-06-16,2021-06-18
+044780b6,ODI,"Grange Cricket Club Ground, Raeburn Place, Edinburgh",Edinburgh,male,international,8,2013-05-17,2022-07-31
+044780b6,T20,"Grange Cricket Club Ground, Raeburn Place, Edinburgh",Edinburgh,female,international,32,2015-07-09,2026-06-04
+044842ae,ODI,"Sheikh Abu Naser Stadium, Khulna",Khulna,male,international,2,2012-11-30,2012-12-02
+044842ae,T20,"Sheikh Abu Naser Stadium, Khulna",Khulna,male,international,11,2013-01-22,2016-01-22
+044842ae,Test,"Sheikh Abu Naser Stadium, Khulna",Khulna,male,international,3,2012-11-21,2015-04-28
+045591e3,T20,"West Park Oval, Burnie",Burnie,female,club,3,2018-12-08,2019-11-03
+058a1066,T20,"Achimota Senior Secondary School A Field, Accra",Accra,male,international,22,2024-03-07,2026-03-28
+05b1646a,ODI,"Nehru Stadium, Fatorda, Margao",Margao,male,international,2,2006-04-03,2007-02-14
+05ceed33,ODI,"Boland Park, Paarl",Paarl,male,international,17,2003-02-12,2024-12-17
+05ceed33,T20,"Boland Park, Paarl",Paarl,male,international,58,2009-10-28,2026-01-27
+0689d53a,T20,"Lalabhai Contractor Stadium, Surat",,male,club,36,2019-02-21,2019-12-01
+07159bf0,ODI,"Dr DY Patil Sports Academy, Navi Mumbai",Navi Mumbai,female,international,4,2025-10-20,2025-11-02
+07159bf0,T20,"Dr DY Patil Sports Academy, Navi Mumbai",Navi Mumbai,female,club,66,2008-04-27,2026-01-17
+07159bf0,Test,"Dr DY Patil Sports Academy, Navi Mumbai",Navi Mumbai,female,international,1,2023-12-14,2023-12-14
+08d5a12b,T20,"KSCA Cricket (2) Ground, Alur",,male,club,5,2021-01-10,2021-01-18
+08ddebea,T20,"Invermay Park, Launceston",Launceston,female,club,2,2019-11-13,2021-10-24
+095126d9,T20,Gelephu International Cricket Ground,Gelephu,female,international,30,2024-10-19,2026-01-29
+09634126,T20,"Camberwell Sports Ground, Melbourne",Melbourne,female,club,5,2017-01-04,2018-01-28
+09c89765,T20,"Emerald High School Ground, Indore",,male,club,22,2019-02-21,2021-01-17
+0b1dbecd,T20,Guanggong International Cricket Stadium,,female,international,4,2012-10-28,2012-10-31
+0b786e7b,ODI,"United Cricket Club Ground, Windhoek",Windhoek,male,international,16,2022-12-01,2024-09-26
+0b786e7b,T20,"United Cricket Club Ground, Windhoek",Windhoek,male,international,34,2019-04-01,2023-11-30
+0c1f648d,ODI,"Central Broward Regional Park Stadium Turf Ground, Lauderhill",Lauderhill,male,international,11,2019-09-13,2025-05-27
+0c1f648d,T20,"Central Broward Regional Park Stadium Turf Ground, Lauderhill",Lauderhill,male,international,42,2010-05-22,2025-08-03
+0ca53d3b,T20,"Lugogo Cricket Oval, Kampala",Kampala,female,international,8,2019-05-20,2025-10-26
+0cd1302a,T20,"Fenner's, Cambridge",Cambridge,female,club,1,2021-08-30,2021-08-30
+0cda819b,ODI,"International Sports Stadium, Coffs Harbour",Coffs Harbour,female,international,2,2016-11-29,2017-10-26
+0cda819b,T20,"International Sports Stadium, Coffs Harbour",Coffs Harbour,male,club,5,2020-01-05,2026-01-05
+0cef2db0,T20,"Aigburth, Liverpool",Liverpool,male,club,6,2017-07-09,2020-09-04
+0d0053c6,T20,Vanuatu Cricket Ground (Oval 2),Port Vila,female,international,8,2023-09-01,2023-09-08
+0d1f3e7c,T20,"Bloomfield Cricket and Athletic Club Ground, Colombo",Colombo,male,club,4,2024-05-14,2024-05-16
+0d32af46,T20,"TCA Oval, Blantyre",Blantyre,male,international,22,2024-10-09,2026-08-16
+0d61ce0e,T20,Gahanga B Ground,Kigali City,male,international,60,2024-05-31,2026-09-13
+0f38bf18,T20,"Gymkhana Club Ground, Dar-es-Salaam",Dar-es-Salaam,female,international,9,2024-09-21,2025-11-05
+0f7729b7,T20,"University of Tasmania Stadium, Launceston",Launceston,male,club,24,2017-01-05,2023-12-11
+0fe8f9ef,T20,Vanuatu Cricket Ground,Port Vila,female,international,20,2022-09-10,2023-09-08
+1075163b,T20,Singapore National Cricket Ground,Singapore,male,international,56,2024-10-21,2026-06-26
+11938200,T20,"Queen's Park, Chesterfield",Chesterfield,male,club,13,2014-07-06,2026-06-28
+11b76a2f,T20,"Drummoyne Oval, Sydney",Sydney,female,club,30,2015-12-18,2026-11-01
+12c104c1,ODI,"Sheikh Zayed Stadium, Abu Dhabi",Abu Dhabi,male,international,40,2006-04-18,2026-10-17
+12c104c1,T20,"Sheikh Zayed Stadium, Abu Dhabi",Abu Dhabi,male,club,183,2010-10-26,2025-12-30
+12c104c1,Test,"Sheikh Zayed Stadium, Abu Dhabi",Abu Dhabi,male,international,13,2010-11-20,2018-12-03
+132928e2,ODI,"Buffalo Park, East London",East London,female,international,14,2003-02-16,2025-12-13
+132928e2,T20,"Buffalo Park, KuGumpo City",KuGompo City,male,club,28,2009-05-01,2026-09-28
+13328e0d,ODI,Mulpani Cricket Ground,Kathmandu,male,international,1,2023-04-29,2023-04-29
+13328e0d,T20,Mulpani Cricket Ground,Kathmandu,female,international,27,2023-10-18,2026-02-01
+1361477c,T20,La Manga Club Top Ground,Murcia,male,international,16,2019-06-26,2025-12-07
+13af4bc9,ODI,"Sunrise Sports Club, Harare",Harare,female,international,1,2021-11-27,2021-11-27
+144d015c,T20,"Belgrano Athletic Club Ground, Buenos Aires",Buenos Aires,male,international,10,2023-02-22,2024-12-15
+146a8a08,ODI,"R Premadasa Stadium, Colombo",Colombo,male,international,100,2004-02-27,2026-01-27
+146a8a08,T20,"R Premadasa Stadium, Colombo",Colombo,male,club,127,2009-02-10,2026-09-16
+146a8a08,Test,"R Premadasa Stadium, Colombo",Colombo,male,international,4,2005-09-12,2017-07-14
+159da669,ODI,"The Hills Cricket Club Ground, Dublin",Dublin,female,international,2,2016-08-11,2018-06-10
+163af78d,ODI,"P Saravanamuttu Stadium, Colombo",Colombo,female,international,9,2007-07-20,2017-02-21
+163af78d,T20,"P Saravanamuttu Stadium, Colombo",Colombo,male,club,30,2014-11-24,2026-09-05
+163af78d,Test,"P Saravanamuttu Stadium, Colombo",Colombo,male,international,13,2005-09-20,2019-08-22
+18521501,T20,"Sri Ramachandra Medical College Ground, Chennai",,male,club,4,2021-01-13,2021-01-19
+18758283,Test,"Asgiriya Stadium, Kandy",Kandy,male,international,3,2006-04-03,2007-12-01
+189d0732,ODI,"McLean Park, Napier",Napier,male,international,22,2002-12-29,2025-11-19
+189d0732,T20,"McLean Park, Napier",Napier,female,club,36,2017-01-03,2026-01-24
+189d0732,Test,"McLean Park, Napier",Napier,male,international,4,2008-03-22,2012-01-26
+19345e84,T20,"Enborne Lodge, Newbury",Newbury,female,club,2,2023-05-23,2025-07-09
+19956be7,ODI,"Peter Burge Oval, Brisbane",Brisbane,female,international,2,2014-08-23,2014-08-26
+1a82fe4b,T20,"Army Ground, Panagoda",Panagoda,male,club,3,2024-05-12,2024-05-13
+1b07faf3,ODI,Bulawayo Athletic Club,Bulawayo,male,international,6,2018-03-06,2023-06-27
+1b07faf3,T20,Bulawayo Athletic Club,Bulawayo,male,international,9,2022-07-11,2022-07-17
+1b74c7ea,ODI,"Sector 16 Stadium, Chandigarh",Chandigarh,male,international,1,2007-10-08,2007-10-08
+1b74c7ea,T20,"Sector 16 Stadium, Chandigarh",,male,club,13,2019-11-08,2019-11-18
+1c80fa70,T20,"Ground 2, Independence Park, Port Vila",Port Vila,female,international,4,2019-05-06,2019-05-10
+1cc2cfc9,T20,"Edgbaston Foundation Community Sports Ground, Birmingham",Birmingham,female,club,1,2021-08-30,2021-08-30
+1cf55100,T20,"Instonians Cricket Club, Shaw's Bridge Lower Ground, Belfast",Belfast,male,club,1,2017-06-23,2017-06-23
+1dc9ff53,T20,"White Hill Field, Sandys Parish",Hamilton,male,international,21,2019-08-18,2026-06-27
+1ddfa01c,T20,"Guernsey Rovers Athletic Club Ground, Port Soif",Port  Soif,male,international,13,2024-06-23,2024-08-28
+1fdf4def,ODI,"WACA, Perth",Perth,female,international,28,2004-02-01,2024-12-11
+1fdf4def,T20,"WACA, Perth",Perth,female,club,83,2007-12-11,2026-10-31
+1fdf4def,Test,"WACA, Perth",Perth,female,international,15,2003-10-09,2026-03-06
+20c1f38f,T20,"KSCA Cricket Ground, Alur",Bengaluru,male,club,6,2021-01-10,2024-12-11
+20c7c4e4,T20,"Mainpower Oval, Rangiora",Rangiora,male,club,1,2017-12-22,2017-12-22
+21c7f39a,T20,"University Oval, Hobart",Hobart,female,club,2,2021-10-27,2021-10-27
+221a9746,T20,"Scott Page Field, Vinor",Prague,female,international,45,2021-05-21,2026-09-06
+22af7ba5,ODI,"Sir Paul Getty's Ground, Wormsley",Wormsley,female,international,1,2012-07-11,2012-07-11
+22af7ba5,Test,"Sir Paul Getty's Ground, Wormsley",Wormsley,female,international,2,2013-08-11,2014-08-13
+22c90c95,T20,"Jubilee Park, Ringwood, Melbourne",Melbourne,female,club,1,2023-11-08,2023-11-08
+23d8819f,ODI,"Sky Stadium, Wellington",Wellington,male,international,21,2003-01-08,2025-11-01
+23d8819f,T20,"Hnry Stadium, Wellington",Wellington,male,international,26,2006-12-22,2026-10-27
+241ce892,ODI,"Manuka Oval, Canberra",Canberra,male,international,11,2013-02-06,2024-02-06
+241ce892,T20,"Manuka Oval, Canberra",Canberra,female,international,51,2015-01-28,2026-02-19
+241ce892,Test,"Manuka Oval, Canberra",Canberra,female,international,2,2019-02-01,2022-01-27
+2474c719,T20,"Moses Mabhida Stadium, Durban",Durban,male,international,1,2011-01-09,2011-01-09
+24868794,T20,"Colts Cricket Club Ground, Colombo",Colombo,male,club,23,2014-10-23,2026-09-05
+2489737f,ODI,"Great Barrier Reef Arena, Mackay",Mackay,male,international,5,2021-09-21,2025-08-24
+2489737f,T20,"Great Barrier Reef Arena, Mackay",Mackay,female,international,24,2018-01-12,2024-09-22
+2489737f,Test,"Great Barrier Reef Arena, Mackay",Mackay,male,international,1,2026-08-22,2026-08-22
+2569ab5c,T20,"Sydney Parade, Dublin",Dublin,female,international,2,2019-05-28,2019-05-29
+2592a1a2,ODI,"Cobham Oval (New), Whangarei",Whangarei,male,international,2,2012-02-06,2017-12-20
+2592a1a2,T20,"Cobham Oval (New), Whangarei",Whangarei,female,club,2,2022-01-16,2022-01-16
+25b64fb5,ODI,"Kingsmead, Durban",Durban,male,international,30,2003-02-11,2026-09-24
+25b64fb5,T20,"Kingsmead, Durban",Durban,male,club,111,2007-09-12,2026-09-27
+25b64fb5,Test,"Kingsmead, Durban",Durban,male,international,16,2002-12-26,2026-10-09
+25e064c5,T20,"Ekeberg Cricket Ground 2, Oslo",Oslo,female,international,1,2024-08-11,2024-08-11
+25fd68ff,T20,"College Ground, Cheltenham",Cheltenham,male,club,16,2014-07-18,2025-07-17
+27885932,ODI,"Hazelaarweg, Rotterdam",Rotterdam,male,international,8,2021-05-19,2024-08-21
+27885932,T20,"Hazelaarweg, Rotterdam",Rotterdam,female,international,17,2015-07-02,2025-08-27
+2895d86a,ODI,"High Performance Oval, Windhoek",Windhoek,male,international,5,2026-10-22,2026-11-01
+2895d86a,T20,"High Performance Oval, Windhoek",Windhoek,female,international,23,2025-04-08,2026-07-25
+291a7a33,ODI,Melbourne Cricket Ground,Melbourne,male,international,39,2003-01-21,2024-11-04
+291a7a33,T20,Melbourne Cricket Ground,Melbourne,male,club,111,2008-02-01,2026-01-13
+291a7a33,Test,Melbourne Cricket Ground,Melbourne,male,international,23,2002-12-26,2025-12-26
+2a20f4bc,ODI,Old Trafford,Manchester,male,international,24,2003-06-17,2022-07-22
+2a20f4bc,T20,Old Trafford,Manchester,male,international,162,2008-06-13,2026-09-19
+2a20f4bc,Test,Old Trafford,Manchester,male,international,16,2006-07-27,2025-07-23
+2b5d00db,ODI,"YMCA Cricket Club, Dublin",Dublin,female,international,1,2013-07-19,2013-07-19
+2b5d00db,T20,"YMCA Cricket Club, Dublin",Dublin,female,international,8,2013-07-16,2019-05-26
+2c7e2200,ODI,"Sportpark Westvliet, The Hague",The Hague,male,international,4,2022-08-26,2024-08-15
+2c7e2200,T20,"Sportpark Westvliet, The Hague",The Hague,male,club,37,2012-07-25,2026-09-06
+2d01e61b,T20,"The Green, Comber",Comber,male,club,11,2016-05-27,2022-05-29
+2de57b79,T20,"Las Caballerizas, Mexico City",Mexico City,female,international,1,2024-11-17,2024-11-17
+2e3b883d,ODI,Galle International Stadium,Galle,female,international,7,2017-06-30,2023-07-03
+2e3b883d,T20,Galle International Stadium,,female,international,12,2012-09-26,2012-10-01
+2e3b883d,Test,Galle International Stadium,Galle,male,international,40,2004-03-08,2026-08-15
+2eb1cc24,ODI,"Chilaw Marians Cricket Club Ground, Katunayake",Katunayake,female,international,2,2018-09-16,2019-03-21
+2eb1cc24,T20,"Chilaw Marians Cricket Club Ground, Katunayake",FTZ Sports Complex,female,international,1,2018-09-25,2018-09-25
+2fa1bb17,ODI,Sharjah Cricket Stadium,Sharjah,male,international,39,2003-04-03,2023-06-09
+2fa1bb17,T20,Sharjah Cricket Stadium,Sharjah,male,club,137,2013-11-26,2026-01-02
+2fa1bb17,Test,Sharjah Cricket Stadium,,male,international,5,2011-11-03,2016-10-30
+2fd21e32,T20,"Ground 1, Independence Park, Port Vila",Port Vila,female,international,6,2019-05-06,2019-05-10
+30417bc3,T20,"Oak Hill Cricket Club, Wicklow",Wicklow,male,club,2,2024-06-04,2024-09-10
+31889d8b,T20,"Merrion Cricket Club Ground, Dublin",Dublin,male,club,2,2017-06-09,2017-07-21
+3198489d,ODI,Sydney Cricket Ground,Sydney,male,international,45,2003-01-09,2025-10-25
+3198489d,T20,Sydney Cricket Ground,Sydney,female,international,98,2007-01-09,2026-02-15
+3198489d,Test,Sydney Cricket Ground,Sydney,male,international,25,2003-01-02,2026-01-04
+33e58737,ODI,"North-West University No1 Ground, Potchefstroom",Potchefstroom,female,international,3,2017-05-07,2017-05-19
+33ec7769,T20,"Fitzherbert Park, Palmerston North",Palmerston North,female,club,10,2021-12-27,2025-12-27
+34f4a4a5,T20,Sano International Cricket Ground,Sano,male,international,52,2022-10-10,2026-09-19
+351ac0b1,ODI,"M Chinnaswamy Stadium, Bengaluru",Bengaluru,female,international,21,2007-06-06,2024-06-23
+351ac0b1,T20,"M Chinnaswamy Stadium, Bengaluru",Bengaluru,male,club,138,2008-04-18,2026-04-24
+351ac0b1,Test,"M Chinnaswamy Stadium, Bengaluru",Bengaluru,male,international,9,2001-12-19,2024-10-16
+354f95b9,ODI,"Holkar Cricket Stadium, Indore",Indore,male,international,13,2006-04-15,2026-01-18
+354f95b9,T20,"Holkar Cricket Stadium, Indore",Indore,male,international,54,2011-05-13,2026-10-11
+354f95b9,Test,"Holkar Cricket Stadium, Indore",Indore,male,international,3,2016-10-08,2023-03-01
+3562399b,ODI,Sheikhupura Stadium,,male,international,1,2008-02-02,2008-02-02
+35d10c8a,ODI,"Sportpark Maarschalkerweerd, Utrecht",Utrecht,male,international,14,2021-06-02,2026-07-31
+35d10c8a,T20,"Sportpark Maarschalkerweerd, Utrecht",Utrecht,female,international,29,2018-07-07,2025-06-13
+35f11f32,T20,"Molyneux Park, Alexandra",Alexandra,female,club,23,2017-12-26,2025-12-30
+36339891,T20,Morodok Techo National Stadium,Phnom Penh,female,international,4,2023-02-09,2023-02-12
+36a49c1a,T20,"Radlett Cricket Club, Radlett",Radlett,male,club,8,2019-08-11,2023-06-06
+36c653fc,T20,"Albert Park 2, Suva",Suva,female,international,9,2025-09-09,2025-09-15
+36c9939a,T20,"People First Stadium, Carrara",Carrara,male,international,23,2018-11-17,2025-11-06
+36c9939a,Test,"Metricon Stadium, Carrara",Carrara,female,international,1,2021-09-30,2021-09-30
+38a7a67b,ODI,"Grace Road, Leicester",Leicester,female,international,17,2016-06-20,2026-09-01
+38a7a67b,T20,"Grace Road, Leicester",Leicester,male,club,82,2014-05-16,2026-07-08
+38a7a67b,Test,"Grace Road, Leicester",Leicester,female,international,1,2006-08-08,2006-08-08
+394fe4d6,T20,"GMHBA Stadium, South Geelong, Victoria",Geelong,male,club,22,2017-02-19,2025-12-21
+3b0e922b,T20,Zhejiang University of Technology Cricket Field,Hangzhou,female,international,18,2023-09-22,2024-11-10
+3b6df8ab,ODI,"Captain Roop Singh Stadium, Gwalior",Gwalior,male,international,3,2003-10-26,2010-02-24
+3d4fd61e,T20,"Grainville, St Saviour",St Saviour,female,international,15,2022-06-25,2026-06-14
+3d631e0e,ODI,"Eden Park Outer Oval, Auckland",Auckland,female,international,3,2017-02-26,2020-01-27
+3d631e0e,T20,"Eden Park Outer Oval, Auckland",Auckland,female,club,66,2017-12-13,2026-01-26
+3d9c33b7,ODI,"Takashinga Sports Club, Highfield, Harare",Harare,male,international,9,2023-06-18,2023-07-06
+3d9c33b7,T20,"Takashinga Sports Club, Highfield, Harare",Harare,female,international,19,2019-05-06,2026-10-07
+3dc422fc,ODI,"SuperSport Park, Centurion",Centurion,female,international,43,2003-02-15,2026-02-25
+3dc422fc,T20,Centurion Park,Centurion,male,club,90,2009-03-29,2026-09-25
+3dc422fc,Test,"SuperSport Park, Centurion",Centurion,male,international,20,2005-03-11,2024-12-26
+3e4de790,T20,"Woodbridge Road, Guildford",Guildford,female,club,10,2016-08-09,2022-06-05
+3e6561e3,T20,"Simar Cricket Ground, Rome",Rome,female,international,19,2024-06-09,2025-05-29
+3e9ce5d3,T20,"Bankstown Oval, Sydney",Sydney,female,club,2,2019-01-06,2019-10-27
+3e9ce5d3,Test,"Bankstown Oval, Sydney",Sydney,female,international,2,2003-02-22,2011-01-22
+3f003d1a,T20,"St George's College Ground, Buenos Aires",Buenos Aires,female,international,18,2023-10-18,2026-08-02
+3fe8d9bf,T20,Sao Fernando Polo and Cricket Club,Seropedica,male,international,2,2024-10-12,2024-10-13
+4003ef9a,T20,La Manga Club Bottom Ground,Murcia,male,international,14,2019-10-25,2023-02-26
+405a8927,ODI,"Mangaung Oval, Bloemfontein",Bloemfontein,female,international,20,2003-02-10,2026-02-22
+405a8927,T20,"Mangaung Oval, Bloemfontein",Bloemfontein,male,club,26,2009-05-15,2024-10-16
+405a8927,Test,"Mangaung Oval, Bloemfontein",Bloemfontein,female,international,3,2008-11-19,2024-12-15
+40ba2a7e,T20,Dreux Sport Cricket Club,Dreux,male,international,7,2024-05-09,2024-05-12
+416aeb39,T20,"Church Street Park, Morrisville",Morrisville,male,club,13,2023-07-20,2024-07-17
+419fe87a,T20,"Albert Park 1, Suva",Suva,female,international,12,2025-09-05,2025-09-15
+425055d2,ODI,"Bir Sreshtho Flight Lieutenant Matiur Rahman Stadium, Chattogram",Chattogram,male,international,24,2006-02-25,2026-04-23
+425055d2,T20,"Bir Sreshtho Flight Lieutenant Matiur Rahman Stadium, Chattogram",Chattogram,male,international,136,2012-02-18,2026-06-21
+425055d2,Test,"Bir Sreshtho Flight Lieutenant Matiur Rahman Stadium, Chattogram",Chattogram,male,international,23,2006-02-28,2025-04-28
+426556b9,T20,"Asian Institute of Technology Ground, Bangkok",Bangkok,female,international,27,2016-12-04,2025-11-30
+42a45b5f,T20,Albertslund Cricket Club,Copenhagen,female,international,6,2025-08-29,2026-06-27
+42fac2bc,T20,"Royal Brussels Cricket Club Ground, Waterloo",Waterloo,male,international,10,2022-06-29,2022-07-04
+43ac9a5d,T20,"Guru Nanak College Ground, Chennai",,male,club,3,2021-01-13,2021-01-17
+4414dcff,ODI,"Windsor Park, Roseau",Dominica,male,international,4,2009-07-26,2010-05-30
+4414dcff,T20,"Windsor Park, Roseau",Roseau,male,international,3,2014-07-05,2022-07-03
+4414dcff,Test,"Windsor Park, Roseau",Roseau,male,international,6,2011-07-06,2023-07-12
+441641a6,ODI,"Darren Sammy National Cricket Stadium, Gros Islet, St Lucia",Gros Islet,female,international,21,2004-05-02,2023-07-01
+441641a6,T20,"Darren Sammy National Cricket Stadium, Gros Islet, St Lucia",Gros Islet,male,club,89,2010-05-01,2026-08-21
+441641a6,Test,"Darren Sammy National Cricket Stadium, Gros Islet, St Lucia",Gros Islet,male,international,8,2006-06-10,2022-06-24
+447236ab,T20,"Botswana Cricket Association Oval 1, Gaborone",Gaborone,male,international,87,2018-08-20,2026-05-30
+45d23acd,T20,Malkerns Country Club Oval,Malkerns,male,international,12,2025-09-12,2026-06-07
+4666efc5,ODI,"Gaddafi Stadium, Lahore",Lahore,male,international,49,2003-10-03,2026-10-31
+4666efc5,T20,"Gaddafi Stadium, Lahore",Lahore,male,club,119,2015-05-22,2026-05-03
+4666efc5,Test,"Gaddafi Stadium, Lahore",Lahore,male,international,6,2003-10-17,2025-10-12
+467bfb75,ODI,"Affies Park, Windhoek",Windhoek,male,international,1,2019-04-27,2019-04-27
+46d73339,T20,Gahanga International Cricket Stadium,Kigali City,male,international,183,2019-06-18,2026-09-19
+46eb19b0,T20,"Europa Sports Complex, Gibraltar",Gibraltar,female,international,22,2023-05-04,2024-12-16
+472e2c7f,T20,"Eastern Oval, Ballarat",Ballarat,female,club,4,2019-11-23,2022-10-30
+477b2bd0,T20,"Waverley Oval, Sydney",Sydney,female,club,1,2016-01-15,2016-01-15
+477f1ae2,ODI,"Telstra Dome, Melbourne",Melbourne,male,international,5,2004-12-05,2006-02-03
+477f1ae2,T20,"Marvel Stadium, Melbourne",Melbourne,male,club,75,2011-12-22,2026-01-15
+478adcab,T20,"Lavington Sports Oval, Albury",Albury,male,club,4,2016-12-13,2023-12-23
+48efd5ba,T20,"Boughton Hall Cricket Club Ground, Chester",Chester,female,club,3,2019-08-18,2021-08-30
+49496c64,T20,"FB Fields, St Clement",St Clement,female,international,5,2023-05-29,2023-06-02
+49d78642,T20,SSC Karlsruhe,Karlsruhe,female,international,5,2026-07-10,2026-07-12
+4a025ff3,T20,Nuriootpa Centennial Park,Nuriootpa,female,club,1,2019-11-16,2019-11-16
+4af8b62f,T20,"National Stadium, Hamilton",Hamilton,male,international,6,2019-08-19,2023-10-07
+4b11d454,T20,"New Farnley Cricket Club, Leeds",Leeds,female,international,3,2025-08-31,2025-09-02
+4bacac99,ODI,Rangiri Dambulla International Stadium,Dambulla,male,international,48,2003-05-10,2024-11-13
+4bacac99,T20,Rangiri Dambulla International Stadium,Dambulla,female,international,47,2022-06-23,2026-08-04
+4cd78d95,T20,"The County Ground, Beckenham",Beckenham,female,club,10,2015-05-29,2024-05-24
+4cd79f92,T20,"Royal Selangor Club, Kuala Lumpur",Kuala Lumpur,female,international,12,2018-06-04,2024-02-13
+4d54f272,T20,Tikkurila Cricket Ground,Vantaa,male,international,34,2022-07-12,2026-08-21
+4e37a018,T20,"Kyambogo Cricket Oval, Kampala",Kampala,male,international,6,2019-05-20,2019-05-23
+4f19260e,ODI,"The County Ground, Chelmsford",Chelmsford,female,international,5,2009-06-29,2024-05-29
+4f19260e,T20,"The County Ground, Chelmsford",Chelmsford,male,club,113,2012-06-28,2026-07-10
+4fbc052d,T20,"Bandra Kurla Complex, Mumbai",,male,club,22,2016-01-15,2021-01-19
+50039b09,ODI,"St Lawrence Ground, Canterbury",Canterbury,female,international,6,2003-06-29,2022-09-21
+50039b09,T20,"St Lawrence Ground, Canterbury",Canterbury,male,club,85,2012-06-26,2026-07-12
+50039b09,Test,"St Lawrence Ground, Canterbury",Canterbury,female,international,1,2015-08-11,2015-08-11
+5057d88a,ODI,"Kotambi Stadium, Vadodara",Vadodara,female,international,7,2024-12-22,2026-10-28
+5057d88a,T20,"Kotambi Stadium, Vadodara",Vadodara,female,club,17,2025-02-14,2026-02-05
+5094a793,ODI,"Rajiv Gandhi International Stadium, Uppal",Hyderabad,male,international,10,2005-11-16,2023-10-10
+5094a793,T20,"Rajiv Gandhi International Stadium, Uppal",Hyderabad,male,international,93,2008-04-22,2026-10-14
+5094a793,Test,"Rajiv Gandhi International Stadium, Uppal",Hyderabad,male,international,6,2010-11-12,2024-01-25
+52d34c4e,T20,Happy Valley Ground 2,Episkopi,male,international,27,2025-10-31,2026-05-23
+53253b23,T20,"KSCA Cricket (3) Ground, Alur",,male,club,4,2021-01-10,2021-01-16
+5485390b,T20,University of Dar-es-Salaam Ground 1,Dar-es-Salaam,male,international,7,2024-09-21,2024-09-26
+54faa0f3,T20,University of Lagos Cricket Oval,Lagos,male,international,5,2021-10-19,2021-10-26
+55e73e73,T20,"Mladost Cricket Ground, Zagreb",Zagreb,male,international,9,2024-08-02,2025-08-08
+58512cad,ODI,"Mahinda Rajapaksa International Cricket Stadium, Sooriyawewa, Hambantota",Hambantota,female,international,26,2011-02-20,2026-07-28
+58512cad,T20,"Mahinda Rajapaksa International Cricket Stadium, Sooriyawewa, Hambantota",Hambantota,female,international,40,2012-06-01,2024-06-28
+586b8dfc,ODI,Harare Sports Club,Harare,female,international,131,2003-02-10,2026-09-30
+586b8dfc,T20,Harare Sports Club,Harare,male,international,76,2010-06-12,2026-07-26
+586b8dfc,Test,Harare Sports Club,Harare,male,international,15,2005-08-07,2026-06-28
+586df99b,T20,"Lochlands, Arbroath",Arbroath,female,international,7,2019-09-01,2019-09-07
+59af6dc1,T20,"Udayana Cricket Ground, Bali",Bali,male,international,95,2023-11-20,2026-04-13
+59c5568b,ODI,"Arnos Vale Ground, Kingstown",St Vincent,male,international,11,2003-06-11,2012-03-20
+59c5568b,T20,"Arnos Vale Ground, Kingstown",Kingstown,male,club,14,2013-07-27,2026-08-09
+59c5568b,Test,"Arnos Vale Ground, Kingstown",St Vincent,male,international,2,2009-07-09,2014-09-05
+5a232ad1,ODI,"Allan Border Field, Brisbane",Brisbane,female,international,16,2017-10-22,2026-10-14
+5a232ad1,T20,"Allan Border Field, Brisbane",Brisbane,female,club,40,2016-12-26,2026-10-30
+5a97f529,T20,"Centre for Cricket Development Ground, Windhoek",Windhoek,female,international,10,2022-04-20,2022-04-26
+5a985b66,ODI,"Sawai Mansingh Stadium, Jaipur",Jaipur,male,international,10,2006-10-11,2013-10-16
+5a985b66,T20,"Sawai Mansingh Stadium, Jaipur",Jaipur,male,club,95,2008-04-21,2026-05-19
+5b927a52,ODI,Lahore City Cricket Association Ground,Lahore,female,international,7,2025-04-09,2025-04-19
+5bbd83c0,ODI,"Reliance Stadium, Vadodara",Vadodara,female,international,10,2005-11-12,2019-10-14
+5bbd83c0,T20,"Reliance Stadium, Vadodara",,male,club,18,2016-01-02,2021-11-09
+5c006b8f,T20,"College Field, St Peter Port",St Peter Port,male,international,6,2019-06-16,2022-05-20
+5c9da760,ODI,"Bangabandhu National Stadium, Dhaka",Dhaka,male,international,4,2003-11-10,2005-01-31
+5c9da760,Test,"Bangabandhu National Stadium, Dhaka",Dhaka,male,international,2,2003-10-21,2004-12-10
+5d785c7e,ODI,"Shaheed Veer Narayan Singh International Stadium, Raipur",Raipur,male,international,2,2023-01-21,2025-12-03
+5d785c7e,T20,"Shaheed Veer Narayan Singh International Stadium, Raipur",Raipur,female,international,27,2013-04-28,2026-10-20
+5e0fd54a,ODI,"North Marine Road Ground, Scarborough",Scarborough,female,international,2,2014-08-21,2014-08-23
+5e0fd54a,T20,"North Marine Road Ground, Scarborough",Scarborough,female,club,2,2018-08-05,2019-08-23
+5e5dc235,T20,"Vassil Levski National Sports Academy, Sofia",Sofia,female,international,34,2021-06-24,2026-06-28
+5e7136c5,ODI,"Cazalys Stadium, Cairns",Cairns,male,international,6,2003-08-02,2025-08-19
+5e7136c5,T20,"Cazalys Stadium, Cairns",Cairns,male,international,3,2019-01-12,2025-08-16
+5ea0ad95,T20,"Hurlingham Club Ground, Buenos Aires",Buenos Aires,male,international,15,2023-02-25,2024-12-15
+5f68c629,T20,"Maple Leaf North-East Ground, King City",King City,male,international,4,2025-06-12,2025-06-13
+60146a0a,T20,"Castle Park Cricket Ground, Colchester",Colchester,male,club,1,2014-07-12,2014-07-12
+6056f871,ODI,"Tribhuvan University International Cricket Ground, Kirtipur",Kirtipur,male,international,46,2020-02-05,2026-05-22
+6056f871,T20,"Tribhuvan University International Cricket Ground, Kirtipur",Kirtipur,male,club,139,2019-12-05,2026-11-03
+60ce0fe1,ODI,"Lal Bahadur Shastri Stadium, Hyderabad, Deccan",Hyderabad,male,international,1,2003-11-15,2003-11-15
+60ebbb3c,ODI,"Hurstville Oval, Sydney",Sydney,female,international,2,2014-11-11,2014-11-13
+60ebbb3c,T20,"Hurstville Oval, Sydney",Sydney,female,club,17,2016-12-29,2020-11-18
+61e72dcd,ODI,"Barsapara Cricket Stadium, Guwahati",Guwahati,male,international,8,2018-10-21,2026-09-30
+61e72dcd,T20,"Barsapara Cricket Stadium, Guwahati",Guwahati,male,club,25,2017-10-10,2026-04-10
+61e72dcd,Test,"Barsapara Cricket Stadium, Guwahati",Guwahati,male,international,1,2025-11-22,2025-11-22
+61ee1d7e,T20,"Sportpark Harga, Schiedam",Schiedam,female,international,3,2022-06-28,2024-05-30
+62097f9d,ODI,"Nehru Stadium, Guwahati",Guwahati,male,international,3,2007-11-05,2010-11-28
+62097f9d,T20,"Nehru Stadium, Guwahati",,male,club,4,2021-11-04,2021-11-09
+63714fc3,ODI,"Eden Park, Auckland",Auckland,male,international,30,2004-01-03,2025-01-11
+63714fc3,T20,"Eden Park, Auckland",Auckland,male,international,45,2005-02-17,2026-10-30
+63714fc3,Test,"Eden Park, Auckland",Auckland,male,international,5,2004-03-18,2018-03-22
+6437937d,T20,"Los Pinos Polo Club 2, Cundinamarca",Bogota,male,international,1,2026-08-08,2026-08-08
+64e8f8d7,ODI,Rawalpindi Cricket Stadium,Rawalpindi,male,international,21,2003-09-18,2026-10-22
+64e8f8d7,T20,Rawalpindi Cricket Stadium,Rawalpindi,male,international,53,2020-02-27,2026-10-13
+64e8f8d7,Test,Rawalpindi Cricket Stadium,Rawalpindi,male,international,10,2004-04-13,2025-10-20
+656a8f4f,T20,Arundel Castle Cricket Club Ground,Arundel,female,club,10,2012-09-16,2025-06-07
+660368d7,T20,Entebbe Cricket Oval,Entebbe,male,international,47,2021-09-10,2025-07-27
+672f066b,ODI,"Eden Gardens, Kolkata",Kolkata,male,international,15,2009-12-24,2023-11-16
+672f066b,T20,"Eden Gardens, Kolkata",Kolkata,male,club,148,2008-04-20,2026-05-24
+672f066b,Test,"Eden Gardens, Kolkata",Kolkata,male,international,10,2004-11-28,2025-11-14
+674d6da8,T20,"Integrated Polytechnic Regional Centre, Kigali",Kigali City,male,international,36,2021-10-16,2022-12-09
+67e29339,ODI,"Civil Service Cricket Club, Stormont, Belfast",Belfast,female,international,22,2006-06-13,2025-07-28
+67e29339,T20,"Civil Service Cricket Club, Stormont, Belfast",Belfast,male,international,26,2008-08-03,2026-06-28
+67e29339,Test,"Civil Service Cricket Club, Stormont, Belfast",Belfast,male,international,2,2024-07-25,2026-05-27
+6802a4ed,ODI,"Maple Leaf North-West Ground, King City",King City,male,international,16,2008-06-29,2026-06-12
+6802a4ed,T20,"Maple Leaf North-West Ground, King City",King City,male,international,18,2008-10-11,2025-06-22
+6a114331,ODI,"Junction Oval, Melbourne",Melbourne,female,international,5,2019-03-03,2025-01-14
+6a114331,T20,"Junction Oval, Melbourne",Melbourne,female,club,60,2018-12-01,2026-11-02
+6a2a3465,ODI,"Khan Shaheb Osman Ali Stadium, Fatullah",Fatullah,male,international,6,2006-04-26,2014-02-28
+6a2a3465,T20,"Khan Shaheb Osman Ali Stadium, Fatullah",Fatullah,male,international,2,2016-02-19,2016-02-21
+6a2a3465,Test,"Khan Shaheb Osman Ali Stadium, Fatullah",Fatullah,male,international,2,2006-04-09,2015-06-10
+6aa8faca,ODI,"New Williamfield No1 Oval, Stirling",Stirling,female,international,1,2026-08-30,2026-08-30
+6ab3b11e,ODI,"Clontarf Cricket Club Ground, Dublin",Dublin,male,international,22,2008-07-29,2025-05-25
+6ab3b11e,T20,"Clontarf Cricket Club Ground, Dublin",Dublin,female,international,14,2021-08-27,2026-06-01
+6aeca24b,T20,Jinja Cricket Ground,Jinja,male,international,2,2024-10-28,2024-10-29
+6b0a6071,ODI,MA Chidambaram Stadium,Chennai,male,international,18,2007-01-27,2023-10-27
+6b0a6071,T20,MA Chidambaram Stadium,Chennai,male,club,112,2008-04-23,2026-05-18
+6b0a6071,Test,MA Chidambaram Stadium,Chennai,male,international,9,2004-10-14,2024-09-19
+6b2f7c19,ODI,Edgbaston,Birmingham,male,international,29,2004-09-10,2026-07-14
+6b2f7c19,T20,Edgbaston,Birmingham,male,club,226,2010-07-05,2026-08-12
+6b2f7c19,Test,Edgbaston,Birmingham,male,international,20,2003-07-24,2026-09-09
+6bfc6938,ODI,"Old Hararians, Harare",Harare,female,international,5,2018-03-06,2021-11-21
+6bfc6938,T20,"Old Hararians, Harare",Harare,female,international,8,2019-05-05,2019-05-11
+6cbe6b49,ODI,"Barabati Stadium, Cuttack",Cuttack,male,international,8,2003-11-06,2025-02-09
+6cbe6b49,T20,"Barabati Stadium, Cuttack",Cuttack,male,international,35,2010-03-19,2025-12-09
+6dd8c4ab,T20,"Trafalgar Road Ground, Southport",Southport,female,club,1,2018-07-22,2018-07-22
+6e0bb613,T20,"Dr PVG Raju ACA Sports Complex, Vizianagaram",,male,club,12,2018-01-08,2019-11-17
+6e5b41b7,T20,"Goldenacre, Edinburgh",Edinburgh,male,international,8,2023-07-20,2023-07-28
+6f27a582,ODI,"Sinovich Park, Sinoville, Pretoria",Pretoria,female,international,1,2007-01-24,2007-01-24
+6f9052c3,ODI,"Maharashtra Cricket Association Stadium, Pune",Pune,male,international,11,2013-10-13,2023-11-11
+6f9052c3,T20,"Maharashtra Cricket Association Stadium, Pune",Pune,male,international,60,2012-04-08,2025-01-31
+6f9052c3,Test,"Maharashtra Cricket Association Stadium, Pune",Pune,male,international,3,2017-02-23,2024-10-24
+6fe44496,T20,"Ishoj Cricket Club, Vejledalen",Ishoj,female,international,10,2025-06-13,2025-08-31
+70795294,ODI,"National Bank Cricket Arena, Karachi",Karachi,female,international,42,2003-09-21,2026-05-09
+70795294,T20,"National Bank Cricket Arena, Karachi",Karachi,female,international,119,2008-04-20,2026-05-15
+70795294,Test,"National Bank Cricket Arena, Karachi",Karachi,male,international,9,2006-01-29,2023-01-02
+7152cefb,ODI,"Hagley Oval, Christchurch",Christchurch,female,international,26,2014-01-23,2026-03-29
+7152cefb,T20,"Hagley Oval, Christchurch",Christchurch,male,international,92,2017-12-14,2026-10-24
+7152cefb,Test,"Hagley Oval, Christchurch",Christchurch,male,international,15,2014-12-26,2025-12-02
+715fdfa4,T20,"Lisburn Cricket Club, Wallace Park, Lisburn",Lisburn,male,club,2,2026-07-28,2026-07-29
+72923025,ODI,"Diamond Oval, Kimberley",Kimberley,female,international,13,2003-02-16,2024-12-04
+72923025,T20,"Diamond Oval, Kimberley",Kimberley,female,international,20,2009-05-09,2023-12-08
+72c91202,ODI,"City Oval, Pietermaritzburg",Pietermaritzburg,female,international,2,2003-02-23,2023-09-28
+72c91202,T20,"City Oval, Pietermaritzburg",Pietermaritzburg,female,international,4,2012-02-19,2019-05-19
+731556bd,T20,"Jadavpur University Complex, Kolkata",,male,club,4,2021-01-10,2021-01-18
+7354790b,T20,"Devineni Venkata Ramana Praneetha Ground, Mulapadu",,male,club,23,2019-02-21,2021-11-09
+73bb627b,ODI,"Shaheed Chandu Stadium, Bogra",Bogra,male,international,4,2006-02-20,2006-12-05
+73bb627b,Test,"Shaheed Chandu Stadium, Bogra",Bogra,male,international,1,2006-03-08,2006-03-08
+741a8499,T20,"GB Oval, Szodliget",Szodliget,male,international,15,2023-08-05,2026-06-28
+7514f831,T20,"Prairie View Cricket Complex, Houston",Houston,male,international,7,2024-04-07,2024-05-25
+75cc2dc8,T20,"CIYMS Cricket Club Ground, Belfast",Belfast,male,club,1,2017-08-11,2017-08-11
+76b33ab4,ODI,"Marrara Cricket Ground, Darwin",Darwin,male,international,4,2003-08-06,2008-09-06
+76b33ab4,T20,"Marrara Cricket Ground, Darwin",Darwin,male,international,2,2025-08-10,2025-08-12
+76b33ab4,Test,"Marrara Cricket Ground, Darwin",Darwin,male,international,2,2003-07-18,2026-08-13
+781303a2,ODI,"Coolidge Cricket Ground, Antigua",Coolidge,female,international,7,2019-09-05,2021-09-13
+781303a2,T20,"Coolidge Cricket Ground, Antigua",Coolidge,male,international,13,2017-10-21,2021-11-14
+783a2b83,ODI,"Bellerive Oval, Hobart",Hobart,female,international,23,2003-01-11,2026-03-01
+783a2b83,T20,"Bellerive Oval, Hobart",Hobart,male,club,131,2010-02-21,2026-01-21
+783a2b83,Test,"Bellerive Oval, Hobart",Hobart,male,international,8,2005-11-17,2022-01-14
+7a156414,T20,"Kolej Tuanku Jaafar Cricket Oval, Mantin",Mantin,female,international,6,2026-06-03,2026-06-06
+7abed07e,T20,"Yeonhui Cricket Ground, Incheon",Incheon,male,international,27,2019-09-19,2026-10-05
+7b17a134,ODI,Colombo Cricket Club Ground,,female,international,3,2017-02-15,2017-02-19
+7b17a134,T20,Colombo Cricket Club Ground,Colombo,male,club,17,2018-09-22,2025-06-15
+7c258abe,T20,"Surrey Village, Maggona",Maggona,male,club,7,2024-05-15,2026-08-16
+7c9e06ca,T20,"Ted Summerton Reserve, Moe",Moe,female,club,4,2019-01-23,2022-11-20
+7ce7583e,T20,"Sri Sivasubramaniya Nadar College of Engineering Ground, Chennai",,male,club,5,2021-01-11,2021-01-19
+7d0ce327,ODI,Al Amerat Cricket Ground Oman Cricket (Ministry Turf 2),Al Amarat,male,international,5,2021-09-06,2021-09-28
+7d0ce327,T20,Al Amerat Cricket Ground Oman Cricket (Ministry Turf 2),Al Amarat,female,international,47,2020-02-25,2026-02-07
+7e06f00d,T20,"Oakland Coliseum, Oakland",Oakland,male,club,21,2025-06-12,2026-07-18
+7e0fa9a4,ODI,Headingley,Leeds,male,international,19,2004-07-01,2026-09-24
+7e0fa9a4,T20,Headingley,Leeds,male,club,158,2014-05-16,2026-08-09
+7e0fa9a4,Test,Headingley,Leeds,male,international,19,2003-08-21,2026-08-19
+7e666178,ODI,"Namibia Cricket Ground, Windhoek",Windhoek,male,international,7,2026-04-04,2026-09-13
+7e666178,T20,"Namibia Cricket Ground, Windhoek",Windhoek,male,international,37,2025-03-19,2026-09-06
+7ea7a26b,T20,Marsa Sports Club,Marsa,male,international,69,2021-07-08,2026-05-09
+7ec079d9,ODI,"Mission Road Ground, Mong Kok, Hong Kong",Hong Kong,male,international,3,2016-11-04,2016-11-08
+7ec079d9,T20,"Mission Road Ground, Mong Kok, Hong Kong",Mong Kok,female,international,46,2016-01-30,2026-05-11
+7fc5a5e5,ODI,"Keenan Stadium, Jamshedpur",Jamshedpur,male,international,1,2006-04-12,2006-04-12
+804b80af,T20,"Pembroke Cricket Club, Sandymount, Dublin",Dublin,male,club,54,2018-07-01,2026-06-17
+80fc5774,ODI,"Senwes Park, Potchefstroom",Potchefstroom,male,international,31,2003-02-12,2026-09-30
+80fc5774,T20,"JB Marks Oval, Potchefstroom",Potchefstroom,female,international,50,2012-02-17,2026-02-10
+80fc5774,Test,"Senwes Park, Potchefstroom",Potchefstroom,male,international,1,2017-09-28,2017-09-28
+81137e75,ODI,"Queens Sports Club, Bulawayo",Bulawayo,female,international,57,2003-02-24,2025-10-02
+81137e75,T20,"Queens Sports Club, Bulawayo",Bulawayo,female,international,33,2013-05-11,2026-09-19
+81137e75,Test,"Queens Sports Club, Bulawayo",Bulawayo,male,international,16,2003-11-12,2025-08-07
+8243d26f,ODI,"Gymkhana Club Ground, Nairobi",Nairobi,male,international,13,2003-02-24,2009-01-31
+8243d26f,T20,"Gymkhana Club Ground, Nairobi",Nairobi,male,international,38,2007-09-01,2026-08-01
+828126dc,ODI,"Shahid Kamruzzaman Stadium, Rajshahi",Rajshahi,female,international,3,2026-04-20,2026-04-25
+829f2233,ODI,"Nahar Singh Stadium, Faridabad",Faridabad,male,international,2,2003-10-29,2006-03-31
+82da1bdb,T20,"Andhra Cricket Association Stadium, Mangalagiri",,male,club,7,2021-11-04,2021-11-09
+83286303,T20,"Roseworth Terrace, Gosforth",Gosforth,female,club,1,2021-08-25,2021-08-25
+8332a4ff,T20,"Chukkapalli Pitchaiah Cricket Ground, Mulapadu",,male,club,8,2019-02-21,2019-03-02
+833af9c5,ODI,"Madhavrao Scindia Cricket Ground, Rajkot",Rajkot,male,international,4,2005-11-09,2009-12-15
+8357eaa5,ODI,"Riverway Stadium, Townsville",Townsville,male,international,3,2022-08-28,2022-09-03
+8357eaa5,T20,"Tony Ireland Stadium, Townsville",Townsville,male,international,2,2016-02-07,2016-02-09
+8732bcd1,ODI,"Toronto Cricket, Skating and Curling Club",Toronto,male,international,1,2010-09-06,2010-09-06
+8755e10d,ODI,"Bayuemas Oval, Kuala Lumpur",Kuala Lumpur,male,international,2,2026-09-10,2026-09-12
+8755e10d,T20,"Bayuemas Oval, Kuala Lumpur",Kuala Lumpur,male,international,143,2023-07-26,2026-10-14
+8783ce1a,T20,"Faleata Oval No 2, Apia",Apia,male,international,12,2024-08-17,2024-08-24
+87d8028d,T20,"Hugo Banks Field, Vinor",Prague,female,international,6,2026-06-26,2026-06-28
+88928320,ODI,Stellenbosch University Ground 2,,female,international,1,2008-02-22,2008-02-22
+89068030,ODI,Brisbane Cricket Ground,Brisbane,male,international,25,2003-01-15,2018-01-19
+89068030,T20,Brisbane Cricket Ground,Brisbane,male,club,83,2006-01-09,2026-01-18
+89068030,Test,Brisbane Cricket Ground,Brisbane,male,international,22,2003-12-04,2025-12-04
+8917f85b,T20,"Traeger Park, Alice Springs",Alice Springs,male,club,6,2018-01-13,2019-12-20
+89d76efd,ODI,"Harlequins, Pretoria",Pretoria,female,international,1,2007-01-22,2007-01-22
+8afe1eb6,T20,"Mardyke, Cork",Cork,male,club,16,2017-08-11,2025-06-19
+8b28c570,T20,"Latrobe Recreation Ground, Latrobe",Latrobe,female,club,2,2022-11-15,2022-11-16
+8b32561f,ODI,Royal Chiangmai Golf Club,Chiang Mai,female,international,4,2022-11-20,2022-11-26
+8b32561f,T20,Royal Chiangmai Golf Club,Chiang Mai,female,international,4,2022-11-29,2022-12-03
+8c850d77,T20,"Pocos Oval, Pocos de Caldas",Minas Gerias,female,international,2,2026-09-23,2026-09-25
+8d0d0ea5,T20,"Woodley Cricket Field, Los Angeles",Los Angeles,female,international,12,2023-09-04,2023-09-11
+8d1d7db9,ODI,"Brabourne Stadium, Mumbai",Mumbai,male,international,16,2006-10-14,2018-10-29
+8d1d7db9,T20,"Brabourne Stadium, Mumbai",Mumbai,female,club,53,2007-10-20,2025-03-15
+8d1d7db9,Test,"Brabourne Stadium, Mumbai",Mumbai,male,international,1,2009-12-02,2009-12-02
+8d502474,T20,"Nassau County International Cricket Stadium, New York",New York,male,international,8,2024-06-03,2024-06-12
+8d94c440,T20,"Moara Vlasiei Cricket Ground, Ilfov County",Ilfov County,female,international,101,2020-10-16,2026-10-18
+8db14948,T20,"Moti Bagh Stadium, Vadodara",,male,club,13,2016-01-03,2021-01-18
+8e7cb417,ODI,"Wanderers Cricket Ground, Windhoek",Windhoek,male,international,20,2019-04-27,2025-03-15
+8e7cb417,T20,"Wanderers Cricket Ground, Windhoek",Windhoek,male,international,33,2013-04-19,2024-10-05
+8edb7b01,ODI,"Bradman Oval, Bowral",Bowral,female,international,2,2014-11-16,2014-11-18
+8edb7b01,Test,"Bradman Oval, Bowral",Bowral,female,international,1,2008-02-15,2008-02-15
+92dc91a4,ODI,"Nehru Stadium, Kochi",Kochi,male,international,4,2007-10-02,2014-10-08
+92dc91a4,T20,"Nehru Stadium, Kochi",,male,club,18,2011-04-09,2016-01-10
+93304ba7,ODI,Trent Bridge,Nottingham,male,international,26,2002-06-27,2024-09-19
+93304ba7,T20,Trent Bridge,Nottingham,male,club,168,2009-06-06,2026-08-10
+93304ba7,Test,Trent Bridge,Nottingham,male,international,19,2003-08-14,2026-06-25
+94f2f523,T20,"Mercantile Cricket Association Ground, Colombo",Colombo,female,international,1,2014-10-26,2014-10-26
+95a49af2,T20,North Sydney Oval No 2,Sydney,female,club,1,2016-12-11,2016-12-11
+97ce693c,ODI,"Niranjan Shah Stadium, Rajkot",Rajkot,male,international,8,2013-01-11,2026-01-14
+97ce693c,T20,"Niranjan Shah Stadium, Rajkot",Rajkot,male,international,38,2013-10-10,2025-01-28
+97ce693c,Test,"Niranjan Shah Stadium, Rajkot",Rajkot,male,international,3,2016-11-09,2024-02-15
+98010cd2,ODI,"Maharaja Yadavindra Singh International Cricket Stadium, New Chandigarh",New Chandigarh,male,international,3,2025-09-14,2026-10-03
+98010cd2,T20,"Maharaja Yadavindra Singh International Cricket Stadium, New Chandigarh",New Chandigarh,male,club,18,2024-03-23,2026-05-29
+993ce27b,ODI,"Basin Reserve, Wellington",Wellington,female,international,18,2005-03-01,2026-04-04
+993ce27b,T20,"Basin Reserve, Wellington",Wellington,female,club,84,2017-12-20,2026-01-19
+993ce27b,Test,"Basin Reserve, Wellington",Wellington,male,international,28,2004-03-26,2025-12-10
+9941c014,T20,"St Paul's College Ground, Kochi",,male,club,7,2016-01-02,2016-01-10
+99d3ce22,T20,"Nigeria Cricket Federation Oval 2, Abuja",Abuja,male,international,15,2024-11-23,2026-10-25
+9a0e6fdf,ODI,"Ruaraka Sports Club Ground, Nairobi",Nairobi,male,international,1,2007-02-04,2007-02-04
+9a0e6fdf,T20,"Ruaraka Sports Club Ground, Nairobi",Nairobi,male,international,6,2024-10-19,2024-10-24
+9a7cfff8,ODI,Sabina Park,Kingston,male,international,24,2003-05-17,2026-06-03
+9a7cfff8,T20,Sabina Park,Kingston,male,club,44,2013-08-15,2026-08-18
+9a7cfff8,Test,Sabina Park,Kingston,male,international,15,2006-06-30,2025-07-12
+9ad6a24b,T20,Koge Cricket Club 2,Koge,female,international,2,2024-09-14,2024-09-15
+9b5220c5,T20,"Reforma Athletic Club, Naucalpan",Naucalpan,male,international,11,2021-10-19,2026-04-05
+9bc15c48,T20,Roma Cricket Ground,Spinaceto,female,international,20,2024-06-09,2025-05-29
+9c39fe2f,T20,"Howell Oval, Penrith",Sydney,female,club,1,2016-12-17,2016-12-17
+9c55fe2c,T20,Pokhara Rangasala,Pokhara,female,international,4,2019-12-02,2019-12-07
+9c942e16,ODI,"Haslegrave Ground, Loughborough",Loughborough,female,international,1,2013-07-03,2013-07-03
+9c942e16,T20,"Haslegrave Ground, Loughborough",Loughborough,female,club,18,2012-09-04,2024-05-26
+9d8bd95b,ODI,"VRA Ground, Amstelveen",Amstelveen,male,international,21,2004-08-21,2025-05-10
+9d8bd95b,T20,"VRA Ground, Amstelveen",Amstelveen,female,international,19,2015-07-01,2024-08-16
+9dd68e5f,ODI,"Green Park, Kanpur",Kanpur,male,international,6,2005-04-15,2017-10-29
+9dd68e5f,T20,"Green Park, Kanpur",Kanpur,male,club,5,2016-05-19,2017-05-13
+9dd68e5f,Test,"Green Park, Kanpur",Kanpur,male,international,6,2004-11-20,2024-09-27
+9e236baa,ODI,"Wankhede Stadium, Mumbai",Mumbai,female,international,21,2003-11-01,2024-01-02
+9e236baa,T20,"Wankhede Stadium, Mumbai",Mumbai,male,club,184,2008-04-20,2026-05-24
+9e236baa,Test,"Wankhede Stadium, Mumbai",Mumbai,male,international,8,2004-11-03,2024-11-01
+9e8be504,T20,"Indian Association Ground, Singapore",Singapore,female,international,27,2019-07-22,2023-08-26
+9eecb9ce,ODI,"Sophia Gardens, Cardiff",Cardiff,male,international,24,2005-06-18,2026-07-16
+9eecb9ce,T20,"Sophia Gardens, Cardiff",Cardiff,male,international,138,2010-09-05,2026-09-17
+9eecb9ce,Test,"Sophia Gardens, Cardiff",Cardiff,male,international,3,2009-07-08,2015-07-08
+9efd3a92,T20,"Selangor Turf Club, Kuala Lumpur",Kuala Lumpur,male,international,38,2023-08-31,2026-10-14
+9f610f1e,T20,"ANZ Stadium, Sydney",Sydney,male,club,18,2011-12-23,2014-12-27
+9f6ea5ea,T20,Guttsta Wicked Cricket Club,Kolsva,female,international,1,2021-08-29,2021-08-29
+a0891586,ODI,"Bay Oval, Mount Maunganui",Mount Maunganui,male,international,28,2014-01-28,2025-10-26
+a0891586,T20,"Bay Oval, Mount Maunganui",Mount Maunganui,male,international,49,2016-01-07,2026-03-15
+a0891586,Test,"Bay Oval, Mount Maunganui",Mount Maunganui,male,international,6,2019-11-21,2025-12-18
+a09dc076,ODI,"Titwood, Glasgow",Glasgow,male,international,4,2007-08-16,2022-07-17
+a09dc076,T20,"Titwood, Glasgow",Glasgow,male,international,6,2025-06-15,2025-06-20
+a0fc5764,ODI,"Vidarbha Cricket Association Stadium, Jamtha, Nagpur",Nagpur,male,international,12,2009-10-28,2025-02-06
+a0fc5764,T20,"Vidarbha Cricket Association Stadium, Jamtha, Nagpur",Nagpur,male,international,24,2009-12-09,2026-01-21
+a0fc5764,Test,"Vidarbha Cricket Association Stadium, Jamtha, Nagpur",Nagpur,male,international,7,2008-11-06,2023-02-09
+a167b335,ODI,"Shere Bangla National Stadium, Mirpur",Dhaka,male,international,126,2006-12-08,2026-06-14
+a167b335,T20,"Shere Bangla National Stadium, Mirpur",Dhaka,male,international,341,2011-10-11,2026-05-02
+a167b335,Test,"Shere Bangla National Stadium, Mirpur",Dhaka,male,international,29,2007-05-25,2026-10-28
+a1af6c3f,ODI,"Sir Vivian Richards Stadium, North Sound, Antigua",North Sound,male,international,38,2007-03-27,2024-11-02
+a1af6c3f,T20,"Sir Vivian Richards Stadium, North Sound, Antigua",North Sound,male,club,50,2010-05-19,2026-08-25
+a1af6c3f,Test,"Sir Vivian Richards Stadium, North Sound, Antigua",North Sound,male,international,14,2008-05-30,2026-07-03
+a1d67071,ODI,"Seddon Park, Hamilton",Hamilton,male,international,40,2003-01-14,2025-11-22
+a1d67071,T20,"Seddon Park, Hamilton",Hamilton,male,international,63,2008-12-28,2026-11-01
+a1d67071,Test,"Seddon Park, Hamilton",Hamilton,male,international,16,2008-03-05,2024-12-14
+a22ac16e,T20,"Sylhet International Cricket Stadium, Academy Ground",Sylhet,female,international,9,2022-10-01,2022-10-05
+a2a2eb9b,ODI,"Brian Lara Stadium, Tarouba, Trinidad",Tarouba,male,international,4,2023-08-01,2025-08-12
+a2a2eb9b,T20,"Brian Lara Stadium, Tarouba, Trinidad",Tarouba,male,club,68,2017-09-05,2025-09-03
+a2a2eb9b,Test,"Brian Lara Stadium, Tarouba, Trinidad",Tarouba,male,international,1,2026-07-25,2026-07-25
+a36ef8c9,T20,Uxbridge Cricket Club Ground,Uxbridge,male,club,6,2015-06-26,2019-08-24
+a381d895,T20,"Queen Elizabeth II Oval, Bendigo",Bendigo,female,club,2,2016-12-17,2016-12-18
+a44b2e74,ODI,Mombasa Sports Club Ground,,male,international,2,2012-02-18,2012-02-20
+a44b2e74,T20,Mombasa Sports Club Ground,,male,international,3,2012-02-22,2012-02-24
+a48e1e3a,ODI,Dubai International Cricket Stadium,Dubai,male,international,60,2009-04-22,2025-11-03
+a48e1e3a,T20,Dubai International Cricket Stadium,Dubai,female,international,313,2009-05-07,2026-09-13
+a48e1e3a,Test,Dubai International Cricket Stadium,,male,international,13,2010-11-12,2018-11-24
+a5199fe6,ODI,"Greenfield International Stadium, Thiruvananthapuram",Thiruvananthapuram,male,international,3,2018-11-01,2026-09-27
+a5199fe6,T20,"Greenfield International Stadium, Thiruvananthapuram",Thiruvananthapuram,male,international,21,2017-11-07,2026-01-31
+a51b401a,T20,"Los Reyes Polo Club, Alajuela",Guacima,female,international,6,2024-04-12,2026-04-26
+a5312317,T20,"Gurgaon Cricket Ground (SRNCC), Sultanpur",,male,club,8,2021-11-04,2021-11-09
+a6032713,ODI,"Three Ws Oval, Cave Hill, Barbados",Cave Hill,female,international,3,2025-06-11,2025-06-17
+a6032713,T20,"Three Ws Oval, Cave Hill, Barbados",Cave Hill,female,international,3,2025-06-20,2025-06-23
+a656b2cd,ODI,"Malahide Cricket Ground, Dublin",Dublin,male,international,18,2013-09-03,2022-07-15
+a656b2cd,T20,"Malahide Cricket Ground, Dublin",Dublin,male,club,36,2015-07-17,2026-09-20
+a656b2cd,Test,"Malahide Cricket Ground, Dublin",Dublin,male,international,1,2018-05-11,2018-05-11
+a682fc55,ODI,"Himachal Pradesh Cricket Association Stadium, Dharamsala",Dharamsala,male,international,8,2013-01-27,2023-10-28
+a682fc55,T20,"Himachal Pradesh Cricket Association Stadium, Dharamsala",Dharamsala,male,club,29,2010-04-16,2026-05-26
+a682fc55,Test,"Himachal Pradesh Cricket Association Stadium, Dharamsala",Dharamsala,male,international,2,2017-03-25,2024-03-07
+a74f7dc2,T20,"Botkyrka Cricket Center, Stockholm",Stockholm,male,international,17,2025-08-08,2026-07-02
+a84e4939,T20,"Palam A Ground, Model Sports Complex, Delhi",,male,club,19,2019-02-21,2021-11-18
+a899c2b7,ODI,"Newlands, Cape Town",Cape Town,male,international,26,2003-02-09,2024-12-19
+a899c2b7,T20,"Newlands, Cape Town",Cape Town,male,club,101,2007-09-12,2026-09-27
+a899c2b7,Test,"Newlands, Cape Town",Cape Town,male,international,27,2003-01-02,2026-10-27
+a8d90b2d,T20,"CB Patel International Cricket Stadium, Surat",,male,club,25,2019-02-21,2019-11-27
+a9710301,T20,"Seebarn Cricket Centre, Lower Austria",Lower Austria,female,international,5,2020-08-12,2020-08-15
+a974b23e,T20,"Malek Cricket Ground, Ajman",Ajman,female,international,4,2022-04-27,2022-04-30
+aa30d19d,ODI,"Amini Park, Port Moresby",Port Moresby,female,international,13,2022-09-11,2026-08-17
+aa30d19d,T20,"Amini Park, Port Moresby",Port Moresby,female,international,22,2019-03-22,2026-08-11
+aa78065d,T20,"Los Pinos Polo Club 1, Cundinamarca",Bogota,male,international,5,2026-08-06,2026-08-09
+aae3e36c,T20,Kaizuka Cricket Ground,Osaka,female,international,4,2022-10-27,2022-10-30
+abca06f8,ODI,"ICC Academy, Dubai",Dubai,male,international,33,2013-03-11,2026-11-02
+abca06f8,T20,"ICC Academy, Dubai",Dubai,male,international,53,2013-03-15,2024-12-20
+ad566198,T20,"Jimmy Powell Oval, Cayman Islands",George Town,male,international,30,2025-04-19,2026-09-27
+ada144d6,ODI,"Warner Park, St Kitts",Basseterre,female,international,27,2006-05-23,2026-04-02
+ada144d6,T20,"Warner Park, St Kitts",Basseterre,male,club,111,2009-08-02,2026-09-03
+ada144d6,Test,"Warner Park, St Kitts",St Kitts,male,international,3,2006-06-22,2011-05-20
+aeb7f2e0,ODI,"Grand Prairie Stadium, Dallas",Dallas,male,international,11,2024-10-25,2026-10-13
+aeb7f2e0,T20,"Grand Prairie Stadium, Dallas",Dallas,male,club,68,2023-07-13,2026-07-12
+aee522f9,ODI,"Sportpark Het Schootsveld, Deventer",Deventer,male,international,2,2019-06-19,2019-06-21
+aee522f9,T20,"Sportpark Het Schootsveld, Deventer",Deventer,male,international,16,2018-06-16,2023-08-15
+af2acf74,T20,"Stanley Park, Blackpool",Blackpool,female,club,13,2016-08-05,2026-06-28
+afb9268b,T20,"Solvangs Park, Glostrup",Copenhagen,male,international,2,2023-05-20,2023-05-21
+afed0e37,ODI,"County Ground, Bristol",Bristol,male,international,23,2003-07-06,2024-09-29
+afed0e37,T20,"County Ground, Bristol",Bristol,male,club,96,2006-08-28,2026-07-12
+afed0e37,Test,"County Ground, Bristol",Bristol,female,international,1,2021-06-16,2021-06-16
+b1f9d65d,ODI,Chittagong Stadium,Chattogram,male,international,4,2003-11-07,2005-01-24
+b1f9d65d,T20,Chittagong Stadium,Chattogram,male,club,7,2013-01-28,2013-02-02
+b1f9d65d,Test,Chittagong Stadium,Chattogram,male,international,2,2003-10-29,2004-10-26
+b2797cc7,ODI,"Niaz Stadium, Hyderabad, Sind",Sind,male,international,1,2008-01-24,2008-01-24
+b3914591,T20,"Svanholm Park, Brondby",Brondby,male,international,24,2021-08-14,2026-07-14
+b46ed39f,ODI,"Antigua Recreation Ground, St John's",Antigua,male,international,2,2006-04-29,2006-04-30
+b46ed39f,Test,"Antigua Recreation Ground, St John's",Antigua,male,international,5,2003-05-09,2009-02-15
+b4715b8e,ODI,"AMI Stadium, Christchurch",Christchurch,male,international,8,2003-01-01,2011-01-29
+b4715b8e,T20,"AMI Stadium, Christchurch",Christchurch,male,international,4,2008-02-07,2010-12-30
+b4715b8e,Test,"Jade Stadium, Christchurch",Christchurch,male,international,2,2005-03-10,2006-12-07
+b4a45184,T20,"Knight Riders Cricket Ground, Pomona",Pomona,male,club,7,2026-07-01,2026-07-05
+b5a89e18,T20,"Queen's Park, Invercargill",Invercargill,male,club,1,2018-01-09,2018-01-09
+b5b6785c,ODI,"Welagedara Stadium, Kurunegala",Kurunegala,female,international,2,2008-05-08,2008-05-11
+b5eabfb5,T20,"Sheikh Zayed Stadium Nursery 1, Abu Dhabi",Abu Dhabi,female,international,28,2019-10-20,2024-05-03
+b5ed508b,T20,New Strabane Park,Strabane,male,club,1,2017-06-16,2017-06-16
+b6c32272,T20,"St Albans Club, Buenos Aires",Buenos Aires,male,international,27,2023-02-21,2025-11-30
+b7a9d7f8,T20,"Alembic Ground, Vadodara",,male,club,3,2016-01-02,2016-01-10
+b7eee9e3,ODI,Pallekele International Cricket Stadium,Kandy,male,international,40,2011-03-08,2025-07-08
+b7eee9e3,T20,Pallekele International Cricket Stadium,Kandy,male,club,62,2011-08-06,2026-08-01
+b7eee9e3,Test,Pallekele International Cricket Stadium,Kandy,male,international,9,2010-12-01,2021-04-29
+b85aecf4,T20,"Pierre Werner Cricket Ground, Walferdange",Walferdange,female,international,14,2020-08-29,2026-08-23
+b97da5c8,ODI,The Oval,London,male,international,47,2003-06-20,2026-09-27
+b97da5c8,T20,The Oval,London,male,club,195,2007-06-28,2026-08-14
+b97da5c8,Test,The Oval,London,male,international,24,2003-09-04,2026-06-17
+b9ea5724,T20,"Clayton Panama, Panama City",Panama City,male,international,7,2025-04-17,2025-04-20
+ba05ccb6,T20,Santarem Cricket Ground,Albergaria,male,international,21,2021-08-20,2026-04-09
+ba1305a8,ODI,Perth Stadium,Perth,male,international,4,2018-01-28,2025-10-19
+ba1305a8,T20,Perth Stadium,Perth,male,club,58,2018-02-01,2026-01-25
+ba1305a8,Test,Perth Stadium,Perth,male,international,6,2018-12-14,2025-11-21
+bbbe0030,T20,"Police Park Ground, Colombo",Colombo,male,club,4,2026-08-12,2026-08-17
+bd7cf747,ODI,"Jaffery Sports Club Ground, Nairobi",Nairobi,male,international,1,2007-02-05,2007-02-05
+be2a1b44,ODI,"Bert Sutcliffe Oval, Lincoln",Lincoln,female,international,7,2014-01-23,2018-03-08
+bef5bb0f,T20,Korogi Sports Park,Nisshin,male,international,19,2026-05-08,2026-10-03
+bf040d61,ODI,"Kinrara Academy Oval, Kuala Lumpur",Kuala Lumpur,female,international,12,2006-09-14,2019-12-12
+bf040d61,T20,"Kinrara Academy Oval, Kuala Lumpur",Kuala Lumpur,female,international,53,2018-06-03,2022-06-25
+bf50d31a,T20,York Cricket Club,York,male,club,3,2019-08-15,2025-06-15
+bfdb318c,T20,"Marina Ground, Corfu",Corfu,female,international,13,2024-09-21,2026-05-10
+bff75d57,T20,"Ekeberg Cricket Ground 1, Oslo",Oslo,female,international,3,2024-08-10,2024-08-11
+c132f7e3,T20,University of Doha for Science and Technology,Doha,male,international,12,2024-02-27,2025-11-13
+c15bc827,ODI,North Sydney Oval,Sydney,female,international,7,2009-03-10,2025-01-12
+c15bc827,T20,North Sydney Oval,Sydney,female,international,70,2014-11-02,2026-10-20
+c15bc827,Test,North Sydney Oval,Sydney,female,international,1,2017-11-09,2017-11-09
+c205fa24,T20,Johor Cricket Academy Oval,Johor,female,international,2,2024-02-04,2024-02-05
+c28dafd8,ODI,"New Road, Worcester",Worcester,female,international,8,2015-07-26,2026-09-06
+c28dafd8,T20,"New Road, Worcester",Worcester,male,club,87,2014-05-30,2026-07-10
+c28dafd8,Test,"New Road, Worcester",Worcester,female,international,2,2005-08-24,2009-07-10
+c2cce98e,T20,"LC de Villiers Oval, Pretoria",Pretoria,female,international,1,2019-05-15,2019-05-15
+c2d746b5,T20,Bayer Uerdingen Cricket Ground,Krefeld,male,international,49,2021-07-08,2026-05-03
+c3607be2,ODI,Multan Cricket Stadium,Multan,male,international,11,2003-09-09,2023-08-30
+c3607be2,T20,Multan Cricket Stadium,Multan,male,club,19,2020-02-26,2025-05-05
+c3607be2,Test,Multan Cricket Stadium,Multan,male,international,8,2003-09-03,2025-01-25
+c3844bde,T20,Koge Cricket Club,Koge,male,international,15,2024-09-14,2026-07-14
+c3e37c1f,ODI,"Willowmoore Park, Benoni",Benoni,female,international,16,2003-03-03,2023-12-23
+c3e37c1f,T20,"Willowmoore Park, Benoni",Benoni,female,international,32,2012-02-26,2026-04-27
+c3e61d33,T20,Kowloon Cricket Club,Kowloon,female,club,19,2023-04-03,2023-04-16
+c4c3c17e,T20,"Velden Cricket Ground, Latschach",Latschach,male,international,9,2025-05-17,2025-08-24
+c4f77dc5,ODI,"Bready Cricket Club, Magheramason",Bready,female,international,4,2019-07-01,2026-07-15
+c4f77dc5,T20,"Bready Cricket Club, Magheramason",Bready,male,club,28,2015-06-20,2026-06-02
+c533c6ab,ODI,"Karen Rolton Oval, Adelaide",Adelaide,female,international,1,2019-02-24,2019-02-24
+c533c6ab,T20,"Karen Rolton Oval, Adelaide",Adelaide,female,club,33,2018-12-21,2026-10-31
+c6e9ea3f,ODI,Lord's,London,male,international,45,2002-06-29,2026-07-19
+c6e9ea3f,T20,Lord's,London,male,club,123,2009-06-05,2026-08-16
+c6e9ea3f,Test,Lord's,London,male,international,43,2005-07-21,2026-08-27
+c8411207,T20,"Lilac Hill Park, Perth",Perth,female,club,18,2017-01-13,2022-11-09
+c8d6aa78,T20,"ICC Academy Ground No 2, Dubai",Dubai,female,international,10,2019-10-19,2021-11-28
+c9fb7c53,ODI,"Southend Cricket Club Stadium, Karachi",Karachi,female,international,4,2015-10-06,2022-06-05
+c9fb7c53,T20,"Southend Cricket Club Stadium, Karachi",Karachi,female,international,8,2015-09-30,2022-05-28
+ca92c7ab,ODI,Adelaide Oval,Adelaide,male,international,34,2003-01-17,2025-10-23
+ca92c7ab,T20,Adelaide Oval,Adelaide,female,international,124,2011-01-12,2026-02-21
+ca92c7ab,Test,Adelaide Oval,Adelaide,male,international,20,2004-11-26,2025-12-17
+caa8e206,T20,"Meersen, Gent",Ghent,male,international,5,2022-06-28,2022-07-01
+cb04a7f0,ODI,"Sheikh Kamal International Cricket Stadium, Cox's Bazar",Cox's Bazar,female,international,2,2017-01-18,2017-01-20
+cba466b0,T20,"West End Park International Cricket Stadium, Doha",Doha,male,international,65,2014-01-19,2026-02-15
+cbde1693,T20,"F.B. Colony Ground, Vadodara",,male,club,10,2021-01-10,2021-11-09
+cc221190,ODI,"The County Ground, Taunton",Taunton,female,international,16,2012-07-04,2025-06-07
+cc221190,T20,"The County Ground, Taunton",Taunton,female,club,121,2011-06-26,2026-07-12
+cc221190,Test,"The County Ground, Taunton",Taunton,female,international,2,2019-07-18,2022-06-27
+cc5717a5,ODI,"JSCA International Stadium Complex, Ranchi",Ranchi,male,international,6,2013-01-19,2025-11-30
+cc5717a5,T20,"JSCA International Stadium Complex, Ranchi",Ranchi,male,international,33,2013-05-12,2026-10-09
+cc5717a5,Test,"JSCA International Stadium Complex, Ranchi",Ranchi,male,international,3,2017-03-16,2024-02-23
+cc767911,ODI,"Riverside Ground, Chester-le-Street",Chester-le-Street,male,international,21,2004-06-29,2026-09-22
+cc767911,T20,"Riverside Ground, Chester-le-Street",Chester-le-Street,female,club,111,2012-09-08,2026-07-10
+cc767911,Test,"Riverside Ground, Chester-le-Street",Chester-le-Street,male,international,5,2005-06-03,2016-05-27
+ccdae359,ODI,"Observatory Lane, Rathmines, Dublin",Dublin,female,international,1,2013-07-17,2013-07-17
+cce804bb,ODI,"Mannofield Park, Aberdeen",Aberdeen,male,international,13,2011-06-29,2022-08-17
+cd930d23,T20,"TI Cycles Ground, Murugappa, Chennai",,male,club,5,2021-01-11,2021-01-19
+cf00ffeb,T20,Kerava National Cricket Ground,Kerava,male,international,50,2021-08-21,2026-08-21
+d0c6b84d,T20,"Achimota Senior Secondary School B Field, Accra",Accra,male,international,14,2024-03-08,2026-03-28
+d127b5dc,T20,"Casey Fields No 4, Melbourne",Melbourne,female,club,7,2016-12-17,2023-11-04
+d13044cf,ODI,"The County Ground, Derby",Derby,female,international,12,2017-06-24,2026-09-03
+d13044cf,T20,"The County Ground, Derby",Derby,male,club,77,2009-06-25,2026-07-12
+d175a899,T20,"Sikh Union Club Ground, Nairobi",Nairobi,male,international,16,2024-06-28,2024-10-18
+d24e54e3,T20,Complejo Municipal de Beisbol de Texcoco,Texcoco de Mora,female,international,3,2026-10-24,2026-10-25
+d2a4ff70,ODI,Kensington Oval,Bridgetown,male,international,34,2003-06-07,2026-07-21
+d2a4ff70,T20,Kensington Oval,Bridgetown,male,club,100,2008-06-20,2026-09-20
+d2a4ff70,Test,Kensington Oval,Bridgetown,male,international,14,2005-04-21,2025-06-25
+d2fdb0fb,ODI,"Queen's Park Oval, Port of Spain, Trinidad",Port of Spain,male,international,25,2005-05-15,2022-07-27
+d2fdb0fb,T20,"Queen's Park Oval, Port of Spain, Trinidad",Port of Spain,male,club,67,2009-03-15,2026-09-02
+d2fdb0fb,Test,"Queen's Park Oval, Port of Spain, Trinidad",Port of Spain,male,international,10,2008-04-03,2026-08-02
+d401b9a8,ODI,"Nondescripts Cricket Club Ground, Colombo",Colombo,female,international,5,2017-02-07,2017-02-19
+d401b9a8,T20,"Nondescripts Cricket Club Ground, Colombo",Colombo,male,club,15,2012-10-03,2026-09-09
+d5289528,ODI,"Carisbrook, Dunedin",Dunedin,male,international,1,2004-02-25,2004-02-25
+d55d0c88,T20,"Happy Valley Ground, Episkopi",Episkopi,female,international,36,2021-10-05,2026-06-20
+d6b79871,T20,"Tafawa Balewa Square Cricket Oval, Lagos",Lagos,male,international,32,2023-03-27,2026-09-27
+d6f70739,T20,"Government Model Senior Secondary School, Chandigarh",,male,club,12,2019-11-08,2019-11-15
+d74c0a77,T20,"Nevill Ground, Tunbridge Wells",Tunbridge Wells,male,club,2,2015-07-17,2016-07-15
+d7992cf0,T20,"Blacktown International Sportspark, Sydney",Sydney,female,club,14,2017-01-02,2022-10-18
+d7e89a1f,T20,"Jadavpur University Campus 2nd Ground, Kolkata",Kolkata,male,club,11,2018-01-21,2022-11-01
+d87ede64,T20,"Stars Arena Hofstade, Zemst",Zemst,male,international,11,2025-05-28,2025-06-01
+d8c57c5e,T20,"Estonian National Cricket and Rugby Field, Tallinn",Tallinn,female,international,11,2025-05-15,2026-07-25
+d9103e0a,T20,"Merchant Taylors' School Ground, Northwood",Northwood,male,club,10,2014-05-25,2026-07-10
+d9192b42,T20,"Clifton Park Ground, York",York,female,club,3,2017-08-20,2018-08-12
+d92d6d2c,T20,"St Xavier's College Ground, Thumba",,male,club,7,2019-11-08,2019-11-17
+d9627581,ODI,"University Oval, Dunedin",Dunedin,female,international,18,2010-02-08,2026-03-11
+d9627581,T20,"University Oval, Dunedin",Dunedin,female,club,50,2013-01-20,2026-01-18
+d9627581,Test,"University Oval, Dunedin",Dunedin,male,international,7,2008-01-04,2017-03-08
+d9b94b57,T20,"North Dalton Park, Wollongong",Wollongong,female,club,1,2017-12-12,2017-12-12
+dab94618,ODI,"Iqbal Stadium, Faisalabad",Faisalabad,male,international,8,2003-10-07,2025-11-08
+dab94618,Test,"Iqbal Stadium, Faisalabad",Faisalabad,male,international,3,2003-10-24,2006-01-21
+dac1057e,T20,"Cricket Central, Sydney",Sydney,female,club,2,2023-11-18,2023-11-21
+daf72acd,T20,"Pukekura Park, New Plymouth",New Plymouth,female,club,28,2017-12-30,2023-12-30
+db68cea3,ODI,"Nehru Stadium, Pune",Pune,male,international,2,2003-11-03,2005-11-03
+dddf4293,T20,"Lisicji Jarak Cricket Ground, Belgrade",Belgrade,female,international,15,2022-07-08,2026-09-06
+dea6641b,ODI,"Narendra Modi Stadium, Ahmedabad",Ahmedabad,male,international,24,2005-04-12,2025-02-12
+dea6641b,T20,"Narendra Modi Stadium, Ahmedabad",Ahmedabad,male,club,73,2010-03-15,2026-05-31
+dea6641b,Test,"Narendra Modi Stadium, Ahmedabad",Ahmedabad,male,international,9,2005-12-18,2025-10-02
+deae8c56,ODI,"Andhra Cricket Association-Visakhapatnam District Cricket Association Stadium, Visakhapatnam",Visakhapatnam,male,international,16,2005-04-05,2025-12-06
+deae8c56,T20,"Andhra Cricket Association-Visakhapatnam District Cricket Association Stadium, Visakhapatnam",Visakhapatnam,male,international,47,2012-04-07,2026-01-28
+deae8c56,Test,"Andhra Cricket Association-Visakhapatnam District Cricket Association Stadium, Visakhapatnam",Visakhapatnam,male,international,3,2016-11-17,2024-02-02
+df3f7f6e,T20,"ENGIE Stadium, Sydney",Sydney,male,club,60,2015-01-17,2026-01-12
+df84525d,ODI,"Moosa Cricket Stadium, Pearland",Pearland,male,international,12,2022-05-28,2022-06-15
+dfed09f0,ODI,"Vidarbha Cricket Association Ground, Nagpur",Nagpur,male,international,2,2005-10-25,2007-10-14
+dfed09f0,T20,"Vidarbha Cricket Association Ground, Nagpur",,male,club,7,2016-01-02,2016-01-10
+dfed09f0,Test,"Vidarbha Cricket Association Ground, Nagpur",Nagpur,male,international,1,2006-03-01,2006-03-01
+dff861a2,T20,"Nigeria Cricket Federation Oval 1, Abuja",Abuja,male,international,32,2024-11-26,2026-10-25
+e3543cd1,ODI,"Arbab Niaz Stadium, Peshawar",Peshawar,male,international,3,2004-03-19,2006-02-06
+e39f2daf,T20,"Ballpark Ground, Graz",Graz,male,international,2,2025-05-18,2025-05-18
+e542d88c,ODI,"Cambusdoon New Ground, Ayr",Ayr,male,international,2,2022-07-11,2022-07-16
+e5f21392,ODI,"Terdthai Cricket Ground, Bangkok",Bangkok,female,international,3,2023-04-19,2023-04-23
+e5f21392,T20,"Terdthai Cricket Ground, Bangkok",Bangkok,male,international,112,2015-12-05,2026-02-28
+e6958e6b,T20,"Botswana Cricket Association Oval 2, Gaborone",Gaborone,male,international,57,2018-08-20,2026-05-30
+e6dc087e,T20,Geelong Cricket Ground,Geelong,male,club,2,2018-12-16,2019-01-13
+e70b9a7c,ODI,"County Ground, Northampton",Northampton,female,international,1,2022-07-11,2022-07-11
+e70b9a7c,T20,"County Ground, Northampton",Northampton,male,club,93,2012-09-13,2026-07-15
+e71c89c9,T20,"Turf City B Cricket Ground, Singapore",Singapore,female,international,1,2023-08-27,2023-08-27
+e74170c2,ODI,"YSD-UKM Cricket Oval, Bangi",Bangi,male,international,1,2026-09-08,2026-09-08
+e74170c2,T20,"YSD-UKM Cricket Oval, Bangi",Bangi,male,international,82,2022-06-17,2026-10-14
+e8345861,ODI,"St George's Park, Gqeberha",Gqeberha,female,international,26,2003-02-13,2025-12-16
+e8345861,T20,"St George's Park, Gqeberha",Gqeberha,male,club,101,2007-12-16,2026-09-29
+e8345861,Test,"St George's Park, Gqeberha",Gqeberha,male,international,13,2007-01-19,2026-10-18
+e9c280c1,T20,"Palam B Ground, Model Sports Complex, Delhi",,male,club,12,2019-02-21,2019-02-28
+eadbad25,ODI,Sinhalese Sports Club Ground,Colombo,female,international,12,2004-07-17,2023-05-04
+eadbad25,T20,Sinhalese Sports Club Ground,Colombo,male,club,31,2016-09-27,2026-09-13
+eadbad25,Test,Sinhalese Sports Club Ground,Colombo,male,international,20,2003-12-18,2026-08-23
+eb5ec975,T20,"Old Deer Park, Richmond",Richmond,male,club,8,2014-07-03,2026-06-28
+ec750057,T20,"Royal Brunswick Ground, Hove, Brighton",Brighton,female,club,1,2024-06-19,2024-06-19
+ecf39768,ODI,Stellenbosch University Ground,,female,international,2,2008-02-21,2008-02-22
+ed4e4230,ODI,"Bharat Ratna Shri Atal Bihari Vajpayee Ekana Cricket Stadium, Lucknow",Lucknow,male,international,10,2021-03-07,2023-10-29
+ed4e4230,T20,"Bharat Ratna Shri Atal Bihari Vajpayee Ekana Cricket Stadium, Lucknow",Lucknow,male,international,46,2018-11-06,2026-10-06
+ee776f99,T20,"Uplands College, White River",White River,male,club,1,2026-09-27,2026-09-27
+ee9d695e,T20,Ekana Cricket Stadium B Ground,,male,club,5,2021-11-04,2021-11-09
+eeb3829d,ODI,"Desert Springs Cricket Ground, Almeria",Almeria,female,international,3,2023-10-17,2023-10-21
+eeb3829d,T20,"Desert Springs Cricket Ground, Almeria",Almeria,female,international,43,2020-03-08,2023-10-24
+eef26f35,ODI,Arun Jaitley Stadium,Delhi,female,international,17,2005-04-17,2025-09-20
+eef26f35,T20,Arun Jaitley Stadium,Delhi,male,club,161,2008-04-19,2026-05-17
+eef26f35,Test,Arun Jaitley Stadium,Delhi,male,international,8,2007-11-22,2025-10-10
+f0c3ccc8,T20,"7he Sevens Stadium, Dubai",Dubai,male,international,4,2024-04-18,2026-01-26
+f140992f,T20,"Abhimanyu Cricket Academy, Dehradun",Dehra Dun,male,club,10,2023-10-17,2023-10-25
+f2b2131d,T20,Sano International Cricket Ground 2,Sano,male,international,6,2025-06-08,2026-05-17
+f2b98fd6,ODI,Queenstown Events Centre,Queenstown,female,international,11,2003-01-04,2023-12-12
+f2b98fd6,T20,Queenstown Events Centre,Queenstown,female,international,12,2021-12-28,2023-12-09
+f2ba1a1d,T20,"GelsenTrabPark, Gelsenkirchen",Gelsenkirchen,female,international,4,2026-08-28,2026-08-30
+f380dc0d,ODI,"Saxton Oval, Nelson",Nelson,female,international,14,2014-01-04,2025-03-09
+f380dc0d,T20,"Saxton Oval, Nelson",Nelson,female,club,17,2010-12-30,2026-01-03
+f4fe4119,ODI,"Punjab Cricket Association IS Bindra Stadium, Mohali, Chandigarh",Chandigarh,male,international,18,2005-10-28,2023-09-22
+f4fe4119,T20,"Punjab Cricket Association IS Bindra Stadium, Mohali, Chandigarh",Chandigarh,male,club,77,2008-04-19,2023-11-06
+f4fe4119,Test,"Punjab Cricket Association IS Bindra Stadium, Mohali, Chandigarh",Chandigarh,male,international,9,2003-10-16,2022-03-04
+f52f9c9a,T20,"N'Du Stadium, Noumea, New Caledonia",Noumea,female,international,6,2025-03-10,2025-03-14
+f5913055,ODI,Sylhet International Cricket Stadium,Sylhet,male,international,6,2018-12-14,2023-03-23
+f5913055,T20,Sylhet International Cricket Stadium,Sylhet,female,international,141,2014-03-17,2026-05-02
+f5913055,Test,Sylhet International Cricket Stadium,Sylhet,male,international,6,2018-11-03,2026-05-16
+f78b8fe9,T20,"Stubberudmyra Cricket Ground, Oslo",Oslo,male,international,3,2025-08-17,2025-08-17
+f7d98265,T20,"Sheikh Zayed Stadium Nursery 2, Abu Dhabi",Abu Dhabi,male,international,1,2018-10-22,2018-10-22
+f7faf22e,T20,"Kerrydale Oval, Gold Coast",Gold Coast,female,international,4,2014-08-30,2014-09-05
+f820cb66,ODI,Louth Cricket Club,,female,international,1,2013-07-01,2013-07-01
+f84ac755,ODI,"The County Ground, Hove",Brighton,female,international,4,2013-08-23,2022-09-18
+f84ac755,T20,"The County Ground, Hove",Brighton,male,club,98,2012-09-15,2026-07-12
+fa6eaa2f,T20,"Woodvale Road, Eglinton",Eglinton,male,club,2,2017-06-23,2024-08-14
+fbb1656d,T20,"DRIEMS Ground, Tangi, Cuttack",,male,club,17,2016-01-02,2019-03-02
+fcb438b3,ODI,Al Amerat Cricket Ground Oman Cricket (Ministry Turf 1),Al Amarat,male,international,33,2020-01-05,2026-10-19
+fcb438b3,T20,Al Amerat Cricket Ground Oman Cricket (Ministry Turf 1),Al Amarat,female,international,134,2019-02-13,2026-02-06
+fcc90eb2,ODI,"Wanderers Stadium, Johannesburg",Johannesburg,male,international,41,2003-02-11,2026-09-27
+fcc90eb2,T20,"Wanderers Stadium, Johannesburg",Johannesburg,female,international,108,2005-10-21,2026-04-25
+fcc90eb2,Test,"Wanderers Stadium, Johannesburg",Johannesburg,male,international,19,2003-12-12,2023-03-08
+ff265dbf,T20,"King George V Sports Ground, Castel",Castel,male,international,24,2019-06-15,2026-05-03
+ff431ef3,T20,Adelaide Oval No 2,,female,club,1,2016-01-17,2016-01-17
+ff772dd3,T20,Hong Kong Cricket Club,Wong Nai Chung Gap,female,international,8,2023-11-15,2023-11-19
+ffa60819,T20,"CH Bansi Lal Cricket Stadium, Lahli, Rohtak",,male,club,4,2021-11-04,2021-11-09

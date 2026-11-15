@@ -278,3 +278,24 @@ side's second innings is compared with its own first. The October
 2011 two-new-ball rule leaves the ODI age gradient unchanged. Write-up:
 `reports/PAPER_DRAFT.md` and Section 7.10 of
 `reports/EL_Phase1_Report_Content.md`.
+
+## Dashboard prototype (Pitch Brief)
+
+`dashboard/app.py` is a read-only Streamlit prototype that turns the committed
+artifacts into a pre-match brief. It never refits a model or scans
+`data/interim/balls.parquet` on interaction.
+
+```powershell
+python src\build_dashboard_data.py     # data/processed/dashboard_*.csv
+python src\build_dashboard_model.py    # models/dashboard/{t20,odi,test}
+streamlit run dashboard/app.py
+```
+
+`build_dashboard_data.py` caches the exact parsed match table at
+`data/interim/matches_parsed.parquet` (about 50 s from `all_json.zip` if it is
+absent). `build_dashboard_model.py` refits the paper's headline match model on
+all labelled matches with the per-format venue windows; the model card reports
+the rolling-origin CV, not in-sample fit. Probabilities are agreement with the
+rule-derived proxy label, never a physical pitch reading. Requires `streamlit`,
+`xgboost`, `scikit-learn`, `pandas`, `numpy` and `matplotlib`.
+

@@ -1,0 +1,1019 @@
+{
+  "folds": 4,
+  "min_train_fraction": 0.5,
+  "venue_configs": [
+    "5,None"
+  ],
+  "venue_windows_by_format": {
+    "T20": 5,
+    "ODI": 5,
+    "Test": 10
+  },
+  "variants": {
+    "xgb:ctx@performat": {
+      "T20": {
+        "weather_mode": "ctx",
+        "model_family": "xgb",
+        "n_raw_features": 29,
+        "folds": [
+          {
+            "fold": 1,
+            "train_n": 1455,
+            "test_n": 421,
+            "test_start": "2020-10-12",
+            "test_end": "2022-02-10",
+            "macro_f1": 0.4204299443353781,
+            "accuracy": 0.6175771971496437
+          },
+          {
+            "fold": 2,
+            "train_n": 1876,
+            "test_n": 490,
+            "test_start": "2022-02-11",
+            "test_end": "2023-03-28",
+            "macro_f1": 0.46689933763042796,
+            "accuracy": 0.5795918367346938
+          },
+          {
+            "fold": 3,
+            "train_n": 2366,
+            "test_n": 374,
+            "test_start": "2023-03-29",
+            "test_end": "2024-08-24",
+            "macro_f1": 0.4820187253820143,
+            "accuracy": 0.5882352941176471
+          },
+          {
+            "fold": 4,
+            "train_n": 2740,
+            "test_n": 342,
+            "test_start": "2024-08-27",
+            "test_end": "2026-10-29",
+            "macro_f1": 0.42327734729339284,
+            "accuracy": 0.5292397660818714
+          }
+        ],
+        "mean_fold_macro_f1": 0.4481563386603033,
+        "std_fold_macro_f1": 0.026859255381436267,
+        "pooled_macro_f1": 0.4530968557174113,
+        "pooled_macro_f1_ci95": [
+          0.42857585355930694,
+          0.47951899652642355
+        ],
+        "pooled_accuracy": 0.5808236017209588,
+        "pooled_ece": 0.05275307842879834,
+        "pooled_n": 1627,
+        "per_class": {
+          "Batting": {
+            "precision": 0.13186813186813187,
+            "recall": 0.2647058823529412,
+            "f1-score": 0.17603911980440098,
+            "support": 136.0
+          },
+          "Pace": {
+            "precision": 0.7589473684210526,
+            "recall": 0.6408888888888888,
+            "f1-score": 0.6949397590361446,
+            "support": 1125.0
+          },
+          "Spin": {
+            "precision": 0.46534653465346537,
+            "recall": 0.5136612021857924,
+            "f1-score": 0.4883116883116883,
+            "support": 366.0
+          },
+          "accuracy": 0.5808236017209588,
+          "macro avg": {
+            "precision": 0.45205401164754994,
+            "recall": 0.4730853244758741,
+            "f1-score": 0.4530968557174113,
+            "support": 1627.0
+          },
+          "weighted avg": {
+            "precision": 0.6404835200312959,
+            "recall": 0.5808236017209588,
+            "f1-score": 0.6050833602526977,
+            "support": 1627.0
+          }
+        },
+        "confusion_matrix": [
+          [
+            36,
+            86,
+            14
+          ],
+          [
+            202,
+            721,
+            202
+          ],
+          [
+            35,
+            143,
+            188
+          ]
+        ],
+        "class_order": [
+          "Batting",
+          "Pace",
+          "Spin"
+        ],
+        "match_type": "T20",
+        "venue_window": 5,
+        "venue_half_life": null
+      },
+      "ODI": {
+        "weather_mode": "ctx",
+        "model_family": "xgb",
+        "n_raw_features": 29,
+        "folds": [
+          {
+            "fold": 1,
+            "train_n": 804,
+            "test_n": 220,
+            "test_start": "2017-05-07",
+            "test_end": "2019-05-11",
+            "macro_f1": 0.42230859878702626,
+            "accuracy": 0.5454545454545454
+          },
+          {
+            "fold": 2,
+            "train_n": 1024,
+            "test_n": 214,
+            "test_start": "2019-05-12",
+            "test_end": "2022-02-12",
+            "macro_f1": 0.3943833943833943,
+            "accuracy": 0.4485981308411215
+          },
+          {
+            "fold": 3,
+            "train_n": 1238,
+            "test_n": 216,
+            "test_start": "2022-02-15",
+            "test_end": "2023-09-04",
+            "macro_f1": 0.3968813305415113,
+            "accuracy": 0.5092592592592593
+          },
+          {
+            "fold": 4,
+            "train_n": 1454,
+            "test_n": 207,
+            "test_start": "2023-09-06",
+            "test_end": "2026-10-31",
+            "macro_f1": 0.430931899641577,
+            "accuracy": 0.45893719806763283
+          }
+        ],
+        "mean_fold_macro_f1": 0.4111263058383772,
+        "std_fold_macro_f1": 0.015815732884413465,
+        "pooled_macro_f1": 0.42169754006859944,
+        "pooled_macro_f1_ci95": [
+          0.3856369161334642,
+          0.4557702702868555
+        ],
+        "pooled_accuracy": 0.4912485414235706,
+        "pooled_ece": 0.10997773879084251,
+        "pooled_n": 857,
+        "per_class": {
+          "Batting": {
+            "precision": 0.2736842105263158,
+            "recall": 0.37681159420289856,
+            "f1-score": 0.3170731707317073,
+            "support": 138.0
+          },
+          "Pace": {
+            "precision": 0.6622807017543859,
+            "recall": 0.5676691729323309,
+            "f1-score": 0.611336032388664,
+            "support": 532.0
+          },
+          "Spin": {
+            "precision": 0.3175355450236967,
+            "recall": 0.3582887700534759,
+            "f1-score": 0.33668341708542715,
+            "support": 187.0
+          },
+          "accuracy": 0.4912485414235706,
+          "macro avg": {
+            "precision": 0.4178334857681328,
+            "recall": 0.43425651239623514,
+            "f1-score": 0.42169754006859944,
+            "support": 857.0
+          },
+          "weighted avg": {
+            "precision": 0.5244817984893771,
+            "recall": 0.4912485414235706,
+            "f1-score": 0.5040217803812365,
+            "support": 857.0
+          }
+        },
+        "confusion_matrix": [
+          [
+            52,
+            59,
+            27
+          ],
+          [
+            113,
+            302,
+            117
+          ],
+          [
+            25,
+            95,
+            67
+          ]
+        ],
+        "class_order": [
+          "Batting",
+          "Pace",
+          "Spin"
+        ],
+        "match_type": "ODI",
+        "venue_window": 5,
+        "venue_half_life": null
+      },
+      "Test": {
+        "weather_mode": "ctx",
+        "model_family": "xgb",
+        "n_raw_features": 29,
+        "folds": [
+          {
+            "fold": 1,
+            "train_n": 322,
+            "test_n": 84,
+            "test_start": "2016-01-02",
+            "test_end": "2018-01-24",
+            "macro_f1": 0.5280459770114942,
+            "accuracy": 0.7619047619047619
+          },
+          {
+            "fold": 2,
+            "train_n": 406,
+            "test_n": 86,
+            "test_start": "2018-01-31",
+            "test_end": "2020-07-24",
+            "macro_f1": 0.5680767380070714,
+            "accuracy": 0.7441860465116279
+          },
+          {
+            "fold": 3,
+            "train_n": 492,
+            "test_n": 85,
+            "test_start": "2020-08-13",
+            "test_end": "2022-12-01",
+            "macro_f1": 0.6158730158730159,
+            "accuracy": 0.8117647058823529
+          },
+          {
+            "fold": 4,
+            "train_n": 577,
+            "test_n": 80,
+            "test_start": "2022-12-08",
+            "test_end": "2026-10-18",
+            "macro_f1": 0.5520663059744445,
+            "accuracy": 0.7
+          }
+        ],
+        "mean_fold_macro_f1": 0.5660155092165065,
+        "std_fold_macro_f1": 0.032118084006859546,
+        "pooled_macro_f1": 0.5675776294170255,
+        "pooled_macro_f1_ci95": [
+          0.5155658856555737,
+          0.6247866889796899
+        ],
+        "pooled_accuracy": 0.755223880597015,
+        "pooled_ece": 0.090081401961636,
+        "pooled_n": 335,
+        "per_class": {
+          "Batting": {
+            "precision": 0.1875,
+            "recall": 0.0967741935483871,
+            "f1-score": 0.1276595744680851,
+            "support": 31.0
+          },
+          "Pace": {
+            "precision": 0.845,
+            "recall": 0.8325123152709359,
+            "f1-score": 0.8387096774193549,
+            "support": 203.0
+          },
+          "Spin": {
+            "precision": 0.680672268907563,
+            "recall": 0.801980198019802,
+            "f1-score": 0.7363636363636363,
+            "support": 101.0
+          },
+          "accuracy": 0.755223880597015,
+          "macro avg": {
+            "precision": 0.5710574229691877,
+            "recall": 0.5770889022797084,
+            "f1-score": 0.5675776294170255,
+            "support": 335.0
+          },
+          "weighted avg": {
+            "precision": 0.7346131318198922,
+            "recall": 0.755223880597015,
+            "f1-score": 0.7420544435742297,
+            "support": 335.0
+          }
+        },
+        "confusion_matrix": [
+          [
+            3,
+            15,
+            13
+          ],
+          [
+            9,
+            169,
+            25
+          ],
+          [
+            4,
+            16,
+            81
+          ]
+        ],
+        "class_order": [
+          "Batting",
+          "Pace",
+          "Spin"
+        ],
+        "match_type": "Test",
+        "venue_window": 10,
+        "venue_half_life": null
+      }
+    },
+    "xgb:day@performat": {
+      "T20": {
+        "weather_mode": "day",
+        "model_family": "xgb",
+        "n_raw_features": 21,
+        "folds": [
+          {
+            "fold": 1,
+            "train_n": 1455,
+            "test_n": 421,
+            "test_start": "2020-10-12",
+            "test_end": "2022-02-10",
+            "macro_f1": 0.38368439070265253,
+            "accuracy": 0.5320665083135392
+          },
+          {
+            "fold": 2,
+            "train_n": 1876,
+            "test_n": 490,
+            "test_start": "2022-02-11",
+            "test_end": "2023-03-28",
+            "macro_f1": 0.4232695749937129,
+            "accuracy": 0.5020408163265306
+          },
+          {
+            "fold": 3,
+            "train_n": 2366,
+            "test_n": 374,
+            "test_start": "2023-03-29",
+            "test_end": "2024-08-24",
+            "macro_f1": 0.47427304417115773,
+            "accuracy": 0.553475935828877
+          },
+          {
+            "fold": 4,
+            "train_n": 2740,
+            "test_n": 342,
+            "test_start": "2024-08-27",
+            "test_end": "2026-10-29",
+            "macro_f1": 0.4019863300785181,
+            "accuracy": 0.48830409356725146
+          }
+        ],
+        "mean_fold_macro_f1": 0.4208033349865103,
+        "std_fold_macro_f1": 0.03390054512290118,
+        "pooled_macro_f1": 0.424098284523835,
+        "pooled_macro_f1_ci95": [
+          0.39864302418861447,
+          0.44898325735748784
+        ],
+        "pooled_accuracy": 0.5187461585740627,
+        "pooled_ece": 0.06911974130737127,
+        "pooled_n": 1627,
+        "per_class": {
+          "Batting": {
+            "precision": 0.13253012048192772,
+            "recall": 0.3235294117647059,
+            "f1-score": 0.18803418803418803,
+            "support": 136.0
+          },
+          "Pace": {
+            "precision": 0.7441574415744158,
+            "recall": 0.5377777777777778,
+            "f1-score": 0.6243550051599587,
+            "support": 1125.0
+          },
+          "Spin": {
+            "precision": 0.4045643153526971,
+            "recall": 0.5327868852459017,
+            "f1-score": 0.45990566037735847,
+            "support": 366.0
+          },
+          "accuracy": 0.5187461585740627,
+          "macro avg": {
+            "precision": 0.4270839591363469,
+            "recall": 0.46469802492946183,
+            "f1-score": 0.424098284523835,
+            "support": 1627.0
+          },
+          "weighted avg": {
+            "precision": 0.6166390642752594,
+            "recall": 0.5187461585740627,
+            "f1-score": 0.5508896755228742,
+            "support": 1627.0
+          }
+        },
+        "confusion_matrix": [
+          [
+            44,
+            78,
+            14
+          ],
+          [
+            247,
+            605,
+            273
+          ],
+          [
+            41,
+            130,
+            195
+          ]
+        ],
+        "class_order": [
+          "Batting",
+          "Pace",
+          "Spin"
+        ],
+        "match_type": "T20",
+        "venue_window": 5,
+        "venue_half_life": null
+      },
+      "ODI": {
+        "weather_mode": "day",
+        "model_family": "xgb",
+        "n_raw_features": 21,
+        "folds": [
+          {
+            "fold": 1,
+            "train_n": 804,
+            "test_n": 220,
+            "test_start": "2017-05-07",
+            "test_end": "2019-05-11",
+            "macro_f1": 0.4347366019223639,
+            "accuracy": 0.4954545454545455
+          },
+          {
+            "fold": 2,
+            "train_n": 1024,
+            "test_n": 214,
+            "test_start": "2019-05-12",
+            "test_end": "2022-02-12",
+            "macro_f1": 0.38776290332646823,
+            "accuracy": 0.411214953271028
+          },
+          {
+            "fold": 3,
+            "train_n": 1238,
+            "test_n": 216,
+            "test_start": "2022-02-15",
+            "test_end": "2023-09-04",
+            "macro_f1": 0.42094079713415605,
+            "accuracy": 0.5185185185185185
+          },
+          {
+            "fold": 4,
+            "train_n": 1454,
+            "test_n": 207,
+            "test_start": "2023-09-06",
+            "test_end": "2026-10-31",
+            "macro_f1": 0.43294331165768396,
+            "accuracy": 0.45410628019323673
+          }
+        ],
+        "mean_fold_macro_f1": 0.41909590351016807,
+        "std_fold_macro_f1": 0.01885167560338285,
+        "pooled_macro_f1": 0.4240078235853755,
+        "pooled_macro_f1_ci95": [
+          0.39033230724183615,
+          0.45733315618250736
+        ],
+        "pooled_accuracy": 0.47024504084014,
+        "pooled_ece": 0.13019947528581852,
+        "pooled_n": 857,
+        "per_class": {
+          "Batting": {
+            "precision": 0.26146788990825687,
+            "recall": 0.41304347826086957,
+            "f1-score": 0.3202247191011236,
+            "support": 138.0
+          },
+          "Pace": {
+            "precision": 0.6583541147132169,
+            "recall": 0.49624060150375937,
+            "f1-score": 0.5659163987138264,
+            "support": 532.0
+          },
+          "Spin": {
+            "precision": 0.3445378151260504,
+            "recall": 0.4385026737967914,
+            "f1-score": 0.38588235294117645,
+            "support": 187.0
+          },
+          "accuracy": 0.47024504084014,
+          "macro avg": {
+            "precision": 0.42145327324917475,
+            "recall": 0.4492622511871401,
+            "f1-score": 0.4240078235853755,
+            "support": 857.0
+          },
+          "weighted avg": {
+            "precision": 0.5259691123259537,
+            "recall": 0.47024504084014,
+            "f1-score": 0.48706946948857727,
+            "support": 857.0
+          }
+        },
+        "confusion_matrix": [
+          [
+            57,
+            58,
+            23
+          ],
+          [
+            135,
+            264,
+            133
+          ],
+          [
+            26,
+            79,
+            82
+          ]
+        ],
+        "class_order": [
+          "Batting",
+          "Pace",
+          "Spin"
+        ],
+        "match_type": "ODI",
+        "venue_window": 5,
+        "venue_half_life": null
+      },
+      "Test": {
+        "weather_mode": "day",
+        "model_family": "xgb",
+        "n_raw_features": 21,
+        "folds": [
+          {
+            "fold": 1,
+            "train_n": 322,
+            "test_n": 84,
+            "test_start": "2016-01-02",
+            "test_end": "2018-01-24",
+            "macro_f1": 0.5114732291320253,
+            "accuracy": 0.7380952380952381
+          },
+          {
+            "fold": 2,
+            "train_n": 406,
+            "test_n": 86,
+            "test_start": "2018-01-31",
+            "test_end": "2020-07-24",
+            "macro_f1": 0.5721787078170056,
+            "accuracy": 0.7558139534883721
+          },
+          {
+            "fold": 3,
+            "train_n": 492,
+            "test_n": 85,
+            "test_start": "2020-08-13",
+            "test_end": "2022-12-01",
+            "macro_f1": 0.5007936507936508,
+            "accuracy": 0.7764705882352941
+          },
+          {
+            "fold": 4,
+            "train_n": 577,
+            "test_n": 80,
+            "test_start": "2022-12-08",
+            "test_end": "2026-10-18",
+            "macro_f1": 0.5053968253968254,
+            "accuracy": 0.6875
+          }
+        ],
+        "mean_fold_macro_f1": 0.5224606032848768,
+        "std_fold_macro_f1": 0.02895359068886032,
+        "pooled_macro_f1": 0.531112934745911,
+        "pooled_macro_f1_ci95": [
+          0.49096157963504167,
+          0.5762340993829709
+        ],
+        "pooled_accuracy": 0.7402985074626866,
+        "pooled_ece": 0.08061197115409395,
+        "pooled_n": 335,
+        "per_class": {
+          "Batting": {
+            "precision": 0.07142857142857142,
+            "recall": 0.03225806451612903,
+            "f1-score": 0.044444444444444446,
+            "support": 31.0
+          },
+          "Pace": {
+            "precision": 0.8469387755102041,
+            "recall": 0.8177339901477833,
+            "f1-score": 0.8320802005012531,
+            "support": 203.0
+          },
+          "Spin": {
+            "precision": 0.648,
+            "recall": 0.801980198019802,
+            "f1-score": 0.7168141592920354,
+            "support": 101.0
+          },
+          "accuracy": 0.7402985074626866,
+          "macro avg": {
+            "precision": 0.5221224489795918,
+            "recall": 0.5506574175612381,
+            "f1-score": 0.531112934745911,
+            "support": 335.0
+          },
+          "weighted avg": {
+            "precision": 0.7151965884861409,
+            "recall": 0.7402985074626866,
+            "f1-score": 0.7244426524418738,
+            "support": 335.0
+          }
+        },
+        "confusion_matrix": [
+          [
+            1,
+            16,
+            14
+          ],
+          [
+            7,
+            166,
+            30
+          ],
+          [
+            6,
+            14,
+            81
+          ]
+        ],
+        "class_order": [
+          "Batting",
+          "Pace",
+          "Spin"
+        ],
+        "match_type": "Test",
+        "venue_window": 10,
+        "venue_half_life": null
+      }
+    },
+    "rf:ctx@performat": {
+      "T20": {
+        "weather_mode": "ctx",
+        "model_family": "rf",
+        "n_raw_features": 29,
+        "folds": [
+          {
+            "fold": 1,
+            "train_n": 1455,
+            "test_n": 421,
+            "test_start": "2020-10-12",
+            "test_end": "2022-02-10",
+            "macro_f1": 0.43035053048898053,
+            "accuracy": 0.6389548693586699
+          },
+          {
+            "fold": 2,
+            "train_n": 1876,
+            "test_n": 490,
+            "test_start": "2022-02-11",
+            "test_end": "2023-03-28",
+            "macro_f1": 0.46374367793351495,
+            "accuracy": 0.5938775510204082
+          },
+          {
+            "fold": 3,
+            "train_n": 2366,
+            "test_n": 374,
+            "test_start": "2023-03-29",
+            "test_end": "2024-08-24",
+            "macro_f1": 0.4701737986428472,
+            "accuracy": 0.6363636363636364
+          },
+          {
+            "fold": 4,
+            "train_n": 2740,
+            "test_n": 342,
+            "test_start": "2024-08-27",
+            "test_end": "2026-10-29",
+            "macro_f1": 0.40701253224979567,
+            "accuracy": 0.5730994152046783
+          }
+        ],
+        "mean_fold_macro_f1": 0.4428201348287846,
+        "std_fold_macro_f1": 0.0256109986868647,
+        "pooled_macro_f1": 0.4467536251591571,
+        "pooled_macro_f1_ci95": [
+          0.4214604709434651,
+          0.47301273708606717
+        ],
+        "pooled_accuracy": 0.610940381069453,
+        "pooled_ece": 0.12871742239393436,
+        "pooled_n": 1627,
+        "per_class": {
+          "Batting": {
+            "precision": 0.11347517730496454,
+            "recall": 0.11764705882352941,
+            "f1-score": 0.11552346570397112,
+            "support": 136.0
+          },
+          "Pace": {
+            "precision": 0.7604790419161677,
+            "recall": 0.6773333333333333,
+            "f1-score": 0.7165021156558533,
+            "support": 1125.0
+          },
+          "Spin": {
+            "precision": 0.4462809917355372,
+            "recall": 0.5901639344262295,
+            "f1-score": 0.508235294117647,
+            "support": 366.0
+          },
+          "accuracy": 0.610940381069453,
+          "macro avg": {
+            "precision": 0.44007840365222317,
+            "recall": 0.4617147755276974,
+            "f1-score": 0.4467536251591571,
+            "support": 1627.0
+          },
+          "weighted avg": {
+            "precision": 0.6357162810352616,
+            "recall": 0.610940381069453,
+            "f1-score": 0.6194162194810288,
+            "support": 1627.0
+          }
+        },
+        "confusion_matrix": [
+          [
+            16,
+            108,
+            12
+          ],
+          [
+            107,
+            762,
+            256
+          ],
+          [
+            18,
+            132,
+            216
+          ]
+        ],
+        "class_order": [
+          "Batting",
+          "Pace",
+          "Spin"
+        ],
+        "match_type": "T20",
+        "venue_window": 5,
+        "venue_half_life": null
+      },
+      "ODI": {
+        "weather_mode": "ctx",
+        "model_family": "rf",
+        "n_raw_features": 29,
+        "folds": [
+          {
+            "fold": 1,
+            "train_n": 804,
+            "test_n": 220,
+            "test_start": "2017-05-07",
+            "test_end": "2019-05-11",
+            "macro_f1": 0.414788954457408,
+            "accuracy": 0.5181818181818182
+          },
+          {
+            "fold": 2,
+            "train_n": 1024,
+            "test_n": 214,
+            "test_start": "2019-05-12",
+            "test_end": "2022-02-12",
+            "macro_f1": 0.3608811407753481,
+            "accuracy": 0.37850467289719625
+          },
+          {
+            "fold": 3,
+            "train_n": 1238,
+            "test_n": 216,
+            "test_start": "2022-02-15",
+            "test_end": "2023-09-04",
+            "macro_f1": 0.4317513642261683,
+            "accuracy": 0.48148148148148145
+          },
+          {
+            "fold": 4,
+            "train_n": 1454,
+            "test_n": 207,
+            "test_start": "2023-09-06",
+            "test_end": "2026-10-31",
+            "macro_f1": 0.43496366407069614,
+            "accuracy": 0.4830917874396135
+          }
+        ],
+        "mean_fold_macro_f1": 0.41059628088240513,
+        "std_fold_macro_f1": 0.029708923669065367,
+        "pooled_macro_f1": 0.41879325541898044,
+        "pooled_macro_f1_ci95": [
+          0.38430839903170755,
+          0.45382930773328434
+        ],
+        "pooled_accuracy": 0.46557759626604434,
+        "pooled_ece": 0.08019887333464294,
+        "pooled_n": 857,
+        "per_class": {
+          "Batting": {
+            "precision": 0.2513089005235602,
+            "recall": 0.34782608695652173,
+            "f1-score": 0.2917933130699088,
+            "support": 138.0
+          },
+          "Pace": {
+            "precision": 0.6632124352331606,
+            "recall": 0.48120300751879697,
+            "f1-score": 0.5577342047930284,
+            "support": 532.0
+          },
+          "Spin": {
+            "precision": 0.3392857142857143,
+            "recall": 0.5080213903743316,
+            "f1-score": 0.4068522483940043,
+            "support": 187.0
+          },
+          "accuracy": 0.46557759626604434,
+          "macro avg": {
+            "precision": 0.4179356833474784,
+            "recall": 0.4456834949498834,
+            "f1-score": 0.41879325541898044,
+            "support": 857.0
+          },
+          "weighted avg": {
+            "precision": 0.5262031183053925,
+            "recall": 0.46557759626604434,
+            "f1-score": 0.4819876833176398,
+            "support": 857.0
+          }
+        },
+        "confusion_matrix": [
+          [
+            48,
+            62,
+            28
+          ],
+          [
+            119,
+            256,
+            157
+          ],
+          [
+            24,
+            68,
+            95
+          ]
+        ],
+        "class_order": [
+          "Batting",
+          "Pace",
+          "Spin"
+        ],
+        "match_type": "ODI",
+        "venue_window": 5,
+        "venue_half_life": null
+      },
+      "Test": {
+        "weather_mode": "ctx",
+        "model_family": "rf",
+        "n_raw_features": 29,
+        "folds": [
+          {
+            "fold": 1,
+            "train_n": 322,
+            "test_n": 84,
+            "test_start": "2016-01-02",
+            "test_end": "2018-01-24",
+            "macro_f1": 0.5020829766592478,
+            "accuracy": 0.7261904761904762
+          },
+          {
+            "fold": 2,
+            "train_n": 406,
+            "test_n": 86,
+            "test_start": "2018-01-31",
+            "test_end": "2020-07-24",
+            "macro_f1": 0.5082758620689655,
+            "accuracy": 0.7674418604651163
+          },
+          {
+            "fold": 3,
+            "train_n": 492,
+            "test_n": 85,
+            "test_start": "2020-08-13",
+            "test_end": "2022-12-01",
+            "macro_f1": 0.6512732334397773,
+            "accuracy": 0.8235294117647058
+          },
+          {
+            "fold": 4,
+            "train_n": 577,
+            "test_n": 80,
+            "test_start": "2022-12-08",
+            "test_end": "2026-10-18",
+            "macro_f1": 0.5534391534391534,
+            "accuracy": 0.7
+          }
+        ],
+        "mean_fold_macro_f1": 0.5537678064017859,
+        "std_fold_macro_f1": 0.05968302719225644,
+        "pooled_macro_f1": 0.553725545923926,
+        "pooled_macro_f1_ci95": [
+          0.5074520086780214,
+          0.6101624297004866
+        ],
+        "pooled_accuracy": 0.755223880597015,
+        "pooled_ece": 0.1480501963536458,
+        "pooled_n": 335,
+        "per_class": {
+          "Batting": {
+            "precision": 0.2222222222222222,
+            "recall": 0.06451612903225806,
+            "f1-score": 0.1,
+            "support": 31.0
+          },
+          "Pace": {
+            "precision": 0.845,
+            "recall": 0.8325123152709359,
+            "f1-score": 0.8387096774193549,
+            "support": 203.0
+          },
+          "Spin": {
+            "precision": 0.6507936507936508,
+            "recall": 0.8118811881188119,
+            "f1-score": 0.7224669603524229,
+            "support": 101.0
+          },
+          "accuracy": 0.755223880597015,
+          "macro avg": {
+            "precision": 0.5726719576719576,
+            "recall": 0.5696365441406687,
+            "f1-score": 0.553725545923926,
+            "support": 335.0
+          },
+          "weighted avg": {
+            "precision": 0.728818052594172,
+            "recall": 0.755223880597015,
+            "f1-score": 0.7353051567514141,
+            "support": 335.0
+          }
+        },
+        "confusion_matrix": [
+          [
+            2,
+            16,
+            13
+          ],
+          [
+            3,
+            169,
+            31
+          ],
+          [
+            4,
+            15,
+            82
+          ]
+        ],
+        "class_order": [
+          "Batting",
+          "Pace",
+          "Spin"
+        ],
+        "match_type": "Test",
+        "venue_window": 10,
+        "venue_half_life": null
+      }
+    }
+  }
+}

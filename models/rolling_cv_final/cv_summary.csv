@@ -1,0 +1,10 @@
+variant,venue_config,venue_window,venue_half_life,match_type,folds,pooled_n,mean_fold_macro_f1,std_fold_macro_f1,pooled_macro_f1,pooled_macro_f1_ci_low,pooled_macro_f1_ci_high,pooled_accuracy,pooled_ece,n_raw_features
+xgb:ctx,performat,5,,T20,4,1627,0.4482,0.0269,0.4531,0.4286,0.4795,0.5808,0.0528,29
+xgb:ctx,performat,5,,ODI,4,857,0.4111,0.0158,0.4217,0.3856,0.4558,0.4912,0.11,29
+xgb:ctx,performat,10,,Test,4,335,0.566,0.0321,0.5676,0.5156,0.6248,0.7552,0.0901,29
+xgb:day,performat,5,,T20,4,1627,0.4208,0.0339,0.4241,0.3986,0.449,0.5187,0.0691,21
+xgb:day,performat,5,,ODI,4,857,0.4191,0.0189,0.424,0.3903,0.4573,0.4702,0.1302,21
+xgb:day,performat,10,,Test,4,335,0.5225,0.029,0.5311,0.491,0.5762,0.7403,0.0806,21
+rf:ctx,performat,5,,T20,4,1627,0.4428,0.0256,0.4468,0.4215,0.473,0.6109,0.1287,29
+rf:ctx,performat,5,,ODI,4,857,0.4106,0.0297,0.4188,0.3843,0.4538,0.4656,0.0802,29
+rf:ctx,performat,10,,Test,4,335,0.5538,0.0597,0.5537,0.5075,0.6102,0.7552,0.1481,29
