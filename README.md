@@ -277,7 +277,10 @@ Test contrast, the last candidate, is +0.0122 pooled but +0.0035 (p=0.14) when e
 side's second innings is compared with its own first. The October
 2011 two-new-ball rule leaves the ODI age gradient unchanged. Write-up:
 `reports/PAPER_DRAFT.md` and Section 7.10 of
-`reports/EL_Phase1_Report_Content.md`.
+`reports/EL_Phase1_Report_Content.md`. The paper is in standard IEEE conference
+format in Markdown (author block, Abstract and Index Terms, Roman-numeral
+sections, TABLE I–IX, Fig. 1, Appendix A); it is not yet a compiled PDF, and the
+target venue is still to be chosen.
 
 ## Dashboard prototype (Pitch Brief)
 

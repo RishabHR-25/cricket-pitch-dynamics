@@ -348,9 +348,26 @@ zero, so no surface-scale signal is confirmed.
   (rule DiD), Table 7.15 (within-bowler gradient) and Table 7.16 (across-innings
   stress test).
 - `reports/PAPER_DRAFT.md` — conference draft built on the audit result (boundary
-  selection, unidentified trend, across-innings contrast not robust): abstract,
-  11 sections, 9 tables, reproducibility table, verified ICC rule citations, and
-  a short venue-fit note.
+  selection, unidentified trend, across-innings contrast not robust). It is kept
+  in standard IEEE conference format: title-cased title, author and affiliation
+  block, run-in **Abstract—** and **Index Terms—**, Roman-numeral sections I–XI
+  with lettered subsections, nine tables captioned **TABLE I**–**TABLE IX** with
+  italic captions above each table, one figure captioned **Fig. 1** below the
+  image, an **Appendix A. Reproducibility**, and IEEE-style references. The
+  formatting is implemented in Markdown because no LaTeX or pandoc toolchain is
+  installed locally; it is not yet a compiled PDF.
+- Venue is deliberately undecided. The earlier "Venue fit" section was removed
+  from the paper and is recorded here instead: the work is a
+  measurement-and-identification study with a large observational sample and a
+  negative central result, so it fits venues that value rigour over a positive
+  predictive headline. MLSA (Machine Learning and Data Mining for Sports
+  Analytics), the workshop at ECML-PKDD, is the closest topical fit and would
+  require cutting nine tables to about five; the IEEE BigData sports track has
+  room for the full event study, rule-change test and power audit; the Journal of
+  Sports Analytics has the best topical fit and no page limit but charges an
+  article processing charge. The main revision risk is the absence of physical
+  pitch data, mitigated by framing the contribution as identification rather than
+  measurement.
 - Figures: `reports/figures/fig1`–`fig6` from
   `python src\make_dynamics_figures.py`. `fig5` is the naive-versus-continuing-bowler
   event study; `fig6` is the format-era rule comparison.
