@@ -446,7 +446,9 @@ on interaction.
   training ranges, label counts and the rolling-origin CV. No in-sample metric
   is reported anywhere.
 - **Screens.** Match brief (three proxy-class probabilities, local XGBoost
-  contributions, venue snapshot, recent matches, weather inputs); Pitch dynamics
+  contributions, venue snapshot, recent matches, weather inputs); Toss advisor
+  (bat-versus-field win shares with intervals, XI pickers and team splits);
+  Pitch dynamics
   (phase decomposition, age curves, venue terciles, Test second-new-ball ladder);
   Model card (out-of-fold class report, confusion matrix, calibration, global
   importance); Method & caveats (label rules, estimand, six-check audit,
@@ -470,8 +472,42 @@ on interaction.
 ```powershell
 python src\build_dashboard_data.py
 python src\build_dashboard_model.py
+python src\build_toss_dataset.py
 streamlit run dashboard/app.py
 ```
+
+## Dashboard: dark theme and Toss advisor (2026-11-19)
+
+The app ships dark by default and reads the theme chosen in Streamlit's settings
+menu (`st.context.theme`), so the custom cards and every matplotlib figure use
+one palette object rather than hard-coded light colours.
+
+The new **Toss advisor** tab answers a descriptive question: if the selected
+side wins the toss, does batting or fielding first have the higher historical
+win share? `src/build_toss_dataset.py` reads the same Cricsheet archive and
+writes three committed artifacts:
+
+- `data/processed/dashboard_toss_matches.csv` — 18,585 T20/ODI/Test matches with
+  toss winner, toss decision, winner, result type, venue key and date.
+- `data/processed/dashboard_teams.csv` — team × format × gender × team-type
+  records with batting-first and fielding-first splits.
+- `data/processed/dashboard_team_players.csv` — 26,318 player × team rows used
+  only to populate the XI pickers and describe a lineup.
+
+Method: decided matches only; the estimand is the share of toss winners who won
+after choosing bat versus field; venue rates are shrunk to the format rate with
+a Beta prior worth 10 pseudo-matches and reported with 95% posterior intervals.
+The call uses venue history only when at least 25 decided matches back each
+choice, otherwise the format baseline; it says "no clear edge" when the
+posterior probability that one choice is better is below 95% or the adjusted
+difference is under 2 points. Ties and no-results are excluded, and the text
+says the comparison is not causal and does not adjust for team strength. The
+line-ups are descriptive and are not inputs to the toss estimate.
+
+Verified with `streamlit.testing.v1.AppTest`: five tabs render for all three
+formats, a decisive venue returns "Field first", XI selection changes, gender
+switches, and a date before any history shows the empty-state warnings without
+exceptions.
 
 ## How to resume
 

@@ -30,6 +30,9 @@ MATCHES_PATH = ROOT / "data/processed/dashboard_matches.csv"
 CLIMATOLOGY_PATH = ROOT / "data/processed/dashboard_weather_climatology.csv"
 VENUES_PATH = ROOT / "data/processed/dashboard_venues.csv"
 DYNAMICS = ROOT / "models/pitch_dynamics"
+TOSS_PATH = ROOT / "data/processed/dashboard_toss_matches.csv"
+TEAMS_PATH = ROOT / "data/processed/dashboard_teams.csv"
+TEAM_PLAYERS_PATH = ROOT / "data/processed/dashboard_team_players.csv"
 MODEL_ROOT = ROOT / "models/dashboard"
 CV_PATH = ROOT / "models/rolling_cv_final/cv_summary.csv"
 PREDICTIONS = ROOT / "models/rolling_cv_final/predictions"
@@ -100,6 +103,41 @@ PRETTY_FEATURE = {
     "dry_days_before": "Dry days before match",
 }
 
+# Theme-aware palette. The app ships dark by default (see .streamlit/config.toml)
+# but follows the theme picked in Streamlit's settings menu, so both palettes are
+# defined here and applied to the custom HTML and to every matplotlib figure.
+THEME_TYPE = (st.context.theme or {}).get("type") or "dark"
+IS_DARK = THEME_TYPE != "light"
+PALETTE = {
+    "panel": "#111b2d" if IS_DARK else "#ffffff",
+    "border": "#22314a" if IS_DARK else "#e2e8f0",
+    "text": "#e8eef8" if IS_DARK else "#0f172a",
+    "muted": "#9fb0c9" if IS_DARK else "#475569",
+    "axis": "#cbd5e1" if IS_DARK else "#0f172a",
+    "accent": "#f59e0b" if IS_DARK else "#0f172a",
+    "neutral": "#64748b" if IS_DARK else "#94a3b8",
+    "track": "#22314a" if IS_DARK else "#e2e8f0",
+    "shadow": "rgba(0,0,0,.35)" if IS_DARK else "rgba(15,23,42,.08)",
+    "verdict_bg": "#1e1a10" if IS_DARK else "#fffbeb",
+    "verdict_text": "#fcd34d" if IS_DARK else "#92400e",
+}
+
+plt.rcParams.update(
+    {
+        "figure.facecolor": PALETTE["panel"],
+        "axes.facecolor": PALETTE["panel"],
+        "savefig.facecolor": PALETTE["panel"],
+        "axes.edgecolor": PALETTE["border"],
+        "axes.labelcolor": PALETTE["muted"],
+        "text.color": PALETTE["text"],
+        "xtick.color": PALETTE["muted"],
+        "ytick.color": PALETTE["muted"],
+        "grid.color": PALETTE["border"],
+        "legend.facecolor": PALETTE["panel"],
+        "legend.edgecolor": PALETTE["border"],
+    }
+)
+
 
 # --------------------------------------------------------------------------- #
 # Data loading
@@ -157,6 +195,31 @@ def load_dynamics() -> dict[str, pd.DataFrame]:
         "specifications": "wear_specifications.csv",
     }
     return {name: pd.read_csv(DYNAMICS / filename) for name, filename in files.items()}
+
+
+@st.cache_data(show_spinner=False)
+def load_toss_matches() -> pd.DataFrame:
+    return pd.read_csv(
+        TOSS_PATH,
+        parse_dates=["date"],
+        dtype={"match_id": str, "venue_key": str, "venue_id": str},
+    )
+
+
+@st.cache_data(show_spinner=False)
+def load_teams() -> pd.DataFrame:
+    return pd.read_csv(
+        TEAMS_PATH, parse_dates=["last_date"], dtype={"team": str}
+    )
+
+
+@st.cache_data(show_spinner=False)
+def load_team_players() -> pd.DataFrame:
+    return pd.read_csv(
+        TEAM_PLAYERS_PATH,
+        parse_dates=["last_date"],
+        dtype={"team": str, "player": str, "player_id": str},
+    )
 
 
 @st.cache_resource(show_spinner=False)
@@ -322,6 +385,163 @@ def local_contributions(
 
 
 # --------------------------------------------------------------------------- #
+# Toss advisor
+# --------------------------------------------------------------------------- #
+SHRINK_PRIOR = 10.0
+MIN_VENUE_N = 25
+
+
+def _decided_tosses(
+    toss: pd.DataFrame,
+    match_type: str,
+    gender: str,
+    team_type: str,
+    before: pd.Timestamp,
+) -> pd.DataFrame:
+    """Matches with a usable toss and a decided result, before the cutoff."""
+    subset = toss[
+        toss["match_type"].eq(match_type)
+        & toss["gender"].eq(gender)
+        & toss["team_type"].eq(team_type)
+        & toss["date"].lt(before)
+        & toss["toss_decision"].isin(["bat", "field"])
+        & toss["toss_winner"].ne("")
+        & toss["winner"].ne("")
+        & toss["result"].ne("no_result")
+    ].copy()
+    subset["toss_won"] = subset["winner"].eq(subset["toss_winner"])
+    return subset
+
+
+def _shrunk(wins: float, n: float, base: float, prior: float = SHRINK_PRIOR) -> float:
+    if n <= 0:
+        return float(base)
+    return float((wins + prior * base) / (n + prior))
+
+
+def _beta_interval(
+    wins: float, n: float, base: float, prior: float = SHRINK_PRIOR
+) -> tuple[float, float]:
+    from scipy.stats import beta
+
+    a = wins + prior * base
+    b = max(n - wins, 0.0) + prior * (1.0 - base)
+    lower, upper = beta.ppf([0.025, 0.975], a, b)
+    return float(lower), float(upper)
+
+
+def _toss_estimates(
+    decided: pd.DataFrame, venue_key: str
+) -> tuple[pd.DataFrame, pd.DataFrame]:
+    """Venue and format rates for each toss decision, shrunk to the format base."""
+    base = (
+        decided.groupby("toss_decision", observed=True)["toss_won"]
+        .agg(["size", "mean"])
+        .rename(columns={"size": "base_n", "mean": "base_rate"})
+    )
+    venue = (
+        decided[decided["venue_key"].eq(venue_key)]
+        .groupby("toss_decision", observed=True)["toss_won"]
+        .agg(["size", "sum"])
+        .rename(columns={"size": "n", "sum": "wins"})
+    )
+    rows = []
+    for decision, label in (("bat", "Bat first"), ("field", "Field first")):
+        base_n = int(base["base_n"].get(decision, 0))
+        base_rate = float(base["base_rate"].get(decision, 0.5))
+        n = int(venue["n"].get(decision, 0))
+        wins = int(venue["wins"].get(decision, 0))
+        raw = wins / n if n else np.nan
+        estimate = _shrunk(wins, n, base_rate)
+        low, high = _beta_interval(wins, n, base_rate)
+        rows.append(
+            {
+                "decision": decision,
+                "label": label,
+                "n": n,
+                "wins": wins,
+                "raw": raw,
+                "estimate": estimate,
+                "low": low,
+                "high": high,
+                "base_n": base_n,
+                "base_rate": base_rate,
+            }
+        )
+    return pd.DataFrame(rows), base.reset_index()
+
+
+def _posterior_probability(
+    bat: pd.Series, field: pd.Series, draws: int = 20_000
+) -> float:
+    """Posterior probability that batting first beats fielding first.
+
+    The two Beta posteriors are independent conditionally on the format base,
+    which is treated as fixed. A fixed seed makes the number reproducible.
+    """
+    rng = np.random.default_rng(42)
+
+    def sample(row: pd.Series) -> np.ndarray:
+        a = row["wins"] + SHRINK_PRIOR * row["base_rate"]
+        b = max(row["n"] - row["wins"], 0.0) + SHRINK_PRIOR * (1.0 - row["base_rate"])
+        return rng.beta(a, b, draws)
+
+    return float((sample(bat) > sample(field)).mean())
+
+
+def _team_records(
+    decided: pd.DataFrame, teams: list[str]
+) -> pd.DataFrame:
+    """Batting-first and fielding-first records for the selected sides."""
+    other = decided["team2"].where(
+        decided["team1"].eq(decided["toss_winner"]), decided["team1"]
+    )
+    first = decided["toss_winner"].where(decided["toss_decision"].eq("bat"), other)
+    frame = decided.assign(first_team=first)
+
+    base_bat = float(frame["winner"].eq(frame["first_team"]).mean())
+
+    rows = []
+    for team in teams:
+        played = frame[frame["team1"].eq(team) | frame["team2"].eq(team)]
+        bat = played[played["first_team"].eq(team)]
+        field = played[~played["first_team"].eq(team)]
+        bat_wins = int(bat["winner"].eq(team).sum())
+        field_wins = int(field["winner"].eq(team).sum())
+        rows.append(
+            {
+                "team": team,
+                "bat_first_n": len(bat),
+                "bat_first_wins": bat_wins,
+                "bat_first_rate": bat_wins / len(bat) if len(bat) else np.nan,
+                "field_first_n": len(field),
+                "field_first_wins": field_wins,
+                "field_first_rate": field_wins / len(field) if len(field) else np.nan,
+                "bat_first_adj": _shrunk(bat_wins, len(bat), base_bat),
+                "field_first_adj": _shrunk(field_wins, len(field), 1.0 - base_bat),
+            }
+        )
+    return pd.DataFrame(rows)
+
+
+def toss_decision_card(
+    label: str, value: float, low: float, high: float, active: bool, color: str
+) -> None:
+    active_class = "active" if active else ""
+    st.markdown(
+        f"""
+        <div class="prob-card {active_class}">
+          <div class="prob-label">{label}{' · lean' if active else ''}</div>
+          <div class="prob-value" style="color:{color};">{value:.1%}</div>
+          <div class="prob-bar"><span style="width:{value * 100:.1f}%;background:{color};"></span></div>
+          <div class="small-muted" style="margin-top:8px;">95% interval {low:.1%} to {high:.1%}</div>
+        </div>
+        """,
+        unsafe_allow_html=True,
+    )
+
+
+# --------------------------------------------------------------------------- #
 # Presentation helpers
 # --------------------------------------------------------------------------- #
 def clean_axes(ax) -> None:
@@ -385,24 +605,41 @@ st.markdown(
              font-size: 11px; font-weight: 600; margin-right: 6px; margin-top: 13px; }
     .badge-warn { background: #7c2d12; color: #fed7aa; }
     .badge-neutral { background: #1e293b; color: #cbd5e1; border: 1px solid #334155; }
-    .prob-card { border: 1px solid #e2e8f0; border-radius: 14px; padding: 14px 16px;
-                 background: #ffffff; height: 100%; }
-    .prob-card.active { border-color: #0f172a; box-shadow: 0 4px 18px rgba(15,23,42,.08); }
+    .prob-card { border: 1px solid __BORDER__; border-radius: 14px; padding: 14px 16px;
+                 background: __PANEL__; height: 100%; }
+    .prob-card.active { border-color: __ACCENT__; box-shadow: 0 4px 18px __SHADOW__; }
     .prob-label { font-size: 12px; letter-spacing: .08em; text-transform: uppercase;
-                  color: #475569; font-weight: 700; }
+                  color: __MUTED__; font-weight: 700; }
     .prob-value { font-size: 32px; font-weight: 800; line-height: 1.1; margin-top: 2px; }
-    .prob-bar { height: 8px; border-radius: 999px; background: #e2e8f0;
+    .prob-bar { height: 8px; border-radius: 999px; background: __TRACK__;
                 margin-top: 9px; overflow: hidden; }
     .prob-bar span { display: block; height: 100%; border-radius: 999px; }
-    .section-title { font-size: 20px; font-weight: 800; color: #0f172a;
+    .section-title { font-size: 20px; font-weight: 800; color: __TEXT__;
                      margin: 4px 0 2px 0; }
-    .section-sub { color: #475569; font-size: 13px; margin-bottom: 8px; }
-    .verdict { border-left: 4px solid #d97706; background: #fffbeb;
+    .section-sub { color: __MUTED__; font-size: 13px; margin-bottom: 8px; }
+    .verdict { border-left: 4px solid #d97706; background: __VERDICT_BG__;
                padding: 14px 16px; border-radius: 0 12px 12px 0; margin: 10px 0 14px 0; }
-    .verdict b { color: #92400e; }
-    .small-muted { color: #475569; font-size: 12px; }
+    .verdict b { color: __VERDICT_TEXT__; }
+    .small-muted { color: __MUTED__; font-size: 12px; }
+    .toss-call { border: 1px solid __BORDER__; border-radius: 14px; padding: 18px 20px;
+                 background: __PANEL__; }
+    .toss-call .kicker { font-size: 11px; letter-spacing: .16em; text-transform: uppercase;
+                         color: __MUTED__; font-weight: 700; }
+    .toss-call .choice { font-size: 30px; font-weight: 800; line-height: 1.1; margin: 4px 0; }
+    .toss-call .detail { font-size: 13px; color: __MUTED__; }
+    .player-chip { display: inline-block; padding: 3px 9px; border-radius: 999px;
+                   border: 1px solid __BORDER__; background: __PANEL__; color: __TEXT__;
+                   font-size: 12px; margin: 0 5px 5px 0; }
     </style>
-    """,
+    """.replace("__BORDER__", PALETTE["border"])
+    .replace("__PANEL__", PALETTE["panel"])
+    .replace("__ACCENT__", PALETTE["accent"])
+    .replace("__SHADOW__", PALETTE["shadow"])
+    .replace("__MUTED__", PALETTE["muted"])
+    .replace("__TRACK__", PALETTE["track"])
+    .replace("__TEXT__", PALETTE["text"])
+    .replace("__VERDICT_BG__", PALETTE["verdict_bg"])
+    .replace("__VERDICT_TEXT__", PALETTE["verdict_text"]),
     unsafe_allow_html=True,
 )
 
@@ -411,6 +648,8 @@ climatology = load_climatology()
 venue_directory = load_venues()
 cv = load_cv()
 dynamics = load_dynamics()
+toss_matches = load_toss_matches()
+team_players = load_team_players()
 
 st.markdown(
     """
@@ -590,8 +829,8 @@ format_mean_run_rate = float(
 format_average = matches[matches["match_type"].eq(match_type)]["first_innings_run_rate"].mean()
 
 # ----------------------------- Tabs ---------------------------------------- #
-tab_brief, tab_dynamics, tab_model, tab_method = st.tabs(
-    ["Match brief", "Pitch dynamics", "Model card", "Method & caveats"]
+tab_brief, tab_toss, tab_dynamics, tab_model, tab_method = st.tabs(
+    ["Match brief", "Toss advisor", "Pitch dynamics", "Model card", "Method & caveats"]
 )
 
 # ============================= Match brief ================================= #
@@ -620,11 +859,11 @@ with tab_brief:
         top = contributions.head(8).iloc[::-1]
         fig, ax = plt.subplots(figsize=(7.2, 3.9))
         colors = [
-            CLASS_COLORS[predicted_class] if value > 0 else "#94a3b8"
+            CLASS_COLORS[predicted_class] if value > 0 else PALETTE["neutral"]
             for value in top["contribution"]
         ]
         ax.barh(top["label"], top["contribution"], color=colors, height=0.62)
-        ax.axvline(0, color="#0f172a", linewidth=1)
+        ax.axvline(0, color=PALETTE["axis"], linewidth=1)
         ax.set_xlabel(f"Contribution toward {predicted_class} (log-odds)")
         clean_axes(ax)
         ax.grid(axis="x", alpha=0.25)
@@ -789,6 +1028,334 @@ with tab_brief:
         unsafe_allow_html=True,
     )
 
+# ============================= Toss advisor =============================== #
+with tab_toss:
+    section(
+        f"Toss advisor · {latest['venue']} · {match_type}",
+        f"{gender.title()} · {team_type.title()} · matches before {match_date:%d %b %Y}",
+    )
+    st.caption(
+        "If you win the toss, should you bat or field? The estimate is the share of "
+        "toss winners who went on to win after making each choice at this venue. "
+        "It is an association in the historical record, not a causal effect of the toss."
+    )
+
+    toss_cutoff = pd.Timestamp(match_date)
+    decided = _decided_tosses(
+        toss_matches, match_type, gender, team_type, toss_cutoff
+    )
+
+    if decided.empty:
+        st.warning(
+            "No decided matches with a usable toss are on record for this format, "
+            "gender and team type before the selected date."
+        )
+    else:
+        team_counts = pd.concat(
+            [decided["team1"], decided["team2"]], ignore_index=True
+        ).value_counts()
+        team_options = list(team_counts.index)
+
+        venue_decided = decided[decided["venue_key"].eq(venue_key)]
+        if len(venue_decided):
+            recent_pair = venue_decided.sort_values("date").iloc[-1]
+            default_pair = [recent_pair["team1"], recent_pair["team2"]]
+        else:
+            default_pair = team_options[:2]
+        default_pair = [team for team in default_pair if team in team_options]
+        while len(default_pair) < 2 and len(team_options) >= 2:
+            candidate = team_options[len(default_pair)]
+            if candidate not in default_pair:
+                default_pair.append(candidate)
+
+        st.markdown("#### 1 · Pick the two sides")
+        left_team, right_team = st.columns(2)
+        with left_team:
+            team_a = st.selectbox(
+                "Team A",
+                team_options,
+                index=team_options.index(default_pair[0]),
+                key=f"toss_team_a_{match_type}_{venue_key}",
+            )
+        with right_team:
+            other_options = [team for team in team_options if team != team_a]
+            default_b = default_pair[1] if default_pair[1] != team_a else other_options[0]
+            team_b = st.selectbox(
+                "Team B",
+                other_options,
+                index=other_options.index(default_b),
+                key=f"toss_team_b_{match_type}_{venue_key}",
+            )
+
+        def squad_frame(team: str) -> pd.DataFrame:
+            squad = team_players[
+                team_players["match_type"].eq(match_type)
+                & team_players["gender"].eq(gender)
+                & team_players["team_type"].eq(team_type)
+                & team_players["team"].eq(team)
+            ].copy()
+            return squad.sort_values(
+                ["last_date", "matches"], ascending=[False, False]
+            )
+
+        st.markdown("#### 2 · Line-ups")
+        st.caption(
+            "Names come from the Cricsheet scorecards for this format. The picker "
+            "defaults to the eleven most recent players; the records shown are "
+            "career records in this format and are descriptive only."
+        )
+        lineup_columns = st.columns(2)
+        selections: dict[str, list[str]] = {}
+        for column, team in zip(lineup_columns, (team_a, team_b)):
+            squad = squad_frame(team)
+            with column:
+                st.markdown(f"**{team}**")
+                if squad.empty:
+                    st.info("No squad records for this side in the archive.")
+                    selections[team] = []
+                    continue
+                choices = list(squad["player"])
+                default_xi = choices[:11]
+                chosen = st.multiselect(
+                    f"{team} XI",
+                    choices,
+                    default=default_xi,
+                    key=f"toss_xi_{match_type}_{venue_key}_{team}",
+                    label_visibility="collapsed",
+                    placeholder="Type to search for a player",
+                )
+                selections[team] = chosen
+                picked = squad[squad["player"].isin(chosen)]
+                if len(picked):
+                    matches_played = int(picked["matches"].sum())
+                    wins_played = int(picked["wins"].sum())
+                    st.caption(
+                        f"{len(picked)} selected · {matches_played:,} format appearances "
+                        f"· {wins_played / matches_played:.1%} win share"
+                    )
+
+        st.markdown("#### 3 · The toss call")
+        venue_est, base_est = _toss_estimates(decided, venue_key)
+        venue_total = int(venue_est["n"].sum())
+        use_venue = venue_total >= MIN_VENUE_N
+        estimates = venue_est.copy()
+        if not use_venue:
+            for index, row in estimates.iterrows():
+                low, high = _beta_interval(0, 0, row["base_rate"])
+                estimates.at[index, "estimate"] = row["base_rate"]
+                estimates.at[index, "low"] = low
+                estimates.at[index, "high"] = high
+
+        bat = estimates[estimates["decision"].eq("bat")].iloc[0]
+        field = estimates[estimates["decision"].eq("field")].iloc[0]
+        edge = (bat["estimate"] - field["estimate"]) * 100
+        bat_chance = _posterior_probability(bat, field)
+        prob = bat_chance if edge > 0 else 1.0 - bat_chance
+        enough = (
+            use_venue
+            and bat["n"] >= MIN_VENUE_N
+            and field["n"] >= MIN_VENUE_N
+        )
+        if not enough:
+            call = "No clear edge"
+            call_color = PALETTE["muted"]
+            call_detail = (
+                "This venue does not have enough decided matches behind both "
+                f"choices (n={int(bat['n'])} bat, {int(field['n'])} field). The "
+                "figures below fall back to the format baseline; treat the toss "
+                "as close to neutral here."
+            )
+        elif abs(edge) < 2.0 or prob < 0.95:
+            call = "No clear edge"
+            call_color = PALETTE["muted"]
+            call_detail = (
+                f"The adjusted difference is {edge:+.1f} points and the posterior "
+                f"probability that one choice is better is only {prob:.0%}. "
+                "Conditions, team make-up and the XI matter more than the toss on "
+                "this record."
+            )
+        elif edge > 0:
+            call = "Bat first"
+            call_color = "#10b981"
+            call_detail = (
+                f"Toss winners who batted first won {bat['estimate']:.1%} of the time "
+                f"here, against {field['estimate']:.1%} for those who fielded: "
+                f"a {edge:+.1f}-point edge over {int(venue_total):,} decided matches, "
+                f"with a {prob:.0%} posterior probability that batting is the better "
+                "choice."
+            )
+        else:
+            call = "Field first"
+            call_color = "#3b82f6"
+            call_detail = (
+                f"Toss winners who fielded first won {field['estimate']:.1%} of the time "
+                f"here, against {bat['estimate']:.1%} for those who batted: "
+                f"a {abs(edge):.1f}-point edge over {int(venue_total):,} decided matches, "
+                f"with a {prob:.0%} posterior probability that fielding is the better "
+                "choice."
+            )
+
+        source = (
+            "venue and format history" if enough else "format baseline"
+        )
+        st.markdown(
+            f"""
+            <div class="toss-call">
+              <div class="kicker">Call if you win the toss · {source}</div>
+              <div class="choice" style="color:{call_color};">{call}</div>
+              <div class="detail">{call_detail}</div>
+            </div>
+            """,
+            unsafe_allow_html=True,
+        )
+
+        card_columns = st.columns(2)
+        with card_columns[0]:
+            toss_decision_card(
+                "Bat first",
+                float(bat["estimate"]),
+                float(bat["low"]),
+                float(bat["high"]),
+                call == "Bat first",
+                "#10b981",
+            )
+        with card_columns[1]:
+            toss_decision_card(
+                "Field first",
+                float(field["estimate"]),
+                float(field["low"]),
+                float(field["high"]),
+                call == "Field first",
+                "#3b82f6",
+            )
+
+        chart_left, chart_right = st.columns([1, 1.05])
+        with chart_left:
+            fig, ax = plt.subplots(figsize=(5.6, 2.3))
+            positions = [1, 0]
+            values = [float(bat["estimate"]), float(field["estimate"])]
+            errors = np.array(
+                [
+                    [values[0] - float(bat["low"]), values[1] - float(field["low"])],
+                    [float(bat["high"]) - values[0], float(field["high"]) - values[1]],
+                ]
+            )
+            ax.barh(
+                positions,
+                values,
+                color=["#10b981", "#3b82f6"],
+                height=0.5,
+            )
+            ax.errorbar(
+                values,
+                positions,
+                xerr=errors,
+                fmt="none",
+                ecolor=PALETTE["axis"],
+                capsize=4,
+                linewidth=1.2,
+            )
+            ax.axvline(0.5, color=PALETTE["muted"], linestyle="--", linewidth=1)
+            ax.set_yticks(positions, ["Bat first", "Field first"])
+            span_low = min(float(bat["low"]), float(field["low"])) - 0.02
+            span_high = max(float(bat["high"]), float(field["high"])) + 0.02
+            ax.set_xlim(max(0.0, span_low), min(1.0, span_high))
+            ax.set_xlabel("Share of toss winners who won")
+            clean_axes(ax)
+            ax.grid(axis="x", alpha=0.25)
+            ax.grid(axis="y", visible=False)
+            fig.tight_layout()
+            show_figure(fig)
+            st.caption(
+                "Bars are shrunk toward the format baseline and the whiskers are "
+                "95% posterior intervals, so small venue samples move toward 50%."
+            )
+
+        with chart_right:
+            st.markdown("**Venue history by toss decision**")
+            display = estimates.copy()
+            display["Decision"] = display["label"]
+            display["Matches"] = display["n"].astype(int)
+            display["Wins"] = display["wins"].astype(int)
+            display["Raw"] = display["raw"] * 100
+            display["Adjusted"] = display["estimate"] * 100
+            display["Interval"] = display.apply(
+                lambda row: f"{row['low']:.1%} to {row['high']:.1%}", axis=1
+            )
+            display["Format baseline"] = display["base_rate"] * 100
+            st.dataframe(
+                display[
+                    ["Decision", "Matches", "Wins", "Raw", "Adjusted", "Interval",
+                     "Format baseline"]
+                ],
+                hide_index=True,
+                width="stretch",
+                column_config={
+                    "Raw": st.column_config.NumberColumn(format="%.1f%%"),
+                    "Adjusted": st.column_config.NumberColumn(format="%.1f%%"),
+                    "Format baseline": st.column_config.NumberColumn(format="%.1f%%"),
+                },
+            )
+            st.caption(
+                f"Format baseline: {match_type} toss winners who bat first win "
+                f"{base_est.set_index('toss_decision')['base_rate'].get('bat', 0.5):.0%} "
+                "of decided matches with a usable toss."
+            )
+
+        st.markdown("#### 4 · What the line-ups add")
+        st.caption(
+            "Batting-first and fielding-first records for the two selected sides in "
+            "this format, before the selected date. They are context: the toss call "
+            "above is estimated from venue and format history, not from a player model."
+        )
+        records = _team_records(decided, [team_a, team_b])
+        records["Bat first"] = records.apply(
+            lambda row: f"{int(row['bat_first_wins'])}-{int(row['bat_first_n'] - row['bat_first_wins'])}",
+            axis=1,
+        )
+        records["Field first"] = records.apply(
+            lambda row: f"{int(row['field_first_wins'])}-{int(row['field_first_n'] - row['field_first_wins'])}",
+            axis=1,
+        )
+        records["Adjusted edge (bat − field)"] = (
+            records["bat_first_adj"] - records["field_first_adj"]
+        ) * 100
+        records["bat_first_rate"] = records["bat_first_rate"] * 100
+        records["field_first_rate"] = records["field_first_rate"] * 100
+        st.dataframe(
+            records[
+                [
+                    "team",
+                    "Bat first",
+                    "bat_first_rate",
+                    "Field first",
+                    "field_first_rate",
+                    "Adjusted edge (bat − field)",
+                ]
+            ].rename(
+                columns={
+                    "team": "Team",
+                    "bat_first_rate": "Bat-first win %",
+                    "field_first_rate": "Field-first win %",
+                }
+            ),
+            hide_index=True,
+            width="stretch",
+            column_config={
+                "Bat-first win %": st.column_config.NumberColumn(format="%.1f%%"),
+                "Field-first win %": st.column_config.NumberColumn(format="%.1f%%"),
+                "Adjusted edge (bat − field)": st.column_config.NumberColumn(format="%+.1f"),
+            },
+        )
+
+        st.info(
+            "The toss decision is chosen under conditions the analyst does not see: "
+            "weather, pitch inspection, team composition and era. A higher historical "
+            "win share after batting first is not proof that batting first causes wins, "
+            "and this table does not adjust for team strength. No-result and tied "
+            "matches are excluded. ODI history mixes the pre- and post-2011 ball rules."
+        )
+
 # ============================= Dynamics ================================== #
 with tab_dynamics:
     section(
@@ -846,7 +1413,7 @@ with tab_dynamics:
         ax.errorbar(
             x, values, yerr=errors, fmt="none", ecolor="#334155", capsize=4, lw=1
         )
-        ax.axhline(0, color="#0f172a", linewidth=1)
+        ax.axhline(0, color=PALETTE["axis"], linewidth=1)
         ax.set_xticks(x)
         ax.set_xticklabels([PHASE_LABEL[phase] for phase in order])
         ax.set_title(title, loc="left", fontsize=11, fontweight="bold")
@@ -913,13 +1480,13 @@ with tab_dynamics:
         ax.bar(
             x,
             values,
-            color=["#94a3b8", "#64748b", "#d97706"],
+            color=[PALETTE["neutral"], PALETTE["muted"], "#d97706"],
             width=0.62,
         )
         ax.errorbar(
             x, values, yerr=errors, fmt="none", ecolor="#334155", capsize=4, lw=1
         )
-        ax.axhline(0, color="#0f172a", linewidth=1)
+        ax.axhline(0, color=PALETTE["axis"], linewidth=1)
         ax.set_xticks(x)
         ax.set_xticklabels(["Low", "Mid", "High"])
         ax.set_xlabel("Historical spin-wicket share tercile")
@@ -960,13 +1527,13 @@ with tab_dynamics:
             ax.bar(
                 x,
                 values,
-                color=["#d97706", "#d97706", "#94a3b8"],
+                color=["#d97706", "#d97706", PALETTE["neutral"]],
                 width=0.62,
             )
             ax.errorbar(
                 x, values, yerr=errors, fmt="none", ecolor="#334155", capsize=4, lw=1
             )
-            ax.axhline(0, color="#0f172a", linewidth=1)
+            ax.axhline(0, color=PALETTE["axis"], linewidth=1)
             ax.set_xticks(x)
             ax.set_xticklabels(subset["label"], fontsize=8)
             ax.set_ylabel("Pace dot-share jump at over 80")
@@ -1118,12 +1685,12 @@ with tab_model:
         .reset_index(drop=True)
     )
     fig, ax = plt.subplots(figsize=(5.8, 3.8))
-    ax.plot([0.3, 1.0], [0.3, 1.0], linestyle="--", color="#94a3b8", linewidth=1)
+    ax.plot([0.3, 1.0], [0.3, 1.0], linestyle="--", color=PALETTE["muted"], linewidth=1)
     ax.plot(
         calibration["mean_confidence"],
         calibration["accuracy"],
         marker="o",
-        color="#0f172a",
+        color=PALETTE["axis"],
         linewidth=2,
     )
     ax.set_xlabel("Mean predicted confidence")
@@ -1146,7 +1713,7 @@ with tab_model:
     grouped = importance.groupby(importance.index.map(raw_feature)).sum()
     grouped = grouped.sort_values(ascending=False).head(12).iloc[::-1]
     fig, ax = plt.subplots(figsize=(8.5, 4.0))
-    ax.barh([pretty_feature(name) for name in grouped.index], grouped, color="#0f172a", height=0.62)
+    ax.barh([pretty_feature(name) for name in grouped.index], grouped, color=PALETTE["axis"], height=0.62)
     ax.set_xlabel("Relative importance")
     clean_axes(ax)
     ax.grid(axis="x", alpha=0.25)
@@ -1331,6 +1898,31 @@ with tab_method:
         "pooled magnitude but includes zero, and two thirds of it is composition."
     )
 
+    section("Toss advisor")
+    st.markdown(
+        """
+        - **Question.** If the selected side wins the toss, does batting or fielding
+          first have the higher historical win share at this venue?
+        - **Estimand.** Among decided matches at the venue with a known toss and a
+          known result, the share of toss winners who won after choosing to bat,
+          compared with the same share after choosing to field. Ties and no-results
+          are excluded.
+        - **Small samples.** Each venue rate is shrunk toward the format-wide rate
+          for that decision with a Beta prior of 10 pseudo-matches, and the whiskers
+          are 95% posterior intervals. A venue needs at least 25 decided matches
+          behind each choice before the call uses venue history; otherwise it falls
+          back to the format baseline and says so.
+        - **Call rule.** The advisor says "no clear edge" when the posterior
+          probability that one decision has the higher rate is below 95%, or the
+          adjusted difference is under 2 points.
+        - **Line-ups.** Player names and career records come from the Cricsheet
+          scorecards and describe the selected XIs. They are not inputs to the toss
+          estimate; no player-level win model is fitted.
+        - **Not causal.** Toss decisions are made under conditions the data do not
+          record, and the comparison does not adjust for team strength or era.
+        """
+    )
+
     section("Reproducibility")
     st.code(
         "\n".join(
@@ -1347,6 +1939,7 @@ with tab_method:
                 "python src\\evaluate_rolling_cv.py --venue-windows T20=5,ODI=5,Test=10",
                 "python src\\build_dashboard_data.py",
                 "python src\\build_dashboard_model.py",
+                "python src\\build_toss_dataset.py",
                 "streamlit run dashboard/app.py",
             ]
         ),
@@ -1365,6 +1958,9 @@ with tab_method:
         - **Coverage.** The match model uses matches with complete early-window data and
           known bowler styles; role coverage varies by format and era.
         - **Weather.** The app uses month climatology, not a match forecast.
+        - **Toss advisor.** The bat/field comparison is a historical association at
+          the venue, not a causal effect; it does not adjust for team strength, and
+          ODI history mixes two ball-rule eras.
         """
     )
 

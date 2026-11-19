@@ -291,6 +291,7 @@ artifacts into a pre-match brief. It never refits a model or scans
 ```powershell
 python src\build_dashboard_data.py     # data/processed/dashboard_*.csv
 python src\build_dashboard_model.py    # models/dashboard/{t20,odi,test}
+python src\build_toss_dataset.py       # toss, result and squad artifacts
 streamlit run dashboard/app.py
 ```
 
@@ -298,7 +299,13 @@ streamlit run dashboard/app.py
 `data/interim/matches_parsed.parquet` (about 50 s from `all_json.zip` if it is
 absent). `build_dashboard_model.py` refits the paper's headline match model on
 all labelled matches with the per-format venue windows; the model card reports
-the rolling-origin CV, not in-sample fit. Probabilities are agreement with the
-rule-derived proxy label, never a physical pitch reading. Requires `streamlit`,
-`xgboost`, `scikit-learn`, `pandas`, `numpy` and `matplotlib`.
+the rolling-origin CV, not in-sample fit. `build_toss_dataset.py` reads the same
+archive for `dashboard_toss_matches.csv`, `dashboard_teams.csv` and
+`dashboard_team_players.csv`, which back the Toss advisor tab: the historical
+win share of toss winners who bat versus field, shrunk to the format baseline,
+plus squad pickers. Probabilities are agreement with the
+rule-derived proxy label, never a physical pitch reading. The app ships dark by
+default and follows the theme chosen in Streamlit's settings menu. Requires
+`streamlit`, `xgboost`, `scikit-learn`, `pandas`, `numpy`, `scipy` and
+`matplotlib`.
 
