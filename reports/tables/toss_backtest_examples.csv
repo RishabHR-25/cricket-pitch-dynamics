@@ -1,0 +1,5 @@
+date,match_type,gender,team_type,venue,team1,team2,toss_winner,toss_decision,call,edge_points,prob_call,winner,toss_winner_won,call_outcome
+2026-08-09,T20,male,club,Headingley,Sunrisers Leeds,Welsh Fire,Welsh Fire,field,bat,19.45560041767569,0.9859370795149796,Sunrisers Leeds,False,not followed
+2026-08-04,T20,male,club,Headingley,Sunrisers Leeds,London Spirit,London Spirit,field,bat,18.792870329249688,0.9825341437986728,Sunrisers Leeds,False,not followed
+2026-07-28,T20,male,club,Headingley,Manchester Super Giants,Sunrisers Leeds,Sunrisers Leeds,field,bat,19.92365262386116,0.9870533503844909,Sunrisers Leeds,True,not followed
+2026-07-25,T20,male,club,Headingley,Sunrisers Leeds,Southern Brave,Southern Brave,field,bat,19.225782203873298,0.9837150828330206,Sunrisers Leeds,False,not followed

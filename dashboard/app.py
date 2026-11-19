@@ -14,6 +14,7 @@ performance numbers are the rolling-origin estimates in
 from __future__ import annotations
 
 import json
+import sys
 from datetime import date, timedelta
 from pathlib import Path
 
@@ -26,6 +27,10 @@ import xgboost as xgb
 from sklearn.metrics import classification_report, confusion_matrix
 
 ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / "src"))
+
+import toss_advisor as TA  # noqa: E402
+
 MATCHES_PATH = ROOT / "data/processed/dashboard_matches.csv"
 CLIMATOLOGY_PATH = ROOT / "data/processed/dashboard_weather_climatology.csv"
 VENUES_PATH = ROOT / "data/processed/dashboard_venues.csv"
@@ -387,141 +392,9 @@ def local_contributions(
 # --------------------------------------------------------------------------- #
 # Toss advisor
 # --------------------------------------------------------------------------- #
-SHRINK_PRIOR = 10.0
-MIN_VENUE_N = 25
-
-
-def _decided_tosses(
-    toss: pd.DataFrame,
-    match_type: str,
-    gender: str,
-    team_type: str,
-    before: pd.Timestamp,
-) -> pd.DataFrame:
-    """Matches with a usable toss and a decided result, before the cutoff."""
-    subset = toss[
-        toss["match_type"].eq(match_type)
-        & toss["gender"].eq(gender)
-        & toss["team_type"].eq(team_type)
-        & toss["date"].lt(before)
-        & toss["toss_decision"].isin(["bat", "field"])
-        & toss["toss_winner"].ne("")
-        & toss["winner"].ne("")
-        & toss["result"].ne("no_result")
-    ].copy()
-    subset["toss_won"] = subset["winner"].eq(subset["toss_winner"])
-    return subset
-
-
-def _shrunk(wins: float, n: float, base: float, prior: float = SHRINK_PRIOR) -> float:
-    if n <= 0:
-        return float(base)
-    return float((wins + prior * base) / (n + prior))
-
-
-def _beta_interval(
-    wins: float, n: float, base: float, prior: float = SHRINK_PRIOR
-) -> tuple[float, float]:
-    from scipy.stats import beta
-
-    a = wins + prior * base
-    b = max(n - wins, 0.0) + prior * (1.0 - base)
-    lower, upper = beta.ppf([0.025, 0.975], a, b)
-    return float(lower), float(upper)
-
-
-def _toss_estimates(
-    decided: pd.DataFrame, venue_key: str
-) -> tuple[pd.DataFrame, pd.DataFrame]:
-    """Venue and format rates for each toss decision, shrunk to the format base."""
-    base = (
-        decided.groupby("toss_decision", observed=True)["toss_won"]
-        .agg(["size", "mean"])
-        .rename(columns={"size": "base_n", "mean": "base_rate"})
-    )
-    venue = (
-        decided[decided["venue_key"].eq(venue_key)]
-        .groupby("toss_decision", observed=True)["toss_won"]
-        .agg(["size", "sum"])
-        .rename(columns={"size": "n", "sum": "wins"})
-    )
-    rows = []
-    for decision, label in (("bat", "Bat first"), ("field", "Field first")):
-        base_n = int(base["base_n"].get(decision, 0))
-        base_rate = float(base["base_rate"].get(decision, 0.5))
-        n = int(venue["n"].get(decision, 0))
-        wins = int(venue["wins"].get(decision, 0))
-        raw = wins / n if n else np.nan
-        estimate = _shrunk(wins, n, base_rate)
-        low, high = _beta_interval(wins, n, base_rate)
-        rows.append(
-            {
-                "decision": decision,
-                "label": label,
-                "n": n,
-                "wins": wins,
-                "raw": raw,
-                "estimate": estimate,
-                "low": low,
-                "high": high,
-                "base_n": base_n,
-                "base_rate": base_rate,
-            }
-        )
-    return pd.DataFrame(rows), base.reset_index()
-
-
-def _posterior_probability(
-    bat: pd.Series, field: pd.Series, draws: int = 20_000
-) -> float:
-    """Posterior probability that batting first beats fielding first.
-
-    The two Beta posteriors are independent conditionally on the format base,
-    which is treated as fixed. A fixed seed makes the number reproducible.
-    """
-    rng = np.random.default_rng(42)
-
-    def sample(row: pd.Series) -> np.ndarray:
-        a = row["wins"] + SHRINK_PRIOR * row["base_rate"]
-        b = max(row["n"] - row["wins"], 0.0) + SHRINK_PRIOR * (1.0 - row["base_rate"])
-        return rng.beta(a, b, draws)
-
-    return float((sample(bat) > sample(field)).mean())
-
-
-def _team_records(
-    decided: pd.DataFrame, teams: list[str]
-) -> pd.DataFrame:
-    """Batting-first and fielding-first records for the selected sides."""
-    other = decided["team2"].where(
-        decided["team1"].eq(decided["toss_winner"]), decided["team1"]
-    )
-    first = decided["toss_winner"].where(decided["toss_decision"].eq("bat"), other)
-    frame = decided.assign(first_team=first)
-
-    base_bat = float(frame["winner"].eq(frame["first_team"]).mean())
-
-    rows = []
-    for team in teams:
-        played = frame[frame["team1"].eq(team) | frame["team2"].eq(team)]
-        bat = played[played["first_team"].eq(team)]
-        field = played[~played["first_team"].eq(team)]
-        bat_wins = int(bat["winner"].eq(team).sum())
-        field_wins = int(field["winner"].eq(team).sum())
-        rows.append(
-            {
-                "team": team,
-                "bat_first_n": len(bat),
-                "bat_first_wins": bat_wins,
-                "bat_first_rate": bat_wins / len(bat) if len(bat) else np.nan,
-                "field_first_n": len(field),
-                "field_first_wins": field_wins,
-                "field_first_rate": field_wins / len(field) if len(field) else np.nan,
-                "bat_first_adj": _shrunk(bat_wins, len(bat), base_bat),
-                "field_first_adj": _shrunk(field_wins, len(field), 1.0 - base_bat),
-            }
-        )
-    return pd.DataFrame(rows)
+# The estimation logic and the shipped call rule live in src/toss_advisor.py so
+# that this app and src/backtest_toss_advisor.py cannot drift apart. Only the
+# rendering helper stays here.
 
 
 def toss_decision_card(
@@ -785,6 +658,9 @@ st.sidebar.caption(
     "The model predicts agreement with a rule-derived behavioural label. "
     "It does not measure the pitch."
 )
+st.sidebar.info(
+    "Team and player pickers are in the **Toss & line-ups** tab, second from the left."
+)
 
 # ----------------------------- Model --------------------------------------- #
 model, card = load_model(match_type)
@@ -830,7 +706,7 @@ format_average = matches[matches["match_type"].eq(match_type)]["first_innings_ru
 
 # ----------------------------- Tabs ---------------------------------------- #
 tab_brief, tab_toss, tab_dynamics, tab_model, tab_method = st.tabs(
-    ["Match brief", "Toss advisor", "Pitch dynamics", "Model card", "Method & caveats"]
+    ["Match brief", "Toss & line-ups", "Pitch dynamics", "Model card", "Method & caveats"]
 )
 
 # ============================= Match brief ================================= #
@@ -1031,17 +907,18 @@ with tab_brief:
 # ============================= Toss advisor =============================== #
 with tab_toss:
     section(
-        f"Toss advisor · {latest['venue']} · {match_type}",
+        f"Toss & line-ups · {latest['venue']} · {match_type}",
         f"{gender.title()} · {team_type.title()} · matches before {match_date:%d %b %Y}",
     )
     st.caption(
         "If you win the toss, should you bat or field? The estimate is the share of "
         "toss winners who went on to win after making each choice at this venue. "
-        "It is an association in the historical record, not a causal effect of the toss."
+        "It is an association in the historical record, not a causal effect of the toss, "
+        "and the backtest in Method & caveats does not support it as a prediction."
     )
 
     toss_cutoff = pd.Timestamp(match_date)
-    decided = _decided_tosses(
+    decided = TA.decided_tosses(
         toss_matches, match_type, gender, team_type, toss_cutoff
     )
 
@@ -1135,27 +1012,15 @@ with tab_toss:
                     )
 
         st.markdown("#### 3 · The toss call")
-        venue_est, base_est = _toss_estimates(decided, venue_key)
-        venue_total = int(venue_est["n"].sum())
-        use_venue = venue_total >= MIN_VENUE_N
-        estimates = venue_est.copy()
-        if not use_venue:
-            for index, row in estimates.iterrows():
-                low, high = _beta_interval(0, 0, row["base_rate"])
-                estimates.at[index, "estimate"] = row["base_rate"]
-                estimates.at[index, "low"] = low
-                estimates.at[index, "high"] = high
-
+        estimates, base_est, use_venue, venue_total = TA.decision_table(
+            decided, venue_key
+        )
         bat = estimates[estimates["decision"].eq("bat")].iloc[0]
         field = estimates[estimates["decision"].eq("field")].iloc[0]
-        edge = (bat["estimate"] - field["estimate"]) * 100
-        bat_chance = _posterior_probability(bat, field)
-        prob = bat_chance if edge > 0 else 1.0 - bat_chance
-        enough = (
-            use_venue
-            and bat["n"] >= MIN_VENUE_N
-            and field["n"] >= MIN_VENUE_N
-        )
+        verdict = TA.choose(bat, field, use_venue, venue_total)
+        edge = verdict["edge"]
+        prob = verdict["prob"]
+        enough = verdict["enough"]
         if not enough:
             call = "No clear edge"
             call_color = PALETTE["muted"]
@@ -1165,7 +1030,7 @@ with tab_toss:
                 "figures below fall back to the format baseline; treat the toss "
                 "as close to neutral here."
             )
-        elif abs(edge) < 2.0 or prob < 0.95:
+        elif verdict["call"] == "none":
             call = "No clear edge"
             call_color = PALETTE["muted"]
             call_detail = (
@@ -1174,7 +1039,7 @@ with tab_toss:
                 "Conditions, team make-up and the XI matter more than the toss on "
                 "this record."
             )
-        elif edge > 0:
+        elif verdict["call"] == "bat":
             call = "Bat first"
             call_color = "#10b981"
             call_detail = (
@@ -1201,12 +1066,21 @@ with tab_toss:
         st.markdown(
             f"""
             <div class="toss-call">
-              <div class="kicker">Call if you win the toss · {source}</div>
+              <div class="kicker">Historical lean if you win the toss · {source}</div>
               <div class="choice" style="color:{call_color};">{call}</div>
               <div class="detail">{call_detail}</div>
             </div>
             """,
             unsafe_allow_html=True,
+        )
+        st.warning(
+            "Backtest verdict: this venue lean is not validated. On 15,653 prior-only "
+            "fixtures from 2010, the rule made 260 clear calls (1.7%). Across 89 forward "
+            "windows at 8 venues, the direction held 81% of the time by matches but 50% "
+            "when venues are weighted equally; the format baseline scored 52%, and the "
+            "venue-adjusted win rates were worse than the format baseline as probability "
+            "forecasts (Brier skill -1.6%). Treat the panel as descriptive venue history, "
+            "not a recommendation."
         )
 
         card_columns = st.columns(2)
@@ -1308,7 +1182,7 @@ with tab_toss:
             "this format, before the selected date. They are context: the toss call "
             "above is estimated from venue and format history, not from a player model."
         )
-        records = _team_records(decided, [team_a, team_b])
+        records = TA.team_records(decided, [team_a, team_b])
         records["Bat first"] = records.apply(
             lambda row: f"{int(row['bat_first_wins'])}-{int(row['bat_first_n'] - row['bat_first_wins'])}",
             axis=1,
@@ -1898,7 +1772,7 @@ with tab_method:
         "pooled magnitude but includes zero, and two thirds of it is composition."
     )
 
-    section("Toss advisor")
+    section("Toss & line-ups")
     st.markdown(
         """
         - **Question.** If the selected side wins the toss, does batting or fielding
@@ -1915,6 +1789,14 @@ with tab_method:
         - **Call rule.** The advisor says "no clear edge" when the posterior
           probability that one decision has the higher rate is below 95%, or the
           adjusted difference is under 2 points.
+        - **Validation.** A prior-only backtest from 2010
+          (`src/backtest_toss_advisor.py`) graded 15,653 matches. The rule made 260
+          clear calls (1.7%). Across 89 forward windows at 8 venues the direction
+          held 81% match-weighted but 50% venue-balanced; the format baseline scored
+          52% on the same windows, and the venue-adjusted rates had a Brier skill of
+          -1.6% (95% CI -1.9% to -1.2%) against the format baseline. This does not
+          support the venue call as a prediction, so the panel is presented as
+          descriptive history.
         - **Line-ups.** Player names and career records come from the Cricsheet
           scorecards and describe the selected XIs. They are not inputs to the toss
           estimate; no player-level win model is fitted.
@@ -1940,6 +1822,7 @@ with tab_method:
                 "python src\\build_dashboard_data.py",
                 "python src\\build_dashboard_model.py",
                 "python src\\build_toss_dataset.py",
+                "python src\\backtest_toss_advisor.py",
                 "streamlit run dashboard/app.py",
             ]
         ),

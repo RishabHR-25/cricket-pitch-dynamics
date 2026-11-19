@@ -292,6 +292,7 @@ artifacts into a pre-match brief. It never refits a model or scans
 python src\build_dashboard_data.py     # data/processed/dashboard_*.csv
 python src\build_dashboard_model.py    # models/dashboard/{t20,odi,test}
 python src\build_toss_dataset.py       # toss, result and squad artifacts
+python src\backtest_toss_advisor.py    # validation tables in reports/tables
 streamlit run dashboard/app.py
 ```
 
@@ -301,11 +302,23 @@ absent). `build_dashboard_model.py` refits the paper's headline match model on
 all labelled matches with the per-format venue windows; the model card reports
 the rolling-origin CV, not in-sample fit. `build_toss_dataset.py` reads the same
 archive for `dashboard_toss_matches.csv`, `dashboard_teams.csv` and
-`dashboard_team_players.csv`, which back the Toss advisor tab: the historical
-win share of toss winners who bat versus field, shrunk to the format baseline,
-plus squad pickers. Probabilities are agreement with the
+`dashboard_team_players.csv`, which back the **Toss & line-ups** tab: the
+historical win share of toss winners who bat versus field, shrunk to the format
+baseline, plus squad pickers. Probabilities are agreement with the
 rule-derived proxy label, never a physical pitch reading. The app ships dark by
 default and follows the theme chosen in Streamlit's settings menu. Requires
 `streamlit`, `xgboost`, `scikit-learn`, `pandas`, `numpy`, `scipy` and
 `matplotlib`.
+
+**Toss advisor validation.** `src/backtest_toss_advisor.py` replays the shipped
+rule with prior-only expanding windows from 2010. Of 15,653 evaluable matches it
+made 260 clear calls (1.7%). Across 89 forward windows at 8 venues the call
+direction held 81% match-weighted but only 50% with venues weighted equally; the
+format baseline alone scored 52% on the same windows, and the venue-adjusted
+rates were worse than the format baseline as probability forecasts (Brier skill
+-1.6%, 95% CI -1.9% to -1.2%; calibration slope 0.15). The panel therefore
+labels the output a **historical lean, not a validated recommendation**. A
+random-direction placebo scores 52%, and relaxing the venue minimum to 10
+matches gives 257 windows at 16 venues with 63% match-weighted / 38%
+venue-balanced accuracy.
 

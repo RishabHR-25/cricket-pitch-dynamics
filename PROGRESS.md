@@ -446,9 +446,9 @@ on interaction.
   training ranges, label counts and the rolling-origin CV. No in-sample metric
   is reported anywhere.
 - **Screens.** Match brief (three proxy-class probabilities, local XGBoost
-  contributions, venue snapshot, recent matches, weather inputs); Toss advisor
-  (bat-versus-field win shares with intervals, XI pickers and team splits);
-  Pitch dynamics
+  contributions, venue snapshot, recent matches, weather inputs); Toss &
+  line-ups (bat-versus-field win shares with intervals, XI pickers and team
+  splits); Pitch dynamics
   (phase decomposition, age curves, venue terciles, Test second-new-ball ladder);
   Model card (out-of-fold class report, confusion matrix, calibration, global
   importance); Method & caveats (label rules, estimand, six-check audit,
@@ -473,16 +473,17 @@ on interaction.
 python src\build_dashboard_data.py
 python src\build_dashboard_model.py
 python src\build_toss_dataset.py
+python src\backtest_toss_advisor.py
 streamlit run dashboard/app.py
 ```
 
-## Dashboard: dark theme and Toss advisor (2026-11-19)
+## Dashboard: dark theme and Toss & line-ups (2026-11-19)
 
 The app ships dark by default and reads the theme chosen in Streamlit's settings
 menu (`st.context.theme`), so the custom cards and every matplotlib figure use
 one palette object rather than hard-coded light colours.
 
-The new **Toss advisor** tab answers a descriptive question: if the selected
+The new **Toss & line-ups** tab answers a descriptive question: if the selected
 side wins the toss, does batting or fielding first have the higher historical
 win share? `src/build_toss_dataset.py` reads the same Cricsheet archive and
 writes three committed artifacts:
@@ -508,6 +509,51 @@ Verified with `streamlit.testing.v1.AppTest`: five tabs render for all three
 formats, a decisive venue returns "Field first", XI selection changes, gender
 switches, and a date before any history shows the empty-state warnings without
 exceptions.
+
+### Blank-winner correction (2026-11-19)
+
+The dashboard reads the committed toss CSV with pandas defaults, so a blank
+`winner` becomes `NaN`, and the original `winner.ne("")` filter let those rows
+through as toss-winner losses. A raw-scorecard audit of 60 randomly sampled
+matches (480 field comparisons) found zero field mismatches and confirmed that
+every blank winner is genuinely blank in Cricsheet (no-result or tie). The
+shared `src/toss_advisor.py` now rejects missing and blank values explicitly.
+Corrected venue example: Wankhede club T20 is 14/36 batting first (38.9% raw,
+40.6% adjusted) against 71/126 fielding first (56.3% raw, 56.1% adjusted), a
+15.6-point fielding edge over 162 decided matches.
+
+### Backtest: the venue call is not validated (2026-11-19)
+
+`src/backtest_toss_advisor.py` replays the shipped rule with expanding,
+prior-only windows from 2010. It imports `src/toss_advisor.py`, so the shipped
+rule and the checked rule cannot drift. Outputs are in `reports/tables/` and the
+per-match forecasts in `data/processed/toss_backtest_predictions.csv`.
+
+- **Coverage.** 15,653 evaluable matches, 260 clear calls (1.7%). The 25-match
+  venue minimum makes the advisor silent almost everywhere.
+- **Direction.** 89 forward windows at 8 venues: 72/89 = 81.0% match-weighted
+  (venue-cluster 95% CI 45.0% to 96.6%), but **50.0% venue-balanced** (4 of 8
+  venues). The 10 non-overlapping windows give 6/10 = 60% (22% to 90%). The
+  format baseline on the same windows scores 51.7%; a random-direction placebo
+  scores 51.7%.
+- **Calibration.** Brier 0.2537 against 0.2498 for the format baseline, a Brier
+  skill of **-1.55%** (95% CI -1.88% to -1.21%). Calibration slope 0.153 (0.044
+  to 0.253), so the venue-adjusted forecasts are overdispersed. The venue
+  adjustment makes the probability forecast worse, not better.
+- **Followed versus against.** +6.2 points (95% CI -6.8 to +20.0): no
+  significant difference, and self-selection confounds it.
+- **Sensitivity.** Lowering the venue minimum to 10 gives 257 windows at 16
+  venues, 63.4% match-weighted but 37.5% venue-balanced. Lowering the posterior
+  threshold to 0.80 gives 381 windows at 18 venues, 49.6% match-weighted but
+  61.1% venue-balanced. No setting yields a stable edge.
+- **Approximation check.** The backtest replaces the dashboard's seeded Monte
+  Carlo posterior with a 512-point quantile grid; on 300 random Beta pairs the
+  maximum absolute difference was 0.00014.
+
+Verdict: the venue-specific toss lean is descriptive history, not a validated
+prediction. The tab now calls it a "historical lean", shows the backtest warning
+under the call, and the Method tab reports the numbers. The line-ups remain
+descriptive and are not inputs to the estimate.
 
 ## How to resume
 
