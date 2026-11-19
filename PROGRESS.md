@@ -252,8 +252,11 @@ within-match "pitch wear" estimate can actually claim.
 ### Data and estimator
 
 - `src/build_ball_dataset.py` → `data/interim/balls.parquet`: **6,776,668
-  deliveries, 23,241 matches** (T20 / ODI / Test, both genders, 2001-12-19 →
-  2026-11-03). Bowling style is attached with the conservative role protocol;
+  deliveries from 18,585 matches** (T20 14,425, ODI 3,237, Test 923; both
+  genders, 2001-12-19 → 2026-11-03). The 23,241 figure that appeared earlier is
+  the number of scorecards in `all_json.zip`, not the number that enters the
+  T20/ODI/Test analysis; 18,585 is the correct denominator for the delivery
+  count. Bowling style is attached with the conservative role protocol;
   **22.6% of deliveries have unknown style and are excluded**.
 - Analysis sample: **5,116,165 legal spin/pace deliveries → 855,659 over x style
   cells** (three or more legal balls per cell, weighted by ball count).
@@ -276,7 +279,7 @@ within-match "pitch wear" estimate can actually claim.
 | Persistence across innings | r = −0.003 / −0.047 / +0.030 | no match-level persistence |
 | Out-of-sample gain | 0.002–0.153% of weighted MSE | economically negligible |
 | Rolling origin (4 folds) | dot share same sign 12/12; magnitudes stable | not a period effect |
-| Within-bowler FE (full controls) | +0.00196 (T20), +0.00223 (ODI), +0.00027 (Test), p<0.001 | **not composition**; never smaller than pooled |
+| Within-bowler FE (full controls) | +0.00196 (T20), +0.00223 (ODI), +0.00027 (Test), p<0.001 | **not composition**; within 1% of pooled in T20, larger in ODI and Test |
 | Exact decomposition, composition term | +0.00002 (T20), −0.00047 (ODI), −0.00012 (Test) | composition is 1% of the coefficient or **negative** |
 
 ### What the gradient is not
@@ -290,7 +293,7 @@ within-match "pitch wear" estimate can actually claim.
    where no pace bowler bowls on both sides of the boundary, **−0.0005**
    (p=0.95) in the 405 where one does, **−0.0204** among those continuing
    bowlers at match FE and **−0.0210** (p=0.044) with bowler x innings FE. The
-   pace share of deliveries rises from **40% to 74%** at the boundary. The
+   pace share of deliveries rises from **38% to 74%** at the boundary. The
    published "within-bowler sign reversal" is therefore mostly a *sample*
    change, not a fixed-effects change; the fixed effect moves the continuing-bowler
    estimate by 0.0006. Outputs: `wear_new_ball_event.csv`,
@@ -312,8 +315,8 @@ within-match "pitch wear" estimate can actually claim.
 4. **Exact decomposition.** The pooled coefficient is a variance-weighted
    average of the within-bowler and between-bowler slopes, an identity that
    closes to 4e-17. Composition is +0.00002 (T20), −0.00047 (ODI), −0.00012
-   (Test), so it never creates the gradient and where it is non-zero it biases a
-   wear claim downwards. Output: `wear_decomposition.csv`.
+   (Test), so it is 1% of the T20 coefficient and negative elsewhere; bowler mix
+   never accounts for the gradient. Output: `wear_decomposition.csv`.
 5. **Across-innings stress test (Test, dot share).** The last candidate is the
    later-innings contrast, +0.0122 at match FE on 1,670,736 deliveries in 922
    matches (cell-panel value +0.01073). It is **+0.0390** in the 94 matches with
@@ -338,6 +341,31 @@ composition, and neither is identified as surface wear.** The one remaining
 candidate, the across-innings Test contrast (dot share +0.01073, p<0.001), loses
 two thirds of its size under a within-side design and is not distinguishable from
 zero, so no surface-scale signal is confirmed.
+
+### Metric audit (2026-11-15)
+
+Every number in the paper was re-checked against the committed artifacts.
+Three claims were wrong and are corrected:
+
+- **Match count.** 23,241 is the number of scorecards in `all_json.zip`; the
+  T20/ODI/Test layer is 18,585 matches and 6,776,668 deliveries. The paper and
+  the EL Markdown now say 18,585. The submitted EL DOCX (2026-11-09 build) still
+  carries the old pairing.
+- **Pace share at the second new ball.** Recomputed from `balls.parquet` on the
+  event window: 38.2% of legal spin/pace deliveries in overs 72-79 are pace,
+  74.0% in overs 80-87. The "40%" in the paper and the EL Markdown is now 38%.
+- **Declaration pressure.** The "third / half" shares are innings-level (32.7%
+  of second innings and 49.6% of fourth innings begin after a declaration), not
+  delivery-level (30.2% and 58.0%). The wording now says "a third of second
+  innings and half of fourth innings".
+
+Also re-verified directly: the event window is 162,467 deliveries; the
+within-bowler 80-81 estimate is −0.0192 with no controls, −0.0210 with the
+wickets control and −0.0211 with wickets and run rate; the established-bowler
+restriction keeps 1,491 bowlers; Table II's observed values are the
+match-by-innings estimates (the paper now says so); and the bootstrap uses 600
+draws. The abstract no longer says the within-bowler slope is "never smaller"
+than the pooled slope: in T20 it is 0.00196 against 0.00198, a 1% difference.
 
 ### Report and paper
 

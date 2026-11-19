@@ -409,10 +409,11 @@ and restored 100% prior-window coverage without a new API call.
 
 ### 7.8 Within-match pitch dynamics
 
-The ball-by-ball layer contains **6,776,668 deliveries from 23,241 matches**.
-After restricting to legal deliveries with a known bowling style, **5,116,165
-deliveries** remain, which aggregate to **855,659 over x style cells**. Of all
-deliveries, 22.6% have an unknown bowler style and are excluded; this is the
+The archive holds 23,241 scorecards; restricting to T20, ODI and Test leaves
+**6,776,668 deliveries from 18,585 matches**. After restricting to legal
+deliveries with a known bowling style, **5,116,165 deliveries** remain, which
+aggregate to **855,659 over x style cells**. Of all deliveries, 22.6% have an
+unknown bowler style and are excluded; this is the
 price of the conservative role protocol and it is reported rather than hidden.
 
 Table 7.7 gives the age x spin coefficient under the three fixed-effect
@@ -726,7 +727,7 @@ in Section 7.10.
 The pattern continues beyond the first two overs. On continuing bowlers the pace
 coefficient is −0.0293 at overs 82-83, −0.0305 at 84-85 and −0.0449 at 86-87,
 against +0.0035, +0.0029 and −0.0045 in the naive specification. The overall pace
-share of deliveries rises from 40% before over 80 to 74% after it, so the naive
+share of deliveries rises from 38% before over 80 to 74% after it, so the naive
 comparison attributes to the ball what belongs to the attack. Whatever the
 continuing-bowler decline reflects — batters settling, spell fatigue, or a harder
 ball that finds the edge rather than the middle — it is not a new-ball bonus, and
@@ -841,12 +842,12 @@ on both sides of each restriction. Three restrictions then move the number. The 
 larger in the 94 matches that produced a follow-on, where one side was far enough
 ahead to enforce it and the side batting again had just been dismissed cheaply.
 Adding a follow-on indicator and a declaration indicator, each interacted with
-spin, cuts it by 44% to +0.0068, because a third of second-innings deliveries and
-half of fourth-innings deliveries come in an innings that began after a
-declaration. The strictest design avoids comparing different batting sides at
-all: in a Test without a follow-on the innings alternate between the sides, so
-each side's second innings can be compared with its own first, with match x team
-fixed effects absorbing the batting side exactly. That returns +0.0035
+spin, cuts it by 44% to +0.0068, because a third of second innings and half of
+fourth innings begin after a declaration. The strictest design avoids comparing
+different batting sides at all: in a Test without a follow-on the innings
+alternate between the sides, so each side's second innings can be compared with
+its own first, with match x team fixed effects absorbing the batting side
+exactly. That returns +0.0035
 (SE 0.0024, p=0.14), about a third of the headline, with a 95% interval of
 [−0.001, +0.008].
 

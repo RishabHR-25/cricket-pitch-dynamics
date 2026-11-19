@@ -8,7 +8,7 @@ RVCE, Bengaluru, India
 **Abstract—**Pitch wear is a first-order tactical variable in cricket and there is no public
 measurement of it. The natural proxy is the within-match change in the relative
 effectiveness of spin and pace, estimated from ball-by-ball data with match fixed
-effects. Using 6.8 million deliveries from 23,241 matches, we show that this
+effects. Using 6.8 million deliveries from 18,585 matches, we show that this
 proxy is precise and stable but not identified as wear. The verdict is mostly
 negative. Within-innings permutation nulls are mis-centred — for one outcome by
 more than the effect they are meant to test — so the usual randomisation
@@ -17,28 +17,28 @@ zero-centred null, and under it the gradient is significant in all three
 formats. The runs-per-ball estimate reverses sign between phases in all three
 formats, and the dot-share estimate does so in T20, which no uniform surface
 process predicts. The runs channel disappears when innings boundaries are
-trimmed, and the per-match
-estimate has zero cross-innings persistence and negligible predictive value.
+trimmed, and the per-match estimate has zero cross-innings persistence and
+negligible predictive value.
 Bowler selection is not the explanation for the smooth trend. We write the
 pooled coefficient as an exact variance-weighted average of a within-bowler and
 a between-bowler slope: composition contributes 0.00002 to a coefficient of
-0.00198 in T20, and is negative in ODI and Test, so the gradient is never
-smaller within bowlers than across them. What fails is attribution, not
-composition. We then test the most natural identification strategy, the second
-new ball at over 80 in Test cricket, and the audit turns up a second trap.
-Across all deliveries the pace dot-ball share rises by 1.5 percentage points at
-the boundary, but the rise is 4.9 points in the matches where no pace bowler
-bowls on both sides of it and essentially zero in the matches where one does. The jump is a
-change of personnel, and it disappears once the comparison is restricted to
-bowlers who continue. A second
-natural experiment, the October 2011 two-new-ball rule in One Day
-Internationals, leaves the age gradient unchanged. The one candidate that
-survives on pooled data, a one-point across-innings contrast in Tests, is four
-times larger in follow-on matches and loses two thirds of its size when each side
-is compared with its own first innings. We conclude that the sharp
-boundary is a selection trap and that the smooth trend is a real description of
-play that cannot be read as surface change; we give a short audit that any
-pitch-wear claim should pass.
+0.00198 in T20, and is negative in ODI and Test, so the within-bowler slope is
+essentially the pooled slope in T20 and larger in ODI and Test. What fails is
+attribution, not composition. We then test the most natural identification
+strategy, the second new ball at over 80 in Test cricket, and the audit turns
+up a second trap. Across all deliveries the pace dot-ball share rises by 1.5
+percentage points at the boundary, but the rise is 4.9 points in the matches
+where no pace bowler bowls on both sides of it and essentially zero in the
+matches where one does. The jump is a change of personnel, and it disappears
+once the comparison is restricted to bowlers who continue. A second natural
+experiment, the October 2011 two-new-ball rule in One Day Internationals,
+leaves the age gradient unchanged. The one candidate that survives on pooled
+data, a one-point across-innings contrast in Tests, is four times larger in
+follow-on matches and loses two thirds of its size when each side is compared
+with its own first innings. We conclude that the sharp boundary is a selection
+trap and that the smooth trend is a real description of play that cannot be
+read as surface change; we give a short audit that any pitch-wear claim should
+pass.
 
 **Index Terms—**pitch wear, spin bowling, fixed effects, permutation inference,
 wild cluster bootstrap, selection, cricket.
@@ -91,7 +91,7 @@ Our contributions are:
    usable. A null-imposed wild cluster bootstrap, with the weight drawn at the
    match level, centres the null at zero and reproduces the clustered standard
    error; under it the dot gradient is significant in all three formats. The
-   standard placebo is not a conservative test; it is not a test of zero at all.
+   standard placebo is not a test of zero at all.
 
 3. **A phase decomposition that reverses.** The pooled gradient is an average of
    offsetting phase effects: the powerplay contributes the largest positive term
@@ -104,12 +104,12 @@ Our contributions are:
    between-bowler slope, so composition is an arithmetic term rather than an
    inference from two differently specified regressions. For the smooth gradient
    the composition term is +0.00002 in T20, −0.00047 in ODI and −0.00012 in
-   Test: it never creates the gradient, and where it is non-zero it works
-   against a wear story. For the second new ball at over 80 it is everything.
-   The aggregate pace dot-ball share rises 1.5 percentage points, but 4.9
-   points in the matches where the pace attack turns over completely at the
-   boundary, and essentially not at all where a seamer continues. The jump is a change of
-   personnel, not a new ball.
+   Test: it accounts for at most 1% of the gradient, and where it is larger it
+   works against a wear story. For the second new ball at over 80 it is
+   everything. The aggregate pace dot-ball share rises 1.5 percentage points,
+   but 4.9 points in the matches where the pace attack turns over completely at
+   the boundary, and essentially not at all where a seamer continues. The jump
+   is a change of personnel, not a new ball.
 
 5. **A ball-age regime test.** The October 2011 two-new-ball rule halves the rate
    at which an ODI ball ages per over of play. If the smooth gradient were ball
@@ -180,9 +180,10 @@ follow [14].
 ## III. Data
 
 **Ball-by-ball archive.** We use the Cricsheet archive of ball-by-ball scorecards
-[15], which covers international and major domestic competitions. The extract used here
-contains **6,776,668 deliveries from 23,241 matches** played between December
-2001 and November 2026, across T20, ODI and Test cricket and both genders.
+[15], which covers international and major domestic competitions. The archive
+holds 23,241 scorecards; restricting to T20, ODI and Test leaves **18,585
+matches and 6,776,668 deliveries**, played between December 2001 and November
+2026, across both genders.
 
 **Bowling style.** Cricsheet records the bowler's name but not the bowling style.
 We attach a style with a conservative, evidence-based protocol: a player profile
@@ -208,7 +209,7 @@ throughout the sample. In ODIs, a mandatory ball change at the start of the 35th
 over applied before 1 October 2011 [17], when it was replaced by two new balls
 per innings, one from each end, used in alternate overs [16]. We use those dates
 as given and verify the mechanics of both regimes: the pace share of deliveries
-jumps from 40% to 74% at over 80 in Tests, and each post-2011 ODI ball is in play
+jumps from 38% to 74% at over 80 in Tests, and each post-2011 ODI ball is in play
 for at most about 25 overs.
 
 ## IV. Estimator
@@ -269,7 +270,10 @@ innings and refits the same specification [9], [10]. If the coefficient were
 driven by style, the observed value should lie in the tail of the values produced
 by random allocation. That logic fails here, because the permutation does not
 sample under the null: it reallocates the regressor and changes its joint
-distribution with over number and with the controls.
+distribution with over number and with the controls. The observed values in
+Table II are the match-by-innings estimates that the placebo re-fits, so they
+differ slightly from the match fixed-effects values in Table I: the innings
+effect absorbs within-match shifts in ball age.
 
 **TABLE II**
 
@@ -298,10 +302,11 @@ hide a real effect or manufacture a spurious one is not a test of zero.
 The repair is to impose the null instead of permuting the regressor. We drop the
 interaction, fit the restricted model, and resample its residuals with a
 Rademacher weight drawn once per match, which preserves the clustering used by
-the standard errors. The bootstrap null is centred at zero by construction, and
-its standard deviation reproduces the match-clustered standard error (0.00015
-against 0.00016 in T20, 0.00009 against 0.00009 in ODI, 0.00003 against 0.00003
-in Test). Under it the dot-ball gradient is significant in all three formats,
+the standard errors; the bootstrap uses 600 draws. The bootstrap null is centred
+at zero by construction, and its standard deviation reproduces the
+match-clustered standard error (0.00015 against 0.00016 in T20, 0.00009 against
+0.00009 in ODI, 0.00003 against 0.00003 in Test). Under it the dot-ball gradient
+is significant in all three formats,
 with $z$ of 9.3, 15.5 and 3.9, so the Test permutation $p=0.06$ is an artefact
 rather than a weak effect. The gradient is precise and real. Every rejection in
 the rest of the paper is about attribution, not existence. The runs channel is
@@ -385,9 +390,10 @@ by its deliveries and enters cell means of the controls. Both estimate the same
 population coefficient; the delivery-level version is used here because the
 decomposition below requires identical rows.
 
-The estimate does not collapse. It is equal to the pooled estimate in T20 and
-larger in ODI and Test under every specification. That is suggestive, but it is
-still a comparison of two coefficients. Table V makes it an identity.
+The estimate does not collapse. It is essentially equal to the pooled estimate
+in T20 (0.00196 against 0.00198) and larger in ODI and Test under every
+specification. That is suggestive, but it is still a comparison of two
+coefficients. Table V makes it an identity.
 
 **TABLE V**
 
@@ -522,9 +528,9 @@ coefficient is −0.0293 at 82-83, −0.0305 at 84-85 and −0.0449 at 86-87, ag
 after the boundary because the new ball and the new attack arrive together and
 then both decay; the continuing-bowler series declines.
 
-The ball is new, but so is the attack: the pace share of deliveries rises from 40%
-before over 80 to 74% after it. Fig. 1 shows the two paths. The grey line is the
-naive series, with a visible bump at the boundary. The blue line is the
+The ball is new, but so is the attack: the pace share of deliveries rises from
+38% before over 80 to 74% after it. Fig. 1 shows the two paths. The grey line is
+the naive series, with a visible bump at the boundary. The blue line is the
 continuing-bowler series, which declines smoothly through the same window; it is
 estimated on the restricted sample, as Table VI makes explicit. Whatever the
 decline reflects — batters settling, spell fatigue, or a harder ball that finds
@@ -615,17 +621,17 @@ Three things move the number. First, the contrast is 4.3 times larger in the 94
 matches that produced a follow-on (+0.0390) than in the 828 that did not
 (+0.0091). A follow-on is awarded when one side leads heavily, and the side that
 bats again has just been dismissed cheaply, so this is the selection trap of
-Section VII reappearing at the innings scale. Second, adding a follow-on indicator
-and a declaration indicator, each interacted with spin, cuts the contrast by 44%
-to +0.0068. Declaration pressure is pervasive: a third of second-innings
-deliveries and half of fourth-innings deliveries come in an innings that began
-after a declaration, and the batting side in those innings faces a different
-objective. Third, and most demanding, the contrast can be
-estimated without comparing different batting sides at all. In a Test without a
-follow-on the innings alternate between the sides, so each side's second innings
-can be compared with its own first, with match x team fixed effects absorbing the
-batting side exactly. That design returns +0.0035 (SE 0.0024, p=0.14), about a
-third of the headline, with a 95% interval of [−0.001, +0.008].
+Section VII reappearing at the innings scale. Second, adding a follow-on
+indicator and a declaration indicator, each interacted with spin, cuts the
+contrast by 44% to +0.0068. Declaration pressure is pervasive: a third of second
+innings and half of fourth innings begin after a declaration, and the batting
+side in those innings faces a different objective. Third, and most demanding,
+the contrast can be estimated without comparing different batting sides at all.
+In a Test without a follow-on the innings alternate between the sides, so each
+side's second innings can be compared with its own first, with match x team
+fixed effects absorbing the batting side exactly. That design returns +0.0035
+(SE 0.0024, p=0.14), about a third of the headline, with a 95% interval of
+[−0.001, +0.008].
 
 The strict design is still not an experiment, and it is not obviously biased in
 one direction. A third innings is often a declaration setup, where the batting
@@ -639,12 +645,12 @@ leaving open whether a smaller surface effect of up to about 0.008 is present.
 
 This is where the data stop. Surface change over 20 to 50 overs is small, and
 composition is not the reason the within-innings estimator fails: Section VI-D
-decomposes the coefficient exactly and the composition term is negative in ODI and
-Test and 1% of the total in T20. The failure is in attribution. The same
+decomposes the coefficient exactly and the composition term is negative in ODI
+and Test and 1% of the total in T20. The failure is in attribution. The same
 coefficient is produced by spell stage, field changes and batter adaptation, it
-does not persist from one innings to the next, and it does not improve
-out-of-sample prediction. A relative style gradient is a description of
-play, not a reading of the surface.
+does not persist from one innings to the next, and its out-of-sample gain is at
+most 0.15%. A relative style gradient is a description of play, not a reading of
+the surface.
 
 ## IX. An Audit for Pitch-Wear Claims
 
