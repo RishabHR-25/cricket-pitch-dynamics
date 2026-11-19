@@ -555,6 +555,15 @@ prediction. The tab now calls it a "historical lean", shows the backtest warning
 under the call, and the Method tab reports the numbers. The line-ups remain
 descriptive and are not inputs to the estimate.
 
+`reports/tables/toss_backtest_examples.csv` lists the most recent clear call at
+each of the 11 venues, so the table shows both directions and both outcomes.
+Representative cases: Jaipur (2026-05-19) called field, the toss winner fielded
+and won; Wankhede (2026-05-24) called field, the toss winner fielded and lost;
+Headingley (2026-08-09) called bat, the toss winner fielded and lost, so the
+call was right about the better choice but the toss winner did not follow it.
+All 260 clear calls were T20; ODI and Test never cleared the 25-match venue
+minimum.
+
 ## How to resume
 
 Weather is done. From the repo root:

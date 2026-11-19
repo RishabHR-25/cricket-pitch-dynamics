@@ -616,7 +616,8 @@ def baseline_benchmark(windows: pd.DataFrame) -> dict:
     return cluster_accuracy(windows, "baseline_agrees")
 
 
-def examples(predictions: pd.DataFrame, per_format: int = 4) -> pd.DataFrame:
+def examples(predictions: pd.DataFrame, per_type: int = 20) -> pd.DataFrame:
+    """One recent clear call per venue, so the table spans venues and outcomes."""
     frame = predictions[predictions["call"].ne("none")].copy()
     frame["followed"] = frame["call"].eq(frame["toss_decision"])
     frame["toss_winner_won"] = frame["toss_won"].eq(1)
@@ -629,13 +630,16 @@ def examples(predictions: pd.DataFrame, per_format: int = 4) -> pd.DataFrame:
         default="not followed",
     )
     frame = frame.sort_values("date", ascending=False)
-    frame = frame.groupby("match_type", observed=True, group_keys=False).head(per_format)
+    frame = frame.groupby(
+        ["match_type", "venue_key"], observed=True, group_keys=False
+    ).head(1)
+    frame = frame.groupby("match_type", observed=True, group_keys=False).head(per_type)
     columns = [
         "date", "match_type", "gender", "team_type", "venue", "team1", "team2",
         "toss_winner", "toss_decision", "call", "edge_points", "prob_call",
         "winner", "toss_winner_won", "call_outcome",
     ]
-    return frame[columns].sort_values(["match_type", "date"], ascending=[True, False])
+    return frame[columns].sort_values("date", ascending=False)
 
 
 # --------------------------------------------------------------------------- #
